@@ -19,7 +19,7 @@ class Goal(Choice):
     display_name = "Goal"
 
     option_bombeach_boss = 0
-    #option_tosla_hq_boss = 1
+    #option_tosla_offices_boss = 1
     #option_moon_boss = 2
     #option_backrooms = 3
     #option_macguffin = 4

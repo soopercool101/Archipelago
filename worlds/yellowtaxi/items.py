@@ -2,6 +2,8 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
+from pygments.lexers import q
+
 from BaseClasses import Item, ItemClassification
 
 if TYPE_CHECKING:
@@ -150,31 +152,14 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         hub_bunnies = 3
         if world.options.extra_demo_collectables:
             hub_bunnies += 2
-        if not world.options.shuffle_golden_spring and not world.options.shuffle_orange_switch:
-            hub_bunnies -= 2
-        elif not world.options.shuffle_morios_password:
+        if world.exclude_top_bunny:
+            hub_bunnies -= 1
+        if world.exclude_spike_bunny:
             hub_bunnies -= 1
         itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(hub_bunnies)]
-        itempool += [world.create_item("Bunny (Bombeach)") for _ in range(3)]
-        itempool += [world.create_item("Bunny (Gym Gears)") for _ in range(3)]
-        # itempool += [world.create_item("Bunny (Demo)") for _ in range(3)]
-        if world.options.goal > 1 or world.options.shuffle_orange_switch:
-            itempool += [world.create_item("Bunny (Flushed Away)") for _ in range(3)]
-        if (world.options.goal > 1 or world.options.shuffle_golden_spring or
-                world.options.shuffle_orange_switch or world.options.shuffle_doggo):
-            itempool += [world.create_item("Bunny (Fecal Matters)") for _ in range(3)]
-        if world.options.goal > 0:
-            itempool += [world.create_item("Bunny (Pizza Time)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Morio's Home)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Arcade Panik)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Tosla's Offices)") for _ in range(3)]
-        if world.options.goal > 1:
-            itempool += [world.create_item("Bunny (Maurizio's City)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Crash Test Industries)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Morio's Mind)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Ruined Observatory)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Tosla HQ)") for _ in range(3)]
-            itempool += [world.create_item("Bunny (Moon)") for _ in range(3)]
+        for level in world.included_levels:
+            if level != "Hub":
+                itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
 
     if world.options.shuffle_gela_toni:
         itempool.append(world.create_item("Gela-Toni"))

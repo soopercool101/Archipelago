@@ -1810,7 +1810,7 @@
     "checkpoints": {},
     "cheeses": {},
     "connections": {
-      "Morio's Lab - Morio's Room": "J1+MorioHat",
+      "Morio's Lab - Morio's Room": "MorioHat",
       "Morio's Lab - Ground Floor Bolts": "B1",
       "Morio's Lab - Ground Floor Wrenches": "",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
@@ -1824,6 +1824,25 @@
   },
   "REGION_MORIOS_LAB/MORIOS_ROOM": {
     "name": "Morio's Lab - Morio's Room",
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Morio's Lab - Morio's Room Jump": "J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "REGION_MORIOS_LAB/MORIOS_ROOM_JUMP": {
+    "name": "Morio's Lab - Morio's Room Jump",
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -2144,7 +2163,7 @@
       "Morio's Lab - Final Floor": "",
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "Password",
       "Morio's Lab - Path to Morio's Room": "Password+FGU",
-      "Morio's Lab - Morio's Room": "Password+FGU+MorioHat",
+      "Morio's Lab - Morio's Room Jump": "Password+FGU+MorioHat",
       "Morio's Lab - Third Floor Wrenches Lower": "Password",
       "Morio's Lab - Third Floor Wrenches Middle": "Password+FGU",
       "Morio's Lab - Ground Floor Bolts": "Password",

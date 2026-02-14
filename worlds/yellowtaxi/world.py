@@ -7,6 +7,7 @@ from worlds.AutoWorld import World
 
 from . import data_loader, items, regions, locations, rules, web_world
 from . import options as taxi_options
+from ..stardew_valley.stardew_rule import true_
 
 
 class YellowTaxiWorld(World):
@@ -39,6 +40,13 @@ class YellowTaxiWorld(World):
         self.early_doggo : bool = False
         self.early_backflip : bool = False
         self.early_psycho_taxi : bool = False
+        self.early_orange_switch : bool = False
+        self.early_golden_spring : bool = False
+        self.early_golden_propeller : bool = False
+        self.early_morios_password : bool = False
+        self.early_rocket : bool = False
+        self.exclude_spike_bunny : bool = False
+        self.exclude_top_bunny : bool = False
 
     def generate_early(self) -> None:
         # Determine which regions are not going to be included
@@ -52,9 +60,9 @@ class YellowTaxiWorld(World):
         self.included_levels = [
             "Hub",
             "Morio's Home",
-            "Bombeach",
-            "Gym Gears",
-            "Fecal Matters",    # Remove this later if doggo is unreachable
+            #"Bombeach",
+            #"Gym Gears",
+            #"Fecal Matters",    # Remove this later if doggo is unreachable
         ]
 
         # Exclude unreachable hub areas past the goal
@@ -77,8 +85,8 @@ class YellowTaxiWorld(World):
                                           "Crash Again - Entrance",
                                           "Granny's Island - Sewer Island",
                                           "Granny's Island - Sewer Island Upper"]
-            else:
-                self.included_levels += ["Flushed Away"]
+            #else:
+            #    self.included_levels += ["Flushed Away"]
             # Cannot reach these spiky areas without golden spring
             if not self.options.shuffle_golden_spring:
                 self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes"]
@@ -95,8 +103,8 @@ class YellowTaxiWorld(World):
                 if self.options.expert_level >= 2:
                     self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
                 # Cannot include fecal matters if you cannot reach doggo
-                if not self.options.shuffle_doggo:
-                    self.included_levels.remove("Fecal Matters")
+                #if not self.options.shuffle_doggo:
+                #    self.included_levels.remove("Fecal Matters")
             # Final floor is hard locked behind Morio's Password
             if not self.options.shuffle_morios_password:
                 self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
@@ -108,6 +116,32 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Final Floor",
                                           "Morio's Lab - Final Floor Pipes",
                                           "Morio's Lab - Final Floor Catwalk"]
+
+        # Make sure early items are set as needed
+        if not "Pizza Time" in self.included_levels:
+            if self.options.shuffle_pizza_king:
+                self.early_pizza_king = True
+            self.early_rat = True
+        if self.options.shuffle_doggo and "Morio's Lab - Fourth Floor" in self.excluded_regions:
+            self.early_doggo = True
+        if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
+            self.early_backflip = True
+        if self.options.shuffle_psycho_taxi and not "Arcade Panik" in self.included_levels:
+            self.early_psycho_taxi = True
+        if self.options.shuffle_orange_switch and not "Crash Test Industries" in self.included_levels:
+            self.early_orange_switch = True
+        if self.options.shuffle_golden_spring and not "Tosla HQ" in self.included_levels:
+            self.early_golden_spring = True
+        if self.options.shuffle_golden_propeller and not "Ruined Observatory" in self.included_levels:
+            self.early_golden_propeller = True
+        if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
+            self.early_morios_password = True
+        self.early_rocket = True
+
+        if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
+            self.exclude_spike_bunny = True
+        if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
+            self.exclude_top_bunny = True
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
@@ -157,9 +191,18 @@ class YellowTaxiWorld(World):
         # IMPORTANT!! NEED TO INCREMENT THIS WHENEVER BREAKING APWORLD CHANGES ARE MADE!!
         dict["major_version"] = 0
         dict["minor_version"] = 1
+
+        # Set early item states, in order to make it easier to track clientside without needing to match logic
         dict["early_pizza_king"] = self.early_pizza_king
         dict["early_rat"] = self.early_rat
         dict["early_doggo"] = self.early_doggo
         dict["early_backflip"] = self.early_backflip
         dict["early_psycho_taxi"] = self.early_psycho_taxi
+        dict["early_orange_switch"] = self.early_orange_switch
+        dict["early_golden_spring"] = self.early_golden_spring
+        dict["early_golden_propeller"] = self.early_golden_propeller
+        dict["early_morios_password"] = self.early_morios_password
+        # Same with bunnies
+        dict["exclude_top_bunny"] = self.exclude_top_bunny
+        dict["exclude_spike_bunny"] = self.exclude_spike_bunny
         return dict
