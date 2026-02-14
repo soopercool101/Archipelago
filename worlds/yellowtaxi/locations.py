@@ -53,6 +53,11 @@ def create_locations(world: YellowTaxiWorld) -> None:
         "Granny's Island Hat World - Purchase Morio Hat", "Morio Hat",
         location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
     )
+    if world.early_rat:
+        world.get_region("Granny's Island - Main Area").add_event(
+            "Granny's Island - Find Michele Near Beach", "Michele",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
 
 
 def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str) -> Dict[str, int | None]:
@@ -63,10 +68,16 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
         case "Granny's Island - Main Area":
             if world is None or (world.options.shuffle_pizza_king and world.options.goal < 1):
                 locations["Granny's Island - Talk to Pizza King"] = 10_10002
-            if world is None or (world.options.shuffle_doggo and world.options.goal < 2 and not world.options.shuffle_golden_spring):
+                if world is not None:
+                    world.early_pizza_king = True
+            if world is None or (world.options.shuffle_doggo and "Morio's Lab - Fourth Floor" in world.excluded_regions):
                 locations["Granny's Island - Talk to Doggo"] = 10_10007
+                if world is not None:
+                    world.early_doggo = True
             if world is None or (world.options.shuffle_rat and world.options.goal < 1):
                 locations["Granny's Island - Talk to Michele Near Beach"] = 2_21_99999
+            if world is not None and world.options.goal < 1:
+                world.early_rat = True
         case "Granny's Island - Crash Again Roof":
             if world is None or world.options.extra_demo_collectables:
                 locations = {
@@ -109,6 +120,19 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 }
             if world is None or world.options.extra_demo_collectables:
                 locations["Morio's Lab - Bunny - Above Morio's Home Portal"] = 2_00003
+        case "Morio's Lab - Second Floor":
+            if world is not None and world.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in world.excluded_regions:
+                locations = {
+                    "Morio's Lab - PICI Backflip Tutorial": 8_00004,
+                }
+                world.early_backflip = True
+        case "Morio's Lab - Psycho Taxi Arcade Machine":
+            if world is None or (world.options.shuffle_psycho_taxi and world.options.goal < 1):
+                locations = {
+                    "Morio's Lab - Interact with Psycho Taxi Arcade Machine": 4_20_99999,
+                }
+                if world is not None:
+                    world.early_psycho_taxi = True
         case "Morio's Lab - Second Floor Above Demo Wall":
             if world is None or world.options.extra_demo_collectables:
                 locations = {
@@ -144,10 +168,10 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Morio's Island - Talk to Morio": 8_00001,
                 }
-        #case "Arcade Panik - Starting Area":
-        #    if world is None or world.options.shuffle_psycho_taxi:
-        #        locations = {
-        #            "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
-        #        }
+        case "Arcade Panik - Starting Area":
+            if world is None or world.options.shuffle_psycho_taxi:
+                locations = {
+                    "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
+                }
 
     return locations

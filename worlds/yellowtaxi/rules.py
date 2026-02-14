@@ -161,7 +161,7 @@ def set_completion_condition(world: YellowTaxiWorld) -> None:
     # So lets undo what we just did, and instead set the completion condition to:
     #world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
 
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Gear", world.player, world.num_gears - 3) and state.can_reach(world.get_region("Morio's Lab - Final Floor"))
+    world.multiworld.completion_condition[world.player] = lambda state: state.has("Gear", world.player, world.num_gears - 3)
 
 
 # Shamelessly copying SM64's rule factory implementation

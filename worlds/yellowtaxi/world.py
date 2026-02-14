@@ -1,5 +1,7 @@
 from collections.abc import Mapping
 from typing import Any, Dict, List
+
+from BaseClasses import MultiWorld
 from Utils import visualize_regions
 from worlds.AutoWorld import World
 
@@ -27,25 +29,42 @@ class YellowTaxiWorld(World):
     # Keeping default Menu region, just in case I want random starting location down the line
     origin_region_name = "Menu"
 
-    def __init__(self, multiworld: "MultiWorld", player: int):
+    def __init__(self, multiworld: MultiWorld, player: int):
         super().__init__(multiworld, player)
         self.num_gears : int = 0
         self.excluded_regions : List[str] = []
-        self.excluded_levels : List[str] = []
+        self.included_levels : List[str] = []
+        self.early_pizza_king : bool = False
+        self.early_rat : bool = False
+        self.early_doggo : bool = False
+        self.early_backflip : bool = False
+        self.early_psycho_taxi : bool = False
 
     def generate_early(self) -> None:
         # Determine which regions are not going to be included
 
         self.num_gears = 0
         self.excluded_regions = []
-        self.excluded_levels = []
+        self.included_levels = []
 
-        # Exclude unreachable hub areas and levels past the goal
+        # Include levels up to the goal
+        # Always included levels
+        self.included_levels = [
+            "Hub",
+            "Morio's Home",
+            "Bombeach",
+            "Gym Gears",
+            "Fecal Matters",    # Remove this later if doggo is unreachable
+        ]
+
+        # Exclude unreachable hub areas past the goal
         # Rocket isn't pre-goal for any current goal types
         if not self.options.shuffle_rocket:
             self.excluded_regions += ["Granny's Island - Top of Rocket"]
-        # Pizza King is post Tosla HQ goal
+        # Pizza King and Gela-Toni are post BomBoss goal
         if self.options.goal < 1:
+            if not self.options.shuffle_gela_toni:
+                self.excluded_regions += ["Ice Cream Truck - Lower Path", "Ice Cream Truck - Upper Path"]
             if not self.options.shuffle_pizza_king:
                 self.excluded_regions += ["Pizza Oven - Entrance", "Pizza Oven - Pillar"]
         # Doggo, Golden Spring, Orange Switch, Morio's Password, and Golden Propeller are all post Tosla HQ goal
@@ -58,10 +77,13 @@ class YellowTaxiWorld(World):
                                           "Crash Again - Entrance",
                                           "Granny's Island - Sewer Island",
                                           "Granny's Island - Sewer Island Upper"]
-                self.excluded_levels += ["Flushed Away"]
+            else:
+                self.included_levels += ["Flushed Away"]
             # Cannot reach these spiky areas without golden spring
             if not self.options.shuffle_golden_spring:
                 self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes"]
+                if self.options.expert_level < 2:
+                    self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
             # Can reach the upper floors via either morio's password (go backwards through pipe), OS or GS
             if (not self.options.shuffle_golden_spring and not self.options.shuffle_morios_password
                     and not self.options.shuffle_orange_switch):
@@ -69,9 +91,12 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Ledge Above Maurizio's City Portal",
                                           "Morio's Lab - Fifth Floor Crash Test Area",
                                           "Morio's Lab - Fifth Floor Morio's Mind Area"]
+                # This can be accessed in expert 2+, but not before
+                if self.options.expert_level >= 2:
+                    self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
                 # Cannot include fecal matters if you cannot reach doggo
                 if not self.options.shuffle_doggo:
-                    self.excluded_levels += ["Fecal Matters"]
+                    self.included_levels.remove("Fecal Matters")
             # Final floor is hard locked behind Morio's Password
             if not self.options.shuffle_morios_password:
                 self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
@@ -132,4 +157,9 @@ class YellowTaxiWorld(World):
         # IMPORTANT!! NEED TO INCREMENT THIS WHENEVER BREAKING APWORLD CHANGES ARE MADE!!
         dict["major_version"] = 0
         dict["minor_version"] = 1
+        dict["early_pizza_king"] = self.early_pizza_king
+        dict["early_rat"] = self.early_rat
+        dict["early_doggo"] = self.early_doggo
+        dict["early_backflip"] = self.early_backflip
+        dict["early_psycho_taxi"] = self.early_psycho_taxi
         return dict

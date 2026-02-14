@@ -126,7 +126,7 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         classification = ItemClassification.progression
 
     # Bunnies are progresssion if Mosk's Rocket is shuffled or exclude post-goal locations is off
-    if name.startswith("Bunny (") and (world.options.shuffle_rocket or not world.options.exclude_post_goal_locations):
+    if name.startswith("Bunny (") and world.options.shuffle_rocket:
         classification = ItemClassification.progression_deprioritized_skip_balancing
 
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
