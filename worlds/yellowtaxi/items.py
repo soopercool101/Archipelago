@@ -2,8 +2,6 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING
 
-from pygments.lexers import q
-
 from BaseClasses import Item, ItemClassification
 
 if TYPE_CHECKING:
