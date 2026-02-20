@@ -1535,7 +1535,8 @@
     "cheeses": {},
     "connections": {
       "Morio's Lab - Ground Floor Lowest Bolt": "",
-      "Morio's Lab - Bunny Ledge": "J1 | X1+B1"
+      "Morio's Lab - Bunny Ledge": "J1 | X1+B1",
+      "Morio's Lab - Fifth Floor Crash Test Area": "X1+J1+B2+FGU"
     },
     "subwarps": {},
     "warps": {},

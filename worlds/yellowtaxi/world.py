@@ -92,16 +92,13 @@ class YellowTaxiWorld(World):
                 self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes"]
                 if self.options.expert_level < 2:
                     self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
-            # Can reach the upper floors via either morio's password (go backwards through pipe), OS or GS
-            if (not self.options.shuffle_golden_spring and not self.options.shuffle_morios_password
-                    and not self.options.shuffle_orange_switch):
+            # Can reach the upper floors via either morio's password (go backwards through pipe), OS or GS unless in X1+
+            if (self.options.expert_level == 0 and not self.options.shuffle_golden_spring
+                    and not self.options.shuffle_morios_password and not self.options.shuffle_orange_switch):
                 self.excluded_regions += ["Morio's Lab - Fourth Floor",
                                           "Morio's Lab - Ledge Above Maurizio's City Portal",
                                           "Morio's Lab - Fifth Floor Crash Test Area",
                                           "Morio's Lab - Fifth Floor Morio's Mind Area"]
-                # This can be accessed in expert 2+, but not before
-                if self.options.expert_level >= 2:
-                    self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
                 # Cannot include fecal matters if you cannot reach doggo
                 #if not self.options.shuffle_doggo:
                 #    self.included_levels.remove("Fecal Matters")
@@ -202,7 +199,8 @@ class YellowTaxiWorld(World):
         dict["early_golden_spring"] = self.early_golden_spring
         dict["early_golden_propeller"] = self.early_golden_propeller
         dict["early_morios_password"] = self.early_morios_password
-        # Same with bunnies
+        dict["early_rocket"] = self.early_rocket
+        # Same with excluded bunnies
         dict["exclude_top_bunny"] = self.exclude_top_bunny
         dict["exclude_spike_bunny"] = self.exclude_spike_bunny
         return dict
