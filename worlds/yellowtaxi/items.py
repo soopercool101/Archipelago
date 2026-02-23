@@ -198,8 +198,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_rat:
         itempool.append(world.create_item("Michele"))
 
-    #if world.options.shuffle_psycho_taxi:
-    #    itempool.append(world.create_item("Psycho Taxi Cartridge"))
+    if world.options.shuffle_psycho_taxi:
+        itempool.append(world.create_item("Psycho Taxi Cartridge"))
 
     number_of_items = len(itempool)
 

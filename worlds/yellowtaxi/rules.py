@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from typing import TYPE_CHECKING, Callable, Mapping, Union
 
 from BaseClasses import CollectionState, MultiWorld
@@ -161,7 +162,7 @@ def set_completion_condition(world: YellowTaxiWorld) -> None:
     # So lets undo what we just did, and instead set the completion condition to:
     #world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
 
-    world.multiworld.completion_condition[world.player] = lambda state: state.has("Gear", world.player, world.num_gears - 3)
+    world.multiworld.completion_condition[world.player] = lambda state: state.can_reach(world.get_region("Bombeach - Starting Area"), player=world.player)
 
 
 # Shamelessly copying SM64's rule factory implementation
@@ -340,16 +341,24 @@ class RuleFactory:
             return "Morio Hat", 1
         if token == "MoskHat":
             return "Mosk Hat", 1
-        # Portals. TODO: Allow variable portal costs
+        # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
             return "Gear", 3
         if token == "PortalBombeach":
+            if self.world.options.goal == 0:
+                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
+                return "Gear", self.world.final_portal_cost
+
             return "Gear", 6
         if token == "PortalArcadePanik":
             return "Gear", 18
         if token == "PortalPizzaTime":
             return "Gear", 32
         if token == "PortalToslaOffices":
+            if self.world.options.goal == 1:
+                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
+                return "Gear", self.world.final_portal_cost
+
             return "Gear", 50
         if token == "PortalGymGears":
             return True
@@ -366,6 +375,10 @@ class RuleFactory:
         if token == "PortalRuinedObservatory":
             return True
         if token == "PortalToslaHQ":
+            if self.world.options.goal == 2:
+                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
+                return "Gear", self.world.final_portal_cost
+
             return "Gear", 130
         if token.startswith("X"):
             expert_level = int(token[1:])

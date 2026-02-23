@@ -33,8 +33,10 @@ class YellowTaxiWorld(World):
     def __init__(self, multiworld: MultiWorld, player: int):
         super().__init__(multiworld, player)
         self.num_gears : int = 0
+        self.num_bunnies : int = 0
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
+        self.early_gela_toni : bool = False
         self.early_pizza_king : bool = False
         self.early_rat : bool = False
         self.early_doggo : bool = False
@@ -47,20 +49,31 @@ class YellowTaxiWorld(World):
         self.early_rocket : bool = False
         self.exclude_spike_bunny : bool = False
         self.exclude_top_bunny : bool = False
+        self.final_portal_cost : int = 0
+        self.goal_levels : List[str] = ["Bombeach"]
 
     def generate_early(self) -> None:
         # Determine which regions are not going to be included
 
         self.num_gears = 0
+        self.num_bunnies = 0
         self.excluded_regions = []
         self.included_levels = []
+
+        match self.options.goal:
+            case 0:
+                self.goal_levels = ["Bombeach"]
+            case 1:
+                self.goal_levels =  ["Tosla Offices"]
+            case 2:
+                self.goal_levels = ["Tosla HQ", "Moon"]
 
         # Include levels up to the goal
         # Always included levels
         self.included_levels = [
             "Hub",
             "Morio's Home",
-            #"Bombeach",
+            "Bombeach",
             #"Gym Gears",
             #"Fecal Matters",    # Remove this later if doggo is unreachable
         ]
@@ -82,7 +95,8 @@ class YellowTaxiWorld(World):
                     (not self.options.expert_level >= 1 or not self.options.shuffle_golden_propeller)):
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
                                           "Granny's Island - Crash Again Roof",
-                                          "Crash Again - Entrance",
+                                          "Crash Again - Starting Area",
+                                          "Crash Again - End",
                                           "Granny's Island - Sewer Island",
                                           "Granny's Island - Sewer Island Upper"]
             #else:
@@ -115,6 +129,8 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Final Floor Catwalk"]
 
         # Make sure early items are set as needed
+        if True or (self.options.exclude_goal_portal_checks and self.options.goal < 1):
+            self.early_gela_toni = True
         if not "Pizza Time" in self.included_levels:
             if self.options.shuffle_pizza_king:
                 self.early_pizza_king = True
@@ -189,7 +205,13 @@ class YellowTaxiWorld(World):
         dict["major_version"] = 0
         dict["minor_version"] = 1
 
+        # Set counts that client needs to know
+        dict["goal_portal_cost"] = self.final_portal_cost
+        dict["total_gears"] = self.num_gears
+        dict["total_bunnies"] = self.num_bunnies
+
         # Set early item states, in order to make it easier to track clientside without needing to match logic
+        dict["early_gela_toni"] = self.early_gela_toni
         dict["early_pizza_king"] = self.early_pizza_king
         dict["early_rat"] = self.early_rat
         dict["early_doggo"] = self.early_doggo
@@ -200,7 +222,13 @@ class YellowTaxiWorld(World):
         dict["early_golden_propeller"] = self.early_golden_propeller
         dict["early_morios_password"] = self.early_morios_password
         dict["early_rocket"] = self.early_rocket
-        # Same with excluded bunnies
+
+        # Set excluded non-linear levels, excluded bunnies
+        dict["exclude_poophouse"] = not "Fecal Matters" in self.included_levels
+        dict["exclude_sewers"] = not "Flushed Away" in self.included_levels
+        dict["exclude_mind"] = not "Morio's Mind" in self.included_levels
+        dict["exclude_observatory"] = not "Ruined Observatory" in self.included_levels
         dict["exclude_top_bunny"] = self.exclude_top_bunny
         dict["exclude_spike_bunny"] = self.exclude_spike_bunny
+
         return dict

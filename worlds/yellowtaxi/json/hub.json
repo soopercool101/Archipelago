@@ -294,21 +294,21 @@
     },
     "connections": {
       "Granny's Island - Moat": "",
-      "Granny's Island - Broken Pier Shallow": "B1+X1 | J1 | GP",
-      "Granny's Island - Broken Pier Deep": "J1 & B1/X1 | GP | J2 | B2+X1",
-      "Granny's Island - Broken Pier Extra Deep": "J1 & B1/X1 | GP | J2",
+      "Granny's Island - Broken Pier Shallow": "X1+B1 | J1 | GP",
+      "Granny's Island - Broken Pier Deep": "X1+B2 | X1/B1 & J1 | GP | J2",
+      "Granny's Island - Broken Pier Extra Deep": "X1/B1 & J1 | GP | J2",
       "Granny's Island - Expert1 High Ground": "X1/J1/B1/GP",
       "Granny's Island - Expert2 High Ground": "X2/J1/B1/GP",
       "Granny's Island - High Ground": "J1/B1/GP",
-      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & GP/X1",
+      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP",
       "Granny's Island - Arch Near Construction Site": "B1 | GP+J1",
       "Granny's Island - Ocean Pillar": "B1 | GP+OS",
-      "Granny's Island - First Island Towards Sewer": "B1 | GP+OS & J1/X2",
+      "Granny's Island - First Island Towards Sewer": "B1 | X2/J1 & GP+OS",
       "Granny's Island - Second Island Towards Sewer": "B1 & OS/GP/J1",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
-      "Granny's Island - High Pillar by Lab": "B1 & X1/GP/J1",
-      "Granny's Island - Crash Again Island": "B2+GP+X1",
-      "Granny's Island - Crash Again Roof": "B2+GP+X2 | GP & OS & J1/B1",
+      "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1",
+      "Granny's Island - Crash Again Island": "X1+B2+GP",
+      "Granny's Island - Crash Again Roof": "X2+B2+GP | GP & OS & J2/B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP"
     },
     "subwarps": {
@@ -1083,7 +1083,7 @@
       "Granny's Island - Lab Hill High Ground": "OS"
     },
     "subwarps": {
-      "Crash Again - Entrance": ["Crash Again - Entrance", ""]
+      "Crash Again - Entrance": ["Crash Again - Starting Area", ""]
     },
     "warps": {},
     "specialrules": {}
@@ -1173,8 +1173,31 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_CRASH_AGAIN/ENTRANCE": {
-    "name": "Crash Again - Entrance",
+  "REGION_CRASH_AGAIN/STARTING_AREA": {
+    "name": "Crash Again - Starting Area",
+    "level": "Hub",
+    "sublevel": "Crash Again",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Crash Again - Checkpoint": 900613
+    },
+    "cheeses": {},
+    "connections": {
+      "Crash Again - End": "X1/B1 & X2/SP"
+    },
+    "subwarps": {
+      "Crash Again - Exit": ["Granny's Island - Main Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "REGION_CRASH_AGAIN/END": {
+    "name": "Crash Again - End",
     "level": "Hub",
     "sublevel": "Crash Again",
     "gears": {
@@ -1185,18 +1208,12 @@
     "chests": {},
     "coinbags": {},
     "coins": {},
-    "checkpoints": {
-      "Crash Again - Checkpoint": 900613
-    },
+    "checkpoints": {},
     "cheeses": {},
     "connections": {},
-    "subwarps": {
-      "Crash Again - Exit": ["Granny's Island - Main Area", ""]
-    },
+    "subwarps": {},
     "warps": {},
-    "specialrules": {
-      "Crash Again - Gear": "SP+B1 | X1+SP | X2"
-    }
+    "specialrules": {}
   },
   "REGION_ICE_CREAM_TRUCK/LOWER_PATH": {
     "name": "Ice Cream Truck - Lower Path",
@@ -1325,14 +1342,14 @@
     "checkpoints": {},
     "cheeses": {},
     "connections": {
-      "Pizza Oven - Pillar": "B2 & J1/X1"
+      "Pizza Oven - Pillar": "X1/J1 & B2"
     },
     "subwarps": {
       "Pizza Oven - Exit": ["Granny's Island - Main Area", ""]
     },
     "warps": {},
     "specialrules": {
-      "Pizza Oven - Gear": "B1 & J1/X1"
+      "Pizza Oven - Gear": "B1 & X1/J1"
     }
   },
   "REGION_PIZZA_OVEN/PILLAR": {
@@ -1422,7 +1439,7 @@
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
       "Morio's Lab - Ground Floor Wrenches": "B1/J2",
       "Morio's Lab - Second Floor": "J1/B1",
-      "Morio's Lab - Fifth Floor Crash Test Area": "B2+X2+FGU"
+      "Morio's Lab - Fifth Floor Crash Test Area": "X2+B2+FGU"
     },
     "subwarps": {
       "Morio's Lab - Front Door": ["Granny's Island - Starting Area", ""],
@@ -1430,7 +1447,8 @@
       "Morio's Lab - Wardrobe Entrance": ["Morio's Wardrobe", ""]
     },
     "warps": {
-      "Morio's Lab - Morio's Home Portal": ["Morio's Island - Starting Area", "PortalMorioHome"]
+      "Morio's Lab - Morio's Home Portal": ["Morio's Island - Starting Area", "PortalMorioHome"],
+      "Morio's Lab - Bombeach Portal": ["Bombeach - Starting Area", "PortalBombeach"]
     },
     "specialrules": {}
   },
@@ -2139,7 +2157,7 @@
     "connections": {
       "Morio's Lab - Fifth Floor Golden Propeller": "J1+GP",
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "J1+Password",
-      "Morio's Lab - Ledge Above Ruined Observatory Portal": "B2 | B1 & X1/J1 | J2 | J1+X1",
+      "Morio's Lab - Ledge Above Ruined Observatory Portal": "B2 | X1/J1 & B1 | J2 | X1+J1",
       "Morio's Lab - Fifth Floor Morio's Mind Area": "Password"
     },
     "subwarps": {},

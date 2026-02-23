@@ -11,7 +11,9 @@ def load_json_data(data_name: str) -> Dict[str, Any]:
 
 regions_json_data : Dict[str, Any] = (load_json_data("hub.json") |
                                       load_json_data("morioshome.json") |
-                                      load_json_data("arcadepanik.json"))
+                                      load_json_data("bombeach.json") |
+                                      load_json_data("arcadepanik.json")
+                                      )
 
 # Load static locations list
 def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:

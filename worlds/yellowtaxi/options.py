@@ -27,6 +27,26 @@ class Goal(Choice):
     default = option_bombeach_boss
     #alias_final_boss = option_moon_boss
 
+class GoalPortalGearPercentage(Range):
+    """
+    Percentage of Gear items needed to access the portal
+    """
+    display_name = "Goal Portal Gear Percentage"
+    range_start = 20
+    range_end = 90
+    default = 75
+
+
+
+class ExcludeGoalPortalChecks(DefaultOnToggle):
+    """
+    If true, removes items from within the goal portal from the pool.
+
+    Note that if false, Goal Portal Gear Percentage may be capped at a lower value.
+    """
+
+    display_name = "Exclude Goal Portal Checks"
+
 class ExpertLevel(Range):
     """
     Difficulty level for expected checks. Higher level means more difficult checks will get in logic earlier.
@@ -82,7 +102,7 @@ class ShuffleMoriosPassword(DefaultOnToggle):
     """
     Adds Morio's Password into the item pool and adds a location for obtaining the key in Morio's Mind.
 
-    If goal is BomBoss or Tosla HQ, talking to Morio in Morio's Bedroom in Morio's Lab will be the location instead.
+    If goal is BomBoss or Tosla HQ, talking to Morio in the Dream Machine in Morio's Lab will be the location instead.
     """
 
     display_name = "Shuffle Morio's Password"
@@ -224,6 +244,8 @@ class ShuffleGoldenPropeller(DefaultOnToggle):
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
+    goal_portal_gear_percentage: GoalPortalGearPercentage
+    exclude_goal_portal_checks : ExcludeGoalPortalChecks
     expert_level: ExpertLevel
     death_link: DeathLink
     shuffle_gela_toni: ShuffleGelaToni
