@@ -1,6 +1,5 @@
 {
-  "REGION_MORIOS_ISLAND/STARTING_AREA": {
-    "name": "Morio's Island - Starting Area",
+  "Morio's Island - Starting Area": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -54,8 +53,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/FIRST_HURDLE": {
-    "name": "Morio's Island - First Hurdle",
+  "Morio's Island - First Hurdle": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -98,8 +96,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/HIGH_GROUND": {
-    "name": "Morio's Island - High Ground",
+  "Morio's Island - High Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {
@@ -292,8 +289,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/MORIOS_HOME_ISLAND": {
-    "name": "Morio's Island - Morio's Home Island",
+  "Morio's Island - Morio's Home Island": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -331,8 +327,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/STONE_ARCH_IN_OCEAN_NEAR_MORIOS_HOME": {
-    "name": "Morio's Island - Stone Arch in Ocean Near Morio's Home",
+  "Morio's Island - Stone Arch in Ocean Near Morio's Home": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -359,8 +354,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/FIRST_BUNNY_ARCH": {
-    "name": "Morio's Island - First Bunny Arch",
+  "Morio's Island - First Bunny Arch": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -385,8 +379,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/SECOND_BUNNY_ARCH": {
-    "name": "Morio's Island - Second Bunny Arch",
+  "Morio's Island - Second Bunny Arch": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -416,8 +409,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/CENTER_STONE_ISLAND": {
-    "name": "Morio's Island - Center Stone Island",
+  "Morio's Island - Center Stone Island": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -458,8 +450,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_ISLAND/HIGHEST_GROUND": {
-    "name": "Morio's Island - Highest Ground",
+  "Morio's Island - Highest Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
     "gears": {},
@@ -498,8 +489,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/STARTING_AREA": {
-    "name": "Morio's Home - Starting Area",
+  "Morio's Home - Starting Area": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
@@ -628,8 +618,7 @@
       "Morio's Home - Coin Bag on Garage Wall Shelf": "J1"
     }
   },
-  "REGION_MORIOS_HOME/EXPERT_1_HIGH_GROUND": {
-    "name": "Morio's Home - Expert 1 High Ground",
+  "Morio's Home - Expert 1 High Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {},
@@ -652,8 +641,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/HIGH_GROUND": {
-    "name": "Morio's Home - High Ground",
+  "Morio's Home - High Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
@@ -688,8 +676,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/BEFORE_BED_PILLARS": {
-    "name": "Morio's Home - Before Bed Pillars",
+  "Morio's Home - Before Bed Pillars": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {},
@@ -714,8 +701,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/BED_PILLARS": {
-    "name": "Morio's Home - Bed Pillars",
+  "Morio's Home - Bed Pillars": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
@@ -744,8 +730,7 @@
     },
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/LOFT": {
-    "name": "Morio's Home - Loft",
+  "Morio's Home - Loft": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {},
@@ -796,8 +781,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/KITCHEN": {
-    "name": "Morio's Home - Kitchen",
+  "Morio's Home - Kitchen": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
@@ -827,8 +811,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/KITCHEN_EXPERT_1": {
-    "name": "Morio's Home - Kitchen Expert 1",
+  "Morio's Home - Kitchen Expert 1": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {},
@@ -849,8 +832,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/KITCHEN_CABINETS": {
-    "name": "Morio's Home - Kitchen Cabinets",
+  "Morio's Home - Kitchen Cabinets": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {},
@@ -872,8 +854,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_HOME/KITCHEN_HIGH_GROUND": {
-    "name": "Morio's Home - Kitchen High Ground",
+  "Morio's Home - Kitchen High Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
@@ -904,8 +885,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_WEIRD_TUNNELS/ENTRANCE_AREA": {
-    "name": "Weird Tunnels - Entrance Area",
+  "Weird Tunnels - Entrance Area": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
     "gears": {},
@@ -930,8 +910,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_WEIRD_TUNNELS/EXPERT_1": {
-    "name": "Weird Tunnels - Expert 1",
+  "Weird Tunnels - Expert 1": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
     "gears": {},
@@ -953,8 +932,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_WEIRD_TUNNELS/HIGH_GROUND": {
-    "name": "Weird Tunnels - High Ground",
+  "Weird Tunnels - High Ground": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
     "gears": {

@@ -1,6 +1,5 @@
 {
-  "REGION_ARCADE_PLAZA/STARTING_AREA": {
-    "name": "Arcade Plaza - Starting Area",
+  "Arcade Plaza - Starting Area": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Plaza",
     "gears": {},
@@ -21,8 +20,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ARCADE_PLAZA/OUTSKIRTS": {
-    "name": "Arcade Plaza - Outskirts",
+  "Arcade Plaza - Outskirts": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Plaza",
     "gears": {},
@@ -122,8 +120,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ARCADE_PANIK_HAT_WORLD/MAIN": {
-    "name": "Arcade Panik Hat World",
+  "Arcade Panik Hat World": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Panik Hat World",
     "gears": {},
@@ -141,8 +138,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ARCADE_PANIK/STARTING_AREA": {
-    "name": "Arcade Panik - Starting Area",
+  "Arcade Panik - Starting Area": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Panik",
     "gears": {
@@ -284,8 +280,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ARCADE_PANIK/EXPERT_1_OR_JUMP": {
-    "name": "Arcade Panik - Expert 1 or Jump",
+  "Arcade Panik - Expert 1 or Jump": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Panik",
     "gears": {},

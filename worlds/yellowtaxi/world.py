@@ -76,7 +76,7 @@ class YellowTaxiWorld(World):
             "Hub",
             "Morio's Home",
             "Bombeach",
-            #"Gym Gears",
+            "Gym Gears",
             #"Fecal Matters",    # Remove this later if doggo is unreachable
         ]
 

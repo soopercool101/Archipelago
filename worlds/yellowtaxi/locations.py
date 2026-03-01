@@ -15,17 +15,16 @@ class YellowTaxiLocation(Location):
     game = "Yellow Taxi Goes Vroom"
 
 def create_locations(world: YellowTaxiWorld) -> None:
+    from .data_loader import regions_json_data
+
     # Finally, we need to put the Locations ("checks") into their regions.
     # Once again, before we do anything, we can grab our regions we created by using world.get_region()
     world.num_gears = 0
     world.num_bunnies = 0
-    for reg in world.regions_json.values():
-        region_name = reg["name"]
-        # if a region doesn't exist, don't make items for it
-        try:
-            region = world.get_region(region_name)
-        except KeyError:
+    for region in world.get_regions():
+        if region.name == "Menu":
             continue
+        reg = regions_json_data[region.name]
         level : str = reg["level"]
 
         if world.options.exclude_goal_portal_checks and level in world.goal_levels:
@@ -58,7 +57,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if world.options.cheesesanity:
             locations = locations | reg["cheeses"]
 
-        locations = locations | get_special_locations(world, region_name)
+        locations = locations | get_special_locations(world, region.name)
         region.add_locations(locations)
 
     world.get_region("Granny's Island - Hat World").add_event(

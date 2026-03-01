@@ -1,6 +1,5 @@
 {
-  "REGION_GRANNYS_ISLAND/STARTING_AREA": {
-    "name": "Granny's Island - Starting Area",
+  "Granny's Island - Starting Area": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -27,8 +26,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/MOAT": {
-    "name": "Granny's Island - Moat",
+  "Granny's Island - Moat": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -77,8 +75,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/MAIN_AREA": {
-    "name": "Granny's Island - Main Area",
+  "Granny's Island - Main Area": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -329,8 +326,7 @@
       "Granny's Island - Gear - Inside Spin Blocks": "SP"
     }
   },
-  "REGION_GRANNYS_ISLAND/PIPE_AREA": {
-    "name": "Granny's Island - Pipe Area",
+  "Granny's Island - Pipe Area": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -358,8 +354,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/BROKEN_PIER_SHALLOW": {
-    "name": "Granny's Island - Broken Pier Shallow",
+  "Granny's Island - Broken Pier Shallow": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -385,8 +380,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/BROKEN_PIER_DEEP": {
-    "name": "Granny's Island - Broken Pier Deep",
+  "Granny's Island - Broken Pier Deep": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -407,8 +401,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/BROKEN_PIER_EXTRA_DEEP": {
-    "name": "Granny's Island - Broken Pier Extra Deep",
+  "Granny's Island - Broken Pier Extra Deep": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -431,8 +424,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/LAB_HILL_EXPERT1_HIGH_GROUND": {
-    "name": "Granny's Island - Lab Hill Expert1 High Ground",
+  "Granny's Island - Lab Hill Expert1 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -462,8 +454,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/LAB_HILL_HIGH_GROUND": {
-    "name": "Granny's Island - Lab Hill High Ground",
+  "Granny's Island - Lab Hill High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -551,8 +542,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/EXPERT1_HIGH_GROUND": {
-    "name": "Granny's Island - Expert1 High Ground",
+  "Granny's Island - Expert1 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -623,8 +613,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/EXPERT2_HIGH_GROUND": {
-    "name": "Granny's Island - Expert2 High Ground",
+  "Granny's Island - Expert2 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -656,8 +645,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/HIGH_GROUND": {
-    "name": "Granny's Island - High Ground",
+  "Granny's Island - High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -789,8 +777,7 @@
       "Granny's Island - Gear - In the Clouds": "B1+GP | B2+J1"
     }
   },
-  "REGION_GRANNYS_ISLAND/TOP_OF_ROCKET": {
-    "name": "Granny's Island - Top of Rocket",
+  "Granny's Island - Top of Rocket": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -819,8 +806,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/ARCH_NEAR_CONSTRUCTION_SITE": {
-    "name": "Granny's Island - Arch Near Construction Site",
+  "Granny's Island - Arch Near Construction Site": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -843,8 +829,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/OCEAN_PILLAR": {
-    "name": "Granny's Island - Ocean Pillar",
+  "Granny's Island - Ocean Pillar": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -867,8 +852,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/FIRST_ISLAND_TOWARDS_SEWER": {
-    "name": "Granny's Island - First Island Towards Sewer",
+  "Granny's Island - First Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -895,8 +879,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/SECOND_ISLAND_TOWARDS_SEWER": {
-    "name": "Granny's Island - Second Island Towards Sewer",
+  "Granny's Island - Second Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -923,8 +906,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/TREE_ON_SECOND_ISLAND_TOWARDS_SEWER": {
-    "name": "Granny's Island - Tree on Second Island Towards Sewer",
+  "Granny's Island - Tree on Second Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -949,8 +931,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/SEWER_ISLAND": {
-    "name": "Granny's Island - Sewer Island",
+  "Granny's Island - Sewer Island": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -982,8 +963,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/SEWER_ISLAND_UPPER": {
-    "name": "Granny's Island - Sewer Island Upper",
+  "Granny's Island - Sewer Island Upper": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -999,8 +979,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/ISLAND_PAST_CLORO-PHIL": {
-    "name": "Granny's Island - Island Past Cloro-Phil",
+  "Granny's Island - Island Past Cloro-Phil": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -1029,8 +1008,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/HIGH_PILLAR_BY_LAB": {
-    "name": "Granny's Island - High Pillar by Lab",
+  "Granny's Island - High Pillar by Lab": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -1066,8 +1044,7 @@
       "Granny's Island - Gear - High Pillar by Lab": "J1/GP"
     }
   },
-  "REGION_GRANNYS_ISLAND/CRASH_AGAIN_ISLAND": {
-    "name": "Granny's Island - Crash Again Island",
+  "Granny's Island - Crash Again Island": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -1088,8 +1065,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/CRASH_AGAIN_ROOF": {
-    "name": "Granny's Island - Crash Again Roof",
+  "Granny's Island - Crash Again Roof": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -1105,8 +1081,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_LAW_FIRM/ENTRANCE": {
-    "name": "Law Firm - Entrance",
+  "Law Firm - Entrance": {
     "level": "Hub",
     "sublevel": "Law Firm",
     "gears": {},
@@ -1126,8 +1101,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_LAW_FIRM/LEDGES": {
-    "name": "Law Firm - Ledges",
+  "Law Firm - Ledges": {
     "level": "Hub",
     "sublevel": "Law Firm",
     "gears": {
@@ -1173,8 +1147,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_CRASH_AGAIN/STARTING_AREA": {
-    "name": "Crash Again - Starting Area",
+  "Crash Again - Starting Area": {
     "level": "Hub",
     "sublevel": "Crash Again",
     "gears": {},
@@ -1196,8 +1169,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_CRASH_AGAIN/END": {
-    "name": "Crash Again - End",
+  "Crash Again - End": {
     "level": "Hub",
     "sublevel": "Crash Again",
     "gears": {
@@ -1215,8 +1187,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ICE_CREAM_TRUCK/LOWER_PATH": {
-    "name": "Ice Cream Truck - Lower Path",
+  "Ice Cream Truck - Lower Path": {
     "level": "Hub",
     "sublevel": "Ice Cream Truck",
     "gears": {
@@ -1283,8 +1254,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_ICE_CREAM_TRUCK/UPPER_PATH": {
-    "name": "Ice Cream Truck - Upper Path",
+  "Ice Cream Truck - Upper Path": {
     "level": "Hub",
     "sublevel": "Ice Cream Truck",
     "gears": {
@@ -1327,8 +1297,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_PIZZA_OVEN/ENTRANCE": {
-    "name": "Pizza Oven - Entrance",
+  "Pizza Oven - Entrance": {
     "level": "Hub",
     "sublevel": "Pizza Oven",
     "gears": {
@@ -1352,8 +1321,7 @@
       "Pizza Oven - Gear": "B1 & X1/J1"
     }
   },
-  "REGION_PIZZA_OVEN/PILLAR": {
-    "name": "Pizza Oven - Pillar",
+  "Pizza Oven - Pillar": {
     "level": "Hub",
     "sublevel": "Pizza Oven",
     "gears": {},
@@ -1381,8 +1349,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_GRANNYS_ISLAND/HAT_WORLD": {
-    "name": "Granny's Island - Hat World",
+  "Granny's Island - Hat World": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -1400,8 +1367,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/GROUND_FLOOR": {
-    "name": "Morio's Lab - Ground Floor",
+  "Morio's Lab - Ground Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -1452,8 +1418,7 @@
     },
     "specialrules": {}
   },
-  "REGION_MORIOS_WARDROBE/MAIN": {
-    "name": "Morio's Wardrobe",
+  "Morio's Wardrobe": {
     "level": "Hub",
     "sublevel": "Morio's Wardrobe",
     "gears": {},
@@ -1477,8 +1442,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/GROUND_FLOOR_WRENCHES": {
-    "name": "Morio's Lab - Ground Floor Wrenches",
+  "Morio's Lab - Ground Floor Wrenches": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1510,8 +1474,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/GROUND_FLOOR_LOWEST_BOLT": {
-    "name": "Morio's Lab - Ground Floor Lowest Bolt",
+  "Morio's Lab - Ground Floor Lowest Bolt": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1531,8 +1494,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/GROUND_FLOOR_BOLTS": {
-    "name": "Morio's Lab - Ground Floor Bolts",
+  "Morio's Lab - Ground Floor Bolts": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -1560,8 +1522,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/GROUND_FLOOR_ORANGE_BLOCKS": {
-    "name": "Morio's Lab - Ground Floor Orange Blocks",
+  "Morio's Lab - Ground Floor Orange Blocks": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1577,8 +1538,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/BUNNY_LEDGE": {
-    "name": "Morio's Lab - Bunny Ledge",
+  "Morio's Lab - Bunny Ledge": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1596,8 +1556,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR": {
-    "name": "Morio's Lab - Second Floor",
+  "Morio's Lab - Second Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1628,8 +1587,7 @@
     },
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/PSYCHO_TAXI_ARCADE_MACHINE": {
-    "name": "Morio's Lab - Psycho Taxi Arcade Machine",
+  "Morio's Lab - Psycho Taxi Arcade Machine": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1647,8 +1605,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_ABOVE_DEMO_WALL": {
-    "name": "Morio's Lab - Second Floor Above Demo Wall",
+  "Morio's Lab - Second Floor Above Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1666,8 +1623,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_AFTER_DEMO_WALL": {
-    "name": "Morio's Lab - Second Floor After Demo Wall",
+  "Morio's Lab - Second Floor After Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1692,8 +1648,7 @@
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #3": "X1/FGU"
     }
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_INSIDE_TRUE_DEMO_WALL": {
-    "name": "Morio's Lab - Second Floor Inside True Demo Wall",
+  "Morio's Lab - Second Floor Inside True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1721,8 +1676,7 @@
       "Morio's Lab - Coin Bag on Second Floor": "FGU"
     }
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_AFTER_TRUE_DEMO_WALL": {
-    "name": "Morio's Lab - Second Floor After True Demo Wall",
+  "Morio's Lab - Second Floor After True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1749,8 +1703,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_FALLING_FROM_SHORTCUT_PIPE": {
-    "name": "Morio's Lab - Second Floor Falling From Shortcut Pipe",
+  "Morio's Lab - Second Floor Falling From Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1769,8 +1722,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/SECOND_FLOOR_ACCESS_TO_SHORTCUT_PIPE": {
-    "name": "Morio's Lab - Second Floor Access to Shortcut Pipe",
+  "Morio's Lab - Second Floor Access to Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1788,8 +1740,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/PATH_TO_MORIOS_ROOM": {
-    "name": "Morio's Lab - Path to Morio's Room",
+  "Morio's Lab - Path to Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1841,8 +1792,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/MORIOS_ROOM": {
-    "name": "Morio's Lab - Morio's Room",
+  "Morio's Lab - Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1860,8 +1810,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/MORIOS_ROOM_JUMP": {
-    "name": "Morio's Lab - Morio's Room Jump",
+  "Morio's Lab - Morio's Room Jump": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -1886,8 +1835,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/THIRD_FLOOR": {
-    "name": "Morio's Lab - Third Floor",
+  "Morio's Lab - Third Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1914,8 +1862,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/THIRD_FLOOR_WRENCHES_LOWER": {
-    "name": "Morio's Lab - Third Floor Wrenches Lower",
+  "Morio's Lab - Third Floor Wrenches Lower": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1940,8 +1887,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/THIRD_FLOOR_WRENCHES_MIDDLE": {
-    "name": "Morio's Lab - Third Floor Wrenches Middle",
+  "Morio's Lab - Third Floor Wrenches Middle": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1965,8 +1911,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/THIRD_FLOOR_WRENCHES_UPPER": {
-    "name": "Morio's Lab - Third Floor Wrenches Upper",
+  "Morio's Lab - Third Floor Wrenches Upper": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -1992,8 +1937,7 @@
       "Morio's Lab - Gear - Third Floor Wrenches": "J1"
     }
   },
-  "REGION_MORIOS_LAB/FOURTH_FLOOR": {
-    "name": "Morio's Lab - Fourth Floor",
+  "Morio's Lab - Fourth Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2015,8 +1959,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FOURTH_FLOOR_EXPERT_JUMP_SPIKES": {
-    "name": "Morio's Lab - Fourth Floor Expert Jump Spikes",
+  "Morio's Lab - Fourth Floor Expert Jump Spikes": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -2034,8 +1977,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FOURTH_FLOOR_JUMP_SPIKES": {
-    "name": "Morio's Lab - Fourth Floor Jump Spikes",
+  "Morio's Lab - Fourth Floor Jump Spikes": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2055,8 +1997,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/LEDGE_ABOVE_MAURIZIOS_CITY_PORTAL": {
-    "name": "Morio's Lab - Ledge Above Maurizio's City Portal",
+  "Morio's Lab - Ledge Above Maurizio's City Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2074,8 +2015,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_CRASH_TEST_AREA": {
-    "name": "Morio's Lab - Fifth Floor Crash Test Area",
+  "Morio's Lab - Fifth Floor Crash Test Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2122,8 +2062,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_MORIOS_MIND_AREA": {
-    "name": "Morio's Lab - Fifth Floor Morio's Mind Area",
+  "Morio's Lab - Fifth Floor Morio's Mind Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2142,8 +2081,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_RUINED_OBSERVATORY_AREA": {
-    "name": "Morio's Lab - Fifth Floor Ruined Observatory Area",
+  "Morio's Lab - Fifth Floor Ruined Observatory Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2164,8 +2102,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_GOLDEN_PROPELLER": {
-    "name": "Morio's Lab - Fifth Floor Golden Propeller",
+  "Morio's Lab - Fifth Floor Golden Propeller": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2193,8 +2130,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_INSIDE_SHORTCUT_PIPE": {
-    "name": "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
+  "Morio's Lab - Fifth Floor Inside Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2214,8 +2150,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/LEDGE_ABOVE_RUINED_OBSERVATORY_PORTAL": {
-    "name": "Morio's Lab - Ledge Above Ruined Observatory Portal",
+  "Morio's Lab - Ledge Above Ruined Observatory Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2262,8 +2197,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/LEDGE_BELOW_TOSLA_HQ_PORTAL": {
-    "name": "Morio's Lab - Ledge Below Tosla HQ Portal",
+  "Morio's Lab - Ledge Below Tosla HQ Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2286,8 +2220,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_LOW_PILLARS": {
-    "name": "Morio's Lab - Fifth Floor Low Pillars",
+  "Morio's Lab - Fifth Floor Low Pillars": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2310,8 +2243,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FIFTH_FLOOR_HIGH_PILLARS": {
-    "name": "Morio's Lab - Fifth Floor High Pillars",
+  "Morio's Lab - Fifth Floor High Pillars": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2339,8 +2271,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FINAL_FLOOR": {
-    "name": "Morio's Lab - Final Floor",
+  "Morio's Lab - Final Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2361,8 +2292,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FINAL_FLOOR_PIPES": {
-    "name": "Morio's Lab - Final Floor Pipes",
+  "Morio's Lab - Final Floor Pipes": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2395,8 +2325,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "REGION_MORIOS_LAB/FINAL_FLOOR_CATWALK": {
-    "name": "Morio's Lab - Final Floor Catwalk",
+  "Morio's Lab - Final Floor Catwalk": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},

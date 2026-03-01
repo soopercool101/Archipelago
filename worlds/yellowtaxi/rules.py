@@ -21,8 +21,11 @@ def set_all_rules(world: YellowTaxiWorld) -> None:
 
 
 def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> None:
-    for reg in world.regions_json.values():
-        region_name = reg["name"]
+    for region in world.get_regions():
+        region_name = region.name
+        if region_name == "Menu": # Menu doesn't have json data or any rules
+            continue
+        reg = world.regions_json[region_name]
 
         # Basic connections
         for connect, rule in reg["connections"].items():
@@ -44,8 +47,11 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
         # Cheeses
         if world.options.cheesesanity:
             for cheese in reg["cheeses"]:
-                cheese_loc = world.get_location(cheese)
-                set_rule(cheese_loc, lambda state: state.has("Michele", world.player))
+                try:
+                    cheese_loc = world.get_location(cheese)
+                    set_rule(cheese_loc, lambda state: state.has("Michele", world.player))
+                except KeyError:
+                    break # If cheese doesn't exist here, region has no items
 
         # Special rules
         for location, rule in reg["specialrules"].items():

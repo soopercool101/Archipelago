@@ -15,25 +15,24 @@ def create_and_connect_regions(world: YellowTaxiWorld) -> None:
 def create_all_regions(world: YellowTaxiWorld) -> None:
     regions = [Region("Menu", world.player, world.multiworld)]
     # TODO: Don't include postgame regions based on goal
-    for reg in world.regions_json.values():
-        reg_name = reg["name"]
+    for reg_name in world.regions_json.keys():
         if reg_name in world.excluded_regions:
             continue
+        reg = world.regions_json[reg_name]
         if reg["level"] not in world.included_levels and reg["level"] not in world.goal_levels:
             continue
-        regions += [Region(reg["name"], world.player, world.multiworld)]
+        regions += [Region(reg_name, world.player, world.multiworld)]
 
     world.multiworld.regions += regions
 
 
 def connect_regions(world: YellowTaxiWorld) -> None:
-    # Connect starting area. TODO: Change if ever adding random starting area
-    world.get_region("Menu").connect(world.get_region("Granny's Island - Starting Area"))
-    for reg in world.regions_json.values():
-        try:
-            region = world.get_region(reg["name"])
-        except KeyError:
+    for region in world.get_regions():
+        if region.name == "Menu":
+            # Connect starting area. TODO: Change if ever adding random starting area
+            region.connect(world.get_region("Granny's Island - Starting Area"))
             continue
+        reg = world.regions_json[region.name]
 
         # Connect basic connections
         for connect in reg["connections"].items():

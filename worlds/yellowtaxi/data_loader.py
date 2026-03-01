@@ -12,18 +12,20 @@ def load_json_data(data_name: str) -> Dict[str, Any]:
 regions_json_data : Dict[str, Any] = (load_json_data("hub.json") |
                                       load_json_data("morioshome.json") |
                                       load_json_data("bombeach.json") |
-                                      load_json_data("arcadepanik.json")
+                                      # load_json_data("arcadepanik.json") |
+                                      load_json_data("gymgears.json")
                                       )
 
 # Load static locations list
 def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
     # Get all location ids from JSON
     game_locations: Dict[str, int] = {}
-    for reg in json_data.values():
+    for reg_name in json_data.keys():
+        reg = json_data[reg_name]
         game_locations = (game_locations | reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] |
                           reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"])
         # Include non-JSON optional locations for the region
-        game_locations.update(locations.get_special_locations(None, reg["name"]))
+        game_locations.update(locations.get_special_locations(None, reg_name))
 
     return game_locations
 
