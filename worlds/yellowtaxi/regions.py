@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from .data_loader import regions_json_data
 from typing import Any, Dict, TYPE_CHECKING
 
 from BaseClasses import Entrance, Region
@@ -15,10 +16,10 @@ def create_and_connect_regions(world: YellowTaxiWorld) -> None:
 def create_all_regions(world: YellowTaxiWorld) -> None:
     regions = [Region("Menu", world.player, world.multiworld)]
     # TODO: Don't include postgame regions based on goal
-    for reg_name in world.regions_json.keys():
+    for reg_name in regions_json_data.keys():
         if reg_name in world.excluded_regions:
             continue
-        reg = world.regions_json[reg_name]
+        reg = regions_json_data[reg_name]
         if reg["level"] not in world.included_levels and reg["level"] not in world.goal_levels:
             continue
         regions += [Region(reg_name, world.player, world.multiworld)]
@@ -32,7 +33,7 @@ def connect_regions(world: YellowTaxiWorld) -> None:
             # Connect starting area. TODO: Change if ever adding random starting area
             region.connect(world.get_region("Granny's Island - Starting Area"))
             continue
-        reg = world.regions_json[region.name]
+        reg = regions_json_data[region.name]
 
         # Connect basic connections
         for connect in reg["connections"].items():

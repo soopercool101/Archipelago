@@ -25,7 +25,6 @@ class YellowTaxiWorld(World):
     settings_key = "yellowtaxi_options"
     settings: ClassVar[taxi_settings.YellowTaxiSettings]
 
-    regions_json: Dict[str, Any] = data_loader.regions_json_data
     location_name_to_id = data_loader.all_locations
     item_name_to_id = items.ITEM_NAME_TO_ID
 
