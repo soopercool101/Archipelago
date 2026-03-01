@@ -70,6 +70,12 @@ def create_locations(world: YellowTaxiWorld) -> None:
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
 
+    if world.options.goal == 0:
+        world.get_region("Bombeach - Starting Area").add_event(
+            "Event: Defeat Bomboss", "Victory",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
+
 
 def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str) -> Dict[str, int | None]:
     # Get locations that are not in the json due to not fitting the main categories/being settings exclusive.

@@ -167,9 +167,8 @@ def set_completion_condition(world: YellowTaxiWorld) -> None:
 
     # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
     # So lets undo what we just did, and instead set the completion condition to:
-    #world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
 
-    world.multiworld.completion_condition[world.player] = lambda state: state.can_reach(world.get_region("Bombeach - Starting Area"), player=world.player)
+    world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
 
 
 # Shamelessly copying SM64's rule factory implementation
