@@ -92,7 +92,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Morio's Password": ItemClassification.progression,
     "Mosk's Rocket": ItemClassification.progression,
     "Full Game Unlock": ItemClassification.progression,
-    "Psycho Taxi Cartridge": ItemClassification.useful,
+    "Psycho Taxi Cartridge": ItemClassification.filler,
     "Michele": ItemClassification.useful,
 }
 
@@ -165,7 +165,6 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_pizza_king:
         itempool.append(world.create_item("Pizza King"))
 
-    # TODO: Figure out how to handle Doggo for earlier goals
     if world.options.shuffle_doggo:
         itempool.append(world.create_item("Doggo"))
 

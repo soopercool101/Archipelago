@@ -1,5 +1,6 @@
+import logging
 from collections.abc import Mapping
-from typing import Any, Dict, List
+from typing import Any, ClassVar, Dict, List
 
 from BaseClasses import MultiWorld
 from Utils import visualize_regions
@@ -7,7 +8,7 @@ from worlds.AutoWorld import World
 
 from . import data_loader, items, regions, locations, rules, web_world
 from . import options as taxi_options
-from ..stardew_valley.stardew_rule import true_
+from . import settings as taxi_settings
 
 
 class YellowTaxiWorld(World):
@@ -15,13 +16,14 @@ class YellowTaxiWorld(World):
     """
     Yellow Taxi Goes Vroom is a trippy arcade platformer ready to take you on a crazy adventure!
     """
-
     game = "Yellow Taxi Goes Vroom"
 
     web = web_world.YellowTaxiWebWorld()
 
     options_dataclass = taxi_options.YellowTaxiOptions
     options: taxi_options.YellowTaxiOptions
+    settings_key = "yellowtaxi_options"
+    settings: ClassVar[taxi_settings.YellowTaxiSettings]
 
     regions_json: Dict[str, Any] = data_loader.regions_json_data
     location_name_to_id = data_loader.all_locations
@@ -155,6 +157,20 @@ class YellowTaxiWorld(World):
             self.exclude_spike_bunny = True
         if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
             self.exclude_top_bunny = True
+
+        if self.options.exclude_goal_portal_checks:
+            for level in self.goal_levels:
+                if level in self.included_levels:
+                    self.included_levels.remove(level)
+
+        if self.options.coinsanity and self.multiworld.players > 1 and not self.settings.enable_multiworld_coinsanity:
+            self.options.coinsanity.value = False
+            logging.warning(
+                f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
+                f"Coinsanity has been disabled. "
+                f"You can allow this by setting 'enable_multiworld_coinsanity' in the seed "
+                f"generator's host.yaml to true and generating locally. (Use at your own risk!)")
+
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)

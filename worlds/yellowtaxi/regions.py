@@ -19,7 +19,7 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         reg_name = reg["name"]
         if reg_name in world.excluded_regions:
             continue
-        if reg["level"] not in world.included_levels:
+        if reg["level"] not in world.included_levels and reg["level"] not in world.goal_levels:
             continue
         regions += [Region(reg["name"], world.player, world.multiworld)]
 
