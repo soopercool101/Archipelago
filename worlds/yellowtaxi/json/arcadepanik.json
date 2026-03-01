@@ -299,9 +299,6 @@
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {
-      "Arcade Panik - Chest on Crazy Ballz Pipes #1": "X1/J1",
-      "Arcade Panik - Chest on Crazy Ballz Pipes #2": "X1/J1"
-    }
+    "specialrules": {}
   }
 }

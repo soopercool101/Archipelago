@@ -144,12 +144,6 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                 if not world is None:
                     world.num_bunnies += 1
-        case "Morio's Lab - Second Floor":
-            # Matches existing location, so don't add it to location cache twice
-            if world is not None and world.options.shuffle_flip_o_will and world.early_backflip:
-                locations = {
-                    "Morio's Lab - PICI Backflip Tutorial": 8_00004,
-                }
         case "Morio's Lab - Psycho Taxi Arcade Machine":
             if world is None or (world.options.shuffle_psycho_taxi and world.early_psycho_taxi):
                 locations = {
@@ -202,12 +196,17 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
         case "Morio's Island - Starting Area":
             if world is None or world.options.shuffle_flip_o_will:
                 locations = {
-                    "Morio's Island - Talk to Morio": 8_00001,
+                    "Morio's Island - Talk to Morio": 3_08_00001,
                 }
         case "Crash Again - End":
             if world is None or (world.options.shuffle_orange_switch and world.early_orange_switch):
                 locations = {
                     "Crash Again - Talk to Ocra Taxi Goes Smooch": 11_00010
+                }
+        case "Gym Gears - Starting Area":
+            if world is None or (world.options.shuffle_flip_o_will and world.early_backflip):
+                locations = {
+                    "Gym Gears - PICI Backflip Tutorial": 6_08_00004,
                 }
         case "Arcade Panik - Starting Area":
             if world is None or (world.options.shuffle_psycho_taxi and not world.early_psycho_taxi):
