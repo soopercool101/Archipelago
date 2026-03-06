@@ -316,7 +316,9 @@
       "Granny's Island - Hat World Entrance": ["Granny's Island - Hat World", ""]
     },
     "warps": {
-      "Granny's Island - Gym Gears Front Door": ["Gym Gears - Starting Area", "PortalGymGears"]
+      "Granny's Island - Gym Gears Entrance": ["Gym Gears - Starting Area", "PortalGymGears"],
+      "Granny's Island - Poop House": ["Fecal Matters - Starting Area", "Doggo"],
+      "Granny's Island - Mosk's Rocket Entrance": ["Mosk's Rocket - Starting Area", "Rocket & J2/B1/GP | X1+Rocket+J1"]
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP",
@@ -1041,7 +1043,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Granny's Island - Gear - High Pillar by Lab": "J1/GP"
+      "Granny's Island - Gear - High Pillar by Lab": "X2/J1/GP"
     }
   },
   "Granny's Island - Crash Again Island": {
@@ -1951,7 +1953,7 @@
     "connections": {
       "Morio's Lab - Fourth Floor Jump Spikes": "GS+J1",
       "Morio's Lab - Fifth Floor Crash Test Area": "B1/J1",
-      "Morio's Lab - Ledge Above Maurizio's City Portal": "J2",
+      "Morio's Lab - Ledge Above Maurizio's City Portal": "J1",
       "Morio's Lab - Third Floor": "GS",
       "Morio's Lab - Fourth Floor Expert Jump Spikes": "GS+J1 | X1+GS+B2 | X2+B2+J2"
     },
@@ -2117,14 +2119,32 @@
       "Morio's Lab - Ledge Below Tosla HQ Portal": "",
       "Morio's Lab - Fifth Floor High Pillars": "",
       "Morio's Lab - Final Floor": "",
-      "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "Password",
-      "Morio's Lab - Path to Morio's Room": "Password+FGU",
-      "Morio's Lab - Morio's Room Jump": "Password+FGU+MorioHat",
-      "Morio's Lab - Third Floor Wrenches Lower": "Password",
-      "Morio's Lab - Third Floor Wrenches Middle": "Password+FGU",
-      "Morio's Lab - Ground Floor Bolts": "Password",
-      "Morio's Lab - Second Floor Access to Shortcut Pipe": "Password",
-      "Morio's Lab - Ledge Above Maurizio's City Portal": "Password"
+      "Morio's Lab - Fifth Floor Golden Propeller (Password)": "Password"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Fifth Floor Golden Propeller (Password)": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "",
+      "Morio's Lab - Path to Morio's Room": "FGU",
+      "Morio's Lab - Morio's Room Jump": "FGU+MorioHat",
+      "Morio's Lab - Third Floor Wrenches Lower": "",
+      "Morio's Lab - Third Floor Wrenches Middle": "FGU",
+      "Morio's Lab - Ground Floor Bolts": "",
+      "Morio's Lab - Second Floor Access to Shortcut Pipe": "",
+      "Morio's Lab - Ledge Above Maurizio's City Portal": ""
     },
     "subwarps": {},
     "warps": {},

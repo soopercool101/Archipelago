@@ -156,7 +156,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             hub_bunnies -= 1
         itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(hub_bunnies)]
         for level in world.included_levels:
-            if level != "Hub":
+            if level != "Hub" and level != "Mosk's Rocket":
                 itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
 
     if world.options.shuffle_gela_toni:

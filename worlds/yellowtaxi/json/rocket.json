@@ -1,0 +1,777 @@
+{
+  "Mosk's Rocket - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Mosk's Rocket - Coin Bag Between Lab Memories and Bomb-it Portals": 160300225
+    },
+    "coins": {
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #1": 160300224,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #2": 160300223,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #3": 160300222,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #4": 160300221,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #5": 160300220,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #6": 160300219,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #7": 160300218,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #8": 160300217,
+      "Mosk's Rocket - Coin Between Lab Memories and Bomb-it Portals #9": 160300216
+    },
+    "checkpoints": {},
+    "cheeses": {
+      "Mosk's Rocket - Cheese Near Welcoming Climbs Portal": 162100004
+    },
+    "connections": {
+      "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "J1/B1"
+    },
+    "subwarps": {
+      "Mosk's Rocket - Lab Memories Portal": ["Lab Memories - Starting Area", "Bunny-Hub"],
+      "Mosk's Rocket - Welcoming Climbs Portal": ["Welcoming Climbs - Starting Area", "Bunny-MH"]
+    },
+    "warps": {
+      "Mosk's Rocket - Front Door": ["Granny's Island - Main Area", ""]
+    },
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {
+      "Mosk's Rocket - Cheese Near Buttons Smashing Portal": 162100003
+    },
+    "connections": {
+      "Mosk's Rocket - Starting Area": "",
+      "Mosk's Rocket - Tosla's Offices Area": "J1 | X2+B2"
+    },
+    "subwarps": {
+      "Mosk's Rocket - Bomb-it Portal": ["Bomb-it - Starting Area", "Bunny-BB"]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Tosla's Offices Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Mosk's Rocket - Coin Bag Near Stealthy Portal": 160300341
+    },
+    "coins": {
+      "Mosk's Rocket - Coin Near Stealthy Portal #1": 160300338,
+      "Mosk's Rocket - Coin Near Stealthy Portal #2": 160300339,
+      "Mosk's Rocket - Coin Near Stealthy Portal #3": 160300340
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
+      "Mosk's Rocket - Gym Gears Area": "J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Gym Gears Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Mosk's Rocket - Coin Bag Near Podium Portal": 160300337
+    },
+    "coins": {
+      "Mosk's Rocket - Coin Near Podium Portal #1": 160300334,
+      "Mosk's Rocket - Coin Near Podium Portal #2": 160300335,
+      "Mosk's Rocket - Coin Near Podium Portal #3": 160300336
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
+      "Mosk's Rocket - Fecal Matters/Flushed Away Area": "B1/J2"
+    },
+    "subwarps": {
+      "Mosk's Rocket - Podium Portal": ["Podium - Starting Area", "Bunny-GG"]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Fecal Matters/Flushed Away Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Mosk's Rocket - Coin Near Smelly Slimes Portal #1": 160300353,
+      "Mosk's Rocket - Coin Near Smelly Slimes Portal #2": 160300352,
+      "Mosk's Rocket - Coin Near Smelly Slimes Portal #3": 160300351,
+      "Mosk's Rocket - Coin Near Smelly Slimes Portal #4": 160300350,
+      "Mosk's Rocket - Coin Near Smelly Slimes Portal #5": 160300349
+    },
+    "checkpoints": {},
+    "cheeses": {
+      "Mosk's Rocket - Cheese Under Homing Beacons": 162100001
+    },
+    "connections": {
+      "Mosk's Rocket - Gym Gears Area": "",
+      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2"
+    },
+    "subwarps": {
+      "Mosk's Rocket - Costipation Portal": ["Costipation - Starting Area", "J1/B2 & Bunny-FM"],
+      "Mosk's Rocket - Smelly Slimes Portal": ["Smelly Slimes - Starting Area", "Bunny-FA"]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {
+      "Mosk's Rocket - Cheese Near Conveyor Belts Portal": 162100002
+    },
+    "connections": {
+      "Mosk's Rocket - Fecal Matters/Flushed Away Area": "",
+      "Mosk's Rocket - Coins Leading to Final Floor": "J1 | X1+B2",
+      "Mosk's Rocket - Tosla HQ Area": "GP/J2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Coins Leading to Final Floor": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Mosk's Rocket - Coin on Steps to Final Floor #1": 160300404,
+      "Mosk's Rocket - Coin on Steps to Final Floor #2": 160300426,
+      "Mosk's Rocket - Coin on Steps to Final Floor #3": 160300427,
+      "Mosk's Rocket - Coin on Steps to Final Floor #4": 160300428,
+      "Mosk's Rocket - Coin on Steps to Final Floor #5": 160300429
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Tosla HQ Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Mosk's Rocket - Coin Bag on Steps to Final Floor": 160300430
+    },
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Mosk's Rocket - Coins Leading to Final Floor": "",
+      "Mosk's Rocket - Final Floor Cheese": "B1/J2 | X1+J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {
+      "Mosk's Rocket - Coin Bag on Steps to Final Floor": "J1/GP"
+    }
+  },
+  "Mosk's Rocket - Final Floor Cheese": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {
+      "Mosk's Rocket - Cheese Near Top of Rocket": 162100000
+    },
+    "connections": {
+      "Mosk's Rocket - Tosla HQ Area": "",
+      "Mosk's Rocket - Moon Area": "B2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Moon Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Mosk's Rocket - Final Floor Cheese": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Lab Memories - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Lab Memories",
+    "kaizolevel": "Hub",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Lab Memories - Checkpoint": 160901925
+    },
+    "cheeses": {},
+    "connections": {
+      "Lab Memories - First Step": "J1+GS"
+    },
+    "subwarps": {
+      "Lab Memories - Mosk's Rocket Portal": ["Mosk's Rocket - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Lab Memories - First Step": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Lab Memories",
+    "kaizolevel": "Hub",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Lab Memories - Coin Bag on Spiky Steps #1": 160300164
+    },
+    "coins": {
+      "Lab Memories - Coin on Spiky Steps #1": 160300157,
+      "Lab Memories - Coin on Spiky Steps #2": 160300158,
+      "Lab Memories - Coin on Spiky Steps #3": 160300159,
+      "Lab Memories - Coin on Spiky Steps #4": 160300162,
+      "Lab Memories - Coin on Spiky Steps #5": 160300167,
+      "Lab Memories - Coin on Spiky Steps #6": 160300166,
+      "Lab Memories - Coin on Spiky Steps #7": 160300165,
+      "Lab Memories - Coin on Spiky Steps #8": 160300199,
+      "Lab Memories - Coin on Spiky Steps #9": 160300226,
+      "Lab Memories - Coin on Spiky Steps #10": 160300246
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Lab Memories - High Ground": "J2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Lab Memories - High Ground": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Lab Memories",
+    "kaizolevel": "Hub",
+    "gears": {
+      "Lab Memories - Gear - First Gear": 160100000,
+      "Lab Memories - Gear - Second Gear": 160100001
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Lab Memories - Coin Bag on Spiky Steps #2": 160300268,
+      "Lab Memories - Coin Bag on Spiky Steps #3": 160300307,
+      "Lab Memories - Coin Bag Surrounding First Gear #1": 160300278,
+      "Lab Memories - Coin Bag Surrounding First Gear #2": 160300286,
+      "Lab Memories - Coin Bag Surrounding First Gear #3": 160300280,
+      "Lab Memories - Coin Bag Surrounding First Gear #4": 160300288,
+      "Lab Memories - Coin Bag on First Island Towards Second Gear": 160300316,
+      "Lab Memories - Coin Bag on Second Island Towards Second Gear": 160300321,
+      "Lab Memories - Coin Bag by Second Gear": 160300323
+    },
+    "coins": {
+      "Lab Memories - Coin on Spiky Steps #11": 160300290,
+      "Lab Memories - Coin on Spiky Steps #12": 160300292,
+      "Lab Memories - Coin on Spiky Steps #13": 160300309,
+      "Lab Memories - Coin on Spiky Steps #14": 160300308,
+      "Lab Memories - Coin Surrounding First Gear #1": 160300281,
+      "Lab Memories - Coin Surrounding First Gear #2": 160300282,
+      "Lab Memories - Coin Surrounding First Gear #3": 160300277,
+      "Lab Memories - Coin Surrounding First Gear #4": 160300279,
+      "Lab Memories - Coin Surrounding First Gear #5": 160300287,
+      "Lab Memories - Coin Surrounding First Gear #6": 160300289,
+      "Lab Memories - Coin Surrounding First Gear #7": 160300284,
+      "Lab Memories - Coin Surrounding First Gear #8": 160300285,
+      "Lab Memories - Coin on First Island Towards Second Gear #1": 160300314,
+      "Lab Memories - Coin on First Island Towards Second Gear #2": 160300313,
+      "Lab Memories - Coin on First Island Towards Second Gear #3": 160300312,
+      "Lab Memories - Coin on First Island Towards Second Gear #4": 160300317,
+      "Lab Memories - Coin on First Island Towards Second Gear #5": 160300315,
+      "Lab Memories - Coin on First Island Towards Second Gear #6": 160300320,
+      "Lab Memories - Coin on First Island Towards Second Gear #7": 160300319,
+      "Lab Memories - Coin on First Island Towards Second Gear #8": 160300318,
+      "Lab Memories - Coin by Second Gear": 160300324
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Welcoming Climbs - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Welcoming Climbs",
+    "kaizolevel": "Morio's Home",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Welcoming Climbs - Coin Bag on Left Side of Starting Platform": 160300126,
+      "Welcoming Climbs - Coin Bag on Right Side of Starting Platform": 160300125,
+      "Welcoming Climbs - Coin Bag on Front Side of Starting Platform": 160300130
+    },
+    "coins": {
+      "Welcoming Climbs - Coin on Left Side of Starting Platform #1": 160300118,
+      "Welcoming Climbs - Coin on Left Side of Starting Platform #2": 160300120,
+      "Welcoming Climbs - Coin on Left Side of Starting Platform #3": 160300122,
+      "Welcoming Climbs - Coin on Left Side of Starting Platform #4": 160300124,
+      "Welcoming Climbs - Coin on Right Side of Starting Platform #1": 160300117,
+      "Welcoming Climbs - Coin on Right Side of Starting Platform #2": 160300119,
+      "Welcoming Climbs - Coin on Right Side of Starting Platform #3": 160300121,
+      "Welcoming Climbs - Coin on Right Side of Starting Platform #4": 160300123,
+      "Welcoming Climbs - Coin on Front Side of Starting Platform #1": 160300127,
+      "Welcoming Climbs - Coin on Front Side of Starting Platform #2": 160300128,
+      "Welcoming Climbs - Coin on Front Side of Starting Platform #3": 160300129
+    },
+    "checkpoints": {
+      "Welcoming Climbs - Checkpoint": 160901600
+    },
+    "cheeses": {},
+    "connections": {
+      "Welcoming Climbs - First Gear Area": "B2 & X1/J1"
+    },
+    "subwarps": {
+      "Welcoming Climbs - Mosk's Rocket Portal": ["Mosk's Rocket - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Welcoming Climbs - First Gear Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Welcoming Climbs",
+    "kaizolevel": "Morio's Home",
+    "gears": {
+      "Welcoming Climbs - Gear - Halfway Point": 160100002
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {
+      "Welcoming Climbs - Chest at Halfway Point #1": 160300408,
+      "Welcoming Climbs - Chest at Halfway Point #2": 160300406
+    },
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {
+      "Welcoming Climbs - Second Gear Area": "B2+J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Welcoming Climbs - Second Gear Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Welcoming Climbs",
+    "kaizolevel": "Morio's Home",
+    "gears": {
+      "Welcoming Climbs - Gear - Highest Point": 160100003
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Welcoming Climbs - Coin Bag at Highest Point #1": 160300437,
+      "Welcoming Climbs - Coin Bag at Highest Point #2": 160300435
+    },
+    "coins": {
+      "Welcoming Climbs - Coin at Highest Point #1": 160300434,
+      "Welcoming Climbs - Coin at Highest Point #2": 160300433,
+      "Welcoming Climbs - Coin at Highest Point #3": 160300432,
+      "Welcoming Climbs - Coin at Highest Point #4": 160300440,
+      "Welcoming Climbs - Coin at Highest Point #5": 160300439,
+      "Welcoming Climbs - Coin at Highest Point #6": 160300438
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Bomb-it - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Bomb-it",
+    "kaizolevel": "Bombeach",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Bomb-it - Checkpoint": 160901270
+    },
+    "cheeses": {},
+    "connections": {
+      "Bomb-it - Outer Area": "J1/B1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Bomb-it - Outer Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Bomb-it",
+    "kaizolevel": "Bombeach",
+    "gears": {
+      "Bomb-it - Gear - Bomb Car Obstacle Course": 160100004,
+      "Bomb-it - Gear - Bomb Car Ramps": 160100005
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Bomb-it - Coin Bag Near Houses #1": 160300056,
+      "Bomb-it - Coin Bag Near Houses #2": 160300057
+    },
+    "coins": {
+      "Bomb-it - Coin Near Houses #1": 160300066,
+      "Bomb-it - Coin Near Houses #2": 160300067,
+      "Bomb-it - Coin Near Houses #3": 160300064,
+      "Bomb-it - Coin Near Houses #4": 160300065,
+      "Bomb-it - Coin Near Houses #5": 160300062,
+      "Bomb-it - Coin Near Houses #6": 160300063,
+      "Bomb-it - Coin Near Houses #7": 160300060,
+      "Bomb-it - Coin Near Houses #8": 160300061,
+      "Bomb-it - Coin Near Houses #9": 160300058,
+      "Bomb-it - Coin Near Houses #10": 160300059
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {
+      "Bomb-it - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
+    },
+    "warps": {},
+    "specialrules": {
+      "Bomb-it - Gear - Bomb Car Ramps": "X1/J1"
+    }
+  },
+  "Podium - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Podium",
+    "kaizolevel": "Gym Gears",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Podium - Checkpoint": 160900145
+    },
+    "cheeses": {},
+    "connections": {
+      "Podium - High Ground": "X2+J1 | J2"
+    },
+    "subwarps": {
+      "Podium - Mosk's Rocket Portal": ["Mosk's Rocket - Gym Gears Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Podium - High Ground": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Podium",
+    "kaizolevel": "Gym Gears",
+    "gears": {
+      "Podium - Gear - First Gear": 160100012,
+      "Podium - Gear - Second Gear": 160100013
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Podium - Coin Bag by First Gear": 160300273,
+      "Podium - Coin Bag by Hat": 160300328,
+      "Podium - Coin Bag by Second Gear": 160300344
+    },
+    "coins": {
+      "Podium - Coin by First Gear #1": 160300276,
+      "Podium - Coin by First Gear #2": 160300275,
+      "Podium - Coin by First Gear #3": 160300274,
+      "Podium - Coin by Hat #1": 160300331,
+      "Podium - Coin by Hat #2": 160300330,
+      "Podium - Coin by Hat #3": 160300329,
+      "Podium - Coin by Second Gear #1": 160300347,
+      "Podium - Coin by Second Gear #2": 160300346,
+      "Podium - Coin by Second Gear #3": 160300345
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Costipation - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Costipation",
+    "kaizolevel": "Fecal Matters",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Costipation - Checkpoint": 160901910
+    },
+    "cheeses": {},
+    "connections": {
+      "Costipation - Roadway Gear Area": "J1/B1",
+      "Costipation - Island Gear Area": "B2"
+    },
+    "subwarps": {
+      "Costipation - Mosk's Rocket Portal": ["Mosk's Rocket - Fecal Matters/Flushed Away Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Costipation - Roadway Gear Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Costipation",
+    "kaizolevel": "Fecal Matters",
+    "gears": {
+      "Costipation - Gear - Roadway": 160100015
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Costipation - Coin Bag Surrounding Roadway Gear #1": 160300212,
+      "Costipation - Coin Bag Surrounding Roadway Gear #2": 160300206
+    },
+    "coins": {
+      "Costipation - Coin Surrounding Roadway Gear #1": 160300215,
+      "Costipation - Coin Surrounding Roadway Gear #2": 160300214,
+      "Costipation - Coin Surrounding Roadway Gear #3": 160300211,
+      "Costipation - Coin Surrounding Roadway Gear #4": 160300213,
+      "Costipation - Coin Surrounding Roadway Gear #5": 160300208,
+      "Costipation - Coin Surrounding Roadway Gear #6": 160300210,
+      "Costipation - Coin Surrounding Roadway Gear #7": 160300205,
+      "Costipation - Coin Surrounding Roadway Gear #8": 160300207,
+      "Costipation - Coin Surrounding Roadway Gear #9": 160300204,
+      "Costipation - Coin Surrounding Roadway Gear #10": 160300203
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Costipation - Island Gear Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Costipation",
+    "kaizolevel": "Fecal Matters",
+    "gears": {
+      "Costipation - Gear - On Island": 160100014
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Costipation - Coin Bag on Gear Island #1": 160300263,
+      "Costipation - Coin Bag on Gear Island #2": 160300255,
+      "Costipation - Coin Bag on Gear Island #3": 160300261,
+      "Costipation - Coin Bag on Gear Island #4": 160300253
+    },
+    "coins": {
+      "Costipation - Coin on Gear Island #1": 160300267,
+      "Costipation - Coin on Gear Island #2": 160300264,
+      "Costipation - Coin on Gear Island #3": 160300260,
+      "Costipation - Coin on Gear Island #4": 160300266,
+      "Costipation - Coin on Gear Island #5": 160300259,
+      "Costipation - Coin on Gear Island #6": 160300265,
+      "Costipation - Coin on Gear Island #7": 160300262,
+      "Costipation - Coin on Gear Island #8": 160300254,
+      "Costipation - Coin on Gear Island #9": 160300251,
+      "Costipation - Coin on Gear Island #10": 160300257,
+      "Costipation - Coin on Gear Island #11": 160300250,
+      "Costipation - Coin on Gear Island #12": 160300256,
+      "Costipation - Coin on Gear Island #13": 160300252,
+      "Costipation - Coin on Gear Island #14": 160300249
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Smelly Slimes - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Smelly Slimes",
+    "kaizolevel": "Flushed Away",
+    "gears": {
+      "Smelly Slimes - Gear - Pipe Above Entrance": 160100017
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Smelly Slimes - Checkpoint by Entrance": 160901448
+    },
+    "cheeses": {},
+    "connections": {
+      "Smelly Slimes - Sidebars by Entrance": "X2/J1/B1",
+      "Smelly Slimes - Exit Area": "B1+J1"
+    },
+    "subwarps": {
+      "Smelly Slimes - Entrance Mosk's Rocket Portal": ["Mosk's Rocket - Fecal Matters/Flushed Away Area", ""]
+    },
+    "warps": {},
+    "specialrules": {
+      "Smelly Slimes - Gear - Pipe Above Entrance": "B2 & X2/J1"
+    }
+  },
+  "Smelly Slimes - Sidebars by Entrance": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Smelly Slimes",
+    "kaizolevel": "Flushed Away",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {
+      "Smelly Slimes - Chest Left of Entrance Portal": 160300098,
+      "Smelly Slimes - Chest Right of Entrance Portal": 160300110
+    },
+    "coinbags": {},
+    "coins": {
+      "Smelly Slimes - Coin Left of Entrance Portal #1": 160300093,
+      "Smelly Slimes - Coin Left of Entrance Portal #2": 160300094,
+      "Smelly Slimes - Coin Left of Entrance Portal #3": 160300095,
+      "Smelly Slimes - Coin Left of Entrance Portal #4": 160300096,
+      "Smelly Slimes - Coin Left of Entrance Portal #5": 160300097,
+      "Smelly Slimes - Coin Left of Entrance Portal #6": 160300099,
+      "Smelly Slimes - Coin Left of Entrance Portal #7": 160300100,
+      "Smelly Slimes - Coin Left of Entrance Portal #8": 160300101,
+      "Smelly Slimes - Coin Left of Entrance Portal #9": 160300102,
+      "Smelly Slimes - Coin Left of Entrance Portal #10": 160300103,
+      "Smelly Slimes - Coin Right of Entrance Portal #1": 160300105,
+      "Smelly Slimes - Coin Right of Entrance Portal #2": 160300106,
+      "Smelly Slimes - Coin Right of Entrance Portal #3": 160300107,
+      "Smelly Slimes - Coin Right of Entrance Portal #4": 160300108,
+      "Smelly Slimes - Coin Right of Entrance Portal #5": 160300109,
+      "Smelly Slimes - Coin Right of Entrance Portal #6": 160300111,
+      "Smelly Slimes - Coin Right of Entrance Portal #7": 160300112,
+      "Smelly Slimes - Coin Right of Entrance Portal #8": 160300113,
+      "Smelly Slimes - Coin Right of Entrance Portal #9": 160300114,
+      "Smelly Slimes - Coin Right of Entrance Portal #10": 160300115
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Smelly Slimes - Exit Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Smelly Slimes",
+    "kaizolevel": "Flushed Away",
+    "gears": {
+      "Smelly Slimes - Gear - In Slime Near Exit": 160100016
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Smelly Slimes - Coin Bag on Left of Exit Gear": 160300160,
+      "Smelly Slimes - Coin Bag on Right of Exit Gear": 160300161
+    },
+    "coins": {
+      "Smelly Slimes - Coin on Left of Exit Gear #1": 160300070,
+      "Smelly Slimes - Coin on Left of Exit Gear #2": 160300071,
+      "Smelly Slimes - Coin on Left of Exit Gear #3": 160300104,
+      "Smelly Slimes - Coin on Left of Exit Gear #4": 160300152,
+      "Smelly Slimes - Coin on Left of Exit Gear #5": 160300154,
+      "Smelly Slimes - Coin on Right of Exit Gear #1": 160300072,
+      "Smelly Slimes - Coin on Right of Exit Gear #2": 160300073,
+      "Smelly Slimes - Coin on Right of Exit Gear #3": 160300116,
+      "Smelly Slimes - Coin on Right of Exit Gear #4": 160300153,
+      "Smelly Slimes - Coin on Right of Exit Gear #5": 160300155
+    },
+    "checkpoints": {
+      "Smelly Slimes - Checkpoint by Exit": 160900998
+    },
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  }
+}

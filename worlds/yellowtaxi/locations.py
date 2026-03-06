@@ -35,7 +35,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if world.options.bunnysanity:
             locations = locations | reg["bunnies"]
             world.num_bunnies += len(reg["bunnies"])
-        else: # Non-bunnysanity still needs to track bunnies
+        elif "Mosk's Rocket" in world.included_levels: # Non-bunnysanity still needs to track bunnies if rocket is in
             for bunny in reg["bunnies"]:
                 bunny_level : str = level
                 if level == "Hub":
@@ -142,7 +142,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     region = world.get_region(region_name)
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Morio's Home Portal", f"Bunny (Morio's Lab)",
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-                if not world is None:
+                if world is not None:
                     world.num_bunnies += 1
         case "Morio's Lab - Psycho Taxi Arcade Machine":
             if world is None or (world.options.shuffle_psycho_taxi and world.early_psycho_taxi):
@@ -164,7 +164,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
         case "Morio's Lab - Second Floor Inside True Demo Wall":
             if world is None or world.options.shuffle_full_game:
                 locations = {
-                    "Reach True Demo Wall": 10_00011,
+                    "Morio's Lab - Reach True Demo Wall": 10_00011,
                 }
         case "Morio's Lab - Second Floor After True Demo Wall":
             if world is None or world.options.shuffle_flip_o_will:
@@ -183,6 +183,10 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Morio's Lab - Talk to Doggo": 10_00007
                 }
+            elif world is not None and not world.options.shuffle_doggo: # Doggo item still logically needed
+                region = world.get_region(region_name)
+                region.add_event(f"Event: Morio's Lab - Talk to Doggo", f"Doggo",
+                                 location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
         case "Morio's Lab - Fifth Floor Morio's Mind Area":
             if world is None or (world.options.shuffle_morios_password and world.early_morios_password):
                 locations = {
@@ -203,6 +207,16 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Crash Again - Talk to Ocra Taxi Goes Smooch": 11_00010
                 }
+        case "Bombeach - Starting Area":
+            if world is None or (world.options.shuffle_gela_toni and not world.early_gela_toni):
+                locations = {
+                    "Bombeach - Save Gela-Toni - Defeat Bomboss": 1_11_00001
+                }
+            elif world is not None and not world.options.shuffle_gela_toni: # Gela-Toni item still logically needed
+                region = world.get_region(region_name)
+                region.add_event(f"Event: Bombeach - Save Gela-Toni - Defeat Bomboss", f"Gela-Toni",
+                                 location_type=YellowTaxiLocation,
+                                 item_type=items.YellowTaxiItem)
         case "Gym Gears - Starting Area":
             if world is None or (world.options.shuffle_flip_o_will and world.early_backflip):
                 locations = {

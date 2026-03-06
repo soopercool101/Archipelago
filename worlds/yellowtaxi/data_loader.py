@@ -13,7 +13,9 @@ regions_json_data : Dict[str, Any] = (load_json_data("hub.json") |
                                       load_json_data("morioshome.json") |
                                       load_json_data("bombeach.json") |
                                       # load_json_data("arcadepanik.json") |
-                                      load_json_data("gymgears.json")
+                                      load_json_data("gymgears.json") |
+                                      load_json_data("fecalmatters.json") |
+                                      load_json_data("rocket.json")
                                       )
 
 # Load static locations list

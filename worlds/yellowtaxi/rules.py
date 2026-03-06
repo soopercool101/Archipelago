@@ -386,6 +386,31 @@ class RuleFactory:
                 return "Gear", self.world.final_portal_cost
 
             return "Gear", 130
+        if token.startswith("Bunny-"):
+            bunny_level : str = token[len("Bunny-"):]
+            if bunny_level == "Hub":
+                hub_bunnies = 3
+                if self.world.options.extra_demo_collectables:
+                    hub_bunnies += 2
+                if self.world.exclude_spike_bunny:
+                    hub_bunnies -= 1
+                if self.world.exclude_top_bunny:
+                    hub_bunnies -= 1
+                return "Bunny (Morio's Lab)", hub_bunnies
+            else:
+                adjusted_bunny_level : str = bunny_level
+                match bunny_level:
+                    case "MH":
+                        adjusted_bunny_level = "Morio's Home"
+                    case "BB":
+                        adjusted_bunny_level = "Bombeach"
+                    case "GG":
+                        adjusted_bunny_level = "Gym Gears"
+                    case "FM":
+                        adjusted_bunny_level = "Fecal Matters"
+                    case "FA":
+                        adjusted_bunny_level = "Flushed Away"
+                return f"Bunny ({adjusted_bunny_level})", 3
         if token.startswith("X"):
             expert_level = int(token[1:])
             return self.world.options.expert_level >= expert_level

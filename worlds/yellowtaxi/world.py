@@ -76,13 +76,14 @@ class YellowTaxiWorld(World):
             "Morio's Home",
             "Bombeach",
             "Gym Gears",
-            #"Fecal Matters",    # Remove this later if doggo is unreachable
         ]
 
         # Exclude unreachable hub areas past the goal
         # Rocket isn't pre-goal for any current goal types
         if not self.options.shuffle_rocket:
             self.excluded_regions += ["Granny's Island - Top of Rocket"]
+        else:
+            self.included_levels += ["Mosk's Rocket"]
         # Pizza King and Gela-Toni are post BomBoss goal
         if self.options.goal < 1:
             if not self.options.shuffle_gela_toni:
@@ -104,7 +105,9 @@ class YellowTaxiWorld(World):
             #    self.included_levels += ["Flushed Away"]
             # Cannot reach these spiky areas without golden spring
             if not self.options.shuffle_golden_spring:
-                self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes"]
+                self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes",
+                                          "Lab Memories - First Step",
+                                          "Lab Memories - High Ground"]
                 if self.options.expert_level < 2:
                     self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
             # Can reach the upper floors via either morio's password (go backwards through pipe), OS or GS unless in X1+
@@ -114,9 +117,6 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Ledge Above Maurizio's City Portal",
                                           "Morio's Lab - Fifth Floor Crash Test Area",
                                           "Morio's Lab - Fifth Floor Morio's Mind Area"]
-                # Cannot include fecal matters if you cannot reach doggo
-                #if not self.options.shuffle_doggo:
-                #    self.included_levels.remove("Fecal Matters")
             # Final floor is hard locked behind Morio's Password
             if not self.options.shuffle_morios_password:
                 self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
@@ -129,8 +129,12 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Final Floor Pipes",
                                           "Morio's Lab - Final Floor Catwalk"]
 
+        # Fecal Matters is included if Doggo is shuffled or logically reachable
+        if self.options.shuffle_doggo or not "Morio's Lab - Fourth Floor" in self.excluded_regions:
+            self.included_levels += ["Fecal Matters"]
+
         # Make sure early items are set as needed
-        if True or (self.options.exclude_goal_portal_checks and self.options.goal < 1):
+        if self.options.exclude_goal_portal_checks and self.options.goal < 1:
             self.early_gela_toni = True
         if not "Pizza Time" in self.included_levels:
             if self.options.shuffle_pizza_king:
@@ -150,7 +154,8 @@ class YellowTaxiWorld(World):
             self.early_golden_propeller = True
         if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
             self.early_morios_password = True
-        self.early_rocket = True
+        if self.options.shuffle_rocket:
+            self.early_rocket = True
 
         if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
             self.exclude_spike_bunny = True

@@ -176,8 +176,6 @@ class Chestsanity(Toggle):
 class Coinbagsanity(Toggle):
     """
     Adds coin bags as location checks.
-
-    Not recommended for most multiworlds! Adds a lot of filler.
     """
 
     display_name = "Coinbagsanity"
@@ -186,7 +184,8 @@ class Coinsanity(Toggle):
     """
     Adds coins as location checks.
 
-    Not recommended for most multiworlds! Adds a lot of filler.
+    Not recommended for most multiworlds! Adds thousands of locations and filler items.
+    Requires enabling "enable_multiworld_coinsanity" in host.yaml in order to use this setting in a multiworld!
     """
 
     display_name = "Coinsanity"

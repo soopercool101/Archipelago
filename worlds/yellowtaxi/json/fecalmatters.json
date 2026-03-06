@@ -1,0 +1,28 @@
+{
+  "Fecal Matters - Starting Area": {
+    "level": "Fecal Matters",
+    "sublevel": "Fecal Matters",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #1": 70300003,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #2": 70300004,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #3": 70300005,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #4": 70300006,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #5": 70300007,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #6": 70300008,
+      "Fecal Matters - Coin in Row Between Roundabout and Entrance #7": 70300009
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {
+      "Fecal Matters - Portal to Granny's Island": ["Granny's Island - Main Area", ""]
+    },
+    "specialrules": {}
+  }
+}
