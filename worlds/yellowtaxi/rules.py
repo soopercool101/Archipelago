@@ -386,6 +386,10 @@ class RuleFactory:
                 return "Gear", self.world.final_portal_cost
 
             return "Gear", 130
+        if token == "NHPR":
+            # No Hub Portal randomization. Placeholder rule for now.
+            # Hub portals launch you upwards when declining entry, making them logical access rules in some cases.
+            return True
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
