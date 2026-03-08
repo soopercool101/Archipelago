@@ -1062,7 +1062,7 @@
       "Granny's Island - Lab Hill High Ground": "OS"
     },
     "subwarps": {
-      "Crash Again - Entrance": ["Crash Again - Starting Area", ""]
+      "Crash Again - Entrance": ["Crash Again - Starting Area", "FGU"]
     },
     "warps": {},
     "specialrules": {}
@@ -1407,7 +1407,7 @@
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
       "Morio's Lab - Ground Floor Wrenches": "B1/J2",
       "Morio's Lab - Second Floor": "J1/B1",
-      "Morio's Lab - Fifth Floor Crash Test Area": "X2+B2+FGU"
+      "Morio's Lab - Fifth Floor Crash Test Area": "X2+B2+FGU | B2+J2+FGU"
     },
     "subwarps": {
       "Morio's Lab - Front Door": ["Granny's Island - Starting Area", ""],
@@ -1580,7 +1580,7 @@
     "connections": {
       "Morio's Lab - Path to Morio's Room": "B1",
       "Morio's Lab - Ground Floor": "",
-      "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1+B1+J1 | B2+J2",
+      "Morio's Lab - Second Floor Access to Shortcut Pipe": "X2+B1+J1 | X1+B2+J2",
       "Morio's Lab - Second Floor Above Demo Wall": "B2",
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
       "Morio's Lab - Psycho Taxi Arcade Machine": "FGU"
