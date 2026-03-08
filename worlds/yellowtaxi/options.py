@@ -212,7 +212,7 @@ class ShuffleFlipOWill(Choice):
     #option_shuffle = 1
     #option_split = 2
     option_on = 3
-    default = option_off
+    default = option_on
     alias_none = option_off
     alias_progressive_split = option_on # TODO: Swap alias with main option if adding more options
 
