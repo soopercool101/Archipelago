@@ -16,6 +16,11 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, De
 
 
 class Goal(Choice):
+    """
+    Which boss is your victory condition.
+
+    Currently only Bomboss is supported.
+    """
     display_name = "Goal"
 
     option_bombeach_boss = 0
@@ -40,7 +45,7 @@ class ExcludeGoalPortalChecks(DefaultOnToggle):
     """
     If true, removes items from within the goal portal from the pool.
 
-    Note that if false, Goal Portal Gear Percentage may be capped at a lower value.
+    Note that if false, Goal Portal Gear Percentage may be capped at a lower value to prevent generation failures.
     """
 
     display_name = "Exclude Goal Portal Checks"
@@ -220,6 +225,15 @@ class ShuffleGlide(Toggle):
 
     display_name = "Shuffle Glide"
 
+class EarlyMove(Toggle):
+    """
+    If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to the first local few checks.
+
+    Prevents an early BK as only 3 gears are accessible moveless.
+    """
+
+    display_name = "Early Move"
+
 class ShuffleGoldenSpring(DefaultOnToggle):
     """
     Shuffles the Golden Spring into the item pool and adds a new location for defeating the Tosla HQ boss.
@@ -263,6 +277,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     cheesesanity: Cheesesanity
     shuffle_flip_o_will: ShuffleFlipOWill
     shuffle_glide: ShuffleGlide
+    early_move: EarlyMove
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
     extra_demo_collectables: ExtraDemoCollectables
@@ -279,7 +294,7 @@ option_groups = [
     ),
     OptionGroup(
         "Ability Randomizer Options",
-        [ShuffleFlipOWill, ShuffleGlide, ShuffleGoldenSpring, ShuffleGoldenPropeller],
+        [ShuffleFlipOWill, ShuffleGlide, EarlyMove, ShuffleGoldenSpring, ShuffleGoldenPropeller],
     ),
 ]
 

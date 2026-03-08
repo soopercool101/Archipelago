@@ -175,6 +175,16 @@ class YellowTaxiWorld(World):
                 f"You can allow this by setting 'enable_multiworld_coinsanity' in the seed "
                 f"generator's host.yaml to true and generating locally. (Use at your own risk!)")
 
+        if not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and self.options.goal_portal_gear_percentage > 80:
+            self.options.goal_portal_gear_percentage.value = 80
+            logging.warning(
+                f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
+                f"Goal Portal Gear percentage has been capped to {80}%.")
+
+        if self.options.shuffle_flip_o_will and self.options.early_move:
+            self.random.choice(["Progressive Jump", "Progressive Boost"])
+            self.multiworld.local_early_items[self.player]["Progressive Jump"] = 1
+
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
