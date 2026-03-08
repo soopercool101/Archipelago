@@ -1490,7 +1490,8 @@
     "checkpoints": {},
     "cheeses": {},
     "connections": {
-      "Morio's Lab - Ground Floor Orange Blocks": "X1+B1"
+      "Morio's Lab - Ground Floor Orange Blocks": "X1+B1",
+      "Morio's Lab - Ground Floor Bolts": "X1+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -1518,6 +1519,7 @@
     "connections": {
       "Morio's Lab - Ground Floor Lowest Bolt": "",
       "Morio's Lab - Bunny Ledge": "J1 | X1+B1",
+      "Morio's Lab - Path to Morio's Room": "X1+J2",
       "Morio's Lab - Fifth Floor Crash Test Area": "X1+J1+B2+FGU"
     },
     "subwarps": {},
@@ -1772,17 +1774,12 @@
       "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #9": 300678,
       "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #10": 300677,
       "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #11": 300680,
-      "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #12": 300694,
-      "Morio's Lab - Coin Near Morio's Room #1": 300747,
-      "Morio's Lab - Coin Near Morio's Room #2": 300746,
-      "Morio's Lab - Coin Near Morio's Room #3": 300745,
-      "Morio's Lab - Coin Near Morio's Room #4": 300744,
-      "Morio's Lab - Coin Near Morio's Room #5": 300743
+      "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #12": 300694
     },
     "checkpoints": {},
     "cheeses": {},
     "connections": {
-      "Morio's Lab - Morio's Room": "MorioHat",
+      "Morio's Lab - Outside Morio's Room": "B1",
       "Morio's Lab - Ground Floor Bolts": "B1",
       "Morio's Lab - Ground Floor Wrenches": "",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
@@ -1794,7 +1791,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Morio's Room": {
+  "Morio's Lab - Outside Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1802,17 +1799,23 @@
     "safes": {},
     "chests": {},
     "coinbags": {},
-    "coins": {},
+    "coins": {
+      "Morio's Lab - Coin Near Morio's Room #1": 300747,
+      "Morio's Lab - Coin Near Morio's Room #2": 300746,
+      "Morio's Lab - Coin Near Morio's Room #3": 300745,
+      "Morio's Lab - Coin Near Morio's Room #4": 300744,
+      "Morio's Lab - Coin Near Morio's Room #5": 300743
+    },
     "checkpoints": {},
     "cheeses": {},
     "connections": {
-      "Morio's Lab - Morio's Room Jump": "J1"
+      "Morio's Lab - Inside Morio's Room Jump": "MorioHat+J1"
     },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Morio's Room Jump": {
+  "Morio's Lab - Inside Morio's Room Jump": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -2139,7 +2142,8 @@
     "connections": {
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "",
       "Morio's Lab - Path to Morio's Room": "FGU",
-      "Morio's Lab - Morio's Room Jump": "FGU+MorioHat",
+      "Morio's Lab - Outside Morio's Room": "FGU",
+      "Morio's Lab - Inside Morio's Room Jump": "FGU+MorioHat",
       "Morio's Lab - Third Floor Wrenches Lower": "",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU",
       "Morio's Lab - Ground Floor Bolts": "",

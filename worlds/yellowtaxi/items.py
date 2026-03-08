@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, List
 
 from BaseClasses import Item, ItemClassification
 
@@ -74,8 +74,8 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Bunny (Tosla HQ)": ItemClassification.filler,
     "Bunny (Moon)": ItemClassification.filler,
     "1 Coin": ItemClassification.filler,
+    "10 Coins": ItemClassification.filler,
     "25 Coins": ItemClassification.filler,
-    "50 Coins": ItemClassification.filler,
     "100 Coins": ItemClassification.filler,
     # Hats reserve 7_00
     "Flip-O-Will": ItemClassification.progression | ItemClassification.useful,
@@ -107,11 +107,32 @@ class YellowTaxiItem(Item):
 # To do this, it must define a function called world.get_filler_item_name(), which we will define in world.py later.
 # For now, let's make a function that returns the name of a random filler item here in items.py.
 def get_random_filler_item_name(world: YellowTaxiWorld) -> str:
+    return get_random_filler_item_names(world, 1)[0]
+
+def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str]:
     # TODO: ADD TRAPS
     #if world.random.randint(0, 99) < world.options.trap_chance:
-
-    # TODO: Add weights for different coin quantities
-    return "1 Coin"
+    filler = []
+    weights = []
+    if world.options.safesanity:
+        filler += ["100 Coins"]
+        weights += [1]
+    if world.options.chestsanity or world.options.cheesesanity:
+        filler += ["25 Coins"]
+        weights += [5]
+    if world.options.coinbagsanity or world.options.cheesesanity or world.options.checkpointsanity:
+        filler += ["10 Coins"]
+        weights += [10]
+    if world.options.coinsanity:
+        filler += ["1 Coin"]
+        weights += [100]
+    elif world.options.checkpointsanity:
+        filler += ["1 Coin"]
+        weights += [20]
+    if len(filler) == 0:
+        filler = ["25 Coins", "10 Coins"]
+        weights = [1, 5]
+    return world.random.choices(filler, weights, k=count)
 
 
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
@@ -127,7 +148,7 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
 
     # Bunnies are progresssion if Mosk's Rocket is shuffled or exclude post-goal locations is off
     if name.startswith("Bunny (") and world.options.shuffle_rocket:
-        classification = ItemClassification.progression_deprioritized_skip_balancing
+        classification = ItemClassification.progression_deprioritized
 
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
@@ -145,7 +166,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     itempool: list[Item] = [world.create_item("Gear") for _ in range(world.num_gears)]
 
-    # Add Bunnies to the pool TODO: Don't add post-goal bunnies for earlier goals
+    # Add Bunnies to the pool
     if world.options.bunnysanity:
         hub_bunnies = 3
         if world.options.extra_demo_collectables:
@@ -206,7 +227,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
 
-    itempool += [world.create_filler() for _ in range(needed_number_of_filler_items)]
+    itempool += [world.create_item(filler) for filler
+                 in get_random_filler_item_names(world, needed_number_of_filler_items)]
 
     world.multiworld.itempool += itempool
 

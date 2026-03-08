@@ -2,13 +2,15 @@
 
 ## Required Software
 - A [Steam](https://store.steampowered.com/app/2011780/Yellow_Taxi_Goes_Vroom/) or [GOG](https://www.gog.com/en/game/yellow_taxi_goes_vroom) PC copy of Yellow Taxi Goes Vroom
-- The latest mod
+- The [latest mod](https://github.com/soopercool101/YellowTaxiAP/releases/latest)
 
 ## Optional Software
 - [Archipelago](https://github.com/ArchipelagoMW/Archipelago/releases/latest)
 
 ## Installation
-
+- Download the .zip file in the latest release of the mod (***NOT THE SOURCE CODE***)
+- Extract it into the root of your game directory. Your folder should look something like this:
+![img.png](files.png)
 
 ## How to play
 On the game's main menu, it should prompt you for slot details, add the player name and room link and click "connect".

@@ -29,14 +29,12 @@ class Goal(Choice):
 
 class GoalPortalGearPercentage(Range):
     """
-    Percentage of Gear items needed to access the portal
+    Percentage of Gear items needed to access the goal portal.
     """
     display_name = "Goal Portal Gear Percentage"
-    range_start = 20
+    range_start = 50
     range_end = 90
     default = 75
-
-
 
 class ExcludeGoalPortalChecks(DefaultOnToggle):
     """
@@ -71,7 +69,7 @@ class ShuffleGelaToni(DefaultOnToggle):
 
     display_name = "Shuffle Gela-Toni"
 
-class ShufflePizzaKing(DefaultOnToggle):
+class ShufflePizzaKing(Toggle):
     """
     Adds the unlock for the Pizza Oven Entrance in Granny's Island into the item pool and adds a location for completing Pizza King's quest in Pizza Time.
 
@@ -98,7 +96,7 @@ class ShuffleOrangeSwitch(DefaultOnToggle):
 
     display_name = "Shuffle Orange Switch"
 
-class ShuffleMoriosPassword(DefaultOnToggle):
+class ShuffleMoriosPassword(Toggle):
     """
     Adds Morio's Password into the item pool and adds a location for obtaining the key in Morio's Mind.
 

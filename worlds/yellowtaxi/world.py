@@ -3,7 +3,7 @@ from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List
 
 from BaseClasses import MultiWorld
-from Utils import visualize_regions
+from Utils import visualize_regions, Version
 from worlds.AutoWorld import World
 
 from . import data_loader, items, regions, locations, rules, web_world
@@ -179,7 +179,7 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
-        visualize_regions(self.get_region("Menu"), "regions_test.puml", show_entrance_names=True, linetype_ortho=False)
+        #visualize_regions(self.get_region("Menu"), "regions_test.puml", show_entrance_names=True, linetype_ortho=False)
 
     def set_rules(self) -> None:
         rules.set_all_rules(self)
@@ -221,9 +221,8 @@ class YellowTaxiWorld(World):
             "extra_demo_collectables",
         )
 
-        # IMPORTANT!! NEED TO INCREMENT THIS WHENEVER BREAKING APWORLD CHANGES ARE MADE!!
-        dict["major_version"] = 0
-        dict["minor_version"] = 1
+        dict["major_version"] = self.world_version.major
+        dict["minor_version"] = self.world_version.minor
 
         # Set counts that client needs to know
         dict["goal_portal_cost"] = self.final_portal_cost
