@@ -187,7 +187,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 region = world.get_region(region_name)
                 region.add_event(f"Event: Morio's Lab - Talk to Doggo", f"Doggo",
                                  location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-        case "Morio's Lab - Fifth Floor Morio's Mind Area":
+        case "Morio's Lab - Dream Machine":
             if world is None or (world.options.shuffle_morios_password and world.early_morios_password):
                 locations = {
                     "Morio's Lab - Talk to Morio in Dream Machine": 11_00012

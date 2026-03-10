@@ -2080,8 +2080,25 @@
     "cheeses": {},
     "connections": {
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password",
+      "Morio's Lab - Dream Machine": "FGU",
       "Morio's Lab - Fifth Floor Crash Test Area": ""
     },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Dream Machine": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}

@@ -110,17 +110,19 @@ class YellowTaxiWorld(World):
                                           "Lab Memories - High Ground"]
                 if self.options.expert_level < 2:
                     self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
-            # Can reach the upper floors via either morio's password (go backwards through pipe), OS or GS unless in X1+
+            # If all main pathways to upper lab area aren't in the game, remove upper lab
             if (self.options.expert_level == 0 and not self.options.shuffle_golden_spring
                     and not self.options.shuffle_morios_password and not self.options.shuffle_orange_switch):
                 self.excluded_regions += ["Morio's Lab - Fourth Floor",
                                           "Morio's Lab - Ledge Above Maurizio's City Portal",
                                           "Morio's Lab - Fifth Floor Crash Test Area",
-                                          "Morio's Lab - Fifth Floor Morio's Mind Area"]
+                                          "Morio's Lab - Fifth Floor Morio's Mind Area",
+                                          "Morio's Lab - Dream Machine"]
             # Final floor is hard locked behind Morio's Password
             if not self.options.shuffle_morios_password:
                 self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
                                           "Morio's Lab - Fifth Floor Golden Propeller",
+                                          "Morio's Lab - Fifth Floor Golden Propeller (Password)",
                                           "Morio's Lab - Ledge Above Ruined Observatory Portal",
                                           "Morio's Lab - Ledge Below Tosla HQ Portal",
                                           "Morio's Lab - Fifth Floor Low Pillars",
@@ -128,6 +130,13 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Final Floor",
                                           "Morio's Lab - Final Floor Pipes",
                                           "Morio's Lab - Final Floor Catwalk"]
+                if self.options.expert_level == 0:
+                    # Assume that expert 0 will not be using the shortcut pipe
+                    self.excluded_regions += [
+                        "Morio's Lab - Second Floor Falling From Shortcut Pipe",
+                        "Morio's Lab - Second Floor Access to Shortcut Pipe",
+                        "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
+                    ]
 
         # Fecal Matters is included if Doggo is shuffled or logically reachable
         if self.options.shuffle_doggo or not "Morio's Lab - Fourth Floor" in self.excluded_regions:
