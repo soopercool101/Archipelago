@@ -176,19 +176,22 @@ class YellowTaxiWorld(World):
                 if level in self.included_levels:
                     self.included_levels.remove(level)
 
-        if self.options.coinsanity and self.multiworld.players > 1 and not self.settings.enable_multiworld_coinsanity:
-            self.options.coinsanity.value = False
+        if (self.options.coinsanity and self.multiworld.players > 1 and
+                self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent):
+            self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
             logging.warning(
                 f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
-                f"Coinsanity has been disabled. "
-                f"You can allow this by setting 'enable_multiworld_coinsanity' in the seed "
-                f"generator's host.yaml to true and generating locally. (Use at your own risk!)")
+                f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
+                f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
+                f"generator's host.yaml to a higher value and generating locally.")
+        if self.options.coinsanity_percent == 0:
+            self.options.coinsanity.value = False
 
-        if not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and self.options.goal_portal_gear_percentage > 80:
-            self.options.goal_portal_gear_percentage.value = 80
+        if not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and self.options.goal_portal_gear_percentage > 75:
+            self.options.goal_portal_gear_percentage.value = 75
             logging.warning(
                 f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
-                f"Goal Portal Gear percentage has been capped to {80}%.")
+                f"Goal Portal Gear percentage has been capped to {75}%.")
 
         if self.options.shuffle_flip_o_will and self.options.early_move:
             self.random.choice(["Progressive Jump", "Progressive Boost"])

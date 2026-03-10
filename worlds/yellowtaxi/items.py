@@ -125,7 +125,7 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
         weights += [10]
     if world.options.coinsanity:
         filler += ["1 Coin"]
-        weights += [100]
+        weights += [world.options.coinsanity_percent]
     elif world.options.checkpointsanity:
         filler += ["1 Coin"]
         weights += [20]

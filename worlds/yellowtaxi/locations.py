@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-from typing import Dict, TYPE_CHECKING, Union
+from math import floor
+from typing import Dict, List, TYPE_CHECKING, Union
 
-from BaseClasses import ItemClassification, Location
+from BaseClasses import Location, Region, LocationProgressType
 
 from . import items
 
@@ -21,6 +22,9 @@ def create_locations(world: YellowTaxiWorld) -> None:
     # Once again, before we do anything, we can grab our regions we created by using world.get_region()
     world.num_gears = 0
     world.num_bunnies = 0
+    coins : List[tuple[Region, Dict[str, int | None]]] = []
+    use_simple_coinsanity = hasattr(world.multiworld, "generation_is_fake") or (world.multiworld.players == 1 and
+                                                                                world.options.coinsanity_percent == 100)
     for region in world.get_regions():
         if region.name == "Menu":
             continue
@@ -53,12 +57,36 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if world.options.coinbagsanity:
             locations = locations | reg["coinbags"]
         if world.options.coinsanity:
-            locations = locations | reg["coins"]
+            if use_simple_coinsanity:
+                locations = locations | reg["coins"]
+            else:
+                for coin, coin_id in reg["coins"].items():
+                    coins += [(region, {coin: coin_id})]
+
         if world.options.cheesesanity:
             locations = locations | reg["cheeses"]
 
         locations = locations | get_special_locations(world, region.name)
         region.add_locations(locations)
+
+    # Set random coins as checks, based on coinsanity % setting
+    if world.options.coinsanity and len(coins) > 0:
+        selected_coin_count : int = len(coins)
+        if world.options.coinsanity_percent < 100:
+            selected_coin_count = floor((len(coins) * world.options.coinsanity_percent) / 100)
+        max_nonfiller_coin_count : int = len(coins)
+        if world.multiworld.players > 1:
+            max_nonfiller_coin_count = floor((len(coins) *
+                                              world.settings.multiworld_coinsanity_percentage_non_filler_cap) / 100)
+        world.random.shuffle(coins)
+        for i in range(0, selected_coin_count):
+            coin_data = coins[i]
+            # coin_data[0] is region, coin_data[1] is actual coin
+            coin_data[0].add_locations(coin_data[1])
+            if i > max_nonfiller_coin_count:
+                # Exclude coins past the threshold
+                loc : Location = world.get_location(list(coin_data[1].keys())[0])
+                loc.progress_type = LocationProgressType.EXCLUDED
 
     world.get_region("Granny's Island - Hat World").add_event(
         "Event: Granny's Island Hat World - Purchase Morio Hat", "Morio Hat",

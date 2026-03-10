@@ -164,34 +164,44 @@ class Checkpointsanity(Toggle):
 
 class Safesanity(Toggle):
     """
-    Adds safes as location checks.
+    Adds freestanding safes as location checks.
     """
 
     display_name = "Safesanity"
 
 class Chestsanity(Toggle):
     """
-    Adds chests as location checks.
+    Adds freestanding chests as location checks.
     """
 
     display_name = "Chestsanity"
 
 class Coinbagsanity(Toggle):
     """
-    Adds coin bags as location checks.
+    Adds freestanding coin bags as location checks.
     """
 
     display_name = "Coinbagsanity"
 
 class Coinsanity(Toggle):
     """
-    Adds coins as location checks.
-
-    Not recommended for most multiworlds! Adds thousands of locations and filler items.
-    Requires enabling "enable_multiworld_coinsanity" in host.yaml in order to use this setting in a multiworld!
+    Adds freestanding individual coins as location checks.
     """
 
     display_name = "Coinsanity"
+
+class CoinsanityPercent(Range):
+    """
+    What percentage of individual coins will be made into location checks if Coinsanity is enabled.
+
+    In a multiworld, the following restrictions are in place:
+    If the value is higher than the "multiworld_coinsanity_percentage_cap" in the host.yaml, it will be lowered to that value.
+    If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml, any coin checks past that threshold will be forced excluded.
+    """
+    display_name = "Coinsanity Percent"
+    range_start = 1
+    range_end = 100
+    default = 10
 
 class Cheesesanity(Toggle):
     """
@@ -238,7 +248,7 @@ class ShuffleGoldenSpring(DefaultOnToggle):
     """
     Shuffles the Golden Spring into the item pool and adds a new location for defeating the Tosla HQ boss.
 
-    If goal is BomBoss, talking to Morio outside of the Tosla HQ Portal will be the location instead.
+    If goal is Bomboss, talking to Morio outside of the Tosla HQ Portal will be the location instead.
     """
     display_name = "Shuffle Golden Spring"
 
@@ -246,7 +256,7 @@ class ShuffleGoldenPropeller(DefaultOnToggle):
     """
     Shuffles the Golden Propeller into the item pool and adds a new location for talking to Morio in Ruined Observatory.
 
-    If goal is BomBoss or Tosla HQ, talking to Nick-O-Will near the top of Granny's Island will be the location instead.
+    If goal is Bomboss or Tosla HQ, talking to Nick-O-Will near the top of Granny's Island will be the location instead.
     """
     display_name = "Shuffle Golden Propeller"
 
@@ -274,6 +284,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     chestsanity: Chestsanity
     coinbagsanity: Coinbagsanity
     coinsanity: Coinsanity
+    coinsanity_percent: CoinsanityPercent
     cheesesanity: Cheesesanity
     shuffle_flip_o_will: ShuffleFlipOWill
     shuffle_glide: ShuffleGlide
@@ -286,7 +297,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup(
         "Location Options",
-        [ExtraDemoCollectables, Bunnysanity, Checkpointsanity, Safesanity, Chestsanity, Coinbagsanity, Coinsanity, Cheesesanity],
+        [ExtraDemoCollectables, Bunnysanity, Checkpointsanity, Safesanity, Chestsanity, Coinbagsanity, Coinsanity, CoinsanityPercent, Cheesesanity],
     ),
     OptionGroup(
         "World Options",

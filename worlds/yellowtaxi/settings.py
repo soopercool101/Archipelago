@@ -2,9 +2,20 @@ import settings
 from typing import Union
 
 class YellowTaxiSettings(settings.Group):
-    class EnableMultiworldCoinsanity(settings.Bool):
-        """When true, allows Coinsanity to be enabled for Multiworld games.
-        This adds thousands of extra locations, and is not recommended for most games!"""
-        description = "Yellow Taxi Goes Vroom Enable Coinsanity in Multiworld"
+    class MultiworldCoinsanityPercentageCap(int):
+        """
+        Caps the percentage of Coinsanity coins that can be checks.
 
-    enable_multiworld_coinsanity: Union[EnableMultiworldCoinsanity, bool] = False
+        Any players that set a Coinsanity percentage above this will have it lowered to this value.
+        """
+
+    multiworld_coinsanity_percentage_cap: Union[MultiworldCoinsanityPercentageCap, int] = 100
+
+    class MultiworldCoinsanityPercentageNonFillerCap(int):
+        """
+        Caps the percentage of individual coins that can be anything other than filler in Multiworld games.
+
+        100% is thousands of coins even in the smallest game, so it's recommended to keep this low for most cases.
+        """
+
+    multiworld_coinsanity_percentage_non_filler_cap: Union[MultiworldCoinsanityPercentageNonFillerCap, int] = 5
