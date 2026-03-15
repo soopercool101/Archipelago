@@ -40,13 +40,15 @@ ITEM_NAME_TO_ID = {
     "Glide": 8_0_4,
     "Golden Spring Unlock": 8_1_0,
     "Golden Propeller Unlock": 8_2_0,
-    "Gela-Toni": 9_01,
-    "Pizza King": 9_02,
-    "Doggo": 9_07,
-    "Orange Switch": 9_10,
-    "Full Game Unlock": 9_11,
-    "Morio's Password": 9_12,
-    "Mosk's Rocket": 9_16,
+    "Lab Key": 10_00,
+    "Gym Membership": 10_06,
+    "Doggo": 10_07,
+    "Mosk's Rocket": 10_16,
+    "Gela-Toni": 11_01,
+    "Pizza King": 11_02,
+    "Orange Switch": 11_10,
+    "Full Game Unlock": 11_11,
+    "Morio's Password": 11_12,
     "Psycho Taxi Cartridge": 20_01,
     "Michele": 20_02,
     # Traps
@@ -85,13 +87,15 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Glide": ItemClassification.useful,
     "Golden Spring Unlock": ItemClassification.progression | ItemClassification.useful,
     "Golden Propeller Unlock": ItemClassification.progression | ItemClassification.useful,
+    "Lab Key": ItemClassification.progression,
+    "Gym Membership": ItemClassification.progression,
+    "Doggo": ItemClassification.progression,
     "Gela-Toni": ItemClassification.progression,
     "Pizza King": ItemClassification.progression,
-    "Doggo": ItemClassification.progression,
     "Orange Switch": ItemClassification.progression,
+    "Full Game Unlock": ItemClassification.progression,
     "Morio's Password": ItemClassification.progression,
     "Mosk's Rocket": ItemClassification.progression,
-    "Full Game Unlock": ItemClassification.progression,
     "Psycho Taxi Cartridge": ItemClassification.filler,
     "Michele": ItemClassification.useful,
 }
@@ -186,8 +190,16 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_pizza_king:
         itempool.append(world.create_item("Pizza King"))
 
-    if world.options.shuffle_doggo:
+    if world.options.locked_morios_lab:
+        itempool.append(world.create_item("Lab Key"))
+
+    if (world.options.fecal_matters_unlock_condition ==
+            world.options.fecal_matters_unlock_condition.option_shuffle_doggo):
         itempool.append(world.create_item("Doggo"))
+
+    if (world.options.gym_gears_unlock_condition ==
+            world.options.gym_gears_unlock_condition.option_shuffle_gym_membership):
+        itempool.append(world.create_item("Gym Membership"))
 
     if world.options.shuffle_morios_password:
         itempool.append(world.create_item("Morio's Password"))

@@ -1,4 +1,4 @@
-from typing import Any, Dict
+from typing import Any, Dict, Set
 
 from . import locations
 
@@ -24,11 +24,16 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
     game_locations: Dict[str, int] = {}
     for reg_name in json_data.keys():
         reg = json_data[reg_name]
-        game_locations = (game_locations | reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] |
-                          reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"])
-        # Include non-JSON optional locations for the region
-        game_locations.update(locations.get_special_locations(None, reg_name))
+        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"] | locations.get_special_locations(None, reg_name))
+        game_locations.update(reg_locations)
+        for location in reg_locations:
+            if reg["level"] in all_location_groups:
+                all_location_groups[reg["level"]].add(location)
+            else:
+                all_location_groups[reg["level"]] = {location}
+
 
     return game_locations
 
+all_location_groups : Dict[str, Set[str]] = {}
 all_locations: Dict[str, int] = get_all_locations(regions_json_data)

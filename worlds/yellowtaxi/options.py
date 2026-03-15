@@ -67,9 +67,62 @@ class ExtraDemoCollectables(Toggle):
 
     display_name = "Add Extra Demo Collectables"
 
+class OpenGrannysIsland(Toggle):
+    """
+    Opens up Granny's Island so that the main part of the island is available moveless.
+    """
+    display_name = "Open Granny's Island"
+
+class LockedMoriosLab(Toggle):
+    """
+    Locks Morio's Lab and adds a "Lab Key" item into the multiworld. Adds a check for talking to Morio in Morio's Room.
+
+    If "Open Granny's Island" is on, you will start outside the locked lab, and if it's off you will start inside the locked lab.
+    """
+    display_name = "Locked Morio's Lab"
+
+class GymGearsUnlockCondition(Choice):
+    """
+    How Gym Gears is unlocked.
+
+    Open: Gym Gears entrance is always available in Granny's Island.
+    FullGame: Gym Gears entrance will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Shuffle Gym Membership: Gym Gears entrance will be unlocked after receiving "Gym Membership" from the multiworld. Adds a purchasable check from the Ultra Chad in Gym Gears.
+    Exclude: Gym Gears entrance is always closed and Gym Gears will not be accessible
+    """
+    display_name = "Gym Gears Unlock Condition"
+
+    option_open = 0
+    option_full_game = 1
+    option_shuffle_gym_membership = 2
+    option_exclude = 3
+
+    default = option_open
+    alias_vanilla = option_open
+
+class FecalMattersUnlockCondition(Choice):
+    """
+    How Fecal Matters is unlocked.
+
+    Vanilla: Talk to Doggo in Morio's Lab to unlock the house in Granny's Island.
+    Open: The house in Granny's Island is always open.
+    FullGame: The house in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Shuffle Doggo: The house in Granny's Island will be unlocked after receiving "Doggo" from the multiworld. Adds a check for talking to Doggo in Morio's Lab.
+    Exclude: The house in Granny's Island is always closed and Fecal Matters will not be accessible
+    """
+    display_name = "Fecal Matters Unlock Condition"
+
+    option_vanilla = -1
+    option_open = 0
+    option_full_game = 1
+    option_shuffle_doggo = 2
+    option_exclude = 3
+
+    default = option_vanilla
+
 class ShuffleGelaToni(DefaultOnToggle):
     """
-    Adds the unlock for the Ice Cream Truck Entrance in Granny's Island into the item pool and adds a location for defeating BomBoss in Bombeach.
+    Adds the unlock for the Ice Cream Truck Entrance in Granny's Island into the item pool and adds a location for defeating Bomboss in Bombeach.
     """
 
     display_name = "Shuffle Gela-Toni"
@@ -78,25 +131,16 @@ class ShufflePizzaKing(Toggle):
     """
     Adds the unlock for the Pizza Oven Entrance in Granny's Island into the item pool and adds a location for completing Pizza King's quest in Pizza Time.
 
-    If BomBoss is the goal, the location check for Pizza King will instead be obtained by talking to him in Granny's Island.
+    If Bomboss is the goal, the location check for Pizza King will instead be obtained by talking to him in Granny's Island.
     """
 
     display_name = "Shuffle Pizza King"
-
-class ShuffleDoggo(DefaultOnToggle):
-    """
-    Adds the unlock for Fecal Matters' Entrance in Granny's Island into the item pool and adds a location for talking to Doggo in Morio's Lab.
-
-    Depending on settings, Doggo may instead be found in Granny's Island, if you would not be able to reach him in Morio's Lab
-    """
-
-    display_name = "Shuffle Doggo"
 
 class ShuffleOrangeSwitch(DefaultOnToggle):
     """
     Adds the Orange Switch into the item pool and adds a location for pressing the Orange Switch in Crash Test Industries.
 
-    If goal is BomBoss or Tosla HQ, a PICI in Morio's Lab will be the location instead.
+    If goal is Bomboss or Tosla HQ, a PICI in Morio's Lab will be the location instead.
     """
 
     display_name = "Shuffle Orange Switch"
@@ -105,7 +149,7 @@ class ShuffleMoriosPassword(Toggle):
     """
     Adds Morio's Password into the item pool and adds a location for obtaining the key in Morio's Mind.
 
-    If goal is BomBoss or Tosla HQ, talking to Morio in the Dream Machine in Morio's Lab will be the location instead.
+    If goal is Bomboss or Tosla HQ, talking to Morio in the Dream Machine in Morio's Lab will be the location instead.
     """
 
     display_name = "Shuffle Morio's Password"
@@ -114,7 +158,7 @@ class ShuffleRocket(Toggle):
     """
     Adds the unlock for Mosk's Rocket to appear in Granny's Island into the item pool and adds a location for defeating the final boss on the Moon.
 
-    If goal is BomBoss or Tosla HQ, talking to Alien Mosk in Granny's Island will be the location instead.
+    If goal is Bomboss or Tosla HQ, talking to Alien Mosk in Granny's Island will be the location instead.
     """
 
     display_name = "Shuffle Mosk's Rocket"
@@ -134,7 +178,7 @@ class ShufflePsychoTaxi(Toggle):
     """
     Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
 
-    If goal is BomBoss, talking to the Psycho Taxi Arcade Machine will be the location instead.
+    If goal is Bomboss, talking to the Psycho Taxi Arcade Machine will be the location instead.
     """
 
     display_name = "Shuffle Psycho Taxi"
@@ -143,7 +187,7 @@ class ShuffleRat(Toggle):
     """
     Adds Michele the Rat into the item pool and adds a location for talking to Michele in Pizza Time.
 
-    If goal is BomBoss, Michele will instead be found somewhere in Granny's Island, depending on settings.
+    If goal is Bomboss, Michele will instead be found in Granny's Island.
     """
 
     display_name = "Shuffle Michele the Rat"
@@ -269,9 +313,12 @@ class YellowTaxiOptions(PerGameCommonOptions):
     exclude_goal_portal_checks : ExcludeGoalPortalChecks
     expert_level: ExpertLevel
     death_link: DeathLink
+    open_grannys_island: OpenGrannysIsland
+    locked_morios_lab: LockedMoriosLab
+    gym_gears_unlock_condition: GymGearsUnlockCondition
+    fecal_matters_unlock_condition: FecalMattersUnlockCondition
     shuffle_gela_toni: ShuffleGelaToni
     shuffle_pizza_king: ShufflePizzaKing
-    shuffle_doggo: ShuffleDoggo
     shuffle_orange_switch: ShuffleOrangeSwitch
     shuffle_morios_password: ShuffleMoriosPassword
     shuffle_rocket: ShuffleRocket
@@ -297,15 +344,44 @@ class YellowTaxiOptions(PerGameCommonOptions):
 option_groups = [
     OptionGroup(
         "Location Options",
-        [ExtraDemoCollectables, Bunnysanity, Checkpointsanity, Safesanity, Chestsanity, Coinbagsanity, Coinsanity, CoinsanityPercent, Cheesesanity],
+        [
+            ExtraDemoCollectables,
+            Bunnysanity,
+            Checkpointsanity,
+            Safesanity,
+            Chestsanity,
+            Coinbagsanity,
+            Coinsanity,
+            CoinsanityPercent,
+            Cheesesanity
+        ],
     ),
     OptionGroup(
         "World Options",
-        [ShuffleGelaToni, ShufflePizzaKing, ShuffleDoggo, ShuffleOrangeSwitch, ShuffleMoriosPassword, ShuffleRocket, ShuffleFullGame, ShufflePsychoTaxi, ShuffleRat],
+        [
+            OpenGrannysIsland,
+            LockedMoriosLab,
+            GymGearsUnlockCondition,
+            FecalMattersUnlockCondition,
+            ShuffleGelaToni,
+            ShufflePizzaKing,
+            ShuffleOrangeSwitch,
+            ShuffleMoriosPassword,
+            ShuffleRocket,
+            ShuffleFullGame,
+            ShufflePsychoTaxi,
+            ShuffleRat
+        ],
     ),
     OptionGroup(
         "Ability Randomizer Options",
-        [ShuffleFlipOWill, ShuffleGlide, EarlyMove, ShuffleGoldenSpring, ShuffleGoldenPropeller],
+        [
+            ShuffleFlipOWill,
+            ShuffleGlide,
+            EarlyMove,
+            ShuffleGoldenSpring,
+            ShuffleGoldenPropeller
+        ],
     ),
 ]
 

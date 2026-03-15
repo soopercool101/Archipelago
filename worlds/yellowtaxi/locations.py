@@ -115,8 +115,8 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations["Granny's Island - Talk to Gela-Toni"] = 11_00001
             if world is None or (world.options.shuffle_pizza_king and world.early_pizza_king):
                 locations["Granny's Island - Talk to Pizza King"] = 11_00002
-            if world is None or (world.options.shuffle_doggo and world.early_doggo):
-                locations["Granny's Island - Talk to Doggo"] = 10_10007
+            #if world is None or (world.options.shuffle_doggo and world.early_doggo):
+            #    locations["Granny's Island - Talk to Doggo"] = 10_10007
             if world is None or (world.options.shuffle_rat and world.early_rat):
                 locations["Granny's Island - Talk to Michele Near Beach"] = 21_99999
             if world is None or (world.options.shuffle_rocket and world.early_rocket):
@@ -172,6 +172,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                 if world is not None:
                     world.num_bunnies += 1
+        case "Morio's Lab - Inside Morio's Room":
+            if world is None or world.options.locked_morios_lab:
+                locations = {
+                    "Morio's Lab - Talk to Morio in Morio's Room": 10_00000,
+                }
         case "Morio's Lab - Psycho Taxi Arcade Machine":
             if world is None or (world.options.shuffle_psycho_taxi and world.early_psycho_taxi):
                 locations = {
@@ -207,14 +212,22 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             if world is None or world.options.shuffle_golden_spring and world.early_golden_spring:
                 locations["Morio's Lab - Talk to Morio Near Tosla Offices Portal"] = 11_00005
         case "Morio's Lab - Fourth Floor":
-            if world is None or (world.options.shuffle_doggo and not world.early_doggo):
+            if world is None or (world.options.fecal_matters_unlock_condition ==
+                                 world.options.fecal_matters_unlock_condition.option_shuffle_doggo):
                 locations = {
                     "Morio's Lab - Talk to Doggo": 10_00007
                 }
-            elif world is not None and not world.options.shuffle_doggo: # Doggo item still logically needed
+            elif (world.options.fecal_matters_unlock_condition ==
+                  world.options.fecal_matters_unlock_condition.option_vanilla): # Doggo item still logically needed
                 region = world.get_region(region_name)
                 region.add_event(f"Event: Morio's Lab - Talk to Doggo", f"Doggo",
                                  location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
+        case "Morio's Lab - Fifth Floor Morio's Mind Area":
+            # Backflip tutorial gets moved earlier
+            if world is not None and world.options.shuffle_flip_o_will and world.early_backflip:
+                locations = {
+                    "Morio's Lab - PICI Backflip Tutorial": 8_00004,
+                }
         case "Morio's Lab - Dream Machine":
             if world is None or (world.options.shuffle_morios_password and world.early_morios_password):
                 locations = {
@@ -246,9 +259,10 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                                  location_type=YellowTaxiLocation,
                                  item_type=items.YellowTaxiItem)
         case "Gym Gears - Starting Area":
-            if world is None or (world.options.shuffle_flip_o_will and world.early_backflip):
+            if world is None or (world.options.gym_gears_unlock_condition ==
+                                 world.options.gym_gears_unlock_condition.option_shuffle_gym_membership):
                 locations = {
-                    "Gym Gears - PICI Backflip Tutorial": 6_08_00004,
+                    "Gym Gears - Purchase Membership From Ultra Chad": 6_10_00006,
                 }
         case "Arcade Panik - Starting Area":
             if world is None or (world.options.shuffle_psycho_taxi and not world.early_psycho_taxi):

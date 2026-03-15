@@ -26,6 +26,7 @@ class YellowTaxiWorld(World):
     settings: ClassVar[taxi_settings.YellowTaxiSettings]
 
     location_name_to_id = data_loader.all_locations
+    location_name_groups = data_loader.all_location_groups
     item_name_to_id = items.ITEM_NAME_TO_ID
 
     # Keeping default Menu region, just in case I want random starting location down the line
@@ -37,6 +38,7 @@ class YellowTaxiWorld(World):
         self.num_bunnies : int = 0
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
+        self.lab_start : bool = False
         self.early_gela_toni : bool = False
         self.early_pizza_king : bool = False
         self.early_rat : bool = False
@@ -75,7 +77,6 @@ class YellowTaxiWorld(World):
             "Hub",
             "Morio's Home",
             "Bombeach",
-            "Gym Gears",
         ]
 
         # Exclude unreachable hub areas past the goal
@@ -110,14 +111,6 @@ class YellowTaxiWorld(World):
                                           "Lab Memories - High Ground"]
                 if self.options.expert_level < 2:
                     self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
-            # If all main pathways to upper lab area aren't in the game, remove upper lab
-            if (self.options.expert_level == 0 and not self.options.shuffle_golden_spring
-                    and not self.options.shuffle_morios_password and not self.options.shuffle_orange_switch):
-                self.excluded_regions += ["Morio's Lab - Fourth Floor",
-                                          "Morio's Lab - Ledge Above Maurizio's City Portal",
-                                          "Morio's Lab - Fifth Floor Crash Test Area",
-                                          "Morio's Lab - Fifth Floor Morio's Mind Area",
-                                          "Morio's Lab - Dream Machine"]
             # Final floor is hard locked behind Morio's Password
             if not self.options.shuffle_morios_password:
                 self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
@@ -138,19 +131,24 @@ class YellowTaxiWorld(World):
                         "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
                     ]
 
-        # Fecal Matters is included if Doggo is shuffled or logically reachable
-        if self.options.shuffle_doggo or not "Morio's Lab - Fourth Floor" in self.excluded_regions:
+        # Add Gym Gears if included via settings
+        if self.options.gym_gears_unlock_condition != self.options.gym_gears_unlock_condition.option_exclude:
+            self.included_levels += ["Gym Gears"]
+        # Add Fecal Matters if included via settings
+        if self.options.fecal_matters_unlock_condition != self.options.fecal_matters_unlock_condition.option_exclude:
             self.included_levels += ["Fecal Matters"]
+        # Add Flushed Away if included via settings and logically accessible
+        #if (self.options.fecal_matters_unlock_condition != self.options.fecal_matters_unlock_condition.option_exclude
+        #        and not "Granny's Island - Sewer Island" in self.excluded_regions):
+        #    self.included_levels += ["Flushed Away"]
 
         # Make sure early items are set as needed
-        if self.options.exclude_goal_portal_checks and self.options.goal < 1:
+        if self.options.shuffle_gela_toni and self.options.exclude_goal_portal_checks and self.options.goal < 1:
             self.early_gela_toni = True
         if not "Pizza Time" in self.included_levels:
             if self.options.shuffle_pizza_king:
                 self.early_pizza_king = True
             self.early_rat = True
-        if self.options.shuffle_doggo and "Morio's Lab - Fourth Floor" in self.excluded_regions:
-            self.early_doggo = True
         if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
             self.early_backflip = True
         if self.options.shuffle_psycho_taxi and not "Arcade Panik" in self.included_levels:
@@ -187,15 +185,20 @@ class YellowTaxiWorld(World):
         if self.options.coinsanity_percent == 0:
             self.options.coinsanity.value = False
 
-        if not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and self.options.goal_portal_gear_percentage > 75:
-            self.options.goal_portal_gear_percentage.value = 75
+        goal_portal_threshold = (50 + 5 * (len(self.included_levels) - 1))
+        if (not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and
+                self.options.goal_portal_gear_percentage > goal_portal_threshold):
+            self.options.goal_portal_gear_percentage.value = goal_portal_threshold
             logging.warning(
                 f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
-                f"Goal Portal Gear percentage has been capped to {75}%.")
+                f"Goal Portal Gear percentage has been capped to {goal_portal_threshold}%.")
+
+        if not self.options.open_grannys_island and self.options.locked_morios_lab:
+            self.lab_start = True
 
         if self.options.shuffle_flip_o_will and self.options.early_move:
-            self.random.choice(["Progressive Jump", "Progressive Boost"])
-            self.multiworld.local_early_items[self.player]["Progressive Jump"] = 1
+            move = self.random.choice(["Progressive Jump", "Progressive Boost"])
+            self.multiworld.local_early_items[self.player][move] = 1
 
 
     def create_regions(self) -> None:
@@ -220,15 +223,18 @@ class YellowTaxiWorld(World):
         dict = self.options.as_dict(
             "death_link",
             "goal",
+            "open_grannys_island",
+            "locked_morios_lab",
             "shuffle_gela_toni",
             "shuffle_pizza_king",
-            "shuffle_doggo",
             "shuffle_orange_switch",
             "shuffle_morios_password",
             "shuffle_rocket",
             "shuffle_full_game",
             "shuffle_psycho_taxi",
             "shuffle_rat",
+            "gym_gears_unlock_condition",
+            "fecal_matters_unlock_condition",
             "bunnysanity",
             "checkpointsanity",
             "safesanity",
@@ -245,6 +251,7 @@ class YellowTaxiWorld(World):
 
         dict["major_version"] = self.world_version.major
         dict["minor_version"] = self.world_version.minor
+        dict["build_version"] = self.world_version.build
 
         # Set counts that client needs to know
         dict["goal_portal_cost"] = self.final_portal_cost
@@ -255,7 +262,7 @@ class YellowTaxiWorld(World):
         dict["early_gela_toni"] = self.early_gela_toni
         dict["early_pizza_king"] = self.early_pizza_king
         dict["early_rat"] = self.early_rat
-        dict["early_doggo"] = self.early_doggo
+        #dict["early_doggo"] = self.early_doggo
         dict["early_backflip"] = self.early_backflip
         dict["early_psycho_taxi"] = self.early_psycho_taxi
         dict["early_orange_switch"] = self.early_orange_switch
@@ -264,12 +271,11 @@ class YellowTaxiWorld(World):
         dict["early_morios_password"] = self.early_morios_password
         dict["early_rocket"] = self.early_rocket
 
-        # Set excluded non-linear levels, excluded bunnies
-        dict["exclude_poophouse"] = not "Fecal Matters" in self.included_levels
-        dict["exclude_sewers"] = not "Flushed Away" in self.included_levels
-        dict["exclude_mind"] = not "Morio's Mind" in self.included_levels
-        dict["exclude_observatory"] = not "Ruined Observatory" in self.included_levels
+        # Set excluded bunnies
         dict["exclude_top_bunny"] = self.exclude_top_bunny
         dict["exclude_spike_bunny"] = self.exclude_spike_bunny
+
+        # Start location
+        dict["lab_start"] = self.lab_start
 
         return dict

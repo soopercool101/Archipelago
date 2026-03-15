@@ -338,7 +338,18 @@ class RuleFactory:
         if token == "PizzaKing":
             return "Pizza King", 1
         if token == "Doggo":
-            return "Doggo", 1
+            match self.world.options.fecal_matters_unlock_condition:
+                case self.world.options.fecal_matters_unlock_condition.option_open:
+                    return True
+                case self.world.options.fecal_matters_unlock_condition.option_full_game:
+                    if self.world.options.shuffle_full_game == 0:
+                        return True
+                    return "Full Game Unlock", 1
+                case self.world.options.fecal_matters_unlock_condition.option_vanilla |\
+                     self.world.options.fecal_matters_unlock_condition.option_shuffle_doggo:
+                    return "Doggo", 1
+                case self.world.options.fecal_matters_unlock_condition.option_exclude:
+                    return False
         if token == "Password":
             return "Morio's Password", 1
         if token == "Rocket":
@@ -386,10 +397,34 @@ class RuleFactory:
                 return "Gear", self.world.final_portal_cost
 
             return "Gear", 130
+        if token == "NPR":
+            # No Portal randomization. Placeholder rule for now.
+            return True
+        if token == "NSAR":
+            # No Subarea randomization. Placeholder rule for now.
+            return True
         if token == "NHPR":
             # No Hub Portal randomization. Placeholder rule for now.
             # Hub portals launch you upwards when declining entry, making them logical access rules in some cases.
             return True
+        if token == "OGI":
+            return self.world.options.open_grannys_island.value == 1
+        if token == "LabKey":
+            if self.world.options.locked_morios_lab:
+                return "Lab Key", 1
+            return True
+        if token == "GymKey":
+            match self.world.options.gym_gears_unlock_condition:
+                case self.world.options.gym_gears_unlock_condition.option_open:
+                    return True
+                case self.world.options.gym_gears_unlock_condition.option_full_game:
+                    if self.world.options.shuffle_full_game == 0:
+                        return True
+                    return "Full Game Unlock", 1
+                case self.world.options.gym_gears_unlock_condition.option_shuffle_gym_membership:
+                    return "Gym Membership", 1
+                case self.world.options.gym_gears_unlock_condition.option_exclude:
+                    return False
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":

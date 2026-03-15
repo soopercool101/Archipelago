@@ -34,8 +34,11 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
 def connect_regions(world: YellowTaxiWorld) -> None:
     for region in world.get_regions():
         if region.name == "Menu":
-            # Connect starting area. TODO: Change if ever adding random starting area
-            region.connect(world.get_region("Granny's Island - Starting Area"))
+            # Connect starting area
+            if world.lab_start:
+                region.connect(world.get_region("Morio's Lab - Ground Floor"))
+            else:
+                region.connect(world.get_region("Granny's Island - Starting Area"))
             continue
         reg = regions_json_data[region.name]
 
