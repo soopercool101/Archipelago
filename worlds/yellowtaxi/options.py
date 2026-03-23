@@ -81,6 +81,12 @@ class LockedMoriosLab(Toggle):
     """
     display_name = "Locked Morio's Lab"
 
+class HatWorldMembership(Toggle):
+    """
+    Adds a "Hat World Membership" item needed to purchase any hats from Hat World
+    """
+    display_name = "Locked Morio's Lab"
+
 class GymGearsUnlockCondition(Choice):
     """
     How Gym Gears is unlocked.
@@ -198,6 +204,19 @@ class Bunnysanity(Toggle):
     """
 
     display_name = "Bunnysanity"
+
+class Hatsanity(Choice):
+    """
+    Shuffles Hats into the pool.
+
+    Hatsanity makes one check per purchasable hat.
+    Shopsanity makes any individual place a hat can be purchased into a check, including duplicates and "no hat" locations.
+    """
+    display_name = "Hatsanity"
+
+    option_off = 0
+    option_hatsanity = 1
+    option_shopsanity = 2
 
 class Checkpointsanity(Toggle):
     """
@@ -326,6 +345,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_psycho_taxi: ShufflePsychoTaxi
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
+    hatsanity: Hatsanity
     checkpointsanity: Checkpointsanity
     safesanity: Safesanity
     chestsanity: Chestsanity
@@ -347,6 +367,7 @@ option_groups = [
         [
             ExtraDemoCollectables,
             Bunnysanity,
+            Hatsanity,
             Checkpointsanity,
             Safesanity,
             Chestsanity,

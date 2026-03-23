@@ -9,13 +9,16 @@ import pkgutil
 def load_json_data(data_name: str) -> Dict[str, Any]:
     return orjson.loads(pkgutil.get_data(__name__, "json/" + data_name).decode("utf-8-sig"))
 
-regions_json_data : Dict[str, Any] = (load_json_data("hub.json") |
-                                      load_json_data("morioshome.json") |
-                                      load_json_data("bombeach.json") |
-                                      # load_json_data("arcadepanik.json") |
-                                      load_json_data("gymgears.json") |
-                                      load_json_data("fecalmatters.json") |
-                                      load_json_data("rocket.json")
+regions_json_data : Dict[str, Any] = (load_json_data("L00.hub.json") |
+                                      load_json_data("L01.bombeach.json") |
+                                      load_json_data("L03.morioshome.json") |
+                                      # load_json_data("L04.arcadepanik.json") |
+                                      load_json_data("L06.gymgears.json") |
+                                      load_json_data("L07.fecalmatters.json") |
+                                      load_json_data("L08.flushedaway.json") |
+                                      load_json_data("L16.rocket.json") |
+                                      load_json_data("L17.babysteps.json") |
+                                      load_json_data("LXX.special.json")
                                       )
 
 # Load static locations list
@@ -24,7 +27,7 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
     game_locations: Dict[str, int] = {}
     for reg_name in json_data.keys():
         reg = json_data[reg_name]
-        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"] | locations.get_special_locations(None, reg_name))
+        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"] | locations.get_hat_locations(None, reg["sublevel"], reg["hats"]) | locations.get_special_locations(None, reg_name))
         game_locations.update(reg_locations)
         for location in reg_locations:
             if reg["level"] in all_location_groups:

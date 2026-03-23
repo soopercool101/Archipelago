@@ -25,6 +25,7 @@
     "cheeses": {
       "Mosk's Rocket - Cheese Near Welcoming Climbs Portal": 162100004
     },
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "J1/B1"
     },
@@ -51,6 +52,7 @@
     "cheeses": {
       "Mosk's Rocket - Cheese Near Buttons Smashing Portal": 162100003
     },
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Starting Area": "",
       "Mosk's Rocket - Tosla's Offices Area": "J1 | X2+B2"
@@ -79,6 +81,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
       "Mosk's Rocket - Gym Gears Area": "J1"
@@ -105,6 +108,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
       "Mosk's Rocket - Fecal Matters/Flushed Away Area": "B1/J2"
@@ -135,6 +139,7 @@
     "cheeses": {
       "Mosk's Rocket - Cheese Under Homing Beacons": 162100001
     },
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Gym Gears Area": "",
       "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2"
@@ -160,6 +165,7 @@
     "cheeses": {
       "Mosk's Rocket - Cheese Near Conveyor Belts Portal": 162100002
     },
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Fecal Matters/Flushed Away Area": "",
       "Mosk's Rocket - Coins Leading to Final Floor": "J1 | X1+B2",
@@ -187,6 +193,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": ""
     },
@@ -208,6 +215,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Coins Leading to Final Floor": "",
       "Mosk's Rocket - Final Floor Cheese": "B1/J2 | X1+J1"
@@ -232,6 +240,7 @@
     "cheeses": {
       "Mosk's Rocket - Cheese Near Top of Rocket": 162100000
     },
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Tosla HQ Area": "",
       "Mosk's Rocket - Moon Area": "B2"
@@ -252,6 +261,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Mosk's Rocket - Final Floor Cheese": ""
     },
@@ -273,6 +283,7 @@
       "Lab Memories - Checkpoint": 160901925
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Lab Memories - First Step": "J1+GS"
     },
@@ -307,6 +318,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Lab Memories - High Ground": "J2"
     },
@@ -361,6 +373,9 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {
+      "Robo Taxi Skin": 160700049
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -396,6 +411,7 @@
       "Welcoming Climbs - Checkpoint": 160901600
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Welcoming Climbs - First Gear Area": "B2 & X1/J1"
     },
@@ -422,6 +438,9 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {
+      "Dentures Hat": 160700039
+    },
     "connections": {
       "Welcoming Climbs - Second Gear Area": "B2+J1"
     },
@@ -453,6 +472,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -472,6 +492,7 @@
       "Bomb-it - Checkpoint": 160901270
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Bomb-it - Outer Area": "J1/B1"
     },
@@ -508,6 +529,9 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {
+      "Mushroom Cloud Hat": 160700040
+    },
     "connections": {},
     "subwarps": {
       "Bomb-it - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
@@ -531,6 +555,7 @@
       "Podium - Checkpoint": 160900145
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Podium - High Ground": "X2+J1 | J2"
     },
@@ -569,6 +594,9 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {
+      "Gym Bros Hat": 160700041
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -588,9 +616,11 @@
       "Costipation - Checkpoint": 160901910
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Costipation - Roadway Gear Area": "J1/B1",
-      "Costipation - Island Gear Area": "B2"
+      "Costipation - Island Gear Area": "B2",
+      "Costipation - Hat Area": "B1"
     },
     "subwarps": {
       "Costipation - Mosk's Rocket Portal": ["Mosk's Rocket - Fecal Matters/Flushed Away Area", ""]
@@ -626,6 +656,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -665,6 +696,27 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Costipation - Hat Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Costipation",
+    "kaizolevel": "Fecal Matters",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Toilet Paper Hat": 160700046
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -686,8 +738,10 @@
       "Smelly Slimes - Checkpoint by Entrance": 160901448
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Smelly Slimes - Sidebars by Entrance": "X2/J1/B1",
+      "Smelly Slimes - Hat Area": "J1 | X2+B2",
       "Smelly Slimes - Exit Area": "B1+J1"
     },
     "subwarps": {
@@ -734,6 +788,27 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Smelly Slimes - Hat Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Smelly Slimes",
+    "kaizolevel": "Flushed Away",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Paper Boat Hat": 160700048
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -769,6 +844,7 @@
       "Smelly Slimes - Checkpoint by Exit": 160900998
     },
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},

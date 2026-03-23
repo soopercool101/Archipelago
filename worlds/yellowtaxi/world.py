@@ -1,6 +1,6 @@
 import logging
 from collections.abc import Mapping
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Set
 
 from BaseClasses import MultiWorld
 from Utils import visualize_regions, Version
@@ -36,6 +36,8 @@ class YellowTaxiWorld(World):
         super().__init__(multiworld, player)
         self.num_gears : int = 0
         self.num_bunnies : int = 0
+        self.included_hats: Set[str] = set()
+        self.hat_location_count : int = 0
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
         self.lab_start : bool = False
@@ -60,6 +62,8 @@ class YellowTaxiWorld(World):
 
         self.num_gears = 0
         self.num_bunnies = 0
+        self.included_hats = set()
+        self.hat_location_count = 0
         self.excluded_regions = []
         self.included_levels = []
 
@@ -196,7 +200,7 @@ class YellowTaxiWorld(World):
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True
 
-        if self.options.shuffle_flip_o_will and self.options.early_move:
+        if self.options.shuffle_flip_o_will != 0 and self.options.early_move:
             move = self.random.choice(["Progressive Jump", "Progressive Boost"])
             self.multiworld.local_early_items[self.player][move] = 1
 
@@ -236,6 +240,7 @@ class YellowTaxiWorld(World):
             "gym_gears_unlock_condition",
             "fecal_matters_unlock_condition",
             "bunnysanity",
+            "hatsanity",
             "checkpointsanity",
             "safesanity",
             "chestsanity",

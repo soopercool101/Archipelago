@@ -413,6 +413,8 @@ class RuleFactory:
             if self.world.options.locked_morios_lab:
                 return "Lab Key", 1
             return True
+        if token == "WardrobeKey":
+            return True
         if token == "GymKey":
             match self.world.options.gym_gears_unlock_condition:
                 case self.world.options.gym_gears_unlock_condition.option_open:

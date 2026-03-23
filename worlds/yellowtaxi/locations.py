@@ -62,6 +62,8 @@ def create_locations(world: YellowTaxiWorld) -> None:
             else:
                 for coin, coin_id in reg["coins"].items():
                     coins += [(region, {coin: coin_id})]
+        if world.options.hatsanity != 0:
+            locations = locations | get_hat_locations(world, reg["sublevel"], reg["hats"])
 
         if world.options.cheesesanity:
             locations = locations | reg["cheeses"]
@@ -88,10 +90,12 @@ def create_locations(world: YellowTaxiWorld) -> None:
                 loc : Location = world.get_location(list(coin_data[1].keys())[0])
                 loc.progress_type = LocationProgressType.EXCLUDED
 
-    world.get_region("Granny's Island - Hat World").add_event(
-        "Event: Granny's Island Hat World - Purchase Morio Hat", "Morio Hat",
-        location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-    )
+    if world.options.hatsanity == 0:
+        world.get_region("Granny's Island Hat World").add_event(
+            "Event: Granny's Island Hat World - Purchase Morio Hat", "Morio Hat",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
+
     if world.early_rat and not world.options.shuffle_rat:
         world.get_region("Granny's Island - Main Area").add_event(
             "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
@@ -104,6 +108,39 @@ def create_locations(world: YellowTaxiWorld) -> None:
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
 
+def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, hat_dict: dict[str, int]) -> Dict[str, int | None]:
+    # No hats, return early
+    if len(hat_dict) == 0:
+        return {}
+
+    locations : dict[str, int | None] = {}
+
+    if world is None or world.options.hatsanity == 1:
+        for (hat, hat_id) in hat_dict.items():
+            # "No Hat" is not a hatsanity check
+            if hat == "No Hat":
+                continue
+            # Add hat to the "included hats" list for item generation
+            if world is not None:
+                world.included_hats.add(hat)
+                world.hat_location_count += 1
+            # Hats purchasable in multiple locations (Handled in special locations)
+            if hat == "Propeller Cap" or hat == "Top Hat":
+                continue
+
+            true_id = (hat_id % 1_00_00000) + 99_00_00000
+            locations[f"Purchase {hat}"] = true_id
+
+    if world is None or world.options.hatsanity == 2:
+        for (hat, hat_id) in hat_dict.items():
+            # Add hat to the "included hats" list for item generation
+            if world is not None and hat != "No Hat":
+                world.included_hats.add(hat)
+                world.hat_location_count += 1
+
+            locations[f"{subarea_name} - Purchase {hat}"] = hat_id
+
+    return locations
 
 def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str) -> Dict[str, int | None]:
     # Get locations that are not in the json due to not fitting the main categories/being settings exclusive.
@@ -269,5 +306,21 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
                 }
+        case "Any Hat World":
+            if world is None or world.options.hatsanity == 1:
+                locations = {
+                    "Purchase Top Hat": 99_07_00002,
+                }
+                if world is not None:
+                    world.included_hats.add("Top Hat")
+                    world.hat_location_count += 1
+        case "Propeller Cap Access":
+            if world is None or world.options.hatsanity == 1:
+                locations = {
+                    "Purchase Propeller Cap": 99_07_00001,
+                }
+                if world is not None:
+                    world.included_hats.add("Propeller Cap")
+                    world.hat_location_count += 1
 
     return locations

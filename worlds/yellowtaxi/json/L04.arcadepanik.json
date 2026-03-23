@@ -10,6 +10,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Arcade Plaza - Outskirts": "J1"
     },
@@ -115,6 +116,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -131,7 +133,10 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
-    "connections": {},
+    "hats": {},
+    "connections": {
+      "Any Hat World": ""
+    },
     "subwarps": {
       "Arcade Panik Hat World - Exit": ["Arcade Plaza - Starting Area", ""]
     },
@@ -271,6 +276,7 @@
       "Arcade Panik - Checkpoint by Go Karts": 40900415
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Arcade Panik - Expert 1 or Jump": "X1/J1"
     },
@@ -296,6 +302,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},

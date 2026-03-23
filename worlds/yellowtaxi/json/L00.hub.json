@@ -17,6 +17,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Pipe Area": "J1/B1",
       "Granny's Island - Moat": "OGI"
@@ -66,6 +67,7 @@
     "cheeses": {
       "Granny's Island - Cheese in Moat": 2100004
     },
+    "hats": {},
     "connections": {
       "Granny's Island - Starting Area": "",
       "Granny's Island - Pipe Area": "J1/B1",
@@ -294,6 +296,7 @@
       "Granny's Island - Cheese Behind City": 2100000,
       "Granny's Island - Cheese on Pier": 2100003
     },
+    "hats": {},
     "connections": {
       "Granny's Island - Moat": "",
       "Granny's Island - Broken Pier Shallow": "X1+B1 | J1 | GP",
@@ -319,7 +322,7 @@
       "Granny's Island - Law Firm Roof Entrance": ["Law Firm - Entrance", ""],
       "Granny's Island - Pizza Oven Entrance": ["Pizza Oven - Entrance", "PizzaKing"],
       "Granny's Island - Ice Cream Truck Entrance": ["Ice Cream Truck - Lower Path", "GelaToni"],
-      "Granny's Island - Hat World Entrance": ["Granny's Island - Hat World", ""]
+      "Granny's Island - Hat World Entrance": ["Granny's Island Hat World", ""]
     },
     "warps": {
       "Granny's Island - Gym Gears Entrance": ["Gym Gears - Starting Area", "PortalGymGears+GymKey"],
@@ -355,6 +358,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Main Area": ""
     },
@@ -385,6 +389,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -406,6 +411,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -429,6 +435,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -459,6 +466,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -543,6 +551,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Crash Again Island": "OS",
       "Granny's Island - Main Area": "",
@@ -614,6 +623,7 @@
     "cheeses": {
       "Granny's Island - Cheese on Mountain": 2100001
     },
+    "hats": {},
     "connections": {
       "Granny's Island - Lab Hill Expert1 High Ground": ""
     },
@@ -648,6 +658,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -775,6 +786,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Lab Hill High Ground": ""
     },
@@ -806,6 +818,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - First Island Towards Sewer": "B1",
       "Granny's Island - Tree on Second Island Towards Sewer": "B1+GP"
@@ -832,6 +845,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -855,6 +869,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -879,6 +894,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Main Area": "J1/B1",
       "Granny's Island - Second Island Towards Sewer": "OS+GP"
@@ -905,6 +921,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - First Island Towards Sewer": "OS+J1 | B1",
       "Granny's Island - Tree on Second Island Towards Sewer": "J1",
@@ -932,6 +949,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Second Island Towards Sewer": ""
     },
@@ -963,12 +981,15 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Second Island Towards Sewer": "OS",
       "Granny's Island - Sewer Island Upper": "X1/J1/B1"
     },
     "subwarps": {},
-    "warps": {},
+    "warps": {
+      "Granny's Island - Flushed Away Entrance": ["Flushed Away - Starting Area", "PortalFlushedAway+SewerKey"]
+    },
     "specialrules": {}
   },
   "Granny's Island - Sewer Island Upper": {
@@ -982,6 +1003,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1011,6 +1033,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1045,6 +1068,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1063,6 +1087,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Granny's Island - Crash Again Roof": "J2",
       "Granny's Island - Lab Hill High Ground": "OS"
@@ -1084,6 +1109,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1100,6 +1126,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Law Firm - Ledges": "J1"
     },
@@ -1150,6 +1177,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1168,6 +1196,7 @@
       "Crash Again - Checkpoint": 900613
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Crash Again - End": "X1/B1 & X2/SP"
     },
@@ -1190,6 +1219,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1253,6 +1283,7 @@
       "Ice Cream Truck - Checkpoint": 901440
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Ice Cream Truck - Upper Path": "B1/J2"
     },
@@ -1300,6 +1331,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1318,6 +1350,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Pizza Oven - Pillar": "X1/J1 & B2"
     },
@@ -1352,14 +1385,15 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Granny's Island - Hat World": {
+  "Granny's Island Hat World": {
     "level": "Hub",
-    "sublevel": "Granny's Island",
+    "sublevel": "Granny's Island Hat World",
     "gears": {},
     "bunnies": {},
     "safes": {},
@@ -1368,7 +1402,16 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
-    "connections": {},
+    "hats": {
+      "Top Hat": 700002,
+      "Propeller Cap": 700001,
+      "No Hat": 700000,
+      "Morio Hat": 700003,
+      "Taxi Stack Hat": 700004
+    },
+    "connections": {
+      "Any Hat World": ""
+    },
     "subwarps": {
       "Granny's Island Hat World - Exit": ["Granny's Island - Main Area", ""]
     },
@@ -1409,6 +1452,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
       "Morio's Lab - Ground Floor Wrenches": "B1/J2",
@@ -1418,7 +1462,7 @@
     "subwarps": {
       "Morio's Lab - Front Door": ["Granny's Island - Starting Area", "LabKey"],
       "Morio's Lab - Back Door": ["Granny's Island - Moat", "LabKey"],
-      "Morio's Lab - Wardrobe Entrance": ["Morio's Wardrobe", ""]
+      "Morio's Lab - Wardrobe Entrance": ["Morio's Wardrobe", "WardrobeKey"]
     },
     "warps": {
       "Morio's Lab - Morio's Home Portal": ["Morio's Island - Starting Area", "PortalMorioHome"],
@@ -1443,6 +1487,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {
       "Morio's Wardrobe - Exit": ["Morio's Lab - Ground Floor", ""]
@@ -1472,6 +1517,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Crash Test Area": "J1+OS+FGU",
       "Morio's Lab - Ground Floor Bolts": "J1",
@@ -1495,6 +1541,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Orange Blocks": "X1+B1",
       "Morio's Lab - Ground Floor Bolts": "X1+B1"
@@ -1520,6 +1567,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Lowest Bolt": "",
       "Morio's Lab - Bunny Ledge": "J1 | X1+B1",
@@ -1544,6 +1592,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1560,6 +1609,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1578,6 +1628,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1600,6 +1651,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Path to Morio's Room": "B1",
       "Morio's Lab - Ground Floor": "",
@@ -1625,6 +1677,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "FGU"
     },
@@ -1643,6 +1696,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor After Demo Wall": ""
     },
@@ -1665,6 +1719,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "FGU",
       "Morio's Lab - Second Floor Inside True Demo Wall": ""
@@ -1691,6 +1746,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
       "Morio's Lab - Second Floor After True Demo Wall": "FGU"
@@ -1722,6 +1778,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor Inside True Demo Wall": "",
       "Morio's Lab - Third Floor": "J1/B1"
@@ -1741,6 +1798,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1+J1"
@@ -1760,6 +1818,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {
       "Morio's Lab - Second Floor Shortcut Pipe": ["Morio's Lab - Fifth Floor Inside Shortcut Pipe", ""]
@@ -1801,6 +1860,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Outside Morio's Room": "B1",
       "Morio's Lab - Ground Floor Bolts": "B1",
@@ -1808,7 +1868,7 @@
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Upper": "FGU+B2",
-      "Morio's Lab - Second Floor Above Demo Wall": "J2"
+      "Morio's Lab - Second Floor After Demo Wall": "J2"
     },
     "subwarps": {},
     "warps": {},
@@ -1831,6 +1891,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Inside Morio's Room": "MorioHat"
     },
@@ -1849,6 +1910,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Inside Morio's Room Jump": "J1"
     },
@@ -1876,6 +1938,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1899,13 +1962,16 @@
       "Morio's Lab - Checkpoint Before Spikes": 900080
     },
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Lower": "J1",
       "Morio's Lab - Fourth Floor": "GS+B1",
       "Morio's Lab - Second Floor": ""
     },
     "subwarps": {},
-    "warps": {},
+    "warps": {
+      "Morio's Lab - Baby Steps! TV": ["Baby Steps! - Starting Area", "TT1"]
+    },
     "specialrules": {}
   },
   "Morio's Lab - Third Floor Wrenches Lower": {
@@ -1925,6 +1991,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Middle": "J1+FGU",
       "Morio's Lab - Third Floor": ""
@@ -1950,6 +2017,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Upper": "J1"
     },
@@ -1976,6 +2044,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -1994,6 +2063,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fourth Floor Jump Spikes": "GS+J1",
       "Morio's Lab - Fifth Floor Crash Test Area": "B1/J1",
@@ -2018,6 +2088,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -2038,6 +2109,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fourth Floor Expert Jump Spikes": ""
     },
@@ -2058,6 +2130,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -2097,6 +2170,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
@@ -2121,6 +2195,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password",
       "Morio's Lab - Dream Machine": "FGU",
@@ -2141,6 +2216,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -2157,6 +2233,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Golden Propeller": "J1+GP",
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "J1+Password",
@@ -2178,6 +2255,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ledge Below Tosla HQ Portal": "",
       "Morio's Lab - Fifth Floor High Pillars": "",
@@ -2200,6 +2278,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Path to Morio's Room": "FGU",
       "Morio's Lab - Outside Morio's Room": "FGU",
@@ -2230,6 +2309,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password"
     },
@@ -2277,6 +2357,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ledge Below Tosla HQ Portal": "J1",
       "Morio's Lab - Fifth Floor Low Pillars": "J1",
@@ -2301,6 +2382,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Final Floor": "J2 | X1+J1",
       "Morio's Lab - Ledge Above Ruined Observatory Portal": ""
@@ -2327,6 +2409,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -2353,6 +2436,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Golden Propeller": "GP"
     },
@@ -2371,6 +2455,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor High Pillars": "J1 | B1+X1",
       "Morio's Lab - Final Floor Pipes": "J1",
@@ -2406,6 +2491,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Wrenches": "FGU",
       "Morio's Lab - Bunny Ledge": "FGU"
@@ -2436,6 +2522,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -2452,6 +2539,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Wrenches": "",
       "Morio's Lab - Ground Floor Lowest Bolt": "",

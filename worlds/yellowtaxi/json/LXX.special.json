@@ -1,0 +1,40 @@
+{
+  "Any Hat World": {
+    "level": "",
+    "sublevel": "",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Top Hat": 990700002
+    },
+    "connections": {
+      "Propeller Cap Access": "HatMembership"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Propeller Cap Access": {
+    "level": "Hatsanity",
+    "sublevel": "Hatsanity",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  }
+}

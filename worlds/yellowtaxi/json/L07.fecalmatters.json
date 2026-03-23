@@ -55,6 +55,7 @@
       "Fecal Matters - Cheese by Roundabout": 72100005,
       "Fecal Matters - Cheese by Cul-de-sac": 72100000
     },
+    "hats": {},
     "connections": {
       "Fecal Matters - Roundabout Hill Tier 1": "J1/B1 | X1+NHPR",
       "Fecal Matters - Roundabout Hill Tier 3": "J1/B2",
@@ -87,6 +88,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -107,6 +109,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -184,6 +187,9 @@
     "cheeses": {
       "Fecal Matters - Cheese in Tunnel on Ramp Over Main Road": 72100003
     },
+    "hats": {
+      "Poop Hat": 70700018
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -215,6 +221,7 @@
       "Fecal Matters - Cheese on Mountain": 72100002,
       "Fecal Matters - Cheese on Island": 72100001
     },
+    "hats": {},
     "connections": {
       "Fecal Matters - Highest Ground": "J1 | X1+B2"
     },
@@ -277,6 +284,9 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {
+      "Dog Bowl Hat": 70700019
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},

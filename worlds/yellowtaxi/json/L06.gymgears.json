@@ -118,6 +118,7 @@
       "Gym Gears - Cheese Under Spin Blocks #1": 62100001,
       "Gym Gears - Cheese Under Spin Blocks #2": 62100000
     },
+    "hats": {},
     "connections": {
       "Gym Gears - Expert 1": "X1/J1",
       "Gym Gears - Expert 2": "X2/J1",
@@ -143,6 +144,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -164,6 +166,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -317,6 +320,10 @@
       "Gym Gears - Checkpoint Halfway to Upper Area": 60900350
     },
     "cheeses": {},
+    "hats": {
+      "Syringe Hat": 60700017,
+      "Flexing Hat": 60700016
+    },
     "connections": {},
     "subwarps": {},
     "warps": {},

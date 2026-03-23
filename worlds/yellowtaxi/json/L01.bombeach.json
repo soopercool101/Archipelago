@@ -435,6 +435,7 @@
       "Bombeach - Cheese Behind Houses Across From Hat World": 12100006,
       "Bombeach - Cheese Behind Bomb Block Cage": 12100003
     },
+    "hats": {},
     "connections": {
       "Bombeach - Easy Bomb Jumps": "",
       "Bombeach - Expert 1 Bomb Jumps": "X1",
@@ -442,7 +443,8 @@
       "Bombeach - Superboost Only": "B2"
     },
     "subwarps": {
-      "Bombeach - Cave Entrance": ["Cave", ""]
+      "Bombeach - Cave Entrance": ["Cave", ""],
+      "Bombeach - Hat World Entrance": ["Bombeach Hat World", ""]
     },
     "warps": {
       "Bombeach - Portal to Morio's Lab": ["Morio's Lab - Ground Floor", ""]
@@ -522,6 +524,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -612,6 +615,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Bombeach - Orange Block Bridge": "OS"
     },
@@ -689,6 +693,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {
       "Bombeach - Expert 1 Bomb Jumps": "",
       "Bombeach - Orange Block Bridge": ""
@@ -716,6 +721,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -739,6 +745,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
@@ -811,9 +818,37 @@
       "Cave - Checkpoint": 10900790
     },
     "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {
       "Cave - Cave Exit": ["Bombeach - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Bombeach Hat World": {
+    "level": "Bombeach",
+    "sublevel": "Bombeach Hat World",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Top Hat": 10700002,
+      "Propeller Cap": 10700001,
+      "No Hat": 10700000,
+      "Bomb Hat": 10700005,
+      "Drink Hat": 10700006
+    },
+    "connections": {
+      "Any Hat World": ""
+    },
+    "subwarps": {
+      "Bombeach Hat World - Exit": ["Bombeach - Starting Area", ""]
     },
     "warps": {},
     "specialrules": {}
