@@ -1,0 +1,84 @@
+{
+  "Getting Gud! - Starting Area": {
+    "level": "Getting Gud!",
+    "sublevel": "Getting Gud!",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Getting Gud! - Lower Spikes": "J1/GP",
+      "Getting Gud! - Middle Floor": "X1+J1 | B1+GS | J2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Getting Gud! - Lower Spikes": {
+    "level": "Getting Gud!",
+    "sublevel": "Getting Gud!",
+    "gears": {
+      "Getting Gud! - Gear - In Spikes Left of Start": 180100004,
+      "Getting Gud! - Gear - In Spikes Right of Start": 180100005
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Getting Gud! - Middle Floor": {
+    "level": "Getting Gud!",
+    "sublevel": "Getting Gud!",
+    "gears": {
+      "Getting Gud! - Gear - In Front of Start": 180100002,
+      "Getting Gud! - Gear - Behind Start": 180100003
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Getting Gud! - High Ground": "GS+B2 | J2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Getting Gud! - High Ground": {
+    "level": "Getting Gud!",
+    "sublevel": "Getting Gud!",
+    "gears": {
+      "Getting Gud! - Gear - High Platform": 180100000,
+      "Getting Gud! - Gear - In the Air": 180100001
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  }
+}

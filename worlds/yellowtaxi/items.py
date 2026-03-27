@@ -33,6 +33,7 @@ ITEM_NAME_TO_ID = {
     "25 Coins": 5,
     "100 Coins": 6,
     # Hats reserve 7_00
+    "No Hat": 7_00,
     "Propeller Cap": 7_01,
     "Top Hat": 7_02,
     "Morio Hat": 7_03,
@@ -83,7 +84,7 @@ ITEM_NAME_TO_ID = {
     "Paper Boat Hat": 7_48,
     "Robo Taxi Skin": 7_49,
     "Glitched Taxi Skin": 7_50,
-    "Influencer Hat": 7_51,
+    "TV Hat": 7_51,
     "Burger Hat": 7_52,
     "Flip-O-Will": 8_0_0,
     "Progressive Jump": 8_0_1,
@@ -95,16 +96,27 @@ ITEM_NAME_TO_ID = {
     "Lab Key": 10_00,
     "Gym Membership": 10_06,
     "Doggo": 10_07,
+    "Sewer Key": 10_08,
     "Mosk's Rocket": 10_16,
+    "Time Trial Remote (Baby Steps!)": 10_17,
+    "Time Trial Remote (Getting Gud!)": 10_18,
+    "Time Trial Remote (Pro Tricks!)": 10_19,
+    "Hat World Membership": 10_99,
+    "Morio's Wardrobe": 11_00,
     "Gela-Toni": 11_01,
     "Pizza King": 11_02,
     "Orange Switch": 11_10,
     "Full Game Unlock": 11_11,
     "Morio's Password": 11_12,
+    "Time Trial Remote": 11_17,
+    "Progressive Time Trial Remote": 11_18,
     "Psycho Taxi Cartridge": 20_01,
     "Michele": 20_02,
     # Traps
     #"Wishlist Trap": 999_001,
+
+    # Universal Tracker Only
+    "Glitched Logic": 99999_999
 }
 
 # Items should have a defined default classification.
@@ -132,6 +144,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "25 Coins": ItemClassification.filler,
     "100 Coins": ItemClassification.filler,
     # Hats reserve 7_00
+    "No Hat": ItemClassification.filler,
     "Propeller Cap": ItemClassification.filler,
     "Top Hat": ItemClassification.filler,
     "Morio Hat": ItemClassification.progression,
@@ -146,7 +159,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Slot Machine Hat": ItemClassification.filler,
     "Gelatin Hat": ItemClassification.filler,
     "Mug Hat": ItemClassification.filler,
-    "Tosla Employee Hat": ItemClassification.progression,
+    "Tosla Employee Hat": ItemClassification.filler,
     "Flexing Hat": ItemClassification.filler,
     "Syringe Hat": ItemClassification.filler,
     "Poop Hat": ItemClassification.filler,
@@ -154,7 +167,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Toilet Hat": ItemClassification.filler,
     "Fishbone Hat": ItemClassification.filler,
     "Spoiler": ItemClassification.filler,
-    "Police Lights": ItemClassification.filler,
+    "Police Lights": ItemClassification.useful,
     "Captain Abs-urd Hat": ItemClassification.filler,
     "Roid-Man Hat": ItemClassification.filler,
     "Buzzsaw Hat": ItemClassification.filler,
@@ -182,7 +195,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Paper Boat Hat": ItemClassification.filler,
     "Robo Taxi Skin": ItemClassification.filler,
     "Glitched Taxi Skin": ItemClassification.filler,
-    "Influencer Hat": ItemClassification.filler,
+    "TV Hat": ItemClassification.filler,
     "Burger Hat": ItemClassification.filler,
     "Flip-O-Will": ItemClassification.progression | ItemClassification.useful,
     "Progressive Jump": ItemClassification.progression | ItemClassification.useful,
@@ -194,16 +207,81 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Lab Key": ItemClassification.progression,
     "Gym Membership": ItemClassification.progression,
     "Doggo": ItemClassification.progression,
+    "Sewer Key": ItemClassification.progression,
+    "Mosk's Rocket": ItemClassification.progression,
+    "Time Trial Remote (Baby Steps!)": ItemClassification.progression,
+    "Time Trial Remote (Getting Gud!)": ItemClassification.progression,
+    "Time Trial Remote (Pro Tricks!)": ItemClassification.progression,
+    "Hat World Membership": ItemClassification.progression,
+    "Morio's Wardrobe": ItemClassification.progression,
     "Gela-Toni": ItemClassification.progression,
     "Pizza King": ItemClassification.progression,
     "Orange Switch": ItemClassification.progression,
     "Full Game Unlock": ItemClassification.progression,
     "Morio's Password": ItemClassification.progression,
-    "Mosk's Rocket": ItemClassification.progression,
+    "Time Trial Remote": ItemClassification.progression,
+    "Progressive Time Trial Remote": ItemClassification.progression,
     "Psycho Taxi Cartridge": ItemClassification.filler,
     "Michele": ItemClassification.useful,
+
+    # Universal Tracker Only
+    "Glitched Logic": ItemClassification.progression,
 }
 
+HATS = [
+    "Propeller Cap",
+    "Top Hat",
+    "Morio Hat",
+    "Taxi Stack Hat",
+    "Bomb Hat",
+    "Drink Hat",
+    "Chef Hat",
+    "Spaghetti Hat",
+    "Pot Hat",
+    "Lasagna Hat",
+    "Joystick Hat",
+    "Slot Machine Hat",
+    "Gelatin Hat",
+    "Mug Hat",
+    "Tosla Employee Hat",
+    "Flexing Hat",
+    "Syringe Hat",
+    "Poop Hat",
+    "Dog Bowl Hat",
+    "Toilet Hat",
+    "Fishbone Hat",
+    "Spoiler",
+    "Police Lights",
+    "Captain Abs-urd Hat",
+    "Roid-Man Hat",
+    "Buzzsaw Hat",
+    "Crusher Hat",
+    "Sleepy Mind Hat",
+    "Heart Hat",
+    "Moon Globe Hat",
+    "Tower Hat",
+    "Alien Mosk (Evil) Hat",
+    "Skeleton Taxi Skin",
+    "Golden Taxi Skin",
+    "Orbit Hat",
+    "Satellite Dish Hat",
+    "Alien Mosk (Good) Hat",
+    "Crash Test Dummy Hat",
+    "Dentures Hat",
+    "Mushroom Cloud Hat",
+    "Gym Bros Hat",
+    "Banana Hat",
+    "Bunny Hat",
+    "Inception Top Hat",
+    "Pizza Man Hat",
+    "Toilet Paper Hat",
+    "Pod Hat",
+    "Paper Boat Hat",
+    "Robo Taxi Skin",
+    "Glitched Taxi Skin",
+    "TV Hat",
+    "Burger Hat"
+]
 
 # Each Item instance must correctly report the "game" it belongs to.
 # To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
@@ -258,6 +336,11 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     if name.startswith("Bunny (") and world.options.shuffle_rocket:
         classification = ItemClassification.progression_deprioritized
 
+    if name == "Alien Mosk (Good) Hat" and "Ruined Observatory" in world.included_levels:
+        classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
+    if name == "Tosla Employee Hat" and "Tosla Offices" in world.included_levels:
+        classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices
+
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
 
@@ -285,7 +368,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             hub_bunnies -= 1
         itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(hub_bunnies)]
         for level in world.included_levels:
-            if level != "Hub" and level != "Mosk's Rocket":
+            if level != "Hub" and level != "Mosk's Rocket" and not level.endswith("!"):
                 itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
 
     if world.options.shuffle_gela_toni:
@@ -304,6 +387,10 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if (world.options.gym_gears_unlock_condition ==
             world.options.gym_gears_unlock_condition.option_shuffle_gym_membership):
         itempool.append(world.create_item("Gym Membership"))
+
+    if (world.options.flushed_away_unlock_condition ==
+            world.options.flushed_away_unlock_condition.option_shuffle_sewer_key):
+        itempool.append(world.create_item("Sewer Key"))
 
     if world.options.shuffle_morios_password:
         itempool.append(world.create_item("Morio's Password"))
@@ -337,22 +424,74 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_psycho_taxi:
         itempool.append(world.create_item("Psycho Taxi Cartridge"))
 
+    if world.options.locked_morios_wardrobe:
+        itempool.append(world.create_item("Morio's Wardrobe"))
+
+    if world.options.locked_time_trials == world.options.locked_time_trials.option_single_item:
+        itempool.append(world.create_item("Time Trial Remote"))
+    elif world.options.locked_time_trials == world.options.locked_time_trials.option_split_items:
+        itempool.append(world.create_item("Time Trial Remote (Baby Steps!)"))
+        itempool.append(world.create_item("Time Trial Remote (Getting Gud!)"))
+        itempool.append(world.create_item("Time Trial Remote (Pro Tricks!)"))
+    elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
+        itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
+
     for hat in world.included_hats:
         itempool.append(world.create_item(hat))
-
-    # If there are more hat locations than hat items, add up to two "bonus" hats that do not have in-game locations
-    extra_hats = world.hat_location_count - len(world.included_hats)
-
-    if extra_hats > 0:
-        itempool.append(world.create_item("Burger Hat"))
-    if extra_hats > 1:
-        itempool.append(world.create_item("Influencer Hat"))
 
     number_of_items = len(itempool)
 
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
 
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
+
+    if world.options.hatsanity != world.options.hatsanity.option_disabled:
+        # Hatsanity only makes one location per hat
+        if world.options.hatsanity == world.options.hatsanity.option_hatsanity:
+            world.hat_location_count = len(world.included_hats)
+
+        # If there are more hat locations than hat items, add "bonus" hats that do not have in-game locations
+        extra_hats = world.hat_location_count - len(world.included_hats)
+
+        if world.options.hatsanity_filler_hats:
+            extra_hats = min(len(HATS) - len(world.included_hats), needed_number_of_filler_items)
+
+        # If funny faces is enabled, special handling is performed for the TV Hat
+        if world.options.funny_faces != "":
+            if extra_hats > 0 and world.options.hatsanity == world.options.hatsanity.option_shopsanity:
+                itempool.append(world.create_item("No Hat"))
+                extra_hats -= 1
+                needed_number_of_filler_items -= 1
+            world.included_hats.add("TV Hat") # TV Hat is always available when funny faces is enabled. Handled specially.
+
+        # Next, add "Alien Mosk (Good)" hat, which has a minor in-game use (allows access to a ruined observatory area, no checks in it though)
+        if extra_hats > 0 and "Ruined Observatory" in world.included_levels and "Alien Mosk (Good) Hat" not in world.included_hats:
+            itempool.append(world.create_item("Alien Mosk (Good) Hat"))
+            extra_hats -= 1
+            needed_number_of_filler_items -= 1
+            world.included_hats.add("Alien Mosk (Good) Hat")
+
+        # Next, add "Police Lights" hat, which has an in-game use (causes certain NPCs not to chase you)
+        if extra_hats > 0 and "Police Lights" not in world.included_hats:
+            itempool.append(world.create_item("Police Lights"))
+            extra_hats -= 1
+            needed_number_of_filler_items -= 1
+            world.included_hats.add("Police Lights")
+
+        # Now add random hats as needed
+        if extra_hats > 0:
+            hats : list[str] = []
+            hats.extend(HATS)
+            world.random.shuffle(hats)
+            for hat in hats:
+                if extra_hats == 0:
+                    break
+                if hat in world.included_hats:
+                    continue
+                itempool.append(world.create_item(hat))
+                extra_hats -= 1
+                needed_number_of_filler_items -= 1
+                # No need to add to included hats, last place they're needed
 
     itempool += [world.create_item(filler) for filler
                  in get_random_filler_item_names(world, needed_number_of_filler_items)]

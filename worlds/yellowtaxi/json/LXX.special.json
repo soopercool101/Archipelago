@@ -10,9 +10,7 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
-    "hats": {
-      "Top Hat": 990700002
-    },
+    "hats": {},
     "connections": {
       "Propeller Cap Access": "HatMembership"
     },

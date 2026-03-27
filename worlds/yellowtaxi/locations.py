@@ -23,8 +23,10 @@ def create_locations(world: YellowTaxiWorld) -> None:
     world.num_gears = 0
     world.num_bunnies = 0
     coins : List[tuple[Region, Dict[str, int | None]]] = []
-    use_simple_coinsanity = hasattr(world.multiworld, "generation_is_fake") or (world.multiworld.players == 1 and
-                                                                                world.options.coinsanity_percent == 100)
+    use_simple_coinsanity = (hasattr(world.multiworld, "generation_is_fake") or
+                             ((world.multiworld.players == 1 or
+                               world.settings.multiworld_coinsanity_percentage_non_filler_cap == 100) and
+                              world.options.coinsanity_percent == 100))
     for region in world.get_regions():
         if region.name == "Menu":
             continue
@@ -34,8 +36,10 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if world.options.exclude_goal_portal_checks and level in world.goal_levels:
             continue
 
-        locations : Dict[str, int | None] = reg["gears"]
-        world.num_gears += len(locations)
+        locations : Dict[str, int | None] = {}
+        if world.options.time_trial_gears or not level.endswith("!"): # Time Trial Levels all end with "!"
+            locations = reg["gears"]
+            world.num_gears += len(locations)
         if world.options.bunnysanity:
             locations = locations | reg["bunnies"]
             world.num_bunnies += len(reg["bunnies"])
@@ -115,7 +119,7 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, h
 
     locations : dict[str, int | None] = {}
 
-    if world is None or world.options.hatsanity == 1:
+    if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
         for (hat, hat_id) in hat_dict.items():
             # "No Hat" is not a hatsanity check
             if hat == "No Hat":
@@ -123,7 +127,6 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, h
             # Add hat to the "included hats" list for item generation
             if world is not None:
                 world.included_hats.add(hat)
-                world.hat_location_count += 1
             # Hats purchasable in multiple locations (Handled in special locations)
             if hat == "Propeller Cap" or hat == "Top Hat":
                 continue
@@ -131,11 +134,12 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, h
             true_id = (hat_id % 1_00_00000) + 99_00_00000
             locations[f"Purchase {hat}"] = true_id
 
-    if world is None or world.options.hatsanity == 2:
+    if world is None or world.options.hatsanity == world.options.hatsanity.option_shopsanity:
         for (hat, hat_id) in hat_dict.items():
-            # Add hat to the "included hats" list for item generation
-            if world is not None and hat != "No Hat":
-                world.included_hats.add(hat)
+            # Add hat to the "included hats" list for item generation, count hat-based locations
+            if world is not None:
+                if hat != "No Hat":
+                    world.included_hats.add(hat)
                 world.hat_location_count += 1
 
             locations[f"{subarea_name} - Purchase {hat}"] = hat_id
@@ -275,6 +279,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Morio's Lab - PICI Backflip Tutorial": 8_00004,
                 }
+        case "Morio's Wardrobe":
+            if world is None or world.options.locked_morios_wardrobe:
+                locations = {
+                    "Morio's Wardrobe - Talk to Mori-O-Tron": 11_00000,
+                }
         case "Morio's Island - Starting Area":
             if world is None or world.options.shuffle_flip_o_will:
                 locations = {
@@ -306,21 +315,34 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
                 }
+        case "Baby Steps! - Pillar":
+            if world is None or world.options.locked_time_trials:
+                locations = {
+                    "Baby Steps! - Complete Time Trial": 17_00_00000,
+                }
+        case "Getting Gud! - High Ground":
+            if world is None or world.options.locked_time_trials:
+                locations = {
+                    "Getting Gud! - Complete Time Trial": 18_00_00000,
+                }
+        case "Pro Tricks! - Final Section":
+            if world is None or world.options.locked_time_trials:
+                locations = {
+                    "Pro Tricks! - Complete Time Trial": 19_00_00000,
+                }
         case "Any Hat World":
-            if world is None or world.options.hatsanity == 1:
+            if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
                 locations = {
                     "Purchase Top Hat": 99_07_00002,
                 }
                 if world is not None:
                     world.included_hats.add("Top Hat")
-                    world.hat_location_count += 1
         case "Propeller Cap Access":
-            if world is None or world.options.hatsanity == 1:
+            if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
                 locations = {
                     "Purchase Propeller Cap": 99_07_00001,
                 }
                 if world is not None:
                     world.included_hats.add("Propeller Cap")
-                    world.hat_location_count += 1
 
     return locations

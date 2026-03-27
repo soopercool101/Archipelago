@@ -925,7 +925,7 @@
     "connections": {
       "Granny's Island - First Island Towards Sewer": "OS+J1 | B1",
       "Granny's Island - Tree on Second Island Towards Sewer": "J1",
-      "Granny's Island - Sewer Island": "OS"
+      "Granny's Island - Sewer Island": "OS/EarlySewer"
     },
     "subwarps": {},
     "warps": {},
@@ -1863,8 +1863,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Outside Morio's Room": "B1",
-      "Morio's Lab - Ground Floor Bolts": "B1",
-      "Morio's Lab - Ground Floor Wrenches": "",
+      "Morio's Lab - Ground Floor Bolts": "B1/J1",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Upper": "FGU+B2",
@@ -1893,7 +1892,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Inside Morio's Room": "MorioHat"
+      "Morio's Lab - Ground Floor Wrenches": "",
+      "Morio's Lab - Inside Morio's Room": "NHS+MorioHat | HS+MorioHat & {Morio's Wardrobe}"
     },
     "subwarps": {},
     "warps": {},
@@ -1965,7 +1965,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Lower": "J1",
-      "Morio's Lab - Fourth Floor": "GS+B1",
+      "Morio's Lab - Fourth Floor": "GS+B1 | X2+GS+J1",
       "Morio's Lab - Second Floor": ""
     },
     "subwarps": {},
@@ -2072,7 +2072,9 @@
       "Morio's Lab - Fourth Floor Expert Jump Spikes": "X1+GS+B2 | X2+B2+J2"
     },
     "subwarps": {},
-    "warps": {},
+    "warps": {
+      "Morio's Lab - Getting Gud! TV": ["Getting Gud! - Starting Area", "TT2"]
+    },
     "specialrules": {}
   },
   "Morio's Lab - Fourth Floor Expert Jump Spikes": {
@@ -2202,7 +2204,9 @@
       "Morio's Lab - Fifth Floor Crash Test Area": ""
     },
     "subwarps": {},
-    "warps": {},
+    "warps": {
+      "Morio's Lab - Pro Tricks! TV": ["Pro Tricks! - Starting Area", "TT3"]
+    },
     "specialrules": {}
   },
   "Morio's Lab - Dream Machine": {
@@ -2282,7 +2286,7 @@
     "connections": {
       "Morio's Lab - Path to Morio's Room": "FGU",
       "Morio's Lab - Outside Morio's Room": "FGU",
-      "Morio's Lab - Inside Morio's Room Jump": "FGU+MorioHat",
+      "Morio's Lab - Inside Morio's Room Jump": "NHS+FGU+MorioHat | HS+FGU+MorioHat & {Morio's Wardrobe}",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU/GS",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU",
       "Morio's Lab - Third Floor Wrenches Upper": "GS+FGU",

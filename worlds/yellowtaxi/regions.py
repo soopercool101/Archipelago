@@ -22,7 +22,7 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         if world.options.expert_level < 1 and "(EXPERTS ONLY)" in reg_name:
             continue
         reg = regions_json_data[reg_name]
-        if reg["level"] not in world.included_levels and reg["level"] not in world.goal_levels:
+        if reg["level"] not in world.included_levels and reg["level"] not in world.special_levels and reg["level"] not in world.goal_levels:
             continue
         if reg["level"] == "Mosk's Rocket" and reg["kaizolevel"] not in world.included_levels:
             continue

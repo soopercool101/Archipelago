@@ -414,6 +414,8 @@ class RuleFactory:
                 return "Lab Key", 1
             return True
         if token == "WardrobeKey":
+            if self.world.options.locked_morios_wardrobe:
+                return "Morio's Wardrobe", 1
             return True
         if token == "GymKey":
             match self.world.options.gym_gears_unlock_condition:
@@ -427,6 +429,56 @@ class RuleFactory:
                     return "Gym Membership", 1
                 case self.world.options.gym_gears_unlock_condition.option_exclude:
                     return False
+        if token == "HatMembership":
+            return True
+        if token == "SewerKey":
+            match self.world.options.flushed_away_unlock_condition:
+                case self.world.options.flushed_away_unlock_condition.option_open:
+                    return True
+                case self.world.options.flushed_away_unlock_condition.option_full_game | self.world.options.flushed_away_unlock_condition.option_default:
+                    if self.world.options.shuffle_full_game == 0:
+                        return True
+                    return "Full Game Unlock", 1
+                case self.world.options.flushed_away_unlock_condition.option_shuffle_sewer_key:
+                    return "Sewer Key", 1
+                case self.world.options.flushed_away_unlock_condition.option_exclude:
+                    return False
+        if token == "EarlySewer":
+            return self.world.early_sewer_island
+        if token == "TT1":
+            match self.world.options.locked_time_trials:
+                case self.world.options.locked_time_trials.option_open:
+                    return True
+                case self.world.options.locked_time_trials.option_single_item:
+                    return "Time Trial Remote", 1
+                case self.world.options.locked_time_trials.option_split_items:
+                    return "Time Trial Remote (Baby Steps!)", 1
+                case self.world.options.locked_time_trials.option_progressive_items:
+                    return "Progressive Time Trial Remote", 1
+        if token == "TT2":
+            match self.world.options.locked_time_trials:
+                case self.world.options.locked_time_trials.option_open:
+                    return True
+                case self.world.options.locked_time_trials.option_single_item:
+                    return "Time Trial Remote", 1
+                case self.world.options.locked_time_trials.option_split_items:
+                    return "Time Trial Remote (Getting Gud!)", 1
+                case self.world.options.locked_time_trials.option_progressive_items:
+                    return "Progressive Time Trial Remote", 2
+        if token == "TT3":
+            match self.world.options.locked_time_trials:
+                case self.world.options.locked_time_trials.option_open:
+                    return True
+                case self.world.options.locked_time_trials.option_single_item:
+                    return "Time Trial Remote", 1
+                case self.world.options.locked_time_trials.option_split_items:
+                    return "Time Trial Remote (Pro Tricks!)", 1
+                case self.world.options.locked_time_trials.option_progressive_items:
+                    return "Progressive Time Trial Remote", 3
+        if token == "NHS":
+            return self.world.options.hatsanity == 0
+        if token == "HS":
+            return self.world.options.hatsanity != 0
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
@@ -454,6 +506,9 @@ class RuleFactory:
                 return f"Bunny ({adjusted_bunny_level})", 3
         if token.startswith("X"):
             expert_level = int(token[1:])
+            if (hasattr(self.world.multiworld, "generation_is_fake")
+                    and self.world.options.expert_level + 1 == expert_level):
+                return "Glitched Logic", 1
             return self.world.options.expert_level >= expert_level
 
         raise Exception(f"Invalid token: '{token}'")

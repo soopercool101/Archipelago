@@ -29,7 +29,10 @@ class YellowTaxiWorld(World):
     location_name_groups = data_loader.all_location_groups
     item_name_to_id = items.ITEM_NAME_TO_ID
 
-    # Keeping default Menu region, just in case I want random starting location down the line
+    # Universal Tracker stuff
+    glitches_item_name = "Glitched Logic"
+
+    # Keeping default Menu region, actual starting location can vary so this is simpler
     origin_region_name = "Menu"
 
     def __init__(self, multiworld: MultiWorld, player: int):
@@ -40,11 +43,13 @@ class YellowTaxiWorld(World):
         self.hat_location_count : int = 0
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
+        self.special_levels : List[str] = []
         self.lab_start : bool = False
         self.early_gela_toni : bool = False
         self.early_pizza_king : bool = False
         self.early_rat : bool = False
         self.early_doggo : bool = False
+        self.early_sewer_island : bool = False
         self.early_backflip : bool = False
         self.early_psycho_taxi : bool = False
         self.early_orange_switch : bool = False
@@ -82,6 +87,20 @@ class YellowTaxiWorld(World):
             "Morio's Home",
             "Bombeach",
         ]
+
+        self.special_levels = [
+            ""  # "Empty" = appears in multiple levels
+        ]
+
+        if self.options.locked_time_trials or self.options.time_trial_gears:
+            self.included_levels += [
+                "Baby Steps!",
+                "Getting Gud!",
+                "Pro Tricks!",
+            ]
+
+        if self.options.hatsanity == 1: # Special "level" for shared hats
+            self.special_levels += ["Hatsanity"]
 
         # Exclude unreachable hub areas past the goal
         # Rocket isn't pre-goal for any current goal types
@@ -142,9 +161,13 @@ class YellowTaxiWorld(World):
         if self.options.fecal_matters_unlock_condition != self.options.fecal_matters_unlock_condition.option_exclude:
             self.included_levels += ["Fecal Matters"]
         # Add Flushed Away if included via settings and logically accessible
-        #if (self.options.fecal_matters_unlock_condition != self.options.fecal_matters_unlock_condition.option_exclude
-        #        and not "Granny's Island - Sewer Island" in self.excluded_regions):
-        #    self.included_levels += ["Flushed Away"]
+        if self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_exclude:
+            if self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_default or "Granny's Island - Sewer Island" not in self.excluded_regions:
+                self.included_levels += ["Flushed Away"]
+                if "Granny's Island - Sewer Island" in self.excluded_regions:
+                    self.excluded_regions.remove("Granny's Island - Sewer Island")
+                    self.excluded_regions.remove("Granny's Island - Sewer Island Upper")
+                    self.early_sewer_island = True
 
         # Make sure early items are set as needed
         if self.options.shuffle_gela_toni and self.options.exclude_goal_portal_checks and self.options.goal < 1:
@@ -229,6 +252,7 @@ class YellowTaxiWorld(World):
             "goal",
             "open_grannys_island",
             "locked_morios_lab",
+            "locked_morios_wardrobe",
             "shuffle_gela_toni",
             "shuffle_pizza_king",
             "shuffle_orange_switch",
@@ -239,6 +263,7 @@ class YellowTaxiWorld(World):
             "shuffle_rat",
             "gym_gears_unlock_condition",
             "fecal_matters_unlock_condition",
+            "flushed_away_unlock_condition",
             "bunnysanity",
             "hatsanity",
             "checkpointsanity",
@@ -275,6 +300,8 @@ class YellowTaxiWorld(World):
         dict["early_golden_propeller"] = self.early_golden_propeller
         dict["early_morios_password"] = self.early_morios_password
         dict["early_rocket"] = self.early_rocket
+        dict["early_sewer_island"] = self.early_sewer_island
+        dict["funny_faces"] = self.options.funny_faces.value
 
         # Set excluded bunnies
         dict["exclude_top_bunny"] = self.exclude_top_bunny

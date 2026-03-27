@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink
+from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText
 
 
 # In this file, we define the options the player can pick.
@@ -67,6 +67,13 @@ class ExtraDemoCollectables(Toggle):
 
     display_name = "Add Extra Demo Collectables"
 
+class TimeTrialGears(Toggle):
+    """
+    Adds each individual gear in Time Trials as a location, and adds the corresponding amount of gears to the pool.
+    """
+
+    display_name = "Add Time Trial Gears"
+
 class OpenGrannysIsland(Toggle):
     """
     Opens up Granny's Island so that the main part of the island is available moveless.
@@ -81,18 +88,26 @@ class LockedMoriosLab(Toggle):
     """
     display_name = "Locked Morio's Lab"
 
+class LockedMoriosWardrobe(Toggle):
+    """
+    Locks Morio's Wardrobe and adds a "Morio's Wardrobe" item into the multiworld. Adds a check for talking to the Mori-O-Tron in Morio's Wardrobe.
+
+    If "Hatsanity" is not disabled, you will require logical access to the wardrobe in order to use hats.
+    """
+    display_name = "Locked Morio's Wardrobe"
+
 class HatWorldMembership(Toggle):
     """
     Adds a "Hat World Membership" item needed to purchase any hats from Hat World
     """
-    display_name = "Locked Morio's Lab"
+    display_name = "Hat World Membership"
 
 class GymGearsUnlockCondition(Choice):
     """
     How Gym Gears is unlocked.
 
     Open: Gym Gears entrance is always available in Granny's Island.
-    FullGame: Gym Gears entrance will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Full Game: Gym Gears entrance will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
     Shuffle Gym Membership: Gym Gears entrance will be unlocked after receiving "Gym Membership" from the multiworld. Adds a purchasable check from the Ultra Chad in Gym Gears.
     Exclude: Gym Gears entrance is always closed and Gym Gears will not be accessible
     """
@@ -105,6 +120,7 @@ class GymGearsUnlockCondition(Choice):
 
     default = option_open
     alias_vanilla = option_open
+    alias_unlocked = option_open
 
 class FecalMattersUnlockCondition(Choice):
     """
@@ -112,7 +128,7 @@ class FecalMattersUnlockCondition(Choice):
 
     Vanilla: Talk to Doggo in Morio's Lab to unlock the house in Granny's Island.
     Open: The house in Granny's Island is always open.
-    FullGame: The house in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Full Game: The house in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
     Shuffle Doggo: The house in Granny's Island will be unlocked after receiving "Doggo" from the multiworld. Adds a check for talking to Doggo in Morio's Lab.
     Exclude: The house in Granny's Island is always closed and Fecal Matters will not be accessible
     """
@@ -125,6 +141,50 @@ class FecalMattersUnlockCondition(Choice):
     option_exclude = 3
 
     default = option_vanilla
+    alias_unlocked = option_open
+
+class FlushedAwayUnlockCondition(Choice):
+    """
+    How Flushed Away is unlocked.
+    If set to anything other than "Default" or "Exclude", an NPC will be added who will take you to the Sewer Island if you have no possible logical path to it.
+
+    Default: Same as Full Game if there is logical access to the Sewer Island, Exclude if there isn't.
+    Open: The Sewer Entrance in Granny's Island is always open.
+    Full Game: The Sewer Entrance in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Shuffle Sewer Key: The house in Granny's Island will be unlocked after receiving "Sewer Key" from the multiworld. Adds a check for <X>.
+    Exclude: The Sewer Entrance in Granny's Island is always closed and Flushed Away will not be accessible
+    """
+    display_name = "Fecal Matters Unlock Condition"
+
+    option_default = -1
+    option_open = 0
+    option_full_game = 1
+    option_shuffle_sewer_key = 2
+    option_exclude = 3
+
+    default = option_default
+    alias_vanilla = option_default
+    alias_unlocked = option_open
+
+class LockedTimeTrials(Choice):
+    """
+    Whether Time Trials are locked behind an item. If set to anything but Open, will add locations for completing each Time Trial.
+
+    Open: Time Trials TVs can always be accessed
+    Single Item: Adds a "Time Trial Remote" item that is needed to access Time Trial TVs
+    Split Items: Adds three specific Time Trial Remote items, each corresponding to an individual Time Trial.
+    Progressive Items: Adds three "Progressive Time Trial Remote" items, each one allowing access to the next sequential Time Trial.
+    """
+    display_name = "Locked Time Trials"
+
+    option_open = 0
+    option_single_item = 1
+    option_split_items = 2
+    option_progressive_items = 3
+
+    default = option_open
+    alias_vanilla = option_open
+    alias_unlocked = option_open
 
 class ShuffleGelaToni(DefaultOnToggle):
     """
@@ -211,12 +271,21 @@ class Hatsanity(Choice):
 
     Hatsanity makes one check per purchasable hat.
     Shopsanity makes any individual place a hat can be purchased into a check, including duplicates and "no hat" locations.
+    In Shopsanity, extra hats will be added to the pool to compensate for the extra hat slots, regardless of the "Hatsanity Filler Hats" setting
     """
     display_name = "Hatsanity"
 
-    option_off = 0
+    option_disabled = 0
     option_hatsanity = 1
     option_shopsanity = 2
+
+    alias_off = 0
+
+class HatsanityFillerHats(DefaultOnToggle):
+    """
+    If Hatsanity is not set to disabled, add as many not-available hats as possible to the filler pool before doing random fill.
+    """
+    display_name = "Hatsanity Filler Hats"
 
 class Checkpointsanity(Toggle):
     """
@@ -323,6 +392,17 @@ class ShuffleGoldenPropeller(DefaultOnToggle):
     """
     display_name = "Shuffle Golden Propeller"
 
+class FunnyFaces(FreeText):
+    """
+    In your installation folder for Yellow Taxi Goes Vroom, there exists an "Extras" folder containing a "FunnyFaces" subfolder.
+
+    Setting this option will load an image from this folder for both the TV Hat and coins, if available.
+    If this is set to anything other than a blank string, you will start with the TV Hat.
+    If Hatsanity is set to Shopsanity, a "No Hat" item will replace the TV Hat in the pool, and hats cannot be fully unequipped unless this is found.
+    """
+    display_name = "Funny Faces"
+    default = ""
+
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
@@ -334,8 +414,11 @@ class YellowTaxiOptions(PerGameCommonOptions):
     death_link: DeathLink
     open_grannys_island: OpenGrannysIsland
     locked_morios_lab: LockedMoriosLab
+    locked_morios_wardrobe: LockedMoriosWardrobe
+    locked_time_trials: LockedTimeTrials
     gym_gears_unlock_condition: GymGearsUnlockCondition
     fecal_matters_unlock_condition: FecalMattersUnlockCondition
+    flushed_away_unlock_condition: FlushedAwayUnlockCondition
     shuffle_gela_toni: ShuffleGelaToni
     shuffle_pizza_king: ShufflePizzaKing
     shuffle_orange_switch: ShuffleOrangeSwitch
@@ -346,6 +429,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
     hatsanity: Hatsanity
+    hatsanity_filler_hats: HatsanityFillerHats
     checkpointsanity: Checkpointsanity
     safesanity: Safesanity
     chestsanity: Chestsanity
@@ -359,6 +443,8 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
     extra_demo_collectables: ExtraDemoCollectables
+    time_trial_gears: TimeTrialGears
+    funny_faces: FunnyFaces
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -366,8 +452,10 @@ option_groups = [
         "Location Options",
         [
             ExtraDemoCollectables,
+            TimeTrialGears,
             Bunnysanity,
             Hatsanity,
+            HatsanityFillerHats,
             Checkpointsanity,
             Safesanity,
             Chestsanity,
@@ -382,8 +470,11 @@ option_groups = [
         [
             OpenGrannysIsland,
             LockedMoriosLab,
+            LockedMoriosWardrobe,
+            LockedTimeTrials,
             GymGearsUnlockCondition,
             FecalMattersUnlockCondition,
+            FlushedAwayUnlockCondition,
             ShuffleGelaToni,
             ShufflePizzaKing,
             ShuffleOrangeSwitch,
@@ -391,7 +482,7 @@ option_groups = [
             ShuffleRocket,
             ShuffleFullGame,
             ShufflePsychoTaxi,
-            ShuffleRat
+            ShuffleRat,
         ],
     ),
     OptionGroup(
@@ -402,6 +493,12 @@ option_groups = [
             EarlyMove,
             ShuffleGoldenSpring,
             ShuffleGoldenPropeller
+        ],
+    ),
+    OptionGroup(
+        "Cosmetic Options",
+        [
+            FunnyFaces
         ],
     ),
 ]
