@@ -330,6 +330,13 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Pro Tricks! - Complete Time Trial": 19_00_00000,
                 }
+        case "Flushed Away - Starting Area":
+            if (world is None or
+                    world.options.flushed_away_unlock_condition ==
+                    world.options.flushed_away_unlock_condition.option_shuffle_sewer_key):
+                locations = {
+                    "Flushed Away - Talk to Michele": 8_10_00008,
+                }
         case "Any Hat World":
             if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
                 locations = {

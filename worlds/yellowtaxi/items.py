@@ -54,7 +54,7 @@ ITEM_NAME_TO_ID = {
     "Poop Hat": 7_18,
     "Dog Bowl Hat": 7_19,
     "Toilet Hat": 7_20,
-    "Fishbone Hat": 7_21,
+    "Bone Fish Hat": 7_21,
     "Spoiler": 7_22,
     "Police Lights": 7_23,
     "Captain Abs-urd Hat": 7_24,
@@ -165,9 +165,9 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Poop Hat": ItemClassification.filler,
     "Dog Bowl Hat": ItemClassification.filler,
     "Toilet Hat": ItemClassification.filler,
-    "Fishbone Hat": ItemClassification.filler,
+    "Bone Fish Hat": ItemClassification.filler,
     "Spoiler": ItemClassification.filler,
-    "Police Lights": ItemClassification.useful,
+    "Police Lights": ItemClassification.filler,
     "Captain Abs-urd Hat": ItemClassification.filler,
     "Roid-Man Hat": ItemClassification.filler,
     "Buzzsaw Hat": ItemClassification.filler,
@@ -249,7 +249,7 @@ HATS = [
     "Poop Hat",
     "Dog Bowl Hat",
     "Toilet Hat",
-    "Fishbone Hat",
+    "Bone Fish Hat",
     "Spoiler",
     "Police Lights",
     "Captain Abs-urd Hat",
@@ -336,6 +336,8 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     if name.startswith("Bunny (") and world.options.shuffle_rocket:
         classification = ItemClassification.progression_deprioritized
 
+    if name == "Police Lights" and "Maurizio's City" in world.included_levels:
+        classification = ItemClassification.useful  # Makes cop cars not attack you
     if name == "Alien Mosk (Good) Hat" and "Ruined Observatory" in world.included_levels:
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
     if name == "Tosla Employee Hat" and "Tosla Offices" in world.included_levels:
@@ -471,13 +473,6 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             needed_number_of_filler_items -= 1
             world.included_hats.add("Alien Mosk (Good) Hat")
 
-        # Next, add "Police Lights" hat, which has an in-game use (causes certain NPCs not to chase you)
-        if extra_hats > 0 and "Police Lights" not in world.included_hats:
-            itempool.append(world.create_item("Police Lights"))
-            extra_hats -= 1
-            needed_number_of_filler_items -= 1
-            world.included_hats.add("Police Lights")
-
         # Now add random hats as needed
         if extra_hats > 0:
             hats : list[str] = []
@@ -497,13 +492,3 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                  in get_random_filler_item_names(world, needed_number_of_filler_items)]
 
     world.multiworld.itempool += itempool
-
-    # Sometimes, you might want the player to start with certain items already in their inventory.
-    # These items are called "precollected items".
-    # They will be sent as soon as they connect for the first time (depending on your client's item handling flag).
-    # Players can add precollected items themselves via the generic "start_inventory" option.
-    # If you want to add your own precollected items, you can do so via world.push_precollected().
-    #if world.options.start_with_one_confetti_cannon:
-        # We're adding a filler item, but you can also add progression items to the player's precollected inventory.
-        #starting_confetti_cannon = world.create_item("Confetti Cannon")
-        #world.push_precollected(starting_confetti_cannon)
