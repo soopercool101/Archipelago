@@ -25,8 +25,8 @@ def create_locations(world: YellowTaxiWorld) -> None:
     coins : List[tuple[Region, Dict[str, int | None]]] = []
     use_simple_coinsanity = (hasattr(world.multiworld, "generation_is_fake") or
                              ((world.multiworld.players == 1 or
-                               world.settings.multiworld_coinsanity_percentage_non_filler_cap == 100) and
-                              world.options.coinsanity_percent == 100))
+                               world.settings.multiworld_coinsanity_percentage_non_filler_cap >= 100) and
+                              world.options.coinsanity_percent >= 100))
     for region in world.get_regions():
         if region.name == "Menu":
             continue

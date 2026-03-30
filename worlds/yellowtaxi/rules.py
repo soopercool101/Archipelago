@@ -507,8 +507,8 @@ class RuleFactory:
         if token.startswith("X"):
             expert_level = int(token[1:])
             if (hasattr(self.world.multiworld, "generation_is_fake")
-                    and self.world.options.expert_level + 1 == expert_level):
-                return "Glitched Logic", 1
+                    and self.world.options.expert_level < expert_level):
+                return "Glitched Logic", expert_level - self.world.options.expert_level
             return self.world.options.expert_level >= expert_level
 
         raise Exception(f"Invalid token: '{token}'")
