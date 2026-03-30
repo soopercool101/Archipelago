@@ -99,13 +99,19 @@ class YellowTaxiWorld(World):
                 "Pro Tricks!",
             ]
 
+        has_golden_spring = self.options.shuffle_golden_spring or ("Tosla Offices" in self.included_levels and
+                                                                   "Tosla Offices" not in self.goal_levels)
+        has_orange_switch = self.options.shuffle_orange_switch or "Crash Test Industries" in self.included_levels
+        has_golden_propeller = self.options.shuffle_golden_propeller or "Ruined Observatory" in self.included_levels
+        has_rocket = self.options.shuffle_rocket
+
         if self.options.hatsanity == 1: # Special "level" for shared hats
             self.special_levels += ["Hatsanity"]
 
-        # Exclude unreachable hub areas past the goal
-        # Rocket isn't pre-goal for any current goal types
-        if not self.options.shuffle_rocket:
-            self.excluded_regions += ["Granny's Island - Top of Rocket"]
+        # Exclude unreachable hub areas
+        if not has_rocket:
+            if not (self.options.expert_level >= 3 and has_golden_propeller):
+                self.excluded_regions += ["Granny's Island - Top of Rocket"]
         else:
             self.included_levels += ["Mosk's Rocket"]
         # Pizza King and Gela-Toni are post BomBoss goal

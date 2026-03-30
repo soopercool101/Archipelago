@@ -196,7 +196,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Robo Taxi Skin": ItemClassification.filler,
     "Glitched Taxi Skin": ItemClassification.filler,
     "TV Hat": ItemClassification.filler,
-    "Burger Hat": ItemClassification.filler,
+    "Burger Hat": ItemClassification.trap,
     "Flip-O-Will": ItemClassification.progression | ItemClassification.useful,
     "Progressive Jump": ItemClassification.progression | ItemClassification.useful,
     "Progressive Boost": ItemClassification.progression | ItemClassification.useful,

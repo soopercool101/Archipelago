@@ -302,10 +302,10 @@
       "Granny's Island - Broken Pier Shallow": "X1+B1 | J1 | GP",
       "Granny's Island - Broken Pier Deep": "X1+B2 | X1/B1 & J1 | GP | J2",
       "Granny's Island - Broken Pier Extra Deep": "X1/B1 & J1 | GP | J2",
-      "Granny's Island - Expert1 High Ground": "X1/J1/B1/GP",
-      "Granny's Island - Expert2 High Ground": "X2/J1/B1/GP",
+      "Granny's Island - Expert 1 High Ground": "X1/J1/B1/GP",
+      "Granny's Island - Expert 2 High Ground": "X2/J1/B1/GP",
       "Granny's Island - High Ground": "J1/B1/GP",
-      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP",
+      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J2+GP",
       "Granny's Island - Arch Near Construction Site": "B1 | GP+J1",
       "Granny's Island - Ocean Pillar": "B1 | GP+OS",
       "Granny's Island - First Island Towards Sewer": "B1 | X2/J1 & GP+OS",
@@ -314,8 +314,10 @@
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1",
       "Granny's Island - Crash Again Island": "X1+B2+GP",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP & OS & J2/B1",
-      "Granny's Island - Sewer Island": "X1+B2+J2+GP",
-      "Morio's Lab - Ground Floor Propeller": "GP+NSAR+LabKey"
+      "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP",
+      "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey",
+      "Law Firm - Ledges": "NSAR+GP",
+      "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP"
     },
     "subwarps": {
       "Granny's Island - Beach Pipe": ["Granny's Island - Pipe Area", ""],
@@ -441,7 +443,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Granny's Island - Lab Hill Expert1 High Ground": {
+  "Granny's Island - Lab Hill Expert 2 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {},
@@ -555,13 +557,13 @@
     "connections": {
       "Granny's Island - Crash Again Island": "OS",
       "Granny's Island - Main Area": "",
-      "Granny's Island - Lab Hill Expert1 High Ground": ""
+      "Granny's Island - Lab Hill Expert 2 High Ground": ""
     },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Granny's Island - Expert1 High Ground": {
+  "Granny's Island - Expert 1 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
@@ -624,24 +626,28 @@
       "Granny's Island - Cheese on Mountain": 2100001
     },
     "hats": {},
-    "connections": {
-      "Granny's Island - Lab Hill Expert1 High Ground": ""
-    },
+    "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Granny's Island - Expert2 High Ground": {
+  "Granny's Island - Expert 2 High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
-      "Granny's Island - Gear - From MMA Champion": 100018
+      "Granny's Island - Gear - From MMA Champion": 100018,
+      "Granny's Island - Gear - Beach Cove": 100002,
+      "Granny's Island - Gear - On Roof by Oil Pump": 100009
     },
     "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {
-      "Granny's Island - Coin Bag Near MMA Champion": 300704
+      "Granny's Island - Coin Bag Near MMA Champion": 300704,
+      "Granny's Island - Coin Bag on Roof by Spin Blocks #1": 300394,
+      "Granny's Island - Coin Bag on Roof by Spin Blocks #2": 300395,
+      "Granny's Island - Coin Bag on Roof by Spin Blocks #3": 300397,
+      "Granny's Island - Coin Bag on Roof by Construction Site": 300461
     },
     "coins": {
       "Granny's Island - Coin on Hill By Cloro-Phil #1": 300424,
@@ -654,12 +660,33 @@
       "Granny's Island - Coin Near MMA Champion #1": 300706,
       "Granny's Island - Coin Near MMA Champion #2": 300705,
       "Granny's Island - Coin Near MMA Champion #3": 300703,
-      "Granny's Island - Coin Near MMA Champion #4": 300702
+      "Granny's Island - Coin Near MMA Champion #4": 300702,
+      "Granny's Island - Coin in Beach Cove #1": 300422,
+      "Granny's Island - Coin in Beach Cove #2": 300421,
+      "Granny's Island - Coin in Beach Cove #3": 300420,
+      "Granny's Island - Coin in Beach Cove #4": 300418,
+      "Granny's Island - Coin in Beach Cove #5": 300417,
+      "Granny's Island - Coin in Beach Cove #6": 300416,
+      "Granny's Island - Coin on Roof by Spin Blocks #1": 300382,
+      "Granny's Island - Coin on Roof by Spin Blocks #2": 300383,
+      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #1": 300381,
+      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #2": 300380,
+      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #3": 300393,
+      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #4": 300413,
+      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #5": 300425,
+      "Granny's Island - Coin on Roof by Oil Pump #1": 300546,
+      "Granny's Island - Coin on Roof by Oil Pump #2": 300545,
+      "Granny's Island - Coin on Roof by Oil Pump #3": 300544,
+      "Granny's Island - Coin on Roof by Construction Site #1": 300414,
+      "Granny's Island - Coin on Roof by Construction Site #2": 300415,
+      "Granny's Island - Coin on Roof by Construction Site #3": 300460
     },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Granny's Island - Lab Hill Expert 2 High Ground": ""
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -670,8 +697,6 @@
     "gears": {
       "Granny's Island - Gear - Granny's Statue": 100005,
       "Granny's Island - Gear - Gym Gears Roof": 100012,
-      "Granny's Island - Gear - Beach Cove": 100002,
-      "Granny's Island - Gear - On Roof by Oil Pump": 100009,
       "Granny's Island - Gear - Lighthouse": 100001,
       "Granny's Island - Gear - In the Clouds": 100015
     },
@@ -685,11 +710,7 @@
       "Granny's Island - Coin Bag on Path to Granny's Statue": 300573,
       "Granny's Island - Coin Bag on Roof in Front of Granny's Statue": 300474,
       "Granny's Island - Coin Bag on Roof Next to Pizza Oven": 300369,
-      "Granny's Island - Coin Bag on Stone Arch on Beach": 300454,
-      "Granny's Island - Coin Bag on Roof by Construction Site": 300461,
-      "Granny's Island - Coin Bag on Roof by Spin Blocks #1": 300394,
-      "Granny's Island - Coin Bag on Roof by Spin Blocks #2": 300395,
-      "Granny's Island - Coin Bag on Roof by Spin Blocks #3": 300397
+      "Granny's Island - Coin Bag on Stone Arch on Beach": 300454
     },
     "coins": {
       "Granny's Island - Coin on Stone Island #1": 300273,
@@ -705,11 +726,6 @@
       "Granny's Island - Coin on Path to Granny's Statue #5": 300468,
       "Granny's Island - Coin on Path to Granny's Statue #6": 300547,
       "Granny's Island - Coin on Path to Granny's Statue #7": 300574,
-      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #1": 300381,
-      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #2": 300380,
-      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #3": 300393,
-      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #4": 300413,
-      "Granny's Island - Coin on Roof Ramp Towards Gym Gears #5": 300425,
       "Granny's Island - Coin Above Pipe on Hill by Lab #1": 300562,
       "Granny's Island - Coin Above Pipe on Hill by Lab #2": 300565,
       "Granny's Island - Coin Above Pipe on Hill by Lab #3": 300568,
@@ -768,21 +784,7 @@
       "Granny's Island - Coin on Ramp Towards Lighthouse #4": 300799,
       "Granny's Island - Coin on Ramp Towards Lighthouse #5": 300801,
       "Granny's Island - Coin on Ramp Towards Lighthouse #6": 300802,
-      "Granny's Island - Coin on Ramp Towards Lighthouse #7": 300804,
-      "Granny's Island - Coin in Beach Cove #1": 300422,
-      "Granny's Island - Coin in Beach Cove #2": 300421,
-      "Granny's Island - Coin in Beach Cove #3": 300420,
-      "Granny's Island - Coin in Beach Cove #4": 300418,
-      "Granny's Island - Coin in Beach Cove #5": 300417,
-      "Granny's Island - Coin in Beach Cove #6": 300416,
-      "Granny's Island - Coin on Roof by Oil Pump #1": 300546,
-      "Granny's Island - Coin on Roof by Oil Pump #2": 300545,
-      "Granny's Island - Coin on Roof by Oil Pump #3": 300544,
-      "Granny's Island - Coin on Roof by Construction Site #1": 300414,
-      "Granny's Island - Coin on Roof by Construction Site #2": 300415,
-      "Granny's Island - Coin on Roof by Construction Site #3": 300460,
-      "Granny's Island - Coin on Roof by Spin Blocks #1": 300382,
-      "Granny's Island - Coin on Roof by Spin Blocks #2": 300383
+      "Granny's Island - Coin on Ramp Towards Lighthouse #7": 300804
     },
     "checkpoints": {},
     "cheeses": {},

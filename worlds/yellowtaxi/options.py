@@ -56,7 +56,7 @@ class ExpertLevel(Range):
     """
     display_name = "Expert Level"
     range_start = 0
-    range_end = 2
+    range_end = 3
     default = 0
 
 class ExtraDemoCollectables(Toggle):
