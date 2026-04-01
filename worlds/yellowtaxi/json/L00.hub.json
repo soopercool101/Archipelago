@@ -333,7 +333,7 @@
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP",
-      "Granny's Island - Safe on Granny's Statue": "J2 | J1+GP",
+      "Granny's Island - Safe on Granny's Statue": "J2 | J1+GP | B1+J1",
       "Granny's Island - Coin Bag on Pillar Towards Sewer": "B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
       "Granny's Island - Gear - Inside Spin Blocks": "SP",

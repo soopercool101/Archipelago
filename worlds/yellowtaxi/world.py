@@ -259,6 +259,7 @@ class YellowTaxiWorld(World):
             "open_grannys_island",
             "locked_morios_lab",
             "locked_morios_wardrobe",
+            "locked_time_trials",
             "shuffle_gela_toni",
             "shuffle_pizza_king",
             "shuffle_orange_switch",
