@@ -6,6 +6,7 @@ from typing import TYPE_CHECKING, Callable, Mapping, Union
 from .data_loader import regions_json_data
 from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
+from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -58,116 +59,7 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
         for location, rule in reg["specialrules"].items():
             rf.assign_location_rule(location, rule)
 
-    return
-    # First, we need to actually grab our entrances. Luckily, there is a helper method for this.
-    overworld_to_bottom_right_room = world.get_entrance("Overworld to Bottom Right Room")
-    overworld_to_top_left_room = world.get_entrance("Overworld to Top Left Room")
-    right_room_to_final_boss_room = world.get_entrance("Right Room to Final Boss Room")
-
-    # An access rule is a function. We can define this function like any other function.
-    # This function must accept exactly one parameter: A "CollectionState".
-    # A CollectionState describes the current progress of the players in the multiworld, i.e. what items they have,
-    # which regions they've reached, etc.
-    # In an access rule, we can ask whether the player has a collected a certain item.
-    # We can do this via the state.has(...) function.
-    # This function takes an item name, a player number, and an optional count parameter (more on that below)
-    # Since a rule only takes a CollectionState parameter, but we also need the player number in the state.has call,
-    # our function needs to be locally defined so that it has access to the player number from the outer scope.
-    # In our case, we are inside a function that has access to the "world" parameter, so we can use world.player.
-    def can_destroy_bush(state: CollectionState) -> bool:
-        return state.has("Sword", world.player)
-
-    # Now we can set our "can_destroy_bush" rule to our entrance which requires slashing a bush to clear the path.
-    # One way to set rules is via the set_rule() function, which works on both Entrances and Locations.
-    set_rule(overworld_to_bottom_right_room, can_destroy_bush)
-
-    # Because the function has to be defined locally, most worlds prefer the lambda syntax.
-    set_rule(overworld_to_top_left_room, lambda state: state.has("Key", world.player))
-
-    # Conditions can depend on event items.
-    set_rule(right_room_to_final_boss_room, lambda state: state.has("Top Left Room Button Pressed", world.player))
-
-    # Some entrance rules may only apply if the player enabled certain options.
-    # In our case, if the hammer option is enabled, we need to add the Hammer requirement to the Entrance from
-    # Overworld to the Top Middle Room.
-    if world.options.hammer:
-        overworld_to_top_middle_room = world.get_entrance("Overworld to Top Middle Room")
-        set_rule(overworld_to_top_middle_room, lambda state: state.has("Hammer", world.player))
-
-
-#def set_all_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> None:
-    #return
-    # Location rules work no differently from Entrance rules.
-    # Most of our locations are chests that can simply be opened by walking up to them.
-    # Thus, their logical requirements are covered by the Entrance rules of the Entrances that were required to
-    # reach the region that the chest sits in.
-    # However, our two enemies work differently.
-    # Entering the room with the enemy is not enough, you also need to have enough combat items to be able to defeat it.
-    # So, we need to set requirements on the Locations themselves.
-    # Since combat is a bit more complicated, we'll use this chance to cover some advanced access rule concepts.
-
-    # Sometimes, you may want to have different rules depending on the player's chosen options.
-    # There is a wrong way to do this, and a right way to do this. Let's do the wrong way first.
-    right_room_enemy = world.get_location("Right Room Enemy Drop")
-
-    # DON'T DO THIS!!!!
-    set_rule(
-        right_room_enemy,
-        lambda state: (
-            state.has("Sword", world.player)
-            and (not world.options.hard_mode or state.has_any(("Shield", "Health Upgrade"), world.player))
-        ),
-    )
-    # DON'T DO THIS!!!!
-
-    # Now, what's actually wrong with this? It works perfectly fine, right?
-    # If hard mode disabled, Sword is enough. If hard mode is enabled, we also need a Shield or a Health Upgrade.
-    # The access rule we just wrote does this correctly, so what's the problem?
-    # The problem is performance.
-    # Most of your world code doesn't need to be perfectly performant, since it just runs once per slot.
-    # However, access rules in particular are by far the hottest code path in Archipelago.
-    # An access rule will potentially be called thousands or even millions of times over the course of one generation.
-    # As a result, access rules are the one place where it's really worth putting in some effort to optimize.
-    # What's the performance problem here?
-    # Every time our access rule is called, it has to evaluate whether world.options.hard_mode is True or False.
-    # Wouldn't it be better if in easy mode, the access rule only checked for Sword to begin with?
-    # Wouldn't it also be better if in hard mode, it already knew it had to check Shield and Health Upgrade as well?
-    # Well, we can achieve this by doing the "if world.options.hard_mode" check outside the set_rule call,
-    # and instead having two *different* set_rule calls depending on which case we're in.
-
-    if world.options.hard_mode:
-        # If you have multiple conditions, you can obviously chain them via "or" or "and".
-        # However, there are also the nice helper functions "state.has_any" and "state.has_all".
-        set_rule(
-            right_room_enemy,
-            lambda state: (
-                state.has("Sword", world.player) and state.has_any(("Shield", "Health Upgrade"), world.player)
-            ),
-        )
-    else:
-        set_rule(right_room_enemy, lambda state: state.has("Sword", world.player))
-
-    # Another way to chain multiple conditions is via the add_rule function.
-    # This makes the access rules a bit slower though, so it should only be used if your structure justifies it.
-    # In our case, it's pretty useful because hard mode and easy mode have different requirements.
-    final_boss = world.get_location("Final Boss Defeated")
-
-    # For the "known" requirements, it's still better to chain them using a normal "and" condition.
-    add_rule(final_boss, lambda state: state.has_all(("Sword", "Shield"), world.player))
-
-    if world.options.hard_mode:
-        # You can check for multiple copies of an item by using the optional count parameter of state.has().
-        add_rule(final_boss, lambda state: state.has("Health Upgrade", world.player, 2))
-
-
 def set_completion_condition(world: YellowTaxiWorld) -> None:
-    # Finally, we need to set a completion condition for our world, defining what the player needs to win the game.
-    # You can just set a completion condition directly like any other condition, referencing items the player receives:
-    #world.multiworld.completion_condition[world.player] = lambda state: state.has_all(("Sword", "Shield"), world.player)
-
-    # In our case, we went for the Victory event design pattern (see create_events() in locations.py).
-    # So lets undo what we just did, and instead set the completion condition to:
-
     world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
 
 
@@ -193,11 +85,8 @@ class RuleFactory:
         except RuleFactory.YTGVLogicException as exception:
             raise RuleFactory.YTGVLogicException(
                 f"Error generating rule for {target_name} using rule expression {rule_expr}: {exception}")
-        if rule == False:
-            raise RuleFactory.YTGVLogicException(
-                f"Error: {target_name} rule expression {rule_expr} always returns False")
-        elif rule:
-            set_rule(target, rule)
+        if rule is not None:
+            self.world.set_rule(target, rule)
 
     def assign_connection_rule(self, region_from: str, region_to: str, rule_expr: str):
         self.assign_entrance_rule(f"{region_from} -> {region_to}", rule_expr)
@@ -214,271 +103,255 @@ class RuleFactory:
         except RuleFactory.YTGVLogicException as exception:
             raise RuleFactory.YTGVLogicException(
                 f"Error generating rule for {entrance_name} using rule expression {rule_expr}: {exception}")
-        if rule == False: # Entrances may only be accessible on certain difficulties
-            set_rule(target, lambda state: False)
-        elif rule:
-            set_rule(target, rule)
+        if rule is not None:
+            self.world.set_rule(target, rule)
 
-    def build_rule(self, rule_expr: str) -> Union[Callable, bool, None]:
+    def build_rule(self, rule_expr: str) -> Rule:
         expressions = rule_expr.split(" | ") if len(rule_expr) > 0 else []
-        rules = []
-        any_failed_rules = False
+        rule: Union[Rule | None] = None
         for expression in expressions:
             or_clause = self.combine_and_clauses(expression)
-            if or_clause is True:
-                return None
-            if or_clause is not False:
-                rules.append(or_clause)
+            if rule is None:
+                rule = or_clause
             else:
-                any_failed_rules = True
-        if rules:
-            if len(rules) == 1:
-                return lambda state: rules[0](state)
-            else:
-                return lambda state: any(rule(state) for rule in rules)
-        elif any_failed_rules:
-            return False
-        return None
+                rule = rule | or_clause
+        if rule is None:
+            return True_()
+        return rule
 
-    def combine_and_clauses(self, rule_expr: str) -> Union[Callable, bool]:
+    def combine_and_clauses(self, rule_expr: str) -> Rule:
         expressions = rule_expr.split(" & ")
-        rules = []
+        rule: Union[Rule | None] = None
         for expression in expressions:
-            and_clause = self.make_lambda(expression)
-            if and_clause is False:
-                return False
-            if and_clause is not True:
-                rules.append(and_clause)
-        if rules:
-            if len(rules) == 1:
-                return rules[0]
-            return lambda state: all(rule(state) for rule in rules)
-        else:
-            return True
+            and_clause = self.evaluate_subclause(expression)
+            if rule is None:
+                rule = and_clause
+            else:
+                rule = rule & and_clause
+        if rule is None:
+            return True_()
+        return rule
 
-    def make_lambda(self, expression: str) -> Union[Callable, bool]:
+    def evaluate_subclause(self, expression: str) -> Rule:
         if '+' in expression:
             tokens = expression.split('+')
-            items: dict[str, int] = {}
+            rule: Union[Rule | None] = None
             for token in tokens:
                 item = self.parse_token(token)
-                if item is True:
-                    continue
-                if item is False:
-                    return False
-                items[item[0]] = int(item[1])
-            if items:
-                if all(c == 1 for c in items.values()):
-                    return lambda state: state.has_all(list(items), self.world.player)
-                return lambda state: state.has_all_counts(items, self.world.player)
-            else:
-                return True
+                if rule is None:
+                    rule = item
+                else:
+                    rule = rule & item
+            if rule is None:
+                return True_()
+            return rule
         if '/' in expression:
             tokens = expression.split('/')
-            items: dict[str, int] = {}
+            rule: Union[Rule | None] = None
             for token in tokens:
                 item = self.parse_token(token)
-                if item is True:
-                    return True
-                if item is False:
-                    continue
-                items[item[0]] = int(item[1])
-            if items:
-                if all(c == 1 for c in items.values()):
-                    return lambda state: state.has_any(list(items), self.world.player)
-                return lambda state: state.has_any_count(items, self.world.player)
-            else:
-                return False
+                if rule is None:
+                    rule = item
+                else:
+                    rule = rule | item
+            if rule is None:
+                return True_()
+            return rule
         if '{{' in expression:
-            return lambda state: state.can_reach(expression[2:-2], "Location", self.world.player)
+            return CanReachLocation(expression[2:-2])
         if '{' in expression:
-            return lambda state: state.can_reach(expression[1:-1], "Region", self.world.player)
-        item = self.parse_token(expression)
-        if item in (True, False):
-            return item
-        return lambda state: state.has(item[0], self.world.player, item[1])
+            return CanReachRegion(expression[1:-1])
+        return self.parse_token(expression)
 
-    def parse_token(self, token: str) -> Union[tuple[str, int], bool]:
+    def parse_token(self, token: str) -> Rule:
         if token == "B1":
             if self.world.options.shuffle_flip_o_will == 0:
-                return True
-            return "Progressive Boost", 1
+                return True_()
+            return Has("Progressive Boost")
         if token == "B2":
             if self.world.options.shuffle_flip_o_will == 0:
-                return True
-            return "Progressive Boost", 2
+                return True_()
+            return Has("Progressive Boost", 2)
         if token == "J1":
             if self.world.options.shuffle_flip_o_will == 0:
-                return True
-            return "Progressive Jump", 1
+                return True_()
+            return Has("Progressive Jump")
         if token == "J2":
             if self.world.options.shuffle_flip_o_will == 0:
-                return True
-            return "Progressive Jump", 2
+                return True_()
+            return Has("Progressive Jump", 2)
         if token == "SP":
             if self.world.options.shuffle_flip_o_will == 0:
-                return True
-            return "Spin Attack", 1
+                return True_()
+            return Has("Spin Attack")
         if token == "GS":
-            return "Golden Spring Unlock", 1
+            return Has("Golden Spring Unlock")
         if token == "GST":
             if self.world.options.shuffle_golden_spring == 0:
-                return True
-            return "Golden Spring Unlock", 1
+                return True_()
+            return Has("Golden Spring Unlock")
         if token == "OS":
-            return "Orange Switch", 1
+            return Has("Orange Switch")
         if token == "GP":
-            return "Golden Propeller Unlock", 1
+            return Has("Golden Propeller Unlock")
         if token == "FGU":
             if self.world.options.shuffle_full_game == 0:
-                return True
-            return "Full Game Unlock", 1
+                return True_()
+            return Has("Full Game Unlock")
         if token == "GelaToni":
-            return "Gela-Toni", 1
+            return Has("Gela-Toni")
         if token == "PizzaKing":
-            return "Pizza King", 1
+            return Has("Pizza King")
         if token == "Doggo":
             match self.world.options.fecal_matters_unlock_condition:
                 case self.world.options.fecal_matters_unlock_condition.option_open:
-                    return True
+                    return True_()
                 case self.world.options.fecal_matters_unlock_condition.option_full_game:
                     if self.world.options.shuffle_full_game == 0:
-                        return True
-                    return "Full Game Unlock", 1
+                        return True_()
+                    return Has("Full Game Unlock")
                 case self.world.options.fecal_matters_unlock_condition.option_vanilla |\
                      self.world.options.fecal_matters_unlock_condition.option_shuffle_doggo:
-                    return "Doggo", 1
+                    return Has("Doggo")
                 case self.world.options.fecal_matters_unlock_condition.option_exclude:
-                    return False
+                    return False_()
         if token == "Password":
-            return "Morio's Password", 1
+            return Has("Morio's Password")
         if token == "Rocket":
-            return "Mosk's Rocket", 1
+            return Has("Mosk's Rocket")
         if token == "MorioHat":
-            return "Morio Hat", 1
+            return Has("Morio Hat")
         if token == "MoskHat":
-            return "Mosk Hat", 1
+            return Has("Alien Mosk Hat (Good)")
         # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
-            return "Gear", 3
+            return Has("Gear", 3)
         if token == "PortalBombeach":
             if self.world.options.goal == 0:
                 self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
-                return "Gear", self.world.final_portal_cost
+                return Has("Gear", self.world.final_portal_cost)
 
-            return "Gear", 6
+            return Has("Gear", 6)
         if token == "PortalArcadePanik":
-            return "Gear", 18
+            return Has("Gear", 18)
         if token == "PortalPizzaTime":
-            return "Gear", 32
+            return Has("Gear", 32)
         if token == "PortalToslaOffices":
             if self.world.options.goal == 1:
                 self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
-                return "Gear", self.world.final_portal_cost
+                return Has("Gear", self.world.final_portal_cost)
 
-            return "Gear", 50
+            return Has("Gear", 50)
         if token == "PortalGymGears":
-            return True
+            return True_()
         if token == "PortalFecalMatters":
-            return True
+            return True_()
         if token == "PortalFlushedAway":
-            return True
+            return True_()
         if token == "PortalMauriziosCity":
-            return "Gear", 65
+            return Has("Gear", 65)
         if token == "PortalCrashTestIndustries":
-            return "Gear", 80
+            return Has("Gear", 80)
         if token == "PortalMoriosMind":
-            return True
+            return True_()
         if token == "PortalRuinedObservatory":
-            return True
+            return True_()
         if token == "PortalToslaHQ":
             if self.world.options.goal == 2:
                 self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
-                return "Gear", self.world.final_portal_cost
+                return Has("Gear", self.world.final_portal_cost)
 
-            return "Gear", 130
+            return Has("Gear", 130)
         if token == "NPR":
             # No Portal randomization. Placeholder rule for now.
-            return True
+            return True_()
         if token == "NSAR":
             # No Subarea randomization. Placeholder rule for now.
-            return True
+            return True_()
         if token == "NHPR":
             # No Hub Portal randomization. Placeholder rule for now.
             # Hub portals launch you upwards when declining entry, making them logical access rules in some cases.
-            return True
+            return True_()
         if token == "OGI":
-            return self.world.options.open_grannys_island.value == 1
+            if self.world.options.open_grannys_island.value == 1:
+                return True_()
+            return False_()
         if token == "LabKey":
             if self.world.options.locked_morios_lab:
-                return "Lab Key", 1
-            return True
+                return Has("Lab Key")
+            return True_()
         if token == "WardrobeKey":
             if self.world.options.locked_morios_wardrobe:
-                return "Morio's Wardrobe", 1
-            return True
+                return Has("Morio's Wardrobe")
+            return True_()
         if token == "GymKey":
             match self.world.options.gym_gears_unlock_condition:
                 case self.world.options.gym_gears_unlock_condition.option_open:
-                    return True
+                    return True_()
                 case self.world.options.gym_gears_unlock_condition.option_full_game:
                     if self.world.options.shuffle_full_game == 0:
-                        return True
-                    return "Full Game Unlock", 1
+                        return True_()
+                    return Has("Full Game Unlock")
                 case self.world.options.gym_gears_unlock_condition.option_shuffle_gym_membership:
-                    return "Gym Membership", 1
+                    return Has("Gym Membership")
                 case self.world.options.gym_gears_unlock_condition.option_exclude:
-                    return False
+                    return False_()
         if token == "HatMembership":
-            return True
+            return True_()
         if token == "SewerKey":
             match self.world.options.flushed_away_unlock_condition:
                 case self.world.options.flushed_away_unlock_condition.option_open:
-                    return True
+                    return True_()
                 case self.world.options.flushed_away_unlock_condition.option_full_game | self.world.options.flushed_away_unlock_condition.option_default:
                     if self.world.options.shuffle_full_game == 0:
-                        return True
-                    return "Full Game Unlock", 1
+                        return True_()
+                    return Has("Full Game Unlock")
                 case self.world.options.flushed_away_unlock_condition.option_shuffle_sewer_key:
-                    return "Sewer Key", 1
+                    return Has("Sewer Key")
                 case self.world.options.flushed_away_unlock_condition.option_exclude:
-                    return False
+                    return False_()
         if token == "EarlySewer":
-            return self.world.early_sewer_island
+            if self.world.early_sewer_island:
+                return True_()
+            return False_()
         if token == "TT1":
             match self.world.options.locked_time_trials:
                 case self.world.options.locked_time_trials.option_open:
-                    return True
+                    return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return "Time Trial Remote", 1
+                    return Has("Time Trial Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return "Time Trial Remote (Baby Steps!)", 1
+                    return Has("Time Trial Remote (Baby Steps!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return "Progressive Time Trial Remote", 1
+                    return Has("Progressive Time Trial Remote")
         if token == "TT2":
             match self.world.options.locked_time_trials:
                 case self.world.options.locked_time_trials.option_open:
-                    return True
+                    return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return "Time Trial Remote", 1
+                    return Has("Time Trial Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return "Time Trial Remote (Getting Gud!)", 1
+                    return Has("Time Trial Remote (Getting Gud!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return "Progressive Time Trial Remote", 2
+                    return Has("Progressive Time Trial Remote", 2)
         if token == "TT3":
             match self.world.options.locked_time_trials:
                 case self.world.options.locked_time_trials.option_open:
-                    return True
+                    return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return "Time Trial Remote", 1
+                    return Has("Time Trial Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return "Time Trial Remote (Pro Tricks!)", 1
+                    return Has("Time Trial Remote (Pro Tricks!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return "Progressive Time Trial Remote", 3
+                    return Has("Progressive Time Trial Remote", 3)
         if token == "NHS":
-            return self.world.options.hatsanity == 0
+            if self.world.options.hatsanity == 0:
+                return True_()
+            return False_()
         if token == "HS":
-            return self.world.options.hatsanity != 0
+            if self.world.options.hatsanity != 0:
+                return True_()
+            return False_()
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
@@ -489,7 +362,7 @@ class RuleFactory:
                     hub_bunnies -= 1
                 if self.world.exclude_top_bunny:
                     hub_bunnies -= 1
-                return "Bunny (Morio's Lab)", hub_bunnies
+                return Has("Bunny (Morio's Lab)")
             else:
                 adjusted_bunny_level : str = bunny_level
                 match bunny_level:
@@ -503,12 +376,14 @@ class RuleFactory:
                         adjusted_bunny_level = "Fecal Matters"
                     case "FA":
                         adjusted_bunny_level = "Flushed Away"
-                return f"Bunny ({adjusted_bunny_level})", 3
+                return Has(f"Bunny ({adjusted_bunny_level})", 3)
         if token.startswith("X"):
             expert_level = int(token[1:])
             if (hasattr(self.world.multiworld, "generation_is_fake")
                     and self.world.options.expert_level < expert_level):
-                return "Glitched Logic", expert_level - self.world.options.expert_level
-            return self.world.options.expert_level >= expert_level
+                return Has("Glitched Logic", expert_level - self.world.options.expert_level)
+            if self.world.options.expert_level >= expert_level:
+                return True_()
+            return False_()
 
         raise Exception(f"Invalid token: '{token}'")
