@@ -51,7 +51,7 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
             for cheese in reg["cheeses"]:
                 try:
                     cheese_loc = world.get_location(cheese)
-                    set_rule(cheese_loc, lambda state: state.has("Michele", world.player))
+                    world.set_rule(cheese_loc, Has("Michele"))
                 except KeyError:
                     break # If cheese doesn't exist here, region has no items
 
@@ -362,7 +362,7 @@ class RuleFactory:
                     hub_bunnies -= 1
                 if self.world.exclude_top_bunny:
                     hub_bunnies -= 1
-                return Has("Bunny (Morio's Lab)")
+                return Has("Bunny (Morio's Lab)", hub_bunnies)
             else:
                 adjusted_bunny_level : str = bunny_level
                 match bunny_level:
