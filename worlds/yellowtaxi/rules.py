@@ -227,10 +227,8 @@ class RuleFactory:
         if token == "PortalMorioHome":
             return Has("Gear", 3)
         if token == "PortalBombeach":
-            if self.world.options.goal == 0:
-                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
+            if self.world.options.goal == self.world.options.goal.option_bombeach_boss:
                 return Has("Gear", self.world.final_portal_cost)
-
             return Has("Gear", 6)
         if token == "PortalArcadePanik":
             return Has("Gear", 18)
@@ -238,9 +236,7 @@ class RuleFactory:
             return Has("Gear", 32)
         if token == "PortalToslaOffices":
             if self.world.options.goal == 1:
-                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
                 return Has("Gear", self.world.final_portal_cost)
-
             return Has("Gear", 50)
         if token == "PortalGymGears":
             return True_()
@@ -258,9 +254,7 @@ class RuleFactory:
             return True_()
         if token == "PortalToslaHQ":
             if self.world.options.goal == 2:
-                self.world.final_portal_cost = math.floor((self.world.num_gears * self.world.options.goal_portal_gear_percentage) / 100)
                 return Has("Gear", self.world.final_portal_cost)
-
             return Has("Gear", 130)
         if token == "NPR":
             # No Portal randomization. Placeholder rule for now.
@@ -273,7 +267,7 @@ class RuleFactory:
             # Hub portals launch you upwards when declining entry, making them logical access rules in some cases.
             return True_()
         if token == "OGI":
-            if self.world.options.open_grannys_island.value == 1:
+            if self.world.options.open_grannys_island:
                 return True_()
             return False_()
         if token == "LabKey":

@@ -1,4 +1,5 @@
 import logging
+import math
 from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List, Set
 
@@ -60,7 +61,18 @@ class YellowTaxiWorld(World):
         self.exclude_spike_bunny : bool = False
         self.exclude_top_bunny : bool = False
         self.final_portal_cost : int = 0
+        self.required_gears : int = 0
         self.goal_levels : List[str] = ["Bombeach"]
+        # These are used to simplify logic and region inclusion rules
+        # Sometimes not shuffling these results in them not existing, if the level isn't in the game
+        self.has_golden_spring_access : bool = False
+        self.has_golden_propeller_access : bool = False
+        self.has_orange_switch_access : bool = False
+        self.has_password_access : bool = False
+        self.has_rocket_access : bool = False
+        # Alternate forms of spike traversal may be added beyond the golden spring
+        self.has_spike_traversal : bool = False
+
 
     def generate_early(self) -> None:
         # Determine which regions are not going to be included
@@ -76,7 +88,7 @@ class YellowTaxiWorld(World):
             case 0:
                 self.goal_levels = ["Bombeach"]
             case 1:
-                self.goal_levels =  ["Tosla Offices"]
+                self.goal_levels =  ["Tosla's Offices"]
             case 2:
                 self.goal_levels = ["Tosla HQ", "Moon"]
 
@@ -99,66 +111,80 @@ class YellowTaxiWorld(World):
                 "Pro Tricks!",
             ]
 
-        has_golden_spring = self.options.shuffle_golden_spring or ("Tosla Offices" in self.included_levels and
-                                                                   "Tosla Offices" not in self.goal_levels)
-        has_orange_switch = self.options.shuffle_orange_switch or "Crash Test Industries" in self.included_levels
-        has_golden_propeller = self.options.shuffle_golden_propeller or "Ruined Observatory" in self.included_levels
-        has_rocket = self.options.shuffle_rocket
+        self.has_golden_spring_access = ((self.options.shuffle_golden_spring ==
+                                         self.options.shuffle_golden_spring.option_true) or
+                                         ("Tosla's Offices" in self.included_levels and
+                                          "Tosla's Offices" not in self.goal_levels))
+        self.has_spike_traversal = self.has_golden_spring_access
+        self.has_orange_switch_access = ((self.options.shuffle_orange_switch.value ==
+                                          self.options.shuffle_orange_switch.option_true) or
+                                         "Crash Test Industries" in self.included_levels)
+        self.has_password_access = ((self.options.shuffle_morios_password.value ==
+                                     self.options.shuffle_morios_password.option_true) or
+                                    "Morio's Mind" in self.included_levels)
+        self.has_golden_propeller_access = ((self.options.shuffle_golden_propeller.value ==
+                                             self.options.shuffle_golden_propeller.option_true) or
+                                            "Ruined Observatory" in self.included_levels)
+        self.has_rocket_access = (self.options.shuffle_rocket.value ==
+                                  self.options.shuffle_rocket.option_true)
 
         if self.options.hatsanity == 1: # Special "level" for shared hats
             self.special_levels += ["Hatsanity"]
 
         # Exclude unreachable hub areas
-        if not has_rocket:
-            if not (self.options.expert_level >= 3 and has_golden_propeller):
+        if not self.has_rocket_access:
+            if not (self.options.expert_level >= 3 and self.has_golden_propeller_access):
                 self.excluded_regions += ["Granny's Island - Top of Rocket"]
         else:
             self.included_levels += ["Mosk's Rocket"]
-        # Pizza King and Gela-Toni are post BomBoss goal
-        if self.options.goal < 1:
-            if not self.options.shuffle_gela_toni:
+
+        # Gela-Toni normally only appears after bomboss is defeated. Considered postgoal content if that's the case
+        if "Bombeach" not in self.included_levels or "Bombeach" in self.goal_levels:
+            # Add early location for Gela-Toni if the main one isn't possible
+            if self.options.shuffle_gela_toni:
+                self.early_gela_toni = True
+            else:
                 self.excluded_regions += ["Ice Cream Truck - Lower Path", "Ice Cream Truck - Upper Path"]
-            if not self.options.shuffle_pizza_king:
+        # Pizza King appears in Pizza Time. If level is inaccessible, either exclude his hub portion or set early
+        if "Pizza Time" not in self.included_levels:
+            if self.options.shuffle_pizza_king:
+                self.early_pizza_king = True
+            else:
                 self.excluded_regions += ["Pizza Oven - Entrance", "Pizza Oven - Pillar"]
-        # Doggo, Golden Spring, Orange Switch, Morio's Password, and Golden Propeller are all post Tosla HQ goal
-        if self.options.goal < 2:
-            # Can't reach Crash Again or Flushed Away without Orange Switch or Golden Propeller in Expert 1 and above
-            if (not self.options.shuffle_orange_switch and
-                    (not self.options.expert_level >= 1 or not self.options.shuffle_golden_propeller)):
+        if not self.has_orange_switch_access:
+            if self.options.expert_level < 1 or not self.has_golden_propeller_access:
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
                                           "Granny's Island - Crash Again Roof",
                                           "Crash Again - Starting Area",
                                           "Crash Again - End",
                                           "Granny's Island - Sewer Island",
                                           "Granny's Island - Sewer Island Upper"]
-            #else:
-            #    self.included_levels += ["Flushed Away"]
-            # Cannot reach these spiky areas without golden spring
-            if not self.options.shuffle_golden_spring:
-                self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes",
-                                          "Lab Memories - First Step",
-                                          "Lab Memories - High Ground"]
-                if self.options.expert_level < 2:
-                    self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
-            # Final floor is hard locked behind Morio's Password
-            if not self.options.shuffle_morios_password:
-                self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
-                                          "Morio's Lab - Fifth Floor Golden Propeller",
-                                          "Morio's Lab - Fifth Floor Golden Propeller (Password)",
-                                          "Morio's Lab - Ledge Above Ruined Observatory Portal",
-                                          "Morio's Lab - Ledge Below Tosla HQ Portal",
-                                          "Morio's Lab - Fifth Floor Low Pillars",
-                                          "Morio's Lab - Fifth Floor High Pillars",
-                                          "Morio's Lab - Final Floor",
-                                          "Morio's Lab - Final Floor Pipes",
-                                          "Morio's Lab - Final Floor Catwalk"]
-                if self.options.expert_level == 0:
-                    # Assume that expert 0 will not be using the shortcut pipe
-                    self.excluded_regions += [
-                        "Morio's Lab - Second Floor Falling From Shortcut Pipe",
-                        "Morio's Lab - Second Floor Access to Shortcut Pipe",
-                        "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
-                    ]
+        if not self.has_spike_traversal:
+            self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes",
+                                      "Lab Memories - First Step",
+                                      "Lab Memories - High Ground"]
+            if self.options.expert_level < 2:
+                self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
+        if not self.has_password_access:
+            self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
+                                      "Morio's Lab - Fifth Floor Golden Propeller",
+                                      "Morio's Lab - Fifth Floor Golden Propeller (Password)",
+                                      "Morio's Lab - Ledge Above Ruined Observatory Portal",
+                                      "Morio's Lab - Ledge Below Tosla HQ Portal",
+                                      "Morio's Lab - Fifth Floor Low Pillars",
+                                      "Morio's Lab - Fifth Floor High Pillars",
+                                      "Morio's Lab - Final Floor",
+                                      "Morio's Lab - Final Floor Pipes",
+                                      "Morio's Lab - Final Floor Catwalk"]
+            if self.options.expert_level == 0:
+                # Assume that expert 0 will not be using the shortcut pipe
+                self.excluded_regions += [
+                    "Morio's Lab - Second Floor Falling From Shortcut Pipe",
+                    "Morio's Lab - Second Floor Access to Shortcut Pipe",
+                    "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
+                ]
+
+        # Granny's Island Levels. Flushed Away in particular needs to consider logical access.
 
         # Add Gym Gears if included via settings
         if self.options.gym_gears_unlock_condition != self.options.gym_gears_unlock_condition.option_exclude:
@@ -168,7 +194,8 @@ class YellowTaxiWorld(World):
             self.included_levels += ["Fecal Matters"]
         # Add Flushed Away if included via settings and logically accessible
         if self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_exclude:
-            if self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_default or "Granny's Island - Sewer Island" not in self.excluded_regions:
+            if (self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_default
+                    or "Granny's Island - Sewer Island" not in self.excluded_regions):
                 self.included_levels += ["Flushed Away"]
                 if "Granny's Island - Sewer Island" in self.excluded_regions:
                     self.excluded_regions.remove("Granny's Island - Sewer Island")
@@ -179,8 +206,6 @@ class YellowTaxiWorld(World):
         if self.options.shuffle_gela_toni and self.options.exclude_goal_portal_checks and self.options.goal < 1:
             self.early_gela_toni = True
         if not "Pizza Time" in self.included_levels:
-            if self.options.shuffle_pizza_king:
-                self.early_pizza_king = True
             self.early_rat = True
         if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
             self.early_backflip = True
@@ -237,10 +262,13 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
-        #visualize_regions(self.get_region("Menu"), "regions_test.puml", show_entrance_names=True, linetype_ortho=False)
+        self.final_portal_cost = math.floor((self.num_gears *
+                                                   self.options.goal_portal_gear_percentage) / 100)
+        self.required_gears = self.final_portal_cost
 
     def set_rules(self) -> None:
         rules.set_all_rules(self)
+        #visualize_regions(self.get_region("Menu"), "regions_test.puml", show_entrance_names=True, linetype_ortho=False)
 
     def create_items(self) -> None:
         items.create_all_items(self)
