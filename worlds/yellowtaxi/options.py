@@ -185,6 +185,10 @@ class LockedTimeTrials(Choice):
     default = option_open
     alias_vanilla = option_open
     alias_unlocked = option_open
+    alias_disabled = option_open
+    alias_off = option_open
+    alias_enabled = option_single_item
+    alias_on = option_single_item
 
 class ShuffleGelaToni(DefaultOnToggle):
     """

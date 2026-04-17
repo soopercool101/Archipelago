@@ -300,7 +300,10 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
     #if world.random.randint(0, 99) < world.options.trap_chance:
     filler = []
     weights = []
-    if world.options.safesanity:
+    if world.options.safesanity and world.options.hatsanity != world.options.hatsanity.option_disabled:
+        filler += ["100 Coins"]
+        weights += [3]
+    elif world.options.safesanity or world.options.hatsanity != world.options.hatsanity.option_disabled:
         filler += ["100 Coins"]
         weights += [1]
     if world.options.chestsanity or world.options.cheesesanity:
@@ -327,6 +330,11 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     # Note: This function's content could just be the contents of world.create_item in world.py directly,
     # but it seemed nicer to have it in its own function over here in items.py.
     classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
+
+    # Don't skip balancing on required gears
+    #if name == "Gear" and world.required_gears > 0:
+    #    classification = ItemClassification.progression_deprioritized
+    #    world.required_gears -= 1
 
     # Rat is progression if Cheesesanity is on
     if name == "Michele" and world.options.cheesesanity:
@@ -446,6 +454,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
 
     needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
+
+    extra_hats = 0
 
     if world.options.hatsanity != world.options.hatsanity.option_disabled:
         # Hatsanity only makes one location per hat

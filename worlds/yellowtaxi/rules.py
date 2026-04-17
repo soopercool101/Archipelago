@@ -172,6 +172,10 @@ class RuleFactory:
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
             return Has("Progressive Boost", 2)
+        if token == "PMB": # Pac-man boost, overhead sections
+            if self.world.options.shuffle_flip_o_will == 0:
+                return True_()
+            return Has("Progressive Boost")
         if token == "J1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
@@ -180,13 +184,22 @@ class RuleFactory:
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
             return Has("Progressive Jump", 2)
+        if token == "PMJ":
+            return False_()
         if token == "SP":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
             return Has("Spin Attack")
         if token == "GS":
+            raise Exception(f"Invalid token: '{token}'")
             return Has("Golden Spring Unlock")
         if token == "GST":
+            if self.world.options.shuffle_golden_spring == 0:
+                return True_()
+            return Has("Golden Spring Unlock")
+        if token == "Spike":
+            return Has("Golden Spring Unlock")
+        if token == "SpikeT":
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
             return Has("Golden Spring Unlock")

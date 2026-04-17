@@ -13,7 +13,7 @@
     "hats": {},
     "connections": {
       "Getting Gud! - Lower Spikes": "J1/GP",
-      "Getting Gud! - Middle Floor": "X1+J1 | B1+GS | J2"
+      "Getting Gud! - Middle Floor": "X1+J1 | B1+Spike | J2"
     },
     "subwarps": {},
     "warps": {},
@@ -55,7 +55,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Getting Gud! - High Ground": "GS+B2 | J2 & X1/B2"
+      "Getting Gud! - High Ground": "Spike+B2 | J2 & X1/B2"
     },
     "subwarps": {},
     "warps": {},

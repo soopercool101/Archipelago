@@ -133,7 +133,13 @@
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
-    "hats": {},
+    "hats": {
+      "Top Hat": 40700002,
+      "Propeller Cap": 40700001,
+      "No Hat": 40700000,
+      "Slot Machine Hat": 40700012,
+      "Joystick Hat": 40700011
+    },
     "connections": {
       "Any Hat World": ""
     },
@@ -158,20 +164,41 @@
       "Arcade Panik - Gear - Go Karts Strike": 40100020,
       "Arcade Panik - Gear - Go Karts Obstacle Course": 40100008,
       "Arcade Panik - Gear - Left Switch Path": 40100018,
-      "Arcade Panik - Gear - Right Switch Path": 40100013
+      "Arcade Panik - Gear - Right Switch Path": 40100013,
+      "Arcade Panik - Gear - Arcade Zone Left Bomb Block Cage": 40100016,
+      "Arcade Panik - Gear - Arcade Zone Right Bomb Block Cage": 40100007,
+      "Arcade Panik - Gear - Button Pillar in Arcade Zone": 40100006,
+      "Arcade Panik - Gear - Button Pillar Past Arcade Zone": 40100005
     },
-    "bunnies": {},
+    "bunnies": {
+      "Arcade Panik - Bunny - On Arcade Zone Wall": 40200002,
+      "Arcade Panik - Bunny - Above Go Karts Pipe": 40200000,
+      "Arcade Panik - Bunny - Above Crazy Ballz Pachinko": 40200001
+    },
     "safes": {},
     "chests": {
       "Arcade Panik - Chest on Big Bowling Pipe": 40300006,
       "Arcade Panik - Chest on Arcade Zone Pipe": 40300007,
       "Arcade Panik - Chest on Go Karts Pipes #1": 40300008,
       "Arcade Panik - Chest on Go Karts Pipes #2": 40300079,
-      "Arcade Panik - Chest on Go Karts Pipes #3": 40300131
+      "Arcade Panik - Chest on Go Karts Pipes #3": 40300131,
+      "Arcade Panik - Chest Inside Go Karts Pipe": 40300205
     },
     "coinbags": {
       "Arcade Panik - Coin Bag on Switch Overlooking Crazy Ballz Long Strike #1": 40300290,
-      "Arcade Panik - Coin Bag on Switch Overlooking Crazy Ballz Long Strike #2": 40300292
+      "Arcade Panik - Coin Bag on Switch Overlooking Crazy Ballz Long Strike #2": 40300292,
+      "Arcade Panik - Coin Bag on Right Arcade Machine Row in Arcade Zone": 40300238,
+      "Arcade Panik - Coin Bag on Left Arcade Machine Row in Arcade Zone": 40300206,
+      "Arcade Panik - Coin Bag on Center Arcade Machine in Arcade Zone #1": 40300227,
+      "Arcade Panik - Coin Bag on Center Arcade Machine in Arcade Zone #2": 40300253,
+      "Arcade Panik - Coin Bag on First Button Pillar in Arcade Zone": 40300284,
+      "Arcade Panik - Coin Bag on Second Button Pillar in Arcade Zone": 40300283,
+      "Arcade Panik - Coin Bag on Third Button Pillar in Arcade Zone": 40300286,
+      "Arcade Panik - Coin Bag on Fourth Button Pillar in Arcade Zone #1": 40300265,
+      "Arcade Panik - Coin Bag on Fourth Button Pillar in Arcade Zone #2": 40300274,
+      "Arcade Panik - Coin Bag on Back Arcade Machine Row in Arcade Zone": 40300230,
+      "Arcade Panik - Coin Bag on Arcade Zone Wall #1": 40300343,
+      "Arcade Panik - Coin Bag on Arcade Zone Wall #2": 40300341
     },
     "coins": {
       "Arcade Panik - Coin by Big Bowling #1": 40300101,
@@ -269,22 +296,104 @@
       "Arcade Panik - Coin on Path to Arcade Zone #2": 40300180,
       "Arcade Panik - Coin on Path to Arcade Zone #3": 40300181,
       "Arcade Panik - Coin on Path to Arcade Zone #4": 40300182,
-      "Arcade Panik - Coin on Path to Arcade Zone #5": 40300183
+      "Arcade Panik - Coin on Path to Arcade Zone #5": 40300183,
+      "Arcade Panik - Coin on Button Before Arcade Zone #1": 40300188,
+      "Arcade Panik - Coin on Button Before Arcade Zone #2": 40300193,
+      "Arcade Panik - Coin on Button Before Arcade Zone #3": 40300202,
+      "Arcade Panik - Coin on Button Before Arcade Zone #4": 40300225,
+      "Arcade Panik - Coin on Button Before Arcade Zone #5": 40300251,
+      "Arcade Panik - Coin on Floor Button in Arcade Zone #1": 40300189,
+      "Arcade Panik - Coin on Floor Button in Arcade Zone #2": 40300194,
+      "Arcade Panik - Coin on Floor Button in Arcade Zone #3": 40300203,
+      "Arcade Panik - Coin on Floor Button in Arcade Zone #4": 40300226,
+      "Arcade Panik - Coin on Floor Button in Arcade Zone #5": 40300252,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #1": 40300244,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #2": 40300243,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #3": 40300242,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #4": 40300241,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #5": 40300240,
+      "Arcade Panik - Coin on Right Arcade Machine Row in Arcade Zone #6": 40300239,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #1": 40300212,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #2": 40300211,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #3": 40300210,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #4": 40300209,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #5": 40300208,
+      "Arcade Panik - Coin on Left Arcade Machine Row in Arcade Zone #6": 40300207,
+      "Arcade Panik - Coin on First Button Pillar in Arcade Zone #1": 40300228,
+      "Arcade Panik - Coin on First Button Pillar in Arcade Zone #2": 40300254,
+      "Arcade Panik - Coin on First Button Pillar in Arcade Zone #3": 40300264,
+      "Arcade Panik - Coin on First Button Pillar in Arcade Zone #4": 40300273,
+      "Arcade Panik - Coin on Second Button Pillar in Arcade Zone #1": 40300217,
+      "Arcade Panik - Coin on Second Button Pillar in Arcade Zone #2": 40300248,
+      "Arcade Panik - Coin on Second Button Pillar in Arcade Zone #3": 40300261,
+      "Arcade Panik - Coin on Second Button Pillar in Arcade Zone #4": 40300270,
+      "Arcade Panik - Coin on Third Button Pillar in Arcade Zone #1": 40300232,
+      "Arcade Panik - Coin on Third Button Pillar in Arcade Zone #2": 40300258,
+      "Arcade Panik - Coin on Third Button Pillar in Arcade Zone #3": 40300268,
+      "Arcade Panik - Coin on Third Button Pillar in Arcade Zone #4": 40300277,
+      "Arcade Panik - Coin on Fourth Button Pillar in Arcade Zone #1": 40300229,
+      "Arcade Panik - Coin on Fourth Button Pillar in Arcade Zone #2": 40300255,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #1": 40300213,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #2": 40300214,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #3": 40300215,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #4": 40300216,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #5": 40300218,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #6": 40300219,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #7": 40300231,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #8": 40300233,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #9": 40300234,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #10": 40300235,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #11": 40300236,
+      "Arcade Panik - Coin on Back Arcade Machine Row in Arcade Zone #12": 40300237,
+      "Arcade Panik - Coin on First Button Pillar Past Arcade Zone #1": 40300256,
+      "Arcade Panik - Coin on First Button Pillar Past Arcade Zone #2": 40300266,
+      "Arcade Panik - Coin on First Button Pillar Past Arcade Zone #3": 40300275,
+      "Arcade Panik - Coin on Second Button Pillar Past Arcade Zone #1": 40300249,
+      "Arcade Panik - Coin on Second Button Pillar Past Arcade Zone #2": 40300262,
+      "Arcade Panik - Coin on Second Button Pillar Past Arcade Zone #3": 40300271,
+      "Arcade Panik - Coin on Third Button Pillar Past Arcade Zone #1": 40300259,
+      "Arcade Panik - Coin on Third Button Pillar Past Arcade Zone #2": 40300269,
+      "Arcade Panik - Coin on Third Button Pillar Past Arcade Zone #3": 40300278,
+      "Arcade Panik - Coin on Fourth Button Pillar Past Arcade Zone #1": 40300250,
+      "Arcade Panik - Coin on Fourth Button Pillar Past Arcade Zone #2": 40300263,
+      "Arcade Panik - Coin on Fourth Button Pillar Past Arcade Zone #3": 40300272,
+      "Arcade Panik - Coin on Fifth Button Pillar Past Arcade Zone #1": 40300257,
+      "Arcade Panik - Coin on Fifth Button Pillar Past Arcade Zone #2": 40300267,
+      "Arcade Panik - Coin on Fifth Button Pillar Past Arcade Zone #3": 40300276,
+      "Arcade Panik - Coin on Arcade Zone Wall #1": 40300348,
+      "Arcade Panik - Coin on Arcade Zone Wall #2": 40300347,
+      "Arcade Panik - Coin on Arcade Zone Wall #3": 40300346,
+      "Arcade Panik - Coin on Arcade Zone Wall #4": 40300345,
+      "Arcade Panik - Coin on Arcade Zone Wall #5": 40300344,
+      "Arcade Panik - Coin on Arcade Zone Wall #6": 40300340,
+      "Arcade Panik - Coin on Arcade Zone Wall #7": 40300339,
+      "Arcade Panik - Coin on Arcade Zone Wall #8": 40300338,
+      "Arcade Panik - Coin on Arcade Zone Wall #9": 40300337,
+      "Arcade Panik - Coin on Arcade Zone Wall #10": 40300336
     },
     "checkpoints": {
       "Arcade Panik - Checkpoint Near Big Bowling": 40900065,
       "Arcade Panik - Checkpoint by Go Karts": 40900415
     },
-    "cheeses": {},
+    "cheeses": {
+      "Arcade Panik - Cheese Under Purple Bridge to Big Bowling": 42100001,
+      "Arcade Panik - Cheese on Center Island Near Psycho Taxi Cartridge": 42100004
+    },
     "hats": {},
     "connections": {
-      "Arcade Panik - Expert 1 or Jump": "X1/J1"
+      "Arcade Panik - Expert 1 or Jump": "X1/J1",
+      "Arcade Panik - Outside Pinball Door": "B2 & X1/J1",
+      "Arcade Panik - Cliff Above Crazy Ballz": "B2 | X1/J1 & B1 | X2+J1"
     },
     "subwarps": {
       "Arcade Panik - Exit": ["Arcade Plaza - Starting Area", ""]
     },
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Arcade Panik - Chest Inside Go Karts Pipe": "X2/J1",
+      "Arcade Panik - Bunny - Above Go Karts Pipe": "B2+J2 | X2+B2+J1",
+      "Arcade Panik - Bunny - Above Crazy Ballz Pachinko": "B2"
+    }
   },
   "Arcade Panik - Expert 1 or Jump": {
     "level": "Arcade Panik",
@@ -305,6 +414,122 @@
     "hats": {},
     "connections": {},
     "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Arcade Panik - Outside Pinball Door": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {
+      "Arcade Panik - Gear - Alcove Under Pinball Entrance": 40100023
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Arcade Panik - Starting Area": "",
+      "Arcade Panik - Upper Race Track": "B1 | X2+J2"
+    },
+    "subwarps": {
+      "Arcade Panik - Pinball Entrance": ["Flipper - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Arcade Panik - Upper Race Track": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Arcade Panik - Tire Pillars": "J1 & X1/B1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Arcade Panik - Tire Pillars": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Arcade Panik - Cliff Above Crazy Ballz": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {
+      "Arcade Panik - Chest on Cliff in Crazy Ballz": 40300373
+    },
+    "coinbags": {
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #1": 40300371,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #2": 40300372,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #3": 40300374,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #4": 40300375,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #5": 40300367,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #6": 40300364,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #7": 40300355,
+      "Arcade Panik - Coin Bag on Cliff in Crazy Ballz #8": 40300350
+    },
+    "coins": {
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #1": 40300366,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #2": 40300368,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #3": 40300363,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #4": 40300365,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #5": 40300354,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #6": 40300356,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #7": 40300349,
+      "Arcade Panik - Coin on Cliff in Crazy Ballz #8": 40300351
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Flipper - Starting Area": {
+    "level": "Arcade Panik",
+    "sublevel": "Flipper",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {
+      "Flipper - Fall in Starting Area Pit": ["Arcade Panik - Outside Pinball Door", ""]
+    },
     "warps": {},
     "specialrules": {}
   }
