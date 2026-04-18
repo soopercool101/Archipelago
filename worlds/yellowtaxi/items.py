@@ -446,7 +446,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
         itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
 
-    for hat in world.included_hats:
+    for hat in sorted(world.included_hats):
         itempool.append(world.create_item(hat))
 
     number_of_items = len(itempool)
