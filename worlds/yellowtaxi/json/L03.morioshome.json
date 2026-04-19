@@ -755,8 +755,9 @@
     "safes": {},
     "chests": {},
     "coinbags": {
-      "Morio's Home - Coin Bag in Loft #1": 30300523,
-      "Morio's Home - Coin Bag in Loft #2": 30300533
+      "Morio's Home - Coin Bag in Loft #1": 30300513,
+      "Morio's Home - Coin Bag in Loft #2": 30300523,
+      "Morio's Home - Coin Bag in Loft #3": 30300533
     },
     "coins": {
       "Morio's Home - Coin in Loft #1": 30300511,
@@ -786,8 +787,7 @@
       "Morio's Home - Coin in Loft #26": 30300520,
       "Morio's Home - Coin in Loft #27": 30300529,
       "Morio's Home - Coin in Loft #28": 30300530,
-      "Morio's Home - Coin in Loft #29": 30300535,
-      "Morio's Home - Coin in Loft #30": 30300513
+      "Morio's Home - Coin in Loft #29": 30300535
     },
     "checkpoints": {},
     "cheeses": {},
