@@ -317,13 +317,13 @@
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP",
       "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey",
       "Law Firm - Ledges": "NSAR+GP",
-      "Ice Cream Truck - Upper Path": "NSAR+HubGelaToni+GP"
+      "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP"
     },
     "subwarps": {
       "Granny's Island - Beach Pipe": ["Granny's Island - Pipe Area", ""],
       "Granny's Island - Law Firm Roof Entrance": ["Law Firm - Entrance", ""],
-      "Granny's Island - Pizza Oven Entrance": ["Pizza Oven - Entrance", "HubPizzaKing"],
-      "Granny's Island - Ice Cream Truck Entrance": ["Ice Cream Truck - Lower Path", "HubGelaToni"],
+      "Granny's Island - Pizza Oven Entrance": ["Pizza Oven - Entrance", "PizzaKing"],
+      "Granny's Island - Ice Cream Truck Entrance": ["Ice Cream Truck - Lower Path", "GelaToni"],
       "Granny's Island - Hat World Entrance": ["Granny's Island Hat World", ""]
     },
     "warps": {
