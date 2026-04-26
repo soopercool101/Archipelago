@@ -315,9 +315,9 @@
       "Granny's Island - Crash Again Island": "X1+B2+GP",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP+OS & J2/B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP",
-      "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey",
-      "Law Firm - Ledges": "NSAR+GP",
-      "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP"
+      "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey+X1",
+      "Law Firm - Ledges": "NSAR+GP+X1",
+      "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP+X1"
     },
     "subwarps": {
       "Granny's Island - Beach Pipe": ["Granny's Island - Pipe Area", ""],
@@ -333,7 +333,7 @@
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP",
-      "Granny's Island - Safe on Granny's Statue": "J2 | J1+GP | B1+J1",
+      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | B1+J1",
       "Granny's Island - Coin Bag on Pillar Towards Sewer": "B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
       "Granny's Island - Gear - Inside Spin Blocks": "SP",
@@ -1784,7 +1784,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Second Floor Inside True Demo Wall": "",
-      "Morio's Lab - Third Floor": "J1/B1"
+      "Morio's Lab - Third Floor": "J1/B1/X2"
     },
     "subwarps": {},
     "warps": {},
@@ -1870,7 +1870,7 @@
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Upper": "FGU+B2",
-      "Morio's Lab - Second Floor After Demo Wall": "J2"
+      "Morio's Lab - Second Floor After Demo Wall": "J2 | X1+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -1915,7 +1915,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Inside Morio's Room Jump": "J1"
+      "Morio's Lab - Inside Morio's Room Jump": "J1 | X2+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -1969,7 +1969,7 @@
     "connections": {
       "Morio's Lab - Third Floor Wrenches Lower": "J1",
       "Morio's Lab - Fourth Floor": "Spike+B1 | X2+Spike+J1",
-      "Morio's Lab - Second Floor": ""
+      "Morio's Lab - Second Floor After True Demo Wall": ""
     },
     "subwarps": {},
     "warps": {
@@ -2298,6 +2298,7 @@
       "Morio's Lab - Ground Floor Propeller": "FGU",
       "Morio's Lab - Ledge Above Maurizio's City Portal": "",
       "Morio's Lab - Fourth Floor Jump Spikes": "Spike",
+      "Morio's Lab - Fourth Floor Expert Jump Spikes": "Spike+B1",
       "Morio's Lab - Fifth Floor Golden Propeller": "Password",
       "Morio's Lab - Third Floor Wrenches Lower": "Spike"
     },
@@ -2560,7 +2561,8 @@
       "Morio's Lab - Third Floor Wrenches Middle": "B1+FGU",
       "Morio's Lab - Third Floor Wrenches Upper": "B1+FGU",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1",
-      "Morio's Lab - Middle Floors Golden Propeller": "FGU+B1+Spike"
+      "Morio's Lab - Middle Floors Golden Propeller": "FGU+B1+Spike",
+      "Morio's Lab - Inside Morio's Room Jump": "NHS+MorioHat+B1 | HS+MorioHat+B1 & {Morio's Wardrobe}"
     },
     "subwarps": {},
     "warps": {},

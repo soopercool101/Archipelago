@@ -620,7 +620,7 @@
     "connections": {
       "Morio's Home - Expert 1 High Ground": "X1/J1/B1",
       "Morio's Home - High Ground": "J1/B1",
-      "Morio's Home - Loft": "J2 | B2+J1",
+      "Morio's Home - Loft": "B2+J2 | X1+J2 | X1+B2+J1",
       "Morio's Home - Kitchen": "SP"
     },
     "subwarps": {

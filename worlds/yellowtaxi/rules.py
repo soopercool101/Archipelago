@@ -191,7 +191,6 @@ class RuleFactory:
                 return True_()
             return Has("Spin Attack")
         if token == "GS":
-            raise Exception(f"Invalid token: '{token}'")
             return Has("Golden Spring Unlock")
         if token == "GST":
             if self.world.options.shuffle_golden_spring == 0:
@@ -377,6 +376,12 @@ class RuleFactory:
                         adjusted_bunny_level = "Morio's Home"
                     case "BB":
                         adjusted_bunny_level = "Bombeach"
+                    case "AP":
+                        adjusted_bunny_level = "Arcade Panik"
+                    case "PT":
+                        adjusted_bunny_level = "Pizza Time"
+                    case "TO":
+                        adjusted_bunny_level = "Tosla's Offices"
                     case "GG":
                         adjusted_bunny_level = "Gym Gears"
                     case "FM":

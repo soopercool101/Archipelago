@@ -58,7 +58,9 @@
       "Mosk's Rocket - Tosla's Offices Area": "J1 | X2+B2"
     },
     "subwarps": {
-      "Mosk's Rocket - Bomb-it Portal": ["Bomb-it - Starting Area", "Bunny-BB"]
+      "Mosk's Rocket - Bomb-it Portal": ["Bomb-it - Starting Area", "Bunny-BB"],
+      "Mosk's Rocket - Buttons Smashing Portal": ["Buttons Smashing - Starting Area", "Bunny-AP"],
+      "Mosk's Rocket - Pepperoni Portal": ["Pepperoni - Starting Area", "Bunny-PT"]
     },
     "warps": {},
     "specialrules": {}
@@ -86,7 +88,9 @@
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
       "Mosk's Rocket - Gym Gears Area": "J1"
     },
-    "subwarps": {},
+    "subwarps": {
+      "Mosk's Rocket - Stealthy Portal": ["Stealthy - Starting Area", "Bunny-TO"]
+    },
     "warps": {},
     "specialrules": {}
   },
@@ -496,7 +500,9 @@
     "connections": {
       "Bomb-it - Outer Area": "J1/B1"
     },
-    "subwarps": {},
+    "subwarps": {
+      "Bomb-it - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", "J1/B1"]
+    },
     "warps": {},
     "specialrules": {}
   },
@@ -533,12 +539,262 @@
       "Mushroom Cloud Hat": 160700040
     },
     "connections": {},
-    "subwarps": {
-      "Bomb-it - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
-    },
+    "subwarps": {},
     "warps": {},
     "specialrules": {
       "Bomb-it - Gear - Bomb Car Ramps": "X1/J1"
+    }
+  },
+  "Buttons Smashing - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Buttons Smashing",
+    "kaizolevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Buttons Smashing - Checkpoint": 160900470
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Buttons Smashing - Buttons": "X1+B1 | B2"
+    },
+    "subwarps": {
+      "Buttons Smashing - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Buttons Smashing - Buttons": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Buttons Smashing",
+    "kaizolevel": "Arcade Panik",
+    "gears": {
+      "Buttons Smashing - Gear - On Button": 160100008,
+      "Buttons Smashing - Gear - Top Platform": 160100009
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Buttons Smashing - Coin Bag on Button #1": 160300247,
+      "Buttons Smashing - Coin Bag on Button #2": 160300293
+    },
+    "coins": {
+      "Buttons Smashing - Coin on Button #1": 160300163,
+      "Buttons Smashing - Coin on Button #2": 160300174,
+      "Buttons Smashing - Coin on Button #3": 160300201,
+      "Buttons Smashing - Coin on Button #4": 160300228,
+      "Buttons Smashing - Coin on Button #5": 160300248,
+      "Buttons Smashing - Coin on Button #6": 160300270,
+      "Buttons Smashing - Coin on Button #7": 160300271,
+      "Buttons Smashing - Coin on Button #8": 160300291,
+      "Buttons Smashing - Coin on Button #9": 160300294,
+      "Buttons Smashing - Coin on Button #10": 160300310,
+      "Buttons Smashing - Coin on Button #11": 160300311,
+      "Buttons Smashing - Coin on Button #12": 160300325,
+      "Buttons Smashing - Coin on Button #13": 160300327
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Buttons Smashing - Hat Platform": "X2+B1 | J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {
+      "Buttons Smashing - Gear - Top Platform": "X1/J1"
+    }
+  },
+  "Buttons Smashing - Hat Platform": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Buttons Smashing",
+    "kaizolevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Glitched Taxi Skin": 160700050
+    },
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Pepperoni - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Pepperoni",
+    "kaizolevel": "Pizza Time",
+    "gears": {
+      "Pepperoni - Gear - From Chef Pepe": 160100006
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Pepperoni - Coin Bag at Start": 160300084
+    },
+    "coins": {
+      "Pepperoni - Coin at Start #1": 160300052,
+      "Pepperoni - Coin at Start #2": 160300054,
+      "Pepperoni - Coin at Start #3": 160300068,
+      "Pepperoni - Coin at Start #4": 160300069
+    },
+    "checkpoints": {
+      "Pepperoni - Checkpoint": 160900765
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Pepperoni - Pizza Ovens": "B1 & X1/J1"
+    },
+    "subwarps": {
+      "Pepperoni - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
+    },
+    "warps": {},
+    "specialrules": {
+      "Pepperoni - Gear - From Chef Pepe": "B1+J1"
+    }
+  },
+  "Pepperoni - Pizza Ovens": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Pepperoni",
+    "kaizolevel": "Pizza Time",
+    "gears": {
+      "Pepperoni - Gear - In the Air": 160100007
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Pepperoni - Coin Bag on Middle Pizza Oven": 160300200,
+      "Pepperoni - Coin Bag on Top Pizza Oven #1": 160300297,
+      "Pepperoni - Coin Bag on Top Pizza Oven #2": 160300295,
+      "Pepperoni - Coin Bag on Top Pizza Oven #3": 160300306,
+      "Pepperoni - Coin Bag on Top Pizza Oven #4": 160300304
+    },
+    "coins": {
+      "Pepperoni - Coin on Top Pizza Oven #1": 160300296,
+      "Pepperoni - Coin on Top Pizza Oven #2": 160300299,
+      "Pepperoni - Coin on Top Pizza Oven #3": 160300298,
+      "Pepperoni - Coin on Top Pizza Oven #4": 160300301,
+      "Pepperoni - Coin on Top Pizza Oven #5": 160300300,
+      "Pepperoni - Coin on Top Pizza Oven #6": 160300303,
+      "Pepperoni - Coin on Top Pizza Oven #7": 160300302,
+      "Pepperoni - Coin on Top Pizza Oven #8": 160300305
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Pizza Man Hat": 160700045
+    },
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Stealthy - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Stealthy",
+    "kaizolevel": "Tosla's Offices",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Stealthy - Starting Checkpoint": 160900320
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Stealthy - Halfway Up": "B1 & X2/J1 | B2"
+    },
+    "subwarps": {
+      "Stealthy - Mosk's Rocket Portal": ["Mosk's Rocket - Tosla's Offices Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Stealthy - Halfway Up": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Stealthy",
+    "kaizolevel": "Tosla's Offices",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Stealthy - Midway Checkpoint": 160900390
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Stealthy - Top of the Tower": "J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Stealthy - Top of the Tower": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Stealthy",
+    "kaizolevel": "Tosla's Offices",
+    "gears": {
+      "Stealthy - Gear - Top of Tower": 160100010,
+      "Stealthy - Gear - Shortcut Back Down": 160100011
+    },
+    "bunnies": {},
+    "safes": {
+      "Stealthy - Safe Near Top": 160300348
+    },
+    "chests": {
+      "Stealthy - Chest Near Midway Checkpoint": 160300326,
+      "Stealthy - Chest Surrounding Gear #1": 160300375,
+      "Stealthy - Chest Surrounding Gear #2": 160300383
+    },
+    "coinbags": {
+      "Stealthy - Coin Bag Surrounding Gear #1": 160300377,
+      "Stealthy - Coin Bag Surrounding Gear #2": 160300381
+    },
+    "coins": {
+      "Stealthy - Coin Surrounding Gear #1": 160300376,
+      "Stealthy - Coin Surrounding Gear #2": 160300380,
+      "Stealthy - Coin Surrounding Gear #3": 160300378,
+      "Stealthy - Coin Surrounding Gear #4": 160300382,
+      "Stealthy - Coin on Ledge on Top of Tower #1": 160300370,
+      "Stealthy - Coin on Ledge on Top of Tower #2": 160300369,
+      "Stealthy - Coin on Ledge on Top of Tower #3": 160300368,
+      "Stealthy - Coin on Ledge on Top of Tower #4": 160300373,
+      "Stealthy - Coin on Ledge on Top of Tower #5": 160300372,
+      "Stealthy - Coin on Ledge on Top of Tower #6": 160300371,
+      "Stealthy - Coin on Ledge on Top of Tower #7": 160300386,
+      "Stealthy - Coin on Ledge on Top of Tower #8": 160300385,
+      "Stealthy - Coin on Ledge on Top of Tower #9": 160300384
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Alien Mosk (Good) Hat": 160700037
+    },
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {
+      "Stealthy - Gear - Shortcut Back Down": "GS/X1"
     }
   },
   "Podium - Starting Area": {
