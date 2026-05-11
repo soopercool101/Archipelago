@@ -1612,7 +1612,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor Crash Test Area": "OS+J1+FGU"
+      "Morio's Lab - Fifth Floor Crash Test Area": "OS+J1+FGU | X2+OS+B1+FGU"
     },
     "subwarps": {},
     "warps": {},
@@ -1725,13 +1725,32 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "FGU",
-      "Morio's Lab - Second Floor Inside True Demo Wall": ""
+      "Morio's Lab - Second Floor True Demo Wall": ""
     },
     "subwarps": {},
     "warps": {},
     "specialrules": {
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #3": "X1/FGU"
     }
+  },
+  "Morio's Lab - Second Floor True Demo Wall": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Morio's Lab - Second Floor Inside True Demo Wall": "FGU"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
   },
   "Morio's Lab - Second Floor Inside True Demo Wall": {
     "level": "Hub",
@@ -1751,16 +1770,13 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Second Floor After Demo Wall": "FGU",
-      "Morio's Lab - Second Floor After True Demo Wall": "FGU"
+      "Morio's Lab - Second Floor After Demo Wall": "",
+      "Morio's Lab - Second Floor After True Demo Wall": "",
+      "Morio's Lab - Third Floor Wrenches Lower": "X2+B1"
     },
     "subwarps": {},
     "warps": {},
-    "specialrules": {
-      "Morio's Lab - Coin on Second Floor After Pizza Time Portal #4": "FGU",
-      "Morio's Lab - Coin on Second Floor After Pizza Time Portal #5": "FGU",
-      "Morio's Lab - Coin Bag on Second Floor": "FGU"
-    }
+    "specialrules": {}
   },
   "Morio's Lab - Second Floor After True Demo Wall": {
     "level": "Hub",
@@ -1783,7 +1799,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Second Floor Inside True Demo Wall": "",
+      "Morio's Lab - Second Floor True Demo Wall": "",
       "Morio's Lab - Third Floor": "J1/B1/X2"
     },
     "subwarps": {},
@@ -1996,7 +2012,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Third Floor Wrenches Middle": "J1+FGU",
+      "Morio's Lab - Third Floor Wrenches Middle": "FGU+J1 | X2+FGU+B1",
       "Morio's Lab - Third Floor": ""
     },
     "subwarps": {},
@@ -2022,7 +2038,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Third Floor Wrenches Upper": "J1"
+      "Morio's Lab - Third Floor Wrenches Upper": "J1 | X2+B1"
     },
     "subwarps": {},
     "warps": {},

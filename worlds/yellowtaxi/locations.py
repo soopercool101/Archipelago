@@ -52,15 +52,15 @@ def create_locations(world: YellowTaxiWorld) -> None:
                                  location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                 world.num_bunnies += 1
 
-        if world.options.checkpointsanity:
+        if world.options.checkpointsanity or hasattr(world.multiworld, "generation_is_fake"):
             locations = locations | reg["checkpoints"]
-        if world.options.safesanity:
+        if world.options.safesanity or hasattr(world.multiworld, "generation_is_fake"):
             locations = locations | reg["safes"]
-        if world.options.chestsanity:
+        if world.options.chestsanity or hasattr(world.multiworld, "generation_is_fake"):
             locations = locations | reg["chests"]
-        if world.options.coinbagsanity:
+        if world.options.coinbagsanity or hasattr(world.multiworld, "generation_is_fake"):
             locations = locations | reg["coinbags"]
-        if world.options.coinsanity:
+        if world.options.coinsanity or hasattr(world.multiworld, "generation_is_fake"):
             if use_simple_coinsanity:
                 locations = locations | reg["coins"]
             else:
@@ -207,11 +207,12 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             if world is None or world.options.extra_demo_collectables:
                 if world is None or world.options.bunnysanity:
                     locations["Morio's Lab - Bunny - Above Morio's Home Portal"] = 2_00003
-                else:  # Non-bunnysanity still needs to track bunnies
+                    if world is not None:
+                        world.num_bunnies += 1
+                elif "Mosk's Rocket" in world.included_levels:  # Non-bunnysanity still needs to track bunnies
                     region = world.get_region(region_name)
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Morio's Home Portal", f"Bunny (Morio's Lab)",
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-                if world is not None:
                     world.num_bunnies += 1
         case "Morio's Lab - Inside Morio's Room":
             if world is None or world.options.locked_morios_lab:
@@ -229,13 +230,14 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     locations = {
                         "Morio's Lab - Bunny - Above Pizza Time Portal": 2_00004,
                     }
-                else:  # Non-bunnysanity still needs to track bunnies
+                    if world is not None:
+                        world.num_bunnies += 1
+                elif "Mosk's Rocket" in world.included_levels:  # Non-bunnysanity still needs to track bunnies
                     region = world.get_region(region_name)
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Pizza Time Portal", f"Bunny (Morio's Lab)",
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-                if not world is None:
                     world.num_bunnies += 1
-        case "Morio's Lab - Second Floor Inside True Demo Wall":
+        case "Morio's Lab - Second Floor True Demo Wall":
             if world is None or world.options.shuffle_full_game:
                 locations = {
                     "Morio's Lab - Reach True Demo Wall": 10_00011,

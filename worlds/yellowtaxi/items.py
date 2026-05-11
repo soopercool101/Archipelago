@@ -116,7 +116,7 @@ ITEM_NAME_TO_ID = {
     #"Wishlist Trap": 999_001,
 
     # Universal Tracker Only
-    "Glitched Logic": 99999_999
+    "Expert Logic": 99999_999
 }
 
 # Items should have a defined default classification.
@@ -225,7 +225,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Michele": ItemClassification.useful,
 
     # Universal Tracker Only
-    "Glitched Logic": ItemClassification.progression,
+    "Expert Logic": ItemClassification.progression,
 }
 
 HATS = [

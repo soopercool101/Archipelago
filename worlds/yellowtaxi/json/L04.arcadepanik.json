@@ -162,18 +162,19 @@
       "Arcade Panik - Gear - Crazy Ballz Middle Prize": 40100019,
       "Arcade Panik - Gear - Crazy Ballz Right Prize": 40100004,
       "Arcade Panik - Gear - Go Karts Strike": 40100020,
-      "Arcade Panik - Gear - Go Karts Obstacle Course": 40100008,
       "Arcade Panik - Gear - Left Switch Path": 40100018,
       "Arcade Panik - Gear - Right Switch Path": 40100013,
       "Arcade Panik - Gear - Arcade Zone Left Bomb Block Cage": 40100016,
       "Arcade Panik - Gear - Arcade Zone Right Bomb Block Cage": 40100007,
       "Arcade Panik - Gear - Button Pillar in Arcade Zone": 40100006,
-      "Arcade Panik - Gear - Button Pillar Past Arcade Zone": 40100005
+      "Arcade Panik - Gear - Button Pillar Past Arcade Zone": 40100005,
+      "Arcade Panik - Gear - Pipe Above Big Bowling Back Door": 40100017,
+      "Arcade Panik - Gear - Go Karts Obstacle Course": 40100008,
+      "Arcade Panik - Gear - Alcove Under Pinball Entrance": 40100023
     },
     "bunnies": {
       "Arcade Panik - Bunny - On Arcade Zone Wall": 40200002,
-      "Arcade Panik - Bunny - Above Go Karts Pipe": 40200000,
-      "Arcade Panik - Bunny - Above Crazy Ballz Pachinko": 40200001
+      "Arcade Panik - Bunny - Above Go Karts Pipe": 40200000
     },
     "safes": {},
     "chests": {
@@ -182,7 +183,9 @@
       "Arcade Panik - Chest on Go Karts Pipes #1": 40300008,
       "Arcade Panik - Chest on Go Karts Pipes #2": 40300079,
       "Arcade Panik - Chest on Go Karts Pipes #3": 40300131,
-      "Arcade Panik - Chest Inside Go Karts Pipe": 40300205
+      "Arcade Panik - Chest Inside Go Karts Pipe": 40300205,
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #1": 40300281,
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #2": 40300369
     },
     "coinbags": {
       "Arcade Panik - Coin Bag on Switch Overlooking Crazy Ballz Long Strike #1": 40300290,
@@ -377,11 +380,16 @@
     },
     "cheeses": {
       "Arcade Panik - Cheese Under Purple Bridge to Big Bowling": 42100001,
-      "Arcade Panik - Cheese on Center Island Near Psycho Taxi Cartridge": 42100004
+      "Arcade Panik - Cheese on Center Island Near Psycho Taxi Cartridge": 42100004,
+      "Arcade Panik - Cheese in Arcade Zone": 42100003,
+      "Arcade Panik - Cheese on Go Karts Track": 42100002,
+      "Arcade Panik - Cheese in Crazy Ballz Area": 42100000
     },
     "hats": {},
     "connections": {
+      "Arcade Panik - Ledge Above Big Bowling Door": "J1 | X1+B1",
       "Arcade Panik - Expert 1 or Jump": "X1/J1",
+      "Arcade Panik - Boost 2": "B2",
       "Arcade Panik - Outside Pinball Door": "B2 & X1/J1",
       "Arcade Panik - Cliff Above Crazy Ballz": "B2 | X1/J1 & B1 | X2+J1"
     },
@@ -392,8 +400,37 @@
     "specialrules": {
       "Arcade Panik - Chest Inside Go Karts Pipe": "X2/J1",
       "Arcade Panik - Bunny - Above Go Karts Pipe": "B2+J2 | X2+B2+J1",
-      "Arcade Panik - Bunny - Above Crazy Ballz Pachinko": "B2"
+      "Arcade Panik - Gear - Pipe Above Big Bowling Back Door": "B1/J1 | X1 & {Arcade Panik - Outside Pinball Door}",
+      "Arcade Panik - Gear - Alcove Under Pinball Entrance": "B2 | X1/B1/J1 & {Arcade Panik - Outside Pinball Door}",
+      "Arcade Panik - Gear - Go Karts Obstacle Course": "X1/J1",
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #1": "J2",
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #2": "J1 & X1/B1 | J2"
     }
+  },
+  "Arcade Panik - Ledge Above Big Bowling Door": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {
+      "Arcade Panik - Gear - On Ledge Above Big Bowling Door": 40100003
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Arcade Panik - Coin on Ledge Above Big Bowling Door #1": 40300200,
+      "Arcade Panik - Coin on Ledge Above Big Bowling Door #2": 40300198,
+      "Arcade Panik - Coin on Ledge Above Big Bowling Door #3": 40300199,
+      "Arcade Panik - Coin on Ledge Above Big Bowling Door #4": 40300196,
+      "Arcade Panik - Coin on Ledge Above Big Bowling Door #5": 40300197
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
   },
   "Arcade Panik - Expert 1 or Jump": {
     "level": "Arcade Panik",
@@ -417,17 +454,49 @@
     "warps": {},
     "specialrules": {}
   },
-  "Arcade Panik - Outside Pinball Door": {
+  "Arcade Panik - Boost 2": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Panik",
-    "gears": {
-      "Arcade Panik - Gear - Alcove Under Pinball Entrance": 40100023
+    "gears": {},
+    "bunnies": {
+      "Arcade Panik - Bunny - Above Crazy Ballz Pachinko": 40200001
     },
-    "bunnies": {},
-    "safes": {},
+    "safes": {
+      "Arcade Panik - Safe on Crazy Ballz Pipe": 40300353
+    },
     "chests": {},
     "coinbags": {},
     "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Arcade Panik - Outside Pinball Door": {
+    "level": "Arcade Panik",
+    "sublevel": "Arcade Panik",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Arcade Panik - Coin Bag on Arcade Machine Left of Pinball Entrance": 40300358,
+      "Arcade Panik - Coin Bag on Arcade Machine Right of Pinball Entrance": 40300361
+    },
+    "coins": {
+      "Arcade Panik - Coin Outside Pinball Entrance #1": 40300335,
+      "Arcade Panik - Coin Outside Pinball Entrance #2": 40300334,
+      "Arcade Panik - Coin Outside Pinball Entrance #3": 40300333,
+      "Arcade Panik - Coin Outside Pinball Entrance #4": 40300332,
+      "Arcade Panik - Coin Outside Pinball Entrance #5": 40300331,
+      "Arcade Panik - Coin on Arcade Machine Left of Pinball Entrance #1": 40300357,
+      "Arcade Panik - Coin on Arcade Machine Left of Pinball Entrance #2": 40300359,
+      "Arcade Panik - Coin on Arcade Machine Right of Pinball Entrance #1": 40300360,
+      "Arcade Panik - Coin on Arcade Machine Right of Pinball Entrance #2": 40300362
+    },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
@@ -448,13 +517,61 @@
     "bunnies": {},
     "safes": {},
     "chests": {},
-    "coinbags": {},
-    "coins": {},
+    "coinbags": {
+      "Arcade Panik - Coin Bag on Race Track Above Pinball Entrance": 40300384,
+      "Arcade Panik - Coin Bag Under Wall Pipe in Upper Race Track Area #1": 40300329,
+      "Arcade Panik - Coin Bag Under Wall Pipe in Upper Race Track Area #2": 40300326,
+      "Arcade Panik - Coin Bag Under Pipe Arch in Upper Race Track Area #1": 40300309,
+      "Arcade Panik - Coin Bag Under Pipe Arch in Upper Race Track Area #2": 40300308,
+      "Arcade Panik - Coin Bag Under Pipe Arch in Upper Race Track Area #3": 40300305,
+      "Arcade Panik - Coin Bag Under Pipe Arch in Upper Race Track Area #4": 40300304
+    },
+    "coins": {
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #1": 40300382,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #2": 40300381,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #3": 40300380,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #4": 40300385,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #5": 40300383,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #6": 40300388,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #7": 40300387,
+      "Arcade Panik - Coin on Race Track Above Pinball Entrance #8": 40300386,
+      "Arcade Panik - Coin on Tire Pillar": 40300379,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #1": 40300324,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #2": 40300323,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #3": 40300322,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #4": 40300330,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #5": 40300328,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #6": 40300321,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #7": 40300320,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #8": 40300319,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #9": 40300327,
+      "Arcade Panik - Coin Under Wall Pipe in Upper Race Track Area #10": 40300325,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #1": 40300318,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #2": 40300310,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #3": 40300302,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #4": 40300317,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #5": 40300301,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #6": 40300316,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #7": 40300300,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #8": 40300315,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #9": 40300307,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #10": 40300299,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #11": 40300314,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #12": 40300306,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #13": 40300298,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #14": 40300313,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #15": 40300297,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #16": 40300312,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #17": 40300296,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #18": 40300311,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #19": 40300303,
+      "Arcade Panik - Coin Under Pipe Arch in Upper Race Track Area #20": 40300295
+    },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Arcade Panik - Tire Pillars": "J1 & X1/B1"
+      "Arcade Panik - Tire Pillars": "J1 & X1/B1 | J2"
     },
     "subwarps": {},
     "warps": {},
@@ -463,11 +580,17 @@
   "Arcade Panik - Tire Pillars": {
     "level": "Arcade Panik",
     "sublevel": "Arcade Panik",
-    "gears": {},
+    "gears": {
+      "Arcade Panik - Gear - On Tire Pillar": 40100024
+    },
     "bunnies": {},
     "safes": {},
-    "chests": {},
-    "coinbags": {},
+    "chests": {
+      "Arcade Panik - Chest on Tire Pillar": 40300377
+    },
+    "coinbags": {
+      "Arcade Panik - Coin Bag on Tire Pillar": 40300378
+    },
     "coins": {},
     "checkpoints": {},
     "cheeses": {},
@@ -517,19 +640,154 @@
   "Flipper - Starting Area": {
     "level": "Arcade Panik",
     "sublevel": "Flipper",
+    "gears": {
+      "Flipper - Gear - Under Ledge at Start": 40100009,
+      "Flipper - Gear - Falling From Start": 40100010
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Flipper - Coin Bag on Ledge at Start #1": 40300462,
+      "Flipper - Coin Bag on Ledge at Start #2": 40300461,
+      "Flipper - Coin Bag on Bumper at Start": 40300454
+    },
+    "coins": {
+      "Flipper - Coin on Ledge at Start #1": 40300456,
+      "Flipper - Coin on Ledge at Start #2": 40300458,
+      "Flipper - Coin on Ledge at Start #3": 40300460,
+      "Flipper - Coin on Ledge at Start #4": 40300464,
+      "Flipper - Coin on Ledge at Start #5": 40300455,
+      "Flipper - Coin on Ledge at Start #6": 40300457,
+      "Flipper - Coin on Ledge at Start #7": 40300459,
+      "Flipper - Coin on Ledge at Start #8": 40300463,
+      "Flipper - Coin on Bumper at Start #1": 40300452,
+      "Flipper - Coin on Bumper at Start #2": 40300451,
+      "Flipper - Coin on Bumper at Start #3": 40300450,
+      "Flipper - Coin on Bumper at Start #4": 40300449,
+      "Flipper - Coin on Bumper at Start #5": 40300448,
+      "Flipper - Coin on Bumper at Start #6": 40300447,
+      "Flipper - Coin on Bumper at Start #7": 40300446,
+      "Flipper - Coin on Track After Starting Pit #1": 40300129,
+      "Flipper - Coin on Track After Starting Pit #2": 40300128,
+      "Flipper - Coin on Track After Starting Pit #3": 40300127,
+      "Flipper - Coin on Track After Starting Pit #4": 40300126,
+      "Flipper - Coin on Track After Starting Pit #5": 40300124,
+      "Flipper - Coin on Track After Starting Pit #6": 40300123,
+      "Flipper - Coin on Track After Starting Pit #7": 40300122,
+      "Flipper - Coin on Track After Starting Pit #8": 40300121
+    },
+    "checkpoints": {
+      "Flipper - Checkpoint": 40900740
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Flipper - Path to the End": "B1 | X1+J1"
+    },
+    "subwarps": {
+      "Flipper - Fall in Starting Area Pit": ["Arcade Panik - Outside Pinball Door", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Flipper - Path to the End": {
+    "level": "Arcade Panik",
+    "sublevel": "Flipper",
+    "gears": {
+      "Flipper - Gear - Bumper on Outside of Entrance Tower": 40100002,
+      "Flipper - Gear - After Ramps": 40100011,
+      "Flipper - Gear - Final Bumper Bounces": 40100000
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Flipper - Coin Bag Surrounding Gear After Ramps #1": 40300432,
+      "Flipper - Coin Bag Surrounding Gear After Ramps #2": 40300433
+    },
+    "coins": {
+      "Flipper - Coin Surrounding Gear After Ramps #1": 40300436,
+      "Flipper - Coin Surrounding Gear After Ramps #2": 40300430,
+      "Flipper - Coin Surrounding Gear After Ramps #3": 40300423,
+      "Flipper - Coin Surrounding Gear After Ramps #4": 40300437,
+      "Flipper - Coin Surrounding Gear After Ramps #5": 40300431,
+      "Flipper - Coin Surrounding Gear After Ramps #6": 40300424,
+      "Flipper - Coin Surrounding Gear After Ramps #7": 40300438,
+      "Flipper - Coin Surrounding Gear After Ramps #8": 40300425,
+      "Flipper - Coin Surrounding Gear After Ramps #9": 40300439,
+      "Flipper - Coin Surrounding Gear After Ramps #10": 40300426,
+      "Flipper - Coin Surrounding Gear After Ramps #11": 40300440,
+      "Flipper - Coin Surrounding Gear After Ramps #12": 40300427,
+      "Flipper - Coin Surrounding Gear After Ramps #13": 40300441,
+      "Flipper - Coin Surrounding Gear After Ramps #14": 40300434,
+      "Flipper - Coin Surrounding Gear After Ramps #15": 40300428,
+      "Flipper - Coin Surrounding Gear After Ramps #16": 40300442,
+      "Flipper - Coin Surrounding Gear After Ramps #17": 40300435,
+      "Flipper - Coin Surrounding Gear After Ramps #18": 40300429
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Flipper - Upper Area (EXPERTS ONLY)": "J2"
+    },
+    "subwarps": {
+      "Flipper - Pipe After Ramps": ["Arcade Panik - Outside Pinball Door", ""],
+      "Flipper - Pipe After Bumper Bounces": ["Arcade Panik - Outside Pinball Door", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Flipper - Upper Area (EXPERTS ONLY)": {
+    "level": "Arcade Panik",
+    "sublevel": "Flipper",
     "gears": {},
     "bunnies": {},
     "safes": {},
     "chests": {},
-    "coinbags": {},
-    "coins": {},
+    "coinbags": {
+      "Flipper - Coin Bag on Outside of Entrance Tower #1": 40300406,
+      "Flipper - Coin Bag on Outside of Entrance Tower #2": 40300405,
+      "Flipper - Coin Bag on Outside of Entrance Tower #3": 40300404
+    },
+    "coins": {
+      "Flipper - Coin on Outside of Entrance Tower #1": 40300421,
+      "Flipper - Coin on Outside of Entrance Tower #2": 40300410,
+      "Flipper - Coin on Outside of Entrance Tower #3": 40300399,
+      "Flipper - Coin on Outside of Entrance Tower #4": 40300420,
+      "Flipper - Coin on Outside of Entrance Tower #5": 40300409,
+      "Flipper - Coin on Outside of Entrance Tower #6": 40300398,
+      "Flipper - Coin on Outside of Entrance Tower #7": 40300419,
+      "Flipper - Coin on Outside of Entrance Tower #8": 40300408,
+      "Flipper - Coin on Outside of Entrance Tower #9": 40300397,
+      "Flipper - Coin on Outside of Entrance Tower #10": 40300418,
+      "Flipper - Coin on Outside of Entrance Tower #11": 40300407,
+      "Flipper - Coin on Outside of Entrance Tower #12": 40300396,
+      "Flipper - Coin on Outside of Entrance Tower #13": 40300417,
+      "Flipper - Coin on Outside of Entrance Tower #14": 40300395,
+      "Flipper - Coin on Outside of Entrance Tower #15": 40300416,
+      "Flipper - Coin on Outside of Entrance Tower #16": 40300394,
+      "Flipper - Coin on Outside of Entrance Tower #17": 40300415,
+      "Flipper - Coin on Outside of Entrance Tower #18": 40300393,
+      "Flipper - Coin on Outside of Entrance Tower #19": 40300414,
+      "Flipper - Coin on Outside of Entrance Tower #20": 40300403,
+      "Flipper - Coin on Outside of Entrance Tower #21": 40300392,
+      "Flipper - Coin on Outside of Entrance Tower #22": 40300413,
+      "Flipper - Coin on Outside of Entrance Tower #23": 40300402,
+      "Flipper - Coin on Outside of Entrance Tower #24": 40300391,
+      "Flipper - Coin on Outside of Entrance Tower #25": 40300412,
+      "Flipper - Coin on Outside of Entrance Tower #26": 40300401,
+      "Flipper - Coin on Outside of Entrance Tower #27": 40300390,
+      "Flipper - Coin on Outside of Entrance Tower #28": 40300411,
+      "Flipper - Coin on Outside of Entrance Tower #29": 40300400,
+      "Flipper - Coin on Outside of Entrance Tower #30": 40300389
+    },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
     "connections": {},
-    "subwarps": {
-      "Flipper - Fall in Starting Area Pit": ["Arcade Panik - Outside Pinball Door", ""]
-    },
+    "subwarps": {},
     "warps": {},
     "specialrules": {}
   }

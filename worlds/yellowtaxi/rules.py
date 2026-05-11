@@ -3,10 +3,12 @@ from __future__ import annotations
 import math
 from typing import TYPE_CHECKING, Callable, Mapping, Union
 
+from rule_builder.options import OptionFilter
 from .data_loader import regions_json_data
 from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
+from .options import ShuffleFullGame
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -202,6 +204,10 @@ class RuleFactory:
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
             return Has("Golden Spring Unlock")
+        if token == "NOS":
+            if self.world.has_orange_switch_access:
+                return False_()
+            return True_()
         if token == "OS":
             return Has("Orange Switch")
         if token == "GP":
@@ -243,13 +249,27 @@ class RuleFactory:
                 return Has("Gear", self.world.final_portal_cost)
             return Has("Gear", 6)
         if token == "PortalArcadePanik":
-            return Has("Gear", 18)
+            if self.world.options.demo_portal_mode != self.world.options.demo_portal_mode.option_default:
+                return Has("Gear", 18)
+            return (Has("Gear", 18) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
         if token == "PortalPizzaTime":
-            return Has("Gear", 32)
+            if (self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_influencers or
+                self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open):
+                return Has("Gear", 32)
+            return (Has("Gear", 32) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
         if token == "PortalToslaOffices":
-            if self.world.options.goal == 1:
-                return Has("Gear", self.world.final_portal_cost)
-            return Has("Gear", 50)
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return Has("Gear", 50 if self.world.options.goal != 1 else self.world.final_portal_cost)
+            return (Has("Gear", 50 if self.world.options.goal != 1 else self.world.final_portal_cost) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
         if token == "PortalGymGears":
             return True_()
         if token == "PortalFecalMatters":
@@ -257,9 +277,19 @@ class RuleFactory:
         if token == "PortalFlushedAway":
             return True_()
         if token == "PortalMauriziosCity":
-            return Has("Gear", 65)
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return Has("Gear", 65)
+            return (Has("Gear", 65) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
         if token == "PortalCrashTestIndustries":
-            return Has("Gear", 80)
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return Has("Gear", 80)
+            return (Has("Gear", 80) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
         if token == "PortalMoriosMind":
             return True_()
         if token == "PortalRuinedObservatory":
@@ -393,7 +423,7 @@ class RuleFactory:
             expert_level = int(token[1:])
             if (hasattr(self.world.multiworld, "generation_is_fake")
                     and self.world.options.expert_level < expert_level):
-                return Has("Glitched Logic", expert_level - self.world.options.expert_level)
+                return Has("Expert Logic", expert_level - self.world.options.expert_level)
             if self.world.options.expert_level >= expert_level:
                 return True_()
             return False_()

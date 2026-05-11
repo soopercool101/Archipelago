@@ -1,9 +1,10 @@
 import logging
 import math
 from collections.abc import Mapping
-from typing import Any, ClassVar, Dict, List, Set
+from typing import Any, ClassVar, Dict, List, Set, Optional
 
 from BaseClasses import MultiWorld
+from Options import Option
 from Utils import visualize_regions, Version
 from worlds.AutoWorld import World
 
@@ -31,7 +32,13 @@ class YellowTaxiWorld(World):
     item_name_to_id = items.ITEM_NAME_TO_ID
 
     # Universal Tracker stuff
-    glitches_item_name = "Glitched Logic"
+    glitches_item_name = "Expert Logic"
+    ut_can_gen_without_yaml = True
+
+    @staticmethod
+    def interpret_slot_data(slot_data: dict[str, Any]) -> dict[str, Any]:
+        # Trigger a regen in UT
+        return slot_data
 
     # Keeping default Menu region, actual starting location can vary so this is simpler
     origin_region_name = "Menu"
@@ -75,7 +82,17 @@ class YellowTaxiWorld(World):
 
 
     def generate_early(self) -> None:
-        # Determine which regions are not going to be included
+        # UT YAML-less
+        re_gen_passthrough = getattr(self.multiworld, "re_gen_passthrough", {})
+        if re_gen_passthrough and self.game in re_gen_passthrough:
+            # Get the passed through slot data from the real generation
+            slot_data: dict[str, Any] = re_gen_passthrough[self.game]
+            # Set all your options here instead of getting them from the yaml
+            for key, value in slot_data.items():
+                opt: Optional[Option] = getattr(self.options, key, None)
+                if opt is not None:
+                    # You can also set .value directly but that won't work if you have OptionSets
+                    setattr(self.options, key, opt.from_any(value))
 
         self.num_gears = 0
         self.num_bunnies = 0
@@ -98,10 +115,11 @@ class YellowTaxiWorld(World):
             "Hub",
             "Morio's Home",
             "Bombeach",
+            "Arcade Panik"
         ]
 
         self.special_levels = [
-            ""  # "Empty" = appears in multiple levels
+            ""  # Empty = appears in multiple levels
         ]
 
         if self.options.locked_time_trials or self.options.time_trial_gears:
@@ -110,6 +128,9 @@ class YellowTaxiWorld(World):
                 "Getting Gud!",
                 "Pro Tricks!",
             ]
+
+        if self.options.hatsanity == 1: # Special "level" for shared hats
+            self.special_levels += ["Hatsanity"]
 
         self.has_golden_spring_access = ((self.options.shuffle_golden_spring ==
                                          self.options.shuffle_golden_spring.option_true) or
@@ -127,9 +148,6 @@ class YellowTaxiWorld(World):
                                             "Ruined Observatory" in self.included_levels)
         self.has_rocket_access = (self.options.shuffle_rocket.value ==
                                   self.options.shuffle_rocket.option_true)
-
-        if self.options.hatsanity == 1: # Special "level" for shared hats
-            self.special_levels += ["Hatsanity"]
 
         # Exclude unreachable hub areas
         if not self.has_rocket_access:
@@ -283,6 +301,7 @@ class YellowTaxiWorld(World):
         # Get relevant options needed for client
         dict = self.options.as_dict(
             "death_link",
+            "expert_level",
             "goal",
             "open_grannys_island",
             "locked_morios_lab",
@@ -294,6 +313,7 @@ class YellowTaxiWorld(World):
             "shuffle_morios_password",
             "shuffle_rocket",
             "shuffle_full_game",
+            "demo_portal_mode",
             "shuffle_psycho_taxi",
             "shuffle_rat",
             "gym_gears_unlock_condition",
@@ -301,11 +321,6 @@ class YellowTaxiWorld(World):
             "flushed_away_unlock_condition",
             "bunnysanity",
             "hatsanity",
-            "checkpointsanity",
-            "safesanity",
-            "chestsanity",
-            "coinbagsanity",
-            "coinsanity",
             "cheesesanity",
             "shuffle_flip_o_will",
             "shuffle_glide",

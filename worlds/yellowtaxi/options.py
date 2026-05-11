@@ -244,6 +244,29 @@ class ShuffleFullGame(Toggle):
 
     display_name = "Shuffle Full Game Unlock"
 
+class DemoPortalMode(Choice):
+    """
+    When the game is in the Demo state, which portals should appear. Has no effect if Shuffle Full Game is off.
+
+    Basic: Matches current Steam demo, only containing the Morio's Home and Bombeach portals.
+    Next Fest: Matches the Next Fest demo, which includes the Arcade Panik portal and the above.
+    Influencers: Matches the demo given to certain influencers, containing the Pizza Time portal and all of the above.
+    Open: Portals will not be removed while in demo mode and will solely require gears to unlock.
+    """
+
+    display_name = "Demo Portal Mode"
+
+    option_basic = 1
+    option_next_fest = 2
+    option_influencers = 3
+    option_open = 0
+
+    default = option_basic
+    alias_vanilla = option_basic
+    alias_default = option_basic
+    alias_extra = option_next_fest
+    alias_extra_influencers = option_influencers
+
 class ShufflePsychoTaxi(Toggle):
     """
     Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
@@ -429,6 +452,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_morios_password: ShuffleMoriosPassword
     shuffle_rocket: ShuffleRocket
     shuffle_full_game: ShuffleFullGame
+    demo_portal_mode: DemoPortalMode
     shuffle_psycho_taxi: ShufflePsychoTaxi
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
@@ -485,6 +509,7 @@ option_groups = [
             ShuffleMoriosPassword,
             ShuffleRocket,
             ShuffleFullGame,
+            DemoPortalMode,
             ShufflePsychoTaxi,
             ShuffleRat,
         ],
