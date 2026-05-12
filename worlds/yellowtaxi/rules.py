@@ -249,7 +249,7 @@ class RuleFactory:
                 return Has("Gear", self.world.final_portal_cost)
             return Has("Gear", 6)
         if token == "PortalArcadePanik":
-            if self.world.options.demo_portal_mode != self.world.options.demo_portal_mode.option_default:
+            if self.world.options.demo_portal_mode != self.world.options.demo_portal_mode.option_basic:
                 return Has("Gear", 18)
             return (Has("Gear", 18) &
                     Has("Full Game Unlock",
@@ -338,7 +338,8 @@ class RuleFactory:
             match self.world.options.flushed_away_unlock_condition:
                 case self.world.options.flushed_away_unlock_condition.option_open:
                     return True_()
-                case self.world.options.flushed_away_unlock_condition.option_full_game | self.world.options.flushed_away_unlock_condition.option_default:
+                case (self.world.options.flushed_away_unlock_condition.option_full_game |
+                      self.world.options.flushed_away_unlock_condition.option_default):
                     if self.world.options.shuffle_full_game == 0:
                         return True_()
                     return Has("Full Game Unlock")

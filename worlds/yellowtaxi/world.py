@@ -301,7 +301,6 @@ class YellowTaxiWorld(World):
         # Get relevant options needed for client
         dict = self.options.as_dict(
             "death_link",
-            "expert_level",
             "goal",
             "open_grannys_island",
             "locked_morios_lab",
@@ -327,6 +326,11 @@ class YellowTaxiWorld(World):
             "shuffle_golden_spring",
             "shuffle_golden_propeller",
             "extra_demo_collectables",
+            # Only used by UT. TODO: Can probably eliminate the last three
+            "expert_level",
+            "goal_portal_gear_percentage",
+            "exclude_goal_portal_checks",
+            "time_trial_gears",
         )
 
         dict["major_version"] = self.world_version.major

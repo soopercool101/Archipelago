@@ -446,59 +446,72 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
         itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
 
-    for hat in sorted(world.included_hats):
-        itempool.append(world.create_item(hat))
+    # Create filler
+    if hasattr(world.multiworld, "generation_is_fake"):
+        # Make one of everything for UT. No RNG to prevent item creation failures.
+        itempool += [world.create_item("No Hat")]
+        for hat in HATS:
+            if hat in world.included_hats:
+                continue
+            itempool.append(world.create_item(hat))
+        itempool += [world.create_item("1 Coin")]
+        itempool += [world.create_item("10 Coins")]
+        itempool += [world.create_item("25 Coins")]
+        itempool += [world.create_item("100 Coins")]
+    else: # Determine what actually needs to be added for real generation
+        # Add included hats
+        for hat in sorted(world.included_hats):
+            itempool.append(world.create_item(hat))
 
-    number_of_items = len(itempool)
+        number_of_items = len(itempool)
 
-    number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
+        number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
 
-    needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
+        needed_number_of_filler_items = number_of_unfilled_locations - number_of_items
 
-    extra_hats = 0
+        # Add hats to fill remaining hat locations, or remaining filler locations, depending
+        if world.options.hatsanity != world.options.hatsanity.option_disabled:
+            # Hatsanity only makes one location per hat
+            if world.options.hatsanity == world.options.hatsanity.option_hatsanity:
+                world.hat_location_count = len(world.included_hats)
 
-    if world.options.hatsanity != world.options.hatsanity.option_disabled:
-        # Hatsanity only makes one location per hat
-        if world.options.hatsanity == world.options.hatsanity.option_hatsanity:
-            world.hat_location_count = len(world.included_hats)
+            # If there are more hat locations than hat items, add "bonus" hats that do not have in-game locations
+            extra_hats : int = world.hat_location_count - len(world.included_hats)
 
-        # If there are more hat locations than hat items, add "bonus" hats that do not have in-game locations
-        extra_hats = world.hat_location_count - len(world.included_hats)
+            if world.options.hatsanity_filler_hats:
+                extra_hats = min(len(HATS) - len(world.included_hats), needed_number_of_filler_items)
 
-        if world.options.hatsanity_filler_hats:
-            extra_hats = min(len(HATS) - len(world.included_hats), needed_number_of_filler_items)
+            # If funny faces is enabled, special handling is performed for the TV Hat
+            if world.options.funny_faces != "":
+                if extra_hats > 0 and world.options.hatsanity == world.options.hatsanity.option_shopsanity:
+                    itempool.append(world.create_item("No Hat"))
+                    extra_hats -= 1
+                    needed_number_of_filler_items -= 1
+                world.included_hats.add("TV Hat") # TV Hat is always available when funny faces is enabled. Handled specially.
 
-        # If funny faces is enabled, special handling is performed for the TV Hat
-        if world.options.funny_faces != "":
-            if extra_hats > 0 and world.options.hatsanity == world.options.hatsanity.option_shopsanity:
-                itempool.append(world.create_item("No Hat"))
+            # Next, add "Alien Mosk (Good)" hat, which has a minor in-game use (allows access to a ruined observatory area, no checks in it though)
+            if extra_hats > 0 and "Ruined Observatory" in world.included_levels and "Alien Mosk (Good) Hat" not in world.included_hats:
+                itempool.append(world.create_item("Alien Mosk (Good) Hat"))
                 extra_hats -= 1
                 needed_number_of_filler_items -= 1
-            world.included_hats.add("TV Hat") # TV Hat is always available when funny faces is enabled. Handled specially.
+                world.included_hats.add("Alien Mosk (Good) Hat")
 
-        # Next, add "Alien Mosk (Good)" hat, which has a minor in-game use (allows access to a ruined observatory area, no checks in it though)
-        if extra_hats > 0 and "Ruined Observatory" in world.included_levels and "Alien Mosk (Good) Hat" not in world.included_hats:
-            itempool.append(world.create_item("Alien Mosk (Good) Hat"))
-            extra_hats -= 1
-            needed_number_of_filler_items -= 1
-            world.included_hats.add("Alien Mosk (Good) Hat")
+            # Now add random hats as needed
+            if extra_hats > 0:
+                hats : list[str] = []
+                hats.extend(HATS)
+                world.random.shuffle(hats)
+                for hat in hats:
+                    if extra_hats == 0:
+                        break
+                    if hat in world.included_hats:
+                        continue
+                    itempool.append(world.create_item(hat))
+                    extra_hats -= 1
+                    needed_number_of_filler_items -= 1
+                    # No need to add to included hats, last place they're needed
 
-        # Now add random hats as needed
-        if extra_hats > 0:
-            hats : list[str] = []
-            hats.extend(HATS)
-            world.random.shuffle(hats)
-            for hat in hats:
-                if extra_hats == 0:
-                    break
-                if hat in world.included_hats:
-                    continue
-                itempool.append(world.create_item(hat))
-                extra_hats -= 1
-                needed_number_of_filler_items -= 1
-                # No need to add to included hats, last place they're needed
-
-    itempool += [world.create_item(filler) for filler
-                 in get_random_filler_item_names(world, needed_number_of_filler_items)]
+        itempool += [world.create_item(filler) for filler
+                     in get_random_filler_item_names(world, needed_number_of_filler_items)]
 
     world.multiworld.itempool += itempool
