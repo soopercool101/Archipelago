@@ -82,7 +82,7 @@ class YellowTaxiWorld(World):
         # UT only
         self.ut_true_num_gears : int = 0
         self.ut_true_goal_cost : int = 0
-        self.ut_true_early_gelatoni : bool = False
+        self.ut_true_early_gela_toni : bool = False
 
 
 
