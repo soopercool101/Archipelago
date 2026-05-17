@@ -37,7 +37,8 @@ def create_locations(world: YellowTaxiWorld) -> None:
             continue
 
         locations : Dict[str, int | None] = {}
-        if world.options.time_trial_gears or not level.endswith("!"): # Time Trial Levels all end with "!"
+        # Time Trial Levels all end with "!", skip them when time trial gears aren't shuffled
+        if world.options.time_trial_gears or not level.endswith("!") or hasattr(world.multiworld, "generation_is_fake"):
             locations = reg["gears"]
             world.num_gears += len(locations)
         if world.options.bunnysanity:
@@ -322,7 +323,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Baby Steps! - Complete Time Trial": 17_00_00000,
                 }
-        case "Getting Gud! - High Ground":
+        case "Getting Gud! - In the Air":
             if world is None or world.options.locked_time_trials:
                 locations = {
                     "Getting Gud! - Complete Time Trial": 18_00_00000,

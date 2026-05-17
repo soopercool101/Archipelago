@@ -65,7 +65,27 @@
     "level": "Getting Gud!",
     "sublevel": "Getting Gud!",
     "gears": {
-      "Getting Gud! - Gear - High Platform": 180100000,
+      "Getting Gud! - Gear - High Platform": 180100000
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Getting Gud! - In the Air": "J2/B2 | X3+B1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Getting Gud! - In the Air": {
+    "level": "Getting Gud!",
+    "sublevel": "Getting Gud!",
+    "gears": {
       "Getting Gud! - Gear - In the Air": 180100001
     },
     "bunnies": {},
@@ -80,7 +100,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Getting Gud! - Gear - In the Air": "J2/B2 | X3+B1"
+      "Getting Gud! - Complete Time Trial": "J1/Spike"
     }
   }
 }

@@ -824,7 +824,7 @@
     "connections": {
       "Morio's Home - Kitchen Expert 1": "X1/B1/J1",
       "Morio's Home - Kitchen Cabinets": "B1/J1",
-      "Morio's Home - Kitchen High Ground": "J1 | X1+B1"
+      "Morio's Home - Kitchen High Ground": "J1 | X1+B2 | X2+B1"
     },
     "subwarps": {},
     "warps": {},

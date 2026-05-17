@@ -399,7 +399,7 @@
     "warps": {},
     "specialrules": {
       "Arcade Panik - Chest Inside Go Karts Pipe": "X2/J1",
-      "Arcade Panik - Bunny - Above Go Karts Pipe": "B2+J2 | X2+B2+J1",
+      "Arcade Panik - Bunny - Above Go Karts Pipe": "B2+J2 | X1+B2+J1",
       "Arcade Panik - Gear - Pipe Above Big Bowling Back Door": "B1/J1 | X1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Alcove Under Pinball Entrance": "B2 | X1/B1/J1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Go Karts Obstacle Course": "X1/J1",

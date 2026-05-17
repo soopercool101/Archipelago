@@ -365,7 +365,11 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     # Creating items should generally be done via the world's create_item method.
     # First, we create a list containing all the items that always exist.
 
-    itempool: list[Item] = [world.create_item("Gear") for _ in range(world.num_gears)]
+    gear_count = world.num_gears
+    if hasattr(world.multiworld, "generation_is_fake"):
+        gear_count = world.ut_true_num_gears
+
+    itempool : list[Item] = [world.create_item("Gear") for _ in range(gear_count)]
 
     # Add Bunnies to the pool
     if world.options.bunnysanity:

@@ -59,8 +59,7 @@
     "connections": {
       "Fecal Matters - Roundabout Hill Tier 1": "J1/B1 | X1+NHPR",
       "Fecal Matters - Roundabout Hill Tier 3": "J1/B2",
-      "Fecal Matters - Boost or Jump": "J1/B1",
-      "Fecal Matters - Boost or Backflip": "J2/B1"
+      "Fecal Matters - Boost or Jump": "J1/B1"
     },
     "subwarps": {},
     "warps": {
@@ -121,8 +120,7 @@
     "level": "Fecal Matters",
     "sublevel": "Fecal Matters",
     "gears": {
-      "Fecal Matters - Gear - Ledge Above Cul-de-sac": 70100003,
-      "Fecal Matters - Gear - Homing Beacons": 70100002
+      "Fecal Matters - Gear - Ledge Above Cul-de-sac": 70100003
     },
     "bunnies": {},
     "safes": {},
@@ -176,21 +174,16 @@
       "Fecal Matters - Coin on Island Overlooking Main Road #25": 70300123,
       "Fecal Matters - Coin on Island Overlooking Main Road #26": 70300130,
       "Fecal Matters - Coin on Island Overlooking Main Road #27": 70300124,
-      "Fecal Matters - Coin on Island Overlooking Main Road #28": 70300127,
-      "Fecal Matters - Coin Near Poop Hat #1": 70300066,
-      "Fecal Matters - Coin Near Poop Hat #2": 70300067,
-      "Fecal Matters - Coin Near Poop Hat #3": 70300069,
-      "Fecal Matters - Coin Near Poop Hat #4": 70300068,
-      "Fecal Matters - Coin Near Poop Hat #5": 70300070
+      "Fecal Matters - Coin on Island Overlooking Main Road #28": 70300127
     },
     "checkpoints": {},
     "cheeses": {
       "Fecal Matters - Cheese in Tunnel on Ramp Over Main Road": 72100003
     },
-    "hats": {
-      "Poop Hat": 70700018
+    "hats": {},
+    "connections": {
+      "Fecal Matters - Boost or Backflip": "X1/J2/B1"
     },
-    "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -203,17 +196,23 @@
       "Fecal Matters - Gear - Escort Bulldog Doggo on Village Island": 70100007,
       "Fecal Matters - Gear - Fire Hydrant on Mountain": 70100004,
       "Fecal Matters - Gear - Talk to Skeletrone": 70100001,
-      "Fecal Matters - Gear - House on Top of Mountain": 70100005
+      "Fecal Matters - Gear - House on Top of Mountain": 70100005,
+      "Fecal Matters - Gear - Homing Beacons": 70100002
     },
     "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {},
     "coins": {
-      "Fecal Matters - Coin Near Dog Food Hat #1": 70300084,
-      "Fecal Matters - Coin Near Dog Food Hat #2": 70300083,
-      "Fecal Matters - Coin Near Dog Food Hat #3": 70300082,
-      "Fecal Matters - Coin Near Dog Food Hat #4": 70300081
+      "Fecal Matters - Coin Near Dog Bowl Hat #1": 70300084,
+      "Fecal Matters - Coin Near Dog Bowl Hat #2": 70300083,
+      "Fecal Matters - Coin Near Dog Bowl Hat #3": 70300082,
+      "Fecal Matters - Coin Near Dog Bowl Hat #4": 70300081,
+      "Fecal Matters - Coin Near Poop Hat #1": 70300066,
+      "Fecal Matters - Coin Near Poop Hat #2": 70300067,
+      "Fecal Matters - Coin Near Poop Hat #3": 70300069,
+      "Fecal Matters - Coin Near Poop Hat #4": 70300068,
+      "Fecal Matters - Coin Near Poop Hat #5": 70300070
     },
     "checkpoints": {},
     "cheeses": {
@@ -221,9 +220,12 @@
       "Fecal Matters - Cheese on Mountain": 72100002,
       "Fecal Matters - Cheese on Island": 72100001
     },
-    "hats": {},
+    "hats": {
+      "Dog Bowl Hat": 70700019,
+      "Poop Hat": 70700018
+    },
     "connections": {
-      "Fecal Matters - Highest Ground": "J1 | X1+B2"
+      "Fecal Matters - Highest Ground": "J1 | X1+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -284,9 +286,7 @@
     },
     "checkpoints": {},
     "cheeses": {},
-    "hats": {
-      "Dog Bowl Hat": 70700019
-    },
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},

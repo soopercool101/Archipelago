@@ -68,7 +68,6 @@ class YellowTaxiWorld(World):
         self.exclude_spike_bunny : bool = False
         self.exclude_top_bunny : bool = False
         self.final_portal_cost : int = 0
-        self.required_gears : int = 0
         self.goal_levels : List[str] = ["Bombeach"]
         # These are used to simplify logic and region inclusion rules
         # Sometimes not shuffling these results in them not existing, if the level isn't in the game
@@ -79,6 +78,12 @@ class YellowTaxiWorld(World):
         self.has_rocket_access : bool = False
         # Alternate forms of spike traversal may be added beyond the golden spring
         self.has_spike_traversal : bool = False
+
+        # UT only
+        self.ut_true_num_gears : int = 0
+        self.ut_true_goal_cost : int = 0
+        self.ut_true_early_gelatoni : bool = False
+
 
 
     def generate_early(self) -> None:
@@ -93,6 +98,14 @@ class YellowTaxiWorld(World):
                 if opt is not None:
                     # You can also set .value directly but that won't work if you have OptionSets
                     setattr(self.options, key, opt.from_any(value))
+                if key == "total_gears":
+                    self.ut_true_num_gears = value
+                if key == "goal_portal_cost":
+                    self.ut_true_goal_cost = value
+                if key == "early_gela_toni":
+                    self.ut_true_early_gela_toni = value
+            self.options.exclude_goal_portal_checks.value = False
+
 
         self.num_gears = 0
         self.num_bunnies = 0
@@ -122,12 +135,18 @@ class YellowTaxiWorld(World):
             ""  # Empty = appears in multiple levels
         ]
 
-        if self.options.locked_time_trials or self.options.time_trial_gears:
+        if (self.options.locked_time_trials or self.options.time_trial_gears or
+                hasattr(self.multiworld, "generation_is_fake")):
             self.included_levels += [
                 "Baby Steps!",
                 "Getting Gud!",
                 "Pro Tricks!",
             ]
+
+        if self.options.exclude_goal_portal_checks:
+            for level in self.goal_levels:
+                if level in self.included_levels:
+                    self.included_levels.remove(level)
 
         if self.options.hatsanity == 1: # Special "level" for shared hats
             self.special_levels += ["Hatsanity"]
@@ -150,15 +169,13 @@ class YellowTaxiWorld(World):
                                   self.options.shuffle_rocket.option_true)
 
         # Exclude unreachable hub areas
-        if not self.has_rocket_access:
-            if not (self.options.expert_level >= 3 and self.has_golden_propeller_access):
-                self.excluded_regions += ["Granny's Island - Top of Rocket"]
-        else:
+        if self.has_rocket_access:
             self.included_levels += ["Mosk's Rocket"]
+        elif not (self.options.expert_level >= 3 and self.has_golden_propeller_access):
+            self.excluded_regions += ["Granny's Island - Top of Rocket"]
 
-        # Gela-Toni normally only appears after bomboss is defeated. Considered postgoal content if that's the case
-        if "Bombeach" not in self.included_levels or "Bombeach" in self.goal_levels:
-            # Add early location for Gela-Toni if the main one isn't possible
+        # Gela-Toni normally only appears after Bomboss is defeated
+        if "Bombeach" not in self.included_levels:
             if self.options.shuffle_gela_toni:
                 self.early_gela_toni = True
             else:
@@ -221,9 +238,9 @@ class YellowTaxiWorld(World):
                     self.early_sewer_island = True
 
         # Make sure early items are set as needed
-        if self.options.shuffle_gela_toni and self.options.exclude_goal_portal_checks and self.options.goal < 1:
-            self.early_gela_toni = True
-        if not "Pizza Time" in self.included_levels:
+        if hasattr(self.multiworld, "generation_is_fake"):
+            self.early_gela_toni = self.ut_true_early_gela_toni
+        if not "Pizza Time" in self.included_levels and (self.options.shuffle_rat or self.options.cheesesanity):
             self.early_rat = True
         if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
             self.early_backflip = True
@@ -244,11 +261,6 @@ class YellowTaxiWorld(World):
             self.exclude_spike_bunny = True
         if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
             self.exclude_top_bunny = True
-
-        if self.options.exclude_goal_portal_checks:
-            for level in self.goal_levels:
-                if level in self.included_levels:
-                    self.included_levels.remove(level)
 
         if (self.options.coinsanity and self.multiworld.players > 1 and
                 self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent):
@@ -280,9 +292,11 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
-        self.final_portal_cost = math.floor((self.num_gears *
-                                                   self.options.goal_portal_gear_percentage) / 100)
-        self.required_gears = self.final_portal_cost
+        if hasattr(self.multiworld, "generation_is_fake"):
+            self.final_portal_cost = self.ut_true_goal_cost
+        else:
+            self.final_portal_cost = math.floor((self.num_gears *
+                                                 self.options.goal_portal_gear_percentage) / 100)
 
     def set_rules(self) -> None:
         rules.set_all_rules(self)
@@ -326,11 +340,8 @@ class YellowTaxiWorld(World):
             "shuffle_golden_spring",
             "shuffle_golden_propeller",
             "extra_demo_collectables",
-            # Only used by UT. TODO: Can probably eliminate the last three
+            # Only used by UT
             "expert_level",
-            "goal_portal_gear_percentage",
-            "exclude_goal_portal_checks",
-            "time_trial_gears",
         )
 
         dict["major_version"] = self.world_version.major
