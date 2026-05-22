@@ -172,7 +172,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Roid-Man Hat": ItemClassification.filler,
     "Buzzsaw Hat": ItemClassification.filler,
     "Crusher Hat": ItemClassification.filler,
-    "Sleepy Mind Hat": ItemClassification.filler,
+    "Sleepy Mind Hat": ItemClassification.progression,
     "Heart Hat": ItemClassification.filler,
     "Moon Globe Hat": ItemClassification.filler,
     "Tower Hat": ItemClassification.filler,
@@ -346,7 +346,7 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
 
     if name == "Police Lights" and "Maurizio's City" in world.included_levels:
         classification = ItemClassification.useful  # Makes cop cars not attack you
-    if name == "Alien Mosk (Good) Hat" and "Ruined Observatory" in world.included_levels:
+    if (name == "Alien Mosk (Good) Hat" or name == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
     if name == "Tosla Employee Hat" and "Tosla Offices" in world.included_levels:
         classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices

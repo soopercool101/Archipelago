@@ -11,8 +11,10 @@ def load_json_data(data_name: str) -> Dict[str, Any]:
 
 regions_json_data : Dict[str, Any] = (load_json_data("L00.hub.json") |
                                       load_json_data("L01.bombeach.json") |
+                                      load_json_data("L02.pizzatime.json") |
                                       load_json_data("L03.morioshome.json") |
                                       load_json_data("L04.arcadepanik.json") |
+                                      load_json_data("L05.toslaoffices.json") |
                                       load_json_data("L06.gymgears.json") |
                                       load_json_data("L07.fecalmatters.json") |
                                       load_json_data("L08.flushedaway.json") |

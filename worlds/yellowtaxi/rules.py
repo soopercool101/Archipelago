@@ -238,11 +238,11 @@ class RuleFactory:
         if token == "Rocket":
             return Has("Mosk's Rocket")
         if token == "MorioHat":
-            return Has("Morio Hat")
+            return Has("Morio Hat") | Has("Sleepy Mind Hat")
         if token == "EmployeeHat":
             return Has("Tosla Employee Hat")
         if token == "MoskHat":
-            return Has("Alien Mosk Hat (Good)")
+            return Has("Alien Mosk Hat (Good)") | Has("Bunny Hat")
         # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
             return Has("Gear", 3)
