@@ -312,9 +312,9 @@
       "Granny's Island - Second Island Towards Sewer": "B1 & OS/GP/J1",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1",
-      "Granny's Island - Crash Again Island": "X1+B2+GP",
+      "Granny's Island - Crash Again Island": "X1+B2+GP | X3+B2+J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP+OS & J2/B1",
-      "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP",
+      "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP | X3+B2+J1",
       "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey+X1",
       "Law Firm - Ledges": "NSAR+GP+X1",
       "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP+X1"
@@ -795,7 +795,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Granny's Island - Gear - Lighthouse": "B2 | B1+GP",
+      "Granny's Island - Gear - Lighthouse": "B2 | X1/B1 & GP",
       "Granny's Island - Gear - In the Clouds": "B1+GP | B2+J1"
     }
   },
@@ -1091,8 +1091,9 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Granny's Island - Crash Again Roof": "J2",
-      "Granny's Island - Lab Hill High Ground": "OS"
+      "Granny's Island - Crash Again Roof": "J2 | X2+J1",
+      "Granny's Island - Lab Hill High Ground": "OS",
+      "Granny's Island - Main Area": "X3+B2+J1"
     },
     "subwarps": {
       "Crash Again - Entrance": ["Crash Again - Starting Area", "FGU"]
@@ -1658,7 +1659,7 @@
     "connections": {
       "Morio's Lab - Path to Morio's Room": "B1",
       "Morio's Lab - Ground Floor": "",
-      "Morio's Lab - Second Floor Access to Shortcut Pipe": "X2+B1+J1 | X1+B2+J2",
+      "Morio's Lab - Second Floor Access to Shortcut Pipe": "X2+B1+J1 | X1+B2+J1 | X1+B1+J2",
       "Morio's Lab - Second Floor Above Demo Wall": "B2",
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
       "Morio's Lab - Psycho Taxi Arcade Machine": "FGU"
@@ -1728,7 +1729,9 @@
       "Morio's Lab - Second Floor True Demo Wall": ""
     },
     "subwarps": {},
-    "warps": {},
+    "warps": {
+      "Morio's Lab - Pizza Time Portal": ["Pizza Time - Starting Area", "PortalPizzaTime"]
+    },
     "specialrules": {
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #3": "X1/FGU"
     }
@@ -1989,6 +1992,7 @@
     },
     "subwarps": {},
     "warps": {
+      "Morio's Lab - Tosla's Offices Portal": ["Tosla Square - Starting Area", "PortalToslaOffices"],
       "Morio's Lab - Baby Steps! TV": ["Baby Steps! - Starting Area", "TT1"]
     },
     "specialrules": {}
@@ -2193,7 +2197,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2",
+      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
       "Morio's Lab - Fourth Floor": "",
       "Morio's Lab - Second Floor": "FGU",
@@ -2314,7 +2318,6 @@
       "Morio's Lab - Ground Floor Propeller": "FGU",
       "Morio's Lab - Ledge Above Maurizio's City Portal": "",
       "Morio's Lab - Fourth Floor Jump Spikes": "Spike",
-      "Morio's Lab - Fourth Floor Expert Jump Spikes": "Spike+B1",
       "Morio's Lab - Fifth Floor Golden Propeller": "Password",
       "Morio's Lab - Third Floor Wrenches Lower": "Spike"
     },

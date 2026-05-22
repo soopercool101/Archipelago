@@ -29,7 +29,10 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
     game_locations: Dict[str, int] = {}
     for reg_name in json_data.keys():
         reg = json_data[reg_name]
-        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] | reg["checkpoints"] | reg["cheeses"] | locations.get_hat_locations(None, reg["sublevel"], reg["hats"]) | locations.get_special_locations(None, reg_name))
+        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] |
+                         reg["checkpoints"] | reg["cheeses"] |
+                         locations.get_hat_locations(None, reg["sublevel"], reg["hats"]) |
+                         locations.get_special_locations(None, reg_name))
         game_locations.update(reg_locations)
         for location in reg_locations:
             if reg["level"] in all_location_groups:

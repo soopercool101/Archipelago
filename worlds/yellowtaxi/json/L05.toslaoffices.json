@@ -1,0 +1,422 @@
+{
+  "Tosla Square - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Square",
+    "gears": {
+      "Tosla Square - Gear - Oil Pump": 50100011
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Tosla Square - Checkpoint in Front of Tosla's Offices": 50900760
+    },
+    "cheeses": {
+      "Tosla Square - Cheese Behind Billboard at Start": 52100004,
+      "Tosla Square - Cheese in Alley Left of Start": 52100000,
+      "Tosla Square - Cheese in Alley Right of Start": 52100003
+    },
+    "hats": {},
+    "connections": {},
+    "subwarps": {
+      "Tosla Square - Tosla Offices Entrance": ["Tosla Offices (Ground Floor)", ""]
+    },
+    "warps": {
+      "Tosla Square - Morio's Lab Portal": ["Morio's Lab - Third Floor", ""]
+    },
+    "specialrules": {
+      "Tosla Square - Gear - Oil Pump": "SP"
+    }
+  },
+  "Tosla Offices (Ground Floor)": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Ground Floor)",
+    "gears": {
+      "Tosla Offices (Ground Floor) - Gear - Above Exit": 50100006
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {
+      "Tosla Offices (Ground Floor) - Exit": ["Tosla Square - Starting Area", ""],
+      "Tosla Offices (Ground Floor) - Elevator": ["Tosla Offices (Second Floor)", ""]
+    },
+    "warps": {},
+    "specialrules": {
+      "Tosla Offices (Ground Floor) - Gear - Above Exit": "X1/OS & J1 | J2"
+    }
+  },
+  "Tosla Offices (Second Floor)": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Second Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Tosla Offices (Second Floor) - Coin Bag Near Down Elevator": 50300109,
+      "Tosla Offices (Second Floor) - Coin Bag Near Up Elevator": 50300090
+    },
+    "coins": {
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #1": 50300091,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #2": 50300093,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #3": 50300095,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #4": 50300097,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #5": 50300099,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #6": 50300101,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #7": 50300103,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #8": 50300105,
+      "Tosla Offices (Second Floor) - Coin Near Down Elevator #9": 50300107,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #1": 50300092,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #2": 50300094,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #3": 50300096,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #4": 50300098,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #5": 50300100,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #6": 50300102,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #7": 50300104,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #8": 50300106,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #9": 50300108,
+      "Tosla Offices (Second Floor) - Coin Near Up Elevator #10": 50300110
+    },
+    "checkpoints": {
+      "Tosla Offices (Second Floor) - Checkpoint": 50900115
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {
+      "Tosla Offices (Second Floor) - Down Elevator": ["Tosla Offices (Ground Floor)", ""],
+      "Tosla Offices (Second Floor) - Up Elevator": ["Tosla Offices (Third Floor) - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Third Floor) - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Third Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Tosla Offices (Third Floor) - Checkpoint": 50900275
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Third Floor) - After Golden Spring": "X2/GST/PMJ"
+    },
+    "subwarps": {
+      "Tosla Offices (Third Floor) - Down Elevator": ["Tosla Offices (Second Floor)", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Third Floor) - After Golden Spring": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Third Floor)",
+    "gears": {
+      "Tosla Offices (Third Floor) - Gear": 50100007
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Third Floor) - Starting Area": ""
+    },
+    "subwarps": {
+      "Tosla Offices (Third Floor) - Up Elevator": ["Tosla Offices (Fourth Floor) - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fourth Floor) - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fourth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #1": 50300118,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #2": 50300117,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #3": 50300116,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #4": 50300127,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #5": 50300141,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #6": 50300142,
+      "Tosla Offices (Fourth Floor) - Coin Leading Onto Desks Near Entrance #7": 50300143
+    },
+    "checkpoints": {
+      "Tosla Offices (Fourth Floor) - Checkpoint": 50900445
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fourth Floor) - Ledge Near Start": "PMB/PMJ",
+      "Tosla Offices (Fourth Floor) - After Ramp": "J1/PMJ/PMB",
+      "Tosla Offices (Fourth Floor) - High Ground": "X1/J1 & PMB | PMJ"
+    },
+    "subwarps": {
+      "Tosla Offices (Fourth Floor) - Down Elevator": ["Tosla Offices (Third Floor) - After Golden Spring", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fourth Floor) - Ledge Near Start": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fourth Floor)",
+    "gears": {
+      "Tosla Offices (Fourth Floor) - Gear - Ledge Near Start": 50100008
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #1": 50300186,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #2": 50300185,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #3": 50300184,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #4": 50300183,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #5": 50300182,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #6": 50300181,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #7": 50300180,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #8": 50300179,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #9": 50300178,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #10": 50300177,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #11": 50300176,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #12": 50300175,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #13": 50300174,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #14": 50300173,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #15": 50300171,
+      "Tosla Offices (Fourth Floor) - Coin on Ledge Near Start #16": 50300169
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fourth Floor) - After Ramp": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fourth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fourth Floor) - Starting Area": "",
+      "Tosla Offices (Fourth Floor) - After Golden Spring": "GST | X2+PW | PMJ"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fourth Floor) - After Golden Spring": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fourth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fourth Floor) - After Ramp": ""
+    },
+    "subwarps": {
+      "Tosla Offices (Fourth Floor) - Up Elevator": ["Tosla Offices (Fifth Floor) - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fourth Floor) - High Ground": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fourth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fourth Floor) - After Golden Spring": "X1+PMB"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fifth Floor) - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fifth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {
+      "Tosla Offices (Fifth Floor) - Checkpoint": 50901595
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fifth Floor) - Golden Spring Area": "X2/GST/PMJ",
+      "Tosla Offices (Fifth Floor) - Exit Area": "SpikeT | X1+PMJ"
+    },
+    "subwarps": {
+      "Tosla Offices (Fifth Floor) - Down Elevator": ["Tosla Offices (Fourth Floor) - After Golden Spring", ""],
+      "Tosla Offices (Fifth Floor) - Employees Only Door": ["Tosla Offices (Employees Only) - Starting Area", "EmployeeHat"]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fifth Floor) - Golden Spring Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fifth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Fifth Floor) - Exit Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Fifth Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Fifth Floor) - Starting Area": ""
+    },
+    "subwarps": {
+      "Tosla Offices (Fifth Floor) - Up Elevator": ["Tosla Offices (Final Floor) - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Final Floor) - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Final Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Final Floor) - Boss Fight": "X1/GST"
+    },
+    "subwarps": {
+      "Tosla Offices (Final Floor) - Elevator": ["Tosla Offices (Fifth Floor) - Exit Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Final Floor) - Boss Fight": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Final Floor)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {
+      "Tosla Offices (Final Floor) - Boss Fight Ending Cutscene": ["Morio's Lab - Third Floor", ""]
+    },
+    "specialrules": {}
+  },
+  "Tosla Offices (Employees Only) - Starting Area": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Employees Only)",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Tosla Offices (Employees Only) - Higher Ground": "PMB/PMJ"
+    },
+    "subwarps": {
+      "Tosla Offices (Employees Only) - Exit": ["Tosla Offices (Fifth Floor) - Starting Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Offices (Employees Only) - Higher Ground": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Offices (Employees Only)",
+    "gears": {},
+    "bunnies": {
+      "Tosla Offices (Employees Only) - Bunny": 50200002
+    },
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {
+      "Tosla Offices (Employees Only) - Bunny": "PMB"
+    }
+  }
+}

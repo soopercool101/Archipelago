@@ -430,6 +430,32 @@ class FunnyFaces(FreeText):
     display_name = "Funny Faces"
     default = ""
 
+class DeathLinkAmnesty(Range):
+    """
+    How many deaths it takes to send a DeathLink
+    """
+    display_name = "Death Link Amnesty"
+    range_start = 1
+    range_end = 5
+    default = 1
+
+class RingLink(Toggle):
+    """
+    Whether your coin gain/loss is linked to other players.
+    """
+    display_name = "Ring Link"
+
+class PurchaseRebatePercent(Range):
+    """
+    When you die, the coins you lose are added to a secret number that causes coin bags, chests, and safes to give more money until you are reimbursed.
+
+    This setting allows any in-game purchases to also increment this number by a % of the cost, allowing you to more easily regain spent coins.
+    """
+    display_name = "Purchase Rebate %"
+    range_start = 0
+    range_end = 100
+    default = 0
+
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
@@ -439,6 +465,9 @@ class YellowTaxiOptions(PerGameCommonOptions):
     exclude_goal_portal_checks : ExcludeGoalPortalChecks
     expert_level: ExpertLevel
     death_link: DeathLink
+    death_link_amnesty: DeathLinkAmnesty
+    ring_link: RingLink
+    purchase_rebate_percent: PurchaseRebatePercent
     open_grannys_island: OpenGrannysIsland
     locked_morios_lab: LockedMoriosLab
     locked_morios_wardrobe: LockedMoriosWardrobe
@@ -490,7 +519,7 @@ option_groups = [
             Coinbagsanity,
             Coinsanity,
             CoinsanityPercent,
-            Cheesesanity
+            Cheesesanity,
         ],
     ),
     OptionGroup(
@@ -521,13 +550,19 @@ option_groups = [
             ShuffleGlide,
             EarlyMove,
             ShuffleGoldenSpring,
-            ShuffleGoldenPropeller
+            ShuffleGoldenPropeller,
+        ],
+    ),
+    OptionGroup(
+        "Quality of Life Options",
+        [
+            PurchaseRebatePercent,
         ],
     ),
     OptionGroup(
         "Cosmetic Options",
         [
-            FunnyFaces
+            FunnyFaces,
         ],
     ),
 ]

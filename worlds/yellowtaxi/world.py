@@ -187,7 +187,8 @@ class YellowTaxiWorld(World):
             else:
                 self.excluded_regions += ["Pizza Oven - Entrance", "Pizza Oven - Pillar"]
         if not self.has_orange_switch_access:
-            if self.options.expert_level < 1 or not self.has_golden_propeller_access:
+            if self.options.expert_level < 1 or (not self.has_golden_propeller_access and
+                                                 self.options.expert_level < 3):
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
                                           "Granny's Island - Crash Again Roof",
                                           "Crash Again - Starting Area",
@@ -270,7 +271,7 @@ class YellowTaxiWorld(World):
                 f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
                 f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
                 f"generator's host.yaml to a higher value and generating locally.")
-        if self.options.coinsanity_percent == 0:
+        if self.options.coinsanity_percent.value == 0:
             self.options.coinsanity.value = False
 
         goal_portal_threshold = (50 + 5 * (len(self.included_levels) - 1))
@@ -315,6 +316,8 @@ class YellowTaxiWorld(World):
         # Get relevant options needed for client
         dict = self.options.as_dict(
             "death_link",
+            "death_link_amnesty",
+            "ring_link",
             "goal",
             "open_grannys_island",
             "locked_morios_lab",
@@ -340,6 +343,7 @@ class YellowTaxiWorld(World):
             "shuffle_golden_spring",
             "shuffle_golden_propeller",
             "extra_demo_collectables",
+            "purchase_rebate_percent",
             # Only used by UT
             "expert_level",
         )
