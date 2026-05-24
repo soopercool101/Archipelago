@@ -1575,7 +1575,8 @@
       "Morio's Lab - Bunny Ledge": "J1 | X1+B1",
       "Morio's Lab - Path to Morio's Room": "X1+J2",
       "Morio's Lab - Fifth Floor Crash Test Area": "X1+B1+FGU & X2/J1",
-      "Morio's Lab - Alcove Above Arcade Panik": "J1/B1"
+      "Morio's Lab - Alcove Above Arcade Panik": "J1/B1",
+      "Morio's Lab - Second Floor Access to Shortcut Pipe": "X3 & B1/J1"
     },
     "subwarps": {},
     "warps": {},
@@ -1889,7 +1890,7 @@
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Upper": "FGU+B2",
-      "Morio's Lab - Second Floor After Demo Wall": "J2 | X1+B1"
+      "Morio's Lab - Second Floor After Demo Wall": "J2 | X1 & B1/J1"
     },
     "subwarps": {},
     "warps": {},
@@ -2051,9 +2052,7 @@
   "Morio's Lab - Third Floor Wrenches Upper": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {
-      "Morio's Lab - Gear - Third Floor Wrenches": 100024
-    },
+    "gears": {},
     "bunnies": {},
     "safes": {},
     "chests": {},
@@ -2068,12 +2067,31 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
+    "connections": {
+      "Morio's Lab - Third Floor Gear Wrench": "J1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Third Floor Gear Wrench": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {
+      "Morio's Lab - Gear - Third Floor Wrenches": 100024
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {
-      "Morio's Lab - Gear - Third Floor Wrenches": "J1"
-    }
+    "specialrules": {}
   },
   "Morio's Lab - Fourth Floor": {
     "level": "Hub",
@@ -2313,6 +2331,7 @@
       "Morio's Lab - Third Floor Wrenches Lower": "FGU/Spike",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU",
       "Morio's Lab - Third Floor Wrenches Upper": "Spike+FGU",
+      "Morio's Lab - Third Floor Gear Wrench": "Spike+B1",
       "Morio's Lab - Ground Floor Bolts": "FGU",
       "Morio's Lab - Alcove Above Arcade Panik": "FGU",
       "Morio's Lab - Ground Floor Propeller": "FGU",
@@ -2579,6 +2598,7 @@
       "Morio's Lab - Third Floor Wrenches Lower": "B1/X2 & FGU",
       "Morio's Lab - Third Floor Wrenches Middle": "B1+FGU",
       "Morio's Lab - Third Floor Wrenches Upper": "B1+FGU",
+      "Morio's Lab - Third Floor Gear Wrench": "B1+FGU",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1",
       "Morio's Lab - Middle Floors Golden Propeller": "FGU+B1+Spike",
       "Morio's Lab - Inside Morio's Room Jump": "NHS+MorioHat+B1 | HS+MorioHat+B1 & {Morio's Wardrobe}"

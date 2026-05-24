@@ -626,9 +626,7 @@
   "Bombeach - Jump or Boost": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
-    "gears": {
-      "Bombeach - Gear - High Ocean Pillar": 10100008
-    },
+    "gears": {},
     "bunnies": {
       "Bombeach - Bunny - Under Mountain Hotel": 10200001
     },
@@ -653,7 +651,31 @@
       "Bombeach - Coin in Row on Second High Ocean Pillar #4": 10300645,
       "Bombeach - Coin in Row on Second High Ocean Pillar #5": 10300646,
       "Bombeach - Coin in Row on Second High Ocean Pillar #6": 10300660,
-      "Bombeach - Coin in Row on Second High Ocean Pillar #7": 10300677,
+      "Bombeach - Coin in Row on Second High Ocean Pillar #7": 10300677
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Bombeach - Expert 1 Bomb Jumps": "",
+      "Bombeach - Orange Block Bridge": "",
+      "Bombeach - Distant High Islands": "X1+J1 | J2 | B1"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Bombeach - Distant High Islands": {
+    "level": "Bombeach",
+    "sublevel": "Bombeach",
+    "gears": {
+      "Bombeach - Gear - High Ocean Pillar": 10100008
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
       "Bombeach - Coin in Ring Around High Ocean Pillar Gear #1": 10300681,
       "Bombeach - Coin in Ring Around High Ocean Pillar Gear #2": 10300680,
       "Bombeach - Coin in Ring Around High Ocean Pillar Gear #3": 10300679,
@@ -694,10 +716,7 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {
-      "Bombeach - Expert 1 Bomb Jumps": "",
-      "Bombeach - Orange Block Bridge": ""
-    },
+    "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}

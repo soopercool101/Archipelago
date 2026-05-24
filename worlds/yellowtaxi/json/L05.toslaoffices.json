@@ -9,7 +9,16 @@
     "safes": {},
     "chests": {},
     "coinbags": {},
-    "coins": {},
+    "coins": {
+      "Tosla Square - Coin on Ramp in Alley #1": 50300062,
+      "Tosla Square - Coin on Ramp in Alley #2": 50300061,
+      "Tosla Square - Coin on Ramp in Alley #3": 50300064,
+      "Tosla Square - Coin on Ramp in Alley #4": 50300063,
+      "Tosla Square - Coin on Ramp in Alley #5": 50300066,
+      "Tosla Square - Coin on Ramp in Alley #6": 50300065,
+      "Tosla Square - Coin on Ramp in Alley #7": 50300068,
+      "Tosla Square - Coin on Ramp in Alley #8": 50300067
+    },
     "checkpoints": {
       "Tosla Square - Checkpoint in Front of Tosla's Offices": 50900760
     },
@@ -19,7 +28,9 @@
       "Tosla Square - Cheese in Alley Right of Start": 52100003
     },
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Tosla Square - Tosla Sign": "J1/B1"
+    },
     "subwarps": {
       "Tosla Square - Tosla Offices Entrance": ["Tosla Offices (Ground Floor)", ""]
     },
@@ -29,6 +40,30 @@
     "specialrules": {
       "Tosla Square - Gear - Oil Pump": "SP"
     }
+  },
+  "Tosla Square - Tosla Sign": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Square",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Tosla Square - Coin Bag on Tosla Sign": 50300163
+    },
+    "coins": {
+      "Tosla Square - Coin on Tosla Sign #1": 50300161,
+      "Tosla Square - Coin on Tosla Sign #2": 50300162,
+      "Tosla Square - Coin on Tosla Sign #3": 50300164,
+      "Tosla Square - Coin on Tosla Sign #4": 50300165
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
   },
   "Tosla Offices (Ground Floor)": {
     "level": "Tosla's Offices",

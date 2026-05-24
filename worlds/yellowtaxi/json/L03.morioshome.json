@@ -689,7 +689,9 @@
     },
     "subwarps": {},
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Morio's Home - Gear - Above Hallway": "X1/B1/J2"
+    }
   },
   "Morio's Home - Before Bed Pillars": {
     "level": "Morio's Home",
@@ -909,7 +911,9 @@
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Morio's Home - Gear - Above Kitchen": "X1/B1/J2"
+    }
   },
   "Weird Tunnels - Entrance Area": {
     "level": "Morio's Home",

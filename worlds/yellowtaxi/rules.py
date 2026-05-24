@@ -8,7 +8,7 @@ from .data_loader import regions_json_data
 from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
-from .options import ShuffleFullGame
+from .options import ShuffleFullGame, PizzaWheels
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -193,17 +193,26 @@ class RuleFactory:
                 return True_()
             return Has("Spin Attack")
         if token == "GS":
-            return Has("Golden Spring Unlock")
+            return Has("Golden Spring Blueprints")
         if token == "GST":
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
-            return Has("Golden Spring Unlock")
+            return Has("Golden Spring Blueprints")
         if token == "Spike":
-            return Has("Golden Spring Unlock")
+            return Has("Golden Spring Blueprints") | Has("Pizza Wheels",
+                                                     options=[
+                                                         OptionFilter(PizzaWheels, PizzaWheels.option_progression)
+                                                     ])
         if token == "SpikeT":
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
-            return Has("Golden Spring Unlock")
+            return Has("Golden Spring Blueprints") | Has("Pizza Wheels",
+                                                     options=[
+                                                         OptionFilter(PizzaWheels, PizzaWheels.option_progression)
+                                                     ])
+        if token == "PW":
+            return Has("Pizza Wheels",
+                       options=[OptionFilter(PizzaWheels, PizzaWheels.option_progression)])
         if token == "NOS":
             if self.world.has_orange_switch_access:
                 return False_()
@@ -211,7 +220,7 @@ class RuleFactory:
         if token == "OS":
             return Has("Orange Switch")
         if token == "GP":
-            return Has("Golden Propeller Unlock")
+            return Has("Golden Propeller Blueprints")
         if token == "FGU":
             if self.world.options.shuffle_full_game == 0:
                 return True_()
@@ -238,11 +247,11 @@ class RuleFactory:
         if token == "Rocket":
             return Has("Mosk's Rocket")
         if token == "MorioHat":
-            return Has("Morio Hat") | Has("Sleepy Mind Hat")
+            return Has("Morio Hat") | Has("Morio's Brain Hat")
         if token == "EmployeeHat":
             return Has("Tosla Employee Hat")
         if token == "MoskHat":
-            return Has("Alien Mosk Hat (Good)") | Has("Bunny Hat")
+            return Has("Alien Mosk (Good) Hat") | Has("Bunny Hat")
         # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
             return Has("Gear", 3)
@@ -267,8 +276,10 @@ class RuleFactory:
                         filtered_resolution=True))
         if token == "PortalToslaOffices":
             if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
-                return Has("Gear", 50 if self.world.options.goal != 1 else self.world.final_portal_cost)
-            return (Has("Gear", 50 if self.world.options.goal != 1 else self.world.final_portal_cost) &
+                return Has("Gear", 50 if self.world.options.goal != self.world.options.goal.option_tosla_offices_boss
+                           else self.world.final_portal_cost)
+            return (Has("Gear", 50 if self.world.options.goal != self.world.options.goal.option_tosla_offices_boss
+                        else self.world.final_portal_cost) &
                     Has("Full Game Unlock",
                         options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                         filtered_resolution=True))
@@ -426,7 +437,7 @@ class RuleFactory:
             expert_level = int(token[1:])
             if (hasattr(self.world.multiworld, "generation_is_fake")
                     and self.world.options.expert_level < expert_level):
-                return Has("Expert Logic", expert_level - self.world.options.expert_level)
+                return Has("Additional Expert Logic Level", expert_level - self.world.options.expert_level)
             if self.world.options.expert_level >= expert_level:
                 return True_()
             return False_()

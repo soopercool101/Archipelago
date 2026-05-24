@@ -61,7 +61,7 @@ ITEM_NAME_TO_ID = {
     "Roid-Man Hat": 7_25,
     "Buzzsaw Hat": 7_26,
     "Crusher Hat": 7_27,
-    "Sleepy Mind Hat": 7_28,
+    "Morio's Brain Hat": 7_28,
     "Heart Hat": 7_29,
     "Moon Globe Hat": 7_30,
     "Tower Hat": 7_31,
@@ -91,8 +91,9 @@ ITEM_NAME_TO_ID = {
     "Progressive Boost": 8_0_2,
     "Spin Attack": 8_0_3,
     "Glide": 8_0_4,
-    "Golden Spring Unlock": 8_1_0,
-    "Golden Propeller Unlock": 8_2_0,
+    "Golden Spring Blueprints": 8_1_0,
+    "Golden Propeller Blueprints": 8_2_0,
+    "Pizza Wheels": 8_9_9,
     "Lab Key": 10_00,
     "Gym Membership": 10_06,
     "Doggo": 10_07,
@@ -116,7 +117,7 @@ ITEM_NAME_TO_ID = {
     #"Wishlist Trap": 999_001,
 
     # Universal Tracker Only
-    "Expert Logic": 99999_999
+    "Additional Expert Logic Level": 99999_999
 }
 
 # Items should have a defined default classification.
@@ -172,7 +173,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Roid-Man Hat": ItemClassification.filler,
     "Buzzsaw Hat": ItemClassification.filler,
     "Crusher Hat": ItemClassification.filler,
-    "Sleepy Mind Hat": ItemClassification.progression,
+    "Morio's Brain Hat": ItemClassification.progression,
     "Heart Hat": ItemClassification.filler,
     "Moon Globe Hat": ItemClassification.filler,
     "Tower Hat": ItemClassification.filler,
@@ -202,8 +203,9 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Progressive Boost": ItemClassification.progression | ItemClassification.useful,
     "Spin Attack": ItemClassification.progression | ItemClassification.useful,
     "Glide": ItemClassification.useful,
-    "Golden Spring Unlock": ItemClassification.progression | ItemClassification.useful,
-    "Golden Propeller Unlock": ItemClassification.progression | ItemClassification.useful,
+    "Golden Spring Blueprints": ItemClassification.progression | ItemClassification.useful,
+    "Golden Propeller Blueprints": ItemClassification.progression | ItemClassification.useful,
+    "Pizza Wheels": ItemClassification.filler,
     "Lab Key": ItemClassification.progression,
     "Gym Membership": ItemClassification.progression,
     "Doggo": ItemClassification.progression,
@@ -225,7 +227,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Michele": ItemClassification.useful,
 
     # Universal Tracker Only
-    "Expert Logic": ItemClassification.progression,
+    "Additional Expert Logic Level": ItemClassification.progression,
 }
 
 HATS = [
@@ -256,7 +258,7 @@ HATS = [
     "Roid-Man Hat",
     "Buzzsaw Hat",
     "Crusher Hat",
-    "Sleepy Mind Hat",
+    "Morio's Brain Hat",
     "Heart Hat",
     "Moon Globe Hat",
     "Tower Hat",
@@ -348,8 +350,14 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         classification = ItemClassification.useful  # Makes cop cars not attack you
     if (name == "Alien Mosk (Good) Hat" or name == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
-    if name == "Tosla Employee Hat" and "Tosla Offices" in world.included_levels:
+    if name == "Tosla Employee Hat" and "Tosla's Offices" in world.included_levels:
         classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices
+
+    if name == "Pizza Wheels":
+        if world.options.pizza_wheels == world.options.pizza_wheels.option_useful:
+            classification = ItemClassification.useful
+        if world.options.pizza_wheels == world.options.pizza_wheels.option_progression:
+            classification = ItemClassification.progression
 
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
@@ -421,13 +429,16 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool.append(world.create_item("Glide"))
 
     if world.options.shuffle_golden_spring:
-        itempool.append(world.create_item("Golden Spring Unlock"))
+        itempool.append(world.create_item("Golden Spring Blueprints"))
 
     if world.options.shuffle_golden_propeller:
-        itempool.append(world.create_item("Golden Propeller Unlock"))
+        itempool.append(world.create_item("Golden Propeller Blueprints"))
 
     if world.options.shuffle_orange_switch:
         itempool.append(world.create_item("Orange Switch"))
+
+    if world.options.pizza_wheels != world.options.pizza_wheels.option_off:
+        itempool += [world.create_item("Pizza Wheels")]
 
     if world.options.shuffle_full_game:
         itempool.append(world.create_item("Full Game Unlock"))

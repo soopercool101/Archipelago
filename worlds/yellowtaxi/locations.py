@@ -33,7 +33,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
         reg = regions_json_data[region.name]
         level : str = reg["level"]
 
-        if world.options.exclude_goal_portal_checks and level in world.goal_levels:
+        if world.options.remove_goal_portal_locations and level in world.goal_levels:
             continue
 
         locations : Dict[str, int | None] = {}
@@ -69,6 +69,8 @@ def create_locations(world: YellowTaxiWorld) -> None:
                     coins += [(region, {coin: coin_id})]
         if world.options.hatsanity != 0:
             locations = locations | get_hat_locations(world, reg["sublevel"], reg["hats"])
+        else:
+            create_hat_events(world, region, reg["sublevel"], reg["hats"])
 
         if world.options.cheesesanity:
             locations = locations | reg["cheeses"]
@@ -95,23 +97,58 @@ def create_locations(world: YellowTaxiWorld) -> None:
                 loc : Location = world.get_location(list(coin_data[1].keys())[0])
                 loc.progress_type = LocationProgressType.EXCLUDED
 
-    if world.options.hatsanity == 0:
-        world.get_region("Granny's Island Hat World").add_event(
-            "Event: Granny's Island Hat World - Purchase Morio Hat", "Morio Hat",
-            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+    # Add Michele event as needed
+    if not world.options.shuffle_rat and world.options.cheesesanity:
+        if world.early_rat:
+            world.get_region("Granny's Island - Main Area").add_event(
+                "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
+                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+            )
+        else:
+            world.get_region("Pizza Time Sewers").add_event(
+                "Event: Pizza Time Sewers - Talk to Michele", "Michele",
+                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+            )
+
+    # Add Golden Spring Blueprints event as needed
+    if not world.options.shuffle_golden_spring and "Tosla's Offices" in world.included_levels:
+        world.get_region("Tosla Offices (Final Floor) - Boss Fight").add_event(
+            "Event: Tosla Offices (Final Floor) - Acquire Golden Spring Blueprints",
+            "Golden Spring Blueprints", location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
 
-    if world.early_rat and not world.options.shuffle_rat:
-        world.get_region("Granny's Island - Main Area").add_event(
-            "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
-            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-        )
-
-    if world.options.goal == 0:
+    # Add Victory event
+    if world.options.goal == world.options.goal.option_bombeach_boss:
         world.get_region("Bombeach - Starting Area").add_event(
             "Event: Defeat Bomboss", "Victory",
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
+    elif world.options.goal == world.options.goal.option_tosla_offices_boss:
+        world.get_region("Tosla Offices (Final Floor) - Boss Fight").add_event(
+            "Event: Defeat Alien Mosk", "Victory",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
+
+def create_hat_events(world: YellowTaxiWorld, region: Region, subarea_name: str, hat_dict: dict[str, int]):
+    # No hats, return early
+    if len(hat_dict) == 0:
+        return
+
+    for hat in hat_dict.keys():
+        if hat_is_important(world, hat):
+            region.add_event(
+                f"Event: {subarea_name} - Purchase {hat}", hat,
+                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+            )
+
+def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
+    if hat == "Morio Hat" or hat == "Morio's Brain Hat":
+        return True
+    if hat == "Tosla Employee Hat": #and "Tosla's Offices" in world.included_levels: # Only found there. Redundant.
+        return True
+    if (hat == "Alien Mosk (Good) Hat" or hat == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
+        return True
+    return False
 
 def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, hat_dict: dict[str, int]) -> Dict[str, int | None]:
     # No hats, return early
@@ -238,6 +275,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Pizza Time Portal", f"Bunny (Morio's Lab)",
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                     world.num_bunnies += 1
+        case "Morio's Lab - Second Floor After Demo Wall":
+            if world is None or world.early_pizza_wheels:
+                locations = {
+                    "Morio's Lab - Talk to Chef Pepe": 7_99999,
+                }
         case "Morio's Lab - Second Floor True Demo Wall":
             if world is None or world.options.shuffle_full_game:
                 locations = {
@@ -254,7 +296,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Morio's Lab - PICI Spin Attack Tutorial": 8_00005,
                 }
             if world is None or world.options.shuffle_golden_spring and world.early_golden_spring:
-                locations["Morio's Lab - Talk to Morio Near Tosla Offices Portal"] = 11_00005
+                locations["Morio's Lab - Talk to Morio Near Tosla's Offices Portal"] = 11_00005
         case "Morio's Lab - Fourth Floor":
             if world is None or (world.options.fecal_matters_unlock_condition ==
                                  world.options.fecal_matters_unlock_condition.option_shuffle_doggo):
@@ -317,6 +359,16 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             if world is None or (world.options.shuffle_psycho_taxi and not world.early_psycho_taxi):
                 locations = {
                     "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
+                }
+        case "Pizza Time - Starting Area":
+            if world is None or world.options.pizza_wheels != world.options.pizza_wheels.option_off:
+                locations = {
+                    "Pizza Time - Talk to MacPizza": 2_07_99999,
+                }
+        case "Pizza Time Sewers":
+            if world is None or world.options.shuffle_rat:
+                locations = {
+                    "Pizza Time Sewers - Talk to Michele": 2_21_99999,
                 }
         case "Baby Steps! - Pillar":
             if world is None or world.options.locked_time_trials:

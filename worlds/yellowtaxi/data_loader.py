@@ -37,10 +37,10 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
                          locations.get_special_locations(None, reg_name))
         game_locations.update(reg_locations)
         for location in reg_locations:
-            if reg["level"] in all_location_groups:
-                all_location_groups[reg["level"]].add(location)
+            if reg["sublevel"] in all_location_groups:
+                all_location_groups[reg["sublevel"]].add(location)
             else:
-                all_location_groups[reg["level"]] = {location}
+                all_location_groups[reg["sublevel"]] = {location}
 
 
     return game_locations

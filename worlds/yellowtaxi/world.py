@@ -30,9 +30,12 @@ class YellowTaxiWorld(World):
     location_name_to_id = data_loader.all_locations
     location_name_groups = data_loader.all_location_groups
     item_name_to_id = items.ITEM_NAME_TO_ID
+    item_name_groups = {
+        "Move": { "Progressive Jump", "Progressive Boost" },
+    }
 
     # Universal Tracker stuff
-    glitches_item_name = "Expert Logic"
+    glitches_item_name = "Additional Expert Logic Level"
     ut_can_gen_without_yaml = True
 
     @staticmethod
@@ -54,6 +57,7 @@ class YellowTaxiWorld(World):
         self.special_levels : List[str] = []
         self.lab_start : bool = False
         self.early_gela_toni : bool = False
+        self.early_pizza_wheels : bool = False
         self.early_pizza_king : bool = False
         self.early_rat : bool = False
         self.early_doggo : bool = False
@@ -80,11 +84,9 @@ class YellowTaxiWorld(World):
         self.has_spike_traversal : bool = False
 
         # UT only
-        self.ut_true_num_gears : int = 0
-        self.ut_true_goal_cost : int = 0
-        self.ut_true_early_gela_toni : bool = False
-
-
+        if hasattr(self.multiworld, "generation_is_fake"):
+            self.ut_true_num_gears : int = 0
+            self.ut_true_goal_cost : int = 0
 
     def generate_early(self) -> None:
         # UT YAML-less
@@ -102,9 +104,12 @@ class YellowTaxiWorld(World):
                     self.ut_true_num_gears = value
                 if key == "goal_portal_cost":
                     self.ut_true_goal_cost = value
-                if key == "early_gela_toni":
-                    self.ut_true_early_gela_toni = value
-            self.options.exclude_goal_portal_checks.value = False
+                if key.startswith("early_"):
+                    attr : Optional[Any] = getattr(self, key, None)
+                    if attr is not None:
+                        setattr(self, key, value)
+
+            self.options.remove_goal_portal_locations.value = False
 
 
         self.num_gears = 0
@@ -128,8 +133,16 @@ class YellowTaxiWorld(World):
             "Hub",
             "Morio's Home",
             "Bombeach",
-            "Arcade Panik"
         ]
+
+        if (self.options.goal >= self.options.goal.option_tosla_offices_boss or
+                not self.options.remove_post_goal_portals):
+            self.included_levels += [
+                "Arcade Panik",
+                "Pizza Time",
+                "Tosla's Offices",
+            ]
+
 
         self.special_levels = [
             ""  # Empty = appears in multiple levels
@@ -143,7 +156,7 @@ class YellowTaxiWorld(World):
                 "Pro Tricks!",
             ]
 
-        if self.options.exclude_goal_portal_checks:
+        if self.options.remove_goal_portal_locations:
             for level in self.goal_levels:
                 if level in self.included_levels:
                     self.included_levels.remove(level)
@@ -177,16 +190,23 @@ class YellowTaxiWorld(World):
         # Gela-Toni normally only appears after Bomboss is defeated
         if "Bombeach" not in self.included_levels:
             if self.options.shuffle_gela_toni:
-                self.early_gela_toni = True
+                if not hasattr(self.multiworld, "generation_is_fake"):
+                    self.early_gela_toni = True
             else:
                 self.excluded_regions += ["Ice Cream Truck - Lower Path", "Ice Cream Truck - Upper Path"]
         # Pizza King appears in Pizza Time. If level is inaccessible, either exclude his hub portion or set early
         if "Pizza Time" not in self.included_levels:
             if self.options.shuffle_pizza_king:
-                self.early_pizza_king = True
+                if not hasattr(self.multiworld, "generation_is_fake"):
+                    self.early_pizza_king = True
             else:
                 self.excluded_regions += ["Pizza Oven - Entrance", "Pizza Oven - Pillar"]
+            if (self.options.pizza_wheels != self.options.pizza_wheels.option_off and
+                    not hasattr(self.multiworld, "generation_is_fake")):
+                self.early_pizza_wheels = True
         if not self.has_orange_switch_access:
+            # Technically this is totally accessible, but is certain death
+            self.excluded_regions += ["Pizza Time - Orange Block Bridge"]
             if self.options.expert_level < 1 or (not self.has_golden_propeller_access and
                                                  self.options.expert_level < 3):
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
@@ -219,6 +239,13 @@ class YellowTaxiWorld(World):
                     "Morio's Lab - Second Floor Access to Shortcut Pipe",
                     "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
                 ]
+        if not "Tosla's Offices" in self.included_levels and "Tosla's Offices" in self.goal_levels:
+            # Remove employees-only completely since the hat will not be progression in this case
+            # Makes generator less mad
+            self.excluded_regions += [
+                "Tosla Offices (Employees Only) - Starting Area",
+                "Tosla Offices (Employees Only) - Higher Ground",
+            ]
 
         # Granny's Island Levels. Flushed Away in particular needs to consider logical access.
 
@@ -236,27 +263,27 @@ class YellowTaxiWorld(World):
                 if "Granny's Island - Sewer Island" in self.excluded_regions:
                     self.excluded_regions.remove("Granny's Island - Sewer Island")
                     self.excluded_regions.remove("Granny's Island - Sewer Island Upper")
-                    self.early_sewer_island = True
+                    if not hasattr(self.multiworld, "generation_is_fake"):
+                        self.early_sewer_island = True
 
         # Make sure early items are set as needed
-        if hasattr(self.multiworld, "generation_is_fake"):
-            self.early_gela_toni = self.ut_true_early_gela_toni
-        if not "Pizza Time" in self.included_levels and (self.options.shuffle_rat or self.options.cheesesanity):
-            self.early_rat = True
-        if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
-            self.early_backflip = True
-        if self.options.shuffle_psycho_taxi and not "Arcade Panik" in self.included_levels:
-            self.early_psycho_taxi = True
-        if self.options.shuffle_orange_switch and not "Crash Test Industries" in self.included_levels:
-            self.early_orange_switch = True
-        if self.options.shuffle_golden_spring and not "Tosla HQ" in self.included_levels:
-            self.early_golden_spring = True
-        if self.options.shuffle_golden_propeller and not "Ruined Observatory" in self.included_levels:
-            self.early_golden_propeller = True
-        if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
-            self.early_morios_password = True
-        if self.options.shuffle_rocket:
-            self.early_rocket = True
+        if not hasattr(self.multiworld, "generation_is_fake"):
+            if not "Pizza Time" in self.included_levels and (self.options.shuffle_rat or self.options.cheesesanity):
+                self.early_rat = True
+            if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
+                self.early_backflip = True
+            if self.options.shuffle_psycho_taxi and not "Arcade Panik" in self.included_levels:
+                self.early_psycho_taxi = True
+            if self.options.shuffle_orange_switch and not "Crash Test Industries" in self.included_levels:
+                self.early_orange_switch = True
+            if self.options.shuffle_golden_spring and not "Tosla HQ" in self.included_levels:
+                self.early_golden_spring = True
+            if self.options.shuffle_golden_propeller and not "Ruined Observatory" in self.included_levels:
+                self.early_golden_propeller = True
+            if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
+                self.early_morios_password = True
+            if self.options.shuffle_rocket:
+                self.early_rocket = True
 
         if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
             self.exclude_spike_bunny = True
@@ -275,7 +302,7 @@ class YellowTaxiWorld(World):
             self.options.coinsanity.value = False
 
         goal_portal_threshold = (50 + 5 * (len(self.included_levels) - 1))
-        if (not self.options.exclude_goal_portal_checks and self.multiworld.players == 1 and self.options.goal < 1 and
+        if (not self.options.remove_goal_portal_locations and self.multiworld.players == 1 and self.options.goal < 1 and
                 self.options.goal_portal_gear_percentage > goal_portal_threshold):
             self.options.goal_portal_gear_percentage.value = goal_portal_threshold
             logging.warning(
@@ -314,7 +341,7 @@ class YellowTaxiWorld(World):
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         # Get relevant options needed for client
-        dict = self.options.as_dict(
+        slot_data : Dict[str, Any] = self.options.as_dict(
             "death_link",
             "death_link_amnesty",
             "ring_link",
@@ -342,41 +369,45 @@ class YellowTaxiWorld(World):
             "shuffle_glide",
             "shuffle_golden_spring",
             "shuffle_golden_propeller",
+            "pizza_wheels",
             "extra_demo_collectables",
             "purchase_rebate_percent",
+            "remove_post_goal_portals",
+            "funny_faces",
             # Only used by UT
             "expert_level",
+            toggles_as_bools=True
         )
 
-        dict["major_version"] = self.world_version.major
-        dict["minor_version"] = self.world_version.minor
-        dict["build_version"] = self.world_version.build
+        slot_data["major_version"] = self.world_version.major
+        slot_data["minor_version"] = self.world_version.minor
+        slot_data["build_version"] = self.world_version.build
 
         # Set counts that client needs to know
-        dict["goal_portal_cost"] = self.final_portal_cost
-        dict["total_gears"] = self.num_gears
-        dict["total_bunnies"] = self.num_bunnies
+        slot_data["goal_portal_cost"] = self.final_portal_cost
+        slot_data["total_gears"] = self.num_gears
+        slot_data["total_bunnies"] = self.num_bunnies
 
         # Set early item states, in order to make it easier to track clientside without needing to match logic
-        dict["early_gela_toni"] = self.early_gela_toni
-        dict["early_pizza_king"] = self.early_pizza_king
-        dict["early_rat"] = self.early_rat
+        slot_data["early_gela_toni"] = self.early_gela_toni
+        slot_data["early_pizza_king"] = self.early_pizza_king
+        slot_data["early_pizza_wheels"] = self.early_pizza_wheels
+        slot_data["early_rat"] = self.early_rat
         #dict["early_doggo"] = self.early_doggo
-        dict["early_backflip"] = self.early_backflip
-        dict["early_psycho_taxi"] = self.early_psycho_taxi
-        dict["early_orange_switch"] = self.early_orange_switch
-        dict["early_golden_spring"] = self.early_golden_spring
-        dict["early_golden_propeller"] = self.early_golden_propeller
-        dict["early_morios_password"] = self.early_morios_password
-        dict["early_rocket"] = self.early_rocket
-        dict["early_sewer_island"] = self.early_sewer_island
-        dict["funny_faces"] = self.options.funny_faces.value
+        slot_data["early_backflip"] = self.early_backflip
+        slot_data["early_psycho_taxi"] = self.early_psycho_taxi
+        slot_data["early_orange_switch"] = self.early_orange_switch
+        slot_data["early_golden_spring"] = self.early_golden_spring
+        slot_data["early_golden_propeller"] = self.early_golden_propeller
+        slot_data["early_morios_password"] = self.early_morios_password
+        slot_data["early_rocket"] = self.early_rocket
+        slot_data["early_sewer_island"] = self.early_sewer_island
 
         # Set excluded bunnies
-        dict["exclude_top_bunny"] = self.exclude_top_bunny
-        dict["exclude_spike_bunny"] = self.exclude_spike_bunny
+        slot_data["exclude_top_bunny"] = self.exclude_top_bunny
+        slot_data["exclude_spike_bunny"] = self.exclude_spike_bunny
 
         # Start location
-        dict["lab_start"] = self.lab_start
+        slot_data["lab_start"] = self.lab_start
 
-        return dict
+        return slot_data

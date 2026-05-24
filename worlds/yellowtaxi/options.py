@@ -18,18 +18,16 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, De
 class Goal(Choice):
     """
     Which boss is your victory condition.
-
-    Currently only Bomboss is supported.
     """
     display_name = "Goal"
 
     option_bombeach_boss = 0
-    #option_tosla_offices_boss = 1
+    option_tosla_offices_boss = 1
     #option_moon_boss = 2
     #option_backrooms = 3
     #option_macguffin = 4
 
-    default = option_bombeach_boss
+    default = option_tosla_offices_boss
     #alias_final_boss = option_moon_boss
 
 class GoalPortalGearPercentage(Range):
@@ -41,18 +39,28 @@ class GoalPortalGearPercentage(Range):
     range_end = 90
     default = 75
 
-class ExcludeGoalPortalChecks(DefaultOnToggle):
+class RemoveGoalPortalLocations(Toggle):
     """
-    If true, removes items from within the goal portal from the pool.
-
-    Note that if false, Goal Portal Gear Percentage may be capped at a lower value to prevent generation failures.
+    If true, removes locations from within the goal portal from the pool.
     """
 
-    display_name = "Exclude Goal Portal Checks"
+    display_name = "Remove Goal Portal Locations"
+
+class RemovePostGoalPortals(Toggle):
+    """
+    If true, removes portals that are after your current goal portal.
+
+    Note that the game does not currently support any portals after Tosla's Offices, so these will always be removed.
+    """
+
+    display_name = "Remove Post-Goal Portals"
 
 class ExpertLevel(Range):
     """
-    Difficulty level for expected checks. Higher level means more difficult checks will get in logic earlier.
+    Difficulty level for location access. Higher level means more difficult locations will get in logic earlier.
+
+    Universal Tracker will by default display 1 expert level above your own as "glitched logic".
+    You can increase the level shown by using "/manually_collect Additional Expert Logic Level".
     """
     display_name = "Expert Level"
     range_start = 0
@@ -62,7 +70,7 @@ class ExpertLevel(Range):
 class ExtraDemoCollectables(Toggle):
     """
     Adds demo-exclusive locations. Adds 5 additional gears and 2 additional bunnies.
-    The corresponding Rocket level will require all 5 Morio's Lab Bunnies to access when active.
+    The corresponding Rocket level will require all available Morio's Lab Bunnies.
     """
 
     display_name = "Add Extra Demo Collectables"
@@ -82,7 +90,7 @@ class OpenGrannysIsland(Toggle):
 
 class LockedMoriosLab(Toggle):
     """
-    Locks Morio's Lab and adds a "Lab Key" item into the multiworld. Adds a check for talking to Morio in Morio's Room.
+    Locks Morio's Lab and adds a "Lab Key" item into the multiworld. Adds a location for talking to Morio in Morio's Room.
 
     If "Open Granny's Island" is on, you will start outside the locked lab, and if it's off you will start inside the locked lab.
     """
@@ -90,7 +98,8 @@ class LockedMoriosLab(Toggle):
 
 class LockedMoriosWardrobe(Toggle):
     """
-    Locks Morio's Wardrobe and adds a "Morio's Wardrobe" item into the multiworld. Adds a check for talking to the Mori-O-Tron in Morio's Wardrobe.
+    Locks Morio's Wardrobe and adds a "Morio's Wardrobe" item into the multiworld.
+    Adds a location for talking to the Mori-O-Tron in Morio's Wardrobe.
 
     If "Hatsanity" is not disabled, you will require logical access to the wardrobe in order to use hats.
     """
@@ -108,7 +117,7 @@ class GymGearsUnlockCondition(Choice):
 
     Open: Gym Gears entrance is always available in Granny's Island.
     Full Game: Gym Gears entrance will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
-    Shuffle Gym Membership: Gym Gears entrance will be unlocked after receiving "Gym Membership" from the multiworld. Adds a purchasable check from the Ultra Chad in Gym Gears.
+    Shuffle Gym Membership: Gym Gears entrance will be unlocked after receiving "Gym Membership" from the multiworld. Adds a purchasable location from the Ultra Chad in Gym Gears.
     Exclude: Gym Gears entrance is always closed and Gym Gears will not be accessible
     """
     display_name = "Gym Gears Unlock Condition"
@@ -129,7 +138,7 @@ class FecalMattersUnlockCondition(Choice):
     Vanilla: Talk to Doggo in Morio's Lab to unlock the house in Granny's Island.
     Open: The house in Granny's Island is always open.
     Full Game: The house in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
-    Shuffle Doggo: The house in Granny's Island will be unlocked after receiving "Doggo" from the multiworld. Adds a check for talking to Doggo in Morio's Lab.
+    Shuffle Doggo: The house in Granny's Island will be unlocked after receiving "Doggo" from the multiworld. Adds a location for talking to Doggo in Morio's Lab.
     Exclude: The house in Granny's Island is always closed and Fecal Matters will not be accessible
     """
     display_name = "Fecal Matters Unlock Condition"
@@ -151,7 +160,7 @@ class FlushedAwayUnlockCondition(Choice):
     Default: Same as Full Game if there is logical access to the Sewer Island, Exclude if there isn't.
     Open: The Sewer Entrance in Granny's Island is always open.
     Full Game: The Sewer Entrance in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
-    Shuffle Sewer Key: The house in Granny's Island will be unlocked after receiving "Sewer Key" from the multiworld. Adds a check for talking to Michele in Flushed Away.
+    Shuffle Sewer Key: The house in Granny's Island will be unlocked after receiving "Sewer Key" from the multiworld. Adds a location for talking to Michele in Flushed Away.
     Exclude: The Sewer Entrance in Granny's Island is always closed and Flushed Away will not be accessible
     """
     display_name = "Flushed Away Unlock Condition"
@@ -193,15 +202,17 @@ class LockedTimeTrials(Choice):
 class ShuffleGelaToni(DefaultOnToggle):
     """
     Adds the unlock for the Ice Cream Truck Entrance in Granny's Island into the item pool and adds a location for defeating Bomboss in Bombeach.
+
+    If goal is Bomboss and Remove Goal Portal locations is enabled, the location will instead be talking to him in Granny's Island.
     """
 
     display_name = "Shuffle Gela-Toni"
 
-class ShufflePizzaKing(Toggle):
+class ShufflePizzaKing(DefaultOnToggle):
     """
     Adds the unlock for the Pizza Oven Entrance in Granny's Island into the item pool and adds a location for completing Pizza King's quest in Pizza Time.
 
-    If Bomboss is the goal, the location check for Pizza King will instead be obtained by talking to him in Granny's Island.
+    If Pizza Time is not an included level, the location will instead be talking to him in Granny's Island.
     """
 
     display_name = "Shuffle Pizza King"
@@ -210,7 +221,7 @@ class ShuffleOrangeSwitch(DefaultOnToggle):
     """
     Adds the Orange Switch into the item pool and adds a location for pressing the Orange Switch in Crash Test Industries.
 
-    If goal is Bomboss or Tosla HQ, a PICI in Morio's Lab will be the location instead.
+    If Crash Test Industries is not an included location, talking to Ocra Taxi at the end of Crash again will be the location instead.
     """
 
     display_name = "Shuffle Orange Switch"
@@ -219,7 +230,7 @@ class ShuffleMoriosPassword(Toggle):
     """
     Adds Morio's Password into the item pool and adds a location for obtaining the key in Morio's Mind.
 
-    If goal is Bomboss or Tosla HQ, talking to Morio in the Dream Machine in Morio's Lab will be the location instead.
+    If Morio's Mind is not an included level, talking to Morio in the Dream Machine in Morio's Lab will be the location instead.
     """
 
     display_name = "Shuffle Morio's Password"
@@ -228,16 +239,16 @@ class ShuffleRocket(Toggle):
     """
     Adds the unlock for Mosk's Rocket to appear in Granny's Island into the item pool and adds a location for defeating the final boss on the Moon.
 
-    If goal is Bomboss or Tosla HQ, talking to Alien Mosk in Granny's Island will be the location instead.
+    If the Moon is not an included level, or is the goal and Remove Goal Portal locations is enabled, talking to Alien Mosk in Granny's Island will be the location instead.
     """
 
     display_name = "Shuffle Mosk's Rocket"
 
-class ShuffleFullGame(Toggle):
+class ShuffleFullGame(DefaultOnToggle):
     """
-    Starts the game in "Demo" mode, locking areas of the hub until a "Full Game Unlock" item is received.
-    Adds a location for hitting the true demo wall in the hub.
-    If the Full Game Unlock item is received, passing through where the wall used to be will send the check.
+    Starts the game in "Demo" mode, locking areas of Morio's Lab until a "Full Game Unlock" item is received.
+    Adds a location for hitting the true demo wall in Morio's Lab.
+    If the Full Game Unlock item is received, passing through where the wall used to be will send the location.
 
     The mod does not work in the actual demo, you are still required to purchase the full game to play!
     """
@@ -248,9 +259,9 @@ class DemoPortalMode(Choice):
     """
     When the game is in the Demo state, which portals should appear. Has no effect if Shuffle Full Game is off.
 
-    Basic: Matches current Steam demo, only containing the Morio's Home and Bombeach portals.
-    Next Fest: Matches the Next Fest demo, which includes the Arcade Panik portal and the above.
-    Influencers: Matches the demo given to certain influencers, containing the Pizza Time portal and all of the above.
+    Basic: Matches current Steam demo, only containing the first two portals.
+    Next Fest: Matches the Next Fest demo, which includes the first three portals.
+    Influencers: Matches the demo given to certain influencers, containing the first four portals.
     Open: Portals will not be removed while in demo mode and will solely require gears to unlock.
     """
 
@@ -271,7 +282,7 @@ class ShufflePsychoTaxi(Toggle):
     """
     Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
 
-    If goal is Bomboss, talking to the Psycho Taxi Arcade Machine will be the location instead.
+    If Arcade Panik is not an included level, talking to the Psycho Taxi Arcade Machine will be the location instead.
     """
 
     display_name = "Shuffle Psycho Taxi"
@@ -280,14 +291,14 @@ class ShuffleRat(Toggle):
     """
     Adds Michele the Rat into the item pool and adds a location for talking to Michele in Pizza Time.
 
-    If goal is Bomboss, Michele will instead be found in Granny's Island.
+    If Pizza Time is not an included level, Michele will instead be found in Granny's Island.
     """
 
     display_name = "Shuffle Michele the Rat"
 
 class Bunnysanity(Toggle):
     """
-    Adds Golden Bunnies as checks and locations. These bunnies are filler unless Mosk's Rocket is shuffled.
+    Adds Golden Bunnies as items and locations. These bunnies are filler items unless Mosk's Rocket is shuffled.
     """
 
     display_name = "Bunnysanity"
@@ -316,46 +327,46 @@ class HatsanityFillerHats(DefaultOnToggle):
 
 class Checkpointsanity(Toggle):
     """
-    Adds checkpoints as location checks.
+    Adds checkpoints as locations.
     """
 
     display_name = "Checkpointsanity"
 
 class Safesanity(Toggle):
     """
-    Adds freestanding safes as location checks.
+    Adds freestanding safes as locations.
     """
 
     display_name = "Safesanity"
 
 class Chestsanity(Toggle):
     """
-    Adds freestanding chests as location checks.
+    Adds freestanding chests as locations.
     """
 
     display_name = "Chestsanity"
 
 class Coinbagsanity(Toggle):
     """
-    Adds freestanding coin bags as location checks.
+    Adds freestanding coin bags as locations.
     """
 
     display_name = "Coinbagsanity"
 
 class Coinsanity(Toggle):
     """
-    Adds freestanding individual coins as location checks.
+    Adds freestanding individual coins as locations.
     """
 
     display_name = "Coinsanity"
 
 class CoinsanityPercent(Range):
     """
-    What percentage of individual coins will be made into location checks if Coinsanity is enabled.
+    What percentage of individual coins will be made into locations if Coinsanity is enabled.
 
     In a multiworld, the following restrictions are in place:
     If the value is higher than the "multiworld_coinsanity_percentage_cap" in the host.yaml, it will be lowered to that value.
-    If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml, any coin checks past that threshold will be forced excluded.
+    If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml, coin locations past that threshold will be forced excluded.
     """
     display_name = "Coinsanity Percent"
     range_start = 1
@@ -364,7 +375,7 @@ class CoinsanityPercent(Range):
 
 class Cheesesanity(Toggle):
     """
-    Adds cheeses as location checks.
+    Adds cheeses as locations.
     """
 
     display_name = "Cheesesanity"
@@ -396,18 +407,18 @@ class ShuffleGlide(Toggle):
 
 class EarlyMove(Toggle):
     """
-    If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to the first local few checks.
+    If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to local sphere 0.
 
-    Prevents an early BK as only 3 gears are accessible moveless.
+    Prevents an early BK depending on settings.
     """
 
     display_name = "Early Move"
 
 class ShuffleGoldenSpring(DefaultOnToggle):
     """
-    Shuffles the Golden Spring into the item pool and adds a new location for defeating the Tosla HQ boss.
+    Shuffles the Golden Spring into the item pool and adds a new location for defeating the Tosla's Offices boss.
 
-    If goal is Bomboss, talking to Morio outside of the Tosla HQ Portal will be the location instead.
+    If Tosla's Offices is not an included level, talking to Morio outside of the Tosla's Offices Portal will be the location instead.
     """
     display_name = "Shuffle Golden Spring"
 
@@ -415,9 +426,28 @@ class ShuffleGoldenPropeller(DefaultOnToggle):
     """
     Shuffles the Golden Propeller into the item pool and adds a new location for talking to Morio in Ruined Observatory.
 
-    If goal is Bomboss or Tosla HQ, talking to Nick-O-Will near the top of Granny's Island will be the location instead.
+    If Ruined Observatory is not an included level, talking to Nick-O-Will near the top of Granny's Island will be the location instead.
     """
     display_name = "Shuffle Golden Propeller"
+
+class PizzaWheels(Choice):
+    """
+    Shuffles Pizza Wheels into the item pool and adds a new location for talking to MacPizza in Pizza Time.
+    If Pizza Time is not an included level, talking to Chef Pepe in Morio's Lab will be the location instead.
+
+    Pizza Wheels have three modes, corresponding to different item classifications:
+    Progression: The cheese on the pizza protects your tires from spikes, allowing you to drive across them safely.
+    Useful: Pizza Wheels can only protect you from spikes after receiving the Golden Spring Blueprints. No logic implications.
+    Filler: Pizza Wheels are purely cosmetic, and have no effect on gameplay.
+    """
+    display_name = "Pizza Wheels"
+
+    option_off = 0
+    option_progression = 3
+    option_useful = 2
+    option_filler = 1
+    default = option_off
+    alias_disabled = option_off
 
 class FunnyFaces(FreeText):
     """
@@ -462,7 +492,8 @@ class PurchaseRebatePercent(Range):
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
     goal_portal_gear_percentage: GoalPortalGearPercentage
-    exclude_goal_portal_checks : ExcludeGoalPortalChecks
+    remove_goal_portal_locations : RemoveGoalPortalLocations
+    remove_post_goal_portals : RemovePostGoalPortals
     expert_level: ExpertLevel
     death_link: DeathLink
     death_link_amnesty: DeathLinkAmnesty
@@ -499,6 +530,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     early_move: EarlyMove
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
+    pizza_wheels: PizzaWheels
     extra_demo_collectables: ExtraDemoCollectables
     time_trial_gears: TimeTrialGears
     funny_faces: FunnyFaces
@@ -540,7 +572,6 @@ option_groups = [
             ShuffleFullGame,
             DemoPortalMode,
             ShufflePsychoTaxi,
-            ShuffleRat,
         ],
     ),
     OptionGroup(
@@ -551,6 +582,8 @@ option_groups = [
             EarlyMove,
             ShuffleGoldenSpring,
             ShuffleGoldenPropeller,
+            PizzaWheels,
+            ShuffleRat,
         ],
     ),
     OptionGroup(

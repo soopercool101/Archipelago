@@ -403,8 +403,8 @@
       "Arcade Panik - Gear - Pipe Above Big Bowling Back Door": "B1/J1 | X1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Alcove Under Pinball Entrance": "B2 | X1/B1/J1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Go Karts Obstacle Course": "X1/J1",
-      "Arcade Panik - Chest Inside Crazy Ballz Pipe #1": "J2",
-      "Arcade Panik - Chest Inside Crazy Ballz Pipe #2": "J1 & X1/B1 | J2"
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #1": "J2 | X2+J1",
+      "Arcade Panik - Chest Inside Crazy Ballz Pipe #2": "J2 | J1 & {Arcade Panik - Cliff Above Crazy Ballz}"
     }
   },
   "Arcade Panik - Ledge Above Big Bowling Door": {
