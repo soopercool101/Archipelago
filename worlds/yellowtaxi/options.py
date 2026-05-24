@@ -221,7 +221,7 @@ class ShuffleOrangeSwitch(DefaultOnToggle):
     """
     Adds the Orange Switch into the item pool and adds a location for pressing the Orange Switch in Crash Test Industries.
 
-    If Crash Test Industries is not an included location, talking to Ocra Taxi at the end of Crash again will be the location instead.
+    If Crash Test Industries is not an included level, talking to Ocra Taxi at the end of Crash again will be the location instead.
     """
 
     display_name = "Shuffle Orange Switch"
