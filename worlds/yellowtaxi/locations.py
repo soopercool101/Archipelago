@@ -110,6 +110,13 @@ def create_locations(world: YellowTaxiWorld) -> None:
                 location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
             )
 
+    # Add Pizza King event as needed
+    if not world.options.shuffle_pizza_king and "Pizza Time" in world.included_levels:
+        world.get_region("Pizza Time - Pizza King's Quest").add_event(
+            "Event: Complete Pizza King's Quest", "Pizza King",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
+
     # Add Golden Spring Blueprints event as needed
     if not world.options.shuffle_golden_spring and "Tosla's Offices" in world.included_levels:
         world.get_region("Tosla Offices (Final Floor) - Boss Fight").add_event(
@@ -364,6 +371,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             if world is None or world.options.pizza_wheels != world.options.pizza_wheels.option_off:
                 locations = {
                     "Pizza Time - Talk to MacPizza": 2_07_99999,
+                }
+        case "Pizza Time - Pizza King's Quest":
+            if world is None or world.options.shuffle_pizza_king:
+                locations = {
+                    "Pizza Time - Complete Pizza King's Quest": 2_11_00002
                 }
         case "Pizza Time Sewers":
             if world is None or world.options.shuffle_rat:

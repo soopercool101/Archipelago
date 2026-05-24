@@ -541,16 +541,12 @@
     "safes": {},
     "chests": {
       "Bombeach - Chest by Orange Block Bridge": 10300601,
-      "Bombeach - Coin Bag on Gem-Shaped Island With Chest #1": 10300352,
-      "Bombeach - Coin on Gem-Shaped Island With Chest #1": 10300351,
-      "Bombeach - Coin on Gem-Shaped Island With Chest #2": 10300350,
-      "Bombeach - Chest on Gem-Shaped Island": 10300349,
-      "Bombeach - Coin on Gem-Shaped Island With Chest #3": 10300348,
-      "Bombeach - Coin on Gem-Shaped Island With Chest #4": 10300347,
-      "Bombeach - Coin Bag on Gem-Shaped Island With Chest #2": 10300346
+      "Bombeach - Chest on Gem-Shaped Island": 10300349
     },
     "coinbags": {
-      "Bombeach - Coin Bag Above Hot Dog Stand": 10300492
+      "Bombeach - Coin Bag Above Hot Dog Stand": 10300492,
+      "Bombeach - Coin Bag on Gem-Shaped Island With Chest #1": 10300352,
+      "Bombeach - Coin Bag on Gem-Shaped Island With Chest #2": 10300346
     },
     "coins": {
       "Bombeach - Coin on Pedestal in Bomboss Arena #1": 10300703,
@@ -596,6 +592,10 @@
       "Bombeach - Coin on Gem-Shaped Island With Gear #4": 10300443,
       "Bombeach - Coin on Gem-Shaped Island With Gear #5": 10300442,
       "Bombeach - Coin on Gem-Shaped Island With Gear #6": 10300441,
+      "Bombeach - Coin on Gem-Shaped Island With Chest #1": 10300351,
+      "Bombeach - Coin on Gem-Shaped Island With Chest #2": 10300350,
+      "Bombeach - Coin on Gem-Shaped Island With Chest #3": 10300348,
+      "Bombeach - Coin on Gem-Shaped Island With Chest #4": 10300347,
       "Bombeach - Coin in Ring on First Island Near Ocean Bridge #1": 10300345,
       "Bombeach - Coin in Ring on First Island Near Ocean Bridge #2": 10300340,
       "Bombeach - Coin in Ring on First Island Near Ocean Bridge #3": 10300334,

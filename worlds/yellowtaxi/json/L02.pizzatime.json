@@ -673,17 +673,17 @@
     "safes": {},
     "chests": {},
     "coinbags": {
+      "Pizza Time - Coin Bag on Second Main Island Mountain": 20300613
+    },
+    "coins": {
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #1": 20300609,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #2": 20300610,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #3": 20300611,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #4": 20300612,
-      "Pizza Time - Coin Bag on Second Main Island Mountain": 20300613,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #5": 20300614,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #6": 20300620,
       "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #7": 20300621,
-      "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #8": 20300622
-    },
-    "coins": {
+      "Pizza Time - Coin Surrounding Coin Bag on Second Main Island Mountain #8": 20300622,
       "Pizza Time - Coin Near Gear on Second Main Island Mountain #1": 20300627,
       "Pizza Time - Coin Near Gear on Second Main Island Mountain #2": 20300632,
       "Pizza Time - Coin Near Gear on Second Main Island Mountain #3": 20300637,
@@ -780,25 +780,26 @@
     "gears": {},
     "bunnies": {},
     "safes": {
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #1": 20300142,
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #2": 20300139,
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #3": 20300143,
-      "Pizza Time - Safe on Spire Near Start": 20300140,
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #4": 20300137,
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #5": 20300141,
-      "Pizza Time - Coin Surrounding Safe on Spire Near Start #6": 20300138
+      "Pizza Time - Safe on Spire Near Start": 20300140
     },
     "chests": {
-      "Pizza Time - Coin Surrounding Chest on Spire Near Start #1": 20300408,
-      "Pizza Time - Coin Surrounding Chest on Spire Near Start #2": 20300407,
-      "Pizza Time - Chest on Spire Near Start": 20300409,
-      "Pizza Time - Coin Surrounding Chest on Spire Near Start #3": 20300411,
-      "Pizza Time - Coin Surrounding Chest on Spire Near Start #4": 20300410
+      "Pizza Time - Chest on Spire Near Start": 20300409
     },
     "coinbags": {
       "Pizza Time - Coin Bag on Spire Near Start": 20300557
     },
-    "coins": {},
+    "coins": {
+      "Pizza Time - Coin Surrounding Chest on Spire Near Start #1": 20300408,
+      "Pizza Time - Coin Surrounding Chest on Spire Near Start #2": 20300407,
+      "Pizza Time - Coin Surrounding Chest on Spire Near Start #3": 20300411,
+      "Pizza Time - Coin Surrounding Chest on Spire Near Start #4": 20300410,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #1": 20300142,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #2": 20300139,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #3": 20300143,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #4": 20300137,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #5": 20300141,
+      "Pizza Time - Coin Surrounding Safe on Spire Near Start #6": 20300138
+    },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
