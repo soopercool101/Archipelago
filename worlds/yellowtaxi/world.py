@@ -109,9 +109,6 @@ class YellowTaxiWorld(World):
                     if attr is not None:
                         setattr(self, key, value)
 
-            self.options.remove_goal_portal_locations.value = False
-
-
         self.num_gears = 0
         self.num_bunnies = 0
         self.included_hats = set()
@@ -372,6 +369,7 @@ class YellowTaxiWorld(World):
             "pizza_wheels",
             "extra_demo_collectables",
             "purchase_rebate_percent",
+            "remove_goal_portal_locations",
             "remove_post_goal_portals",
             "funny_faces",
             # Only used by UT
