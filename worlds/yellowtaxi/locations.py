@@ -22,11 +22,16 @@ def create_locations(world: YellowTaxiWorld) -> None:
     # Once again, before we do anything, we can grab our regions we created by using world.get_region()
     world.num_gears = 0
     world.num_bunnies = 0
+    chests : List[tuple[Region, Dict[str, int | None]]] = []
+    use_simple_chestsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+                                     world.options.chestsanity_percent >= 100)
+    coinbags : List[tuple[Region, Dict[str, int | None]]] = []
+    use_simple_coinbagsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+                                       world.options.coinbagsanity_percent >= 100)
     coins : List[tuple[Region, Dict[str, int | None]]] = []
-    use_simple_coinsanity = (hasattr(world.multiworld, "generation_is_fake") or
-                             ((world.multiworld.players == 1 or
-                               world.options.coinsanity_non_filler_cap >= 100) and
-                              world.options.coinsanity_percent >= 100))
+    use_simple_coinsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+                                    (world.options.coinsanity_non_filler_cap >= 100 and
+                                     world.options.coinsanity_percent >= 100))
     for region in world.get_regions():
         if region.name == "Menu":
             continue
@@ -38,7 +43,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         locations : Dict[str, int | None] = {}
         # Time Trial Levels all end with "!", skip them when time trial gears aren't shuffled
-        if world.options.time_trial_gears or not level.endswith("!") or hasattr(world.multiworld, "generation_is_fake"):
+        if hasattr(world.multiworld, "generation_is_fake") or world.options.time_trial_gears or not level.endswith("!"):
             locations = reg["gears"]
             world.num_gears += len(locations)
         if world.options.bunnysanity:
@@ -58,9 +63,17 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if world.options.safesanity or hasattr(world.multiworld, "generation_is_fake"):
             locations = locations | reg["safes"]
         if world.options.chestsanity or hasattr(world.multiworld, "generation_is_fake"):
-            locations = locations | reg["chests"]
+            if use_simple_chestsanity:
+                locations = locations | reg["chests"]
+            else:
+                for chest, chest_id in reg["chests"].items():
+                    chests += [(region, {chest: chest_id})]
         if world.options.coinbagsanity or hasattr(world.multiworld, "generation_is_fake"):
-            locations = locations | reg["coinbags"]
+            if use_simple_coinbagsanity:
+                locations = locations | reg["coinbags"]
+            else:
+                for coinbag, coinbag_id in reg["coinbags"].items():
+                    coinbags += [(region, {coinbag: coinbag_id})]
         if world.options.coinsanity or hasattr(world.multiworld, "generation_is_fake"):
             if use_simple_coinsanity:
                 locations = locations | reg["coins"]
@@ -78,13 +91,31 @@ def create_locations(world: YellowTaxiWorld) -> None:
         locations = locations | get_special_locations(world, region.name)
         region.add_locations(locations)
 
+    # Set random chests as checks, based on chestsanity % setting
+    if world.options.chestsanity and len(chests) > 0:
+        selected_chest_count : int = max(floor((len(chests) * world.options.chestsanity_percent) / 100), 1)
+        world.random.shuffle(chests)
+        for i in range(0, selected_chest_count):
+            chest_data = chests[i]
+            # chest_data[0] is region, chest_data[1] is actual chest
+            chest_data[0].add_locations(chest_data[1])
+
+    # Set random coin bags as checks, based on coinbagsanity % setting
+    if world.options.coinbagsanity and len(coinbags) > 0:
+        selected_coinbag_count : int = max(floor((len(coinbags) * world.options.coinbagsanity_percent) / 100), 1)
+        world.random.shuffle(coinbags)
+        for i in range(0, selected_coinbag_count):
+            coinbag_data = coinbags[i]
+            # coinbag_data[0] is region, coinbag_data[1] is actual coin bag
+            coinbag_data[0].add_locations(coinbag_data[1])
+
     # Set random coins as checks, based on coinsanity % setting
     if world.options.coinsanity and len(coins) > 0:
         selected_coin_count : int = len(coins)
         if world.options.coinsanity_percent < 100:
             selected_coin_count = floor((len(coins) * world.options.coinsanity_percent) / 100)
         max_nonfiller_coin_count : int = len(coins)
-        if world.multiworld.players > 1:
+        if world.options.coinsanity_non_filler_cap < 100:
             max_nonfiller_coin_count = floor((len(coins) * world.options.coinsanity_non_filler_cap) / 100)
         world.random.shuffle(coins)
         for i in range(0, selected_coin_count):
@@ -95,33 +126,6 @@ def create_locations(world: YellowTaxiWorld) -> None:
                 # Exclude coins past the threshold
                 loc : Location = world.get_location(list(coin_data[1].keys())[0])
                 loc.progress_type = LocationProgressType.EXCLUDED
-
-    # Add Michele event as needed
-    if not world.options.shuffle_rat and world.options.cheesesanity:
-        if world.early_rat:
-            world.get_region("Granny's Island - Main Area").add_event(
-                "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
-                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-            )
-        else:
-            world.get_region("Pizza Time Sewers").add_event(
-                "Event: Pizza Time Sewers - Talk to Michele", "Michele",
-                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-            )
-
-    # Add Pizza King event as needed
-    if not world.options.shuffle_pizza_king and "Pizza Time" in world.included_levels:
-        world.get_region("Pizza Time - Pizza King's Quest").add_event(
-            "Event: Complete Pizza King's Quest", "Pizza King",
-            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-        )
-
-    # Add Golden Spring Blueprints event as needed
-    if not world.options.shuffle_golden_spring and "Tosla's Offices" in world.included_levels:
-        world.get_region("Tosla Offices (Final Floor) - Boss Fight").add_event(
-            "Event: Tosla Offices (Final Floor) - Acquire Golden Spring Blueprints",
-            "Golden Spring Blueprints", location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-        )
 
     # Add Victory event
     if world.options.goal == world.options.goal.option_bombeach_boss:
@@ -156,15 +160,15 @@ def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
         return True
     return False
 
-def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, hat_dict: dict[str, int]) -> Dict[str, int | None]:
+def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea: str, hats: dict[str, int]) -> Dict[str, int | None]:
     # No hats, return early
-    if len(hat_dict) == 0:
+    if len(hats) == 0:
         return {}
 
     locations : dict[str, int | None] = {}
 
     if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
-        for (hat, hat_id) in hat_dict.items():
+        for (hat, hat_id) in hats.items():
             # "No Hat" is not a hatsanity check
             if hat == "No Hat":
                 continue
@@ -179,14 +183,14 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea_name: str, h
             locations[f"Purchase {hat}"] = true_id
 
     if world is None or world.options.hatsanity == world.options.hatsanity.option_shopsanity:
-        for (hat, hat_id) in hat_dict.items():
+        for (hat, hat_id) in hats.items():
             # Add hat to the "included hats" list for item generation, count hat-based locations
             if world is not None:
                 if hat != "No Hat":
                     world.included_hats.add(hat)
                 world.hat_location_count += 1
 
-            locations[f"{subarea_name} - Purchase {hat}"] = hat_id
+            locations[f"{subarea} - Purchase {hat}"] = hat_id
 
     return locations
 
@@ -204,6 +208,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             #    locations["Granny's Island - Talk to Doggo"] = 10_10007
             if world is None or (world.options.shuffle_rat and world.early_rat):
                 locations["Granny's Island - Talk to Michele Near Beach"] = 21_99999
+            elif world.early_rat:
+                world.get_region(region_name).add_event(
+                    "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
             if world is None or (world.options.shuffle_rocket and world.early_rocket):
                 locations["Granny's Island - Talk to Alien Mosk"] = 10_00016
         case "Granny's Island - Crash Again Roof":
@@ -312,7 +321,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
             elif (world.options.fecal_matters_unlock_condition ==
                   world.options.fecal_matters_unlock_condition.option_vanilla): # Doggo item still logically needed
                 region = world.get_region(region_name)
-                region.add_event(f"Event: Morio's Lab - Talk to Doggo", f"Doggo",
+                region.add_event("Event: Morio's Lab - Talk to Doggo", "Doggo",
                                  location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
         case "Morio's Lab - Fifth Floor Morio's Mind Area":
             # Backflip tutorial gets moved earlier
@@ -352,7 +361,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 }
             elif world is not None and not world.options.shuffle_gela_toni: # Gela-Toni item still logically needed
                 region = world.get_region(region_name)
-                region.add_event(f"Event: Bombeach - Save Gela-Toni - Defeat Bomboss", f"Gela-Toni",
+                region.add_event("Event: Bombeach - Save Gela-Toni - Defeat Bomboss", "Gela-Toni",
                                  location_type=YellowTaxiLocation,
                                  item_type=items.YellowTaxiItem)
         case "Gym Gears - Starting Area":
@@ -376,11 +385,32 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Pizza Time - Complete Pizza King's Quest": 2_11_00002
                 }
+            else:
+                world.get_region(region_name).add_event(
+                    "Event: Complete Pizza King's Quest", "Pizza King",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
         case "Pizza Time Sewers":
             if world is None or world.options.shuffle_rat:
                 locations = {
                     "Pizza Time Sewers - Talk to Michele": 2_21_99999,
                 }
+            elif world.options.cheesesanity:
+                world.get_region(region_name).add_event(
+                    "Event: Pizza Time Sewers - Talk to Michele", "Michele",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
+        case "Tosla Offices (Final Floor) - Boss Fight":
+            if world is None or world.options.shuffle_golden_spring:
+                locations = {
+                    "Tosla Offices (Final Floor) - Golden Spring Blueprints": 5_11_00005
+                }
+            else:
+                world.get_region(region_name).add_event(
+                    "Event: Tosla Offices (Final Floor) - Golden Spring Blueprints",
+                    "Golden Spring Blueprints",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
         case "Baby Steps! - Pillar":
             if world is None or world.options.locked_time_trials:
                 locations = {

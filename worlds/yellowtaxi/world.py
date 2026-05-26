@@ -5,8 +5,9 @@ from typing import Any, ClassVar, Dict, List, Set, Optional
 
 from BaseClasses import MultiWorld
 from Options import Option
-from Utils import visualize_regions, Version
+from Utils import messagebox#, visualize_regions, Version
 from worlds.AutoWorld import World
+from worlds.LauncherComponents import Component, Type, components
 
 from . import data_loader, items, regions, locations, rules, web_world
 from . import options as taxi_options
@@ -39,6 +40,29 @@ class YellowTaxiWorld(World):
     # Universal Tracker stuff
     glitches_item_name = "Additional Expert Logic Level"
     ut_can_gen_without_yaml = True
+
+    # Shamelessly taken from Tunic's implementation
+    def attempt_launch_ut(*args: str) -> None:
+        try:
+            from worlds.tracker import launch_client
+
+            launch_client(*args)
+        except ImportError as e:
+            logging.getLogger(__name__).error(e)
+            messagebox(
+                "Cannot Load UT",
+                "There was an error loading Universal Tracker. Please ensure it is installed and up to date.",
+            )
+
+    components.append(
+        Component(
+            "Universal Tracker for Yellow Taxi Goes Vroom",
+            func=attempt_launch_ut,
+            game_name="Yellow Taxi Goes Vroom",
+            component_type=Type.HIDDEN,
+            supports_uri=True,
+        )
+    )
 
     @staticmethod
     def interpret_slot_data(slot_data: dict[str, Any]) -> dict[str, Any]:

@@ -35,9 +35,9 @@ class GoalPortalGearPercentage(Range):
     Percentage of Gear items needed to access the goal portal.
     """
     display_name = "Goal Portal Gear Percentage"
-    range_start = 50
+    range_start = 40
     range_end = 90
-    default = 75
+    default = 60
 
 class RemoveGoalPortalLocations(Toggle):
     """
@@ -267,10 +267,10 @@ class DemoPortalMode(Choice):
 
     display_name = "Demo Portal Mode"
 
-    option_basic = 1
-    option_next_fest = 2
-    option_influencers = 3
-    option_open = 0
+    option_basic = 2
+    option_next_fest = 3
+    option_influencers = 4
+    option_open = -1
 
     default = option_basic
     alias_vanilla = option_basic
@@ -346,12 +346,30 @@ class Chestsanity(Toggle):
 
     display_name = "Chestsanity"
 
+class ChestsanityPercent(Range):
+    """
+    What percentage of individual chests will be made into locations if Chestsanity is enabled.
+    """
+    display_name = "Chestsanity Percent"
+    range_start = 1
+    range_end = 100
+    default = 100
+
 class Coinbagsanity(Toggle):
     """
     Adds freestanding coin bags as locations.
     """
 
     display_name = "Coinbagsanity"
+
+class CoinbagsanityPercent(Range):
+    """
+    What percentage of individual coin bags will be made into locations if Coinbagsanity is enabled.
+    """
+    display_name = "Coinbagsanity Percent"
+    range_start = 1
+    range_end = 100
+    default = 65
 
 class Coinsanity(Toggle):
     """
@@ -383,7 +401,7 @@ class CoinsanityNonFillerCap(Range):
     If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml (default: 5), it will be lowered to that value.
     """
     display_name = "Coinsanity Non-Filler Cap Percentage"
-    range_start = 1
+    range_start = 0
     range_end = 100
     default = 5
 
@@ -432,7 +450,7 @@ class ShuffleGoldenSpring(DefaultOnToggle):
     """
     Shuffles the Golden Spring into the item pool and adds a new location for defeating the Tosla's Offices boss.
 
-    If Tosla's Offices is not an included level, talking to Morio outside of the Tosla's Offices Portal will be the location instead.
+    If Tosla's Offices is not an included level, talking to Morio near the Tosla's Offices Portal will be the location instead.
     """
     display_name = "Shuffle Golden Spring"
 
@@ -476,7 +494,7 @@ class FunnyFaces(FreeText):
 
 class DeathLinkAmnesty(Range):
     """
-    How many deaths it takes to send a DeathLink
+    How many deaths it takes to send a DeathLink.
     """
     display_name = "Death Link Amnesty"
     range_start = 1
@@ -494,6 +512,7 @@ class PurchaseRebatePercent(Range):
     When you die, the coins you lose are added to a secret number that causes coin bags, chests, and safes to give more money until you are reimbursed.
 
     This setting allows any in-game purchases to also increment this number by a % of the cost, allowing you to more easily regain spent coins.
+    Note that this value is saved per-session, restarting the game will result in it being reset to 0!
     """
     display_name = "Purchase Rebate %"
     range_start = 0
@@ -535,7 +554,9 @@ class YellowTaxiOptions(PerGameCommonOptions):
     checkpointsanity: Checkpointsanity
     safesanity: Safesanity
     chestsanity: Chestsanity
+    chestsanity_percent: ChestsanityPercent
     coinbagsanity: Coinbagsanity
+    coinbagsanity_percent: CoinbagsanityPercent
     coinsanity: Coinsanity
     coinsanity_percent: CoinsanityPercent
     coinsanity_non_filler_cap: CoinsanityNonFillerCap
@@ -563,7 +584,9 @@ option_groups = [
             Checkpointsanity,
             Safesanity,
             Chestsanity,
+            ChestsanityPercent,
             Coinbagsanity,
+            CoinbagsanityPercent,
             Coinsanity,
             CoinsanityPercent,
             Cheesesanity,
