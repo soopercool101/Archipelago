@@ -364,14 +364,28 @@ class CoinsanityPercent(Range):
     """
     What percentage of individual coins will be made into locations if Coinsanity is enabled.
 
-    In a multiworld, the following restrictions are in place:
-    If the value is higher than the "multiworld_coinsanity_percentage_cap" in the host.yaml, it will be lowered to that value.
-    If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml, coin locations past that threshold will be forced excluded.
+    In a multiworld, the following restriction is in place:
+    If the value is higher than the "multiworld_coinsanity_percentage_cap" in the host.yaml (default: 100), it will be lowered to that value.
     """
     display_name = "Coinsanity Percent"
     range_start = 1
     range_end = 100
     default = 10
+
+class CoinsanityNonFillerCap(Range):
+    """
+    What percentage of total available coins will be able to be anything other than filler items.
+
+    If your Coinsanity Percent is set to 10 and this is set to 5, half of your rolled coin locations will be forced filler.
+    If your Coinsanity Percent is lower than this number, all coins could potentially be progression.
+
+    In a multiworld, the following restriction is in place:
+    If the value is higher than the "multiworld_coinsanity_percentage_non_filler_cap" in the host.yaml (default: 5), it will be lowered to that value.
+    """
+    display_name = "Coinsanity Non-Filler Cap Percentage"
+    range_start = 1
+    range_end = 100
+    default = 5
 
 class Cheesesanity(Toggle):
     """
@@ -524,6 +538,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     coinbagsanity: Coinbagsanity
     coinsanity: Coinsanity
     coinsanity_percent: CoinsanityPercent
+    coinsanity_non_filler_cap: CoinsanityNonFillerCap
     cheesesanity: Cheesesanity
     shuffle_flip_o_will: ShuffleFlipOWill
     shuffle_glide: ShuffleGlide
@@ -596,6 +611,12 @@ option_groups = [
         "Cosmetic Options",
         [
             FunnyFaces,
+        ],
+    ),
+    OptionGroup(
+        "Advanced Options",
+        [
+            CoinsanityNonFillerCap,
         ],
     ),
 ]

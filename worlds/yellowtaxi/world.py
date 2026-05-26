@@ -32,6 +32,8 @@ class YellowTaxiWorld(World):
     item_name_to_id = items.ITEM_NAME_TO_ID
     item_name_groups = {
         "Move": { "Progressive Jump", "Progressive Boost" },
+        "Golden Spring": { "Golden Spring Blueprints" },
+        "Golden Propeller": { "Golden Propeller Blueprints" },
     }
 
     # Universal Tracker stuff
@@ -74,13 +76,13 @@ class YellowTaxiWorld(World):
         self.final_portal_cost : int = 0
         self.goal_levels : List[str] = ["Bombeach"]
         # These are used to simplify logic and region inclusion rules
-        # Sometimes not shuffling these results in them not existing, if the level isn't in the game
+        # Sometimes not shuffling these results in them not existing, if the related level isn't in the game
         self.has_golden_spring_access : bool = False
         self.has_golden_propeller_access : bool = False
         self.has_orange_switch_access : bool = False
         self.has_password_access : bool = False
         self.has_rocket_access : bool = False
-        # Alternate forms of spike traversal may be added beyond the golden spring
+        # Pizza Wheels or Golden Spring can give spike traversal
         self.has_spike_traversal : bool = False
 
         # UT only
@@ -104,7 +106,7 @@ class YellowTaxiWorld(World):
                     self.ut_true_num_gears = value
                 if key == "goal_portal_cost":
                     self.ut_true_goal_cost = value
-                if key.startswith("early_"):
+                if key.startswith("early_") or key.startswith("exclude_"):
                     attr : Optional[Any] = getattr(self, key, None)
                     if attr is not None:
                         setattr(self, key, value)
@@ -165,7 +167,8 @@ class YellowTaxiWorld(World):
                                          self.options.shuffle_golden_spring.option_true) or
                                          ("Tosla's Offices" in self.included_levels and
                                           "Tosla's Offices" not in self.goal_levels))
-        self.has_spike_traversal = self.has_golden_spring_access
+        self.has_spike_traversal = (self.has_golden_spring_access or
+                                    self.options.pizza_wheels == self.options.pizza_wheels.option_progression)
         self.has_orange_switch_access = ((self.options.shuffle_orange_switch.value ==
                                           self.options.shuffle_orange_switch.option_true) or
                                          "Crash Test Industries" in self.included_levels)
@@ -230,7 +233,7 @@ class YellowTaxiWorld(World):
                                       "Morio's Lab - Final Floor Pipes",
                                       "Morio's Lab - Final Floor Catwalk"]
             if self.options.expert_level == 0:
-                # Assume that expert 0 will not be using the shortcut pipe
+                # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
                 self.excluded_regions += [
                     "Morio's Lab - Second Floor Falling From Shortcut Pipe",
                     "Morio's Lab - Second Floor Access to Shortcut Pipe",
@@ -282,25 +285,35 @@ class YellowTaxiWorld(World):
             if self.options.shuffle_rocket:
                 self.early_rocket = True
 
-        if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
-            self.exclude_spike_bunny = True
-        if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
-            self.exclude_top_bunny = True
+            if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
+                self.exclude_spike_bunny = True
+            if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
+                self.exclude_top_bunny = True
 
         if (self.options.coinsanity and self.multiworld.players > 1 and
                 self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent):
-            self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
-            logging.warning(
-                f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
-                f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
-                f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
-                f"generator's host.yaml to a higher value and generating locally.")
+            if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
+                self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
+                    f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
+                    f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
+                    f"generator's host.yaml to a higher value and generating locally.")
+            if self.settings.multiworld_coinsanity_percentage_non_filler_cap < self.options.coinsanity_non_filler_cap:
+                self.options.coinsanity_non_filler_cap.value = (
+                    self.settings.multiworld_coinsanity_percentage_non_filler_cap)
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
+                    f"Coinsanity Non-Filler Cap Percentage has been lowered to "
+                    f"{self.options.coinsanity_non_filler_cap.value}. "
+                    f"You can increase this by setting 'multiworld_coinsanity_percentage_non_filler_cap' in the seed "
+                    f"generator's host.yaml to a higher value and generating locally.")
         if self.options.coinsanity_percent.value == 0:
             self.options.coinsanity.value = False
 
-        goal_portal_threshold = (50 + 5 * (len(self.included_levels) - 1))
-        if (not self.options.remove_goal_portal_locations and self.multiworld.players == 1 and self.options.goal < 1 and
-                self.options.goal_portal_gear_percentage > goal_portal_threshold):
+        goal_portal_threshold : int = (50 + 5 * (len(self.included_levels) - 1))
+        if (not self.options.remove_goal_portal_locations and self.multiworld.players == 1 and self.options.goal < 1
+                and self.options.goal_portal_gear_percentage > goal_portal_threshold):
             self.options.goal_portal_gear_percentage.value = goal_portal_threshold
             logging.warning(
                 f"{self.player_name}: Your options have been modified to avoid generation failures.\n"

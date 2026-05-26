@@ -25,7 +25,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
     coins : List[tuple[Region, Dict[str, int | None]]] = []
     use_simple_coinsanity = (hasattr(world.multiworld, "generation_is_fake") or
                              ((world.multiworld.players == 1 or
-                               world.settings.multiworld_coinsanity_percentage_non_filler_cap >= 100) and
+                               world.options.coinsanity_non_filler_cap >= 100) and
                               world.options.coinsanity_percent >= 100))
     for region in world.get_regions():
         if region.name == "Menu":
@@ -85,8 +85,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             selected_coin_count = floor((len(coins) * world.options.coinsanity_percent) / 100)
         max_nonfiller_coin_count : int = len(coins)
         if world.multiworld.players > 1:
-            max_nonfiller_coin_count = floor((len(coins) *
-                                              world.settings.multiworld_coinsanity_percentage_non_filler_cap) / 100)
+            max_nonfiller_coin_count = floor((len(coins) * world.options.coinsanity_non_filler_cap) / 100)
         world.random.shuffle(coins)
         for i in range(0, selected_coin_count):
             coin_data = coins[i]
