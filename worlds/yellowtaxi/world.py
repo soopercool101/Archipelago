@@ -314,8 +314,7 @@ class YellowTaxiWorld(World):
             if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
                 self.exclude_top_bunny = True
 
-        if (self.options.coinsanity and self.multiworld.players > 1 and
-                self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent):
+        if self.options.coinsanity and self.multiworld.players > 1:
             if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
                 self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
                 logging.warning(
