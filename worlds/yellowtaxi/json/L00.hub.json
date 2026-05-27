@@ -315,9 +315,9 @@
       "Granny's Island - Crash Again Island": "X1+B2+GP | X3+B2+J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP+OS & J2/B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP | X3+B2+J1",
-      "Morio's Lab - Ground Floor Propeller": "NSAR+GP+LabKey+X1",
-      "Law Firm - Ledges": "NSAR+GP+X1",
-      "Ice Cream Truck - Upper Path": "NSAR+GelaToni+GP+X1"
+      "Morio's Lab - Ground Floor Propeller": "X1+NSAR+GP+LabKey",
+      "Law Firm - Ledges": "X1+NSAR+GP",
+      "Ice Cream Truck - Upper Path": "X1+NSAR+GelaToni+GP"
     },
     "subwarps": {
       "Granny's Island - Beach Pipe": ["Granny's Island - Pipe Area", ""],
@@ -1288,13 +1288,15 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Ice Cream Truck - Upper Path": "B1/J2"
+      "Ice Cream Truck - Upper Path": "X2/B1/J2 | X1+J1"
     },
     "subwarps": {
       "Ice Cream Truck - Exit": ["Granny's Island - Main Area", ""]
     },
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Ice Cream Truck - Gear - Lower Path in Bomb Block": "X1/J1 | {Ice Cream Truck - Upper Path}"
+    }
   },
   "Ice Cream Truck - Upper Path": {
     "level": "Hub",

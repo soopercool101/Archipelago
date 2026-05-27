@@ -305,7 +305,10 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
     if world.options.safesanity and world.options.hatsanity != world.options.hatsanity.option_disabled:
         filler += ["100 Coins"]
         weights += [3]
-    elif world.options.safesanity or world.options.hatsanity != world.options.hatsanity.option_disabled:
+    elif world.options.hatsanity != world.options.hatsanity.option_disabled:
+        filler += ["100 Coins"]
+        weights += [2]
+    elif world.options.safesanity:
         filler += ["100 Coins"]
         weights += [1]
     if world.options.chestsanity or world.options.cheesesanity:

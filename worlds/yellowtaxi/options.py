@@ -360,7 +360,7 @@ class CoinbagsanityPercent(Range):
     display_name = "Coinbagsanity Percent"
     range_start = 1
     range_end = 100
-    default = 65
+    default = 50
 
 class Coinsanity(Toggle):
     """
