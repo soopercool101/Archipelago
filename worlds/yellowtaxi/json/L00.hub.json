@@ -567,7 +567,8 @@
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
-      "Granny's Island - Gear - In Cliff Face": 100008
+      "Granny's Island - Gear - In Cliff Face": 100008,
+      "Granny's Island - Gear - Granny's Statue": 100005
     },
     "bunnies": {},
     "safes": {},
@@ -575,9 +576,10 @@
       "Granny's Island - Chest on Roofs Behind Granny's Statue": 300396
     },
     "coinbags": {
-      "Granny's Island - Coin Bag on Power Shovel": 300270,
       "Granny's Island - Coin Bag on Mountain Ramp House": 300749,
-      "Granny's Island - Coin Bag on Roofs Behind Granny's Statue": 300318
+      "Granny's Island - Coin Bag on Roofs Behind Granny's Statue": 300318,
+      "Granny's Island - Coin Bag on Path to Granny's Statue": 300573,
+      "Granny's Island - Coin Bag on Roof in Front of Granny's Statue": 300474
     },
     "coins": {
       "Granny's Island - Coin on Roofs Behind Granny's Statue": 300300,
@@ -619,7 +621,18 @@
       "Granny's Island - Coin in Cliff Face #4": 300623,
       "Granny's Island - Coin in Cliff Face #5": 300626,
       "Granny's Island - Coin in Cliff Face #6": 300628,
-      "Granny's Island - Coin in Cliff Face #7": 300629
+      "Granny's Island - Coin in Cliff Face #7": 300629,
+      "Granny's Island - Coin on Path to Granny's Statue #1": 300465,
+      "Granny's Island - Coin on Path to Granny's Statue #2": 300466,
+      "Granny's Island - Coin on Path to Granny's Statue #3": 300467,
+      "Granny's Island - Coin on Path to Granny's Statue #4": 300469,
+      "Granny's Island - Coin on Path to Granny's Statue #5": 300468,
+      "Granny's Island - Coin on Path to Granny's Statue #6": 300547,
+      "Granny's Island - Coin on Path to Granny's Statue #7": 300574,
+      "Granny's Island - Coin on Roof in Front of Granny's Statue #1": 300462,
+      "Granny's Island - Coin on Roof in Front of Granny's Statue #2": 300463,
+      "Granny's Island - Coin on Roof in Front of Granny's Statue #3": 300473,
+      "Granny's Island - Coin on Roof in Front of Granny's Statue #4": 300464
     },
     "checkpoints": {},
     "cheeses": {
@@ -643,6 +656,7 @@
     "safes": {},
     "chests": {},
     "coinbags": {
+      "Granny's Island - Coin Bag on Power Shovel": 300270,
       "Granny's Island - Coin Bag Near MMA Champion": 300704,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #1": 300394,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #2": 300395,
@@ -695,7 +709,6 @@
     "level": "Hub",
     "sublevel": "Granny's Island",
     "gears": {
-      "Granny's Island - Gear - Granny's Statue": 100005,
       "Granny's Island - Gear - Gym Gears Roof": 100012,
       "Granny's Island - Gear - Lighthouse": 100001,
       "Granny's Island - Gear - In the Clouds": 100015
@@ -707,8 +720,6 @@
     },
     "coinbags": {
       "Granny's Island - Coin Bag on Stone Island": 300276,
-      "Granny's Island - Coin Bag on Path to Granny's Statue": 300573,
-      "Granny's Island - Coin Bag on Roof in Front of Granny's Statue": 300474,
       "Granny's Island - Coin Bag on Roof Next to Pizza Oven": 300369,
       "Granny's Island - Coin Bag on Stone Arch on Beach": 300454
     },
@@ -719,13 +730,6 @@
       "Granny's Island - Coin on Stone Island #4": 300277,
       "Granny's Island - Coin on Stone Island #5": 300278,
       "Granny's Island - Coin on Stone Island #6": 300279,
-      "Granny's Island - Coin on Path to Granny's Statue #1": 300465,
-      "Granny's Island - Coin on Path to Granny's Statue #2": 300466,
-      "Granny's Island - Coin on Path to Granny's Statue #3": 300467,
-      "Granny's Island - Coin on Path to Granny's Statue #4": 300469,
-      "Granny's Island - Coin on Path to Granny's Statue #5": 300468,
-      "Granny's Island - Coin on Path to Granny's Statue #6": 300547,
-      "Granny's Island - Coin on Path to Granny's Statue #7": 300574,
       "Granny's Island - Coin Above Pipe on Hill by Lab #1": 300562,
       "Granny's Island - Coin Above Pipe on Hill by Lab #2": 300565,
       "Granny's Island - Coin Above Pipe on Hill by Lab #3": 300568,
@@ -735,10 +739,6 @@
       "Granny's Island - Coin Above Pipe on Hill by Lab #7": 300564,
       "Granny's Island - Coin Above Pipe on Hill by Lab #8": 300567,
       "Granny's Island - Coin Above Pipe on Hill by Lab #9": 300570,
-      "Granny's Island - Coin on Roof in Front of Granny's Statue #1": 300462,
-      "Granny's Island - Coin on Roof in Front of Granny's Statue #2": 300463,
-      "Granny's Island - Coin on Roof in Front of Granny's Statue #3": 300473,
-      "Granny's Island - Coin on Roof in Front of Granny's Statue #4": 300464,
       "Granny's Island - Coin on Stone Arch on Top of Mountain #1": 300767,
       "Granny's Island - Coin on Stone Arch on Top of Mountain #2": 300765,
       "Granny's Island - Coin on Stone Arch on Top of Mountain #3": 300764,

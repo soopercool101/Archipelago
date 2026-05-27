@@ -744,7 +744,9 @@
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Bombeach - Bunny - On Ocean Pillar": "X2/J1/OS"
+    }
   },
   "Bombeach - Orange Block Bridge": {
     "level": "Bombeach",

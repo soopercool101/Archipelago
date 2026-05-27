@@ -287,15 +287,6 @@ class ShufflePsychoTaxi(Toggle):
 
     display_name = "Shuffle Psycho Taxi"
 
-class ShuffleRat(Toggle):
-    """
-    Adds Michele the Rat into the item pool and adds a location for talking to Michele in Pizza Time.
-
-    If Pizza Time is not an included level, Michele will instead be found in Granny's Island.
-    """
-
-    display_name = "Shuffle Michele the Rat"
-
 class Bunnysanity(Toggle):
     """
     Adds Golden Bunnies as items and locations. These bunnies are filler items unless Mosk's Rocket is shuffled.
@@ -461,6 +452,15 @@ class ShuffleGoldenPropeller(DefaultOnToggle):
     If Ruined Observatory is not an included level, talking to Nick-O-Will near the top of Granny's Island will be the location instead.
     """
     display_name = "Shuffle Golden Propeller"
+
+class ShuffleRat(Toggle):
+    """
+    Adds Michele the Rat into the item pool and adds a location for talking to Michele in Pizza Time.
+
+    If Pizza Time is not an included level, Michele will instead be found in Granny's Island.
+    """
+
+    display_name = "Shuffle Michele the Rat"
 
 class PizzaWheels(Choice):
     """

@@ -300,7 +300,7 @@ class YellowTaxiWorld(World):
                 self.early_psycho_taxi = True
             if self.options.shuffle_orange_switch and not "Crash Test Industries" in self.included_levels:
                 self.early_orange_switch = True
-            if self.options.shuffle_golden_spring and not "Tosla HQ" in self.included_levels:
+            if self.options.shuffle_golden_spring and not "Tosla's Offices" in self.included_levels:
                 self.early_golden_spring = True
             if self.options.shuffle_golden_propeller and not "Ruined Observatory" in self.included_levels:
                 self.early_golden_propeller = True

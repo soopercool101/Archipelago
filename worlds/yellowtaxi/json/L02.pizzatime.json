@@ -913,7 +913,9 @@
       "Chef Hat": 20700007,
       "Spaghetti Hat": 20700008
     },
-    "connections": {},
+    "connections": {
+      "Any Hat World": ""
+    },
     "subwarps": {},
     "warps": {
       "Pizza Time Hat World - Exit": ["Pizza Time - Starting Area", ""]
