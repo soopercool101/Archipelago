@@ -519,6 +519,16 @@ class PurchaseRebatePercent(Range):
     range_end = 100
     default = 0
 
+class EasyAlienMosk(Toggle):
+    """
+    When fighting Alien Mosk in Tosla's Offices, there are 4 different positions at which a Golden Spring will spawn.
+    In all phases except the first, the fight will spawn one Golden Spring at the furthest position from the player.
+
+    When this option is enabled, all four golden springs will spawn on all boss phases instead.
+    """
+
+    display_name = "Easy Alien Mosk"
+
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
@@ -570,6 +580,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     extra_demo_collectables: ExtraDemoCollectables
     time_trial_gears: TimeTrialGears
     funny_faces: FunnyFaces
+    easy_alien_mosk: EasyAlienMosk
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -628,6 +639,7 @@ option_groups = [
         "Quality of Life Options",
         [
             PurchaseRebatePercent,
+            EasyAlienMosk,
         ],
     ),
     OptionGroup(
