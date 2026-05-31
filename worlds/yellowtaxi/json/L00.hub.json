@@ -312,9 +312,9 @@
       "Granny's Island - Second Island Towards Sewer": "B1 & OS/GP/J1",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1",
-      "Granny's Island - Crash Again Island": "X1+B2+GP | X3+B2+J1",
+      "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP+OS & J2/B1",
-      "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP | X3+B2+J1",
+      "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP | X2+B2+J1",
       "Morio's Lab - Ground Floor Propeller": "X1+NSAR+GP+LabKey",
       "Law Firm - Ledges": "X1+NSAR+GP",
       "Ice Cream Truck - Upper Path": "X1+NSAR+GelaToni+GP"
@@ -926,7 +926,7 @@
     "hats": {},
     "connections": {
       "Granny's Island - First Island Towards Sewer": "OS+J1 | B1",
-      "Granny's Island - Tree on Second Island Towards Sewer": "J1",
+      "Granny's Island - Tree on Second Island Towards Sewer": "J1 | X1+B1",
       "Granny's Island - Sewer Island": "OS/EarlySewer"
     },
     "subwarps": {},
@@ -953,7 +953,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Granny's Island - Second Island Towards Sewer": ""
+      "Granny's Island - Second Island Towards Sewer": "",
+      "Granny's Island - Sewer Island": "X3+B2"
     },
     "subwarps": {},
     "warps": {},
