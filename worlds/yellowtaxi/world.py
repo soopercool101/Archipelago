@@ -331,33 +331,33 @@ class YellowTaxiWorld(World):
             if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
                 self.exclude_top_bunny = True
 
-        if self.options.coinsanity and self.multiworld.players > 1:
-            if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
-                self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
-                logging.warning(
-                    f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
-                    f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
-                    f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
-                    f"generator's host.yaml to a higher value and generating locally.")
-            if self.settings.multiworld_coinsanity_percentage_non_filler_cap < self.options.coinsanity_non_filler_cap:
-                self.options.coinsanity_non_filler_cap.value = (
-                    self.settings.multiworld_coinsanity_percentage_non_filler_cap)
-                logging.warning(
-                    f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
-                    f"Coinsanity Non-Filler Cap Percentage has been lowered to "
-                    f"{self.options.coinsanity_non_filler_cap.value}. "
-                    f"You can increase this by setting 'multiworld_coinsanity_percentage_non_filler_cap' in the seed "
-                    f"generator's host.yaml to a higher value and generating locally.")
-        if self.options.coinsanity_percent.value == 0:
-            self.options.coinsanity.value = False
+            if self.options.coinsanity and self.multiworld.players > 1:
+                if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
+                    self.options.coinsanity_percent.value = self.settings.multiworld_coinsanity_percentage_cap
+                    logging.warning(
+                        f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
+                        f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
+                        f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
+                        f"generator's host.yaml to a higher value and generating locally.")
+                if self.settings.multiworld_coinsanity_percentage_non_filler_cap < self.options.coinsanity_non_filler_cap:
+                    self.options.coinsanity_non_filler_cap.value = (
+                        self.settings.multiworld_coinsanity_percentage_non_filler_cap)
+                    logging.warning(
+                        f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
+                        f"Coinsanity Non-Filler Cap Percentage has been lowered to "
+                        f"{self.options.coinsanity_non_filler_cap.value}. "
+                        f"You can increase this by setting 'multiworld_coinsanity_percentage_non_filler_cap' in the seed "
+                        f"generator's host.yaml to a higher value and generating locally.")
+            if self.options.coinsanity_percent.value == 0:
+                self.options.coinsanity.value = False
 
-        goal_portal_threshold : int = (50 + 5 * (len(self.included_levels) - 1))
-        if (not self.options.remove_goal_portal_locations and self.multiworld.players == 1 and self.options.goal < 1
-                and self.options.goal_portal_gear_percentage > goal_portal_threshold):
-            self.options.goal_portal_gear_percentage.value = goal_portal_threshold
-            logging.warning(
-                f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
-                f"Goal Portal Gear percentage has been capped to {goal_portal_threshold}%.")
+            goal_portal_threshold : int = (50 + 5 * (len(self.included_levels) - 1))
+            if (not self.options.remove_goal_portal_locations and self.multiworld.players == 1 and self.options.goal < 1
+                    and self.options.goal_portal_gear_percentage > goal_portal_threshold):
+                self.options.goal_portal_gear_percentage.value = goal_portal_threshold
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
+                    f"Goal Portal Gear percentage has been capped to {goal_portal_threshold}%.")
 
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True
