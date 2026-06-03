@@ -15,7 +15,11 @@ def create_and_connect_regions(world: YellowTaxiWorld) -> None:
 
 def create_all_regions(world: YellowTaxiWorld) -> None:
     regions = [Region("Menu", world.player, world.multiworld)]
-    # TODO: Don't include postgame regions based on goal
+    if hasattr(world.multiworld, "generation_is_fake"):
+        ut_sorted_sublevels: dict[str, int] = {}
+        ut_sort_region_counters: dict[str, int] = {}
+        ut_sorted_levels: dict[str, int] = {}
+        ut_sorted_level_counter: int = 0
     for reg_name in regions_json_data.keys():
         if reg_name in world.excluded_regions:
             continue
@@ -27,6 +31,22 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         if reg["level"] == "Mosk's Rocket" and reg["kaizolevel"] not in world.included_levels:
             continue
         regions += [Region(reg_name, world.player, world.multiworld)]
+        # UT sorting. Basically it adds level # * 100 and sublevel # based on order defined in the json
+        # TODO: Make this more accurate based on level order, especially when level rando is in
+        # May need to move this elsewhere if doing so, since level order may not yet be able to be inferred
+        # Also this could probably be simplified significantly but it works for the time being
+        if hasattr(world.multiworld, "generation_is_fake"):
+            if reg["level"] not in ut_sorted_levels.keys():
+                ut_sorted_levels[reg["level"]] = ut_sorted_level_counter
+                ut_sorted_level_counter += 1
+            if reg["sublevel"] not in ut_sorted_sublevels:
+                if reg["level"] in ut_sort_region_counters.keys():
+                    ut_sort_region_counters[reg["level"]] += 1
+                else:
+                    ut_sort_region_counters[reg["level"]] = 1
+                ut_sorted_sublevels[reg["sublevel"]] = ((ut_sorted_levels[reg["level"]] * 100) +
+                                                        ut_sort_region_counters[reg["level"]])
+            world.ut_sort_region_dict[reg_name] = ut_sorted_sublevels[reg["sublevel"]]
 
     world.multiworld.regions += regions
 

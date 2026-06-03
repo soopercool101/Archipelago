@@ -4,7 +4,7 @@ from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List, Set, Optional
 
 from BaseClasses import MultiWorld
-from Options import Option
+from Options import Option, OptionError
 from Utils import messagebox#, visualize_regions, Version
 from worlds.AutoWorld import World
 from worlds.LauncherComponents import Component, Type, components
@@ -113,11 +113,15 @@ class YellowTaxiWorld(World):
         if hasattr(self.multiworld, "generation_is_fake"):
             self.ut_true_num_gears : int = 0
             self.ut_true_goal_cost : int = 0
+            self.ut_sort_region_dict : dict[str, int] = {}
 
     def generate_early(self) -> None:
         # UT YAML-less
         re_gen_passthrough = getattr(self.multiworld, "re_gen_passthrough", {})
         if re_gen_passthrough and self.game in re_gen_passthrough:
+            major_version : int = 0
+            minor_version : int = 0
+            build_version : int = 0
             # Get the passed through slot data from the real generation
             slot_data: dict[str, Any] = re_gen_passthrough[self.game]
             # Set all your options here instead of getting them from the yaml
@@ -126,14 +130,27 @@ class YellowTaxiWorld(World):
                 if opt is not None:
                     # You can also set .value directly but that won't work if you have OptionSets
                     setattr(self.options, key, opt.from_any(value))
-                if key == "total_gears":
+                elif key == "total_gears":
                     self.ut_true_num_gears = value
-                if key == "goal_portal_cost":
+                elif key == "goal_portal_cost":
                     self.ut_true_goal_cost = value
-                if key.startswith("early_") or key.startswith("exclude_"):
+                elif key.startswith("early_") or key.startswith("exclude_"):
                     attr : Optional[Any] = getattr(self, key, None)
                     if attr is not None:
                         setattr(self, key, value)
+                elif key == "major_version":
+                    major_version = value
+                elif key == "minor_version":
+                    minor_version = value
+                elif key == "build_version":
+                    build_version = value
+
+            if (major_version != self.world_version.major
+                    or minor_version != self.world_version.minor or build_version != self.world_version.build):
+                raise OptionError("APWorld version (v" +
+                                  f"{self.world_version.major}.{self.world_version.minor}.{self.world_version.build}" +
+                                  ") is not the same version used at generation (v" +
+                                  f"{major_version}.{minor_version}.{build_version})!")
 
         self.num_gears = 0
         self.num_bunnies = 0
@@ -445,3 +462,6 @@ class YellowTaxiWorld(World):
         slot_data["lab_start"] = self.lab_start
 
         return slot_data
+
+    def custom_ut_sort(self, region_label: str, location_label: str) -> str | int:
+        return self.ut_sort_region_dict.get(region_label, 9999999)

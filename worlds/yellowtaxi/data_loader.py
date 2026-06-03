@@ -9,11 +9,12 @@ import pkgutil
 def load_json_data(data_name: str) -> Dict[str, Any]:
     return orjson.loads(pkgutil.get_data(__name__, "json/" + data_name).decode("utf-8-sig"))
 
-regions_json_data : Dict[str, Any] = (load_json_data("L00.hub.json") |
-                                      load_json_data("L01.bombeach.json") |
-                                      load_json_data("L02.pizzatime.json") |
+regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
+                                      load_json_data("L00.hub.json") |
                                       load_json_data("L03.morioshome.json") |
+                                      load_json_data("L01.bombeach.json") |
                                       load_json_data("L04.arcadepanik.json") |
+                                      load_json_data("L02.pizzatime.json") |
                                       load_json_data("L05.toslaoffices.json") |
                                       load_json_data("L06.gymgears.json") |
                                       load_json_data("L07.fecalmatters.json") |
@@ -21,8 +22,7 @@ regions_json_data : Dict[str, Any] = (load_json_data("L00.hub.json") |
                                       load_json_data("L16.rocket.json") |
                                       load_json_data("L17.babysteps.json") |
                                       load_json_data("L18.gettinggud.json") |
-                                      load_json_data("L19.protricks.json") |
-                                      load_json_data("LXX.special.json")
+                                      load_json_data("L19.protricks.json")
                                       )
 
 # Load static locations list
