@@ -8,7 +8,7 @@ from .data_loader import regions_json_data
 from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
-from .options import ShuffleFullGame, PizzaWheels
+from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -186,6 +186,13 @@ class RuleFactory:
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
             return Has("Progressive Jump", 2)
+        if token == "GL":
+            return Has("Glide",
+                       options=[
+                           OptionFilter(ShuffleGlide, ShuffleGlide.option_true)
+                       ],
+                       filtered_resolution=True
+                       )
         if token == "PMJ":
             return False_()
         if token == "SP":

@@ -311,7 +311,7 @@
       "Granny's Island - First Island Towards Sewer": "B1 | X2/J1 & GP+OS",
       "Granny's Island - Second Island Towards Sewer": "B1 & OS/GP/J1",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
-      "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1",
+      "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP+J1 | X1+GP+J2",
       "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | GP+OS & J2/B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X3+Rocket+B2+GP | X2+B2+J1",
@@ -796,7 +796,7 @@
     "warps": {},
     "specialrules": {
       "Granny's Island - Gear - Lighthouse": "B2 | X1/B1 & GP",
-      "Granny's Island - Gear - In the Clouds": "B1+GP | B2+J1"
+      "Granny's Island - Gear - In the Clouds": "B1+GP | B2+J1 | X2+GP+J1 | X1+GP+J2"
     }
   },
   "Granny's Island - Top of Rocket": {
@@ -2217,7 +2217,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1",
+      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1 | X3+J1+GL",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
       "Morio's Lab - Fourth Floor": "",
       "Morio's Lab - Second Floor": "FGU",

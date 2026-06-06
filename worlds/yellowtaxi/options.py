@@ -424,7 +424,7 @@ class ShuffleGlide(Toggle):
     """
     Shuffles the ability to stall in midair by tapping the gas button into the item pool and adds a new location for talking to a PICI in Morio's Lab.
 
-    This item is not logically required for any locations at this time, and as such will be considered "useful"
+    This item is currently only logically required in Expert Level 3. As such, it will be classified as "Useful" for lower difficulties.
     """
 
     display_name = "Shuffle Glide"
