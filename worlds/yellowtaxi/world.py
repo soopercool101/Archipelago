@@ -246,8 +246,9 @@ class YellowTaxiWorld(World):
                     not hasattr(self.multiworld, "generation_is_fake")):
                 self.early_pizza_wheels = True
         if not self.has_orange_switch_access:
-            # Technically this is totally accessible, but is certain death
-            self.excluded_regions += ["Pizza Time - Orange Block Bridge"]
+            if self.options.expert_level < 3:
+                # Technically this is totally accessible, but is certain death
+                self.excluded_regions += ["Pizza Time - Orange Block Bridge"]
             if self.options.expert_level < 1 or (not self.has_golden_propeller_access and
                                                  self.options.expert_level < 3):
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
@@ -257,11 +258,12 @@ class YellowTaxiWorld(World):
                                           "Granny's Island - Sewer Island",
                                           "Granny's Island - Sewer Island Upper"]
         if not self.has_spike_traversal:
-            self.excluded_regions += ["Morio's Lab - Fourth Floor Jump Spikes",
-                                      "Lab Memories - First Step",
+            self.excluded_regions += ["Lab Memories - First Step",
                                       "Lab Memories - High Ground"]
             if self.options.expert_level < 2:
-                self.excluded_regions += ["Morio's Lab - Fourth Floor Expert Jump Spikes"]
+                self.excluded_regions += ["Morio's Lab - Fourth Floor Spiky Cliffs"]
+            if self.options.expert_level < 3:
+                self.excluded_regions += ["Morio's Lab - Fourth Floor Spiky Bunny Alcove"]
         if not self.has_password_access:
             self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
                                       "Morio's Lab - Fifth Floor Golden Propeller",
@@ -326,7 +328,7 @@ class YellowTaxiWorld(World):
             if self.options.shuffle_rocket:
                 self.early_rocket = True
 
-            if "Morio's Lab - Fourth Floor Jump Spikes" in self.excluded_regions:
+            if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
                 self.exclude_spike_bunny = True
             if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
                 self.exclude_top_bunny = True
@@ -337,17 +339,17 @@ class YellowTaxiWorld(World):
                     logging.warning(
                         f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
                         f"Coinsanity Percent has been lowered to {self.options.coinsanity_percent.value}. "
-                        f"You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
-                        f"generator's host.yaml to a higher value and generating locally.")
+                        "You can increase this by setting 'multiworld_coinsanity_percentage_cap' in the seed "
+                        "generator's host.yaml to a higher value and generating locally.")
                 if self.settings.multiworld_coinsanity_percentage_non_filler_cap < self.options.coinsanity_non_filler_cap:
                     self.options.coinsanity_non_filler_cap.value = (
                         self.settings.multiworld_coinsanity_percentage_non_filler_cap)
                     logging.warning(
                         f"{self.player_name}: Your options have been modified to avoid disrupting the multiworld.\n"
-                        f"Coinsanity Non-Filler Cap Percentage has been lowered to "
+                        "Coinsanity Non-Filler Cap Percentage has been lowered to "
                         f"{self.options.coinsanity_non_filler_cap.value}. "
-                        f"You can increase this by setting 'multiworld_coinsanity_percentage_non_filler_cap' in the seed "
-                        f"generator's host.yaml to a higher value and generating locally.")
+                        "You can increase this by setting 'multiworld_coinsanity_percentage_non_filler_cap' in the "
+                        "seed generator's host.yaml to a higher value and generating locally.")
             if self.options.coinsanity_percent.value == 0:
                 self.options.coinsanity.value = False
 
@@ -358,6 +360,13 @@ class YellowTaxiWorld(World):
                 logging.warning(
                     f"{self.player_name}: Your options have been modified to avoid generation failures.\n"
                     f"Goal Portal Gear percentage has been capped to {goal_portal_threshold}%.")
+
+            if self.multiworld.players == 1 and self.options.ring_link:
+                self.options.ring_link.value = False
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified.\n"
+                    "RingLink has no effect on a single-player game "
+                    "and has been disabled to reduce unnecessary network pings.")
 
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True

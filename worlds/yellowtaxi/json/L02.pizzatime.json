@@ -310,6 +310,7 @@
     "hats": {},
     "connections": {
       "Pizza Time - Oil Pumps": "SP",
+      "Pizza Time - House on First Island": "X3/J1/B1",
       "Pizza Time - Spires Near Start": "B1 & X2/J1",
       "Pizza Time - Accessible Ledges": "X1/J1/B1",
       "Pizza Time - Less Accessible Ledges": "X2/J1/B1",
@@ -346,6 +347,34 @@
     "chests": {},
     "coinbags": {},
     "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Pizza Time - House on First Island": {
+    "level": "Pizza Time",
+    "sublevel": "Pizza Time",
+    "gears": {
+      "Pizza Time - Gear - On House on First Main Island": 20100012
+    },
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Pizza Time - Coin Bag on Gear House on First Main Island": 20300161
+    },
+    "coins": {
+      "Pizza Time - Coin on Gear House on First Main Island #1": 20300160,
+      "Pizza Time - Coin on Gear House on First Main Island #2": 20300159,
+      "Pizza Time - Coin on Gear House on First Main Island #3": 20300158,
+      "Pizza Time - Coin on Gear House on First Main Island #4": 20300162,
+      "Pizza Time - Coin on Gear House on First Main Island #5": 20300282,
+      "Pizza Time - Coin on Gear House on First Main Island #6": 20300281
+    },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
@@ -529,7 +558,6 @@
     "sublevel": "Pizza Time",
     "gears": {
       "Pizza Time - Gear - Column on Plateau on First Main Island": 20100013,
-      "Pizza Time - Gear - On House on First Main Island": 20100012,
       "Pizza Time - Gear - On 400° Oven": 20100014,
       "Pizza Time - Gear - On 600° Oven": 20100008
     },
@@ -543,7 +571,6 @@
       "Pizza Time - Chest on 900° Oven": 20300618
     },
     "coinbags": {
-      "Pizza Time - Coin Bag on Gear House on First Main Island": 20300161,
       "Pizza Time - Coin Bag on Spire on Top of First Hill": 20300413,
       "Pizza Time - Coin Bag on House Near Bunny Arch": 20300349,
       "Pizza Time - Coin Bag on Morco's Pizza Roof": 20300412,
@@ -590,12 +617,6 @@
       "Pizza Time - Coin on Middle Column on Plateau on First Main Island #5": 20300328,
       "Pizza Time - Coin on Middle Column on Plateau on First Main Island #6": 20300324,
       "Pizza Time - Coin on Middle Column on Plateau on First Main Island #7": 20300327,
-      "Pizza Time - Coin on Gear House on First Main Island #1": 20300160,
-      "Pizza Time - Coin on Gear House on First Main Island #2": 20300159,
-      "Pizza Time - Coin on Gear House on First Main Island #3": 20300158,
-      "Pizza Time - Coin on Gear House on First Main Island #4": 20300162,
-      "Pizza Time - Coin on Gear House on First Main Island #5": 20300282,
-      "Pizza Time - Coin on Gear House on First Main Island #6": 20300281,
       "Pizza Time - Coin on House Near Bunny Arch #1": 20300305,
       "Pizza Time - Coin on House Near Bunny Arch #2": 20300306,
       "Pizza Time - Coin on House Near Bunny Arch #3": 20300329,
@@ -657,7 +678,7 @@
     "hats": {},
     "connections": {
       "Pizza Time - Pizza King's Quest": "X1/B1",
-      "Pizza Time - Second Main Island Mountain": "B1"
+      "Pizza Time - Second Main Island Mountain": "B1 | X1+J1"
     },
     "subwarps": {},
     "warps": {},
@@ -706,7 +727,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & J1/X1 | X2+B1+J1"
+      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1+J1",
+      "Pizza Time - Orange Block Bridge": "X3 & B1/J1"
     },
     "subwarps": {},
     "warps": {},
@@ -988,7 +1010,7 @@
     },
     "warps": {},
     "specialrules": {
-      "900° - Gear": "B1 | X2+J2"
+      "900° - Gear": "B1 | X2+J1"
     }
   },
   "Pizza Time Sewers": {

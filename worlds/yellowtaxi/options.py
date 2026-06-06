@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
-from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText
+from Options import (Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText,
+                     StartInventoryPool)
 
 
 # In this file, we define the options the player can pick.
@@ -581,6 +582,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     time_trial_gears: TimeTrialGears
     funny_faces: FunnyFaces
     easy_alien_mosk: EasyAlienMosk
+    start_inventory_from_pool: StartInventoryPool
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [

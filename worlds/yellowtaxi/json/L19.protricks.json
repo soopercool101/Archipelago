@@ -21,7 +21,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Pro Tricks! - Gear - #2 Above Ramps": "B1/J2"
+      "Pro Tricks! - Gear - #2 Above Ramps": "B1/J2 | X2+J1"
     }
   },
   "Pro Tricks! - First Gap Ramp": {
@@ -40,7 +40,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pro Tricks! - Middle Section": "B1"
+      "Pro Tricks! - Middle Section": "B1 | X1+J1"
     },
     "subwarps": {},
     "warps": {},
@@ -88,7 +88,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Pro Tricks! - Complete Time Trial": "{Pro Tricks! - Middle Section}"
+      "Pro Tricks! - Complete Time Trial": "B1 | X3+PW"
     }
   }
 }

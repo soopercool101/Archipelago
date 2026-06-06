@@ -2110,11 +2110,11 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fourth Floor Jump Spikes": "Spike+J1",
+      "Morio's Lab - Fourth Floor Spiky Bunny Alcove": "X3/Spike & J1",
       "Morio's Lab - Fifth Floor Crash Test Area": "B1/J1",
       "Morio's Lab - Ledge Above Maurizio's City Portal": "J1",
       "Morio's Lab - Third Floor": "Spike",
-      "Morio's Lab - Fourth Floor Expert Jump Spikes": "X1+Spike+B2 | X2+B2+J2"
+      "Morio's Lab - Fourth Floor Spiky Cliffs": "Spike+J1 | X1+Spike+B2 | X2+B2+J2"
     },
     "subwarps": {},
     "warps": {
@@ -2122,7 +2122,7 @@
     },
     "specialrules": {}
   },
-  "Morio's Lab - Fourth Floor Expert Jump Spikes": {
+  "Morio's Lab - Fourth Floor Spiky Cliffs": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
@@ -2141,7 +2141,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Fourth Floor Jump Spikes": {
+  "Morio's Lab - Fourth Floor Spiky Bunny Alcove": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2157,9 +2157,7 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {
-      "Morio's Lab - Fourth Floor Expert Jump Spikes": ""
-    },
+    "connections": {},
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -2340,7 +2338,8 @@
       "Morio's Lab - Alcove Above Arcade Panik": "FGU",
       "Morio's Lab - Ground Floor Propeller": "FGU",
       "Morio's Lab - Ledge Above Maurizio's City Portal": "",
-      "Morio's Lab - Fourth Floor Jump Spikes": "Spike",
+      "Morio's Lab - Fourth Floor Spiky Bunny Alcove": "Spike",
+      "Morio's Lab - Fourth Floor Spiky Cliffs": "Spike",
       "Morio's Lab - Fifth Floor Golden Propeller": "Password",
       "Morio's Lab - Third Floor Wrenches Lower": "Spike"
     },
