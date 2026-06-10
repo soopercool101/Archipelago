@@ -30,7 +30,7 @@
     "hats": {},
     "connections": {
       "Tosla Square - Tosla Sign": "J1/B1",
-      "Tosla Square - Lower Buildings": "B1 | X2+J2"
+      "Tosla Square - Lower Buildings": "B1 | X2+J2 | X3+J1"
     },
     "subwarps": {
       "Tosla Square - Tosla Offices Entrance": ["Tosla Offices (Ground Floor)", ""]
@@ -82,10 +82,6 @@
       "Tosla Square - Coin Bag Surrounding Gelatin Hat #3": 50300307,
       "Tosla Square - Coin Bag Surrounding Gelatin Hat #4": 50300302,
       "Tosla Square - Coin Bag on Building Under Gelatin Hat": 50300200,
-      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #1": 50300322,
-      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #2": 50300318,
-      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #3": 50300327,
-      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #4": 50300323,
       "Tosla Square - Coin Bag on Building Below Tosla Employee Hat": 50300292,
       "Tosla Square - Coin Bag on Building Below Homing Beacon Path Gear": 50300205
     },
@@ -150,14 +146,6 @@
       "Tosla Square - Coin on Building Under Gelatin Hat #2": 50300199,
       "Tosla Square - Coin on Building Under Gelatin Hat #3": 50300201,
       "Tosla Square - Coin on Building Under Gelatin Hat #4": 50300202,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #1": 50300320,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #2": 50300324,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #3": 50300317,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #4": 50300326,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #5": 50300319,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #6": 50300328,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #7": 50300321,
-      "Tosla Square - Coin Surrounding Tosla Employee Hat #8": 50300325,
       "Tosla Square - Coin on Building Below Tosla Employee Hat #1": 50300287,
       "Tosla Square - Coin on Building Below Tosla Employee Hat #2": 50300286,
       "Tosla Square - Coin on Building Below Tosla Employee Hat #3": 50300285,
@@ -203,14 +191,49 @@
       "Tosla Square - Coin in Large Arrow Formation on Building #13": 50300234
     },
     "checkpoints": {
-      "Tosla Square - Checkpoint on Lower Buildings": 50900695,
-      "Tosla Square - Checkpoint on Upper Buildings Before Homing Beacons": 50900655
+      "Tosla Square - Checkpoint on Lower Buildings": 50900695
     },
     "cheeses": {
       "Tosla Square - Cheese on Lower Buildings": 52100001
     },
     "hats": {
-      "Gelatin Hat": 50700013,
+      "Gelatin Hat": 50700013
+    },
+    "connections": {
+      "Tosla Square - Medium High Buildings": "B1/J2"
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Tosla Square - Medium High Buildings": {
+    "level": "Tosla's Offices",
+    "sublevel": "Tosla Square",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #1": 50300322,
+      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #2": 50300318,
+      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #3": 50300327,
+      "Tosla Square - Coin Bag Surrounding Tosla Employee Hat #4": 50300323
+    },
+    "coins": {
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #1": 50300320,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #2": 50300324,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #3": 50300317,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #4": 50300326,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #5": 50300319,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #6": 50300328,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #7": 50300321,
+      "Tosla Square - Coin Surrounding Tosla Employee Hat #8": 50300325
+    },
+    "checkpoints": {
+      "Tosla Square - Checkpoint on Upper Buildings Before Homing Beacons": 50900655
+    },
+    "cheeses": {},
+    "hats": {
       "Tosla Employee Hat": 50700015
     },
     "connections": {

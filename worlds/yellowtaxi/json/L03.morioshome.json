@@ -286,7 +286,7 @@
     "connections": {
       "Morio's Island - Morio's Home Island": "",
       "Morio's Island - First Bunny Arch": "X1/J1 & B2 | J1+X1+B1 | X2+B1",
-      "Morio's Island - Second Bunny Arch": "B2",
+      "Morio's Island - Second Bunny Arch": "B2 | X2+B1+J1",
       "Morio's Island - Center Stone Island": "B1 & J1/X2 | J2+X1",
       "Morio's Island - Highest Ground": "B2 | J2+X1",
       "Propeller Cap Access": ""
@@ -620,7 +620,7 @@
     "connections": {
       "Morio's Home - Expert 1 High Ground": "X1/J1/B1",
       "Morio's Home - High Ground": "J1/B1",
-      "Morio's Home - Loft": "B2+J2 | X1+J2 | X1+B2+J1",
+      "Morio's Home - Loft": "B2 & X2/J2 | X1+J2 | X1+B2+J1 | X3+B1+J1",
       "Morio's Home - Kitchen": "SP"
     },
     "subwarps": {
@@ -713,7 +713,7 @@
     "hats": {},
     "connections": {
       "Morio's Home - Starting Area": "",
-      "Morio's Home - Bed Pillars": "B1 & X1/J1"
+      "Morio's Home - Bed Pillars": "B1 & X1/J1 | X3+J1+GL"
     },
     "subwarps": {},
     "warps": {},
@@ -795,7 +795,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Home - Kitchen": ""
+      "Morio's Home - Kitchen High Ground": ""
     },
     "subwarps": {},
     "warps": {},
@@ -908,7 +908,9 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Morio's Home - Kitchen": ""
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {

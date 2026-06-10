@@ -267,13 +267,13 @@ class YellowTaxiWorld(World):
         if not self.has_password_access:
             self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
                                       "Morio's Lab - Fifth Floor Golden Propeller",
-                                      "Morio's Lab - Fifth Floor Golden Propeller (Password)",
                                       "Morio's Lab - Ledge Above Ruined Observatory Portal",
                                       "Morio's Lab - Ledge Below Tosla HQ Portal",
                                       "Morio's Lab - Fifth Floor Low Pillars",
                                       "Morio's Lab - Fifth Floor High Pillars",
                                       "Morio's Lab - Final Floor",
                                       "Morio's Lab - Final Floor Pipes",
+                                      "Morio's Lab - Final Floor Bunny Shortcut",
                                       "Morio's Lab - Final Floor Catwalk"]
             if self.options.expert_level == 0:
                 # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
@@ -330,7 +330,7 @@ class YellowTaxiWorld(World):
 
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
                 self.exclude_spike_bunny = True
-            if "Morio's Lab - Final Floor Pipes" in self.excluded_regions:
+            if "Morio's Lab - Final Floor Bunny Shortcut" in self.excluded_regions:
                 self.exclude_top_bunny = True
 
             if self.options.coinsanity and self.multiworld.players > 1:

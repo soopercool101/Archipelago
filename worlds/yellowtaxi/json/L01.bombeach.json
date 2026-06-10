@@ -439,8 +439,7 @@
     "connections": {
       "Bombeach - Easy Bomb Jumps": "",
       "Bombeach - Expert 1 Bomb Jumps": "X1",
-      "Bombeach - Jump or Boost": "J1/B1",
-      "Bombeach - Superboost Only": "B2"
+      "Bombeach - Jump or Boost": "J1/B1"
     },
     "subwarps": {
       "Bombeach - Cave Entrance": ["Cave", ""],
@@ -716,18 +715,19 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Bombeach - Orange Block Island": "B2",
+      "Bombeach - Bunny Pillar": "B1 & J1/X3"
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Bombeach - Superboost Only": {
+  "Bombeach - Orange Block Island": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
     "gears": {},
-    "bunnies": {
-      "Bombeach - Bunny - On Ocean Pillar": 10200000
-    },
+    "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {
@@ -738,6 +738,27 @@
       "Bombeach - Coin on Floating Orange Blocks #1": 10300697,
       "Bombeach - Coin on Floating Orange Blocks #2": 10300696
     },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Bombeach - Bunny Pillar": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Bombeach - Bunny Pillar": {
+    "level": "Bombeach",
+    "sublevel": "Bombeach",
+    "gears": {},
+    "bunnies": {
+      "Bombeach - Bunny - On Ocean Pillar": 10200000
+    },
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
     "checkpoints": {},
     "cheeses": {},
     "hats": {},

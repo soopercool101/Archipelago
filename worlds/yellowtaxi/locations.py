@@ -227,15 +227,18 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations["Granny's Island - Gear - Above Sewer"] = 1_10020
                 if world is not None:
                     world.num_gears += 1
-        case "Granny's Island - High Ground":
+        case "Granny's Island - Expert 2 High Ground":
             if world is None or world.options.extra_demo_collectables:
                 locations = {
                     "Granny's Island - Gear - On Pizza Oven": 1_10004
                 }
                 if world is not None:
                     world.num_gears += 1
+        case "Granny's Island - High Ground":
             if world is None or world.options.shuffle_golden_propeller and world.early_golden_propeller:
-                locations["Granny's Island - Talk to Nick-O-Will"] = 11_00013
+                locations = {
+                    "Granny's Island - Talk to Nick-O-Will": 11_00013
+                }
         case "Morio's Lab - Ground Floor Orange Blocks":
             if world is None or world.options.extra_demo_collectables:
                 locations = {

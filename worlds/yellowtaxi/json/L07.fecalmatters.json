@@ -58,7 +58,7 @@
     "hats": {},
     "connections": {
       "Fecal Matters - Roundabout Hill Tier 1": "J1/B1 | X1+NHPR",
-      "Fecal Matters - Roundabout Hill Tier 3": "J1/B2",
+      "Fecal Matters - Roundabout Hill Tier 3": "J1/B2 | X2+B1",
       "Fecal Matters - Boost or Jump": "J1/B1"
     },
     "subwarps": {},

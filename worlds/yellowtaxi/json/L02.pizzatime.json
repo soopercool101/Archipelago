@@ -317,7 +317,7 @@
       "Pizza Time - Orange Block Bridge": "OS",
       "Pizza Time - Ledge Left of Final Roundabout": "X1+NHPR | X2/J1/B1",
       "Pizza Time - High Ground": "J1/B1",
-      "Pizza Time - Bunny Island": "NOS+B2+J2 | X1+J2 | X2+J1",
+      "Pizza Time - Bunny Island Upper": "NOS+B2+J2 | X1+J2 | X2+J1",
       "Pizza Time - Floating Orange Island": "B2 & X1/OS | B1+J1+OS | NOS+B2+J1"
     },
     "subwarps": {
@@ -678,7 +678,8 @@
     "hats": {},
     "connections": {
       "Pizza Time - Pizza King's Quest": "X1/B1",
-      "Pizza Time - Second Main Island Mountain": "B1 | X1+J1"
+      "Pizza Time - Second Main Island Mountain": "B1 | X1+J1",
+      "Pizza Time - Bunny Island Lower": "X2+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -727,20 +728,18 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1+J1",
+      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1+J1 | X3+B1+GL",
       "Pizza Time - Orange Block Bridge": "X3 & B1/J1"
     },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Pizza Time - Bunny Island": {
+  "Pizza Time - Bunny Island Upper": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
     "gears": {},
-    "bunnies": {
-      "Pizza Time - Bunny - On Tall Island Between First and Third Main Islands": 20200000
-    },
+    "bunnies": {},
     "safes": {},
     "chests": {
       "Pizza Time - Chest on Bunny Island": 20300476
@@ -754,6 +753,27 @@
       "Pizza Time - Coin on Bunny Island #5": 20300474,
       "Pizza Time - Coin on Bunny Island #6": 20300473
     },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Pizza Time - Bunny Island Lower": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Pizza Time - Bunny Island Lower": {
+    "level": "Pizza Time",
+    "sublevel": "Pizza Time",
+    "gears": {},
+    "bunnies": {
+      "Pizza Time - Bunny - On Tall Island Between First and Third Main Islands": 20200000
+    },
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
@@ -790,7 +810,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pizza Time - Bunny Island": "OS+B1"
+      "Pizza Time - Bunny Island Upper": "OS+B1"
     },
     "subwarps": {},
     "warps": {},
