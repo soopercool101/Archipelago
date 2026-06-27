@@ -15,7 +15,7 @@ def create_and_connect_regions(world: YellowTaxiWorld) -> None:
 
 def create_all_regions(world: YellowTaxiWorld) -> None:
     regions = [Region("Menu", world.player, world.multiworld)]
-    if hasattr(world.multiworld, "generation_is_fake"):
+    if world.using_ut:
         ut_sorted_sublevels: dict[str, int] = {}
         ut_sort_region_counters: dict[str, int] = {}
         ut_sorted_levels: dict[str, int] = {}
@@ -24,6 +24,8 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         if reg_name in world.excluded_regions:
             continue
         if world.options.expert_level < 1 and "(EXPERTS ONLY)" in reg_name:
+            continue
+        if not world.options.include_out_of_bounds and "out-of-bounds" in reg_name.lower():
             continue
         reg = regions_json_data[reg_name]
         if reg["level"] not in world.included_levels and reg["level"] not in world.special_levels and reg["level"] not in world.goal_levels:
@@ -35,7 +37,7 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         # TODO: Make this more accurate based on level order, especially when level rando is in
         # May need to move this elsewhere if doing so, since level order may not yet be able to be inferred
         # Also this could probably be simplified significantly but it works for the time being
-        if hasattr(world.multiworld, "generation_is_fake"):
+        if world.using_ut:
             if reg["level"] not in ut_sorted_levels.keys():
                 ut_sorted_levels[reg["level"]] = ut_sorted_level_counter
                 ut_sorted_level_counter += 1

@@ -86,7 +86,7 @@ ITEM_NAME_TO_ID = {
     "Glitched Taxi Skin": 7_50,
     "TV Hat": 7_51,
     "Burger Hat": 7_52,
-    "Flip-O-Will": 8_0_0,
+    #"Flip-O-Will": 8_0_0, # Not actually adding this at the moment, not interesting standalone
     "Progressive Jump": 8_0_1,
     "Progressive Boost": 8_0_2,
     "Spin Attack": 8_0_3,
@@ -380,7 +380,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     # First, we create a list containing all the items that always exist.
 
     gear_count = world.num_gears
-    if hasattr(world.multiworld, "generation_is_fake"):
+    if world.using_ut:
         gear_count = world.ut_true_num_gears
 
     itempool : list[Item] = [world.create_item("Gear") for _ in range(gear_count)]
@@ -468,7 +468,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
 
     # Create filler
-    if hasattr(world.multiworld, "generation_is_fake"):
+    if world.using_ut:
         # Make one of everything for UT. No RNG to prevent item creation failures.
         itempool += [world.create_item("No Hat")]
         for hat in HATS:

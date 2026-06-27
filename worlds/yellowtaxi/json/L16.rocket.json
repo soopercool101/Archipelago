@@ -27,7 +27,8 @@
     },
     "hats": {},
     "connections": {
-      "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "J1/B1"
+      "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "J1/B1",
+      "Mosk's Rocket - Gym Gears Area": "X3+B1"
     },
     "subwarps": {
       "Mosk's Rocket - Lab Memories Portal": ["Lab Memories - Starting Area", "Bunny-Hub"],
@@ -55,7 +56,7 @@
     "hats": {},
     "connections": {
       "Mosk's Rocket - Starting Area": "",
-      "Mosk's Rocket - Tosla's Offices Area": "J1 | X2+B2"
+      "Mosk's Rocket - Tosla's Offices Area": "J1 | X2+B2 | X3+B1"
     },
     "subwarps": {
       "Mosk's Rocket - Bomb-it Portal": ["Bomb-it - Starting Area", "Bunny-BB"],
@@ -86,7 +87,7 @@
     "hats": {},
     "connections": {
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
-      "Mosk's Rocket - Gym Gears Area": "J1"
+      "Mosk's Rocket - Gym Gears Area": "X1/B1 & J1"
     },
     "subwarps": {
       "Mosk's Rocket - Stealthy Portal": ["Stealthy - Starting Area", "Bunny-TO"]
@@ -115,7 +116,7 @@
     "hats": {},
     "connections": {
       "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": "",
-      "Mosk's Rocket - Fecal Matters/Flushed Away Area": "B1/J2"
+      "Mosk's Rocket - Flushed Away Area": "B1/J2 | X1+J1"
     },
     "subwarps": {
       "Mosk's Rocket - Podium Portal": ["Podium - Starting Area", "Bunny-GG"]
@@ -123,7 +124,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Mosk's Rocket - Fecal Matters/Flushed Away Area": {
+  "Mosk's Rocket - Flushed Away Area": {
     "level": "Mosk's Rocket",
     "sublevel": "Mosk's Rocket",
     "kaizolevel": "Mosk's Rocket",
@@ -146,11 +147,31 @@
     "hats": {},
     "connections": {
       "Mosk's Rocket - Gym Gears Area": "",
-      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2"
+      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2",
+      "Mosk's Rocket - Fecal Matters Area": "J1/B2 | X3+B1"
     },
     "subwarps": {
-      "Mosk's Rocket - Costipation Portal": ["Costipation - Starting Area", "J1/B2 & Bunny-FM"],
       "Mosk's Rocket - Smelly Slimes Portal": ["Smelly Slimes - Starting Area", "Bunny-FA"]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
+  "Mosk's Rocket - Fecal Matters Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Mosk's Rocket",
+    "kaizolevel": "Mosk's Rocket",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {
+      "Mosk's Rocket - Costipation Portal": ["Costipation - Starting Area", "Bunny-FM"]
     },
     "warps": {},
     "specialrules": {}
@@ -171,7 +192,7 @@
     },
     "hats": {},
     "connections": {
-      "Mosk's Rocket - Fecal Matters/Flushed Away Area": "",
+      "Mosk's Rocket - Flushed Away Area": "",
       "Mosk's Rocket - Coins Leading to Final Floor": "J1 | X1+B2",
       "Mosk's Rocket - Tosla HQ Area": "GP/J2"
     },
@@ -324,7 +345,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Lab Memories - High Ground": "J2"
+      "Lab Memories - High Ground": "J2 | X2+J1"
     },
     "subwarps": {},
     "warps": {},
@@ -417,7 +438,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Welcoming Climbs - First Gear Area": "B2 & X1/J1"
+      "Welcoming Climbs - First Gear Area": "B2 & X1/J1 | X3+B1+J1+GL"
     },
     "subwarps": {
       "Welcoming Climbs - Mosk's Rocket Portal": ["Mosk's Rocket - Starting Area", ""]
@@ -446,7 +467,7 @@
       "Dentures Hat": 160700039
     },
     "connections": {
-      "Welcoming Climbs - Second Gear Area": "B2+J1"
+      "Welcoming Climbs - Second Gear Area": "B2 & X2/J1"
     },
     "subwarps": {},
     "warps": {},
@@ -561,7 +582,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Buttons Smashing - Buttons": "X1+B1 | B2"
+      "Buttons Smashing - Buttons": "X1+B1 | B2",
+      "Buttons Smashing - Hat Platform": "X2+J1"
     },
     "subwarps": {
       "Buttons Smashing - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
@@ -626,7 +648,9 @@
     "hats": {
       "Glitched Taxi Skin": 160700050
     },
-    "connections": {},
+    "connections": {
+      "Buttons Smashing - Buttons": ""
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -656,14 +680,14 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pepperoni - Pizza Ovens": "B1 & X1/J1"
+      "Pepperoni - Pizza Ovens": "B1 & X1/J1 | X1+J1"
     },
     "subwarps": {
       "Pepperoni - Mosk's Rocket Portal": ["Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area", ""]
     },
     "warps": {},
     "specialrules": {
-      "Pepperoni - Gear - From Chef Pepe": "B1+J1"
+      "Pepperoni - Gear - From Chef Pepe": "X3/J1 & B1"
     }
   },
   "Pepperoni - Pizza Ovens": {
@@ -874,12 +898,12 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Costipation - Roadway Gear Area": "J1/B1",
-      "Costipation - Island Gear Area": "B2",
-      "Costipation - Hat Area": "B1"
+      "Costipation - Roadway Gear Area": "B1 | X1+J1",
+      "Costipation - Island Gear Area": "B2 | X2+B1",
+      "Costipation - Hat Area": "B1 | X3+J1"
     },
     "subwarps": {
-      "Costipation - Mosk's Rocket Portal": ["Mosk's Rocket - Fecal Matters/Flushed Away Area", ""]
+      "Costipation - Mosk's Rocket Portal": ["Mosk's Rocket - Flushed Away Area", ""]
     },
     "warps": {},
     "specialrules": {}
@@ -998,14 +1022,14 @@
     "connections": {
       "Smelly Slimes - Sidebars by Entrance": "X2/J1/B1",
       "Smelly Slimes - Hat Area": "J1 | X2+B2",
-      "Smelly Slimes - Exit Area": "B1+J1"
+      "Smelly Slimes - Exit Area": "B1+J1 | X3 & B1/J1"
     },
     "subwarps": {
-      "Smelly Slimes - Entrance Mosk's Rocket Portal": ["Mosk's Rocket - Fecal Matters/Flushed Away Area", ""]
+      "Smelly Slimes - Entrance Mosk's Rocket Portal": ["Mosk's Rocket - Flushed Away Area", ""]
     },
     "warps": {},
     "specialrules": {
-      "Smelly Slimes - Gear - Pipe Above Entrance": "B2 & X2/J1"
+      "Smelly Slimes - Gear - Pipe Above Entrance": "B2 & X2/J1 | X2+B1 & {Smelly Slimes - Exit Area}"
     }
   },
   "Smelly Slimes - Sidebars by Entrance": {

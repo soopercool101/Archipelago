@@ -321,6 +321,7 @@
       "Pizza Time - Floating Orange Island": "B2 & X1/OS | B1+J1+OS | NOS+B2+J1"
     },
     "subwarps": {
+      "Pizza Time - Hat World Entrance": ["Pizza Time Hat World", ""],
       "Pizza Time - 400° Oven": ["400°", ""],
       "Pizza Time - 600° Oven": ["600°", ""],
       "Pizza Time - 900° Oven": ["900°", ""],
@@ -328,8 +329,7 @@
     },
     "warps": {
       "Pizza Time - Morio's Lab Portal Near Hat World": ["Morio's Lab - Second Floor After Demo Wall", ""],
-      "Pizza Time - Morio's Lab Portal Near Pizza King": ["Morio's Lab - Second Floor After Demo Wall", ""],
-      "Pizza Time - Hat World Entrance": ["Pizza Time Hat World", ""]
+      "Pizza Time - Morio's Lab Portal Near Pizza King": ["Morio's Lab - Second Floor After Demo Wall", ""]
     },
     "specialrules": {}
   },
@@ -958,10 +958,10 @@
     "connections": {
       "Any Hat World": ""
     },
-    "subwarps": {},
-    "warps": {
+    "subwarps": {
       "Pizza Time Hat World - Exit": ["Pizza Time - Starting Area", ""]
     },
+    "warps": {},
     "specialrules": {}
   },
   "400°": {

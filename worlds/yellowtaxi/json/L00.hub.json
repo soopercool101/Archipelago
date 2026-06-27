@@ -312,7 +312,7 @@
       "Granny's Island - Second Island Towards Sewer": "B1 & X2/OS/GP/J1 | X1+GP+OS",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP+J1 | X1+GP+J2",
-      "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+B1+GP",
+      "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+B1+GP | X3+B1+J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | X3+B1+GP | GP+OS+B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X2+B2+J1 | X2+B1+GP",
       "Morio's Lab - Ground Floor Propeller": "X1+NSAR+GP+LabKey",
@@ -333,7 +333,7 @@
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP",
-      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | B1+J1",
+      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | X1/B1 & J1",
       "Granny's Island - Coin Bag on Pillar Towards Sewer": "B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
       "Granny's Island - Gear - Inside Spin Blocks": "X3/SP",
@@ -560,7 +560,8 @@
       "Granny's Island - Coin Bag on Mountain Ramp House": 300749,
       "Granny's Island - Coin Bag on Roofs Behind Granny's Statue": 300318,
       "Granny's Island - Coin Bag on Path to Granny's Statue": 300573,
-      "Granny's Island - Coin Bag on Roof in Front of Granny's Statue": 300474
+      "Granny's Island - Coin Bag on Roof in Front of Granny's Statue": 300474,
+      "Granny's Island - Coin Bag on Power Shovel": 300270
     },
     "coins": {
       "Granny's Island - Coin on Roofs Behind Granny's Statue": 300300,
@@ -631,19 +632,20 @@
     "gears": {
       "Granny's Island - Gear - From MMA Champion": 100018,
       "Granny's Island - Gear - Beach Cove": 100002,
-      "Granny's Island - Gear - On Roof by Oil Pump": 100009
+      "Granny's Island - Gear - On Roof by Oil Pump": 100009,
+      "Granny's Island - Gear - Gym Gears Roof": 100012
     },
     "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {
-      "Granny's Island - Coin Bag on Power Shovel": 300270,
       "Granny's Island - Coin Bag Near MMA Champion": 300704,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #1": 300394,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #2": 300395,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #3": 300397,
       "Granny's Island - Coin Bag on Roof by Construction Site": 300461,
-      "Granny's Island - Coin Bag on Roof Next to Pizza Oven": 300369
+      "Granny's Island - Coin Bag on Roof Next to Pizza Oven": 300369,
+      "Granny's Island - Coin Bag on Stone Arch on Beach": 300454
     },
     "coins": {
       "Granny's Island - Coin on Hill By Cloro-Phil #1": 300424,
@@ -679,7 +681,12 @@
       "Granny's Island - Coin on Roof Next to Pizza Oven #1": 300298,
       "Granny's Island - Coin on Roof Next to Pizza Oven #2": 300307,
       "Granny's Island - Coin on Roof Next to Pizza Oven #3": 300315,
-      "Granny's Island - Coin on Roof Next to Pizza Oven #4": 300368
+      "Granny's Island - Coin on Roof Next to Pizza Oven #4": 300368,
+      "Granny's Island - Coin on Stone Arch on Beach #1": 300453,
+      "Granny's Island - Coin on Stone Arch on Beach #2": 300455,
+      "Granny's Island - Coin on Stone Arch on Beach #3": 300458,
+      "Granny's Island - Coin on Stone Arch on Beach #4": 300457,
+      "Granny's Island - Coin on Stone Arch on Beach #5": 300456
     },
     "checkpoints": {},
     "cheeses": {},
@@ -694,17 +701,14 @@
   "Granny's Island - High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {
-      "Granny's Island - Gear - Gym Gears Roof": 100012
-    },
+    "gears": {},
     "bunnies": {},
     "safes": {},
     "chests": {
       "Granny's Island - Chest on Stone Arch in Water": 300366
     },
     "coinbags": {
-      "Granny's Island - Coin Bag on Stone Island": 300276,
-      "Granny's Island - Coin Bag on Stone Arch on Beach": 300454
+      "Granny's Island - Coin Bag on Stone Island": 300276
     },
     "coins": {
       "Granny's Island - Coin on Stone Island #1": 300273,
@@ -729,11 +733,6 @@
       "Granny's Island - Coin on Stone Arch on Top of Mountain #5": 300791,
       "Granny's Island - Coin on Stone Arch on Top of Mountain #6": 300795,
       "Granny's Island - Coin on Stone Arch on Top of Mountain #7": 300794,
-      "Granny's Island - Coin on Stone Arch on Beach #1": 300453,
-      "Granny's Island - Coin on Stone Arch on Beach #2": 300455,
-      "Granny's Island - Coin on Stone Arch on Beach #3": 300458,
-      "Granny's Island - Coin on Stone Arch on Beach #4": 300457,
-      "Granny's Island - Coin on Stone Arch on Beach #5": 300456,
       "Granny's Island - Coin on Stone Arch in Water #1": 300367,
       "Granny's Island - Coin on Stone Arch in Water #2": 300392,
       "Granny's Island - Coin Near Lighthouse #1": 300779,
@@ -1117,6 +1116,33 @@
     "warps": {},
     "specialrules": {}
   },
+  "Granny's Island Hat World": {
+    "level": "Hub",
+    "sublevel": "Granny's Island Hat World",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {
+      "Top Hat": 700002,
+      "Propeller Cap": 700001,
+      "No Hat": 700000,
+      "Morio Hat": 700003,
+      "Taxi Stack Hat": 700004
+    },
+    "connections": {
+      "Any Hat World": ""
+    },
+    "subwarps": {
+      "Granny's Island Hat World - Exit": ["Granny's Island - Main Area", ""]
+    },
+    "warps": {},
+    "specialrules": {}
+  },
   "Law Firm - Entrance": {
     "level": "Hub",
     "sublevel": "Law Firm",
@@ -1130,7 +1156,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Law Firm - Ledges": "J1"
+      "Law Firm - Ledges": "J1 | X3+B1"
     },
     "subwarps": {
       "Law Firm - Exit": ["Granny's Island - Main Area", ""]
@@ -1392,33 +1418,6 @@
     "hats": {},
     "connections": {},
     "subwarps": {},
-    "warps": {},
-    "specialrules": {}
-  },
-  "Granny's Island Hat World": {
-    "level": "Hub",
-    "sublevel": "Granny's Island Hat World",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {
-      "Top Hat": 700002,
-      "Propeller Cap": 700001,
-      "No Hat": 700000,
-      "Morio Hat": 700003,
-      "Taxi Stack Hat": 700004
-    },
-    "connections": {
-      "Any Hat World": ""
-    },
-    "subwarps": {
-      "Granny's Island Hat World - Exit": ["Granny's Island - Main Area", ""]
-    },
     "warps": {},
     "specialrules": {}
   },
@@ -2022,6 +2021,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+J1 | X2+FGU+B1",
+      "Morio's Lab - Third Floor Gear Wrench": "J2 | X2+J1",
       "Morio's Lab - Third Floor": ""
     },
     "subwarps": {},
@@ -2053,7 +2053,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Third Floor Wrenches Upper": {
+  "Morio's Lab - Third Floor Wrenches Upper In True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -2065,14 +2065,33 @@
       "Morio's Lab - Coin on Third Floor Wrenches #11": 300685,
       "Morio's Lab - Coin on Third Floor Wrenches #12": 300687,
       "Morio's Lab - Coin on Third Floor Wrenches #13": 300686,
-      "Morio's Lab - Coin on Third Floor Wrenches #14": 300684,
+      "Morio's Lab - Coin on Third Floor Wrenches #14": 300684
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Third Floor Wrenches Upper": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
       "Morio's Lab - Coin on Third Floor Wrenches #15": 300683
     },
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Third Floor Gear Wrench": "J1"
+      "Morio's Lab - Third Floor Gear Wrench": "J1",
+      "Morio's Lab - Third Floor Wrenches Upper In True Demo Wall": "FGU"
     },
     "subwarps": {},
     "warps": {},
@@ -2092,7 +2111,9 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Morio's Lab - Third Floor Wrenches Upper": "J1"
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -2118,7 +2139,8 @@
     },
     "subwarps": {},
     "warps": {
-      "Morio's Lab - Getting Gud! TV": ["Getting Gud! - Starting Area", "TT2"]
+      "Morio's Lab - Getting Gud! TV": ["Getting Gud! - Starting Area", "TT2"],
+      "Morio's Lab - Maurizio's City Portal": ["Maurizio's City - Starting Area", "PortalMauriziosCity"]
     },
     "specialrules": {}
   },
@@ -2333,12 +2355,11 @@
       "Morio's Lab - Inside Morio's Room Jump": "NHS+FGU+MorioHat | HS+FGU+MorioHat & {Morio's Wardrobe}",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU/Spike",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU",
-      "Morio's Lab - Third Floor Wrenches Upper": "Spike+FGU",
-      "Morio's Lab - Third Floor Gear Wrench": "Spike+B1",
+      "Morio's Lab - Third Floor Wrenches Upper": "Spike",
+      "Morio's Lab - Third Floor Gear Wrench": "Spike",
       "Morio's Lab - Ground Floor Bolts": "FGU",
       "Morio's Lab - Alcove Above Arcade Panik": "FGU",
       "Morio's Lab - Ground Floor Propeller": "FGU",
-      "Morio's Lab - Third Floor Wrenches Lower": "Spike",
       "Morio's Lab - Middle Floors 2 Golden Propellers": ""
     },
     "subwarps": {},
@@ -2430,6 +2451,7 @@
     "connections": {
       "Morio's Lab - Ledge Below Tosla HQ Portal": "J1",
       "Morio's Lab - Fifth Floor Low Pillars": "J1",
+      "Morio's Lab - Final Floor Bunny Shortcut": "X3+B1",
       "Morio's Lab - Fifth Floor Ruined Observatory Area": ""
     },
     "subwarps": {},
@@ -2582,7 +2604,8 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Wrenches": "FGU",
-      "Morio's Lab - Bunny Ledge": "FGU"
+      "Morio's Lab - Bunny Ledge": "FGU",
+      "Morio's Lab - Outside Morio's Room": "J1"
     },
     "subwarps": {},
     "warps": {},

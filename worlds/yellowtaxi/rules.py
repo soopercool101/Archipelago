@@ -1,14 +1,16 @@
 from __future__ import annotations
 
 import math
-from typing import TYPE_CHECKING, Callable, Mapping, Union
+from typing import TYPE_CHECKING, Callable, Mapping, Union, override, ClassVar
 
+from NetUtils import JSONMessagePart
 from rule_builder.options import OptionFilter
 from .data_loader import regions_json_data
 from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
-from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide
+from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide, IncludeOutOfBounds, LockedMoriosLab, \
+    LockedMoriosWardrobe, OpenGrannysIsland
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -74,6 +76,8 @@ class RuleFactory:
 
     def __init__(self, world: YellowTaxiWorld):
         self.world = world
+        self.move_prefix = ""
+        self.cached_complex_rules : dict[str, Rule] = {}
 
     def assign_location_rule(self, target_name: str, rule_expr: str):
         try:
@@ -169,32 +173,29 @@ class RuleFactory:
         if token == "B1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has("Progressive Boost")
+            return Has(f"{self.move_prefix}Progressive Boost")
         if token == "B2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has("Progressive Boost", 2)
+            return Has(f"{self.move_prefix}Progressive Boost", 2)
         if token == "PMB": # Pac-man boost, overhead sections
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has("Progressive Boost")
+            return Has(f"{self.move_prefix}Progressive Boost")
         if token == "J1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has("Progressive Jump")
+            return Has(f"{self.move_prefix}Progressive Jump")
         if token == "J2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has("Progressive Jump", 2)
-        if token == "GL":
-            return Has("Glide",
-                       options=[
-                           OptionFilter(ShuffleGlide, ShuffleGlide.option_true)
-                       ],
-                       filtered_resolution=True
-                       )
+            return Has(f"{self.move_prefix}Progressive Jump", 2)
         if token == "PMJ":
             return False_()
+        if token == "GL":
+            return Has("Glide",
+                       options=[OptionFilter(ShuffleGlide, ShuffleGlide.option_true)],
+                       filtered_resolution=True)
         if token == "SP":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
@@ -229,9 +230,9 @@ class RuleFactory:
         if token == "GP":
             return Has("Golden Propeller Blueprints")
         if token == "FGU":
-            if self.world.options.shuffle_full_game == 0:
-                return True_()
-            return Has("Full Game Unlock")
+            return Has("Full Game Unlock",
+                       options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                       filtered_resolution=True)
         if token == "GelaToni":
             return Has("Gela-Toni")
         if token == "PizzaKing":
@@ -332,14 +333,56 @@ class RuleFactory:
             if self.world.options.open_grannys_island:
                 return True_()
             return False_()
+        if token == "OOB": # Out-of-bounds
+            if not self.world.options.include_out_of_bounds:
+                return False_()
+            return OutOfBounds()
+        if token == "SCOOB": # Standard clip out-of-bounds. Requires less items on higher expert levels
+            scoob_rule = False_()
+            if f"{self.move_prefix}SCOOB" in self.cached_complex_rules:
+                scoob_rule = self.cached_complex_rules[f"{self.move_prefix}SCOOB"]
+            else:
+                if not self.world.options.include_out_of_bounds or (not self.world.using_ut and
+                                                                    self.world.options.expert_level <= 0):
+                    return False_()
+                elif self.world.options.shuffle_flip_o_will == 0:
+                    scoob_rule = True_()
+                else:
+                    match self.world.options.expert_level:
+                        case 0:
+                            scoob_rule = False_()
+                        case 1:
+                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost", 2) &
+                                          Has(f"{self.move_prefix}Progressive Jump"))
+                        case 2:
+                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost") &
+                                          Has(f"{self.move_prefix}Progressive Jump"))
+                        case _:
+                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost") |
+                                          Has(f"{self.move_prefix}Progressive Jump"))
+                    if self.world.using_ut and self.world.options.expert_level < 3:
+                        if self.world.options.expert_level == 0:
+                            scoob_rule |= (Has(f"{self.move_prefix}Progressive Boost", 2) &
+                                           Has(f"{self.move_prefix}Progressive Jump") &
+                                           Has(self.world.glitches_item_name))
+                        if self.world.options.expert_level <= 1:
+                            scoob_rule |= (Has(f"{self.move_prefix}Progressive Boost") &
+                                           Has(f"{self.move_prefix}Progressive Jump") &
+                                           Has(self.world.glitches_item_name, 2 - self.world.options.expert_level))
+                        if self.world.options.expert_level <= 2:
+                            scoob_rule |= ((Has(f"{self.move_prefix}Progressive Boost") |
+                                           Has(f"{self.move_prefix}Progressive Jump")) &
+                                           Has(self.world.glitches_item_name, 3 - self.world.options.expert_level))
+                self.cached_complex_rules[f"{self.move_prefix}SCOOB"] = scoob_rule
+            return scoob_rule & OutOfBounds()
         if token == "LabKey":
-            if self.world.options.locked_morios_lab:
-                return Has("Lab Key")
-            return True_()
+            return Has("Lab Key",
+                       options=[OptionFilter(LockedMoriosLab, LockedMoriosLab.option_true)],
+                       filtered_resolution=True)
         if token == "WardrobeKey":
-            if self.world.options.locked_morios_wardrobe:
-                return Has("Morio's Wardrobe")
-            return True_()
+            return Has("Morio's Wardrobe",
+                       options=[OptionFilter(LockedMoriosWardrobe, LockedMoriosWardrobe.option_true)],
+                       filtered_resolution=True)
         if token == "GymKey":
             match self.world.options.gym_gears_unlock_condition:
                 case self.world.options.gym_gears_unlock_condition.option_open:
@@ -442,11 +485,25 @@ class RuleFactory:
                 return Has(f"Bunny ({adjusted_bunny_level})", 3)
         if token.startswith("X"):
             expert_level = int(token[1:])
-            if (hasattr(self.world.multiworld, "generation_is_fake")
-                    and self.world.options.expert_level < expert_level):
-                return Has("Additional Expert Logic Level", expert_level - self.world.options.expert_level)
+            if self.world.using_ut and self.world.options.expert_level < expert_level:
+                return Has(self.world.glitches_item_name, expert_level - self.world.options.expert_level)
             if self.world.options.expert_level >= expert_level:
                 return True_()
             return False_()
 
         raise Exception(f"Invalid token: '{token}'")
+
+# Used for out-of-bounds stuff, really just to explain better in UT
+class OutOfBounds(Rule["YellowTaxiWorld"], game="Yellow Taxi Goes Vroom"):
+    class Resolved(Rule.Resolved):
+        @override
+        def _evaluate(self, state: CollectionState) -> bool:
+            return True
+
+        @override
+        def explain_json(self, state: CollectionState | None = None) -> list[JSONMessagePart]:
+            return [{"type": "color", "color": "green", "text": "Include Out-of-Bounds"}]
+
+        @override
+        def __str__(self) -> str:
+            return "Include Out-of-Bounds"

@@ -13,7 +13,9 @@
       "Bombeach - Gear - In Mountain Tunnel Alcove": 10100006,
       "Bombeach - Gear - Defeat Bomboss": 10100015
     },
-    "bunnies": {},
+    "bunnies": {
+      "Bombeach - Bunny - Under Mountain Hotel": 10200001
+    },
     "safes": {},
     "chests": {
       "Bombeach - Chest in Ocean Behind Rocks Right of Start": 10300014,
@@ -448,7 +450,9 @@
     "warps": {
       "Bombeach - Portal to Morio's Lab": ["Morio's Lab - Ground Floor", ""]
     },
-    "specialrules": {}
+    "specialrules": {
+      "Bombeach - Bunny - Under Mountain Hotel": "X2/J1/B1"
+    }
   },
   "Bombeach - Easy Bomb Jumps": {
     "level": "Bombeach",
@@ -626,9 +630,7 @@
     "level": "Bombeach",
     "sublevel": "Bombeach",
     "gears": {},
-    "bunnies": {
-      "Bombeach - Bunny - Under Mountain Hotel": 10200001
-    },
+    "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {
@@ -717,7 +719,7 @@
     "hats": {},
     "connections": {
       "Bombeach - Orange Block Island": "B2",
-      "Bombeach - Bunny Pillar": "B1 & J1/X3"
+      "Bombeach - Bunny Pillar": "B1+J1 | X3 & J1/B1"
     },
     "subwarps": {},
     "warps": {},
@@ -765,9 +767,7 @@
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {
-      "Bombeach - Bunny - On Ocean Pillar": "X2/J1/OS"
-    }
+    "specialrules": {}
   },
   "Bombeach - Orange Block Bridge": {
     "level": "Bombeach",

@@ -511,7 +511,7 @@
     "connections": {
       "Tosla Offices (Fourth Floor) - Ledge Near Start": "PMB/PMJ",
       "Tosla Offices (Fourth Floor) - After Ledge": "J1/PMJ/PMB",
-      "Tosla Offices (Fourth Floor) - High Ground": "X1/J1 & PMB"
+      "Tosla Offices (Fourth Floor) - High Ground": "J1+PMB"
     },
     "subwarps": {
       "Tosla Offices (Fourth Floor) - Down Elevator": ["Tosla Offices (Third Floor) - After Golden Spring", ""]
@@ -602,6 +602,7 @@
     "hats": {},
     "connections": {
       "Tosla Offices (Fourth Floor) - Starting Area": "",
+      "Tosla Offices (Fourth Floor) - High Ground": "X1+PMB",
       "Tosla Offices (Fourth Floor) - After Golden Spring": "GST | X2+PW | PMJ"
     },
     "subwarps": {},

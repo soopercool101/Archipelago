@@ -23,13 +23,13 @@ def create_locations(world: YellowTaxiWorld) -> None:
     world.num_gears = 0
     world.num_bunnies = 0
     chests : List[tuple[Region, Dict[str, int | None]]] = []
-    use_simple_chestsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+    use_simple_chestsanity : bool = (world.using_ut or
                                      world.options.chestsanity_percent >= 100)
     coinbags : List[tuple[Region, Dict[str, int | None]]] = []
-    use_simple_coinbagsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+    use_simple_coinbagsanity : bool = (world.using_ut or
                                        world.options.coinbagsanity_percent >= 100)
     coins : List[tuple[Region, Dict[str, int | None]]] = []
-    use_simple_coinsanity : bool = (hasattr(world.multiworld, "generation_is_fake") or
+    use_simple_coinsanity : bool = (world.using_ut or
                                     (world.options.coinsanity_non_filler_cap >= 100 and
                                      world.options.coinsanity_percent >= 100))
     for region in world.get_regions():
@@ -43,7 +43,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         locations : Dict[str, int | None] = {}
         # Time Trial Levels all end with "!", skip them when time trial gears aren't shuffled
-        if hasattr(world.multiworld, "generation_is_fake") or world.options.time_trial_gears or not level.endswith("!"):
+        if world.using_ut or world.options.time_trial_gears or not level.endswith("!"):
             locations = reg["gears"]
             world.num_gears += len(locations)
         if world.options.bunnysanity:
@@ -58,23 +58,23 @@ def create_locations(world: YellowTaxiWorld) -> None:
                                  location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                 world.num_bunnies += 1
 
-        if world.options.checkpointsanity or hasattr(world.multiworld, "generation_is_fake"):
+        if world.options.checkpointsanity or world.using_ut:
             locations = locations | reg["checkpoints"]
-        if world.options.safesanity or hasattr(world.multiworld, "generation_is_fake"):
+        if world.options.safesanity or world.using_ut:
             locations = locations | reg["safes"]
-        if world.options.chestsanity or hasattr(world.multiworld, "generation_is_fake"):
+        if world.options.chestsanity or world.using_ut:
             if use_simple_chestsanity:
                 locations = locations | reg["chests"]
             else:
                 for chest, chest_id in reg["chests"].items():
                     chests += [(region, {chest: chest_id})]
-        if world.options.coinbagsanity or hasattr(world.multiworld, "generation_is_fake"):
+        if world.options.coinbagsanity or world.using_ut:
             if use_simple_coinbagsanity:
                 locations = locations | reg["coinbags"]
             else:
                 for coinbag, coinbag_id in reg["coinbags"].items():
                     coinbags += [(region, {coinbag: coinbag_id})]
-        if world.options.coinsanity or hasattr(world.multiworld, "generation_is_fake"):
+        if world.options.coinsanity or world.using_ut:
             if use_simple_coinsanity:
                 locations = locations | reg["coins"]
             else:
@@ -117,6 +117,15 @@ def create_locations(world: YellowTaxiWorld) -> None:
         max_nonfiller_coin_count : int = len(coins)
         if world.options.coinsanity_non_filler_cap < 100:
             max_nonfiller_coin_count = floor((len(coins) * world.options.coinsanity_non_filler_cap) / 100)
+        # Impossible coin special handling
+        if (world.options.expert_level >= 3 and world.options.include_out_of_bounds and
+                "Flushed Away" in world.included_levels):
+            selected_coin_count -= 1
+            if max_nonfiller_coin_count <= 0:
+                loc : Location = world.get_location("Flushed Away - The Impossible Coin (Out-of-Bounds Near Ramps)")
+                loc.progress_type = LocationProgressType.EXCLUDED
+            else:
+                max_nonfiller_coin_count -= 1
         world.random.shuffle(coins)
         for i in range(0, selected_coin_count):
             coin_data = coins[i]
@@ -435,6 +444,16 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     world.options.flushed_away_unlock_condition.option_shuffle_sewer_key):
                 locations = {
                     "Flushed Away - Talk to Michele": 8_10_00008,
+                }
+        case "Flushed Away - Checkpoint Area":
+            if (world is None or
+                    (
+                        world.options.expert_level >= 3 and
+                        world.options.include_out_of_bounds and
+                        world.options.coinsanity
+                    )):
+                locations = {
+                    "Flushed Away - The Impossible Coin (Out-of-Bounds Near Ramps)": 8_03_00110,
                 }
         case "Any Hat World":
             if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:

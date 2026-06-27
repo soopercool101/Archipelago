@@ -55,7 +55,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Getting Gud! - High Ground": "B1 | X1+J2"
+      "Getting Gud! - High Ground": "B1 | X1+J2 | X3+J1",
+      "Getting Gud! - In the Air": "X1+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -76,7 +77,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Getting Gud! - In the Air": "X1+J1 | J2/B2 | X3+B1"
+      "Getting Gud! - In the Air": "X1+J1 | J2/B2"
     },
     "subwarps": {},
     "warps": {},

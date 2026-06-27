@@ -109,8 +109,10 @@ class YellowTaxiWorld(World):
         # Pizza Wheels or Golden Spring can give spike traversal
         self.has_spike_traversal : bool = False
 
+        self.using_ut : bool = False
         # UT only
-        if hasattr(self.multiworld, "generation_is_fake"):
+        if getattr(self.multiworld, "generation_is_fake", False):
+            self.using_ut = True
             self.ut_true_num_gears : int = 0
             self.ut_true_goal_cost : int = 0
             self.ut_sort_region_dict : dict[str, int] = {}
@@ -189,7 +191,7 @@ class YellowTaxiWorld(World):
         ]
 
         if (self.options.locked_time_trials or self.options.time_trial_gears or
-                hasattr(self.multiworld, "generation_is_fake")):
+                self.using_ut):
             self.included_levels += [
                 "Baby Steps!",
                 "Getting Gud!",
@@ -231,19 +233,19 @@ class YellowTaxiWorld(World):
         # Gela-Toni normally only appears after Bomboss is defeated
         if "Bombeach" not in self.included_levels:
             if self.options.shuffle_gela_toni:
-                if not hasattr(self.multiworld, "generation_is_fake"):
+                if not self.using_ut:
                     self.early_gela_toni = True
             else:
                 self.excluded_regions += ["Ice Cream Truck - Lower Path", "Ice Cream Truck - Upper Path"]
         # Pizza King appears in Pizza Time. If level is inaccessible, either exclude his hub portion or set early
         if "Pizza Time" not in self.included_levels:
             if self.options.shuffle_pizza_king:
-                if not hasattr(self.multiworld, "generation_is_fake"):
+                if not self.using_ut:
                     self.early_pizza_king = True
             else:
                 self.excluded_regions += ["Pizza Oven - Entrance", "Pizza Oven - Pillar"]
             if (self.options.pizza_wheels != self.options.pizza_wheels.option_off and
-                    not hasattr(self.multiworld, "generation_is_fake")):
+                    not self.using_ut):
                 self.early_pizza_wheels = True
         if not self.has_orange_switch_access:
             if self.options.expert_level < 3:
@@ -306,11 +308,11 @@ class YellowTaxiWorld(World):
                 if "Granny's Island - Sewer Island" in self.excluded_regions:
                     self.excluded_regions.remove("Granny's Island - Sewer Island")
                     self.excluded_regions.remove("Granny's Island - Sewer Island Upper")
-                    if not hasattr(self.multiworld, "generation_is_fake"):
+                    if not self.using_ut:
                         self.early_sewer_island = True
 
         # Make sure early items are set as needed
-        if not hasattr(self.multiworld, "generation_is_fake"):
+        if not self.using_ut:
             if not "Pizza Time" in self.included_levels and (self.options.shuffle_rat or self.options.cheesesanity):
                 self.early_rat = True
             if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
@@ -379,7 +381,7 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
-        if hasattr(self.multiworld, "generation_is_fake"):
+        if self.using_ut:
             self.final_portal_cost = self.ut_true_goal_cost
         else:
             self.final_portal_cost = math.floor((self.num_gears *
@@ -436,6 +438,7 @@ class YellowTaxiWorld(World):
             "funny_faces",
             # Only used by UT
             "expert_level",
+            "include_out_of_bounds",
             toggles_as_bools=True
         )
 

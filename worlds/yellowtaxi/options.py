@@ -68,6 +68,15 @@ class ExpertLevel(Range):
     range_end = 3
     default = 0
 
+class IncludeOutOfBounds(Toggle):
+    """
+    Adds collectables that exist out-of-bounds and logic to reach areas by clipping through walls.
+
+    Logic and what this entails differs by expert level.
+    On expert 0, this only affects certain coins that are hidden within level geometry but do not require clipping.
+    """
+    display_name = "Include Out-Of-Bounds"
+
 class ExtraDemoCollectables(Toggle):
     """
     Adds demo-exclusive locations. Adds 5 additional gears and 2 additional bunnies.
@@ -539,6 +548,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     remove_goal_portal_locations : RemoveGoalPortalLocations
     remove_post_goal_portals : RemovePostGoalPortals
     expert_level: ExpertLevel
+    include_out_of_bounds: IncludeOutOfBounds
     death_link: DeathLink
     death_link_amnesty: DeathLinkAmnesty
     ring_link: RingLink
