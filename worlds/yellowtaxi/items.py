@@ -555,8 +555,6 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                 needed_number_of_filler_items -= 1
                 world.included_hats.add("Alien Mosk (Good) Hat")
 
-        # Add hats to fill remaining hat locations, or remaining filler locations, depending
-        if world.options.hatsanity != world.options.hatsanity.option_disabled:
             # Now add random hats as needed
             if extra_hats > 0:
                 hats : list[str] = []
