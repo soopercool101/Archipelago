@@ -217,7 +217,11 @@ class YellowTaxiWorld(World):
                                          "Crash Test Industries" in self.included_levels)
         self.has_password_access = ((self.options.shuffle_morios_password.value ==
                                      self.options.shuffle_morios_password.option_true) or
-                                    "Morio's Mind" in self.included_levels)
+                                    "Morio's Mind" in self.included_levels or
+                                    (self.options.include_out_of_bounds.value ==
+                                     self.options.include_out_of_bounds.option_full
+                                     and self.options.expert_level >= 1)
+                                    )
         self.has_golden_propeller_access = ((self.options.shuffle_golden_propeller.value ==
                                              self.options.shuffle_golden_propeller.option_true) or
                                             "Ruined Observatory" in self.included_levels)
@@ -275,7 +279,8 @@ class YellowTaxiWorld(World):
                                       "Morio's Lab - Fifth Floor High Pillars",
                                       "Morio's Lab - Final Floor",
                                       "Morio's Lab - Final Floor Pipes",
-                                      "Morio's Lab - Final Floor Bunny Shortcut",
+                                      "Morio's Lab - Final Floor Bunny Shortcut Upper",
+                                      "Morio's Lab - Final Floor Bunny Shortcut Lower",
                                       "Morio's Lab - Final Floor Catwalk"]
             if self.options.expert_level == 0:
                 # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
@@ -332,7 +337,7 @@ class YellowTaxiWorld(World):
 
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
                 self.exclude_spike_bunny = True
-            if "Morio's Lab - Final Floor Bunny Shortcut" in self.excluded_regions:
+            if "Morio's Lab - Final Floor Bunny Shortcut Upper" in self.excluded_regions:
                 self.exclude_top_bunny = True
 
             if self.options.coinsanity and self.multiworld.players > 1:

@@ -120,7 +120,7 @@ class RuleFactory:
             if rule is None:
                 rule = or_clause
             else:
-                rule = rule | or_clause
+                rule |= or_clause
         if rule is None:
             return True_()
         return rule
@@ -133,7 +133,7 @@ class RuleFactory:
             if rule is None:
                 rule = and_clause
             else:
-                rule = rule & and_clause
+                rule &= and_clause
         if rule is None:
             return True_()
         return rule
@@ -143,11 +143,11 @@ class RuleFactory:
             tokens = expression.split('+')
             rule: Union[Rule | None] = None
             for token in tokens:
-                item = self.parse_token(token)
+                and_clause = self.parse_token(token)
                 if rule is None:
-                    rule = item
+                    rule = and_clause
                 else:
-                    rule = rule & item
+                    rule &= and_clause
             if rule is None:
                 return True_()
             return rule
@@ -155,11 +155,11 @@ class RuleFactory:
             tokens = expression.split('/')
             rule: Union[Rule | None] = None
             for token in tokens:
-                item = self.parse_token(token)
+                or_clause = self.parse_token(token)
                 if rule is None:
-                    rule = item
+                    rule = or_clause
                 else:
-                    rule = rule | item
+                    rule |= or_clause
             if rule is None:
                 return True_()
             return rule
@@ -242,9 +242,9 @@ class RuleFactory:
                 case self.world.options.fecal_matters_unlock_condition.option_open:
                     return True_()
                 case self.world.options.fecal_matters_unlock_condition.option_full_game:
-                    if self.world.options.shuffle_full_game == 0:
-                        return True_()
-                    return Has("Full Game Unlock")
+                    return Has("Full Game Unlock",
+                               options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                               filtered_resolution=True)
                 case self.world.options.fecal_matters_unlock_condition.option_vanilla |\
                      self.world.options.fecal_matters_unlock_condition.option_shuffle_doggo:
                     return Has("Doggo")
@@ -334,7 +334,7 @@ class RuleFactory:
                 return True_()
             return False_()
         if token == "OOB": # Out-of-bounds
-            if not self.world.options.include_out_of_bounds:
+            if not self.world.options.include_out_of_bounds == self.world.options.include_out_of_bounds.option_full:
                 return False_()
             return OutOfBounds()
         if token == "SCOOB": # Standard clip out-of-bounds. Requires less items on higher expert levels
@@ -342,11 +342,14 @@ class RuleFactory:
             if f"{self.move_prefix}SCOOB" in self.cached_complex_rules:
                 scoob_rule = self.cached_complex_rules[f"{self.move_prefix}SCOOB"]
             else:
-                if not self.world.options.include_out_of_bounds or (not self.world.using_ut and
-                                                                    self.world.options.expert_level <= 0):
+                if (not self.world.options.include_out_of_bounds == self.world.options.include_out_of_bounds.option_full
+                        or (not self.world.using_ut and self.world.options.expert_level <= 0)):
                     return False_()
                 elif self.world.options.shuffle_flip_o_will == 0:
-                    scoob_rule = True_()
+                    if self.world.options.expert_level <= 0:
+                        scoob_rule = Has(self.world.glitches_item_name)
+                    else:
+                        scoob_rule = True_()
                 else:
                     match self.world.options.expert_level:
                         case 0:
@@ -361,7 +364,7 @@ class RuleFactory:
                             scoob_rule = (Has(f"{self.move_prefix}Progressive Boost") |
                                           Has(f"{self.move_prefix}Progressive Jump"))
                     if self.world.using_ut and self.world.options.expert_level < 3:
-                        if self.world.options.expert_level == 0:
+                        if self.world.options.expert_level <= 0:
                             scoob_rule |= (Has(f"{self.move_prefix}Progressive Boost", 2) &
                                            Has(f"{self.move_prefix}Progressive Jump") &
                                            Has(self.world.glitches_item_name))
@@ -388,9 +391,9 @@ class RuleFactory:
                 case self.world.options.gym_gears_unlock_condition.option_open:
                     return True_()
                 case self.world.options.gym_gears_unlock_condition.option_full_game:
-                    if self.world.options.shuffle_full_game == 0:
-                        return True_()
-                    return Has("Full Game Unlock")
+                    return Has("Full Game Unlock",
+                               options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                               filtered_resolution=True)
                 case self.world.options.gym_gears_unlock_condition.option_shuffle_gym_membership:
                     return Has("Gym Membership")
                 case self.world.options.gym_gears_unlock_condition.option_exclude:
@@ -403,9 +406,9 @@ class RuleFactory:
                     return True_()
                 case (self.world.options.flushed_away_unlock_condition.option_full_game |
                       self.world.options.flushed_away_unlock_condition.option_default):
-                    if self.world.options.shuffle_full_game == 0:
-                        return True_()
-                    return Has("Full Game Unlock")
+                    return Has("Full Game Unlock",
+                               options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                               filtered_resolution=True)
                 case self.world.options.flushed_away_unlock_condition.option_shuffle_sewer_key:
                     return Has("Sewer Key")
                 case self.world.options.flushed_away_unlock_condition.option_exclude:
@@ -493,7 +496,7 @@ class RuleFactory:
 
         raise Exception(f"Invalid token: '{token}'")
 
-# Used for out-of-bounds stuff, really just to explain better in UT
+# Used for out-of-bounds stuff, really just to explain things better in UT
 class OutOfBounds(Rule["YellowTaxiWorld"], game="Yellow Taxi Goes Vroom"):
     class Resolved(Rule.Resolved):
         @override

@@ -117,15 +117,6 @@ def create_locations(world: YellowTaxiWorld) -> None:
         max_nonfiller_coin_count : int = len(coins)
         if world.options.coinsanity_non_filler_cap < 100:
             max_nonfiller_coin_count = floor((len(coins) * world.options.coinsanity_non_filler_cap) / 100)
-        # Impossible coin special handling
-        if (world.options.expert_level >= 3 and world.options.include_out_of_bounds and
-                "Flushed Away" in world.included_levels):
-            selected_coin_count -= 1
-            if max_nonfiller_coin_count <= 0:
-                loc : Location = world.get_location("Flushed Away - The Impossible Coin (Out-of-Bounds Near Ramps)")
-                loc.progress_type = LocationProgressType.EXCLUDED
-            else:
-                max_nonfiller_coin_count -= 1
         world.random.shuffle(coins)
         for i in range(0, selected_coin_count):
             coin_data = coins[i]
@@ -444,16 +435,6 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     world.options.flushed_away_unlock_condition.option_shuffle_sewer_key):
                 locations = {
                     "Flushed Away - Talk to Michele": 8_10_00008,
-                }
-        case "Flushed Away - Checkpoint Area":
-            if (world is None or
-                    (
-                        world.options.expert_level >= 3 and
-                        world.options.include_out_of_bounds and
-                        world.options.coinsanity
-                    )):
-                locations = {
-                    "Flushed Away - The Impossible Coin (Out-of-Bounds Near Ramps)": 8_03_00110,
                 }
         case "Any Hat World":
             if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:

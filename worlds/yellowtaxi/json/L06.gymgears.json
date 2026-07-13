@@ -18,7 +18,6 @@
       "Gym Gears - Coin in Entrance Hallway #4": 60300003,
       "Gym Gears - Coin in Entrance Hallway #5": 60300004,
       "Gym Gears - Coin in Entrance Hallway #6": 60300006,
-      "Gym Gears - Coin Inside Entrance Pillar": 60300005,
       "Gym Gears - Coin Between Entrance Pillars #1": 60300012,
       "Gym Gears - Coin Between Entrance Pillars #2": 60300017,
       "Gym Gears - Coin in Entrance Weightlifting Area #1": 60300015,
@@ -29,8 +28,6 @@
       "Gym Gears - Coin in Entrance Weightlifting Area #6": 60300009,
       "Gym Gears - Coin in Entrance Weightlifting Area #7": 60300008,
       "Gym Gears - Coin in Entrance Weightlifting Area #8": 60300007,
-      "Gym Gears - Coin Inside Entrance Weightlifting Area Exit Hallway Pillar #1": 60300018,
-      "Gym Gears - Coin Inside Entrance Weightlifting Area Exit Hallway Pillar #2": 60300026,
       "Gym Gears - Coin Between Entrance Weightlifting Area Exit Hallway Pillars #1": 60300019,
       "Gym Gears - Coin Between Entrance Weightlifting Area Exit Hallway Pillars #2": 60300020,
       "Gym Gears - Coin Between Entrance Weightlifting Area Exit Hallway Pillars #3": 60300021,
@@ -120,10 +117,11 @@
     },
     "hats": {},
     "connections": {
-      "Gym Gears - Expert 1": "X1/J1",
-      "Gym Gears - Expert 2": "X2/J1",
-      "Gym Gears - Expert 2 Boost": "X2+B1 | J1",
-      "Gym Gears - Jump": "J1"
+      "Gym Gears - Jump or Expert 1": "X1/J1",
+      "Gym Gears - Jump or Expert 2": "X2/J1",
+      "Gym Gears - Jump or Expert 2 Boost": "X2+B1 | J1",
+      "Gym Gears - Jump or Expert 3 Boost": "X3+B1 | J1",
+      "Gym Gears - Hidden Coins": ""
     },
     "subwarps": {},
     "warps": {
@@ -131,7 +129,7 @@
     },
     "specialrules": {}
   },
-  "Gym Gears - Expert 1": {
+  "Gym Gears - Jump or Expert 1": {
     "level": "Gym Gears",
     "sublevel": "Gym Gears",
     "gears": {},
@@ -151,107 +149,35 @@
     "warps": {},
     "specialrules": {}
   },
-  "Gym Gears - Expert 2": {
-    "level": "Gym Gears",
-    "sublevel": "Gym Gears",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {
-      "Gym Gears - Coin on Left Side Steps in Main Area #2": 60300102,
-      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #1": 60300105,
-      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #2": 60300111,
-      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #3": 60300118
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
-  },
-  "Gym Gears - Expert 2 Boost": {
+  "Gym Gears - Jump or Expert 2": {
     "level": "Gym Gears",
     "sublevel": "Gym Gears",
     "gears": {
-      "Gym Gears - Gear - Back Left Corner of Main Area": 60100001
+      "Gym Gears - Gear - Top of 20 Tons Block Stairway to Upper Area": 60100003
     },
     "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {
-      "Gym Gears - Coin Bag on Broken Pillar in Ultra Chad Room": 60300103
-    },
-    "coins": {
-      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #1": 60300107,
-      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #2": 60300113,
-      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #3": 60300120,
-      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #1": 60300106,
-      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #2": 60300112,
-      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #3": 60300119
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
-  },
-  "Gym Gears - Jump": {
-    "level": "Gym Gears",
-    "sublevel": "Gym Gears",
-    "gears": {
-      "Gym Gears - Gear - Beam Above Entrance Weightlifting Area": 60100000,
-      "Gym Gears - Gear - Top of 20 Tons Block Stairway to Upper Area": 60100003,
-      "Gym Gears - Gear - Highest Point": 60100005,
-      "Gym Gears - Gear - Alcove Above Entrance to Main Area": 60100002,
-      "Gym Gears - Gear - Ultra Chad Room": 60100004
-    },
-    "bunnies": {
-      "Gym Gears - Bunny - Back of Main Area": 60200001,
-      "Gym Gears - Bunny - On Center Pillar": 60200000,
-      "Gym Gears - Bunny - Ultra Chad Room": 60200002
-    },
     "safes": {},
     "chests": {
       "Gym Gears - Chest on 20 Tons Block in Entrance Weightlifting Area": 60300138,
-      "Gym Gears - Chest on 20 Tons Block Stairway to Upper Area": 60300178,
-      "Gym Gears - Chest on Beam Above Main Area": 60300208,
-      "Gym Gears - Chest on 20 Tons Block in Alcove Above Entrance to Main Area": 60300189
+      "Gym Gears - Chest on 20 Tons Block Stairway to Upper Area": 60300178
     },
     "coinbags": {
       "Gym Gears - Coin Bag on 20 Tons Block in Entrance Weightlifting Area": 60300126,
       "Gym Gears - Coin Bag on 20 Tons Block Stairway to Upper Area #1": 60300157,
-      "Gym Gears - Coin Bag on 20 Tons Block Stairway to Upper Area #2": 60300173,
-      "Gym Gears - Coin Bag on Beam Above Main Area #1": 60300224,
-      "Gym Gears - Coin Bag on Beam Above Main Area #2": 60300225,
-      "Gym Gears - Coin Bag on 20 Tons Block in Alcove Above Entrance to Main Area #1": 60300177,
-      "Gym Gears - Coin Bag on 20 Tons Block in Alcove Above Entrance to Main Area #2": 60300183,
-      "Gym Gears - Coin Bag on Pillar in Ultra Chad Room": 60300116
+      "Gym Gears - Coin Bag on 20 Tons Block Stairway to Upper Area #2": 60300173
     },
     "coins": {
       "Gym Gears - Coin on Steps in Entrance Weightlifting Area #2": 60300101,
-      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #1": 60300104,
-      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #2": 60300110,
-      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #3": 60300117,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #1": 60300108,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #2": 60300114,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #3": 60300121,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #4": 60300122,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #5": 60300127,
       "Gym Gears - Coin on 20 Tons Block Steps in Entrance Weightlifting Area #6": 60300133,
-      "Gym Gears - Coin on Beam Above Entrance Weightlifting Area #1": 60300130,
-      "Gym Gears - Coin on Beam Above Entrance Weightlifting Area #2": 60300132,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #1": 60300134,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #2": 60300139,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #3": 60300152,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #4": 60300135,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #5": 60300140,
-      "Gym Gears - Coin on 20 Tons Block Towards Bunny #6": 60300153,
+      "Gym Gears - Coin on Left Side Steps in Main Area #2": 60300102,
+      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #1": 60300105,
+      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #2": 60300111,
+      "Gym Gears - Coin on Left Side Steps 20 Tons Block in Main Area #3": 60300118,
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #1": 60300109,
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #2": 60300115,
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #3": 60300123,
@@ -275,7 +201,87 @@
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #21": 60300174,
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #22": 60300170,
       "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #23": 60300175,
-      "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #24": 60300179,
+      "Gym Gears - Coin on 20 Tons Block Stairway to Upper Area #24": 60300179
+    },
+    "checkpoints": {
+      "Gym Gears - Checkpoint Halfway to Upper Area": 60900350
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Gym Gears - Jump or Expert 2 Boost": {
+    "level": "Gym Gears",
+    "sublevel": "Gym Gears",
+    "gears": {
+      "Gym Gears - Gear - Back Left Corner of Main Area": 60100001
+    },
+    "bunnies": {
+      "Gym Gears - Bunny - Back of Main Area": 60200001
+    },
+    "safes": {},
+    "chests": {},
+    "coinbags": {
+      "Gym Gears - Coin Bag on Broken Pillar in Ultra Chad Room": 60300103
+    },
+    "coins": {
+      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #1": 60300104,
+      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #2": 60300110,
+      "Gym Gears - Coin on 20 Tons Block Near Hat in Entrance Weightlifting Area #3": 60300117,
+      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #1": 60300107,
+      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #2": 60300113,
+      "Gym Gears - Coin on Left Back 20 Tons Block in Main Area #3": 60300120,
+      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #1": 60300106,
+      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #2": 60300112,
+      "Gym Gears - Coin on Left Center 20 Tons Block in Main Area #3": 60300119,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #1": 60300134,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #2": 60300139,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #3": 60300152,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #4": 60300135,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #5": 60300140,
+      "Gym Gears - Coin on 20 Tons Block Towards Bunny #6": 60300153
+    },
+    "checkpoints": {
+      "Gym Gears - Checkpoint Near Bunny": 60900360
+    },
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Gym Gears - Jump or Expert 3 Boost": {
+    "level": "Gym Gears",
+    "sublevel": "Gym Gears",
+    "gears": {
+      "Gym Gears - Gear - Beam Above Entrance Weightlifting Area": 60100000,
+      "Gym Gears - Gear - Highest Point": 60100005,
+      "Gym Gears - Gear - Alcove Above Entrance to Main Area": 60100002,
+      "Gym Gears - Gear - Ultra Chad Room": 60100004
+    },
+    "bunnies": {
+      "Gym Gears - Bunny - On Center Pillar": 60200000,
+      "Gym Gears - Bunny - Ultra Chad Room": 60200002
+    },
+    "safes": {},
+    "chests": {
+      "Gym Gears - Chest on Beam Above Main Area": 60300208,
+      "Gym Gears - Chest on 20 Tons Block in Alcove Above Entrance to Main Area": 60300189
+    },
+    "coinbags": {
+      "Gym Gears - Coin Bag on Beam Above Main Area #1": 60300224,
+      "Gym Gears - Coin Bag on Beam Above Main Area #2": 60300225,
+      "Gym Gears - Coin Bag on 20 Tons Block in Alcove Above Entrance to Main Area #1": 60300177,
+      "Gym Gears - Coin Bag on 20 Tons Block in Alcove Above Entrance to Main Area #2": 60300183,
+      "Gym Gears - Coin Bag on Pillar in Ultra Chad Room": 60300116
+    },
+    "coins": {
+      "Gym Gears - Coin on Beam Above Entrance Weightlifting Area #1": 60300130,
+      "Gym Gears - Coin on Beam Above Entrance Weightlifting Area #2": 60300132,
       "Gym Gears - Coin on Upper Area Stairway #1": 60300185,
       "Gym Gears - Coin on Upper Area Stairway #2": 60300190,
       "Gym Gears - Coin on Upper Area Stairway #3": 60300194,
@@ -336,10 +342,7 @@
       "Gym Gears - Coin on 20 Tons Block in Alcove Above Entrance to Main Area #11": 60300188,
       "Gym Gears - Coin on 20 Tons Block in Alcove Above Entrance to Main Area #12": 60300191
     },
-    "checkpoints": {
-      "Gym Gears - Checkpoint Near Bunny": 60900360,
-      "Gym Gears - Checkpoint Halfway to Upper Area": 60900350
-    },
+    "checkpoints": {},
     "cheeses": {},
     "hats": {
       "Syringe Hat": 60700017,
@@ -349,7 +352,28 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Gym Gears - Bunny - Ultra Chad Room": "X1/J2"
+      "Gym Gears - Bunny - Ultra Chad Room": "X1+J1 | J2"
     }
+  },
+  "Gym Gears - Hidden Coins": {
+    "level": "Gym Gears",
+    "sublevel": "Gym Gears",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
+      "Gym Gears - Coin Inside Entrance Pillar": 60300005,
+      "Gym Gears - Coin Inside Entrance Weightlifting Area Exit Hallway Pillar #1": 60300018,
+      "Gym Gears - Coin Inside Entrance Weightlifting Area Exit Hallway Pillar #2": 60300026
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {},
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
   }
 }

@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 
 from Options import (Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText,
-                     StartInventoryPool)
+                     StartInventoryPool, OptionSet)
+from .items import TRAPS
 
 
 # In this file, we define the options the player can pick.
@@ -68,14 +69,24 @@ class ExpertLevel(Range):
     range_end = 3
     default = 0
 
-class IncludeOutOfBounds(Toggle):
+class IncludeOutOfBounds(Choice):
     """
-    Adds collectables that exist out-of-bounds and logic to reach areas by clipping through walls.
+    Adds out-of-bounds logic.
 
-    Logic and what this entails differs by expert level.
-    On expert 0, this only affects certain coins that are hidden within level geometry but do not require clipping.
+    Barely: Adds coins that exist barely out-of-bounds but are collectable by bumping into certain floors/walls.
+    Full: Adds logic to fully clip in/out of bounds in various places, depending on expert level. Same as Barely for Expert 0.
     """
     display_name = "Include Out-Of-Bounds"
+
+    option_none = 0
+    option_barely = 1
+    option_full = 2
+
+    alias_off = option_none
+    alias_hidden_coins = option_barely
+    alias_on = option_full
+
+    default = option_none
 
 class ExtraDemoCollectables(Toggle):
     """
@@ -517,6 +528,12 @@ class RingLink(Toggle):
     """
     display_name = "Ring Link"
 
+class TrapLink(Toggle):
+    """
+    Whether your received traps are linked to other players.
+    """
+    display_name = "Trap Link"
+
 class PurchaseRebatePercent(Range):
     """
     When you die, the coins you lose are added to a secret number that causes coin bags, chests, and safes to give more money until you are reimbursed.
@@ -539,6 +556,24 @@ class EasyAlienMosk(Toggle):
 
     display_name = "Easy Alien Mosk"
 
+class TrapFillPercent(Range):
+    """
+    What percentage of filler items will be replaced by traps.
+    """
+    display_name = "Trap Fill Percent"
+    range_start = 0
+    range_end = 100
+    default = 0
+
+class EnabledTraps(OptionSet):
+    """
+    Which trap types are enabled.
+    """
+    display_name = "Enabled Traps"
+    valid_keys = sorted(TRAPS)
+    default = sorted(TRAPS)
+
+
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
 # This is in the format "option_name_in_snake_case: OptionClassName".
 @dataclass
@@ -552,6 +587,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     death_link: DeathLink
     death_link_amnesty: DeathLinkAmnesty
     ring_link: RingLink
+    trap_link: TrapLink
     purchase_rebate_percent: PurchaseRebatePercent
     open_grannys_island: OpenGrannysIsland
     locked_morios_lab: LockedMoriosLab
@@ -593,6 +629,8 @@ class YellowTaxiOptions(PerGameCommonOptions):
     funny_faces: FunnyFaces
     easy_alien_mosk: EasyAlienMosk
     start_inventory_from_pool: StartInventoryPool
+    trap_fill_percent: TrapFillPercent
+    enabled_traps: EnabledTraps
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -652,6 +690,14 @@ option_groups = [
         [
             PurchaseRebatePercent,
             EasyAlienMosk,
+        ],
+    ),
+    OptionGroup(
+        "Trap Options",
+        [
+            TrapLink,
+            TrapFillPercent,
+            EnabledTraps,
         ],
     ),
     OptionGroup(

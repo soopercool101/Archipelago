@@ -71,8 +71,7 @@
     "connections": {
       "Granny's Island - Starting Area": "",
       "Granny's Island - Pipe Area": "J1/B1",
-      "Granny's Island - Main Area": "OGI",
-      "Granny's Island - Starting Area": "OGI"
+      "Granny's Island - Main Area": "OGI"
     },
     "subwarps": {
       "Granny's Island - Morio's Lab Back Door": ["Morio's Lab - Ground Floor", "LabKey"]
@@ -305,15 +304,15 @@
       "Granny's Island - Expert 1 High Ground": "X1/J1/B1/GP",
       "Granny's Island - Expert 2 High Ground": "X2/J1/B1/GP",
       "Granny's Island - High Ground": "J1/B1/GP",
-      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J2+GP",
+      "Granny's Island - Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J1 | X3+B1+GP",
       "Granny's Island - Arch Near Construction Site": "B1 | GP+J1",
-      "Granny's Island - Ocean Pillar": "B1 | GP+OS | X2+GP+J1",
+      "Granny's Island - Ocean Pillar": "B1 | X2/GP & OS | X2+J1 & X3/GP",
       "Granny's Island - First Island Towards Sewer": "B1 | GP+J1+OS | X1+GP",
       "Granny's Island - Second Island Towards Sewer": "B1 & X2/OS/GP/J1 | X1+GP+OS",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
-      "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP+J1 | X1+GP+J2",
-      "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+B1+GP | X3+B1+J1",
-      "Granny's Island - Crash Again Roof": "X2+B2+GP | X3+B1+GP | GP+OS+B1",
+      "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP+J1 | X1+GP+J2 | X3+J1",
+      "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+GP & X3/B1 | X3+J1",
+      "Granny's Island - Crash Again Roof": "X2+B2+GP | X3+GP+B1 | GP+OS+B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X2+B2+J1 | X2+B1+GP",
       "Morio's Lab - Ground Floor Propeller": "X1+NSAR+GP+LabKey",
       "Law Firm - Ledges": "X1+NSAR+GP",
@@ -329,12 +328,12 @@
     "warps": {
       "Granny's Island - Gym Gears Entrance": ["Gym Gears - Starting Area", "PortalGymGears+GymKey"],
       "Granny's Island - Poop House": ["Fecal Matters - Starting Area", "PortalFecalMatters+Doggo"],
-      "Granny's Island - Mosk's Rocket Entrance": ["Mosk's Rocket - Starting Area", "Rocket & J2/B1/GP | X1+Rocket+J1"]
+      "Granny's Island - Mosk's Rocket Entrance": ["Mosk's Rocket - Starting Area", "Rocket & X2/J2/B1/GP | X1+Rocket+J1"]
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP",
-      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | X1/B1 & J1",
-      "Granny's Island - Coin Bag on Pillar Towards Sewer": "B1/GP",
+      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | X1/B1 & J1 | X1+B2 | X2+B1",
+      "Granny's Island - Coin Bag on Pillar Towards Sewer": "X2/B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
       "Granny's Island - Gear - Inside Spin Blocks": "X3/SP",
       "Granny's Island - Coin Bag on Brown Cliffside Cabin": "X1/J1/GP",
@@ -768,7 +767,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Granny's Island - In the Sky": "X1/J1 & B2 | X1/B1 & GP | X3+B1+J1+GL"
+      "Granny's Island - In the Sky": "X1/J1 & B2 | X1/B1 & GP | X2+J1+B1 | X3 & B1/J1"
     },
     "subwarps": {},
     "warps": {},
@@ -793,7 +792,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Granny's Island - Gear - In the Clouds": "B1 & GP/J1 | X2+J1"
+      "Granny's Island - Gear - In the Clouds": "B1 & GP/J1 | X2+J1 | X3+B1"
     }
   },
   "Granny's Island - Top of Rocket": {
@@ -819,8 +818,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Granny's Island - First Island Towards Sewer": "B1",
-      "Granny's Island - Tree on Second Island Towards Sewer": "B1+GP"
+      "Granny's Island - First Island Towards Sewer": "Rocket+B1",
+      "Granny's Island - Tree on Second Island Towards Sewer": "Rocket+B1+GP"
     },
     "subwarps": {},
     "warps": {},
@@ -1389,7 +1388,7 @@
     },
     "warps": {},
     "specialrules": {
-      "Pizza Oven - Gear": "B1 & X1/J1 | X2+NSAR+GP+J1"
+      "Pizza Oven - Gear": "B1 & X1/J1 | X2+NSAR+GP+J1 | X3+J1"
     }
   },
   "Pizza Oven - Pillar": {
@@ -1458,7 +1457,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
-      "Morio's Lab - Ground Floor Wrenches": "B1/J2",
+      "Morio's Lab - Ground Floor Second Wrench": "B1/J2",
       "Morio's Lab - Second Floor": "J1/B1",
       "Morio's Lab - Fifth Floor Crash Test Area": "X2+B2+FGU | B2+J2+FGU"
     },
@@ -1498,7 +1497,7 @@
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Ground Floor Wrenches": {
+  "Morio's Lab - Ground Floor First Wrench": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
@@ -1511,7 +1510,28 @@
       "Morio's Lab - Coin on Ground Floor Wrench #2": 300602,
       "Morio's Lab - Coin on Ground Floor Wrench #3": 300601,
       "Morio's Lab - Coin on Ground Floor Wrench #4": 300600,
-      "Morio's Lab - Coin on Ground Floor Wrench #5": 300599,
+      "Morio's Lab - Coin on Ground Floor Wrench #5": 300599
+    },
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Morio's Lab - Ground Floor Second Wrench": "J1",
+      "Morio's Lab - Ground Floor": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Ground Floor Second Wrench": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {
       "Morio's Lab - Coin on Ground Floor Wrench #6": 300618,
       "Morio's Lab - Coin on Ground Floor Wrench #7": 300617,
       "Morio's Lab - Coin on Ground Floor Wrench #8": 300616,
@@ -1522,8 +1542,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
+      "Morio's Lab - Ground Floor First Wrench": "",
       "Morio's Lab - Ground Floor Bolts": "J1",
-      "Morio's Lab - Ground Floor": "",
       "Morio's Lab - Ground Floor Orange Blocks": "J1+OS | J2"
     },
     "subwarps": {},
@@ -1545,7 +1565,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ground Floor Wrenches": "",
+      "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Ground Floor Orange Blocks": "X1+B1",
       "Morio's Lab - Ground Floor Bolts": "X1+B1"
     },
@@ -1597,7 +1617,9 @@
     "checkpoints": {},
     "cheeses": {},
     "hats": {},
-    "connections": {},
+    "connections": {
+      "Morio's Lab - Third Floor": "X2+B1+OOB"
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -1636,7 +1658,11 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ground Floor Orange Blocks": "X1+J1"
+      "Morio's Lab - Ground Floor Orange Blocks": "X1+J1",
+      "Morio's Lab - Fifth Floor Crash Test Area": "X3+J1",
+      "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": "SCOOB",
+      "Morio's Lab - Fourth Floor": "X3+OOB+B1",
+      "Morio's Lab - Final Floor Bunny Shortcut Lower": "X3+J1"
     },
     "subwarps": {},
     "warps": {},
@@ -1664,9 +1690,9 @@
       "Morio's Lab - Path to Morio's Room": "B1 | X2+J1",
       "Morio's Lab - Ground Floor": "",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X2+B1+J1 | X1+B2+J1 | X1+B1+J2",
-      "Morio's Lab - Second Floor Above Demo Wall": "B2",
+      "Morio's Lab - Second Floor Above Demo Wall": "B2 | X3+J1",
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
-      "Morio's Lab - Psycho Taxi Arcade Machine": "FGU"
+      "Morio's Lab - Psycho Taxi Arcade Machine": "FGU | X2+OOB+B1"
     },
     "subwarps": {},
     "warps": {
@@ -1687,7 +1713,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Second Floor": "FGU"
+      "Morio's Lab - Second Floor": "FGU | X1+OOB+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -1888,7 +1914,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Outside Morio's Room": "B1",
+      "Morio's Lab - Outside Morio's Room": "B1 | X3+J1",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
       "Morio's Lab - Third Floor Wrenches Lower": "FGU+B2",
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+B2",
@@ -1918,7 +1944,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ground Floor Wrenches": "",
+      "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Inside Morio's Room": "NHS+MorioHat | HS+MorioHat & {Morio's Wardrobe}"
     },
     "subwarps": {},
@@ -1991,7 +2017,7 @@
     "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Lower": "J1",
-      "Morio's Lab - Fourth Floor": "Spike+B1 | X2+Spike+J1",
+      "Morio's Lab - Fourth Floor": "Spike+B1 | X2+Spike+J1 | X3+J1",
       "Morio's Lab - Second Floor After True Demo Wall": ""
     },
     "subwarps": {},
@@ -2135,7 +2161,7 @@
       "Morio's Lab - Fifth Floor Crash Test Area": "B1/J1",
       "Morio's Lab - Ledge Above Maurizio's City Portal": "J1",
       "Morio's Lab - Third Floor": "Spike",
-      "Morio's Lab - Fourth Floor Spiky Cliffs": "Spike+J1 | X1+Spike+B2 | X2+B2+J2"
+      "Morio's Lab - Fourth Floor Spiky Cliffs": "X3/Spike & J1 | X1+Spike+B2 | X2+B2+J2"
     },
     "subwarps": {},
     "warps": {
@@ -2239,13 +2265,13 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1 | X3+J1+GL",
+      "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1 | X3+J1",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
       "Morio's Lab - Fourth Floor": "",
       "Morio's Lab - Second Floor": "FGU",
       "Morio's Lab - Ground Floor Lowest Bolt": "FGU",
       "Morio's Lab - Ground Floor Orange Blocks": "FGU",
-      "Morio's Lab - Ground Floor Wrenches": "FGU"
+      "Morio's Lab - Ground Floor Second Wrench": "FGU | X3+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -2264,7 +2290,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password",
+      "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password | X3+OOB+B1",
       "Morio's Lab - Dream Machine": "FGU",
       "Morio's Lab - Fifth Floor Crash Test Area": ""
     },
@@ -2331,7 +2357,8 @@
       "Morio's Lab - Final Floor": "",
       "Morio's Lab - Middle Floors 3 Golden Propellers": "Password",
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "Password",
-      "Morio's Lab - Final Floor Bunny Shortcut": "X1+B1+Password"
+      "Morio's Lab - Third Floor": "X3+NSAR+OOB+Password",
+      "Morio's Lab - Final Floor Bunny Shortcut Upper": "X1+B1 & X3/Password"
     },
     "subwarps": {},
     "warps": {},
@@ -2449,9 +2476,9 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ledge Below Tosla HQ Portal": "J1",
-      "Morio's Lab - Fifth Floor Low Pillars": "J1",
-      "Morio's Lab - Final Floor Bunny Shortcut": "X3+B1",
+      "Morio's Lab - Ledge Below Tosla HQ Portal": "J1 | X3+B1",
+      "Morio's Lab - Fifth Floor Low Pillars": "J1 | X1+B1",
+      "Morio's Lab - Final Floor Bunny Shortcut Upper": "X3+B1",
       "Morio's Lab - Fifth Floor Ruined Observatory Area": ""
     },
     "subwarps": {},
@@ -2475,7 +2502,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Final Floor": "J2 | X1+J1",
+      "Morio's Lab - Final Floor": "J2 | X1+J1 | X3+B1",
       "Morio's Lab - Ledge Above Ruined Observatory Portal": ""
     },
     "subwarps": {},
@@ -2548,7 +2575,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Fifth Floor High Pillars": "J1 | B1+X1",
+      "Morio's Lab - Fifth Floor High Pillars": "J1 | X1+B1",
       "Morio's Lab - Final Floor Pipes": "J1",
       "Morio's Lab - Final Floor Catwalk": "J2 | J1+X1",
       "Morio's Lab - Ledge Below Tosla HQ Portal": ""
@@ -2576,19 +2603,40 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Final Floor Bunny Shortcut": ""
+      "Morio's Lab - Final Floor Bunny Shortcut Upper": ""
     },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
   },
-  "Morio's Lab - Final Floor Bunny Shortcut": {
+  "Morio's Lab - Final Floor Bunny Shortcut Upper": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {},
     "bunnies": {
       "Morio's Lab - Bunny - Shortcut From Final Floor": 200002
     },
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Morio's Lab - Final Floor": "",
+      "Morio's Lab - Final Floor Bunny Shortcut Lower": "",
+      "Morio's Lab - Fifth Floor Low Pillars": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
+  "Morio's Lab - Final Floor Bunny Shortcut Lower": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {},
@@ -2603,9 +2651,12 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ground Floor Wrenches": "FGU",
+      "Morio's Lab - Final Floor Bunny Shortcut Upper": "X3+J1",
+      "Morio's Lab - Ground Floor First Wrench": "FGU",
       "Morio's Lab - Bunny Ledge": "FGU",
-      "Morio's Lab - Outside Morio's Room": "J1"
+      "Morio's Lab - Ground Floor Orange Blocks": "FGU",
+      "Morio's Lab - Outside Morio's Room": "FGU+J1",
+      "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": "SCOOB"
     },
     "subwarps": {},
     "warps": {},
@@ -2639,6 +2690,36 @@
     "warps": {},
     "specialrules": {}
   },
+  "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": {
+    "level": "Hub",
+    "sublevel": "Morio's Lab",
+    "gears": {},
+    "bunnies": {},
+    "safes": {},
+    "chests": {},
+    "coinbags": {},
+    "coins": {},
+    "checkpoints": {},
+    "cheeses": {},
+    "hats": {},
+    "connections": {
+      "Morio's Wardrobe": "X2 & X3/B1 & J1",
+      "Morio's Lab - Ground Floor Second Wrench": "",
+      "Morio's Lab - Outside Morio's Room": "",
+      "Morio's Lab - Inside Morio's Room": "",
+      "Morio's Lab - Third Floor": "",
+      "Morio's Lab - Third Floor Wrenches Lower": "",
+      "Morio's Lab - Third Floor Gear Wrench": "",
+      "Morio's Lab - Fourth Floor": "",
+      "Morio's Lab - Fourth Floor Spiky Cliffs": "",
+      "Morio's Lab - Fifth Floor Ruined Observatory Area": "",
+      "Morio's Lab - Fifth Floor Low Pillars": "",
+      "Morio's Lab - Final Floor Bunny Shortcut Lower": ""
+    },
+    "subwarps": {},
+    "warps": {},
+    "specialrules": {}
+  },
   "Morio's Lab - Ground Floor Propeller": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
@@ -2652,7 +2733,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Morio's Lab - Ground Floor Wrenches": "",
+      "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Ground Floor Lowest Bolt": "",
       "Morio's Lab - Second Floor": "",
       "Morio's Lab - Ground Floor Bolts": "B1/X1",
@@ -2660,10 +2741,10 @@
       "Morio's Lab - Bunny Ledge": "B1+X1",
       "Morio's Lab - Second Floor Above Demo Wall": "B1 | X1+J2",
       "Morio's Lab - Third Floor": "FGU",
-      "Morio's Lab - Third Floor Wrenches Lower": "B1/X2 & FGU",
-      "Morio's Lab - Third Floor Wrenches Middle": "B1+FGU",
-      "Morio's Lab - Third Floor Wrenches Upper": "B1+FGU",
-      "Morio's Lab - Third Floor Gear Wrench": "B1+FGU",
+      "Morio's Lab - Third Floor Wrenches Lower": "X2/B1 & FGU",
+      "Morio's Lab - Third Floor Wrenches Middle": "X2/B1 & FGU",
+      "Morio's Lab - Third Floor Wrenches Upper": "X2/B1 & FGU",
+      "Morio's Lab - Third Floor Gear Wrench": "X2/B1 & FGU",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1",
       "Morio's Lab - Middle Floors 3 Golden Propellers": "FGU+B1+Spike",
       "Morio's Lab - Inside Morio's Room Jump": "NHS+MorioHat+B1 | HS+MorioHat+B1 & {Morio's Wardrobe}",

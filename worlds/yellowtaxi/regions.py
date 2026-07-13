@@ -20,12 +20,21 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         ut_sort_region_counters: dict[str, int] = {}
         ut_sorted_levels: dict[str, int] = {}
         ut_sorted_level_counter: int = 0
+        include_oob_areas: bool = (
+                    world.options.include_out_of_bounds == world.options.include_out_of_bounds.option_full)
+    else:
+        include_oob_areas: bool = (
+                    world.options.include_out_of_bounds == world.options.include_out_of_bounds.option_full
+                    and world.options.expert_level >= 1)
     for reg_name in regions_json_data.keys():
         if reg_name in world.excluded_regions:
             continue
         if world.options.expert_level < 1 and "(EXPERTS ONLY)" in reg_name:
             continue
-        if not world.options.include_out_of_bounds and "out-of-bounds" in reg_name.lower():
+        if not include_oob_areas and "out-of-bounds" in reg_name.lower():
+            continue
+        if (world.options.include_out_of_bounds == world.options.include_out_of_bounds.option_none and
+                "hidden coins" in reg_name.lower()):
             continue
         reg = regions_json_data[reg_name]
         if reg["level"] not in world.included_levels and reg["level"] not in world.special_levels and reg["level"] not in world.goal_levels:

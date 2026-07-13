@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 from typing import TYPE_CHECKING, List
 
 from BaseClasses import Item, ItemClassification
@@ -114,10 +115,24 @@ ITEM_NAME_TO_ID = {
     "Psycho Taxi Cartridge": 20_01,
     "Michele": 20_02,
     # Traps
-    #"Wishlist Trap": 999_001,
+    "Burger Hat Trap": 666_000,
+    "Cutscene Trap": 666_001,
+    "Explosion Trap": 666_002,
+    "Fast Trap": 666_003,
+    "Invisible Trap": 666_004,
+    "Literature Trap": 666_005,
+    "No Hat Trap": 666_006,
+    "Phone Trap": 666_007,
+    "Pixelate Trap": 666_008,
+    "Screen Flip Trap": 666_009,
+    "Slip Trap": 666_010,
+    "Slow Trap": 666_011,
+    "Spam Trap": 666_012,
+    "Stun Trap": 666_013,
+    "Whirlpool Trap": 666_014,
 
     # Universal Tracker Only
-    "Additional Expert Logic Level": 99999_999
+    "Additional Expert Logic Level": 666_999
 }
 
 # Items should have a defined default classification.
@@ -285,6 +300,24 @@ HATS = [
     "Burger Hat"
 ]
 
+TRAPS = [
+    "Burger Hat Trap",
+    "Cutscene Trap",
+    "Explosion Trap",
+    "Fast Trap",
+    "Invisible Trap",
+    "Literature Trap",
+    "No Hat Trap",
+    "Phone Trap",
+    "Pixelate Trap",
+    "Screen Flip Trap",
+    "Slip Trap",
+    "Slow Trap",
+    "Spam Trap",
+    "Stun Trap",
+    "Whirlpool Trap",
+]
+
 # Each Item instance must correctly report the "game" it belongs to.
 # To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
 class YellowTaxiItem(Item):
@@ -298,8 +331,6 @@ def get_random_filler_item_name(world: YellowTaxiWorld) -> str:
     return get_random_filler_item_names(world, 1)[0]
 
 def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str]:
-    # TODO: ADD TRAPS
-    #if world.random.randint(0, 99) < world.options.trap_chance:
     filler = []
     weights = []
     if world.options.safesanity and world.options.hatsanity != world.options.hatsanity.option_disabled:
@@ -328,13 +359,18 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
         weights = [1, 5]
     return world.random.choices(filler, weights, k=count)
 
+def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
+    filler = []
+    weights = []
+
+    return world.random.choices(TRAPS, k=count)
+
 
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
-    # Our world class must have a create_item() function that can create any of our items by name at any time.
-    # So, we make this helper function that creates the item by name with the correct classification.
-    # Note: This function's content could just be the contents of world.create_item in world.py directly,
-    # but it seemed nicer to have it in its own function over here in items.py.
-    classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
+    if name in TRAPS:
+        classification = ItemClassification.trap
+    else:
+        classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
 
     # Don't skip balancing on required gears
     #if name == "Gear" and world.required_gears > 0:
@@ -475,6 +511,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             if hat in world.included_hats:
                 continue
             itempool.append(world.create_item(hat))
+        for trap in TRAPS:
+            itempool.append(world.create_item(trap))
         itempool += [world.create_item("1 Coin")]
         itempool += [world.create_item("10 Coins")]
         itempool += [world.create_item("25 Coins")]
@@ -497,7 +535,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                 world.hat_location_count = len(world.included_hats)
 
             # If there are more hat locations than hat items, add "bonus" hats that do not have in-game locations
-            extra_hats : int = world.hat_location_count - len(world.included_hats)
+            extra_hats : int = min(world.hat_location_count - len(world.included_hats), needed_number_of_filler_items)
 
             if world.options.hatsanity_filler_hats:
                 extra_hats = min(len(HATS) - len(world.included_hats), needed_number_of_filler_items)
@@ -517,6 +555,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                 needed_number_of_filler_items -= 1
                 world.included_hats.add("Alien Mosk (Good) Hat")
 
+        # Add hats to fill remaining hat locations, or remaining filler locations, depending
+        if world.options.hatsanity != world.options.hatsanity.option_disabled:
             # Now add random hats as needed
             if extra_hats > 0:
                 hats : list[str] = []
@@ -531,6 +571,15 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                     extra_hats -= 1
                     needed_number_of_filler_items -= 1
                     # No need to add to included hats, last place they're needed
+
+        # Add traps
+        if world.options.trap_fill_percent > 0:
+            needed_number_of_traps = math.floor((needed_number_of_filler_items * world.options.trap_fill_percent) / 100)
+
+            itempool += [world.create_item(trap) for trap
+                         in get_random_trap_names(world, needed_number_of_traps)]
+
+            needed_number_of_filler_items -= needed_number_of_traps
 
         itempool += [world.create_item(filler) for filler
                      in get_random_filler_item_names(world, needed_number_of_filler_items)]
