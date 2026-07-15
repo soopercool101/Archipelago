@@ -200,7 +200,8 @@
       "Gelatin Hat": 50700013
     },
     "connections": {
-      "Tosla Square - Medium High Buildings": "B1/J2"
+      "Tosla Square - Medium High Buildings": "B1/J2 | X3+J1",
+      "Tosla Square - High Ground": "X3+J1"
     },
     "subwarps": {},
     "warps": {},

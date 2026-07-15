@@ -12,6 +12,7 @@ from worlds.LauncherComponents import Component, Type, components
 from . import data_loader, items, regions, locations, rules, web_world
 from . import options as taxi_options
 from . import settings as taxi_settings
+from .items import TRAPS
 
 
 class YellowTaxiWorld(World):
@@ -35,6 +36,8 @@ class YellowTaxiWorld(World):
         "Move": { "Progressive Jump", "Progressive Boost" },
         "Golden Spring": { "Golden Spring Blueprints" },
         "Golden Propeller": { "Golden Propeller Blueprints" },
+        "Trap": TRAPS,
+        "Traps": TRAPS,
     }
 
     # Universal Tracker stuff
@@ -271,24 +274,27 @@ class YellowTaxiWorld(World):
             if self.options.expert_level < 3:
                 self.excluded_regions += ["Morio's Lab - Fourth Floor Spiky Bunny Alcove"]
         if not self.has_password_access:
-            self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
-                                      "Morio's Lab - Fifth Floor Golden Propeller",
-                                      "Morio's Lab - Ledge Above Ruined Observatory Portal",
-                                      "Morio's Lab - Ledge Below Tosla HQ Portal",
-                                      "Morio's Lab - Fifth Floor Low Pillars",
-                                      "Morio's Lab - Fifth Floor High Pillars",
-                                      "Morio's Lab - Final Floor",
-                                      "Morio's Lab - Final Floor Pipes",
-                                      "Morio's Lab - Final Floor Bunny Shortcut Upper",
-                                      "Morio's Lab - Final Floor Bunny Shortcut Lower",
-                                      "Morio's Lab - Final Floor Catwalk"]
-            if self.options.expert_level == 0:
-                # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
-                self.excluded_regions += [
-                    "Morio's Lab - Second Floor Falling From Shortcut Pipe",
-                    "Morio's Lab - Second Floor Access to Shortcut Pipe",
-                    "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
-                ]
+            if self.options.expert_level <= 0 or (self.options.include_out_of_bounds !=
+                                                  self.options.include_out_of_bounds.option_full
+                                                  and self.options.expert_level < 3):
+                self.excluded_regions += ["Morio's Lab - Fifth Floor Ruined Observatory Area",
+                                          "Morio's Lab - Fifth Floor Golden Propeller",
+                                          "Morio's Lab - Ledge Above Ruined Observatory Portal",
+                                          "Morio's Lab - Ledge Below Tosla HQ Portal",
+                                          "Morio's Lab - Fifth Floor Low Pillars",
+                                          "Morio's Lab - Fifth Floor High Pillars",
+                                          "Morio's Lab - Final Floor",
+                                          "Morio's Lab - Final Floor Pipes",
+                                          "Morio's Lab - Final Floor Bunny Shortcut Upper",
+                                          "Morio's Lab - Final Floor Bunny Shortcut Lower",
+                                          "Morio's Lab - Final Floor Catwalk"]
+                if self.options.expert_level <= 0:
+                    # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
+                    self.excluded_regions += [
+                        "Morio's Lab - Second Floor Falling From Shortcut Pipe",
+                        "Morio's Lab - Second Floor Access to Shortcut Pipe",
+                        "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
+                    ]
         if not "Tosla's Offices" in self.included_levels and "Tosla's Offices" in self.goal_levels:
             # Remove employees-only completely since the hat will not be progression in this case
             # Makes generator less mad
@@ -411,6 +417,7 @@ class YellowTaxiWorld(World):
             "death_link",
             "death_link_amnesty",
             "ring_link",
+            "trap_link",
             "goal",
             "open_grannys_island",
             "locked_morios_lab",

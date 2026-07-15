@@ -129,7 +129,8 @@ ITEM_NAME_TO_ID = {
     "Slow Trap": 666_011,
     "Spam Trap": 666_012,
     "Stun Trap": 666_013,
-    "Whirlpool Trap": 666_014,
+    "Timer Trap": 666_014,
+    "Whirlpool Trap": 666_015,
 
     # Universal Tracker Only
     "Additional Expert Logic Level": 666_999
@@ -315,6 +316,7 @@ TRAPS = [
     "Slow Trap",
     "Spam Trap",
     "Stun Trap",
+    "Timer Trap",
     "Whirlpool Trap",
 ]
 
@@ -363,7 +365,7 @@ def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
     filler = []
     weights = []
 
-    return world.random.choices(TRAPS, k=count)
+    return world.random.choices(sorted(world.options.enabled_traps.value), k=count)
 
 
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
@@ -571,7 +573,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                     # No need to add to included hats, last place they're needed
 
         # Add traps
-        if world.options.trap_fill_percent > 0:
+        if world.options.trap_fill_percent > 0 and len(world.options.enabled_traps.value) > 0:
             needed_number_of_traps = math.floor((needed_number_of_filler_items * world.options.trap_fill_percent) / 100)
 
             itempool += [world.create_item(trap) for trap

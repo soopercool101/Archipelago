@@ -155,7 +155,9 @@
     "gears": {
       "Gym Gears - Gear - Top of 20 Tons Block Stairway to Upper Area": 60100003
     },
-    "bunnies": {},
+    "bunnies": {
+      "Gym Gears - Bunny - Back of Main Area": 60200001
+    },
     "safes": {},
     "chests": {
       "Gym Gears - Chest on 20 Tons Block in Entrance Weightlifting Area": 60300138,
@@ -211,7 +213,9 @@
     "connections": {},
     "subwarps": {},
     "warps": {},
-    "specialrules": {}
+    "specialrules": {
+      "Gym Gears - Bunny - Back of Main Area": "X3/J1/B1"
+    }
   },
   "Gym Gears - Jump or Expert 2 Boost": {
     "level": "Gym Gears",
@@ -219,9 +223,7 @@
     "gears": {
       "Gym Gears - Gear - Back Left Corner of Main Area": 60100001
     },
-    "bunnies": {
-      "Gym Gears - Bunny - Back of Main Area": 60200001
-    },
+    "bunnies": {},
     "safes": {},
     "chests": {},
     "coinbags": {
@@ -352,7 +354,7 @@
     "subwarps": {},
     "warps": {},
     "specialrules": {
-      "Gym Gears - Bunny - Ultra Chad Room": "X1+J1 | J2"
+      "Gym Gears - Bunny - Ultra Chad Room": "X1+J1 | X3/J2"
     }
   },
   "Gym Gears - Hidden Coins": {

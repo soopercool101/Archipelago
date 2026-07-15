@@ -147,7 +147,7 @@
     "hats": {},
     "connections": {
       "Mosk's Rocket - Gym Gears Area": "",
-      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2",
+      "Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area": "B1 | X1+J2 | X2+J1",
       "Mosk's Rocket - Fecal Matters Area": "J1/B2 | X3+B1"
     },
     "subwarps": {
@@ -310,7 +310,8 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Lab Memories - First Step": "J1+Spike"
+      "Lab Memories - First Step": "J1+Spike",
+      "Lab Memories - High Ground": "X3+J1"
     },
     "subwarps": {
       "Lab Memories - Mosk's Rocket Portal": ["Mosk's Rocket - Starting Area", ""]
@@ -401,7 +402,9 @@
     "hats": {
       "Robo Taxi Skin": 160700049
     },
-    "connections": {},
+    "connections": {
+      "Lab Memories - First Step": "X3"
+    },
     "subwarps": {},
     "warps": {},
     "specialrules": {}
@@ -438,7 +441,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Welcoming Climbs - First Gear Area": "B2 & X1/J1 | X3+B1+J1+GL"
+      "Welcoming Climbs - First Gear Area": "B2 & X1/J1 | X3+J1"
     },
     "subwarps": {
       "Welcoming Climbs - Mosk's Rocket Portal": ["Mosk's Rocket - Starting Area", ""]
@@ -467,7 +470,7 @@
       "Dentures Hat": 160700039
     },
     "connections": {
-      "Welcoming Climbs - Second Gear Area": "B2 & X2/J1"
+      "Welcoming Climbs - Second Gear Area": "B2 & X2/J1 | X3+J1+B1"
     },
     "subwarps": {},
     "warps": {},
@@ -743,7 +746,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Stealthy - Halfway Up": "B1 & X2/J1 | B2"
+      "Stealthy - Halfway Up": "B1 & X2/J1 | B2 | X3+J1"
     },
     "subwarps": {
       "Stealthy - Mosk's Rocket Portal": ["Mosk's Rocket - Tosla's Offices Area", ""]
@@ -899,7 +902,7 @@
     "hats": {},
     "connections": {
       "Costipation - Roadway Gear Area": "B1 | X1+J1",
-      "Costipation - Island Gear Area": "B2 | X2+B1",
+      "Costipation - Island Gear Area": "B2 | X2+B1 | X3+J1",
       "Costipation - Hat Area": "B1 | X3+J1"
     },
     "subwarps": {
@@ -1029,7 +1032,7 @@
     },
     "warps": {},
     "specialrules": {
-      "Smelly Slimes - Gear - Pipe Above Entrance": "B2 & X2/J1 | X2+B1 & {Smelly Slimes - Exit Area}"
+      "Smelly Slimes - Gear - Pipe Above Entrance": "B2 & X2/J1 | X2+B1 & {Smelly Slimes - Exit Area} | X3+J1"
     }
   },
   "Smelly Slimes - Sidebars by Entrance": {

@@ -311,14 +311,14 @@
     "connections": {
       "Pizza Time - Oil Pumps": "SP",
       "Pizza Time - House on First Island": "X3/J1/B1",
-      "Pizza Time - Spires Near Start": "B1 & X2/J1",
+      "Pizza Time - Spires Near Start": "B1 & X2/J1 | X2+J1",
       "Pizza Time - Accessible Ledges": "X1/J1/B1",
       "Pizza Time - Less Accessible Ledges": "X2/J1/B1",
       "Pizza Time - Orange Block Bridge": "OS",
       "Pizza Time - Ledge Left of Final Roundabout": "X1+NHPR | X2/J1/B1",
       "Pizza Time - High Ground": "J1/B1",
       "Pizza Time - Bunny Island Upper": "NOS+B2+J2 | X1+J2 | X2+J1",
-      "Pizza Time - Floating Orange Island": "B2 & X1/OS | B1+J1+OS | NOS+B2+J1"
+      "Pizza Time - Floating Orange Island": "B2 & X1/OS | B1+J1+OS | NOS+B2+J1 | X2+B1 & NOS/X3"
     },
     "subwarps": {
       "Pizza Time - Hat World Entrance": ["Pizza Time Hat World", ""],
@@ -575,6 +575,7 @@
       "Pizza Time - Coin Bag on House Near Bunny Arch": 20300349,
       "Pizza Time - Coin Bag on Morco's Pizza Roof": 20300412,
       "Pizza Time - Coin Bag on House Near Morco's Pizza": 20300396,
+      "Pizza Time - Coin Bag on Roof Left Before Final Roundabout": 20300586,
       "Pizza Time - Coin Bag on Roof Left in Final Roundabout": 20300589,
       "Pizza Time - Coin Bag on Roof Right in Final Roundabout": 20300590,
       "Pizza Time - Coin Bag on Roof Before 600° Oven": 20300393
@@ -627,7 +628,6 @@
       "Pizza Time - Coin on Morco's Pizza Roof #4": 20300338,
       "Pizza Time - Coin on Morco's Pizza Roof #5": 20300350,
       "Pizza Time - Coin on Morco's Pizza Roof #6": 20300392,
-      "Pizza Time - Coin on Roof Left Before Final Roundabout": 20300586,
       "Pizza Time - Coin on Mario's Pizza #1": 20300608,
       "Pizza Time - Coin on Mario's Pizza #2": 20300615,
       "Pizza Time - Coin Behind Mountain on the Pizza King's Path #1": 20300490,
@@ -728,7 +728,7 @@
     "cheeses": {},
     "hats": {},
     "connections": {
-      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1+J1 | X3+B1+GL",
+      "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1 & X3/J1 | X3+J1",
       "Pizza Time - Orange Block Bridge": "X3 & B1/J1"
     },
     "subwarps": {},
