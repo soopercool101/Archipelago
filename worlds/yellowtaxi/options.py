@@ -444,7 +444,7 @@ class ShuffleGlide(Toggle):
     """
     Shuffles the ability to stall in midair by tapping the gas button into the item pool and adds a new location for talking to a PICI in Morio's Lab.
 
-    This item is currently only logically required in Expert Level 3. As such, it will be classified as "Useful" for lower difficulties.
+    This item is not logically required for any locations at this time, and as such will be considered "Useful"
     """
 
     display_name = "Shuffle Glide"
@@ -534,12 +534,19 @@ class TrapLink(Toggle):
     """
     display_name = "Trap Link"
 
+class TrapLinkUsesWhitelist(Toggle):
+    """
+    If true, Trap Link will only receive traps from the "Enabled Traps" list.
+    If false, Trap Link can receive any valid trap, including some that are exclusive to Trap Links from other games.
+    """
+    display_name = "Trap Link Uses Whitelist"
+
 class PurchaseRebatePercent(Range):
     """
-    When you die, the coins you lose are added to a secret number that causes coin bags, chests, and safes to give more money until you are reimbursed.
+    When you die, the coins you lose are added to a secret counter that causes coin bags, chests, and safes to give more money until you are reimbursed.
 
-    This setting allows any in-game purchases to also increment this number by a % of the cost, allowing you to more easily regain spent coins.
-    Note that this value is saved per-session, restarting the game will result in it being reset to 0!
+    This setting allows any in-game purchases to also increment this counter by a % of the cost, allowing you to more easily regain spent coins.
+    Note that the counter is saved per-session, restarting the game will result in it being reset to 0!
     """
     display_name = "Purchase Rebate %"
     range_start = 0
@@ -588,6 +595,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     death_link_amnesty: DeathLinkAmnesty
     ring_link: RingLink
     trap_link: TrapLink
+    trap_link_uses_whitelist: TrapLinkUsesWhitelist
     purchase_rebate_percent: PurchaseRebatePercent
     open_grannys_island: OpenGrannysIsland
     locked_morios_lab: LockedMoriosLab
@@ -696,6 +704,7 @@ option_groups = [
         "Trap Options",
         [
             TrapLink,
+            TrapLinkUsesWhitelist,
             TrapFillPercent,
             EnabledTraps,
         ],

@@ -234,8 +234,11 @@ class YellowTaxiWorld(World):
         # Exclude unreachable hub areas
         if self.has_rocket_access:
             self.included_levels += ["Mosk's Rocket"]
-        elif not (self.options.expert_level >= 3 and self.has_golden_propeller_access):
-            self.excluded_regions += ["Granny's Island - Top of Rocket"]
+        elif not (self.options.expert_level >= 3):
+            self.excluded_regions += [
+                "Granny's Island - Coins on Top of Rocket",
+                "Granny's Island - Gear on Top of Rocket",
+            ]
 
         # Gela-Toni normally only appears after Bomboss is defeated
         if "Bombeach" not in self.included_levels:
@@ -484,6 +487,9 @@ class YellowTaxiWorld(World):
 
         # Start location
         slot_data["lab_start"] = self.lab_start
+
+        if self.options.trap_link_uses_whitelist:
+            slot_data["trap_link_whitelist"] = sorted(self.options.enabled_traps.value)
 
         return slot_data
 

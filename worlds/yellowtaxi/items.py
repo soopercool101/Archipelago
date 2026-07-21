@@ -400,9 +400,6 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         if world.options.pizza_wheels == world.options.pizza_wheels.option_progression:
             classification = ItemClassification.progression
 
-    if name == "Glide" and world.options.expert_level >= 3:
-        classification = ItemClassification.progression | ItemClassification.useful
-
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
 
