@@ -451,6 +451,7 @@ class YellowTaxiWorld(World):
             "remove_goal_portal_locations",
             "remove_post_goal_portals",
             "funny_faces",
+            "easy_alien_mosk",
             # Only used by UT
             "expert_level",
             "include_out_of_bounds",
