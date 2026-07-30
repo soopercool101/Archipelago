@@ -93,8 +93,6 @@ class RuleFactory:
             target = self.world.get_location(target_name)
         except KeyError:
             return
-        if target is None:
-            return
         try:
             rule = self.build_rule(rule_expr)
         except RuleFactory.YTGVLogicException as exception:
@@ -110,8 +108,6 @@ class RuleFactory:
         try:
             target = self.world.get_entrance(entrance_name)
         except KeyError:
-            return
-        if target is None:
             return
         try:
             rule = self.build_rule(rule_expr)
