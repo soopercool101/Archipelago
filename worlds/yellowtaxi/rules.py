@@ -105,6 +105,8 @@ class RuleFactory:
         self.assign_entrance_rule(f"{region_from} -> {region_to}", rule_expr)
 
     def assign_entrance_rule(self, entrance_name: str, rule_expr: str):
+        if rule_expr is None or rule_expr == "":
+            return
         try:
             target = self.world.get_entrance(entrance_name)
         except KeyError:
