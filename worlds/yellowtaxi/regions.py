@@ -74,28 +74,41 @@ def connect_regions(world: YellowTaxiWorld) -> None:
         reg = regions_json_data[region.name]
 
         # Connect basic connections
-        for connect in reg["connections"].items():
-            try:
-                connecting_region = world.get_region(connect[0])
-            except KeyError:
-                continue
-            region.connect(connecting_region, f"{region.name} -> {connecting_region.name}")
+        if "connections" in reg.keys():
+            for connect in reg["connections"].items():
+                try:
+                    connecting_region = world.get_region(connect[0])
+                except KeyError:
+                    continue
+                region.connect(connecting_region, f"{region.name} -> {connecting_region.name}")
 
         # Connect subwarps
         # TODO: Entrance Rando
-        for subwarp in reg["subwarps"].items():
-            try:
-                connecting_region = world.get_region(subwarp[1][0])
-            except KeyError:
-                continue
-            region.connect(connecting_region, subwarp[0])
+        if "subwarps" in reg.keys():
+            for subwarp in reg["subwarps"].items():
+                try:
+                    connecting_region = world.get_region(subwarp[1][0])
+                except KeyError:
+                    continue
+                region.connect(connecting_region, subwarp[0])
 
         # Connect full warps
         # TODO: Entrance Rando
-        for warp in reg["warps"].items():
-            try:
-                connecting_region = world.get_region(warp[1][0])
-            except KeyError:
-                continue
-            region.connect(connecting_region, warp[0])
+        if "warps" in reg.keys():
+            for warp in reg["warps"].items():
+                try:
+                    connecting_region = world.get_region(warp[1][0])
+                except KeyError:
+                    continue
+                region.connect(connecting_region, warp[0])
 
+
+        # Connect Mori-O-Trons
+        # TODO: Entrance Rando
+        if "moriotrons" in reg.keys() and (world.options.expert_level >= 2 or world.using_ut):
+            for moriotron in reg["moriotrons"].items():
+                try:
+                    connecting_region = world.get_region(moriotron[1])
+                except KeyError:
+                    continue
+                region.connect(connecting_region, moriotron[0])

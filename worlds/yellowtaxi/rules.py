@@ -34,24 +34,32 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
         reg = regions_json_data[region_name]
 
         # Basic connections
-        for connect, rule in reg["connections"].items():
-            if rule:
-                rf.assign_connection_rule(region_name, connect, rule)
+        if "connections" in reg.keys():
+            for connect, rule in reg["connections"].items():
+                if rule:
+                    rf.assign_connection_rule(region_name, connect, rule)
 
         # Subwarps
-        for subwarp, connect_and_rule in reg["subwarps"].items():
-            rule = connect_and_rule[1]
-            if rule:
-                rf.assign_entrance_rule(subwarp, rule)
+        if "subwarps" in reg.keys():
+            for subwarp, connect_and_rule in reg["subwarps"].items():
+                rule = connect_and_rule[1]
+                if rule:
+                    rf.assign_entrance_rule(subwarp, rule)
 
         # Warps
-        for warp, connect_and_rule in reg["warps"].items():
-            rule = connect_and_rule[1]
-            if rule:
-                rf.assign_entrance_rule(warp, rule)
+        if "warps" in reg.keys():
+            for warp, connect_and_rule in reg["warps"].items():
+                rule = connect_and_rule[1]
+                if rule:
+                    rf.assign_entrance_rule(warp, rule)
+
+        # Mori-O-Trons
+        if world.options.expert_level >= 1 and "moriotrons" in reg.keys():
+            for moriotron, connect in reg["moriotrons"].items():
+                rf.assign_entrance_rule(moriotron, "X2")
 
         # Cheeses
-        if world.options.cheesesanity:
+        if world.options.cheesesanity and "cheeses" in reg.keys():
             for cheese in reg["cheeses"]:
                 try:
                     cheese_loc = world.get_location(cheese)
@@ -60,8 +68,9 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
                     break # If cheese doesn't exist here, region has no items
 
         # Special rules
-        for location, rule in reg["specialrules"].items():
-            rf.assign_location_rule(location, rule)
+        if "specialrules" in reg.keys():
+            for location, rule in reg["specialrules"].items():
+                rf.assign_location_rule(location, rule)
 
 def set_completion_condition(world: YellowTaxiWorld) -> None:
     world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
@@ -485,6 +494,8 @@ class RuleFactory:
                         adjusted_bunny_level = "Fecal Matters"
                     case "FA":
                         adjusted_bunny_level = "Flushed Away"
+                    case "MC":
+                        adjusted_bunny_level = "Maurizio's City"
                 return Has(f"Bunny ({adjusted_bunny_level})", 3)
         if token.startswith("X"):
             expert_level = int(token[1:])

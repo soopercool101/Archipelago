@@ -43,49 +43,52 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         locations : Dict[str, int | None] = {}
         # Time Trial Levels all end with "!", skip them when time trial gears aren't shuffled
-        if world.using_ut or world.options.time_trial_gears or not level.endswith("!"):
+        if "gears" in reg.keys() and (world.using_ut or world.options.time_trial_gears or not level.endswith("!")):
             locations = reg["gears"]
             world.num_gears += len(locations)
-        if world.options.bunnysanity:
-            locations = locations | reg["bunnies"]
-            world.num_bunnies += len(reg["bunnies"])
-        elif "Mosk's Rocket" in world.included_levels: # Non-bunnysanity still needs to track bunnies if rocket is in
-            for bunny in reg["bunnies"]:
-                bunny_level : str = level
-                if level == "Hub":
-                    bunny_level = "Morio's Lab"
-                region.add_event(f"Event: {bunny}", f"Bunny ({bunny_level})",
-                                 location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-                world.num_bunnies += 1
+        if "bunnies" in reg.keys():
+            if world.options.bunnysanity:
+                locations = locations | reg["bunnies"]
+                world.num_bunnies += len(reg["bunnies"])
+            elif "Mosk's Rocket" in world.included_levels: # Non-bunnysanity still needs to track bunnies for rocket
+                for bunny in reg["bunnies"]:
+                    bunny_level : str = level
+                    if level == "Hub":
+                        bunny_level = "Morio's Lab"
+                    region.add_event(f"Event: {bunny}", f"Bunny ({bunny_level})",
+                                     location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
+                    world.num_bunnies += 1
 
-        if world.options.checkpointsanity or world.using_ut:
+        if "checkpoints" in reg.keys() and (world.options.checkpointsanity or world.using_ut):
             locations = locations | reg["checkpoints"]
-        if world.options.safesanity or world.using_ut:
+        if "safes" in reg.keys() and (world.options.safesanity or world.using_ut):
             locations = locations | reg["safes"]
-        if world.options.chestsanity or world.using_ut:
+        if "chests" in reg.keys() and (world.options.chestsanity or world.using_ut):
             if use_simple_chestsanity:
                 locations = locations | reg["chests"]
             else:
                 for chest, chest_id in reg["chests"].items():
                     chests += [(region, {chest: chest_id})]
-        if world.options.coinbagsanity or world.using_ut:
+        if "coinbags" in reg.keys() and (world.options.coinbagsanity or world.using_ut):
             if use_simple_coinbagsanity:
                 locations = locations | reg["coinbags"]
             else:
                 for coinbag, coinbag_id in reg["coinbags"].items():
                     coinbags += [(region, {coinbag: coinbag_id})]
-        if world.options.coinsanity or world.using_ut:
+        if "coins" in reg.keys() and (world.options.coinsanity or world.using_ut):
             if use_simple_coinsanity:
                 locations = locations | reg["coins"]
             else:
                 for coin, coin_id in reg["coins"].items():
                     coins += [(region, {coin: coin_id})]
-        if world.options.hatsanity != 0:
-            locations = locations | get_hat_locations(world, reg["sublevel"], reg["hats"])
-        else:
-            create_hat_events(world, region, reg["sublevel"], reg["hats"])
 
-        if world.options.cheesesanity:
+        if "hats" in reg.keys():
+            if world.options.hatsanity != 0:
+                locations = locations | get_hat_locations(world, reg["sublevel"], reg["hats"])
+            else:
+                create_hat_events(world, region, reg["sublevel"], reg["hats"])
+
+        if world.options.cheesesanity and "cheeses" in reg.keys():
             locations = locations | reg["cheeses"]
 
         locations = locations | get_special_locations(world, region.name)

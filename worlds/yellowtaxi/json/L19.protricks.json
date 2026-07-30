@@ -6,20 +6,10 @@
       "Pro Tricks! - Gear - #1 Near Spikes at Start": 190100007,
       "Pro Tricks! - Gear - #2 Above Ramps": 190100008
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pro Tricks! - First Gap Ramp": "B1/J1",
       "Pro Tricks! - Final Section": "J2 | X2+J1"
     },
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Pro Tricks! - Gear - #2 Above Ramps": "B1/J2 | X2+J1"
     }
@@ -31,20 +21,9 @@
       "Pro Tricks! - Gear - #3 Above Gap": 190100002,
       "Pro Tricks! - Gear - #4 On Ramp Island": 190100001
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pro Tricks! - Middle Section": "B1 | X1+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pro Tricks! - Middle Section": {
     "level": "Pro Tricks!",
@@ -54,20 +33,9 @@
       "Pro Tricks! - Gear - #6 Sharp Turn Through Spikes": 190100000,
       "Pro Tricks! - Gear - #7 On Flat Island": 190100005
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pro Tricks! - Final Section": "X1/J1 & B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pro Tricks! - Final Section": {
     "level": "Pro Tricks!",
@@ -76,17 +44,6 @@
       "Pro Tricks! - Gear - #8 On Ramp Pillar": 190100006,
       "Pro Tricks! - Gear - #9 Cliff Above Start": 190100004
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Pro Tricks! - Complete Time Trial": "B1 | X3+J1"
     }

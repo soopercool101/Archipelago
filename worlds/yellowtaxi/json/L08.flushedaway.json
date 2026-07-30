@@ -2,13 +2,9 @@
   "Flushed Away - Starting Area": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
     "bunnies": {
       "Flushed Away - Bunny - Above the Sewer Creatures": 80200000
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin in Sewage Stream From Starting Area #1": 80300382,
       "Flushed Away - Coin in Sewage Stream From Starting Area #2": 80300381,
@@ -68,9 +64,6 @@
       "Flushed Away - Coin in Sewage Stream Leading to Bunny Ramp #8": 80300332,
       "Flushed Away - Coin in Sewage Stream Leading to Bunny Ramp #9": 80300333
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Path Surrounding Starting Area": "X1/B1/J1",
       "Flushed Away - Pipe to Upper Starting Area": "X2+B2 | J1 | X3+B1",
@@ -78,8 +71,6 @@
       "Flushed Away - Ledge Above Starting Area": "X2+B1",
       "Flushed Away - Checkpoint Area": ""
     },
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Flushed Away - Bunny - Above the Sewer Creatures": "X1/B1/J1"
     }
@@ -94,11 +85,9 @@
     "bunnies": {
       "Flushed Away - Bunny - Behind Waterfall": 80200001
     },
-    "safes": {},
     "chests": {
       "Flushed Away - Chest on Pipe in Alligator Room": 80300196
     },
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin in Sewage Path Right of Checkpoint #1": 80300299,
       "Flushed Away - Coin in Sewage Path Right of Checkpoint #2": 80300298,
@@ -117,11 +106,6 @@
       "Flushed Away - Coin in Sewage Path in Front of Checkpoint #3": 80300302,
       "Flushed Away - Coin in Sewage Path in Front of Checkpoint #4": 80300303,
       "Flushed Away - Coin in Sewage Path in Front of Checkpoint #5": 80300304,
-      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #1": 80300272,
-      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #2": 80300271,
-      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #3": 80300255,
-      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #4": 80300237,
-      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #5": 80300236,
       "Flushed Away - Coin on Side Pathway Before Skeletrone Dance Party #1": 80300263,
       "Flushed Away - Coin on Side Pathway Before Skeletrone Dance Party #2": 80300256,
       "Flushed Away - Coin on Side Pathway Before Skeletrone Dance Party #3": 80300264,
@@ -278,6 +262,7 @@
       "Flushed Away - Central Drain Archway": "",
       "Flushed Away - Central Drain Waterfall Accessible": "X1",
       "Flushed Away - Gear Pillar": "J1/B1",
+      "Flushed Away - Barely Out-of-Bounds": "OOB",
       "Flushed Away - Out-of-Bounds (EXPERTS ONLY)": "X1+OOB+B1 & J1/X2"
     },
     "subwarps": {
@@ -287,7 +272,6 @@
       "Flushed Away - Tunnel After Gear Pillar": ["Flushed Away - Central Drain Archway", ""],
       "Flushed Away - Pipe in Alligator Room": ["Flushed Away - Central Drain Archway", ""]
     },
-    "warps": {},
     "specialrules": {
       "Flushed Away - Bunny - Behind Waterfall": "X1/B1/J1",
       "Flushed Away - Gear - Skeletrone Dance Party": "X1+B1 | J1",
@@ -298,10 +282,6 @@
   "Flushed Away - Path Surrounding Starting Area": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Flushed Away - Coin Bag on Right Side of Entrance Area": 80300417,
       "Flushed Away - Coin Bag on Left Side of Entrance Area": 80300418
@@ -342,38 +322,21 @@
       "Flushed Away - Coin on Left Side of Entrance Area #16": 80300389,
       "Flushed Away - Coin on Left Side of Entrance Area #17": 80300388
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Pipe Above Starting Area": "X1+B2+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Pipe Above Starting Area": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
     "cheeses": {
       "Flushed Away - Cheese on Pipe Above Entrance Area": 82100001
     },
-    "hats": {},
     "connections": {
       "Flushed Away - Starting Area": "",
       "Flushed Away - Path Surrounding Starting Area": "",
       "Flushed Away - Ledge Above Starting Area": "X1+B1 | J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Ledge Above Starting Area": {
     "level": "Flushed Away",
@@ -381,10 +344,6 @@
     "gears": {
       "Flushed Away - Gear - On Ledge Above Entrance Area": 80100001
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin on Ledge Above Entrance Area #1": 80300419,
       "Flushed Away - Coin on Ledge Above Entrance Area #2": 80300420,
@@ -396,14 +355,7 @@
       "Flushed Away - Coin on Ledge Above Entrance Area #8": 80300429,
       "Flushed Away - Coin on Ledge Above Entrance Area #9": 80300430,
       "Flushed Away - Coin on Ledge Above Entrance Area #10": 80300431
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Pipe to Upper Starting Area": {
     "level": "Flushed Away",
@@ -411,27 +363,13 @@
     "gears": {
       "Flushed Away - Gear - Pipe in Starting Sewage Stream": 80100000
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Flushed Away - Pipe in Entrance Sewage Stream": ["Flushed Away - Pipe Above Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - High Ground Near Checkpoint": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Flushed Away - Chest on Roof Near Checkpoint": 80300351
     },
@@ -444,12 +382,6 @@
       "Flushed Away - Coin Behind Doggo Near Checkpoint #2": 80300341,
       "Flushed Away - Coin Behind Doggo Near Checkpoint #3": 80300340
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Flushed Away - Chest on Roof Near Checkpoint": "X1/J1",
       "Flushed Away - Coin Bag on Roof Near Checkpoint": "X1/J1"
@@ -458,11 +390,6 @@
   "Flushed Away - Sewage Ramps": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin on Sewage Ramps #1": 80300273,
       "Flushed Away - Coin on Sewage Ramps #2": 80300274,
@@ -471,15 +398,9 @@
       "Flushed Away - Coin on Sewage Ramps #5": 80300284,
       "Flushed Away - Coin on Sewage Ramps #6": 80300335
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - After Sewage Ramps": "B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - After Sewage Ramps": {
     "level": "Flushed Away",
@@ -487,10 +408,6 @@
     "gears": {
       "Flushed Away - Gear - After Sewage Ramps": 80100005
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin After Sewage Ramps #1": 80300283,
       "Flushed Away - Coin After Sewage Ramps #2": 80300334,
@@ -498,23 +415,13 @@
       "Flushed Away - Coin After Sewage Ramps #4": 80300345,
       "Flushed Away - Coin After Sewage Ramps #5": 80300346
     },
-    "checkpoints": {},
     "cheeses": {
       "Flushed Away - Cheese After Sewage Ramps": 82100004
-    },
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Below Sewage Jumps": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Flushed Away - Coin Bag Below Sewage Ramps": 80300074
     },
@@ -553,25 +460,14 @@
       "Flushed Away - Coin Below Sewage Ramps #32": 80300030,
       "Flushed Away - Coin Below Sewage Ramps #33": 80300031
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Sewage Path From Ramp Room to Central Drain": "",
       "Flushed Away - Out-of-Bounds (EXPERTS ONLY)": "X3+B1+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Sewage Path From Ramp Room to Central Drain": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin in Sewage Path From Ramp Room to Central Drain #1": 80300000,
       "Flushed Away - Coin in Sewage Path From Ramp Room to Central Drain #2": 80300001,
@@ -579,16 +475,10 @@
       "Flushed Away - Coin in Sewage Path From Ramp Room to Central Drain #4": 80300003,
       "Flushed Away - Coin in Sewage Path From Ramp Room to Central Drain #5": 80300004
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Below Sewage Jumps": "X1 & B1/J1",
       "Flushed Away - Central Drain": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Gear Pillar": {
     "level": "Flushed Away",
@@ -596,10 +486,6 @@
     "gears": {
       "Flushed Away - Gear - On Pillar": 80100003
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin on Pillar Surrounding Gear #1": 80300165,
       "Flushed Away - Coin on Pillar Surrounding Gear #2": 80300168,
@@ -613,23 +499,11 @@
       "Flushed Away - Coin on Pillar Surrounding Gear #10": 80300175,
       "Flushed Away - Coin on Pillar Surrounding Gear #11": 80300174,
       "Flushed Away - Coin on Pillar Surrounding Gear #12": 80300177
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin Behind Central Drain Skeleton Shacks Near Exit Pipe #1": 80300006,
       "Flushed Away - Coin Behind Central Drain Skeleton Shacks Near Exit Pipe #2": 80300007,
@@ -664,12 +538,10 @@
       "Flushed Away - Coin in Ring Around Timer in Central Drain #8": 80300022,
       "Flushed Away - Coin on Central Drain Skeleton Shack Between Shops": 80300041
     },
-    "checkpoints": {},
     "cheeses": {
       "Flushed Away - Cheese Near Central Drain Exit Pipe": 82100005,
       "Flushed Away - Cheese in Central Drain Sewage": 82100002
     },
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain High Ground": "B1/J1",
       "Flushed Away - Central Drain Bunny": "X1+B1 | J1",
@@ -678,7 +550,6 @@
     "subwarps": {
       "Flushed Away - Central Drain Exit Pipe": ["Flushed Away - Checkpoint Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "Flushed Away - Coin on Central Drain Skeleton Shack Between Shops": "X1/B1/J1"
     }
@@ -686,52 +557,25 @@
   "Flushed Away - Central Drain Archway": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain": "",
       "Flushed Away - Central Drain Archway Accessible": "X1",
       "Flushed Away - Central Drain Bunny": "X1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain Archway Accessible": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin on Central Drain Skeleton Shack Stairway": 80300049
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain Waterfall and Archway Accessible": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain Waterfall Accessible": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Flushed Away - Coin Bag on Central Drain Shop Near Waterfall": 80300098,
       "Flushed Away - Coin Bag on Central Drain Lemonade Stand Near Waterfall": 80300052
@@ -743,61 +587,28 @@
       "Flushed Away - Coin on Central Drain Lemonade Stand Near Waterfall #4": 80300056,
       "Flushed Away - Coin on Central Drain Lemonade Stand Near Waterfall #5": 80300057
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain Waterfall and Archway Accessible": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain Waterfall and Archway Accessible": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin on Central Drain Skeleton Shack Between Waterfalls #1": 80300048,
       "Flushed Away - Coin on Central Drain Skeleton Shack Between Waterfalls #2": 80300050
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain Bunny": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
     "bunnies": {
       "Flushed Away - Bunny - In Central Drain": 80200002
-    },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Central Drain High Ground": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Flushed Away - Chest on Central Drain Shop Stairway": 80300100
     },
@@ -818,16 +629,10 @@
       "Flushed Away - Coin on Central Drain Shop Near Exit Pipe #3": 80300089,
       "Flushed Away - Coin on Central Drain Shop Near Exit Pipe #4": 80300088
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain Archway Accessible": "",
       "Flushed Away - Central Drain Waterfall Accessible": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Flushed Away - Above Central Drain": {
     "level": "Flushed Away",
@@ -835,39 +640,27 @@
     "gears": {
       "Flushed Away - Gear - Above Central Drain": 80100006
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Flushed Away - Central Drain": "",
       "Flushed Away - Central Drain Bunny": "X1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
+  },
+  "Flushed Away - Barely Out-of-Bounds": {
+    "level": "Flushed Away",
+    "sublevel": "Flushed Away",
+    "coins": {
+      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #1": 80300272,
+      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #2": 80300271,
+      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #3": 80300255,
+      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #4": 80300237,
+      "Flushed Away - Coin Underneath Sewage Leading to Skeletrone Dance Party #5": 80300236
+    }
   },
   "Flushed Away - Out-of-Bounds (EXPERTS ONLY)": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Flushed Away - Coin Far Out-of-Bounds Near Ramps": 80300110
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

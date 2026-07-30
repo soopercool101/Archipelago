@@ -2,9 +2,6 @@
   "Pizza Time - Starting Area": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Pizza Time - Chest on Roof on First Main Island": 20300144
     },
@@ -307,7 +304,6 @@
       "Pizza Time - Cheese Behind Tonino's Pizza": 22100002,
       "Pizza Time - Cheese Near Final Roundabout": 22100001
     },
-    "hats": {},
     "connections": {
       "Pizza Time - Oil Pumps": "SP",
       "Pizza Time - House on First Island": "X3/J1/B1",
@@ -330,8 +326,7 @@
     "warps": {
       "Pizza Time - Morio's Lab Portal Near Hat World": ["Morio's Lab - Second Floor After Demo Wall", ""],
       "Pizza Time - Morio's Lab Portal Near Pizza King": ["Morio's Lab - Second Floor After Demo Wall", ""]
-    },
-    "specialrules": {}
+    }
   },
   "Pizza Time - Oil Pumps": {
     "level": "Pizza Time",
@@ -341,19 +336,7 @@
       "Pizza Time - Gear - Second Oil Pump": 20100005,
       "Pizza Time - Gear - Third Oil Pump": 20100004,
       "Pizza Time - Gear - Fourth Oil Pump": 20100003
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - House on First Island": {
     "level": "Pizza Time",
@@ -361,9 +344,6 @@
     "gears": {
       "Pizza Time - Gear - On House on First Main Island": 20100012
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Pizza Time - Coin Bag on Gear House on First Main Island": 20300161
     },
@@ -374,14 +354,7 @@
       "Pizza Time - Coin on Gear House on First Main Island #4": 20300162,
       "Pizza Time - Coin on Gear House on First Main Island #5": 20300282,
       "Pizza Time - Coin on Gear House on First Main Island #6": 20300281
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Accessible Ledges": {
     "level": "Pizza Time",
@@ -389,10 +362,6 @@
     "gears": {
       "Pizza Time - Gear - In Ocean Cove": 20100001
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Pizza Time - Coin on Ocean Ledges Below Orange Block Bridge #1": 20300023,
       "Pizza Time - Coin on Ocean Ledges Below Orange Block Bridge #2": 20300022,
@@ -453,22 +422,11 @@
       "Pizza Time - Coin Surrounding Pizza Slice Near Mario's Pizza #8": 20300565,
       "Pizza Time - Coin Surrounding Pizza Slice Near Mario's Pizza #9": 20300569,
       "Pizza Time - Coin Surrounding Pizza Slice Near Mario's Pizza #10": 20300566
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Less Accessible Ledges": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Pizza Time - Coin Bag on Ledge on Fourth Main Island #1": 20300426,
       "Pizza Time - Coin Bag on Ledge on Fourth Main Island #2": 20300424
@@ -504,14 +462,7 @@
       "Pizza Time - Coin on Cliff Path on Fifth Main Island #5": 20300291,
       "Pizza Time - Coin on Cliff on Final Main Island #1": 20300331,
       "Pizza Time - Coin on Cliff on Final Main Island #2": 20300333
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Ledge Left of Final Roundabout": {
     "level": "Pizza Time",
@@ -519,12 +470,9 @@
     "gears": {
       "Pizza Time - Gear - On Gem-Shaped Island Left of Final Main Island": 20100002
     },
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Pizza Time - Chest on Ledge Left of Final Roundabout": 20300570
     },
-    "coinbags": {},
     "coins": {
       "Pizza Time - Coin on Ledge Left of Final Roundabout #1": 20300577,
       "Pizza Time - Coin on Ledge Left of Final Roundabout #2": 20300576,
@@ -544,14 +492,7 @@
       "Pizza Time - Coin on Gem-Shaped Island Left of Final Main Island #4": 20300147,
       "Pizza Time - Coin on Gem-Shaped Island Left of Final Main Island #5": 20300146,
       "Pizza Time - Coin on Gem-Shaped Island Left of Final Main Island #6": 20300145
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - High Ground": {
     "level": "Pizza Time",
@@ -565,7 +506,6 @@
       "Pizza Time - Bunny - Under Arch on Second Main Island": 20200001,
       "Pizza Time - Bunny - Above Final Roundabout": 20200002
     },
-    "safes": {},
     "chests": {
       "Pizza Time - Chest on House on Top of First Hill": 20300351,
       "Pizza Time - Chest on 900° Oven": 20300618
@@ -671,19 +611,14 @@
       "Pizza Time - Coin on Second Main Island Mountain #9": 20300452,
       "Pizza Time - Coin on Second Main Island Mountain #10": 20300457
     },
-    "checkpoints": {},
     "cheeses": {
       "Pizza Time - Cheese on Plateau on First Main Island": 22100004
     },
-    "hats": {},
     "connections": {
       "Pizza Time - Pizza King's Quest": "X1/B1",
       "Pizza Time - Second Main Island Mountain": "B1 | X1+J1",
       "Pizza Time - Bunny Island Lower": "X2+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Second Main Island Mountain": {
     "level": "Pizza Time",
@@ -691,9 +626,6 @@
     "gears": {
       "Pizza Time - Gear - On Second Main Island Mountain": 20100000
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Pizza Time - Coin Bag on Second Main Island Mountain": 20300613
     },
@@ -724,27 +656,17 @@
       "Pizza Time - Coin Near Gear on Second Main Island Mountain #16": 20300631,
       "Pizza Time - Coin Near Gear on Second Main Island Mountain #17": 20300636
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pizza Time - Island After Orange Block Bridge": "NOS/X1 & B2 & X1/J1 | X2+B1 & X3/J1 | X3+J1",
       "Pizza Time - Orange Block Bridge": "X3 & B1/J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Bunny Island Upper": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Pizza Time - Chest on Bunny Island": 20300476
     },
-    "coinbags": {},
     "coins": {
       "Pizza Time - Coin on Bunny Island #1": 20300479,
       "Pizza Time - Coin on Bunny Island #2": 20300478,
@@ -753,45 +675,23 @@
       "Pizza Time - Coin on Bunny Island #5": 20300474,
       "Pizza Time - Coin on Bunny Island #6": 20300473
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pizza Time - Bunny Island Lower": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Bunny Island Lower": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
     "bunnies": {
       "Pizza Time - Bunny - On Tall Island Between First and Third Main Islands": 20200000
-    },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Floating Orange Island": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
     "safes": {
       "Pizza Time - Safe on Floating Orange Block Island": 20300600
     },
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Pizza Time - Coin on Floating Orange Block Island #1": 20300602,
       "Pizza Time - Coin on Floating Orange Block Island #2": 20300605,
@@ -806,21 +706,13 @@
       "Pizza Time - Coin on Floating Orange Block Island #11": 20300595,
       "Pizza Time - Coin on Floating Orange Block Island #12": 20300598
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pizza Time - Bunny Island Upper": "OS+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Spires Near Start": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
     "safes": {
       "Pizza Time - Safe on Spire Near Start": 20300140
     },
@@ -841,42 +733,18 @@
       "Pizza Time - Coin Surrounding Safe on Spire Near Start #4": 20300137,
       "Pizza Time - Coin Surrounding Safe on Spire Near Start #5": 20300141,
       "Pizza Time - Coin Surrounding Safe on Spire Near Start #6": 20300138
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Pizza King's Quest": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
     "gears": {
       "Pizza Time - Gear - From Pizza King": 20100007
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Orange Block Bridge": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Pizza Time - Coin on Orange Block Bridge #1": 20300203,
       "Pizza Time - Coin on Orange Block Bridge #2": 20300204,
@@ -894,15 +762,9 @@
       "Pizza Time - Coin on Orange Block Bridge #14": 20300217,
       "Pizza Time - Coin on Orange Block Bridge #15": 20300218
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pizza Time - Island After Orange Block Bridge": "OS"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time - Island After Orange Block Bridge": {
     "level": "Pizza Time",
@@ -910,9 +772,6 @@
     "gears": {
       "Pizza Time - Gear - On Island After Orange Block Bridge": 20100015
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Pizza Time - Coin Bag on Island After Orange Block Bridge #1": 20300219,
       "Pizza Time - Coin Bag on Island After Orange Block Bridge #2": 20300198,
@@ -928,26 +787,11 @@
       "Pizza Time - Coin on Island After Orange Block Bridge #6": 20300228,
       "Pizza Time - Coin on Island After Orange Block Bridge #7": 20300202,
       "Pizza Time - Coin on Island After Orange Block Bridge #8": 20300223
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Time Hat World": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time Hat World",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Top Hat": 20700002,
       "Propeller Cap": 20700001,
@@ -960,9 +804,7 @@
     },
     "subwarps": {
       "Pizza Time Hat World - Exit": ["Pizza Time - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "400°": {
     "level": "Pizza Time",
@@ -970,19 +812,9 @@
     "gears": {
       "400° - Gear": 20100009
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "400° - Exit": ["Pizza Time - Starting Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "400° - Gear": "B1/J1"
     }
@@ -993,19 +825,9 @@
     "gears": {
       "600° - Gear": 20100010
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "600° - Exit": ["Pizza Time - Starting Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "600° - Gear": "B1/J1"
     }
@@ -1016,19 +838,9 @@
     "gears": {
       "900° - Gear": 20100011
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "900° - Exit": ["Pizza Time - Starting Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "900° - Gear": "B1 | X2+J1"
     }
@@ -1036,20 +848,8 @@
   "Pizza Time Sewers": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time Sewers",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Pizza Time Sewer - Exit": ["Pizza Time - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

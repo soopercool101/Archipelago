@@ -170,6 +170,8 @@ class YellowTaxiWorld(World):
             case 1:
                 self.goal_levels =  ["Tosla's Offices"]
             case 2:
+                self.goal_levels = ["Maurizio's City"]
+            case 3:
                 self.goal_levels = ["Tosla HQ", "Moon"]
 
         # Include levels up to the goal
@@ -186,6 +188,12 @@ class YellowTaxiWorld(World):
                 "Arcade Panik",
                 "Pizza Time",
                 "Tosla's Offices",
+            ]
+
+        if (self.options.goal >= 2 or
+                not self.options.remove_post_goal_portals):
+            self.included_levels += [
+                #"Maurizio's City",
             ]
 
 

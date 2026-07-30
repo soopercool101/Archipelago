@@ -2,21 +2,9 @@
   "Baby Steps! - Starting Area": {
     "level": "Baby Steps!",
     "sublevel": "Baby Steps!",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Baby Steps! - Main Area": "X1/J1/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Baby Steps! - Main Area": {
     "level": "Baby Steps!",
@@ -27,38 +15,15 @@
       "Baby Steps! - Gear - Lower Corner": 170100004,
       "Baby Steps! - Gear - Upper Corner": 170100002
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Baby Steps! - Pillar": "B1/J2 | X1+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Baby Steps! - Pillar": {
     "level": "Baby Steps!",
     "sublevel": "Baby Steps!",
     "gears": {
       "Baby Steps! - Gear - Pillar": 170100001
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

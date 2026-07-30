@@ -2,11 +2,6 @@
   "Fecal Matters - Starting Area": {
     "level": "Fecal Matters",
     "sublevel": "Fecal Matters",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Fecal Matters - Coin in Row Between Roundabout and Entrance #1": 70300003,
       "Fecal Matters - Coin in Row Between Roundabout and Entrance #2": 70300004,
@@ -50,31 +45,22 @@
       "Fecal Matters - Coin on Road Towards Cul-de-sac #18": 70300044,
       "Fecal Matters - Coin on Road Towards Cul-de-sac #19": 70300045
     },
-    "checkpoints": {},
     "cheeses": {
       "Fecal Matters - Cheese by Roundabout": 72100005,
       "Fecal Matters - Cheese by Cul-de-sac": 72100000
     },
-    "hats": {},
     "connections": {
       "Fecal Matters - Roundabout Hill Tier 1": "J1/B1 | X1+NHPR",
       "Fecal Matters - Roundabout Hill Tier 3": "J1/B2 | X2+B1",
       "Fecal Matters - Boost or Jump": "J1/B1"
     },
-    "subwarps": {},
     "warps": {
       "Fecal Matters - Roundabout Portal to Granny's Island": ["Granny's Island - Main Area", ""]
-    },
-    "specialrules": {}
+    }
   },
   "Fecal Matters - Roundabout Hill Tier 1": {
     "level": "Fecal Matters",
     "sublevel": "Fecal Matters",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Fecal Matters - Coin on Hill Above Roundabout #1": 70300046,
       "Fecal Matters - Coin on Hill Above Roundabout #2": 70300047,
@@ -84,14 +70,7 @@
       "Fecal Matters - Coin on Hill Above Roundabout #6": 70300052,
       "Fecal Matters - Coin on Hill Above Roundabout #7": 70300051,
       "Fecal Matters - Coin on Hill Above Roundabout #8": 70300053
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Fecal Matters - Roundabout Hill Tier 3": {
     "level": "Fecal Matters",
@@ -102,16 +81,6 @@
     "bunnies": {
       "Fecal Matters - Bunny - Above Roundabout": 70200000
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Fecal Matters - Gear - Escort Bulldog Doggo on Roundabout Hill": "{Fecal Matters - Boost or Backflip}"
     }
@@ -122,8 +91,6 @@
     "gears": {
       "Fecal Matters - Gear - Ledge Above Cul-de-sac": 70100003
     },
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Fecal Matters - Chest on Ramp Over Main Road": 70300057
     },
@@ -176,17 +143,12 @@
       "Fecal Matters - Coin on Island Overlooking Main Road #27": 70300124,
       "Fecal Matters - Coin on Island Overlooking Main Road #28": 70300127
     },
-    "checkpoints": {},
     "cheeses": {
       "Fecal Matters - Cheese in Tunnel on Ramp Over Main Road": 72100003
     },
-    "hats": {},
     "connections": {
       "Fecal Matters - Boost or Backflip": "X1/J2/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Fecal Matters - Boost or Backflip": {
     "level": "Fecal Matters",
@@ -199,10 +161,6 @@
       "Fecal Matters - Gear - House on Top of Mountain": 70100005,
       "Fecal Matters - Gear - Homing Beacons": 70100002
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Fecal Matters - Coin Near Dog Bowl Hat #1": 70300084,
       "Fecal Matters - Coin Near Dog Bowl Hat #2": 70300083,
@@ -214,7 +172,6 @@
       "Fecal Matters - Coin Near Poop Hat #4": 70300068,
       "Fecal Matters - Coin Near Poop Hat #5": 70300070
     },
-    "checkpoints": {},
     "cheeses": {
       "Fecal Matters - Cheese on Village Island": 72100004,
       "Fecal Matters - Cheese on Mountain": 72100002,
@@ -226,10 +183,7 @@
     },
     "connections": {
       "Fecal Matters - Highest Ground": "J1 | X1+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Fecal Matters - Highest Ground": {
     "level": "Fecal Matters",
@@ -241,8 +195,6 @@
       "Fecal Matters - Bunny - On Top of Mountain": 70200002,
       "Fecal Matters - Bunny - Off Cliff": 70200001
     },
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Fecal Matters - Coin Bag on Top of Mountain by Bunny #1": 70300143,
       "Fecal Matters - Coin Bag on Top of Mountain by Bunny #2": 70300151
@@ -283,13 +235,6 @@
       "Fecal Matters - Coin on Narrow Cliff #11": 70300112,
       "Fecal Matters - Coin on Narrow Cliff #12": 70300111,
       "Fecal Matters - Coin on Narrow Cliff #13": 70300110
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

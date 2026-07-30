@@ -502,14 +502,17 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
         itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
 
+    # Add included hats
+    for hat in sorted(world.included_hats):
+        itempool.append(world.create_item(hat))
+
     # Create filler
     if world.using_ut:
         # Make one of everything for UT. No RNG to prevent item creation failures.
         itempool += [world.create_item("No Hat")]
         for hat in HATS:
-            if hat in world.included_hats:
-                continue
-            itempool.append(world.create_item(hat))
+            if hat not in world.included_hats:
+                itempool.append(world.create_item(hat))
         for trap in TRAPS:
             itempool.append(world.create_item(trap))
         itempool += [world.create_item("1 Coin")]
@@ -517,10 +520,6 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool += [world.create_item("25 Coins")]
         itempool += [world.create_item("100 Coins")]
     else: # Determine what actually needs to be added for real generation
-        # Add included hats
-        for hat in sorted(world.included_hats):
-            itempool.append(world.create_item(hat))
-
         number_of_items = len(itempool)
 
         number_of_unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))

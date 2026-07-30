@@ -2,11 +2,6 @@
   "Morio's Island - Starting Area": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Island - Coin in Starting Area Arrow #1": 30300094,
       "Morio's Island - Coin in Starting Area Arrow #2": 30300095,
@@ -44,24 +39,13 @@
       "Morio's Island - Coin in Starting Area Forward Row #8": 30300126,
       "Morio's Island - Coin in Starting Area Forward Row #9": 30300127
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Island - First Hurdle": "X2 | J1/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - First Hurdle": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Island - Coin in Row Before First Checkpoint #1": 30300063,
       "Morio's Island - Coin in Row Before First Checkpoint #2": 30300064,
@@ -90,13 +74,9 @@
     "cheeses": {
       "Morio's Island - Cheese Behind First Hurdle Ramp": 32100001
     },
-    "hats": {},
     "connections": {
       "Morio's Island - High Ground": "J1/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - High Ground": {
     "level": "Morio's Home",
@@ -108,8 +88,6 @@
       "Morio's Island - Gear - On Morio's Roof": 30100000,
       "Morio's Island - Gear - On the Rubber Ducks": 30100009
     },
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Island - Chest on First Stone Arch": 30300423,
       "Morio's Island - Chest on Home Island Stone Pillar": 30300385
@@ -286,22 +264,15 @@
     "connections": {
       "Morio's Island - Morio's Home Island": "",
       "Morio's Island - First Bunny Arch": "X1/J1 & B2 | J1+X1+B1 | X2+B1",
-      "Morio's Island - Second Bunny Arch": "B2 | X2+B1 & X3/J1",
+      "Morio's Island - Second Bunny Arch": "B2 | X2+B1 & X3/J1 | X3+J1",
       "Morio's Island - Center Stone Island": "X1+B1 & J1/X2 | J2+X2 | B2 & J1/X1",
       "Morio's Island - Highest Ground": "B2 | J2+X1 | X3+J1",
       "Propeller Cap Access": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - Morio's Home Island": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Island - Coin Bag on Home Island Stone Pillar #1": 30300093,
       "Morio's Island - Coin Bag in Ocean": 30300002
@@ -323,23 +294,17 @@
     "cheeses": {
       "Morio's Island - Cheese Near Morio's Home": 32100002
     },
-    "hats": {},
     "connections": {
       "Morio's Island - Starting Area": "J1/B1",
       "Morio's Island - Stone Arch in Ocean Near Morio's Home": "B1 | X1+J2"
     },
     "subwarps": {
       "Morio's Island - Morio's Garage": ["Morio's Home - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - Stone Arch in Ocean Near Morio's Home": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Island - Chest Stone Arch Near Morio's Home": 30300154
     },
@@ -353,25 +318,14 @@
       "Morio's Island - Coin on Stone Arch Near Morio's Home #4": 30300152,
       "Morio's Island - Coin on Stone Arch Near Morio's Home #5": 30300151,
       "Morio's Island - Coin on Stone Arch Near Morio's Home #6": 30300156
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - First Bunny Arch": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
     "bunnies": {
       "Morio's Island - Bunny - On First Optional Path": 30200000
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Island - Coin on First Bunny Arch #1": 30300431,
       "Morio's Island - Coin on First Bunny Arch #2": 30300432,
@@ -379,24 +333,14 @@
       "Morio's Island - Coin on First Bunny Arch #4": 30300434,
       "Morio's Island - Coin on First Bunny Arch #5": 30300435,
       "Morio's Island - Coin on First Bunny Arch #6": 30300436
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - Second Bunny Arch": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
     "bunnies": {
       "Morio's Island - Bunny - On Second Optional Path": 30200001
     },
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Island - Coin Bag on Second Bunny Arch #1": 30300416,
       "Morio's Island - Coin Bag on Second Bunny Arch #2": 30300414
@@ -410,21 +354,11 @@
       "Morio's Island - Coin on Second Bunny Arch #6": 30300411,
       "Morio's Island - Coin on Second Bunny Arch #7": 30300410,
       "Morio's Island - Coin on Second Bunny Arch #8": 30300413
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - Center Stone Island": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Island - Chest on Center Stone Island": 30300273
     },
@@ -452,21 +386,11 @@
       "Morio's Island - Coin on Center Stone Island #18": 30300272,
       "Morio's Island - Coin on Center Stone Island #19": 30300270,
       "Morio's Island - Coin on Center Stone Island #20": 30300271
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Island - Highest Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Island - Chest on Dirt Arch": 30300484
     },
@@ -493,15 +417,9 @@
       "Morio's Island - Coin on Center Stone Cliffside #1": 30300409,
       "Morio's Island - Coin on Center Stone Cliffside #2": 30300408
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Island - Center Stone Island": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Home - Starting Area": {
     "level": "Morio's Home",
@@ -509,14 +427,11 @@
     "gears": {
       "Morio's Home - Gear - Living Room Nook": 30100002,
       "Morio's Home - Gear - Upper Bedroom Platform": 30100003,
-      "Morio's Home - Gear - In Bedroom Corner": 30100007,
-      "Morio's Home - Gear - In Hidden Room Near Garage": 30100013
+      "Morio's Home - Gear - In Bedroom Corner": 30100007
     },
     "bunnies": {
       "Morio's Home - Bunny - In Hidden Room in Hallway": 30200002
     },
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Home - Coin Bag on Bookshelf": 30300293,
       "Morio's Home - Coin Bag on Bump in Bedroom": 30300389,
@@ -617,10 +532,8 @@
     "checkpoints": {
       "Morio's Home - Checkpoint in Bedroom": 30900380
     },
-    "cheeses": {},
-    "hats": {},
     "connections": {
-      "Morio's Home - Expert 1 High Ground": "X1/J1/B1",
+      "Morio's Home - Expert 2 High Ground": "X2/J1/B1",
       "Morio's Home - High Ground": "J1/B1",
       "Morio's Home - Loft": "B2 & X2/J2 | X1+J2 | X1+B2+J1 | X3+B1+J1",
       "Morio's Home - Kitchen": "SP"
@@ -628,35 +541,33 @@
     "subwarps": {
       "Morio's Home - Door in Bedroom": ["Weird Tunnels - Entrance Area", ""]
     },
-    "warps": {},
     "specialrules": {
-      "Morio's Home - Coin Bag on Garage Wall Shelf": "J1 | X2+B1",
-      "Morio's Home - Gear - In Hidden Room Near Garage": "X2/J1/B1"
+      "Morio's Home - Coin Bag on Garage Wall Shelf": "J1 | X2+B1"
     }
   },
-  "Morio's Home - Expert 1 High Ground": {
+  "Morio's Home - Expert 2 High Ground": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
-    "gears": {},
-    "bunnies": {},
+    "gears": {
+      "Morio's Home - Gear - In Hidden Room Near Garage": 30100013
+    },
     "safes": {
       "Morio's Home - Safe in Hidden Room Near Garage": 30300264
     },
-    "chests": {},
-    "coinbags": {},
-    "coins": {
-      "Morio's Home - Coin on Garage Shelf #1": 30300356,
-      "Morio's Home - Coin on Garage Shelf #2": 30300357,
-      "Morio's Home - Coin on Garage Shelf #3": 30300358,
-      "Morio's Home - Coin on Garage Shelf #4": 30300366
+    "chests": {
+      "Morio's Home - Chest on Garage Shelf Near Tire": 30300300
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "coinbags": {
+      "Morio's Home - Coin Bag on Garage Shelf Near Tire": 30300299
+    },
+    "coins": {
+      "Morio's Home - Coin on Garage Shelf Near Gear #1": 30300356,
+      "Morio's Home - Coin on Garage Shelf Near Gear #2": 30300357,
+      "Morio's Home - Coin on Garage Shelf Near Gear #3": 30300358,
+      "Morio's Home - Coin on Garage Shelf Near Gear #4": 30300366,
+      "Morio's Home - Coin on Garage Shelf Near Tire #1": 30300297,
+      "Morio's Home - Coin on Garage Shelf Near Tire #2": 30300298
+    }
   },
   "Morio's Home - High Ground": {
     "level": "Morio's Home",
@@ -665,33 +576,20 @@
       "Morio's Home - Gear - On Garage Shelf": 30100015,
       "Morio's Home - Gear - Above Hallway": 30100011
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {
-      "Morio's Home - Chest on Garage Shelf": 30300300
-    },
     "coinbags": {
-      "Morio's Home - Coin Bag on Garage Standing Shelf": 30300299,
       "Morio's Home - Coin Bag on Hallway Ledge #1": 30300365,
       "Morio's Home - Coin Bag on Hallway Ledge #2": 30300359
     },
     "coins": {
-      "Morio's Home - Coin on Garage Shelf #5": 30300297,
-      "Morio's Home - Coin on Garage Shelf #6": 30300298,
       "Morio's Home - Coin on Hallway Ledge #1": 30300364,
       "Morio's Home - Coin on Hallway Ledge #2": 30300363,
       "Morio's Home - Coin on Hallway Ledge #3": 30300362,
       "Morio's Home - Coin on Hallway Ledge #4": 30300361,
       "Morio's Home - Coin on Hallway Ledge #5": 30300360
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Home - Before Bed Pillars": "X1/B1/J2"
     },
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Morio's Home - Gear - Above Hallway": "X1/B1/J2"
     }
@@ -699,11 +597,6 @@
   "Morio's Home - Before Bed Pillars": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Home - Coin on Bed Pillar #1": 30300443,
       "Morio's Home - Coin on Bed Pillar #2": 30300449,
@@ -712,15 +605,10 @@
     "checkpoints": {
       "Morio's Home - Checkpoint Before Bed Pillars": 30900425
     },
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Home - Starting Area": "",
       "Morio's Home - Bed Pillars": "B1 & X1/J1 | X3+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Home - Bed Pillars": {
     "level": "Morio's Home",
@@ -728,12 +616,9 @@
     "gears": {
       "Morio's Home - Gear - After Bed Pillars": 30100012
     },
-    "bunnies": {},
     "safes": {
       "Morio's Home - Safe After Bed Pillars": 30300494
     },
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Home - Coin After Bed Pillars #1": 30300469,
       "Morio's Home - Coin After Bed Pillars #2": 30300472,
@@ -742,23 +627,13 @@
       "Morio's Home - Coin After Bed Pillars #5": 30300465,
       "Morio's Home - Coin After Bed Pillars #6": 30300466
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
     "warps": {
       "Morio's Home - Portal to Morio's Lab": ["Morio's Lab - Ground Floor", ""]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Home - Loft": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Home - Coin Bag in Loft #1": 30300513,
       "Morio's Home - Coin Bag in Loft #2": 30300523,
@@ -794,15 +669,9 @@
       "Morio's Home - Coin in Loft #28": 30300530,
       "Morio's Home - Coin in Loft #29": 30300535
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Home - Kitchen High Ground": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Home - Kitchen": {
     "level": "Morio's Home",
@@ -810,10 +679,6 @@
     "gears": {
       "Morio's Home - Gear - In Dining Room Nook": 30100001
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Home - Coin on Kitchen Sink": 30300190,
       "Morio's Home - Coin on Kitchen Stove": 30300191,
@@ -823,66 +688,33 @@
       "Morio's Home - Coin on Dining Room Cupboard #1": 30300147,
       "Morio's Home - Coin on Dining Room Cupboard #2": 30300148
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {
-      "Morio's Home - Kitchen Expert 1": "X1/B1/J1",
-      "Morio's Home - Kitchen Cabinets": "B1/J1",
-      "Morio's Home - Kitchen High Ground": "J1 | X1+B2 | X2+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
-  },
-  "Morio's Home - Kitchen Expert 1": {
-    "level": "Morio's Home",
-    "sublevel": "Morio's Home",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {
-      "Morio's Home - Chest on Dining Room Pantry": 30300224
-    },
-    "coinbags": {},
-    "coins": {
-      "Morio's Home - Coin on Dining Room Pantry #1": 30300222,
-      "Morio's Home - Coin on Dining Room Pantry #2": 30300223
-    },
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Lasagna Hat": 30700010
     },
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "connections": {
+      "Morio's Home - Kitchen Expert 2": "X2/B1/J1",
+      "Morio's Home - Kitchen High Ground": "J1 | X1+B2 | X2+B1"
+    }
   },
-  "Morio's Home - Kitchen Cabinets": {
+  "Morio's Home - Kitchen Expert 2": {
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
+    "chests": {
+      "Morio's Home - Chest on Dining Room Pantry": 30300224
+    },
     "coinbags": {
       "Morio's Home - Coin Bag on Kitchen Cabinet #1": 30300353,
       "Morio's Home - Coin Bag on Kitchen Cabinet #2": 30300352
     },
     "coins": {
+      "Morio's Home - Coin on Dining Room Pantry #1": 30300222,
+      "Morio's Home - Coin on Dining Room Pantry #2": 30300223,
       "Morio's Home - Coin on Kitchen Cabinet #1": 30300354,
       "Morio's Home - Coin on Kitchen Cabinet #2": 30300351
     },
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Pot Hat": 30700009
-    },
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Home - Kitchen High Ground": {
     "level": "Morio's Home",
@@ -890,9 +722,6 @@
     "gears": {
       "Morio's Home - Gear - Above Kitchen": 30100008
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Home - Coin Bag on Path Above Kitchen": 30300397,
       "Morio's Home - Coin Bag Above Dining Room": 30300444
@@ -908,14 +737,9 @@
       "Morio's Home - Coin on Ramp Above Dining Room #5": 30300477,
       "Morio's Home - Coin on Ramp Above Dining Room #6": 30300479
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Home - Kitchen": ""
     },
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Morio's Home - Gear - Above Kitchen": "X1/B1/J2"
     }
@@ -923,11 +747,6 @@
   "Weird Tunnels - Entrance Area": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Weird Tunnels - Coin on Path Before First Boosts #1": 30300068,
       "Weird Tunnels - Coin on Path Before First Boosts #2": 30300069,
@@ -935,25 +754,13 @@
       "Weird Tunnels - Coin on Path Before First Boosts #4": 30300071,
       "Weird Tunnels - Coin on Path Before First Boosts #5": 30300072
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
-      "Weird Tunnels - Expert 1": "X1/B1/J1",
-      "Weird Tunnels - High Ground": "B1/J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+      "Weird Tunnels - Expert 2": "X2/B1/J1"
+    }
   },
-  "Weird Tunnels - Expert 1": {
+  "Weird Tunnels - Expert 2": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Weird Tunnels - Coin on Path Before Second Boosts #1": 30300073,
       "Weird Tunnels - Coin on Path Before Second Boosts #2": 30300074,
@@ -961,27 +768,17 @@
       "Weird Tunnels - Coin on Path Before Second Boosts #4": 30300076,
       "Weird Tunnels - Coin on Path Before Second Boosts #5": 30300077
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "connections": {
+      "Weird Tunnels - Expert 3": "X3/B1/J1"
+    }
   },
-  "Weird Tunnels - High Ground": {
+  "Weird Tunnels - Expert 3": {
     "level": "Morio's Home",
     "sublevel": "Weird Tunnels",
     "gears": {
-      "Weird Tunnels - Gear - On Upper Path": 30100006,
       "Weird Tunnels - Gear - On Lower Path": 30100005
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
-      "Weird Tunnels - Coin Bag on Right Upper Path #1": 30300235,
-      "Weird Tunnels - Coin Bag on Right Upper Path #2": 30300251,
       "Weird Tunnels - Coin Bag Near Lower Gear #1": 30300024,
       "Weird Tunnels - Coin Bag Near Lower Gear #2": 30300036
     },
@@ -991,25 +788,6 @@
       "Weird Tunnels - Coin on Left Upper Path #3": 30300227,
       "Weird Tunnels - Coin on Left Upper Path #4": 30300228,
       "Weird Tunnels - Coin on Left Upper Path #5": 30300229,
-      "Weird Tunnels - Coin on Right Upper Path #1": 30300234,
-      "Weird Tunnels - Coin on Right Upper Path #2": 30300233,
-      "Weird Tunnels - Coin on Right Upper Path #3": 30300232,
-      "Weird Tunnels - Coin on Right Upper Path #4": 30300231,
-      "Weird Tunnels - Coin on Right Upper Path #5": 30300230,
-      "Weird Tunnels - Coin on Right Upper Path #6": 30300238,
-      "Weird Tunnels - Coin on Right Upper Path #7": 30300237,
-      "Weird Tunnels - Coin on Right Upper Path #8": 30300236,
-      "Weird Tunnels - Coin on Right Upper Path #9": 30300241,
-      "Weird Tunnels - Coin on Right Upper Path #10": 30300240,
-      "Weird Tunnels - Coin on Right Upper Path #11": 30300239,
-      "Weird Tunnels - Coin on Right Upper Path #12": 30300244,
-      "Weird Tunnels - Coin on Right Upper Path #13": 30300242,
-      "Weird Tunnels - Coin on Right Upper Path #14": 30300247,
-      "Weird Tunnels - Coin on Right Upper Path #15": 30300246,
-      "Weird Tunnels - Coin on Right Upper Path #16": 30300245,
-      "Weird Tunnels - Coin on Right Upper Path #17": 30300250,
-      "Weird Tunnels - Coin on Right Upper Path #18": 30300249,
-      "Weird Tunnels - Coin on Right Upper Path #19": 30300248,
       "Weird Tunnels - Coin Surrounding Lower Gear #1": 30300022,
       "Weird Tunnels - Coin Surrounding Lower Gear #2": 30300025,
       "Weird Tunnels - Coin Surrounding Lower Gear #3": 30300023,
@@ -1029,12 +807,40 @@
       "Weird Tunnels - Coin Leading Towards Exit #3": 30300041,
       "Weird Tunnels - Coin Leading Towards Exit #4": 30300042
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "connections": {
+      "Weird Tunnels - High Ground": "B1/J1"
+    }
+  },
+  "Weird Tunnels - High Ground": {
+    "level": "Morio's Home",
+    "sublevel": "Weird Tunnels",
+    "gears": {
+      "Weird Tunnels - Gear - On Upper Path": 30100006
+    },
+    "coinbags": {
+      "Weird Tunnels - Coin Bag on Right Upper Path #1": 30300235,
+      "Weird Tunnels - Coin Bag on Right Upper Path #2": 30300251
+    },
+    "coins": {
+      "Weird Tunnels - Coin on Right Upper Path #1": 30300234,
+      "Weird Tunnels - Coin on Right Upper Path #2": 30300233,
+      "Weird Tunnels - Coin on Right Upper Path #3": 30300232,
+      "Weird Tunnels - Coin on Right Upper Path #4": 30300231,
+      "Weird Tunnels - Coin on Right Upper Path #5": 30300230,
+      "Weird Tunnels - Coin on Right Upper Path #6": 30300238,
+      "Weird Tunnels - Coin on Right Upper Path #7": 30300237,
+      "Weird Tunnels - Coin on Right Upper Path #8": 30300236,
+      "Weird Tunnels - Coin on Right Upper Path #9": 30300241,
+      "Weird Tunnels - Coin on Right Upper Path #10": 30300240,
+      "Weird Tunnels - Coin on Right Upper Path #11": 30300239,
+      "Weird Tunnels - Coin on Right Upper Path #12": 30300244,
+      "Weird Tunnels - Coin on Right Upper Path #13": 30300242,
+      "Weird Tunnels - Coin on Right Upper Path #14": 30300247,
+      "Weird Tunnels - Coin on Right Upper Path #15": 30300246,
+      "Weird Tunnels - Coin on Right Upper Path #16": 30300245,
+      "Weird Tunnels - Coin on Right Upper Path #17": 30300250,
+      "Weird Tunnels - Coin on Right Upper Path #18": 30300249,
+      "Weird Tunnels - Coin on Right Upper Path #19": 30300248
+    }
   }
 }

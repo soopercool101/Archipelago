@@ -1,4 +1,4 @@
-from typing import Any, Dict, Set
+from typing import Any, Dict, Set, List
 
 from . import locations
 
@@ -26,15 +26,31 @@ regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
                                       )
 
 # Load static locations list
-def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
+def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int | None]:
     # Get all location ids from JSON
-    game_locations: Dict[str, int] = {}
+    game_locations: Dict[str, int | None] = {}
+    location_keys : List[str] = [
+        "gears",
+        "bunnies",
+        "safes",
+        "chests",
+        "coinbags",
+        "coins",
+        "checkpoints",
+        "cheeses",
+        # Hats are handled specially
+    ]
     for reg_name in json_data.keys():
         reg = json_data[reg_name]
-        reg_locations = (reg["gears"] | reg["bunnies"] | reg["safes"] | reg["chests"] | reg["coinbags"] | reg["coins"] |
-                         reg["checkpoints"] | reg["cheeses"] |
-                         locations.get_hat_locations(None, reg["sublevel"], reg["hats"]) |
-                         locations.get_special_locations(None, reg_name))
+        reg_locations : Dict[str, int | None] = {}
+        for key in location_keys:
+            if key in reg.keys():
+                reg_locations |= reg[key]
+
+        if "hats" in reg.keys():
+            reg_locations |= locations.get_hat_locations(None, reg["sublevel"], reg["hats"])
+
+        reg_locations |= locations.get_special_locations(None, reg_name)
         game_locations.update(reg_locations)
         for location in reg_locations:
             if reg["sublevel"] in all_location_groups:
@@ -46,4 +62,4 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int]:
     return game_locations
 
 all_location_groups : Dict[str, Set[str]] = {}
-all_locations: Dict[str, int] = get_all_locations(regions_json_data)
+all_locations: Dict[str, int | None] = get_all_locations(regions_json_data)

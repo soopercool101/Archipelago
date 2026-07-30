@@ -16,7 +16,6 @@
     "bunnies": {
       "Bombeach - Bunny - Under Mountain Hotel": 10200001
     },
-    "safes": {},
     "chests": {
       "Bombeach - Chest in Ocean Behind Rocks Right of Start": 10300014,
       "Bombeach - Chest on Ocean Bridge House Roof": 10300543,
@@ -437,7 +436,6 @@
       "Bombeach - Cheese Behind Houses Across From Hat World": 12100006,
       "Bombeach - Cheese Behind Bomb Block Cage": 12100003
     },
-    "hats": {},
     "connections": {
       "Bombeach - Easy Bomb Jumps": "",
       "Bombeach - Expert 1 Bomb Jumps": "X1",
@@ -465,11 +463,9 @@
     "bunnies": {
       "Bombeach - Bunny - On Island": 10200002
     },
-    "safes": {},
     "chests": {
       "Bombeach - Chest on Top of Hat World": 10300590
     },
-    "coinbags": {},
     "coins": {
       "Bombeach - Coin on Bunny Island #1": 10300322,
       "Bombeach - Coin on Bunny Island #2": 10300314,
@@ -524,14 +520,7 @@
       "Bombeach - Coin on Platform on Right Side of First Beach #3": 10300353,
       "Bombeach - Coin on Platform on Right Side of First Beach #4": 10300359,
       "Bombeach - Coin on Platform on Right Side of First Beach #5": 10300360
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Expert 1 Bomb Jumps": {
     "level": "Bombeach",
@@ -540,8 +529,6 @@
       "Bombeach - Gear - On Gem-Shaped Island": 10100007,
       "Bombeach - Gear - Island Near Ocean Bridge": 10100003
     },
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Bombeach - Chest by Orange Block Bridge": 10300601,
       "Bombeach - Chest on Gem-Shaped Island": 10300349
@@ -616,23 +603,13 @@
       "Bombeach - Coin Near Gear on Island Near Ocean Bridge #7": 10300233,
       "Bombeach - Coin Near Gear on Island Near Ocean Bridge #8": 10300236
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Bombeach - Orange Block Bridge": "OS"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Jump or Boost": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Bombeach - Coin Bag in Secret Ocean Area Past Gem-Shaped Islands #1": 10300143,
       "Bombeach - Coin Bag in Secret Ocean Area Past Gem-Shaped Islands #2": 10300139,
@@ -654,17 +631,11 @@
       "Bombeach - Coin in Row on Second High Ocean Pillar #6": 10300660,
       "Bombeach - Coin in Row on Second High Ocean Pillar #7": 10300677
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Bombeach - Expert 1 Bomb Jumps": "",
       "Bombeach - Orange Block Bridge": "",
       "Bombeach - Distant High Islands": "X1+J1 | J2 | B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Distant High Islands": {
     "level": "Bombeach",
@@ -672,10 +643,6 @@
     "gears": {
       "Bombeach - Gear - High Ocean Pillar": 10100008
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Bombeach - Coin in Ring Around High Ocean Pillar Gear #1": 10300681,
       "Bombeach - Coin in Ring Around High Ocean Pillar Gear #2": 10300680,
@@ -714,24 +681,14 @@
       "Bombeach - Coin on Distant High Island #23": 10300588,
       "Bombeach - Coin on Distant High Island #24": 10300587
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Bombeach - Orange Block Island": "B2",
       "Bombeach - Bunny Pillar": "B1+J1 | X3 & J1/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Orange Block Island": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Bombeach - Coin Bag on Floating Orange Blocks #1": 10300695,
       "Bombeach - Coin Bag on Floating Orange Blocks #2": 10300698
@@ -740,43 +697,20 @@
       "Bombeach - Coin on Floating Orange Blocks #1": 10300697,
       "Bombeach - Coin on Floating Orange Blocks #2": 10300696
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Bombeach - Bunny Pillar": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Bunny Pillar": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
-    "gears": {},
     "bunnies": {
       "Bombeach - Bunny - On Ocean Pillar": 10200000
-    },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach - Orange Block Bridge": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Bombeach - Coin on Orange Block Bridge #1": 10300600,
       "Bombeach - Coin on Orange Block Bridge #2": 10300599,
@@ -784,14 +718,7 @@
       "Bombeach - Coin on Orange Block Bridge #4": 10300597,
       "Bombeach - Coin on Orange Block Bridge #5": 10300596,
       "Bombeach - Coin on Orange Block Bridge #6": 10300595
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Cave": {
     "level": "Bombeach",
@@ -799,10 +726,6 @@
     "gears": {
       "Cave - Gear": 10100014
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Cave - Coin on First Bomb Block Bridge #1": 10300278,
       "Cave - Coin on First Bomb Block Bridge #2": 10300277,
@@ -859,26 +782,13 @@
     "checkpoints": {
       "Cave - Checkpoint": 10900790
     },
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Cave - Cave Exit": ["Bombeach - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Bombeach Hat World": {
     "level": "Bombeach",
     "sublevel": "Bombeach Hat World",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Top Hat": 10700002,
       "Propeller Cap": 10700001,
@@ -891,8 +801,6 @@
     },
     "subwarps": {
       "Bombeach Hat World - Exit": ["Bombeach - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

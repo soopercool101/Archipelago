@@ -8,10 +8,17 @@
       "Maurizio's City - Gear - Escort Busy Man From Lowest Level": 90100012,
       "Maurizio's City - Gear - Escort Busy Man From Lower Middle Level": 90100007
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
+    "safes": {
+      "Maurizio's City - Safe on Cliff Off of Upper Middle Level": 90300123
+    },
+    "chests": {
+      "Maurizio's City - Chest on Ledge Left of Main Road Ramp Between Middle Levels": 90300146
+    },
+    "coinbags": {
+      "Maurizio's City - Coin Bag on Roof Left of Main Road Ramp From Lowest Level": 90300055,
+      "Maurizio's City - Coin Bag on Left Tree on Lower Middle Level": 90300155,
+      "Maurizio's City - Coin Bag on Right Tree on Lower Middle Level": 90300158
+    },
     "coins": {
       "Maurizio's City - Coin on Main Road on Lowest Level #1": 90300016,
       "Maurizio's City - Coin on Main Road on Lowest Level #2": 90300015,
@@ -42,25 +49,81 @@
       "Maurizio's City - Coin on Main Road Ramp From Lowest Level #9": 90300041,
       "Maurizio's City - Coin on Main Road Ramp From Lowest Level #10": 90300043,
       "Maurizio's City - Coin on Main Road Ramp From Lowest Level #11": 90300044,
-      "Maurizio's City - Coin on Main Road Ramp From Lowest Level #12": 90300047
+      "Maurizio's City - Coin on Main Road Ramp From Lowest Level #12": 90300047,
+      "Maurizio's City - Coin Near Hydrant Left of Main Road Ramp From Lowest Level #1": 90300049,
+      "Maurizio's City - Coin Near Hydrant Left of Main Road Ramp From Lowest Level #2": 90300048,
+      "Maurizio's City - Coin on Roof Left of Main Road Ramp From Lowest Level #1": 90300057,
+      "Maurizio's City - Coin on Roof Left of Main Road Ramp From Lowest Level #2": 90300056,
+      "Maurizio's City - Coin on Left Tree on Lower Middle Level #1": 90300152,
+      "Maurizio's City - Coin on Left Tree on Lower Middle Level #2": 90300156,
+      "Maurizio's City - Coin on Left Tree on Lower Middle Level #3": 90300154,
+      "Maurizio's City - Coin on Left Tree on Lower Middle Level #4": 90300160,
+      "Maurizio's City - Coin on Right Tree on Lower Middle Level #1": 90300153,
+      "Maurizio's City - Coin on Right Tree on Lower Middle Level #2": 90300159,
+      "Maurizio's City - Coin on Right Tree on Lower Middle Level #3": 90300157,
+      "Maurizio's City - Coin on Right Tree on Lower Middle Level #4": 90300161,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #1": 90300058,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #2": 90300059,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #3": 90300060,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #4": 90300061,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #5": 90300062,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #6": 90300063,
+      "Maurizio's City - Coin on Main Road on Lower Middle Level #7": 90300064,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #1": 90300104,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #2": 90300105,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #3": 90300106,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #4": 90300108,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #5": 90300109,
+      "Maurizio's City - Coin on House Roof on Lower Middle Level #6": 90300110,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #1": 90300140,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #2": 90300141,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #3": 90300142,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #4": 90300143,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #5": 90300144,
+      "Maurizio's City - Coin on Ledge Left of Main Road Ramp Between Middle Levels #6": 90300145,
+      "Maurizio's City - Coin on Ledge Right of Main Road Ramp Between Middle Levels #1": 90300139,
+      "Maurizio's City - Coin on Ledge Right of Main Road Ramp Between Middle Levels #2": 90300138,
+      "Maurizio's City - Coin on Ledge Right of Main Road Ramp Between Middle Levels #3": 90300137,
+      "Maurizio's City - Coin on Ledge Right of Main Road Ramp Between Middle Levels #4": 90300136,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level Before Checkpoint #1": 90300210,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level Before Checkpoint #2": 90300211,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level Before Checkpoint #3": 90300212,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level Before Checkpoint #4": 90300213,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level After Checkpoint #1": 90300232,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level After Checkpoint #2": 90300231,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level After Checkpoint #3": 90300230,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level After Checkpoint #4": 90300229,
+      "Maurizio's City - Coin on Main Road on Upper Middle Level After Checkpoint #5": 90300228,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #1": 90300199,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #2": 90300198,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #3": 90300197,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #4": 90300151,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #5": 90300150,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #6": 90300149,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #7": 90300148,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #8": 90300147,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #9": 90300124,
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #10": 90300122
     },
     "checkpoints": {
-      "Maurizio's City - Checkpoint - Plaza on Lowest Level": 90900058
+      "Maurizio's City - Checkpoint - Plaza on Lowest Level": 90900058,
+      "Maurizio's City - Checkpoint on Upper Middle Level": 90900365
     },
     "cheeses": {
       "Maurizio's City - Cheese Under Cliff Near Vladeroni on Lowest Level": 92100006,
       "Maurizio's City - Cheese in Building Alcove on Lowest Level": 92100005,
-      "Maurizio's City - Cheese Near Cliff on Lowest Level": 92100002
+      "Maurizio's City - Cheese Near Cliff on Lowest Level": 92100002,
+      "Maurizio's City - Cheese Near Oil Pump on Lower Middle Level": 92100003,
+      "Maurizio's City - Cheese in Passageway Under Metavoidal Poster": 92100008,
+      "Maurizio's City - Cheese in Cheese Shop on Upper Middle Level #1": 92100007,
+      "Maurizio's City - Cheese in Cheese Shop on Upper Middle Level #2": 92100004
     },
-    "hats": {},
     "connections": {
       "Maurizio's City - Oil Pumps": "SP"
     },
     "subwarps": {
       "Maurizio's City - Painted Tunnel": ["Purple Tunnel", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Maurizio's City - Oil Pumps": {
     "level": "Maurizio's City",
@@ -70,31 +133,11 @@
       "Maurizio's City - Gear - Oil Pump on Lower Middle Level": 90100001,
       "Maurizio's City - Gear - Oil Pump on Higher Middle Level": 90100003,
       "Maurizio's City - Gear - Oil Pump on Highest Level": 90100000
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Maurizio's City Hat World": {
     "level": "Maurizio's City",
     "sublevel": "Maurizio's City Hat World",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Top Hat": 90700002,
       "Propeller Cap": 90700001,
@@ -102,12 +145,9 @@
       "Spoiler": 90700022,
       "Police Lights": 90700023
     },
-    "connections": {},
     "subwarps": {
       "Maurizio's City Hat World - Exit": ["Maurizio's City - Starting Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Purple Tunnel": {
     "level": "Maurizio's City",
@@ -118,18 +158,9 @@
     "bunnies": {
       "Purple Tunnel - Bunny": 90200001
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Purple Tunnel - Exit": ["Maurizio's City - Starting Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "Purple Tunnel - Gear": "B1/J1",
       "Purple Tunnel - Bunny": "B1/J2 | X1+J1"

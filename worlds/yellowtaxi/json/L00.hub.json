@@ -2,11 +2,6 @@
   "Granny's Island - Starting Area": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin in Starting Area #1": 300037,
       "Granny's Island - Coin in Starting Area #2": 300038,
@@ -15,27 +10,16 @@
       "Granny's Island - Coin in Starting Area #5": 300117,
       "Granny's Island - Coin in Starting Area #6": 300149
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
-      "Granny's Island - Pipe Area": "J1/B1",
-      "Granny's Island - Moat": "OGI"
+      "Granny's Island - Moat": "X2/OGI/J1/B1"
     },
     "subwarps": {
       "Granny's Island - Morio's Lab Front Door": ["Morio's Lab - Ground Floor", "LabKey"]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Moat": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin in Moat #1": 300151,
       "Granny's Island - Coin in Moat #2": 300100,
@@ -63,21 +47,17 @@
       "Granny's Island - Coin in Moat #24": 300099,
       "Granny's Island - Coin in Moat #25": 300150
     },
-    "checkpoints": {},
     "cheeses": {
       "Granny's Island - Cheese in Moat": 2100004
     },
-    "hats": {},
     "connections": {
-      "Granny's Island - Starting Area": "",
+      "Granny's Island - Starting Area": "X1/OGI/J1/B1",
       "Granny's Island - Pipe Area": "J1/B1",
-      "Granny's Island - Main Area": "OGI"
+      "Granny's Island - Main Area": "X3/OGI/J1/B1"
     },
     "subwarps": {
       "Granny's Island - Morio's Lab Back Door": ["Morio's Lab - Ground Floor", "LabKey"]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Main Area": {
     "level": "Hub",
@@ -88,7 +68,6 @@
       "Granny's Island - Gear - Oil Pump": 100003,
       "Granny's Island - Gear - Inside Spin Blocks": 100014
     },
-    "bunnies": {},
     "safes": {
       "Granny's Island - Safe on Ocean Pillar": 300280,
       "Granny's Island - Safe on Granny's Statue": 300755
@@ -295,7 +274,6 @@
       "Granny's Island - Cheese Behind City": 2100000,
       "Granny's Island - Cheese on Pier": 2100003
     },
-    "hats": {},
     "connections": {
       "Granny's Island - Moat": "",
       "Granny's Island - Broken Pier Shallow": "X1+B1 | J1 | GP",
@@ -303,11 +281,11 @@
       "Granny's Island - Expert 1 High Ground": "X1/J1/B1/GP",
       "Granny's Island - Expert 2 High Ground": "X2/J1/B1/GP",
       "Granny's Island - High Ground": "J1/B1/GP",
-      "Granny's Island - Coins on Top of Rocket": "X3+Rocket+J1",
+      "Granny's Island - Coins on Top of Rocket": "X1+Rocket+J1 & X3/GP",
       "Granny's Island - Gear on Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J1 | X3+B1+GP",
       "Granny's Island - Arch Near Construction Site": "B1 | GP+J1",
       "Granny's Island - Ocean Pillar": "B1 | X2/GP & OS | X2+J1 & X3/GP",
-      "Granny's Island - First Island Towards Sewer": "B1 | GP+J1+OS | X1+GP",
+      "Granny's Island - First Island Towards Sewer": "B1 | GP+J1+OS | X1+GP | X2+J1",
       "Granny's Island - Second Island Towards Sewer": "B1 & X2/OS/GP/J1 | X1+GP+OS",
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP+J1 | X1+GP+J2 | X3+J1",
@@ -331,7 +309,7 @@
       "Granny's Island - Mosk's Rocket Entrance": ["Mosk's Rocket - Starting Area", "Rocket & X2/J2/B1/GP | X1+Rocket+J1"]
     },
     "specialrules": {
-      "Granny's Island - Safe on Ocean Pillar": "B2 | B1+GP | X2+J1 & X3/B1",
+      "Granny's Island - Safe on Ocean Pillar": "B2 | B1 & X3/GP | X2+J1 & X3/B1",
       "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | X1/B1 & J1 | X1+B2 | X2+B1",
       "Granny's Island - Coin Bag on Pillar Towards Sewer": "X2/B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
@@ -343,11 +321,6 @@
   "Granny's Island - Pipe Area": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin Near Pipe on Hill by Lab #1": 300346,
       "Granny's Island - Coin Near Pipe on Hill by Lab #2": 300347,
@@ -357,26 +330,16 @@
       "Granny's Island - Coin Near Pipe on Hill by Lab #6": 300362,
       "Granny's Island - Coin Near Pipe on Hill by Lab #7": 300365
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Main Area": ""
     },
     "subwarps": {
       "Granny's Island - Hillside Pipe": ["Granny's Island - Main Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Broken Pier Shallow": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Broken Pier #1": 300050,
       "Granny's Island - Coin on Broken Pier #2": 300051,
@@ -387,14 +350,7 @@
       "Granny's Island - Coin on Broken Pier #7": 300056,
       "Granny's Island - Coin on Broken Pier #8": 300057,
       "Granny's Island - Coin on Broken Pier #9": 300058
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Broken Pier Deep": {
     "level": "Hub",
@@ -402,10 +358,6 @@
     "gears": {
       "Granny's Island - Gear - Broken Pier": 100011
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Broken Pier #10": 300059,
       "Granny's Island - Coin on Broken Pier #11": 300060,
@@ -415,22 +367,11 @@
       "Granny's Island - Coin on Broken Pier #15": 300041,
       "Granny's Island - Coin on Broken Pier #16": 300044,
       "Granny's Island - Coin on Broken Pier #17": 300062
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Lab Hill High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Granny's Island - Coin Bag on Starting Area Walls #1": 300543,
       "Granny's Island - Coin Bag on Starting Area Walls #2": 300503,
@@ -514,16 +455,10 @@
       "Granny's Island - Coin on Cliff Behind Starting Area #6": 300313,
       "Granny's Island - Coin on Cliff Behind Starting Area #7": 300296
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Crash Again Island": "OS",
       "Granny's Island - Main Area": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Expert 1 High Ground": {
     "level": "Hub",
@@ -532,8 +467,6 @@
       "Granny's Island - Gear - In Cliff Face": 100008,
       "Granny's Island - Gear - Granny's Statue": 100005
     },
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Roofs Behind Granny's Statue": 300396
     },
@@ -597,15 +530,9 @@
       "Granny's Island - Coin on Roof in Front of Granny's Statue #3": 300473,
       "Granny's Island - Coin on Roof in Front of Granny's Statue #4": 300464
     },
-    "checkpoints": {},
     "cheeses": {
       "Granny's Island - Cheese on Mountain": 2100001
-    },
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Expert 2 High Ground": {
     "level": "Hub",
@@ -616,9 +543,6 @@
       "Granny's Island - Gear - On Roof by Oil Pump": 100009,
       "Granny's Island - Gear - Gym Gears Roof": 100012
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Granny's Island - Coin Bag Near MMA Champion": 300704,
       "Granny's Island - Coin Bag on Roof by Spin Blocks #1": 300394,
@@ -669,22 +593,13 @@
       "Granny's Island - Coin on Stone Arch on Beach #4": 300457,
       "Granny's Island - Coin on Stone Arch on Beach #5": 300456
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Lab Hill High Ground": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - High Ground": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Stone Arch in Water": 300366
     },
@@ -745,15 +660,9 @@
       "Granny's Island - Coin on Ramp Towards Lighthouse #6": 300802,
       "Granny's Island - Coin on Ramp Towards Lighthouse #7": 300804
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
-      "Granny's Island - In the Sky": "X1/J1 & B2 | X1/B1 & GP | X2+J1+B1 | X3 & B1/J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+      "Granny's Island - In the Sky": "X1/J1/GP & B2 | X1+B1+GP | X2+J1+B1 | X3 & B1/J1"
+    }
   },
   "Granny's Island - In the Sky": {
     "level": "Hub",
@@ -762,17 +671,6 @@
       "Granny's Island - Gear - Lighthouse": 100001,
       "Granny's Island - Gear - In the Clouds": 100015
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Granny's Island - Gear - In the Clouds": "B1 & GP/J1 | X2+J1 | X3+B1"
     }
@@ -780,13 +678,9 @@
   "Granny's Island - Coins on Top of Rocket": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Top of Rocket": 300798
     },
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Top of Rocket #1": 300800,
       "Granny's Island - Coin on Top of Rocket #2": 300803,
@@ -794,15 +688,9 @@
       "Granny's Island - Coin on Top of Rocket #4": 300808,
       "Granny's Island - Coin on Top of Rocket #5": 300834
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Gear on Top of Rocket": "X2+Rocket+J2"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Gear on Top of Rocket": {
     "level": "Hub",
@@ -810,46 +698,24 @@
     "gears": {
       "Granny's Island - Gear - On Top of Rocket": 100020
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Coins on Top of Rocket": "",
       "Granny's Island - First Island Towards Sewer": "Rocket+B1",
       "Granny's Island - Tree on Second Island Towards Sewer": "Rocket+B1+GP"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Arch Near Construction Site": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Arch Near Construction Site": 300596
     },
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Arch Near Construction Site #1": 300592,
       "Granny's Island - Coin on Arch Near Construction Site #2": 300593,
       "Granny's Island - Coin on Arch Near Construction Site #3": 300594,
       "Granny's Island - Coin on Arch Near Construction Site #4": 300595
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Ocean Pillar": {
     "level": "Hub",
@@ -857,31 +723,16 @@
     "gears": {
       "Granny's Island - Gear - On Ocean Pillar Towards Sewer": 100006
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Ocean Pillar Towards Sewer #1": 300588,
       "Granny's Island - Coin on Ocean Pillar Towards Sewer #2": 300587,
       "Granny's Island - Coin on Ocean Pillar Towards Sewer #3": 300586,
       "Granny's Island - Coin on Ocean Pillar Towards Sewer #4": 300585
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - First Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Granny's Island - Coin Bag on First Island Towards Sewers #1": 300409,
       "Granny's Island - Coin Bag on First Island Towards Sewers #2": 300408
@@ -892,24 +743,14 @@
       "Granny's Island - Coin on First Island Towards Sewers #3": 300407,
       "Granny's Island - Coin on First Island Towards Sewers #4": 300406
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Main Area": "J1/B1",
       "Granny's Island - Second Island Towards Sewer": "OS+GP"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Second Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Granny's Island - Coin Bag on Second Island Towards Sewer": 300092
     },
@@ -919,55 +760,35 @@
       "Granny's Island - Coin on Second Island Towards Sewer #3": 300090,
       "Granny's Island - Coin on Second Island Towards Sewer #4": 300093
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - First Island Towards Sewer": "OS+J1 | B1",
       "Granny's Island - Tree on Second Island Towards Sewer": "J1 | X1+B1",
       "Granny's Island - Sewer Island": "OS/EarlySewer"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Tree on Second Island Towards Sewer": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Tree on Second Island Towards Sewer": 300304
     },
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Tree on Second Island Towards Sewer #1": 300305,
       "Granny's Island - Coin on Tree on Second Island Towards Sewer #2": 300306,
       "Granny's Island - Coin on Tree on Second Island Towards Sewer #3": 300303,
       "Granny's Island - Coin on Tree on Second Island Towards Sewer #4": 300302
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Second Island Towards Sewer": "",
       "Granny's Island - Sewer Island": "X3+B2 | X3+B1+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - Sewer Island": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Sewer Island": 300259
     },
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on Sewer Island #1": 300095,
       "Granny's Island - Coin on Sewer Island #2": 300102,
@@ -980,42 +801,21 @@
       "Granny's Island - Coin on Sewer Island #9": 300101,
       "Granny's Island - Coin on Sewer Island #10": 300089
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Second Island Towards Sewer": "OS",
       "Granny's Island - Sewer Island Upper": "X1/J1/B1"
     },
-    "subwarps": {},
     "warps": {
       "Granny's Island - Flushed Away Entrance": ["Flushed Away - Starting Area", "PortalFlushedAway+SewerKey"]
-    },
-    "specialrules": {}
+    }
   },
   "Granny's Island - Sewer Island Upper": {
     "level": "Hub",
-    "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "sublevel": "Granny's Island"
   },
   "Granny's Island - Island Past Cloro-Phil": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Granny's Island - Chest on Island Past Cloro-Phil": 300281
     },
@@ -1031,14 +831,7 @@
       "Granny's Island - Coin on Island Past Cloro-Phil #6": 300284,
       "Granny's Island - Coin on Island Past Cloro-Phil #7": 300282,
       "Granny's Island - Coin on Island Past Cloro-Phil #8": 300283
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Granny's Island - High Pillar by Lab": {
     "level": "Hub",
@@ -1046,10 +839,6 @@
     "gears": {
       "Granny's Island - Gear - High Pillar by Lab": 100007
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Granny's Island - Coin on High Pillar by Lab #1": 300633,
       "Granny's Island - Coin on High Pillar by Lab #2": 300638,
@@ -1067,12 +856,6 @@
       "Granny's Island - Coin on High Pillar by Lab #14": 300642,
       "Granny's Island - Coin on High Pillar by Lab #15": 300647
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Granny's Island - Gear - High Pillar by Lab": "X2/J1/GP"
     }
@@ -1080,54 +863,22 @@
   "Granny's Island - Crash Again Island": {
     "level": "Hub",
     "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Granny's Island - Crash Again Roof": "J2 | X2+J1",
       "Granny's Island - Lab Hill High Ground": "OS",
       "Granny's Island - Main Area": "X3+B2+J1"
     },
     "subwarps": {
-      "Crash Again - Entrance": ["Crash Again - Starting Area", "FGU"]
-    },
-    "warps": {},
-    "specialrules": {}
+      "Granny's Island - Crash Again Entrance": ["Crash Again - Starting Area", "FGU"]
+    }
   },
   "Granny's Island - Crash Again Roof": {
     "level": "Hub",
-    "sublevel": "Granny's Island",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "sublevel": "Granny's Island"
   },
   "Granny's Island Hat World": {
     "level": "Hub",
     "sublevel": "Granny's Island Hat World",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
     "hats": {
       "Top Hat": 700002,
       "Propeller Cap": 700001,
@@ -1140,30 +891,17 @@
     },
     "subwarps": {
       "Granny's Island Hat World - Exit": ["Granny's Island - Main Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Law Firm - Entrance": {
     "level": "Hub",
     "sublevel": "Law Firm",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Law Firm - Ledges": "J1 | X3+B1"
     },
     "subwarps": {
       "Law Firm - Exit": ["Granny's Island - Main Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Law Firm - Ledges": {
     "level": "Hub",
@@ -1171,10 +909,6 @@
     "gears": {
       "Law Firm - Gear": 100023
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Law Firm - Coin #1": 300399,
       "Law Firm - Coin #2": 300400,
@@ -1203,56 +937,27 @@
       "Law Firm - Coin #25": 300559,
       "Law Firm - Coin #26": 300560,
       "Law Firm - Coin #27": 300561
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Crash Again - Starting Area": {
     "level": "Hub",
     "sublevel": "Crash Again",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
     "checkpoints": {
       "Crash Again - Checkpoint": 900613
     },
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Crash Again - End": "X1/PMB & X2/SP | PMJ"
     },
     "subwarps": {
       "Crash Again - Exit": ["Granny's Island - Main Area", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Crash Again - End": {
     "level": "Hub",
     "sublevel": "Crash Again",
     "gears": {
       "Crash Again - Gear": 100010
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Ice Cream Truck - Lower Path": {
     "level": "Hub",
@@ -1260,10 +965,6 @@
     "gears": {
       "Ice Cream Truck - Gear - Lower Path in Bomb Block": 100022
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Ice Cream Truck - Coin on First Island #1": 300075,
       "Ice Cream Truck - Coin on First Island #2": 300080,
@@ -1311,15 +1012,12 @@
     "checkpoints": {
       "Ice Cream Truck - Checkpoint": 901440
     },
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Ice Cream Truck - Upper Path": "X2/B1/J2 | X1+J1"
     },
     "subwarps": {
       "Ice Cream Truck - Exit": ["Granny's Island - Main Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "Ice Cream Truck - Gear - Lower Path in Bomb Block": "X1/J1 | {Ice Cream Truck - Upper Path}"
     }
@@ -1330,10 +1028,6 @@
     "gears": {
       "Ice Cream Truck - Gear - Upper Path": 100021
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Ice Cream Truck - Coin on Upper Grassy Area #1": 300330,
       "Ice Cream Truck - Coin on Upper Grassy Area #2": 300326,
@@ -1359,14 +1053,7 @@
       "Ice Cream Truck - Coin Circling Upper Gear #10": 300344,
       "Ice Cream Truck - Coin Circling Upper Gear #11": 300343,
       "Ice Cream Truck - Coin Circling Upper Gear #12": 300341
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Pizza Oven - Entrance": {
     "level": "Hub",
@@ -1374,21 +1061,12 @@
     "gears": {
       "Pizza Oven - Gear": 100004
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Pizza Oven - Pillar": "X1/J1 & B2"
     },
     "subwarps": {
       "Pizza Oven - Exit": ["Granny's Island - Main Area", ""]
     },
-    "warps": {},
     "specialrules": {
       "Pizza Oven - Gear": "B1 & X1/J1 | X2+NSAR+GP+J1 | X3+J1"
     }
@@ -1396,9 +1074,6 @@
   "Pizza Oven - Pillar": {
     "level": "Hub",
     "sublevel": "Pizza Oven",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Pizza Oven - Chest on Top of Pillar": 300737
     },
@@ -1413,14 +1088,7 @@
       "Pizza Oven - Coin on Top of Pillar #4": 300733,
       "Pizza Oven - Coin on Top of Pillar #5": 300736,
       "Pizza Oven - Coin on Top of Pillar #6": 300735
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor": {
     "level": "Hub",
@@ -1430,10 +1098,6 @@
       "Morio's Lab - Gear - Entrance Alcove": 100026,
       "Morio's Lab - Gear - Fall off Ramp": 100025
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin Near Entrance #1": 300064,
       "Morio's Lab - Coin Near Entrance #2": 300096,
@@ -1454,9 +1118,6 @@
       "Morio's Lab - Coin Near Entrance #17": 300440,
       "Morio's Lab - Coin Near Entrance #18": 300439
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
       "Morio's Lab - Ground Floor Second Wrench": "B1/J2",
@@ -1471,17 +1132,11 @@
     "warps": {
       "Morio's Lab - Morio's Home Portal": ["Morio's Island - Starting Area", "PortalMorioHome"],
       "Morio's Lab - Bombeach Portal": ["Bombeach - Starting Area", "PortalBombeach"]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Wardrobe": {
     "level": "Hub",
     "sublevel": "Morio's Wardrobe",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Wardrobe - Coin #1": 300069,
       "Morio's Wardrobe - Coin #2": 300068,
@@ -1489,24 +1144,13 @@
       "Morio's Wardrobe - Coin #4": 300066,
       "Morio's Wardrobe - Coin #5": 300065
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Morio's Wardrobe - Exit": ["Morio's Lab - Ground Floor", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor First Wrench": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Ground Floor Wrench #1": 300603,
       "Morio's Lab - Coin on Ground Floor Wrench #2": 300602,
@@ -1514,25 +1158,14 @@
       "Morio's Lab - Coin on Ground Floor Wrench #4": 300600,
       "Morio's Lab - Coin on Ground Floor Wrench #5": 300599
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Second Wrench": "J1",
       "Morio's Lab - Ground Floor": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor Second Wrench": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Ground Floor Wrench #6": 300618,
       "Morio's Lab - Coin on Ground Floor Wrench #7": 300617,
@@ -1540,48 +1173,27 @@
       "Morio's Lab - Coin on Ground Floor Wrench #9": 300615,
       "Morio's Lab - Coin on Ground Floor Wrench #10": 300614
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor First Wrench": "",
       "Morio's Lab - Ground Floor Bolts": "J1",
       "Morio's Lab - Ground Floor Orange Blocks": "J1+OS | J2"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor Lowest Bolt": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Bolts Above Ground Floor #1": 300632
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Ground Floor Orange Blocks": "X1+B1",
       "Morio's Lab - Ground Floor Bolts": "X1+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor Bolts": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag in Nut Above Ground Floor #1": 300663,
       "Morio's Lab - Coin Bag in Nut Above Ground Floor #2": 300648,
@@ -1590,9 +1202,6 @@
     "coins": {
       "Morio's Lab - Coin on Bolts Above Ground Floor #2": 300649
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Lowest Bolt": "",
       "Morio's Lab - Bunny Ledge": "J1 | X1+B1",
@@ -1600,10 +1209,7 @@
       "Morio's Lab - Fifth Floor Crash Test Area": "X1+B1+FGU & X2/J1",
       "Morio's Lab - Alcove Above Arcade Panik": "J1/B1",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X3 & B1/J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Alcove Above Arcade Panik": {
     "level": "Hub",
@@ -1611,73 +1217,34 @@
     "gears": {
       "Morio's Lab - Gear - Alcove Above Arcade Panik Portal": 100027
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor": "X2+B1+OOB"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor Orange Blocks": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Crash Test Area": "OS+J1+FGU | X2+OS+B1+FGU"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Bunny Ledge": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
     "bunnies": {
       "Morio's Lab - Bunny - Ledge Above Ground Floor": 200000
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Orange Blocks": "X1+J1",
       "Morio's Lab - Fifth Floor Crash Test Area": "X3+J1",
       "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": "SCOOB",
       "Morio's Lab - Fourth Floor": "X3+OOB+B1",
       "Morio's Lab - Final Floor Bunny Shortcut Lower": "X3+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Second Floor #1": 300433,
       "Morio's Lab - Coin on Second Floor #2": 300435,
@@ -1685,9 +1252,6 @@
       "Morio's Lab - Coin on Second Floor #4": 300437,
       "Morio's Lab - Coin on Second Floor #5": 300438
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Path to Morio's Room": "B1 | X2+J1",
       "Morio's Lab - Ground Floor": "",
@@ -1695,71 +1259,36 @@
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
       "Morio's Lab - Psycho Taxi Arcade Machine": "FGU | X2+OOB+B1"
     },
-    "subwarps": {},
     "warps": {
       "Morio's Lab - Arcade Panik Portal": ["Arcade Plaza - Starting Area", "PortalArcadePanik"]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Psycho Taxi Arcade Machine": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "FGU | X1+OOB+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor Above Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor After Demo Wall": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor After Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #1": 300434,
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #2": 300432,
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #3": 300431
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "FGU",
       "Morio's Lab - Second Floor True Demo Wall": ""
     },
-    "subwarps": {},
     "warps": {
       "Morio's Lab - Pizza Time Portal": ["Pizza Time - Starting Area", "PortalPizzaTime"]
     },
@@ -1770,29 +1299,13 @@
   "Morio's Lab - Second Floor True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor Inside True Demo Wall": "FGU"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor Inside True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Second Floor": 300428
     },
@@ -1800,25 +1313,15 @@
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #4": 300430,
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #5": 300429
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor After Demo Wall": "",
       "Morio's Lab - Second Floor After True Demo Wall": "",
       "Morio's Lab - Third Floor Wrenches Lower": "X2+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor After True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Second to Third Floor Stairway #1": 300476,
       "Morio's Lab - Coin Bag on Second to Third Floor Stairway #2": 300550
@@ -1829,63 +1332,29 @@
       "Morio's Lab - Coin on Second to Third Floor Stairway #3": 300549,
       "Morio's Lab - Coin on Second to Third Floor Stairway #4": 300551
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor True Demo Wall": "",
       "Morio's Lab - Third Floor": "X2/J1/B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor Falling From Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Second Floor": "",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X1+J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Second Floor Access to Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
     "subwarps": {
       "Morio's Lab - Second Floor Shortcut Pipe": ["Morio's Lab - Fifth Floor Inside Shortcut Pipe", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Path to Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Corner Ledge Towards Morio's Room": 300675
     },
@@ -1911,9 +1380,6 @@
       "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #11": 300680,
       "Morio's Lab - Coin on Corner Ledge Towards Morio's Room #12": 300694
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Outside Morio's Room": "B1 | X3+J1",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
@@ -1922,19 +1388,11 @@
       "Morio's Lab - Third Floor Wrenches Upper": "FGU+B2",
       "Morio's Lab - Second Floor Above Demo Wall": "B2 | X3+J1",
       "Morio's Lab - Second Floor After Demo Wall": "J2 | X1 & B1/J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Outside Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin Near Morio's Room #1": 300747,
       "Morio's Lab - Coin Near Morio's Room #2": 300746,
@@ -1942,35 +1400,17 @@
       "Morio's Lab - Coin Near Morio's Room #4": 300744,
       "Morio's Lab - Coin Near Morio's Room #5": 300743
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Inside Morio's Room": "NHS+MorioHat | HS+MorioHat & {Morio's Wardrobe}"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Inside Morio's Room": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Inside Morio's Room Jump": "J1 | X2+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Inside Morio's Room Jump": {
     "level": "Hub",
@@ -1978,9 +1418,6 @@
     "gears": {
       "Morio's Lab - Gear - Morio's Room": 100016
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag in Morio's Room #1": 300754,
       "Morio's Lab - Coin Bag in Morio's Room #2": 300752
@@ -1989,25 +1426,14 @@
       "Morio's Lab - Coin in Morio's Room #1": 300748,
       "Morio's Lab - Coin in Morio's Room #2": 300751,
       "Morio's Lab - Coin in Morio's Room #3": 300753
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Lab - Chest on Second to Third Floor Stairway": 300581
     },
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Second to Third Floor Stairway #5": 300580,
       "Morio's Lab - Coin on Second to Third Floor Stairway #6": 300582
@@ -2015,28 +1441,19 @@
     "checkpoints": {
       "Morio's Lab - Checkpoint Before Spikes": 900080
     },
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Lower": "J1",
       "Morio's Lab - Fourth Floor": "Spike+B1 | X2+Spike+J1 | X3+J1",
       "Morio's Lab - Second Floor After True Demo Wall": ""
     },
-    "subwarps": {},
     "warps": {
       "Morio's Lab - Tosla's Offices Portal": ["Tosla Square - Starting Area", "PortalToslaOffices"],
       "Morio's Lab - Baby Steps! TV": ["Baby Steps! - Starting Area", "TT1"]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor Wrenches Lower": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Third Floor Wrenches #1": 300650,
       "Morio's Lab - Coin on Third Floor Wrenches #2": 300651,
@@ -2044,26 +1461,15 @@
       "Morio's Lab - Coin on Third Floor Wrenches #4": 300653,
       "Morio's Lab - Coin on Third Floor Wrenches #5": 300654
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Middle": "FGU+J1 | X2+FGU+B1",
       "Morio's Lab - Third Floor Gear Wrench": "J2 | X2+J1",
       "Morio's Lab - Third Floor": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor Wrenches Middle": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Third Floor Wrenches #6": 300664,
       "Morio's Lab - Coin on Third Floor Wrenches #7": 300666,
@@ -2071,59 +1477,30 @@
       "Morio's Lab - Coin on Third Floor Wrenches #9": 300667,
       "Morio's Lab - Coin on Third Floor Wrenches #10": 300665
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Upper": "J1 | X2+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor Wrenches Upper In True Demo Wall": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Third Floor Wrenches #11": 300685,
       "Morio's Lab - Coin on Third Floor Wrenches #12": 300687,
       "Morio's Lab - Coin on Third Floor Wrenches #13": 300686,
       "Morio's Lab - Coin on Third Floor Wrenches #14": 300684
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor Wrenches Upper": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Third Floor Wrenches #15": 300683
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Gear Wrench": "J1",
       "Morio's Lab - Third Floor Wrenches Upper In True Demo Wall": "FGU"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Third Floor Gear Wrench": {
     "level": "Hub",
@@ -2131,33 +1508,13 @@
     "gears": {
       "Morio's Lab - Gear - Third Floor Wrenches": 100024
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Third Floor Wrenches Upper": "J1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fourth Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fourth Floor Spiky Bunny Alcove": "X3/Spike & J1",
       "Morio's Lab - Fifth Floor Crash Test Area": "B1/J1",
@@ -2165,79 +1522,38 @@
       "Morio's Lab - Third Floor": "Spike",
       "Morio's Lab - Fourth Floor Spiky Cliffs": "X3/Spike & J1 | X1+Spike+B2 | X2+B2+J2"
     },
-    "subwarps": {},
     "warps": {
       "Morio's Lab - Getting Gud! TV": ["Getting Gud! - Starting Area", "TT2"],
       "Morio's Lab - Maurizio's City Portal": ["Maurizio's City - Starting Area", "PortalMauriziosCity"]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fourth Floor Spiky Cliffs": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "gears": {
       "Morio's Lab - Gear - On Spiky Cliffs": 100019
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fourth Floor Spiky Bunny Alcove": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
     "bunnies": {
       "Morio's Lab - Bunny - In Spiky Alcove": 200001
     },
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag in Spiky Alcove": 300789
-    },
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ledge Above Maurizio's City Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag Above Maurizio's City Portal": 300793
-    },
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor Crash Test Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag in Orange Block Shortcut Tunnel": 300721
     },
@@ -2263,9 +1579,6 @@
       "Morio's Lab - Coin in Orange Block Shortcut Tunnel #14": 300730,
       "Morio's Lab - Coin in Orange Block Shortcut Tunnel #15": 300731
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Morio's Mind Area": "OS/J2 | X2+B1 | X3+J1",
       "Morio's Lab - Ground Floor Bolts": "B1/J1",
@@ -2274,85 +1587,37 @@
       "Morio's Lab - Ground Floor Lowest Bolt": "FGU",
       "Morio's Lab - Ground Floor Orange Blocks": "FGU",
       "Morio's Lab - Ground Floor Second Wrench": "FGU | X3+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor Morio's Mind Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password | X3+OOB+B1",
       "Morio's Lab - Dream Machine": "FGU",
       "Morio's Lab - Fifth Floor Crash Test Area": ""
     },
-    "subwarps": {},
     "warps": {
       "Morio's Lab - Pro Tricks! TV": ["Pro Tricks! - Starting Area", "TT3"]
-    },
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Dream Machine": {
     "level": "Hub",
-    "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    "sublevel": "Morio's Lab"
   },
   "Morio's Lab - Fifth Floor Ruined Observatory Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Golden Propeller": "J1+GP",
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "J1+Password",
       "Morio's Lab - Ledge Above Ruined Observatory Portal": "B2 | X1/J1 & B1 | J2 | X1+J1",
       "Morio's Lab - Fifth Floor Morio's Mind Area": "Password"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor Golden Propeller": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ledge Below Tosla HQ Portal": "",
       "Morio's Lab - Fifth Floor High Pillars": "",
@@ -2361,23 +1626,11 @@
       "Morio's Lab - Fifth Floor Inside Shortcut Pipe": "Password",
       "Morio's Lab - Third Floor": "X3+NSAR+OOB+Password",
       "Morio's Lab - Final Floor Bunny Shortcut Upper": "X1+B1 & X3/Password"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Middle Floors 3 Golden Propellers": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Path to Morio's Room": "FGU",
       "Morio's Lab - Outside Morio's Room": "FGU",
@@ -2390,61 +1643,31 @@
       "Morio's Lab - Alcove Above Arcade Panik": "FGU",
       "Morio's Lab - Ground Floor Propeller": "FGU",
       "Morio's Lab - Middle Floors 2 Golden Propellers": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Middle Floors 2 Golden Propellers": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fourth Floor Spiky Bunny Alcove": "X3/Spike",
       "Morio's Lab - Fourth Floor Spiky Cliffs": "Spike | X2+B1",
       "Morio's Lab - Fifth Floor Golden Propeller": "Password",
       "Morio's Lab - Ledge Above Maurizio's City Portal": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor Inside Shortcut Pipe": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "Password"
     },
     "subwarps": {
       "Morio's Lab - Fifth Floor Shortcut Pipe": ["Morio's Lab - Second Floor Falling From Shortcut Pipe", ""]
-    },
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ledge Above Ruined Observatory Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Ledge Above Ruined Observatory Portal": 300812
     },
@@ -2474,75 +1697,42 @@
       "Morio's Lab - Coin on Pillar Near Ledge Above Ruined Observatory Portal #8": 300813,
       "Morio's Lab - Coin on Pillar Near Ledge Above Ruined Observatory Portal #9": 300809
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ledge Below Tosla HQ Portal": "J1 | X3+B1",
       "Morio's Lab - Fifth Floor Low Pillars": "J1 | X1+B1",
       "Morio's Lab - Final Floor Bunny Shortcut Upper": "X3+B1",
       "Morio's Lab - Fifth Floor Ruined Observatory Area": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ledge Below Tosla HQ Portal": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Ledge Below Tosla HQ Portal #1": 300851,
       "Morio's Lab - Coin Bag on Ledge Below Tosla HQ Portal #2": 300852,
       "Morio's Lab - Coin Bag on Ledge Below Tosla HQ Portal #3": 300853
     },
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Final Floor": "J2 | X1+J1 | X3+B1",
       "Morio's Lab - Ledge Above Ruined Observatory Portal": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor Low Pillars": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Lab - Chest on Medium Pillar Above Ruined Observatory Portal": 300842
     },
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on Medium Pillar Above Ruined Observatory Portal #1": 300840,
       "Morio's Lab - Coin on Medium Pillar Above Ruined Observatory Portal #2": 300843,
       "Morio's Lab - Coin on Medium Pillar Above Ruined Observatory Portal #3": 300841,
       "Morio's Lab - Coin on Medium Pillar Above Ruined Observatory Portal #4": 300844
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Fifth Floor High Pillars": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin on High Pillar Above Ruined Observatory Portal #1": 300855,
       "Morio's Lab - Coin on High Pillar Above Ruined Observatory Portal #2": 300858,
@@ -2554,44 +1744,23 @@
       "Morio's Lab - Coin on Pillar Attached to Wall Above Ruined Observatory Portal #3": 300839,
       "Morio's Lab - Coin on Pillar Attached to Wall Above Ruined Observatory Portal #4": 300836
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor Golden Propeller": "GP"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Final Floor": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Fifth Floor High Pillars": "J1 | X1+B1",
       "Morio's Lab - Final Floor Pipes": "J1",
       "Morio's Lab - Final Floor Catwalk": "J2 | J1+X1",
       "Morio's Lab - Ledge Below Tosla HQ Portal": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Final Floor Pipes": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
     "chests": {
       "Morio's Lab - Chest on Pipes on Final Floor #1": 300862,
       "Morio's Lab - Chest on Pipes on Final Floor #2": 300863
@@ -2600,48 +1769,25 @@
       "Morio's Lab - Coin Bag on Pipes on Final Floor #1": 300860,
       "Morio's Lab - Coin Bag on Pipes on Final Floor #2": 300861
     },
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Final Floor Bunny Shortcut Upper": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Final Floor Bunny Shortcut Upper": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
     "bunnies": {
       "Morio's Lab - Bunny - Shortcut From Final Floor": 200002
     },
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Final Floor": "",
       "Morio's Lab - Final Floor Bunny Shortcut Lower": "",
       "Morio's Lab - Fifth Floor Low Pillars": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Final Floor Bunny Shortcut Lower": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
     "coins": {
       "Morio's Lab - Coin in Shortcut From Final Floor #1": 300845,
       "Morio's Lab - Coin in Shortcut From Final Floor #2": 300846,
@@ -2649,9 +1795,6 @@
       "Morio's Lab - Coin in Shortcut From Final Floor #4": 300848,
       "Morio's Lab - Coin in Shortcut From Final Floor #5": 300849
     },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Final Floor Bunny Shortcut Upper": "X3+J1",
       "Morio's Lab - Ground Floor First Wrench": "FGU",
@@ -2659,18 +1802,11 @@
       "Morio's Lab - Ground Floor Orange Blocks": "FGU",
       "Morio's Lab - Outside Morio's Room": "FGU+J1",
       "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": "SCOOB"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Final Floor Catwalk": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
     "coinbags": {
       "Morio's Lab - Coin Bag on Catwalk Above Tosla HQ Portal #1": 300870,
       "Morio's Lab - Coin Bag on Catwalk Above Tosla HQ Portal #2": 300871,
@@ -2683,27 +1819,11 @@
       "Morio's Lab - Coin on Catwalk Above Tosla HQ Portal #4": 300873,
       "Morio's Lab - Coin on Catwalk Above Tosla HQ Portal #5": 300874,
       "Morio's Lab - Coin on Catwalk Above Tosla HQ Portal #6": 300875
-    },
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Out-of-Bounds (EXPERTS ONLY)": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Wardrobe": "X2 & X3/B1 & J1",
       "Morio's Lab - Ground Floor Second Wrench": "",
@@ -2717,23 +1837,11 @@
       "Morio's Lab - Fifth Floor Ruined Observatory Area": "",
       "Morio's Lab - Fifth Floor Low Pillars": "",
       "Morio's Lab - Final Floor Bunny Shortcut Lower": ""
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Morio's Lab - Ground Floor Propeller": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Morio's Lab - Ground Floor Second Wrench": "",
       "Morio's Lab - Ground Floor Lowest Bolt": "",
@@ -2751,9 +1859,6 @@
       "Morio's Lab - Middle Floors 3 Golden Propellers": "FGU+B1+Spike",
       "Morio's Lab - Inside Morio's Room Jump": "NHS+MorioHat+B1 | HS+MorioHat+B1 & {Morio's Wardrobe}",
       "Morio's Lab - Middle Floors 2 Golden Propellers": "X2+FGU+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   }
 }

@@ -2,22 +2,10 @@
   "Getting Gud! - Starting Area": {
     "level": "Getting Gud!",
     "sublevel": "Getting Gud!",
-    "gears": {},
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Getting Gud! - Lower Spikes": "J1/Spike | X2+B1",
       "Getting Gud! - Middle Floor": "X1+J1 | B1+Spike | J2"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Getting Gud! - Lower Spikes": {
     "level": "Getting Gud!",
@@ -25,19 +13,7 @@
     "gears": {
       "Getting Gud! - Gear - In Spikes Left of Start": 180100004,
       "Getting Gud! - Gear - In Spikes Right of Start": 180100005
-    },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Getting Gud! - Middle Floor": {
     "level": "Getting Gud!",
@@ -46,21 +22,10 @@
       "Getting Gud! - Gear - In Front of Start": 180100002,
       "Getting Gud! - Gear - Behind Start": 180100003
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Getting Gud! - High Ground": "B1 | X1+J2 | X3+J1",
       "Getting Gud! - In the Air": "X1+B1"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Getting Gud! - High Ground": {
     "level": "Getting Gud!",
@@ -68,20 +33,9 @@
     "gears": {
       "Getting Gud! - Gear - High Platform": 180100000
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
     "connections": {
       "Getting Gud! - In the Air": "X1+J1 | J2/B2"
-    },
-    "subwarps": {},
-    "warps": {},
-    "specialrules": {}
+    }
   },
   "Getting Gud! - In the Air": {
     "level": "Getting Gud!",
@@ -89,17 +43,6 @@
     "gears": {
       "Getting Gud! - Gear - In the Air": 180100001
     },
-    "bunnies": {},
-    "safes": {},
-    "chests": {},
-    "coinbags": {},
-    "coins": {},
-    "checkpoints": {},
-    "cheeses": {},
-    "hats": {},
-    "connections": {},
-    "subwarps": {},
-    "warps": {},
     "specialrules": {
       "Getting Gud! - Complete Time Trial": "J1/Spike"
     }
