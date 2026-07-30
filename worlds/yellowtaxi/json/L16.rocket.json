@@ -148,9 +148,9 @@
       "Buttons Smashing - Hat Platform": "X2+NSAR & {Buttons Smashing - Starting Area}",
       "Stealthy - Halfway Up": "X1+NSAR & {Stealthy - Starting Area}",
       "Podium - First Gear Pillar": "X1+NSAR & {Podium - Starting Area}",
-      "Costipation - Hat Area": "X1+NSAR & {Heroic Moves - Starting Area}",
-      "Costipation - Roadway Gear Area": "X1+NSAR & {Heroic Moves - Starting Area}",
-      "Costipation - Island Gear Area": "X1+NSAR & {Heroic Moves - Starting Area}",
+      "Costipation - Hat Area": "X1+NSAR & {Costipation - Starting Area}",
+      "Costipation - Roadway Gear Area": "X1+NSAR & {Costipation - Starting Area}",
+      "Costipation - Island Gear Area": "X1+NSAR & {Costipation - Starting Area}",
       "Heroic Moves - Building": "X1+NSAR & {Heroic Moves - Starting Area}"
     }
   },
