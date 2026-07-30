@@ -53,9 +53,9 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
                 if rule:
                     rf.assign_entrance_rule(warp, rule)
 
-        # Mori-O-Trons
-        if world.options.expert_level >= 1 and "moriotrons" in reg.keys():
-            for moriotron, connect in reg["moriotrons"].items():
+        # Mori-O-Trons. Only need rules on UT, as they aren't added at all unless important
+        if world.using_ut and "moriotrons" in reg.keys():
+            for moriotron in reg["moriotrons"].keys():
                 rf.assign_entrance_rule(moriotron, "X2")
 
         # Cheeses
