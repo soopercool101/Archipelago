@@ -460,6 +460,7 @@ class YellowTaxiWorld(World):
             "remove_post_goal_portals",
             "funny_faces",
             "easy_alien_mosk",
+            "shop_hints",
             # Only used by UT
             "expert_level",
             "include_out_of_bounds",

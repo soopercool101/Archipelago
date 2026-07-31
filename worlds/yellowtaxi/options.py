@@ -170,7 +170,7 @@ class FecalMattersUnlockCondition(Choice):
     option_shuffle_doggo = 2
     option_exclude = 3
 
-    default = option_vanilla
+    default = option_shuffle_doggo
     alias_unlocked = option_open
 
 class FlushedAwayUnlockCondition(Choice):
@@ -551,7 +551,7 @@ class PurchaseRebatePercent(Range):
     display_name = "Purchase Rebate %"
     range_start = 0
     range_end = 100
-    default = 0
+    default = 25
 
 class EasyAlienMosk(Toggle):
     """
@@ -579,6 +579,25 @@ class EnabledTraps(OptionSet):
     display_name = "Enabled Traps"
     valid_keys = sorted(TRAPS)
     default = sorted(TRAPS)
+
+class ShopHints(Choice):
+    """
+    When backing out of a shop without purchasing, should a hint be generated and, if so, for what item types?
+    """
+    display_name = "Shop Hints"
+
+    option_none = 0
+    option_progression_only = 3
+    option_progression_and_useful = 2
+    option_all = 1
+    default = option_none
+    alias_disabled = option_none
+    alias_off = option_none
+    alias_progression = option_progression_only
+    alias_useful = option_progression_and_useful
+    alias_proguseful = option_progression_and_useful
+    alias_any = option_all
+    alias_on = option_all
 
 
 # We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
@@ -639,6 +658,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     start_inventory_from_pool: StartInventoryPool
     trap_fill_percent: TrapFillPercent
     enabled_traps: EnabledTraps
+    shop_hints: ShopHints
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -696,6 +716,7 @@ option_groups = [
     OptionGroup(
         "Quality of Life Options",
         [
+            ShopHints,
             PurchaseRebatePercent,
             EasyAlienMosk,
         ],
