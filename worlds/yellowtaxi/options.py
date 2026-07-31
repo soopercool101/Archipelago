@@ -590,7 +590,7 @@ class ShopHints(Choice):
     option_progression_only = 3
     option_progression_and_useful = 2
     option_all = 1
-    default = option_none
+    default = option_progression_only
     alias_disabled = option_none
     alias_off = option_none
     alias_progression = option_progression_only
