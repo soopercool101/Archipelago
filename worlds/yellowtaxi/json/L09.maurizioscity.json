@@ -6,7 +6,10 @@
       "Maurizio's City - Gear - Escort Umarell From Lowest Level": 90100016,
       "Maurizio's City - Gear - Escort Shaboiardo": 90100014,
       "Maurizio's City - Gear - Escort Busy Man From Lowest Level": 90100012,
-      "Maurizio's City - Gear - Escort Busy Man From Lower Middle Level": 90100007
+      "Maurizio's City - Gear - Escort Busy Man From Lower Middle Level": 90100007,
+      "Maurizio's City - Gear - Escort Pietro Parcheggio": 90100009,
+      "Maurizio's City - Gear - Escort Uigliam": 90100017,
+      "Maurizio's City - Gear - Escort Doggo": 90100008
     },
     "safes": {
       "Maurizio's City - Safe on Cliff Off of Upper Middle Level": 90300123
@@ -17,7 +20,10 @@
     "coinbags": {
       "Maurizio's City - Coin Bag on Roof Left of Main Road Ramp From Lowest Level": 90300055,
       "Maurizio's City - Coin Bag on Left Tree on Lower Middle Level": 90300155,
-      "Maurizio's City - Coin Bag on Right Tree on Lower Middle Level": 90300158
+      "Maurizio's City - Coin Bag on Right Tree on Lower Middle Level": 90300158,
+      "Maurizio's City - Coin Bag in Construction Site on Upper Middle Level #1": 90300222,
+      "Maurizio's City - Coin Bag in Construction Site on Upper Middle Level #2": 90300247,
+      "Maurizio's City - Coin Bag in Construction Site on Upper Middle Level #3": 90300243
     },
     "coins": {
       "Maurizio's City - Coin on Main Road on Lowest Level #1": 90300016,
@@ -103,7 +109,55 @@
       "Maurizio's City - Coin on Cliff Off of Upper Middle Level #7": 90300148,
       "Maurizio's City - Coin on Cliff Off of Upper Middle Level #8": 90300147,
       "Maurizio's City - Coin on Cliff Off of Upper Middle Level #9": 90300124,
-      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #10": 90300122
+      "Maurizio's City - Coin on Cliff Off of Upper Middle Level #10": 90300122,
+      "Maurizio's City - Coin on Main Road Near Pizza Restaurants on Upper Middle Level #1": 90300258,
+      "Maurizio's City - Coin on Main Road Near Pizza Restaurants on Upper Middle Level #2": 90300257,
+      "Maurizio's City - Coin on Main Road Near Pizza Restaurants on Upper Middle Level #3": 90300256,
+      "Maurizio's City - Coin on Main Road Near Pizza Restaurants on Upper Middle Level #4": 90300255,
+      "Maurizio's City - Coin on Main Road Near Pizza Restaurants on Upper Middle Level #5": 90300254,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #1": 90300215,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #2": 90300221,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #3": 90300234,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #4": 90300240,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #5": 90300246,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #6": 90300250,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #7": 90300216,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #8": 90300235,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #9": 90300241,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #10": 90300251,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #11": 90300217,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #12": 90300223,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #13": 90300236,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #14": 90300242,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #15": 90300248,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #16": 90300252,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #17": 90300218,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #18": 90300224,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #19": 90300237,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #20": 90300249,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #21": 90300219,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #22": 90300238,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #23": 90300244,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #24": 90300220,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #25": 90300226,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #26": 90300239,
+      "Maurizio's City - Coin in Construction Site on Upper Middle Level #27": 90300245,
+      "Maurizio's City - Coin on Main Road Ramp to Upper Level #1": 90300302,
+      "Maurizio's City - Coin on Main Road Ramp to Upper Level #2": 90300326,
+      "Maurizio's City - Coin on Main Road Ramp to Upper Level #3": 90300327,
+      "Maurizio's City - Coin on Main Road Ramp to Upper Level #4": 90300328,
+      "Maurizio's City - Coin on Main Road Ramp to Upper Level #5": 90300330,
+      "Maurizio's City - Coin on Main Road on Upper Level #1": 90300331,
+      "Maurizio's City - Coin on Main Road on Upper Level #2": 90300332,
+      "Maurizio's City - Coin on Main Road on Upper Level #3": 90300333,
+      "Maurizio's City - Coin on Main Road on Upper Level #4": 90300334,
+      "Maurizio's City - Coin on Main Road on Upper Level #5": 90300335,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #1": 90300342,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #2": 90300343,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #3": 90300348,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #4": 90300349,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #5": 90300352,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #6": 90300355
     },
     "checkpoints": {
       "Maurizio's City - Checkpoint - Plaza on Lowest Level": 90900058,
@@ -119,10 +173,18 @@
       "Maurizio's City - Cheese in Cheese Shop on Upper Middle Level #2": 92100004
     },
     "connections": {
-      "Maurizio's City - Oil Pumps": "SP"
+      "Maurizio's City - Oil Pumps": "SP",
+      "Maurizio's City - Expert 2": "X2/J1/B1",
+      "Maurizio's City - Roofs Under Checkpoint Building": "X2/J1/B1",
+      "Maurizio's City - Checkpoint Building on Upper Level": "B1/J1"
     },
     "subwarps": {
-      "Maurizio's City - Painted Tunnel": ["Purple Tunnel", ""]
+      "Maurizio's City - Painted Tunnel": ["Purple Tunnel", ""],
+      "Maurizio's City - Hat World Entrance": ["Maurizio's City Hat World", ""]
+    },
+    "moriotrons": {
+      "Maurizio's City - Mori-O-Tron on Upper Middle Level Between Cheese and Meat Shops": "Maurizio's City - Checkpoint Building on Upper Level",
+      "Maurizio's City - Mori-O-Tron on Upper Level Under Beams": "Maurizio's City - Checkpoint Building on Upper Level"
     }
   },
   "Maurizio's City - Oil Pumps": {
@@ -133,6 +195,74 @@
       "Maurizio's City - Gear - Oil Pump on Lower Middle Level": 90100001,
       "Maurizio's City - Gear - Oil Pump on Higher Middle Level": 90100003,
       "Maurizio's City - Gear - Oil Pump on Highest Level": 90100000
+    }
+  },
+  "Maurizio's City - Expert 2": {
+    "level": "Maurizio's City",
+    "sublevel": "Maurizio's City",
+    "coinbags": {
+      "Maurizio's City - Coin Bag on Gimmy's Roof": 90300294
+    },
+    "coins": {
+      "Maurizio's City - Coin on Red Beams on Lower Middle Level #1": 90300116,
+      "Maurizio's City - Coin on Red Beams on Lower Middle Level #2": 90300118,
+      "Maurizio's City - Coin on Red Beams on Lower Middle Level #3": 90300119,
+      "Maurizio's City - Coin on Red Beams on Lower Middle Level #4": 90300121
+    },
+    "specialrules": {
+      "Maurizio's City - Coin on Red Beams on Lower Middle Level #4": "X3/J1/B1"
+    }
+  },
+  "Maurizio's City - Roofs Under Checkpoint Building": {
+    "level": "Maurizio's City",
+    "sublevel": "Maurizio's City",
+    "coinbags": {
+      "Maurizio's City - Coin Bag on Building Near Van Biodiesel #1": 90300316,
+      "Maurizio's City - Coin Bag on Building Near Van Biodiesel #2": 90300310
+    },
+    "coins": {
+      "Maurizio's City - Coin on Building Near Van Biodiesel #1": 90300323,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #2": 90300320,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #3": 90300317,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #4": 90300314,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #5": 90300311,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #6": 90300308,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #7": 90300305,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #8": 90300322,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #9": 90300319,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #10": 90300307,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #11": 90300304,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #12": 90300321,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #13": 90300318,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #14": 90300315,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #15": 90300312,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #16": 90300309,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #17": 90300306,
+      "Maurizio's City - Coin on Building Near Van Biodiesel #18": 90300303,
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #1": 90300341,
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #2": 90300340,
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #3": 90300339,
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #4": 90300338,
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #5": 90300337
+    },
+    "specialrules": {
+      "Maurizio's City - Coin on Pink House Roof on Upper Level #3": "B1/J1 | {Maurizio's City - Checkpoint Building on Upper Level}"
+    }
+  },
+  "Maurizio's City - Checkpoint Building on Upper Level": {
+    "level": "Maurizio's City",
+    "sublevel": "Maurizio's City",
+    "coins": {
+      "Maurizio's City - Coin Leading Up Building on Upper Level #7": 90300357,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #8": 90300371,
+      "Maurizio's City - Coin Leading Up Building on Upper Level #9": 90300372
+    },
+    "checkpoints": {
+      "Maurizio's City - Checkpoint on Building on Upper Level": 90900345
+    },
+    "connections": {
+      "Maurizio's City - Starting Area": "",
+      "Maurizio's City - Roofs Under Checkpoint Building": ""
     }
   },
   "Maurizio's City Hat World": {

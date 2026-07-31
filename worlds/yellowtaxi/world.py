@@ -193,7 +193,7 @@ class YellowTaxiWorld(World):
         if (self.options.goal >= 2 or
                 not self.options.remove_post_goal_portals):
             self.included_levels += [
-                #"Maurizio's City",
+                "Maurizio's City",
             ]
 
 

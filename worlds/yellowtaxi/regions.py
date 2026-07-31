@@ -104,8 +104,8 @@ def connect_regions(world: YellowTaxiWorld) -> None:
 
 
         # Connect Mori-O-Trons
-        # TODO: Entrance Rando. Until then, only relevant in Maurizio's City
-        if reg["level"] == "Maurizio's City":
+        # TODO: Entrance Rando. Until then, only relevant in Maurizio's City and Crash Test Industries
+        if reg["level"] in ["Maurizio's City", "Crash Test Industries"]:
             if "moriotrons" in reg.keys() and (world.options.expert_level >= 2 or world.using_ut):
                 for moriotron in reg["moriotrons"].items():
                     try:

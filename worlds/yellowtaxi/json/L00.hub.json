@@ -310,7 +310,7 @@
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1 & X3/GP | X2+J1 & X3/B1",
-      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & GP | X1/B1 & J1 | X1+B2 | X2+B1",
+      "Granny's Island - Safe on Granny's Statue": "J2 | J1/B1 & X2/GP | X1+B1+J1 | B2 & X1/J1",
       "Granny's Island - Coin Bag on Pillar Towards Sewer": "X2/B1/GP",
       "Granny's Island - Gear - Oil Pump": "SP | X2",
       "Granny's Island - Gear - Inside Spin Blocks": "X3/SP",
@@ -1122,7 +1122,7 @@
       "Morio's Lab - Ground Floor Orange Blocks": "B2",
       "Morio's Lab - Ground Floor Second Wrench": "B1/J2",
       "Morio's Lab - Second Floor": "J1/B1",
-      "Morio's Lab - Fifth Floor Crash Test Area": "X2+B2+FGU | B2+J2+FGU"
+      "Morio's Lab - Fifth Floor Crash Test Area": "NOS+B2+J2+FGU | X1+B2+FGU & X2/J1"
     },
     "subwarps": {
       "Morio's Lab - Front Door": ["Granny's Island - Starting Area", "LabKey"],

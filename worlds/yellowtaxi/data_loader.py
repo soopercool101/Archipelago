@@ -19,6 +19,7 @@ regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
                                       load_json_data("L06.gymgears.json") |
                                       load_json_data("L07.fecalmatters.json") |
                                       load_json_data("L08.flushedaway.json") |
+                                      load_json_data("L09.maurizioscity.json") |
                                       load_json_data("L16.rocket.json") |
                                       load_json_data("L17.babysteps.json") |
                                       load_json_data("L18.gettinggud.json") |
