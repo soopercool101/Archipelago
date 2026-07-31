@@ -85,7 +85,7 @@ class RuleFactory:
 
     def __init__(self, world: YellowTaxiWorld):
         self.world = world
-        self.move_prefix = ""
+        self.move_suffix = ""
         self.cached_complex_rules : dict[str, Rule] = {}
 
     def assign_location_rule(self, target_name: str, rule_expr: str):
@@ -180,23 +180,23 @@ class RuleFactory:
         if token == "B1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"{self.move_prefix}Progressive Boost")
+            return Has(f"Progressive Boost{self.move_suffix}")
         if token == "B2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"{self.move_prefix}Progressive Boost", 2)
+            return Has(f"Progressive Boost{self.move_suffix}", 2)
         if token == "PMB": # Pac-man boost, overhead sections
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"{self.move_prefix}Progressive Boost")
+            return Has(f"Progressive Boost{self.move_suffix}")
         if token == "J1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"{self.move_prefix}Progressive Jump")
+            return Has(f"Progressive Jump{self.move_suffix}")
         if token == "J2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"{self.move_prefix}Progressive Jump", 2)
+            return Has(f"Progressive Jump{self.move_suffix}", 2)
         if token == "PMJ":
             return False_()
         if token == "GL":
@@ -343,11 +343,14 @@ class RuleFactory:
         if token == "OOB": # Out-of-bounds
             if not self.world.options.include_out_of_bounds == self.world.options.include_out_of_bounds.option_full:
                 return False_()
-            return OutOfBounds()
+            # Fancy UT rule for printing purposes. Can skip as an optimization on actual gen
+            if self.world.using_ut:
+                return OutOfBounds()
+            return True_()
         if token == "SCOOB": # Standard clip out-of-bounds. Requires less items on higher expert levels
             scoob_rule = False_()
-            if f"{self.move_prefix}SCOOB" in self.cached_complex_rules:
-                scoob_rule = self.cached_complex_rules[f"{self.move_prefix}SCOOB"]
+            if f"SCOOB{self.move_suffix}" in self.cached_complex_rules:
+                scoob_rule = self.cached_complex_rules[f"SCOOB{self.move_suffix}"]
             else:
                 if (not self.world.options.include_out_of_bounds == self.world.options.include_out_of_bounds.option_full
                         or (not self.world.using_ut and self.world.options.expert_level <= 0)):
@@ -362,29 +365,32 @@ class RuleFactory:
                         case 0:
                             scoob_rule = False_()
                         case 1:
-                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost", 2) &
-                                          Has(f"{self.move_prefix}Progressive Jump"))
+                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}", 2) &
+                                          Has(f"Progressive Jump{self.move_suffix}"))
                         case 2:
-                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost") &
-                                          Has(f"{self.move_prefix}Progressive Jump"))
+                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}") &
+                                          Has(f"Progressive Jump{self.move_suffix}"))
                         case _:
-                            scoob_rule = (Has(f"{self.move_prefix}Progressive Boost") |
-                                          Has(f"{self.move_prefix}Progressive Jump"))
+                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}") |
+                                          Has(f"Progressive Jump{self.move_suffix}"))
                     if self.world.using_ut and self.world.options.expert_level < 3:
                         if self.world.options.expert_level <= 0:
-                            scoob_rule |= (Has(f"{self.move_prefix}Progressive Boost", 2) &
-                                           Has(f"{self.move_prefix}Progressive Jump") &
+                            scoob_rule |= (Has(f"Progressive Boost{self.move_suffix}", 2) &
+                                           Has(f"Progressive Jump{self.move_suffix}") &
                                            Has(self.world.glitches_item_name))
                         if self.world.options.expert_level <= 1:
-                            scoob_rule |= (Has(f"{self.move_prefix}Progressive Boost") &
-                                           Has(f"{self.move_prefix}Progressive Jump") &
+                            scoob_rule |= (Has(f"Progressive Boost{self.move_suffix}") &
+                                           Has(f"Progressive Jump{self.move_suffix}") &
                                            Has(self.world.glitches_item_name, 2 - self.world.options.expert_level))
                         if self.world.options.expert_level <= 2:
-                            scoob_rule |= ((Has(f"{self.move_prefix}Progressive Boost") |
-                                           Has(f"{self.move_prefix}Progressive Jump")) &
+                            scoob_rule |= ((Has(f"Progressive Boost{self.move_suffix}") |
+                                           Has(f"Progressive Jump{self.move_suffix}")) &
                                            Has(self.world.glitches_item_name, 3 - self.world.options.expert_level))
-                self.cached_complex_rules[f"{self.move_prefix}SCOOB"] = scoob_rule
-            return scoob_rule & OutOfBounds()
+                self.cached_complex_rules[f"SCOOB{self.move_suffix}"] = scoob_rule
+            # Fancy UT rule for printing purposes. Can skip as an optimization on actual gen
+            if self.world.using_ut:
+                return scoob_rule & OutOfBounds()
+            return scoob_rule
         if token == "LabKey":
             return Has("Lab Key",
                        options=[OptionFilter(LockedMoriosLab, LockedMoriosLab.option_true)],
