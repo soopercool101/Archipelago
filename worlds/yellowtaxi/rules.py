@@ -86,6 +86,7 @@ class RuleFactory:
     def __init__(self, world: YellowTaxiWorld):
         self.world = world
         self.move_suffix = ""
+        self.skip_unnecessary_rule_calculations = not self.world.using_ut
         self.cached_complex_rules : dict[str, Rule] = {}
 
     def assign_location_rule(self, target_name: str, rule_expr: str):
@@ -124,6 +125,8 @@ class RuleFactory:
         rule: Union[Rule | None] = None
         for expression in expressions:
             or_clause = self.combine_and_clauses(expression)
+            if self.skip_unnecessary_rule_calculations and or_clause.Resolved.always_true:
+                return True_()
             if rule is None:
                 rule = or_clause
             else:
@@ -137,6 +140,8 @@ class RuleFactory:
         rule: Union[Rule | None] = None
         for expression in expressions:
             and_clause = self.evaluate_subclause(expression)
+            if self.skip_unnecessary_rule_calculations and and_clause.Resolved.always_false:
+                return False_()
             if rule is None:
                 rule = and_clause
             else:
@@ -151,6 +156,8 @@ class RuleFactory:
             rule: Union[Rule | None] = None
             for token in tokens:
                 and_clause = self.parse_token(token)
+                if self.skip_unnecessary_rule_calculations and and_clause.Resolved.always_false:
+                    return False_()
                 if rule is None:
                     rule = and_clause
                 else:
@@ -163,6 +170,8 @@ class RuleFactory:
             rule: Union[Rule | None] = None
             for token in tokens:
                 or_clause = self.parse_token(token)
+                if self.skip_unnecessary_rule_calculations and or_clause.Resolved.always_true:
+                    return True_()
                 if rule is None:
                     rule = or_clause
                 else:
