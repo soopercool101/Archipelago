@@ -25,8 +25,8 @@ class Goal(Choice):
 
     option_bombeach_boss = 0
     option_tosla_offices_boss = 1
-    #option_moon_boss = 2
-    #option_backrooms = 3
+    option_help_maurizio = 2
+    #option_moon_boss = 3
     #option_macguffin = 4
 
     default = option_tosla_offices_boss

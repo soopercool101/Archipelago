@@ -315,8 +315,10 @@ class RuleFactory:
             return True_()
         if token == "PortalMauriziosCity":
             if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
-                return Has("Gear", 65)
-            return (Has("Gear", 65) &
+                return Has("Gear", 65 if self.world.options.goal != self.world.options.goal.option_help_maurizio
+                           else self.world.final_portal_cost)
+            return (Has("Gear", 65 if self.world.options.goal != self.world.options.goal.option_help_maurizio
+                        else self.world.final_portal_cost) &
                     Has("Full Game Unlock",
                         options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                         filtered_resolution=True))
@@ -328,10 +330,26 @@ class RuleFactory:
                         options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                         filtered_resolution=True))
         if token == "PortalMoriosMind":
-            return True_()
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return True_()
+            return Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True)
         if token == "PortalRuinedObservatory":
-            return True_()
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return True_()
+            return Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True)
         if token == "PortalToslaHQ":
+            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
+                return Has("Gear", 130 if self.world.options.goal != 3 # self.world.options.goal.option_moon_boss
+                           else self.world.final_portal_cost)
+            return (Has("Gear", 130 if self.world.options.goal != 3 # self.world.options.goal.option_moon_boss
+                        else self.world.final_portal_cost) &
+                    Has("Full Game Unlock",
+                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                        filtered_resolution=True))
             if self.world.options.goal == 2:
                 return Has("Gear", self.world.final_portal_cost)
             return Has("Gear", 130)
