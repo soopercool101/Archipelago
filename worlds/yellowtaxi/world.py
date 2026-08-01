@@ -219,8 +219,7 @@ class YellowTaxiWorld(World):
 
         self.has_golden_spring_access = ((self.options.shuffle_golden_spring ==
                                          self.options.shuffle_golden_spring.option_true) or
-                                         ("Tosla's Offices" in self.included_levels and
-                                          "Tosla's Offices" not in self.goal_levels))
+                                         "Tosla's Offices" in self.included_levels)
         self.has_spike_traversal = (self.has_golden_spring_access or
                                     self.options.pizza_wheels == self.options.pizza_wheels.option_progression)
         self.has_orange_switch_access = ((self.options.shuffle_orange_switch.value ==

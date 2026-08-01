@@ -217,12 +217,16 @@ class RuleFactory:
                 return True_()
             return Has("Spin Attack")
         if token == "GS":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_golden_spring_access:
+                return False_()
             return Has("Golden Spring Blueprints")
         if token == "GST":
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
             return Has("Golden Spring Blueprints")
         if token == "Spike":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_spike_traversal:
+                return False_()
             return Has("Golden Spring Blueprints") | Has("Pizza Wheels",
                                                      options=[
                                                          OptionFilter(PizzaWheels, PizzaWheels.option_progression)
@@ -242,8 +246,12 @@ class RuleFactory:
                 return False_()
             return True_()
         if token == "OS":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_orange_switch_access:
+                return False_()
             return Has("Orange Switch")
         if token == "GP":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_golden_propeller_access:
+                return False_()
             return Has("Golden Propeller Blueprints")
         if token == "FGU":
             return Has("Full Game Unlock",
@@ -267,8 +275,12 @@ class RuleFactory:
                 case self.world.options.fecal_matters_unlock_condition.option_exclude:
                     return False_()
         if token == "Password":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_password_access:
+                return False_()
             return Has("Morio's Password")
         if token == "Rocket":
+            if self.skip_unnecessary_rule_calculations and not self.world.has_rocket_access:
+                return False_()
             return Has("Mosk's Rocket")
         if token == "MorioHat":
             return Has("Morio Hat") | Has("Morio's Brain Hat")
