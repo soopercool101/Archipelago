@@ -33,6 +33,8 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
             continue
         if not include_oob_areas and "out-of-bounds" in reg_name.lower():
             continue
+        if not world.has_golden_propeller_access and "golden propeller" in reg_name.lower():
+            continue
         if (world.options.include_out_of_bounds == world.options.include_out_of_bounds.option_none and
                 "hidden coins" in reg_name.lower()):
             continue

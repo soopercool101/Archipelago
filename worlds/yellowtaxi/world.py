@@ -301,10 +301,14 @@ class YellowTaxiWorld(World):
                                           "Morio's Lab - Final Floor Catwalk"]
                 if self.options.expert_level <= 0:
                     # Assume that expert 0 will not be using the shortcut pipe (plus it's useless until entrance rando)
+                    # Additionally, expert 0 will never have GP inside lab
                     self.excluded_regions += [
                         "Morio's Lab - Second Floor Falling From Shortcut Pipe",
                         "Morio's Lab - Second Floor Access to Shortcut Pipe",
                         "Morio's Lab - Fifth Floor Inside Shortcut Pipe",
+                        "Morio's Lab - Middle Floors 3 Golden Propellers",
+                        "Morio's Lab - Middle Floors 2 Golden Propellers",
+                        "Morio's Lab - Ground Floor Golden Propeller",
                     ]
         if not "Tosla's Offices" in self.included_levels and "Tosla's Offices" in self.goal_levels:
             # Remove employees-only completely since the hat will not be progression in this case

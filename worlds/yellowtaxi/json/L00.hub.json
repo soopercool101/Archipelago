@@ -292,7 +292,7 @@
       "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+GP & X3/B1 | X3+J1",
       "Granny's Island - Crash Again Roof": "X2+B2+GP | X3+GP+B1 | GP+OS+B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X2+B2+J1 | X2+B1+GP",
-      "Morio's Lab - Ground Floor Propeller": "X1+NSAR+GP+LabKey",
+      "Morio's Lab - Ground Floor Golden Propeller": "X1+NSAR+GP+LabKey",
       "Law Firm - Ledges": "X1+NSAR+GP",
       "Ice Cream Truck - Upper Path": "X1+NSAR+GelaToni+GP"
     },
@@ -1641,7 +1641,7 @@
       "Morio's Lab - Third Floor Gear Wrench": "Spike",
       "Morio's Lab - Ground Floor Bolts": "FGU",
       "Morio's Lab - Alcove Above Arcade Panik": "FGU",
-      "Morio's Lab - Ground Floor Propeller": "FGU",
+      "Morio's Lab - Ground Floor Golden Propeller": "FGU",
       "Morio's Lab - Middle Floors 2 Golden Propellers": ""
     }
   },
@@ -1839,7 +1839,7 @@
       "Morio's Lab - Final Floor Bunny Shortcut Lower": ""
     }
   },
-  "Morio's Lab - Ground Floor Propeller": {
+  "Morio's Lab - Ground Floor Golden Propeller": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "connections": {
