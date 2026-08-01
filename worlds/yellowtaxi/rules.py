@@ -362,9 +362,6 @@ class RuleFactory:
                     Has("Full Game Unlock",
                         options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                         filtered_resolution=True))
-            if self.world.options.goal == 2:
-                return Has("Gear", self.world.final_portal_cost)
-            return Has("Gear", 130)
         if token == "NPR":
             # No Portal randomization. Placeholder rule for now.
             return True_()
