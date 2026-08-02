@@ -141,6 +141,11 @@ def create_locations(world: YellowTaxiWorld) -> None:
             "Event: Defeat Alien Mosk", "Victory",
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
+    elif world.options.goal == world.options.goal.option_help_maurizio:
+        world.get_region("Maurizio's City - Maurizio's Building Upper Area").add_event(
+            "Event: Help Maurizio", "Victory",
+            location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+        )
 
 def create_hat_events(world: YellowTaxiWorld, region: Region, subarea_name: str, hat_dict: dict[str, int]):
     # No hats, return early

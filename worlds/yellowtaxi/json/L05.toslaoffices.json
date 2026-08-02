@@ -570,7 +570,7 @@
     },
     "connections": {
       "Tosla Offices (Fifth Floor) - Golden Spring Area": "X3/GST/PMJ",
-      "Tosla Offices (Fifth Floor) - Exit Area": "SpikeT | X1+PMJ"
+      "Tosla Offices (Fifth Floor) - Exit Area": "SpikeT | X2+PMB | X1+PMJ"
     },
     "subwarps": {
       "Tosla Offices (Fifth Floor) - Down Elevator": ["Tosla Offices (Fourth Floor) - After Golden Spring", ""],

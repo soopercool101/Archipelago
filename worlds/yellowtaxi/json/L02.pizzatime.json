@@ -312,6 +312,7 @@
       "Pizza Time - Less Accessible Ledges": "X2/J1/B1",
       "Pizza Time - Orange Block Bridge": "OS",
       "Pizza Time - Ledge Left of Final Roundabout": "X1+NHPR | X2/J1/B1",
+      "Pizza Time - Second Main Island Mountain Lower": "X3/J1/B1",
       "Pizza Time - High Ground": "J1/B1",
       "Pizza Time - Bunny Island Upper": "NOS+B2+J2 | X1+J2 | X2+J1",
       "Pizza Time - Floating Orange Island": "B2 & X1/OS | B1+J1+OS | NOS+B2+J1 | X2+B1 & NOS/X3"
@@ -503,7 +504,6 @@
       "Pizza Time - Gear - On 600° Oven": 20100008
     },
     "bunnies": {
-      "Pizza Time - Bunny - Under Arch on Second Main Island": 20200001,
       "Pizza Time - Bunny - Above Final Roundabout": 20200002
     },
     "chests": {
@@ -513,7 +513,6 @@
     "coinbags": {
       "Pizza Time - Coin Bag on Spire on Top of First Hill": 20300413,
       "Pizza Time - Coin Bag on House Near Bunny Arch": 20300349,
-      "Pizza Time - Coin Bag on Morco's Pizza Roof": 20300412,
       "Pizza Time - Coin Bag on House Near Morco's Pizza": 20300396,
       "Pizza Time - Coin Bag on Roof Left Before Final Roundabout": 20300586,
       "Pizza Time - Coin Bag on Roof Left in Final Roundabout": 20300589,
@@ -562,12 +561,6 @@
       "Pizza Time - Coin on House Near Bunny Arch #2": 20300306,
       "Pizza Time - Coin on House Near Bunny Arch #3": 20300329,
       "Pizza Time - Coin on House Near Bunny Arch #4": 20300334,
-      "Pizza Time - Coin on Morco's Pizza Roof #1": 20300330,
-      "Pizza Time - Coin on Morco's Pizza Roof #2": 20300336,
-      "Pizza Time - Coin on Morco's Pizza Roof #3": 20300337,
-      "Pizza Time - Coin on Morco's Pizza Roof #4": 20300338,
-      "Pizza Time - Coin on Morco's Pizza Roof #5": 20300350,
-      "Pizza Time - Coin on Morco's Pizza Roof #6": 20300392,
       "Pizza Time - Coin on Mario's Pizza #1": 20300608,
       "Pizza Time - Coin on Mario's Pizza #2": 20300615,
       "Pizza Time - Coin Behind Mountain on the Pizza King's Path #1": 20300490,
@@ -596,7 +589,32 @@
       "Pizza Time - Coin on Island Between Second and Final Main Islands #4": 20300360,
       "Pizza Time - Coin on Island Between Second and Final Main Islands #5": 20300357,
       "Pizza Time - Coin on Island Between Second and Final Main Islands #6": 20300361,
-      "Pizza Time - Coin on Island Between Second and Final Main Islands #7": 20300358,
+      "Pizza Time - Coin on Island Between Second and Final Main Islands #7": 20300358
+    },
+    "cheeses": {
+      "Pizza Time - Cheese on Plateau on First Main Island": 22100004
+    },
+    "connections": {
+      "Pizza Time - Pizza King's Quest": "X1/B1",
+      "Pizza Time - Bunny Island Lower": "X2+B1"
+    }
+  },
+  "Pizza Time - Second Main Island Mountain Lower": {
+    "level": "Pizza Time",
+    "sublevel": "Pizza Time",
+    "bunnies": {
+      "Pizza Time - Bunny - Under Arch on Second Main Island": 20200001
+    },
+    "coinbags": {
+      "Pizza Time - Coin Bag on Morco's Pizza Roof": 20300412
+    },
+    "coins": {
+      "Pizza Time - Coin on Morco's Pizza Roof #1": 20300330,
+      "Pizza Time - Coin on Morco's Pizza Roof #2": 20300336,
+      "Pizza Time - Coin on Morco's Pizza Roof #3": 20300337,
+      "Pizza Time - Coin on Morco's Pizza Roof #4": 20300338,
+      "Pizza Time - Coin on Morco's Pizza Roof #5": 20300350,
+      "Pizza Time - Coin on Morco's Pizza Roof #6": 20300392,
       "Pizza Time - Coin on Bunny Arch #1": 20300581,
       "Pizza Time - Coin on Bunny Arch #2": 20300582,
       "Pizza Time - Coin on Bunny Arch #3": 20300583,
@@ -611,16 +629,11 @@
       "Pizza Time - Coin on Second Main Island Mountain #9": 20300452,
       "Pizza Time - Coin on Second Main Island Mountain #10": 20300457
     },
-    "cheeses": {
-      "Pizza Time - Cheese on Plateau on First Main Island": 22100004
-    },
     "connections": {
-      "Pizza Time - Pizza King's Quest": "X1/B1",
-      "Pizza Time - Second Main Island Mountain": "B1 | X1+J1",
-      "Pizza Time - Bunny Island Lower": "X2+B1"
+      "Pizza Time - Second Main Island Mountain Upper": "B1 | X1+J1"
     }
   },
-  "Pizza Time - Second Main Island Mountain": {
+  "Pizza Time - Second Main Island Mountain Upper": {
     "level": "Pizza Time",
     "sublevel": "Pizza Time",
     "gears": {

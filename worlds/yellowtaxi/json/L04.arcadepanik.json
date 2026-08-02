@@ -363,7 +363,7 @@
     },
     "specialrules": {
       "Arcade Panik - Chest Inside Go-Karts Bowling Ball Pipe": "X2/J1 | X1+B1",
-      "Arcade Panik - Bunny - Above Go-Karts Bowling Ball Pipe": "B2+J1 | B1+J2 | X1+B1+J1",
+      "Arcade Panik - Bunny - Above Go-Karts Bowling Ball Pipe": "B2+J1 | B1+J2 | X1+B1 & X3/J1",
       "Arcade Panik - Gear - Green Pipe Above Big Bowling Back Door": "B1/J1 | X1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Alcove Under Pinball Entrance": "X1/B1/J1 & {Arcade Panik - Outside Pinball Door}",
       "Arcade Panik - Gear - Go-Karts Obstacle Course": "X1/J1",

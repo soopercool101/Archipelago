@@ -607,7 +607,7 @@
     },
     "connections": {
       "Morio's Home - Starting Area": "",
-      "Morio's Home - Bed Pillars": "B2 & X1/J1 | X1+J1 & X3/B1 | X2+B1"
+      "Morio's Home - Bed Pillars": "B2 & X1/J1 | X3+J1 | X1+B1 & X2/J1"
     }
   },
   "Morio's Home - Bed Pillars": {
