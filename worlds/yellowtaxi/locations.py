@@ -142,7 +142,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
     elif world.options.goal == world.options.goal.option_help_maurizio:
-        world.get_region("Maurizio's City - Maurizio's Building Upper Area").add_event(
+        world.get_region("Maurizio's City - Maurizio's Building Maurizio Area").add_event(
             "Event: Help Maurizio", "Victory",
             location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
         )
