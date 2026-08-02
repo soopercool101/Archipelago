@@ -394,6 +394,13 @@ class YellowTaxiWorld(World):
                     "RingLink has no effect on a single-player game "
                     "and has been disabled to reduce unnecessary network pings.")
 
+            if self.multiworld.players == 1 and self.options.trap_link:
+                self.options.trap_link.value = False
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified.\n"
+                    "TrapLink has no effect on a single-player game "
+                    "and has been disabled to reduce unnecessary network pings.")
+
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True
 
