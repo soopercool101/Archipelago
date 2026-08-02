@@ -150,8 +150,7 @@ class YellowTaxiWorld(World):
                 elif key == "build_version":
                     build_version = value
 
-            if (major_version != self.world_version.major
-                    or minor_version != self.world_version.minor or build_version != self.world_version.build):
+            if major_version != self.world_version.major or minor_version != self.world_version.minor:
                 raise OptionError("APWorld version (v" +
                                   f"{self.world_version.major}.{self.world_version.minor}.{self.world_version.build}" +
                                   ") is not the same version used at generation (v" +
