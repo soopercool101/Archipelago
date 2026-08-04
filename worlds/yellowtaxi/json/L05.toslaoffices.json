@@ -31,7 +31,7 @@
       "Tosla Square - Tosla Offices Entrance": ["Tosla Offices (Ground Floor)", ""]
     },
     "warps": {
-      "Tosla Square - Morio's Lab Portal": ["Morio's Lab - Third Floor", ""]
+      "Tosla Square - Morio's Lab Portal": ["{RETURNPORTAL}", ""]
     },
     "specialrules": {
       "Tosla Square - Gear - Oil Pump": "SP"
@@ -658,7 +658,7 @@
     "level": "Tosla's Offices",
     "sublevel": "Tosla Offices (Final Floor)",
     "warps": {
-      "Tosla Offices (Final Floor) - Boss Fight Ending Cutscene": ["Morio's Lab - Third Floor", ""]
+      "Tosla Offices (Final Floor) - Boss Fight Ending Cutscene": ["{RETURNPORTAL}", ""]
     }
   },
   "Tosla Offices (Employees Only) - Starting Area": {

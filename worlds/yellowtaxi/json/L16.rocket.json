@@ -29,7 +29,7 @@
       "Mosk's Rocket - Welcoming Climbs Portal": ["Welcoming Climbs - Starting Area", "Bunny-MH"]
     },
     "warps": {
-      "Mosk's Rocket - Front Door": ["Granny's Island - Main Area", ""]
+      "Mosk's Rocket - Front Door": ["{RETURNPORTAL}", ""]
     }
   },
   "Mosk's Rocket - Bombeach/Arcade Panik/Pizza Time Area": {

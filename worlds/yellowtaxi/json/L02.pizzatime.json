@@ -325,8 +325,8 @@
       "Pizza Time - Sewer Entrance": ["Pizza Time Sewers", "X1/B1/J1"]
     },
     "warps": {
-      "Pizza Time - Morio's Lab Portal Near Hat World": ["Morio's Lab - Second Floor After Demo Wall", ""],
-      "Pizza Time - Morio's Lab Portal Near Pizza King": ["Morio's Lab - Second Floor After Demo Wall", ""]
+      "Pizza Time - Morio's Lab Portal Near Hat World": ["{RETURNPORTAL}", ""],
+      "Pizza Time - Morio's Lab Portal Near Pizza King": ["{RETURNPORTAL}", ""]
     }
   },
   "Pizza Time - Oil Pumps": {

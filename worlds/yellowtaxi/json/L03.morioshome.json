@@ -637,7 +637,7 @@
       "Morio's Home - Coin After Bed Pillars #6": 30300466
     },
     "warps": {
-      "Morio's Home - Portal to Morio's Lab": ["Morio's Lab - Ground Floor", ""]
+      "Morio's Home - Portal to Morio's Lab": ["{RETURNPORTAL}", ""]
     }
   },
   "Morio's Home - Loft": {

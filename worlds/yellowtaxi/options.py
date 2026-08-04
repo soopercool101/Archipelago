@@ -599,9 +599,71 @@ class ShopHints(Choice):
     alias_any = option_all
     alias_on = option_all
 
+class UseSeparateEntrancePools(Choice):
+    """
+    If enabled, shuffled levels will be split up into separate pools, and will only be at an entrance from that pool.
+    If disabled, any shuffled level can be at any shuffled entrance.
+    """
+    display_name = "Use Separate Entrance Pools"
 
-# We must now define a dataclass inheriting from PerGameCommonOptions that we put all our options in.
-# This is in the format "option_name_in_snake_case: OptionClassName".
+class AllowShufflingRemovedLevels(DefaultOnToggle):
+    """
+    When on, allows levels to be shuffled when they would normally not be included in the game.
+
+    For instance, if your goal is Tosla's Offices and you set Remove Post-Goal Portals,
+    this would allow Crash Test Industries to still be included as a shuffled portal.
+    """
+    display_name = "Allow Shuffling Removed Levels"
+
+class PortalOrder(Choice):
+    """
+    Which order portals will appear.
+
+    Vanilla: The default portal level order.
+    Internal: Follows the code level #s. Changes the first 4 levels to: Bombeach, Pizza Time, Morio's Home, Arcade Panik
+              This order puts more moveless locations early!
+    Shuffle: Shuffles portal levels. If "Use Separate Entrance Pools" is true, these will be in their own unique pool.
+    """
+    display_name = "Portal Order"
+    option_vanilla = 0,
+    option_internal = 1,
+    option_shuffle = 2,
+
+    default = option_vanilla
+
+class ShuffleGrannysLevels(Toggle):
+    """
+    Whether the three Granny's Island Levels (Gym Gears, Fecal Matters, and Flushed Away) should be shuffled.
+
+    If "Use Separate Entrance Pools" is true, these will be in their own unique pool.
+    """
+    display_name = "Shuffle Granny's Island Levels"
+
+class ShuffleTimeTrialsEntrances(Toggle):
+    """
+    Whether the three Time Trials should have their entrances be shuffled.
+
+    If "Use Separate Entrance Pools" is true, these will be in the "Miscellaneous" pool.
+    """
+    display_name = "Shuffle Time Trial Entrances"
+
+class ShuffleRocketEntrance(Toggle):
+    """
+    Whether Mosk's Rocket should have its entrance shuffled. Has no effect if "Shuffle Rocket" is off.
+
+    If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
+    """
+    display_name = "Shuffle Rocket Entrance"
+
+class ShufflePsychoTaxiEntrance(Toggle):
+    """
+    Whether Psycho Taxi should have its entrance shuffled.
+    Has no effect if "Shuffle Psycho Taxi" is off and Arcade Panik is not present in the seed.
+
+    If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
+    """
+    display_name = "Shuffle Psycho Taxi Entrance"
+
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
@@ -659,6 +721,13 @@ class YellowTaxiOptions(PerGameCommonOptions):
     trap_fill_percent: TrapFillPercent
     enabled_traps: EnabledTraps
     shop_hints: ShopHints
+    use_separate_entrance_pools: UseSeparateEntrancePools
+    allow_shuffling_removed_levels: AllowShufflingRemovedLevels
+    portal_order: PortalOrder
+    shuffle_grannys_levels: ShuffleGrannysLevels
+    shuffle_time_trial_entrances: ShuffleTimeTrialsEntrances
+    shuffle_rocket_entrance: ShuffleRocketEntrance
+    shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -712,6 +781,18 @@ option_groups = [
             PizzaWheels,
             ShuffleRat,
         ],
+    ),
+    OptionGroup(
+        "Entrance Randomization Options",
+        [
+            UseSeparateEntrancePools,
+            AllowShufflingRemovedLevels,
+            PortalOrder,
+            ShuffleGrannysLevels,
+            ShuffleTimeTrialsEntrances,
+            ShuffleRocketEntrance,
+            ShufflePsychoTaxiEntrance,
+        ]
     ),
     OptionGroup(
         "Quality of Life Options",

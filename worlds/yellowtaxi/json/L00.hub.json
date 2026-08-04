@@ -304,9 +304,9 @@
       "Granny's Island - Hat World Entrance": ["Granny's Island Hat World", ""]
     },
     "warps": {
-      "Granny's Island - Gym Gears Entrance": ["Gym Gears - Starting Area", "PortalGymGears+GymKey"],
-      "Granny's Island - Poop House": ["Fecal Matters - Starting Area", "PortalFecalMatters+Doggo"],
-      "Granny's Island - Mosk's Rocket Entrance": ["Mosk's Rocket - Starting Area", "Rocket & X2/J2/B1/GP | X1+Rocket+J1"]
+      "Granny's Island - Gym Gears Entrance": ["{PORTAL}Gym Gears", "PortalGymGears+GymKey"],
+      "Granny's Island - Poop House": ["{PORTAL}Fecal Matters", "PortalFecalMatters+Doggo"],
+      "Granny's Island - Mosk's Rocket Entrance": ["{PORTAL}Mosk's Rocket", "Rocket & X2/J2/B1/GP | X1+Rocket+J1"]
     },
     "specialrules": {
       "Granny's Island - Safe on Ocean Pillar": "B2 | B1 & X3/GP | X2+J1 & X3/B1",
@@ -806,7 +806,7 @@
       "Granny's Island - Sewer Island Upper": "X1/J1/B1"
     },
     "warps": {
-      "Granny's Island - Flushed Away Entrance": ["Flushed Away - Starting Area", "PortalFlushedAway+SewerKey"]
+      "Granny's Island - Flushed Away Entrance": ["{PORTAL}Flushed Away", "PortalFlushedAway+SewerKey"]
     }
   },
   "Granny's Island - Sewer Island Upper": {
@@ -1130,8 +1130,8 @@
       "Morio's Lab - Wardrobe Entrance": ["Morio's Wardrobe", "WardrobeKey"]
     },
     "warps": {
-      "Morio's Lab - Morio's Home Portal": ["Morio's Island - Starting Area", "PortalMorioHome"],
-      "Morio's Lab - Bombeach Portal": ["Bombeach - Starting Area", "PortalBombeach"]
+      "Morio's Lab - Morio's Home Portal": ["{PORTAL}Morio's Home", "PortalMorioHome"],
+      "Morio's Lab - Bombeach Portal": ["{PORTAL}Bombeach", "PortalBombeach"]
     }
   },
   "Morio's Wardrobe": {
@@ -1260,7 +1260,7 @@
       "Morio's Lab - Psycho Taxi Arcade Machine": "FGU | X2+OOB+B1"
     },
     "warps": {
-      "Morio's Lab - Arcade Panik Portal": ["Arcade Plaza - Starting Area", "PortalArcadePanik"]
+      "Morio's Lab - Arcade Panik Portal": ["{PORTAL}Arcade Panik", "PortalArcadePanik"]
     }
   },
   "Morio's Lab - Psycho Taxi Arcade Machine": {
@@ -1290,7 +1290,7 @@
       "Morio's Lab - Second Floor True Demo Wall": ""
     },
     "warps": {
-      "Morio's Lab - Pizza Time Portal": ["Pizza Time - Starting Area", "PortalPizzaTime"]
+      "Morio's Lab - Pizza Time Portal": ["{PORTAL}Pizza Time", "PortalPizzaTime"]
     },
     "specialrules": {
       "Morio's Lab - Coin on Second Floor After Pizza Time Portal #3": "X1/FGU"
@@ -1447,8 +1447,8 @@
       "Morio's Lab - Second Floor After True Demo Wall": ""
     },
     "warps": {
-      "Morio's Lab - Tosla's Offices Portal": ["Tosla Square - Starting Area", "PortalToslaOffices"],
-      "Morio's Lab - Baby Steps! TV": ["Baby Steps! - Starting Area", "TT1"]
+      "Morio's Lab - Tosla's Offices Portal": ["{PORTAL}Tosla's Offices", "PortalToslaOffices"],
+      "Morio's Lab - Baby Steps! TV": ["{PORTAL}Baby Steps!", "TT1"]
     }
   },
   "Morio's Lab - Third Floor Wrenches Lower": {
@@ -1523,8 +1523,8 @@
       "Morio's Lab - Fourth Floor Spiky Cliffs": "X3/Spike & J1 | X1+Spike+B2 | X2+B2+J2"
     },
     "warps": {
-      "Morio's Lab - Getting Gud! TV": ["Getting Gud! - Starting Area", "TT2"],
-      "Morio's Lab - Maurizio's City Portal": ["Maurizio's City - Starting Area", "PortalMauriziosCity"]
+      "Morio's Lab - Getting Gud! TV": ["{PORTAL}Getting Gud!", "TT2"],
+      "Morio's Lab - Maurizio's City Portal": ["{PORTAL}Maurizio's City", "PortalMauriziosCity"]
     }
   },
   "Morio's Lab - Fourth Floor Spiky Cliffs": {
@@ -1598,7 +1598,7 @@
       "Morio's Lab - Fifth Floor Crash Test Area": ""
     },
     "warps": {
-      "Morio's Lab - Pro Tricks! TV": ["Pro Tricks! - Starting Area", "TT3"]
+      "Morio's Lab - Pro Tricks! TV": ["{PORTAL}Pro Tricks!", "TT3"]
     }
   },
   "Morio's Lab - Dream Machine": {

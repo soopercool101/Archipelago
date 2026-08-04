@@ -446,7 +446,7 @@
       "Bombeach - Hat World Entrance": ["Bombeach Hat World", ""]
     },
     "warps": {
-      "Bombeach - Portal to Morio's Lab": ["Morio's Lab - Ground Floor", ""]
+      "Bombeach - Portal to Morio's Lab": ["{RETURNPORTAL}", ""]
     },
     "specialrules": {
       "Bombeach - Bunny - Under Mountain Hotel": "X2/J1/B1"

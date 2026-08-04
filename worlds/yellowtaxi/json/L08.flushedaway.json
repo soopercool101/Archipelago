@@ -262,7 +262,7 @@
       "Flushed Away - Central Drain Archway": "",
       "Flushed Away - Central Drain Waterfall Accessible": "X1",
       "Flushed Away - Gear Pillar": "J1/B1",
-      "Flushed Away - Barely Out-of-Bounds": "OOB",
+      "Flushed Away - Hidden Coins": "",
       "Flushed Away - Out-of-Bounds (EXPERTS ONLY)": "X1+OOB+B1 & J1/X2"
     },
     "subwarps": {
@@ -399,7 +399,7 @@
       "Flushed Away - Coin on Sewage Ramps #6": 80300335
     },
     "connections": {
-      "Flushed Away - After Sewage Ramps": "B1"
+      "Flushed Away - After Sewage Ramps": "B1 | X3+J1"
     }
   },
   "Flushed Away - After Sewage Ramps": {
@@ -645,7 +645,7 @@
       "Flushed Away - Central Drain Bunny": "X1"
     }
   },
-  "Flushed Away - Barely Out-of-Bounds": {
+  "Flushed Away - Hidden Coins": {
     "level": "Flushed Away",
     "sublevel": "Flushed Away",
     "coins": {

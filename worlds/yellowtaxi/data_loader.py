@@ -26,6 +26,37 @@ regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
                                       load_json_data("L19.protricks.json")
                                       )
 
+original_level_order : List[str] = [
+    "Morio's Home",
+    "Bombeach",
+    "Arcade Panik",
+    "Pizza Time",
+    "Tosla's Offices",
+    "Maurizio's City",
+    "Crash Test Industries",
+    "Morio's Mind",
+    "Ruined Observatory",
+    "Tosla HQ",
+    "The Moon",
+    "Gym Gears",
+    "Fecal Matters",
+    "Flushed Away",
+    "Mosk's Rocket",
+    "Baby steps!",
+    "Getting Gud!",
+    "Pro tricks!",
+    "Psycho Taxi"
+]
+
+# TODO: Remove levels as they are finished. Remove this list entirely for v1.0.0
+unfinished_levels : List[str] = [
+    "Crash Test Industries",
+    "Morio's Mind",
+    "Ruined Observatory",
+    "Tosla HQ",
+    "The Moon"
+]
+
 # Load static locations list
 def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int | None]:
     # Get all location ids from JSON

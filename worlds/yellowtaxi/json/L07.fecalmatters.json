@@ -55,7 +55,7 @@
       "Fecal Matters - Boost or Jump": "J1/B1"
     },
     "warps": {
-      "Fecal Matters - Roundabout Portal to Granny's Island": ["Granny's Island - Main Area", ""]
+      "Fecal Matters - Roundabout Portal to Granny's Island": ["{RETURNPORTAL}", ""]
     }
   },
   "Fecal Matters - Roundabout Hill Tier 1": {

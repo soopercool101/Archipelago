@@ -120,7 +120,7 @@
       "Gym Gears - Hidden Coins": ""
     },
     "warps": {
-      "Gym Gears - Granny's Island Portal": ["Granny's Island - Main Area", ""]
+      "Gym Gears - Granny's Island Portal": ["{RETURNPORTAL}", ""]
     }
   },
   "Gym Gears - Jump or Expert 1": {
