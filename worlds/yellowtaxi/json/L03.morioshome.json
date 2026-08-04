@@ -40,7 +40,8 @@
       "Morio's Island - Coin in Starting Area Forward Row #9": 30300127
     },
     "connections": {
-      "Morio's Island - First Hurdle": "X2 | J1/B1"
+      "Morio's Island - First Hurdle": "X2/J1/B1",
+      "Morio's Island - Cliffs Above Starting Area": "X3/J1/B1"
     }
   },
   "Morio's Island - First Hurdle": {
@@ -78,30 +79,12 @@
       "Morio's Island - High Ground": "J1/B1"
     }
   },
-  "Morio's Island - High Ground": {
+  "Morio's Island - Cliffs Above Starting Area": {
     "level": "Morio's Home",
     "sublevel": "Morio's Island",
-    "gears": {
-      "Morio's Island - Gear - After First Ramp": 30100004,
-      "Morio's Island - Gear - On Stone Pedestal": 30100010,
-      "Morio's Island - Gear - Stone Island Above Morio's Home Island": 30100014,
-      "Morio's Island - Gear - On Morio's Roof": 30100000,
-      "Morio's Island - Gear - On the Rubber Ducks": 30100009
-    },
-    "chests": {
-      "Morio's Island - Chest on First Stone Arch": 30300423,
-      "Morio's Island - Chest on Home Island Stone Pillar": 30300385
-    },
     "coinbags": {
       "Morio's Island - Coin Bag on Starting Area Left Cliff": 30300345,
-      "Morio's Island - Coin Bag on Starting Area Right Cliff": 30300344,
-      "Morio's Island - Coin Bag on First Stone Arch #1": 30300424,
-      "Morio's Island - Coin Bag on First Stone Arch #2": 30300422,
-      "Morio's Island - Coin Bag Near Fence on Island Leading to Morio's Home": 30300331,
-      "Morio's Island - Coin Bag on Umbrella": 30300143,
-      "Morio's Island - Coin Bag on Home Island Stone Pillar #2": 30300290,
-      "Morio's Island - Coin Bag on Low Stone Island Near Mori-O-Tron #1": 30300015,
-      "Morio's Island - Coin Bag on Low Stone Island Near Mori-O-Tron #2": 30300021
+      "Morio's Island - Coin Bag on Starting Area Right Cliff": 30300344
     },
     "coins": {
       "Morio's Island - Coin in Triangle on Starting Area Left Cliff #1": 30300314,
@@ -131,7 +114,33 @@
       "Morio's Island - Coin in Row on Starting Area Right Cliff #2": 30300336,
       "Morio's Island - Coin in Row on Starting Area Right Cliff #3": 30300338,
       "Morio's Island - Coin in Row on Starting Area Right Cliff #4": 30300340,
-      "Morio's Island - Coin in Row on Starting Area Right Cliff #5": 30300342,
+      "Morio's Island - Coin in Row on Starting Area Right Cliff #5": 30300342
+    }
+  },
+  "Morio's Island - High Ground": {
+    "level": "Morio's Home",
+    "sublevel": "Morio's Island",
+    "gears": {
+      "Morio's Island - Gear - After First Ramp": 30100004,
+      "Morio's Island - Gear - On Stone Pedestal": 30100010,
+      "Morio's Island - Gear - Stone Island Above Morio's Home Island": 30100014,
+      "Morio's Island - Gear - On Morio's Roof": 30100000,
+      "Morio's Island - Gear - On the Rubber Ducks": 30100009
+    },
+    "chests": {
+      "Morio's Island - Chest on First Stone Arch": 30300423,
+      "Morio's Island - Chest on Home Island Stone Pillar": 30300385
+    },
+    "coinbags": {
+      "Morio's Island - Coin Bag on First Stone Arch #1": 30300424,
+      "Morio's Island - Coin Bag on First Stone Arch #2": 30300422,
+      "Morio's Island - Coin Bag Near Fence on Island Leading to Morio's Home": 30300331,
+      "Morio's Island - Coin Bag on Umbrella": 30300143,
+      "Morio's Island - Coin Bag on Home Island Stone Pillar #2": 30300290,
+      "Morio's Island - Coin Bag on Low Stone Island Near Mori-O-Tron #1": 30300015,
+      "Morio's Island - Coin Bag on Low Stone Island Near Mori-O-Tron #2": 30300021
+    },
+    "coins": {
       "Morio's Island - Coin on First Stone Arch #1": 30300425,
       "Morio's Island - Coin on First Stone Arch #2": 30300421,
       "Morio's Island - Coin on First Stone Ramp #1": 30300213,
