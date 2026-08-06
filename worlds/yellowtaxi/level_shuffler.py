@@ -16,7 +16,7 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
         portal_levels = alternative_portal_level_order
 
     if options.use_separate_entrance_pools or True:
-        perform_pooled_randomization(options, random, goal_portal)
+        level_order = perform_pooled_randomization(options, random, goal_portal)
 
     return level_order
 

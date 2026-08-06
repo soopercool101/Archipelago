@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from .data_loader import regions_json_data
+from .data_loader import regions_json_data, original_level_order, special_starting_areas
 from typing import Any, Dict, TYPE_CHECKING
 
 from BaseClasses import Entrance, Region
@@ -99,7 +99,15 @@ def connect_regions(world: YellowTaxiWorld) -> None:
         if "warps" in reg.keys():
             for warp in reg["warps"].items():
                 if warp[1][0].startswith("{PORTAL}"):
-                    connecting_region = ""
+                    # Get the starting area that corresponds to this entrance
+                    connecting_level : str = world.level_order[original_level_order.index(warp[1][0][8:])]
+                    if connecting_level == "Excluded":
+                        continue
+                    starting_area : str = connecting_level
+                    if starting_area in special_starting_areas.keys():
+                        starting_area = special_starting_areas[starting_area]
+                    starting_area = starting_area + " - Starting Area"
+                    connecting_region = world.get_region(starting_area)
                 else:
                     try:
                         connecting_region = world.get_region(warp[1][0])

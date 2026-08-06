@@ -182,24 +182,10 @@ class YellowTaxiWorld(World):
 
         self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
 
-        # Figure out how many portals should be in the game. Do this pre-shuffle
-        for level in self.level_order:
-            if goal_portal_index == -1 and level in self.goal_levels:
-                goal_portal_index = self.num_portals
-                if self.options.remove_post_goal_portals and level in self.goal_levels:
-                    self.num_portals += 1
-                    break
-            if level in data_loader.unfinished_levels:
-                break
+        self.included_levels = ["Hub"]
+        self.special_levels = [""]
 
-            self.num_portals += 1
-
-        #level_order.set_level_order(self)
-
-        if self.options.remove_goal_portal_locations:
-            for level in self.goal_levels:
-                if level in self.included_levels:
-                    self.included_levels.remove(level)
+        self.included_levels += list(self.level_order)
 
         if self.options.hatsanity == 1: # Special "level" for shared hats
             self.special_levels += ["Hatsanity"]
@@ -435,10 +421,10 @@ class YellowTaxiWorld(World):
             "shuffle_pizza_king",
             "shuffle_orange_switch",
             "shuffle_morios_password",
-            "shuffle_rocket",
+            #"shuffle_rocket",
             "shuffle_full_game",
             "demo_portal_mode",
-            "shuffle_psycho_taxi",
+            #"shuffle_psycho_taxi",
             "shuffle_rat",
             "gym_gears_unlock_condition",
             "fecal_matters_unlock_condition",

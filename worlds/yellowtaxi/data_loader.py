@@ -104,6 +104,12 @@ level_ids : Dict[str, int] = {
     "Psycho Taxi": 20,
 }
 
+special_starting_areas : Dict[str, str] = {
+    "Morio's Home": "Morio's Island",
+    "Arcade Panik": "Arcade Plaza",
+    "Tosla's Offices": "Tosla Square",
+}
+
 # Load static locations list
 def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int | None]:
     # Get all location ids from JSON
