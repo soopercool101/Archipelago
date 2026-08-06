@@ -458,7 +458,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_morios_password:
         itempool.append(world.create_item("Morio's Password"))
 
-    if world.options.shuffle_rocket:
+    if world.options.rocket_unlock_condition == world.options.rocket_unlock_condition.option_shuffle_rocket:
         itempool.append(world.create_item("Mosk's Rocket"))
 
     if world.options.shuffle_flip_o_will != 0:
@@ -487,7 +487,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_rat:
         itempool.append(world.create_item("Michele"))
 
-    if world.options.shuffle_psycho_taxi:
+    if (world.options.psycho_taxi_unlock_condition ==
+            world.options.psycho_taxi_unlock_condition.option_shuffle_cartridge):
         itempool.append(world.create_item("Psycho Taxi Cartridge"))
 
     if world.options.locked_morios_wardrobe:

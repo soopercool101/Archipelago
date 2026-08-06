@@ -98,10 +98,13 @@ def connect_regions(world: YellowTaxiWorld) -> None:
         # TODO: Entrance Rando
         if "warps" in reg.keys():
             for warp in reg["warps"].items():
-                try:
-                    connecting_region = world.get_region(warp[1][0])
-                except KeyError:
-                    continue
+                if warp[1][0].startswith("{PORTAL}"):
+                    connecting_region = ""
+                else:
+                    try:
+                        connecting_region = world.get_region(warp[1][0])
+                    except KeyError:
+                        continue
                 region.connect(connecting_region, warp[0])
 
 

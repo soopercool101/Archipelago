@@ -178,7 +178,7 @@ class FlushedAwayUnlockCondition(Choice):
     How Flushed Away is unlocked.
     If set to anything other than "Default" or "Exclude", an NPC will be added who will take you to the Sewer Island if you have no possible logical path to it.
 
-    Default: Same as Full Game if there is logical access to the Sewer Island, Exclude if there isn't.
+    Default: Same as Full Game if there is logical access to the Sewer Island, Exclude if there isn't. Will add to portal shuffle pool as applicable regardless of final result.
     Open: The Sewer Entrance in Granny's Island is always open.
     Full Game: The Sewer Entrance in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
     Shuffle Sewer Key: The house in Granny's Island will be unlocked after receiving "Sewer Key" from the multiworld. Adds a location for talking to Michele in Flushed Away.
@@ -194,6 +194,50 @@ class FlushedAwayUnlockCondition(Choice):
 
     default = option_default
     alias_vanilla = option_default
+    alias_unlocked = option_open
+
+class PsychoTaxiUnlockCondition(Choice):
+    """
+    How Psycho Taxi is unlocked.
+    At this time, the Psycho Taxi level contains no locations.
+
+    Default: Picking up the Psycho Taxi Cartridge in Arcade Panik will unlock Psycho Taxi. Same as Excluded if there's no logical access to Arcade Panik
+    Open: Psycho Taxi will always be unlocked.
+    Shuffle Cartridge: Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
+                       If Arcade Panik is not an included level, talking to the Psycho Taxi Arcade Machine will be the location instead.
+    Excluded: The Psycho Taxi Arcade Machine will never turn on.
+    """
+
+    display_name = "Psycho Taxi Unlock Condition"
+
+    option_default = -1
+    option_open = 0
+    option_shuffle_cartridge = 2
+    option_exclude = 3
+
+    default = option_default
+    alias_vanilla = option_default
+    alias_unlocked = option_open
+
+class MoskRocketUnlockCondition(Choice):
+    """
+    How Mosk's Rocket is unlocked.
+
+    Open: Mosk's Rocket will always appear in Granny's Island
+    Shuffle Rocket: Adds the Mosk's Rocket to the item pool and adds a location for defeating the final boss on the Moon.
+                    If the Moon is not an included level, or is the goal and Remove Goal Portal locations is enabled, talking to Alien Mosk in Granny's Island will be the location instead.
+    Exclude: Mosk's Rocket will never appear.
+    """
+
+    display_name = "Mosk's Rocket Unlock Condition"
+
+    #option_default = -1
+    option_open = 0
+    option_shuffle_rocket = 2
+    option_exclude = 3
+
+    default = option_exclude
+    #alias_vanilla = option_default
     alias_unlocked = option_open
 
 class LockedTimeTrials(Choice):
@@ -256,15 +300,6 @@ class ShuffleMoriosPassword(Toggle):
 
     display_name = "Shuffle Morio's Password"
 
-class ShuffleRocket(Toggle):
-    """
-    Adds the unlock for Mosk's Rocket to appear in Granny's Island into the item pool and adds a location for defeating the final boss on the Moon.
-
-    If the Moon is not an included level, or is the goal and Remove Goal Portal locations is enabled, talking to Alien Mosk in Granny's Island will be the location instead.
-    """
-
-    display_name = "Shuffle Mosk's Rocket"
-
 class ShuffleFullGame(DefaultOnToggle):
     """
     Starts the game in "Demo" mode, locking areas of Morio's Lab until a "Full Game Unlock" item is received.
@@ -299,14 +334,6 @@ class DemoPortalMode(Choice):
     alias_extra = option_next_fest
     alias_extra_influencers = option_influencers
 
-class ShufflePsychoTaxi(Toggle):
-    """
-    Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
-
-    If Arcade Panik is not an included level, talking to the Psycho Taxi Arcade Machine will be the location instead.
-    """
-
-    display_name = "Shuffle Psycho Taxi"
 
 class Bunnysanity(Toggle):
     """
@@ -599,21 +626,31 @@ class ShopHints(Choice):
     alias_any = option_all
     alias_on = option_all
 
-class UseSeparateEntrancePools(Choice):
+class UseSeparateEntrancePools(Toggle):
     """
     If enabled, shuffled levels will be split up into separate pools, and will only be at an entrance from that pool.
     If disabled, any shuffled level can be at any shuffled entrance.
     """
     display_name = "Use Separate Entrance Pools"
 
-class AllowShufflingRemovedLevels(DefaultOnToggle):
+class AllowShufflingRemovedLevels(Choice):
     """
     When on, allows levels to be shuffled when they would normally not be included in the game.
+    Conversely, these levels will replace shuffled levels that would normally be included by your settings.
 
-    For instance, if your goal is Tosla's Offices and you set Remove Post-Goal Portals,
-    this would allow Crash Test Industries to still be included as a shuffled portal.
+    None: Only shuffle levels that would be included by your non-ER options
+    Portal Levels Only: Only the Portal levels in Morio's Lab will be potentially shuffled in if not normally included.
+    Main Levels Only: Portal Levels and the three Granny's Island levels will be potentially shuffled in if not normally included.
+    Any: Allows Mosk's Rocket and Psycho Taxi to be shuffled, even if their entrance unlock conditions are excluded.
     """
     display_name = "Allow Shuffling Removed Levels"
+
+    option_none = 0
+    option_portal_levels_only = 1
+    option_main_levels_only = 2
+    option_any = 3
+
+    default = option_main_levels_only
 
 class PortalOrder(Choice):
     """
@@ -649,7 +686,8 @@ class ShuffleTimeTrialsEntrances(Toggle):
 
 class ShuffleRocketEntrance(Toggle):
     """
-    Whether Mosk's Rocket should have its entrance shuffled. Has no effect if "Shuffle Rocket" is off.
+    Whether Mosk's Rocket should have its entrance shuffled.
+    Has no effect if "Mosk's Rocket Unlock Condition" is set to "Exclude".
 
     If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
     """
@@ -658,7 +696,7 @@ class ShuffleRocketEntrance(Toggle):
 class ShufflePsychoTaxiEntrance(Toggle):
     """
     Whether Psycho Taxi should have its entrance shuffled.
-    Has no effect if "Shuffle Psycho Taxi" is off and Arcade Panik is not present in the seed.
+    Has no effect if "Psycho Taxi Unlock Condition" is set to "Exclude", or if set to "Default" and Arcade Panik is not an included level.
 
     If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
     """
@@ -682,17 +720,17 @@ class YellowTaxiOptions(PerGameCommonOptions):
     locked_morios_lab: LockedMoriosLab
     locked_morios_wardrobe: LockedMoriosWardrobe
     locked_time_trials: LockedTimeTrials
+    psycho_taxi_unlock_condition: PsychoTaxiUnlockCondition
     gym_gears_unlock_condition: GymGearsUnlockCondition
     fecal_matters_unlock_condition: FecalMattersUnlockCondition
     flushed_away_unlock_condition: FlushedAwayUnlockCondition
+    rocket_unlock_condition: MoskRocketUnlockCondition
     shuffle_gela_toni: ShuffleGelaToni
     shuffle_pizza_king: ShufflePizzaKing
     shuffle_orange_switch: ShuffleOrangeSwitch
     shuffle_morios_password: ShuffleMoriosPassword
-    shuffle_rocket: ShuffleRocket
     shuffle_full_game: ShuffleFullGame
     demo_portal_mode: DemoPortalMode
-    shuffle_psycho_taxi: ShufflePsychoTaxi
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
     hatsanity: Hatsanity
@@ -757,17 +795,17 @@ option_groups = [
             LockedMoriosLab,
             LockedMoriosWardrobe,
             LockedTimeTrials,
+            PsychoTaxiUnlockCondition,
             GymGearsUnlockCondition,
             FecalMattersUnlockCondition,
             FlushedAwayUnlockCondition,
+            MoskRocketUnlockCondition,
             ShuffleGelaToni,
             ShufflePizzaKing,
             ShuffleOrangeSwitch,
             ShuffleMoriosPassword,
-            ShuffleRocket,
             ShuffleFullGame,
             DemoPortalMode,
-            ShufflePsychoTaxi,
         ],
     ),
     OptionGroup(

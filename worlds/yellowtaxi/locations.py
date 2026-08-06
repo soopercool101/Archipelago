@@ -221,7 +221,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Event: Granny's Island - Talk to Michele Near Beach", "Michele",
                     location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
                 )
-            if world is None or (world.options.shuffle_rocket and world.early_rocket):
+            if world is None or world.early_rocket:
                 locations["Granny's Island - Talk to Alien Mosk"] = 10_00016
         case "Granny's Island - Crash Again Roof":
             if world is None or world.options.extra_demo_collectables:
@@ -284,7 +284,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Morio's Lab - Talk to Morio in Morio's Room": 10_00000,
                 }
         case "Morio's Lab - Psycho Taxi Arcade Machine":
-            if world is None or (world.options.shuffle_psycho_taxi and world.early_psycho_taxi):
+            if world is None or world.early_psycho_taxi:
                 locations = {
                     "Morio's Lab - Interact with Psycho Taxi Arcade Machine": 20_99999,
                 }
@@ -382,7 +382,8 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Gym Gears - Purchase Membership From Ultra Chad": 6_10_00006,
                 }
         case "Arcade Panik - Starting Area":
-            if world is None or (world.options.shuffle_psycho_taxi and not world.early_psycho_taxi):
+            if (world is None or (world.options.psycho_taxi_unlock_condition.value ==
+                                  world.options.psycho_taxi_unlock_condition.option_shuffle_cartridge)):
                 locations = {
                     "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
                 }

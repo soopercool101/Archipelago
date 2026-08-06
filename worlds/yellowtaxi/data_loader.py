@@ -26,7 +26,7 @@ regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
                                       load_json_data("L19.protricks.json")
                                       )
 
-original_level_order : List[str] = [
+original_portal_level_order : List[str] = [
     "Morio's Home",
     "Bombeach",
     "Arcade Panik",
@@ -38,15 +38,37 @@ original_level_order : List[str] = [
     "Ruined Observatory",
     "Tosla HQ",
     "The Moon",
+]
+
+alternative_portal_level_order : List[str] = [
+    "Bombeach",
+    "Pizza Time",
+    "Morio's Home",
+    "Arcade Panik",
+    "Tosla's Offices",
+    "Maurizio's City",
+    "Crash Test Industries",
+    "Morio's Mind",
+    "Ruined Observatory",
+    "Tosla HQ",
+    "The Moon",
+]
+
+grannys_island_level_order : List[str] = [
     "Gym Gears",
     "Fecal Matters",
     "Flushed Away",
+]
+
+miscellaneous_level_order : List[str] = [
     "Mosk's Rocket",
-    "Baby steps!",
+    "Baby Steps!",
     "Getting Gud!",
-    "Pro tricks!",
+    "Pro Tricks!",
     "Psycho Taxi"
 ]
+
+original_level_order : List[str] = original_portal_level_order + grannys_island_level_order + miscellaneous_level_order
 
 # TODO: Remove levels as they are finished. Remove this list entirely for v1.0.0
 unfinished_levels : List[str] = [
@@ -56,6 +78,31 @@ unfinished_levels : List[str] = [
     "Tosla HQ",
     "The Moon"
 ]
+
+level_ids : Dict[str, int] = {
+    "Excluded": 11, # HubDemo in vanilla. Fully unused so repurposing
+
+    "Hub": 0,
+    "Bombeach": 1,
+    "Pizza Time": 2,
+    "Morio's Home": 3,
+    "Arcade Panik": 4,
+    "Tosla's Offices": 5,
+    "Gym Gears": 6,
+    "Fecal Matters": 7,
+    "Flushed Away": 8,
+    "Maurizio's City": 9,
+    "Crash Test Industries": 10,
+    "Morio's Mind": 12,
+    "Ruined Observatory": 13,
+    "Tosla HQ": 14,
+    "The Moon": 15,
+    "Mosk's Rocket": 16,
+    "Baby Steps!": 17,
+    "Getting Gud!": 18,
+    "Pro Tricks!": 19,
+    "Psycho Taxi": 20,
+}
 
 # Load static locations list
 def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int | None]:

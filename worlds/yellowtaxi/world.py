@@ -9,7 +9,7 @@ from Utils import messagebox#, visualize_regions, Version
 from worlds.AutoWorld import World
 from worlds.LauncherComponents import Component, Type, components
 
-from . import data_loader, items, regions, locations, rules, web_world
+from . import data_loader, level_shuffler, items, regions, locations, rules, web_world
 from . import options as taxi_options
 from . import settings as taxi_settings
 from .items import TRAPS
@@ -79,8 +79,13 @@ class YellowTaxiWorld(World):
         super().__init__(multiworld, player)
         self.num_gears : int = 0
         self.num_bunnies : int = 0
+        self.num_portals : int = 0
         self.included_hats: Set[str] = set()
         self.hat_location_count : int = 0
+        self.level_order : List[str] = []
+        self.portal_levels : List[str] = []
+        self.grannys_levels : List[str] = []
+        self.misc_levels : List[str] = []
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
         self.special_levels : List[str] = []
@@ -173,40 +178,23 @@ class YellowTaxiWorld(World):
             case 3:
                 self.goal_levels = ["Tosla HQ", "Moon"]
 
-        # Include levels up to the goal
-        # Always included levels
-        self.included_levels = [
-            "Hub",
-            "Morio's Home",
-            "Bombeach",
-        ]
+        goal_portal_index : int = -1
 
-        if (self.options.goal >= self.options.goal.option_tosla_offices_boss or
-                not self.options.remove_post_goal_portals):
-            self.included_levels += [
-                "Arcade Panik",
-                "Pizza Time",
-                "Tosla's Offices",
-            ]
+        self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
 
-        if (self.options.goal >= 2 or
-                not self.options.remove_post_goal_portals):
-            self.included_levels += [
-                "Maurizio's City",
-            ]
+        # Figure out how many portals should be in the game. Do this pre-shuffle
+        for level in self.level_order:
+            if goal_portal_index == -1 and level in self.goal_levels:
+                goal_portal_index = self.num_portals
+                if self.options.remove_post_goal_portals and level in self.goal_levels:
+                    self.num_portals += 1
+                    break
+            if level in data_loader.unfinished_levels:
+                break
 
+            self.num_portals += 1
 
-        self.special_levels = [
-            ""  # Empty = appears in multiple levels
-        ]
-
-        if (self.options.locked_time_trials or self.options.time_trial_gears or
-                self.using_ut):
-            self.included_levels += [
-                "Baby Steps!",
-                "Getting Gud!",
-                "Pro Tricks!",
-            ]
+        #level_order.set_level_order(self)
 
         if self.options.remove_goal_portal_locations:
             for level in self.goal_levels:
@@ -234,8 +222,7 @@ class YellowTaxiWorld(World):
         self.has_golden_propeller_access = ((self.options.shuffle_golden_propeller.value ==
                                              self.options.shuffle_golden_propeller.option_true) or
                                             "Ruined Observatory" in self.included_levels)
-        self.has_rocket_access = (self.options.shuffle_rocket.value ==
-                                  self.options.shuffle_rocket.option_true)
+        self.has_rocket_access = "Mosk's Rocket" in self.included_levels
 
         # Exclude unreachable hub areas
         if self.has_rocket_access:
@@ -341,7 +328,9 @@ class YellowTaxiWorld(World):
                 self.early_rat = True
             if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
                 self.early_backflip = True
-            if self.options.shuffle_psycho_taxi and not "Arcade Panik" in self.included_levels:
+            if (self.options.psycho_taxi_unlock_condition.value ==
+                    self.options.psycho_taxi_unlock_condition.option_shuffle_cartridge
+                    and not "Arcade Panik" in self.included_levels):
                 self.early_psycho_taxi = True
             if self.options.shuffle_orange_switch and not "Crash Test Industries" in self.included_levels:
                 self.early_orange_switch = True
@@ -351,7 +340,7 @@ class YellowTaxiWorld(World):
                 self.early_golden_propeller = True
             if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
                 self.early_morios_password = True
-            if self.options.shuffle_rocket:
+            if self.options.rocket_unlock_condition.value == self.options.rocket_unlock_condition.option_shuffle_rocket:
                 self.early_rocket = True
 
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
@@ -407,7 +396,6 @@ class YellowTaxiWorld(World):
         if self.options.shuffle_flip_o_will != 0 and self.options.early_move:
             move = self.random.choice(["Progressive Jump", "Progressive Boost"])
             self.multiworld.local_early_items[self.player][move] = 1
-
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
