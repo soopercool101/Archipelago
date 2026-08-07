@@ -151,6 +151,7 @@ class GymGearsUnlockCondition(Choice):
     default = option_open
     alias_vanilla = option_open
     alias_unlocked = option_open
+    alias_locked = option_shuffle_gym_membership
 
 class FecalMattersUnlockCondition(Choice):
     """
@@ -172,6 +173,7 @@ class FecalMattersUnlockCondition(Choice):
 
     default = option_shuffle_doggo
     alias_unlocked = option_open
+    alias_locked = option_shuffle_doggo
 
 class FlushedAwayUnlockCondition(Choice):
     """
@@ -186,15 +188,16 @@ class FlushedAwayUnlockCondition(Choice):
     """
     display_name = "Flushed Away Unlock Condition"
 
-    option_default = -1
     option_open = 0
     option_full_game = 1
     option_shuffle_sewer_key = 2
     option_exclude = 3
 
-    default = option_default
-    alias_vanilla = option_default
+    default = option_open
+    alias_default = option_open
+    alias_vanilla = option_open
     alias_unlocked = option_open
+    alias_locked = option_shuffle_sewer_key
 
 class PsychoTaxiUnlockCondition(Choice):
     """

@@ -181,12 +181,6 @@ class YellowTaxiWorld(World):
         goal_portal_index : int = -1
 
         if not self.using_ut:
-            # Consider flushed away open if shuffling it and set to default. Makes my life easier.
-            if (self.options.shuffle_grannys_levels and self.options.flushed_away_unlock_condition.value ==
-                    self.options.flushed_away_unlock_condition.option_default):
-                self.options.flushed_away_unlock_condition.value = \
-                    self.options.flushed_away_unlock_condition.option_open
-
             self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
 
         logging.info(f"{self.player_name}: Level order:")

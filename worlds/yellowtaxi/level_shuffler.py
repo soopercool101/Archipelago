@@ -8,24 +8,6 @@ from .data_loader import (original_portal_level_order, alternative_portal_level_
 from .options import YellowTaxiOptions
 
 def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : str) -> List[str]:
-    goal_portal_index : int = -1
-    num_portals : int = 0
-    level_order : List[str] = []
-
-    level_order = perform_pooled_randomization(options, random, goal_portal)
-
-    level_sanity_checks(options, level_order)
-
-    return level_order
-
-def level_sanity_checks(options: YellowTaxiOptions, level_order : List[str]) -> None:
-    if options.flushed_away_unlock_condition == options.flushed_away_unlock_condition.option_default:
-        options.flushed_away_unlock_condition.value = options.flushed_away_unlock_condition.option_open
-
-def perform_unpooled_randomization(options: YellowTaxiOptions, level_order : List[str]):
-    return
-
-def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goal_portal : str) -> List[str]:
     portal_order : List[str] = []
     valid_portals : List[str] = []
     shuffled_portals : bool = False
@@ -224,10 +206,8 @@ def get_portal_randomization_count_and_pool(options: YellowTaxiOptions, goal_por
         if past_goal and options.remove_post_goal_portals:
             if no_extras_in_pool:
                 break
-            else:
-                continue
         else:
-            valid_portals += [portal]
-        num_portals += 1
+            num_portals += 1
+        valid_portals += [portal]
 
     return num_portals, valid_portals
