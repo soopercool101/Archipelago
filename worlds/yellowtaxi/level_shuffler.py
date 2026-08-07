@@ -12,8 +12,7 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     num_portals : int = 0
     level_order : List[str] = []
 
-    if options.use_separate_entrance_pools or True:
-        level_order = perform_pooled_randomization(options, random, goal_portal)
+    level_order = perform_pooled_randomization(options, random, goal_portal)
 
     level_sanity_checks(options, level_order)
 
@@ -28,7 +27,8 @@ def perform_unpooled_randomization(options: YellowTaxiOptions, level_order : Lis
 
 def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goal_portal : str) -> List[str]:
     portal_order : List[str] = []
-    valid_portals : List[str]
+    valid_portals : List[str] = []
+    shuffled_portals : bool = False
     if options.portal_order.value == options.portal_order.option_shuffle:
         num_portals : int
         num_portals, valid_portals = get_portal_randomization_count_and_pool(options, goal_portal)
@@ -40,6 +40,7 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
                 portal_order += [valid_portals[i]]
             else:
                 portal_order += ["Excluded"]
+        shuffled_portals : bool = True
     else:
         base_portal_order : List[str]
         if options.portal_order.value == options.portal_order.option_internal:
@@ -58,6 +59,7 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
 
     grannys_order : List[str] = []
     valid_grannys : List[str] = []
+    shuffled_grannys : bool = False
     if options.shuffle_grannys_levels:
         if (options.allow_shuffling_removed_levels.value >=
                 options.allow_shuffling_removed_levels.option_main_levels_only):
@@ -93,6 +95,8 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
             grannys_index += 1
         else:
             grannys_order += ["Excluded"]
+
+        shuffled_grannys = True
     else:
         grannys_order = list(grannys_island_level_order)
 
@@ -108,7 +112,6 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
 
     misc_order : List[str] = []
     valid_misc : List[str] = []
-    shuffle_any_misc : bool = False
     if options.shuffle_rocket_entrance:
         valid_misc += [miscellaneous_level_order[0]]
     if options.shuffle_time_trial_entrances:
@@ -136,13 +139,70 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
         misc_order += list(miscellaneous_level_order[1:4])
 
     if (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_exclude or
-            (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_vanilla and
-            "Arcade Panik" not in portal_order)):
+            (options.use_separate_entrance_pools and options.psycho_taxi_unlock_condition.value ==
+             options.psycho_taxi_unlock_condition.option_vanilla and "Arcade Panik" not in portal_order)):
         misc_order += ["Excluded"]
     elif options.shuffle_psycho_taxi_entrance:
         misc_order += [valid_misc[misc_index]]
     else:
         misc_order += [str(miscellaneous_level_order[4])]
+
+    level_order : List[str] = portal_order + grannys_order + misc_order
+    if options.use_separate_entrance_pools:
+        return level_order
+
+    valid_levels: List[str] = valid_portals + valid_grannys + valid_misc
+    if not options.use_separate_entrance_pools:
+        # Run randomization until placement passes important tests
+        random.shuffle(valid_levels)
+        valid_level_index : int = 0
+        current_level_order : List[str] = []
+        if shuffled_portals:
+            for i in range(0, len(portal_order)):
+                # Don't move goal or excluded levels
+                if level_order[i] == "Excluded" or level_order[i] == goal_portal:
+                    current_level_order += [level_order[i]]
+                    continue
+                current_level_order += [valid_levels[valid_level_index]]
+                valid_level_index += 1
+        else:
+            current_level_order += portal_order
+        if shuffled_grannys:
+            for i in range(0, len(grannys_order)):
+                if level_order[i + len(portal_order)] == "Excluded":
+                    current_level_order += [level_order[i + len(portal_order)]]
+                    continue
+                current_level_order += [valid_levels[valid_level_index]]
+                valid_level_index += 1
+        else:
+            current_level_order += grannys_order
+
+        if options.rocket_unlock_condition.value == options.rocket_unlock_condition.option_exclude:
+            current_level_order += ["Excluded"]
+        elif options.shuffle_rocket_entrance:
+            current_level_order += [valid_levels[valid_level_index]]
+            valid_level_index += 1
+        else:
+            current_level_order += ["Mosk's Rocket"]
+
+        if options.shuffle_time_trial_entrances:
+            for i in range(0, 3):
+                current_level_order += [valid_levels[valid_level_index]]
+                valid_level_index += 1
+        else:
+            current_level_order += list(miscellaneous_level_order[1:4])
+
+        if (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_exclude or
+                (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_vanilla
+                 and "Arcade Panik" not in level_order)):
+            current_level_order += ["Excluded"]
+        elif options.shuffle_psycho_taxi_entrance:
+            current_level_order += [valid_levels[valid_level_index]]
+            valid_level_index += 1
+        else:
+            current_level_order += ["Psycho Taxi"]
+
+        return current_level_order
 
     return portal_order + grannys_order + misc_order
 
