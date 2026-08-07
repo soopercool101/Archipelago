@@ -152,7 +152,7 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
         return level_order
 
     valid_levels: List[str] = valid_portals + valid_grannys + valid_misc
-    if not options.use_separate_entrance_pools:
+    if not options.use_separate_entrance_pools and len(valid_levels) > 0:
         # Run randomization until placement passes important tests
         random.shuffle(valid_levels)
         valid_level_index : int = 0
