@@ -464,8 +464,7 @@ class RuleFactory:
             match self.world.options.flushed_away_unlock_condition:
                 case self.world.options.flushed_away_unlock_condition.option_open:
                     return True_()
-                case (self.world.options.flushed_away_unlock_condition.option_full_game |
-                      self.world.options.flushed_away_unlock_condition.option_default):
+                case self.world.options.flushed_away_unlock_condition.option_full_game:
                     return Has("Full Game Unlock",
                                options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                                filtered_resolution=True)

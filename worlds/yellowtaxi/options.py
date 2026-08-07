@@ -178,9 +178,8 @@ class FecalMattersUnlockCondition(Choice):
 class FlushedAwayUnlockCondition(Choice):
     """
     How Flushed Away is unlocked.
-    If set to anything other than "Default" or "Exclude", an NPC will be added who will take you to the Sewer Island if you have no possible logical path to it.
+    If set to anything other than "Exclude", an NPC will be added who will take you to the Sewer Island if you have no possible logical path to it.
 
-    Default: Same as Full Game if there is logical access to the Sewer Island, Exclude if there isn't. Will add to portal shuffle pool as applicable regardless of final result.
     Open: The Sewer Entrance in Granny's Island is always open.
     Full Game: The Sewer Entrance in Granny's Island will open after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
     Shuffle Sewer Key: The house in Granny's Island will be unlocked after receiving "Sewer Key" from the multiworld. Adds a location for talking to Michele in Flushed Away.
@@ -193,9 +192,9 @@ class FlushedAwayUnlockCondition(Choice):
     option_shuffle_sewer_key = 2
     option_exclude = 3
 
-    default = option_open
-    alias_default = option_open
-    alias_vanilla = option_open
+    default = option_full_game
+    alias_default = option_full_game
+    alias_vanilla = option_full_game
     alias_unlocked = option_open
     alias_locked = option_shuffle_sewer_key
 
