@@ -100,12 +100,15 @@ def connect_regions(world: YellowTaxiWorld) -> None:
             for warp in reg["warps"].items():
                 if warp[1][0].startswith("{PORTAL}"):
                     # Get the starting area that corresponds to this entrance
-                    connecting_level : str = world.level_order[original_level_order.index(warp[1][0][8:])]
+                    index : int = original_level_order.index(warp[1][0][8:])
+                    connecting_level : str = world.level_order[index]
                     if connecting_level == "Excluded":
                         continue
                     starting_area : str = connecting_level
                     if starting_area in special_starting_areas.keys():
                         starting_area = special_starting_areas[starting_area]
+                    if starting_area == "":
+                        continue
                     starting_area = starting_area + " - Starting Area"
                     connecting_region = world.get_region(starting_area)
                 else:

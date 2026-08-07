@@ -201,7 +201,8 @@ class PsychoTaxiUnlockCondition(Choice):
     How Psycho Taxi is unlocked.
     At this time, the Psycho Taxi level contains no locations.
 
-    Default: Picking up the Psycho Taxi Cartridge in Arcade Panik will unlock Psycho Taxi. Same as Excluded if there's no logical access to Arcade Panik
+    Vanilla: Picking up the Psycho Taxi Cartridge in Arcade Panik will unlock Psycho Taxi.
+             Same as Excluded if there's no logical access to Arcade Panik
     Open: Psycho Taxi will always be unlocked.
     Shuffle Cartridge: Adds the Psycho Taxi Cartridge into the item pool and adds a location for picking up the Cartridge in Arcade Panik.
                        If Arcade Panik is not an included level, talking to the Psycho Taxi Arcade Machine will be the location instead.
@@ -210,14 +211,14 @@ class PsychoTaxiUnlockCondition(Choice):
 
     display_name = "Psycho Taxi Unlock Condition"
 
-    option_default = -1
+    option_vanilla = -1
     option_open = 0
     option_shuffle_cartridge = 2
     option_exclude = 3
 
-    default = option_default
-    alias_vanilla = option_default
+    default = option_shuffle_cartridge
     alias_unlocked = option_open
+    alias_off = option_exclude
 
 class MoskRocketUnlockCondition(Choice):
     """
@@ -687,7 +688,7 @@ class ShuffleTimeTrialsEntrances(Toggle):
 class ShuffleRocketEntrance(Toggle):
     """
     Whether Mosk's Rocket should have its entrance shuffled.
-    Has no effect if "Mosk's Rocket Unlock Condition" is set to "Exclude".
+    If "Mosk's Rocket Unlock Condition" is set to "Exclude", will shuffle the level into the pool, but not the entrance.
 
     If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
     """
@@ -696,7 +697,8 @@ class ShuffleRocketEntrance(Toggle):
 class ShufflePsychoTaxiEntrance(Toggle):
     """
     Whether Psycho Taxi should have its entrance shuffled.
-    Has no effect if "Psycho Taxi Unlock Condition" is set to "Exclude", or if set to "Default" and Arcade Panik is not an included level.
+    If "Psycho Taxi Unlock Condition" is set to "Exclude" or to "Default" when Arcade Panik is not an included level,
+    will shuffle the level into the pool, but not the entrance.
 
     If "Use Separate Entrance Pools" is true, it will be in the "Miscellaneous" pool.
     """

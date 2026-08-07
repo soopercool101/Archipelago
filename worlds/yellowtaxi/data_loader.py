@@ -108,6 +108,7 @@ special_starting_areas : Dict[str, str] = {
     "Morio's Home": "Morio's Island",
     "Arcade Panik": "Arcade Plaza",
     "Tosla's Offices": "Tosla Square",
+    "Psycho Taxi": "",
 }
 
 # Load static locations list

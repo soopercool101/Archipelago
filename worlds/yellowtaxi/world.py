@@ -180,12 +180,28 @@ class YellowTaxiWorld(World):
 
         goal_portal_index : int = -1
 
-        self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
+        if not self.using_ut:
+            # Consider flushed away open if shuffling it and set to default. Makes my life easier.
+            if (self.options.shuffle_grannys_levels and self.options.flushed_away_unlock_condition.value ==
+                    self.options.flushed_away_unlock_condition.option_default):
+                self.options.flushed_away_unlock_condition.value = \
+                    self.options.flushed_away_unlock_condition.option_open
+
+            self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
+
+        logging.info(f"{self.player_name}: Level order:")
+        for i in range(0, len(self.level_order)):
+            logging.info(f"[{i}] {data_loader.original_level_order[i]} -> {self.level_order[i]}")
 
         self.included_levels = ["Hub"]
         self.special_levels = [""]
 
-        self.included_levels += list(self.level_order)
+        for level in self.level_order:
+            if level == "Excluded":
+                continue
+            if level in self.goal_levels and self.options.remove_goal_portal_locations:
+                continue
+            self.included_levels += [level]
 
         if self.options.hatsanity == 1: # Special "level" for shared hats
             self.special_levels += ["Hatsanity"]
@@ -208,12 +224,11 @@ class YellowTaxiWorld(World):
         self.has_golden_propeller_access = ((self.options.shuffle_golden_propeller.value ==
                                              self.options.shuffle_golden_propeller.option_true) or
                                             "Ruined Observatory" in self.included_levels)
-        self.has_rocket_access = "Mosk's Rocket" in self.included_levels
+        self.has_rocket_access = (self.options.rocket_unlock_condition.value !=
+                                  self.options.rocket_unlock_condition.option_exclude)
 
         # Exclude unreachable hub areas
-        if self.has_rocket_access:
-            self.included_levels += ["Mosk's Rocket"]
-        elif not (self.options.expert_level >= 3):
+        if not self.has_rocket_access and not (self.options.expert_level >= 3):
             self.excluded_regions += [
                 "Granny's Island - Coins on Top of Rocket",
                 "Granny's Island - Gear on Top of Rocket",
@@ -245,9 +260,18 @@ class YellowTaxiWorld(World):
                 self.excluded_regions += ["Granny's Island - Crash Again Island",
                                           "Granny's Island - Crash Again Roof",
                                           "Crash Again - Starting Area",
-                                          "Crash Again - End",
-                                          "Granny's Island - Sewer Island",
-                                          "Granny's Island - Sewer Island Upper"]
+                                          "Crash Again - End"]
+                if (self.options.flushed_away_unlock_condition.value <
+                        self.options.flushed_away_unlock_condition.option_exclude):
+                    if not self.using_ut:
+                        self.early_sewer_island = True
+                else:
+                    self.excluded_regions += ["Granny's Island - Sewer Island",
+                                              "Granny's Island - Sewer Island Upper"]
+        elif (not self.options.shuffle_orange_switch and self.level_order[13] == "Crash Test Industries"
+              and (self.options.expert_level <= 0 or not self.has_golden_propeller_access) and not self.using_ut):
+            # Sewer island would lock itself unless this is done
+            self.early_sewer_island = True
         if not self.has_spike_traversal:
             self.excluded_regions += ["Lab Memories - First Step",
                                       "Lab Memories - High Ground"]
@@ -288,25 +312,6 @@ class YellowTaxiWorld(World):
                 "Tosla Offices (Employees Only) - Starting Area",
                 "Tosla Offices (Employees Only) - Higher Ground",
             ]
-
-        # Granny's Island Levels. Flushed Away in particular needs to consider logical access.
-
-        # Add Gym Gears if included via settings
-        if self.options.gym_gears_unlock_condition != self.options.gym_gears_unlock_condition.option_exclude:
-            self.included_levels += ["Gym Gears"]
-        # Add Fecal Matters if included via settings
-        if self.options.fecal_matters_unlock_condition != self.options.fecal_matters_unlock_condition.option_exclude:
-            self.included_levels += ["Fecal Matters"]
-        # Add Flushed Away if included via settings and logically accessible
-        if self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_exclude:
-            if (self.options.flushed_away_unlock_condition != self.options.flushed_away_unlock_condition.option_default
-                    or "Granny's Island - Sewer Island" not in self.excluded_regions):
-                self.included_levels += ["Flushed Away"]
-                if "Granny's Island - Sewer Island" in self.excluded_regions:
-                    self.excluded_regions.remove("Granny's Island - Sewer Island")
-                    self.excluded_regions.remove("Granny's Island - Sewer Island Upper")
-                    if not self.using_ut:
-                        self.early_sewer_island = True
 
         # Make sure early items are set as needed
         if not self.using_ut:
@@ -483,6 +488,13 @@ class YellowTaxiWorld(World):
 
         if self.options.trap_link_uses_whitelist:
             slot_data["trap_link_whitelist"] = sorted(self.options.enabled_traps.value)
+
+        numerical_level_order : List[int] = []
+
+        for level in self.level_order:
+            numerical_level_order.append(data_loader.level_ids[level])
+
+        slot_data["level_order"] = numerical_level_order
 
         return slot_data
 

@@ -12,22 +12,25 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     num_portals : int = 0
     level_order : List[str] = []
 
-    if options.portal_order.value == options.portal_order.option_internal:
-        portal_levels = alternative_portal_level_order
-
     if options.use_separate_entrance_pools or True:
         level_order = perform_pooled_randomization(options, random, goal_portal)
 
+    level_sanity_checks(options, level_order)
+
     return level_order
 
-def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goal_portal : str) -> List[str]:
-    shuffle_pools : Dict[str, List[str]] = {}
-    level_order : List[str] = []
+def level_sanity_checks(options: YellowTaxiOptions, level_order : List[str]) -> None:
+    if options.flushed_away_unlock_condition == options.flushed_away_unlock_condition.option_default:
+        options.flushed_away_unlock_condition.value = options.flushed_away_unlock_condition.option_open
 
+def perform_unpooled_randomization(options: YellowTaxiOptions, level_order : List[str]):
+    return
+
+def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goal_portal : str) -> List[str]:
     portal_order : List[str] = []
+    valid_portals : List[str]
     if options.portal_order.value == options.portal_order.option_shuffle:
         num_portals : int
-        valid_portals : List[str]
         num_portals, valid_portals = get_portal_randomization_count_and_pool(options, goal_portal)
         random.shuffle(valid_portals)
         goal_portal_index : int = original_portal_level_order.index(goal_portal)
@@ -48,14 +51,14 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
         for portal in base_portal_order:
             if portal == goal_portal and options.remove_post_goal_portals:
                 skip_remaining = True
-            elif skip_remaining:
+            elif skip_remaining or portal in unfinished_levels:
                 portal_order += ["Excluded"]
                 continue
             portal_order += [portal]
 
     grannys_order : List[str] = []
+    valid_grannys : List[str] = []
     if options.shuffle_grannys_levels:
-        valid_grannys : List[str] = []
         if (options.allow_shuffling_removed_levels.value >=
                 options.allow_shuffling_removed_levels.option_main_levels_only):
             valid_grannys = ["Gym Gears", "Fecal Matters", "Flushed Away"]
@@ -106,13 +109,11 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
     misc_order : List[str] = []
     valid_misc : List[str] = []
     shuffle_any_misc : bool = False
-    if (options.shuffle_rocket_entrance and options.rocket_unlock_condition.value !=
-            options.rocket_unlock_condition.option_exclude):
+    if options.shuffle_rocket_entrance:
         valid_misc += [miscellaneous_level_order[0]]
     if options.shuffle_time_trial_entrances:
         valid_misc += list(miscellaneous_level_order[1:4])
-    if (options.shuffle_psycho_taxi_entrance and
-            options.psycho_taxi_unlock_condition.value != options.psycho_taxi_unlock_condition.option_exclude):
+    if options.shuffle_psycho_taxi_entrance:
         valid_misc += [miscellaneous_level_order[4]]
 
     random.shuffle(valid_misc)
@@ -132,9 +133,11 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
         misc_order += list(valid_misc[misc_index:misc_index+3])
         misc_index += 3
     else:
-        misc_order += list(miscellaneous_level_order[1:3])
+        misc_order += list(miscellaneous_level_order[1:4])
 
-    if options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_exclude:
+    if (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_exclude or
+            (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_vanilla and
+            "Arcade Panik" not in portal_order)):
         misc_order += ["Excluded"]
     elif options.shuffle_psycho_taxi_entrance:
         misc_order += [valid_misc[misc_index]]

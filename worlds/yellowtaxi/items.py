@@ -384,7 +384,7 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         classification = ItemClassification.progression
 
     # Bunnies are progresssion if Mosk's Rocket is shuffled or exclude post-goal locations is off
-    if name.startswith("Bunny (") and world.options.shuffle_rocket:
+    if name.startswith("Bunny (") and "Mosk's Rocket" in world.included_levels:
         classification = ItemClassification.progression_deprioritized
 
     if name == "Police Lights" and "Maurizio's City" in world.included_levels:
@@ -393,6 +393,9 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
     if name == "Tosla Employee Hat" and "Tosla's Offices" in world.included_levels:
         classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices
+
+    if name == "Psycho Taxi Cartridge" and world.options.shuffle_psycho_taxi_entrance:
+        classification = ItemClassification.progression # Leads to an actual level, presumedly
 
     if name == "Pizza Wheels":
         if world.options.pizza_wheels == world.options.pizza_wheels.option_useful:
@@ -431,7 +434,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             hub_bunnies -= 1
         itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(hub_bunnies)]
         for level in world.included_levels:
-            if level != "Hub" and level != "Mosk's Rocket" and not level.endswith("!"):
+            if level not in ["Hub", "Mosk's Rocket", "Psycho Taxi"] and not level.endswith("!"):
                 itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
 
     if world.options.shuffle_gela_toni:

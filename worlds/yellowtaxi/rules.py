@@ -281,7 +281,18 @@ class RuleFactory:
         if token == "Rocket":
             if self.skip_unnecessary_rule_calculations and not self.world.has_rocket_access:
                 return False_()
+            if (self.world.options.rocket_unlock_condition.value ==
+                    self.world.options.rocket_unlock_condition.option_open):
+                return True_()
             return Has("Mosk's Rocket")
+        if token == "PsychoTaxi":
+            if (self.world.options.psycho_taxi_unlock_condition.value ==
+                    self.world.options.psycho_taxi_unlock_condition.option_open):
+                return True_()
+            if (self.world.options.psycho_taxi_unlock_condition.value ==
+                    self.world.options.psycho_taxi_unlock_condition.option_exclude):
+                return False_()
+            return Has("Psycho Taxi Cartridge")
         if token == "MorioHat":
             return Has("Morio Hat") | Has("Morio's Brain Hat")
         if token == "EmployeeHat":

@@ -1257,17 +1257,20 @@
       "Morio's Lab - Ground Floor": "",
       "Morio's Lab - Second Floor Access to Shortcut Pipe": "X2+B1+J1 | X1+B2+J1 | X1+B1+J2",
       "Morio's Lab - Second Floor After Demo Wall": "FGU",
-      "Morio's Lab - Psycho Taxi Arcade Machine": "FGU | X2+OOB+B1"
+      "Morio's Lab - Psycho Taxi Arcade Machine Area": "FGU | X2+OOB+B1"
     },
     "warps": {
       "Morio's Lab - Arcade Panik Portal": ["{PORTAL}Arcade Panik", "PortalArcadePanik"]
     }
   },
-  "Morio's Lab - Psycho Taxi Arcade Machine": {
+  "Morio's Lab - Psycho Taxi Arcade Machine Area": {
     "level": "Hub",
     "sublevel": "Morio's Lab",
     "connections": {
       "Morio's Lab - Second Floor": "FGU | X1+OOB+B1"
+    },
+    "warps": {
+      "Morio's Lab - Psycho Taxi Arcade Machine": ["{PORTAL}Psycho Taxi", "PsychoTaxi"]
     }
   },
   "Morio's Lab - Second Floor Above Demo Wall": {

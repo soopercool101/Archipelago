@@ -387,6 +387,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Arcade Panik - Psycho Taxi Cartridge": 4_20_99999,
                 }
+            else:
+                world.get_region(region_name).add_event(
+                    "Event: Pick up Psycho Taxi Cartridge", "Psycho Taxi Cartridge",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
         case "Pizza Time - Starting Area":
             if world is None or world.options.pizza_wheels != world.options.pizza_wheels.option_off:
                 locations = {
