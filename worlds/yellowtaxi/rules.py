@@ -301,9 +301,13 @@ class RuleFactory:
             return Has("Alien Mosk (Good) Hat") | Has("Bunny Hat")
         # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
+            if (self.world.options.goal == self.world.options.goal.option_bombeach_boss
+                    and self.world.options.portal_order.value == self.world.options.portal_order.option_internal):
+                return Has("Gear", self.world.final_portal_cost)
             return Has("Gear", 3)
         if token == "PortalBombeach":
-            if self.world.options.goal == self.world.options.goal.option_bombeach_boss:
+            if (self.world.options.goal == self.world.options.goal.option_bombeach_boss
+                    and self.world.options.portal_order.value != self.world.options.portal_order.option_internal):
                 return Has("Gear", self.world.final_portal_cost)
             return Has("Gear", 6)
         if token == "PortalArcadePanik":
