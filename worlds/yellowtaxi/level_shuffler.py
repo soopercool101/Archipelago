@@ -194,7 +194,7 @@ def perform_pooled_randomization(options: YellowTaxiOptions, random: Random, goa
 
         if (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_exclude or
                 (options.psycho_taxi_unlock_condition.value == options.psycho_taxi_unlock_condition.option_vanilla
-                 and "Arcade Panik" not in level_order)):
+                 and "Arcade Panik" not in current_level_order)):
             current_level_order += ["Excluded"]
         elif options.shuffle_psycho_taxi_entrance:
             current_level_order += [valid_levels[valid_level_index]]
