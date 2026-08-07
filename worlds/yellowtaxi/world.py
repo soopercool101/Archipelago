@@ -1,5 +1,6 @@
 import logging
 import math
+import typing
 from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List, Set, Optional
 
@@ -83,9 +84,6 @@ class YellowTaxiWorld(World):
         self.included_hats: Set[str] = set()
         self.hat_location_count : int = 0
         self.level_order : List[str] = []
-        self.portal_levels : List[str] = []
-        self.grannys_levels : List[str] = []
-        self.misc_levels : List[str] = []
         self.excluded_regions : List[str] = []
         self.included_levels : List[str] = []
         self.special_levels : List[str] = []
@@ -183,9 +181,6 @@ class YellowTaxiWorld(World):
         if not self.using_ut:
             self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
 
-        logging.info(f"{self.player_name}: Level order:")
-        for i in range(0, len(self.level_order)):
-            logging.info(f"[{i}] {data_loader.original_level_order[i]} -> {self.level_order[i]}")
 
         self.included_levels = ["Hub"]
         self.special_levels = [""]
@@ -494,3 +489,8 @@ class YellowTaxiWorld(World):
 
     def custom_ut_sort(self, region_label: str, location_label: str) -> str | int:
         return self.ut_sort_region_dict.get(region_label, 9999999)
+
+    def write_spoiler(self, spoiler_handle: typing.TextIO) -> None:
+        spoiler_handle.write("\nEntrances:\n")
+        for i in range(0, len(self.level_order)):
+            spoiler_handle.write(f"\n{data_loader.original_level_order[i]} -> {self.level_order[i]}")
