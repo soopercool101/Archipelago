@@ -22,6 +22,7 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
                 portal_order += [valid_portals[i]]
             else:
                 portal_order += ["Excluded"]
+        valid_portals.remove(goal_portal)
         shuffled_portals : bool = True
     else:
         base_portal_order : List[str]
