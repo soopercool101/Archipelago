@@ -49,7 +49,10 @@ def create_locations(world: YellowTaxiWorld) -> None:
         if "bunnies" in reg.keys():
             if world.options.bunnysanity:
                 locations = locations | reg["bunnies"]
-                world.num_bunnies += len(reg["bunnies"])
+                if "Mosk's Rocket" in world.included_levels:
+                    world.num_bunnies += len(reg["bunnies"])
+                else:
+                    world.num_filler += len(reg["bunnies"])
             elif "Mosk's Rocket" in world.included_levels: # Non-bunnysanity still needs to track bunnies for rocket
                 for bunny in reg["bunnies"]:
                     bunny_level : str = level
@@ -61,23 +64,28 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         if "checkpoints" in reg.keys() and (world.options.checkpointsanity or world.using_ut):
             locations = locations | reg["checkpoints"]
+            world.num_filler += len(reg["checkpoints"])
         if "safes" in reg.keys() and (world.options.safesanity or world.using_ut):
             locations = locations | reg["safes"]
+            world.num_filler += len(reg["safes"])
         if "chests" in reg.keys() and (world.options.chestsanity or world.using_ut):
             if use_simple_chestsanity:
                 locations = locations | reg["chests"]
+                world.num_filler += len(reg["chests"])
             else:
                 for chest, chest_id in reg["chests"].items():
                     chests += [(region, {chest: chest_id})]
         if "coinbags" in reg.keys() and (world.options.coinbagsanity or world.using_ut):
             if use_simple_coinbagsanity:
                 locations = locations | reg["coinbags"]
+                world.num_filler += len(reg["coinbags"])
             else:
                 for coinbag, coinbag_id in reg["coinbags"].items():
                     coinbags += [(region, {coinbag: coinbag_id})]
         if "coins" in reg.keys() and (world.options.coinsanity or world.using_ut):
             if use_simple_coinsanity:
                 locations = locations | reg["coins"]
+                world.num_filler += len(reg["coins"])
             else:
                 for coin, coin_id in reg["coins"].items():
                     coins += [(region, {coin: coin_id})]
@@ -90,6 +98,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         if world.options.cheesesanity and "cheeses" in reg.keys():
             locations = locations | reg["cheeses"]
+            world.num_filler += len(reg["cheeses"])
 
         locations = locations | get_special_locations(world, region.name)
         region.add_locations(locations)
@@ -102,6 +111,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             chest_data = chests[i]
             # chest_data[0] is region, chest_data[1] is actual chest
             chest_data[0].add_locations(chest_data[1])
+            world.num_filler += 1
 
     # Set random coin bags as checks, based on coinbagsanity % setting
     if world.options.coinbagsanity and len(coinbags) > 0:
@@ -111,6 +121,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             coinbag_data = coinbags[i]
             # coinbag_data[0] is region, coinbag_data[1] is actual coin bag
             coinbag_data[0].add_locations(coinbag_data[1])
+            world.num_filler += 1
 
     # Set random coins as checks, based on coinsanity % setting
     if world.options.coinsanity and len(coins) > 0:
@@ -125,6 +136,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             coin_data = coins[i]
             # coin_data[0] is region, coin_data[1] is actual coin
             coin_data[0].add_locations(coin_data[1])
+            world.num_filler += 1
             if i > max_nonfiller_coin_count:
                 # Exclude coins past the threshold
                 loc : Location = world.get_location(list(coin_data[1].keys())[0])
@@ -272,7 +284,10 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 if world is None or world.options.bunnysanity:
                     locations["Morio's Lab - Bunny - Above Morio's Home Portal"] = 2_00003
                     if world is not None:
-                        world.num_bunnies += 1
+                        if "Mosk's Rocket" in world.included_levels:
+                            world.num_bunnies += 1
+                        else:
+                            world.num_filler += 1
                 elif "Mosk's Rocket" in world.included_levels:  # Non-bunnysanity still needs to track bunnies
                     region = world.get_region(region_name)
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Morio's Home Portal", f"Bunny (Morio's Lab)",
@@ -295,7 +310,10 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                         "Morio's Lab - Bunny - Above Pizza Time Portal": 2_00004,
                     }
                     if world is not None:
-                        world.num_bunnies += 1
+                        if "Mosk's Rocket" in world.included_levels:
+                            world.num_bunnies += 1
+                        else:
+                            world.num_filler += 1
                 elif "Mosk's Rocket" in world.included_levels:  # Non-bunnysanity still needs to track bunnies
                     region = world.get_region(region_name)
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Pizza Time Portal", f"Bunny (Morio's Lab)",
@@ -466,3 +484,51 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     world.included_hats.add("Propeller Cap")
 
     return locations
+
+def fix_location_deficit(world: YellowTaxiWorld):
+    # UT doesn't have to worry about this
+    if world.using_ut:
+        return
+
+    # Get how many filler items would be needed to make up for locations that wouldn't be in the world
+    # Morio's Home traditionally has one of the Move Rando locations
+    location_deficit : int = 0
+    if (world.options.shuffle_flip_o_will.value != world.options.shuffle_flip_o_will.alias_none and
+            "Morio's Home" not in world.included_levels):
+        location_deficit += 1
+
+    # Gym Membership location is in Gym Gears
+    if (world.options.gym_gears_unlock_condition.value ==
+            world.options.gym_gears_unlock_condition.option_shuffle_gym_membership and
+            "Gym Gears" not in world.included_levels):
+        location_deficit += 1
+
+    # Sewer key location is in flushed away
+    if (world.options.flushed_away_unlock_condition.value ==
+            world.options.flushed_away_unlock_condition.option_shuffle_sewer_key and
+            "Flushed Away" not in world.included_levels):
+        location_deficit += 1
+
+    # Single-item locked time trials can actually remove from the deficit, depending on how many time trials there are
+    if world.options.locked_time_trials.value == world.options.locked_time_trials.option_single_item:
+        location_deficit += 1
+        if "Baby Steps!" in world.included_levels:
+            location_deficit -= 1
+        if "Getting Gud!" in world.included_levels:
+            location_deficit -= 1
+        if "Pro Tricks!" in world.included_levels:
+            location_deficit -= 1
+    # Multi-item unlocks can only add to the deficit, however
+    elif world.options.locked_time_trials.value != world.options.locked_time_trials.option_open:
+        if "Baby Steps!" not in world.included_levels:
+            location_deficit += 1
+        if "Getting Gud!" not in world.included_levels:
+            location_deficit += 1
+        if "Pro Tricks!" not in world.included_levels:
+            location_deficit += 1
+
+    # If there are not enough filler items to cover the deficit, we have to eat into gears
+    if location_deficit > world.num_filler:
+        location_deficit -= world.num_filler
+        world.num_filler = 0
+        world.num_gears -= location_deficit

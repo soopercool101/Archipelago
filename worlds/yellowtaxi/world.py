@@ -81,6 +81,7 @@ class YellowTaxiWorld(World):
         self.num_gears : int = 0
         self.num_bunnies : int = 0
         self.num_portals : int = 0
+        self.num_filler : int = 0
         self.included_hats: Set[str] = set()
         self.hat_location_count : int = 0
         self.level_order : List[str] = []
@@ -380,6 +381,7 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
+        locations.fix_location_deficit(self)
         if self.using_ut:
             self.final_portal_cost = self.ut_true_goal_cost
         else:

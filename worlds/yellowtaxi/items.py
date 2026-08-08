@@ -140,22 +140,22 @@ ITEM_NAME_TO_ID = {
 # In our case, we will make a dictionary from item name to classification.
 DEFAULT_ITEM_CLASSIFICATIONS = {
     "Gear": ItemClassification.progression_deprioritized_skip_balancing,
-    "Bunny (Morio's Lab)": ItemClassification.filler,
-    "Bunny (Bombeach)": ItemClassification.filler,
-    "Bunny (Pizza Time)": ItemClassification.filler,
-    "Bunny (Morio's Home)": ItemClassification.filler,
-    "Bunny (Arcade Panik)": ItemClassification.filler,
-    "Bunny (Tosla's Offices)": ItemClassification.filler,
-    "Bunny (Gym Gears)": ItemClassification.filler,
-    "Bunny (Fecal Matters)": ItemClassification.filler,
-    "Bunny (Flushed Away)": ItemClassification.filler,
-    "Bunny (Maurizio's City)": ItemClassification.filler,
-    "Bunny (Crash Test Industries)": ItemClassification.filler,
-    # "Bunny (Demo)": ItemClassification.filler,
-    "Bunny (Morio's Mind)": ItemClassification.filler,
-    "Bunny (Ruined Observatory)": ItemClassification.filler,
-    "Bunny (Tosla HQ)": ItemClassification.filler,
-    "Bunny (Moon)": ItemClassification.filler,
+    "Bunny (Morio's Lab)": ItemClassification.progression_deprioritized,
+    "Bunny (Bombeach)": ItemClassification.progression_deprioritized,
+    "Bunny (Pizza Time)": ItemClassification.progression_deprioritized,
+    "Bunny (Morio's Home)": ItemClassification.progression_deprioritized,
+    "Bunny (Arcade Panik)": ItemClassification.progression_deprioritized,
+    "Bunny (Tosla's Offices)": ItemClassification.progression_deprioritized,
+    "Bunny (Gym Gears)": ItemClassification.progression_deprioritized,
+    "Bunny (Fecal Matters)": ItemClassification.progression_deprioritized,
+    "Bunny (Flushed Away)": ItemClassification.progression_deprioritized,
+    "Bunny (Maurizio's City)": ItemClassification.progression_deprioritized,
+    "Bunny (Crash Test Industries)": ItemClassification.progression_deprioritized,
+    # "Bunny (Demo)": ItemClassification.progression_deprioritized,
+    "Bunny (Morio's Mind)": ItemClassification.progression_deprioritized,
+    "Bunny (Ruined Observatory)": ItemClassification.progression_deprioritized,
+    "Bunny (Tosla HQ)": ItemClassification.progression_deprioritized,
+    "Bunny (Moon)": ItemClassification.progression_deprioritized,
     "1 Coin": ItemClassification.filler,
     "10 Coins": ItemClassification.filler,
     "25 Coins": ItemClassification.filler,
@@ -383,10 +383,6 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     if name == "Michele" and world.options.cheesesanity:
         classification = ItemClassification.progression
 
-    # Bunnies are progresssion if Mosk's Rocket is shuffled or exclude post-goal locations is off
-    if name.startswith("Bunny (") and "Mosk's Rocket" in world.included_levels:
-        classification = ItemClassification.progression_deprioritized
-
     if name == "Police Lights" and "Maurizio's City" in world.included_levels:
         classification = ItemClassification.useful  # Makes cop cars not attack you
     if (name == "Alien Mosk (Good) Hat" or name == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
@@ -423,8 +419,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     itempool : list[Item] = [world.create_item("Gear") for _ in range(gear_count)]
 
-    # Add Bunnies to the pool
-    if world.options.bunnysanity:
+    # Add Bunnies to the pool if needed
+    if world.options.bunnysanity and "Mosk's Rocket" in world.included_levels:
         hub_bunnies = 3
         if world.options.extra_demo_collectables:
             hub_bunnies += 2
