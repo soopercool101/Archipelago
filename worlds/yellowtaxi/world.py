@@ -493,4 +493,5 @@ class YellowTaxiWorld(World):
     def write_spoiler(self, spoiler_handle: typing.TextIO) -> None:
         spoiler_handle.write("\nEntrances:\n")
         for i in range(0, len(self.level_order)):
-            spoiler_handle.write(f"\n{data_loader.original_level_order[i]} -> {self.level_order[i]}")
+            if self.level_order[i] != "Excluded":
+                spoiler_handle.write(f"\n{data_loader.original_level_order[i]} -> {self.level_order[i]}")
