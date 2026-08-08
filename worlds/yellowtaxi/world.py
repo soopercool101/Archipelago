@@ -307,7 +307,7 @@ class YellowTaxiWorld(World):
         if not self.using_ut:
             if not "Pizza Time" in self.included_levels and (self.options.shuffle_rat or self.options.cheesesanity):
                 self.early_rat = True
-            if self.options.shuffle_flip_o_will and "Morio's Lab - Final Floor" in self.excluded_regions:
+            if self.options.shuffle_flip_o_will != 0 and "Morio's Lab - Final Floor" in self.excluded_regions:
                 self.early_backflip = True
             if (self.options.psycho_taxi_unlock_condition.value ==
                     self.options.psycho_taxi_unlock_condition.option_shuffle_cartridge
@@ -374,9 +374,15 @@ class YellowTaxiWorld(World):
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True
 
-        if self.options.shuffle_flip_o_will != 0 and self.options.early_move:
-            move = self.random.choice(["Progressive Jump", "Progressive Boost"])
-            self.multiworld.local_early_items[self.player][move] = 1
+        if self.options.early_move:
+            move : str = ""
+            if self.options.shuffle_flip_o_will.value == self.options.shuffle_flip_o_will.option_global:
+                move = self.random.choice(["Progressive Jump", "Progressive Boost"])
+            if self.options.shuffle_flip_o_will.value == self.options.shuffle_flip_o_will.option_per_level:
+                move = self.random.choice(["Progressive Jump (Hub)", "Progressive Boost (Hub)"])
+
+            if move != "":
+                self.multiworld.local_early_items[self.player][move] = 1
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
@@ -429,6 +435,7 @@ class YellowTaxiWorld(World):
             "hatsanity",
             "cheesesanity",
             "shuffle_flip_o_will",
+            "shuffle_spin_attack",
             "shuffle_glide",
             "shuffle_golden_spring",
             "shuffle_golden_propeller",

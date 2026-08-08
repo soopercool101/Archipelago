@@ -456,8 +456,11 @@ class Cheesesanity(Toggle):
 
 class ShuffleFlipOWill(Choice):
     """
-    Shuffles the Flip O' Will into the item pool as 2 Progressive Boosts, 2 Progressive Jumps, and 1 Spin Attack.
-    Adds 5 corresponding locations by talking to NPCs, 4 PICIs in Morio's Lab and Morio in Morio's Island.
+    Shuffles the Flip O' Will into the item pool as 2 Progressive Boosts and 2 Progressive Jumps.
+    Adds 4 corresponding locations by talking to NPCs, 3 PICIs in Morio's Lab and Morio in Morio's Island.
+
+    If set to "Per Level", each level will have its own boost and jump items.
+    No additional locations are added, so this will eat into the filler pool and, if needed, gear count.
     """
 
     display_name = "Flip O' Will Shuffle"
@@ -465,10 +468,20 @@ class ShuffleFlipOWill(Choice):
     option_off = 0
     #option_shuffle = 1
     #option_split = 2
-    option_on = 3
-    default = option_on
+    option_global = 3
+    option_per_level = 4
+    default = option_global
     alias_none = option_off
-    alias_progressive_split = option_on # TODO: Swap alias with main option if adding more options
+    alias_on = option_global
+    alias_progressive_split = option_global # TODO: Swap alias with main option if adding more options
+
+class ShuffleSpinAttack(DefaultOnToggle):
+    """
+    Shuffles the ability to attack using the Flip O' Will into the pool.
+    This attack will knock back enemies and break blocks and oil pumps.
+    """
+
+    display_name = "Shuffle Spin Attack"
 
 class ShuffleGlide(Toggle):
     """
@@ -484,6 +497,8 @@ class EarlyMove(Toggle):
     If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to local sphere 0.
 
     Prevents an early BK depending on settings.
+
+    If per-level Flip O' Will randomization is performed, this will be a Hub move.
     """
 
     display_name = "Early Move"
@@ -750,6 +765,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     coinsanity_non_filler_cap: CoinsanityNonFillerCap
     cheesesanity: Cheesesanity
     shuffle_flip_o_will: ShuffleFlipOWill
+    shuffle_spin_attack: ShuffleSpinAttack
     shuffle_glide: ShuffleGlide
     early_move: EarlyMove
     shuffle_golden_spring: ShuffleGoldenSpring
@@ -816,6 +832,7 @@ option_groups = [
         "Ability Randomizer Options",
         [
             ShuffleFlipOWill,
+            ShuffleSpinAttack,
             ShuffleGlide,
             EarlyMove,
             ShuffleGoldenSpring,

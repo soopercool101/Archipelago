@@ -33,6 +33,17 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
             continue
         reg = regions_json_data[region_name]
 
+        if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
+            if reg["level"] == "Crash Test Industries":
+                rf.move_prefix = ""
+            else:
+                rf.move_prefix = "Progressive "
+
+            if reg["level"].endswith("!"):
+                rf.move_suffix = " (Time Trials)"
+            else:
+                rf.move_suffix = f" ({reg["level"]})"
+
         # Basic connections
         if "connections" in reg.keys():
             for connect, rule in reg["connections"].items():
@@ -85,6 +96,7 @@ class RuleFactory:
 
     def __init__(self, world: YellowTaxiWorld):
         self.world = world
+        self.move_prefix = "Progressive "
         self.move_suffix = ""
         self.skip_unnecessary_rule_calculations = not self.world.using_ut
         self.cached_complex_rules : dict[str, Rule] = {}
@@ -189,23 +201,23 @@ class RuleFactory:
         if token == "B1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"Progressive Boost{self.move_suffix}")
+            return Has(f"{self.move_prefix}Boost{self.move_suffix}")
         if token == "B2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"Progressive Boost{self.move_suffix}", 2)
+            return Has(f"{self.move_prefix}Boost{self.move_suffix}", 2)
         if token == "PMB": # Pac-man boost, overhead sections
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"Progressive Boost{self.move_suffix}")
+            return Has(f"{self.move_prefix}Boost{self.move_suffix}")
         if token == "J1":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"Progressive Jump{self.move_suffix}")
+            return Has(f"{self.move_prefix}Jump{self.move_suffix}")
         if token == "J2":
             if self.world.options.shuffle_flip_o_will == 0:
                 return True_()
-            return Has(f"Progressive Jump{self.move_suffix}", 2)
+            return Has(f"{self.move_prefix}Jump{self.move_suffix}", 2)
         if token == "PMJ":
             return False_()
         if token == "GL":
@@ -416,26 +428,26 @@ class RuleFactory:
                         case 0:
                             scoob_rule = False_()
                         case 1:
-                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}", 2) &
-                                          Has(f"Progressive Jump{self.move_suffix}"))
+                            scoob_rule = (Has(f"{self.move_prefix}Boost{self.move_suffix}", 2) &
+                                          Has(f"{self.move_prefix}Jump{self.move_suffix}"))
                         case 2:
-                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}") &
-                                          Has(f"Progressive Jump{self.move_suffix}"))
+                            scoob_rule = (Has(f"{self.move_prefix}Boost{self.move_suffix}") &
+                                          Has(f"{self.move_prefix}Jump{self.move_suffix}"))
                         case _:
-                            scoob_rule = (Has(f"Progressive Boost{self.move_suffix}") |
-                                          Has(f"Progressive Jump{self.move_suffix}"))
+                            scoob_rule = (Has(f"{self.move_prefix}Boost{self.move_suffix}") |
+                                          Has(f"{self.move_prefix}Jump{self.move_suffix}"))
                     if self.world.using_ut and self.world.options.expert_level < 3:
                         if self.world.options.expert_level <= 0:
-                            scoob_rule |= (Has(f"Progressive Boost{self.move_suffix}", 2) &
-                                           Has(f"Progressive Jump{self.move_suffix}") &
+                            scoob_rule |= (Has(f"{self.move_prefix}Boost{self.move_suffix}", 2) &
+                                           Has(f"{self.move_prefix}Jump{self.move_suffix}") &
                                            Has(self.world.glitches_item_name))
                         if self.world.options.expert_level <= 1:
-                            scoob_rule |= (Has(f"Progressive Boost{self.move_suffix}") &
-                                           Has(f"Progressive Jump{self.move_suffix}") &
+                            scoob_rule |= (Has(f"{self.move_prefix}Boost{self.move_suffix}") &
+                                           Has(f"{self.move_prefix}Jump{self.move_suffix}") &
                                            Has(self.world.glitches_item_name, 2 - self.world.options.expert_level))
                         if self.world.options.expert_level <= 2:
-                            scoob_rule |= ((Has(f"Progressive Boost{self.move_suffix}") |
-                                           Has(f"Progressive Jump{self.move_suffix}")) &
+                            scoob_rule |= ((Has(f"{self.move_prefix}Boost{self.move_suffix}") |
+                                           Has(f"{self.move_prefix}Jump{self.move_suffix}")) &
                                            Has(self.world.glitches_item_name, 3 - self.world.options.expert_level))
                 self.cached_complex_rules[f"SCOOB{self.move_suffix}"] = scoob_rule
             # Fancy UT rule for printing purposes. Can skip as an optimization on actual gen

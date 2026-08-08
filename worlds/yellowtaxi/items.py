@@ -8,9 +8,6 @@ from BaseClasses import Item, ItemClassification
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
 
-# Every item must have a unique integer ID associated with it.
-# We will have a lookup from item name to ID here that, in world.py, we will import and bind to the world class.
-# Even if an item doesn't exist on specific options, it must be present in this lookup.
 ITEM_NAME_TO_ID = {
     "Gear": 1,
     "Bunny (Morio's Lab)": 2_00,
@@ -132,12 +129,47 @@ ITEM_NAME_TO_ID = {
     "Timer Trap": 666_014,
     "Whirlpool Trap": 666_015,
 
+    "Progressive Jump (Hub)": 777_00_0_1,
+    "Progressive Boost (Hub)": 777_00_0_2,
+    "Progressive Jump (Bombeach)": 777_01_0_1,
+    "Progressive Boost (Bombeach)": 777_01_0_2,
+    "Progressive Jump (Pizza Time)": 777_02_0_1,
+    "Progressive Boost (Pizza Time)": 777_02_0_2,
+    "Progressive Jump (Morio's Home)": 777_03_0_1,
+    "Progressive Boost (Morio's Home)": 777_03_0_2,
+    "Progressive Jump (Arcade Panik)": 777_04_0_1,
+    "Progressive Boost (Arcade Panik)": 777_04_0_2,
+    "Progressive Jump (Tosla's Offices)": 777_05_0_1,
+    "Progressive Boost (Tosla's Offices)": 777_05_0_2,
+    "Progressive Jump (Gym Gears)": 777_06_0_1,
+    "Progressive Boost (Gym Gears)": 777_06_0_2,
+    "Progressive Jump (Fecal Matters)": 777_07_0_1,
+    "Progressive Boost (Fecal Matters)": 777_07_0_2,
+    "Progressive Jump (Flushed Away)": 777_08_0_1,
+    "Progressive Boost (Flushed Away)": 777_08_0_2,
+    "Progressive Jump (Maurizio's City)": 777_09_0_1,
+    "Progressive Boost (Maurizio's City)": 777_09_0_2,
+    "Jump (Crash Test Industries)": 777_10_0_1,
+    "Boost (Crash Test Industries)": 777_10_0_2,
+    "Progressive Jump (Morio's Mind)": 777_12_0_1,
+    "Progressive Boost (Morio's Mind)": 777_12_0_2,
+    "Progressive Jump (Ruined Observatory)": 777_13_0_1,
+    "Progressive Boost (Ruined Observatory)": 777_13_0_2,
+    "Progressive Jump (Tosla HQ)": 777_14_0_1,
+    "Progressive Boost (Tosla HQ)": 777_14_0_2,
+    "Progressive Jump (The Moon)": 777_15_0_1,
+    "Progressive Boost (The Moon)": 777_15_0_2,
+    "Progressive Jump (Mosk's Rocket)": 777_16_0_1,
+    "Progressive Boost (Mosk's Rocket)": 777_16_0_2,
+    "Progressive Jump (Psycho Taxi)": 777_20_0_1,
+    "Progressive Boost (Psycho Taxi)": 777_20_0_2,
+    "Progressive Jump (Time Trials)": 777_21_0_1,
+    "Progressive Boost (Time Trials)": 777_21_0_2,
+
     # Universal Tracker Only
     "Additional Expert Logic Level": 666_999
 }
 
-# Items should have a defined default classification.
-# In our case, we will make a dictionary from item name to classification.
 DEFAULT_ITEM_CLASSIFICATIONS = {
     "Gear": ItemClassification.progression_deprioritized_skip_balancing,
     "Bunny (Morio's Lab)": ItemClassification.progression_deprioritized,
@@ -320,15 +352,9 @@ TRAPS = [
     "Whirlpool Trap",
 ]
 
-# Each Item instance must correctly report the "game" it belongs to.
-# To make this simple, it is common practice to subclass the basic Item class and override the "game" field.
 class YellowTaxiItem(Item):
     game = "Yellow Taxi Goes Vroom"
 
-
-# Ontop of our regular itempool, our world must be able to create arbitrary amounts of filler as requested by core.
-# To do this, it must define a function called world.get_filler_item_name(), which we will define in world.py later.
-# For now, let's make a function that returns the name of a random filler item here in items.py.
 def get_random_filler_item_name(world: YellowTaxiWorld) -> str:
     return get_random_filler_item_names(world, 1)[0]
 
@@ -371,6 +397,8 @@ def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
     if name in TRAPS:
         classification = ItemClassification.trap
+    elif name.startswith("Progressive Jump") or name.startswith("Progressive Boost"):
+        classification = ItemClassification.progression
     else:
         classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
 
@@ -401,18 +429,7 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
 
     return YellowTaxiItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
 
-
-# With those two helper functions defined, let's now get to actually creating and submitting our itempool.
 def create_all_items(world: YellowTaxiWorld) -> None:
-    # This is the function in which we will create all the items that this world submits to the multiworld item pool.
-    # There must be exactly as many items as there are locations.
-    # In our case, there are either six or seven locations.
-    # We must make sure that when there are six locations, there are six items,
-    # and when there are seven locations, there are seven items.
-
-    # Creating items should generally be done via the world's create_item method.
-    # First, we create a list containing all the items that always exist.
-
     gear_count = world.num_gears
     if world.using_ut:
         gear_count = world.ut_true_num_gears
@@ -460,9 +477,25 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.rocket_unlock_condition == world.options.rocket_unlock_condition.option_shuffle_rocket:
         itempool.append(world.create_item("Mosk's Rocket"))
 
-    if world.options.shuffle_flip_o_will != 0:
+    if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_global:
         itempool += [world.create_item("Progressive Boost") for _ in range(2)]
         itempool += [world.create_item("Progressive Jump") for _ in range(2)]
+    elif world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
+        created_time_trial_moves : bool = False
+        for level in world.included_levels:
+            if level == "Crash Test Industries":
+                itempool += [world.create_item("Boost (Crash Test Industries)")]
+                #itempool += [world.create_item("Jump (Crash Test Industries)")]
+            elif level.endswith("!"):
+                if not created_time_trial_moves:
+                    itempool += [world.create_item("Progressive Boost (Time Trials)") for _ in range(2)]
+                    itempool += [world.create_item("Progressive Jump (Time Trials)") for _ in range(2)]
+                    created_time_trial_moves = True
+            elif level != "Psycho Taxi":
+                itempool += [world.create_item(f"Progressive Boost ({level})") for _ in range(2)]
+                itempool += [world.create_item(f"Progressive Jump ({level})") for _ in range(2)]
+
+    if world.options.shuffle_spin_attack:
         itempool.append(world.create_item("Spin Attack"))
 
     if world.options.shuffle_glide:

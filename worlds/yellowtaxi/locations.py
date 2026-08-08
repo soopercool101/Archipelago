@@ -493,9 +493,23 @@ def fix_location_deficit(world: YellowTaxiWorld):
     # Get how many filler items would be needed to make up for locations that wouldn't be in the world
     # Morio's Home traditionally has one of the Move Rando locations
     location_deficit : int = 0
-    if (world.options.shuffle_flip_o_will.value != world.options.shuffle_flip_o_will.alias_none and
+    if (world.options.shuffle_flip_o_will.value != world.options.shuffle_flip_o_will.option_off and
             "Morio's Home" not in world.included_levels):
         location_deficit += 1
+
+    if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
+        created_time_trial_moves : bool = False
+        for level in world.included_levels:
+            if level == "Hub":
+                continue # Already accounted for
+            if level == "Crash Test Industries":
+                location_deficit += 1
+            elif level.endswith("!"):
+                if not created_time_trial_moves:
+                    location_deficit += 4
+                    created_time_trial_moves = True
+            elif level != "Psycho Taxi":
+                location_deficit += 4
 
     # Gym Membership location is in Gym Gears
     if (world.options.gym_gears_unlock_condition.value ==
