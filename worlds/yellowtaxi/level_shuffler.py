@@ -137,7 +137,17 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     valid_levels: List[str] = valid_portals + valid_grannys + valid_misc
     if not options.use_separate_entrance_pools and len(valid_levels) > 0:
         # Run randomization until placement passes important tests
-        random.shuffle(valid_levels)
+        while True:
+            random.shuffle(valid_levels)
+            # Closed Granny's Island has a very restrictive start. Make sure first portal remedies this somewhat
+            if shuffled_portals and not options.open_grannys_island:
+                # Don't let 1st portal be Rocket, Psycho Taxi, or Getting Gud!
+                if valid_levels[0] in ["Mosk's Rocket", "Psycho Taxi", "Getting Gud!"]:
+                    continue
+                # If time trials don't have gears, don't let the first level be a time trial
+                if not options.time_trial_gears and valid_levels[0].endswith("!"):
+                    continue
+            break
         valid_level_index : int = 0
         current_level_order : List[str] = []
         if shuffled_portals:
