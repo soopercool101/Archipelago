@@ -451,7 +451,6 @@ class YellowTaxiWorld(World):
             "extra_demo_collectables",
             "purchase_rebate_percent",
             "remove_goal_portal_locations",
-            "remove_post_goal_portals",
             "funny_faces",
             "easy_alien_mosk",
             "quick_gear_pickups",
