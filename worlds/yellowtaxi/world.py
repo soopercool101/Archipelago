@@ -4,7 +4,7 @@ import typing
 from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List, Set, Optional
 
-from BaseClasses import MultiWorld
+from BaseClasses import MultiWorld, Region
 from Options import Option, OptionError
 from Utils import messagebox#, visualize_regions, Version
 from worlds.AutoWorld import World
@@ -506,6 +506,39 @@ class YellowTaxiWorld(World):
 
     def custom_ut_sort(self, region_label: str, location_label: str) -> str | int:
         return self.ut_sort_region_dict.get(region_label, 9999999)
+
+    def extend_hint_information(self, hint_data: typing.Dict[int, typing.Dict[int, str]]):
+        er_hint_data = {}
+        for reg_name in data_loader.regions_json_data.keys():
+            try:
+                region : Region = self.multiworld.get_region(reg_name, self.player)
+            except KeyError:
+                continue
+
+            region_data : Dict[str, Any] = data_loader.regions_json_data[reg_name]
+
+            if region_data["level"] not in self.level_order:
+                continue
+
+            level_index : int = self.level_order.index(region_data["level"])
+            if level_index == data_loader.original_level_order.index(region_data["level"]):
+                continue
+
+            level_entrance : str = data_loader.original_level_order[level_index]
+
+            if level_entrance in data_loader.original_portal_level_order:
+                level_entrance += " Portal"
+            elif level_entrance == "Psycho Taxi":
+                level_entrance += " Arcade Machine"
+            elif level_entrance.endswith("!"):
+                level_entrance += " TV"
+            else:
+                level_entrance += " Entrance"
+
+            for location in region.get_locations():
+                er_hint_data[location.address] = level_entrance
+
+        hint_data[self.player] = er_hint_data
 
     def write_spoiler(self, spoiler_handle: typing.TextIO) -> None:
         spoiler_handle.write("\nEntrances:\n")
