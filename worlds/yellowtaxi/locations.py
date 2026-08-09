@@ -499,7 +499,8 @@ def fix_location_deficit(world: YellowTaxiWorld):
 
     if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
         created_time_trial_moves : bool = False
-        for level in world.included_levels:
+        true_included_levels : set[str] = set(list(world.included_levels) + list(world.goal_levels))
+        for level in true_included_levels:
             if level == "Hub":
                 continue # Already accounted for
             if level == "Crash Test Industries":

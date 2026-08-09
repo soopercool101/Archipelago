@@ -482,7 +482,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool += [world.create_item("Progressive Jump") for _ in range(2)]
     elif world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
         created_time_trial_moves : bool = False
-        for level in world.included_levels:
+        true_included_levels : set[str] = set(list(world.included_levels) + list(world.goal_levels))
+        for level in true_included_levels:
             if level == "Crash Test Industries":
                 itempool += [world.create_item("Boost (Crash Test Industries)")]
                 #itempool += [world.create_item("Jump (Crash Test Industries)")]
