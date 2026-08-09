@@ -397,8 +397,8 @@ def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
     if name in TRAPS:
         classification = ItemClassification.trap
-    elif name.startswith("Progressive Jump") or name.startswith("Progressive Boost"):
-        classification = ItemClassification.progression
+    elif "Jump (" in name or "Boost (" in name:
+        classification = ItemClassification.progression | ItemClassification.useful
     else:
         classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
 
