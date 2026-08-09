@@ -225,7 +225,7 @@ class RuleFactory:
                        options=[OptionFilter(ShuffleGlide, ShuffleGlide.option_true)],
                        filtered_resolution=True)
         if token == "SP":
-            if self.world.options.shuffle_flip_o_will == 0:
+            if not self.world.options.shuffle_spin_attack:
                 return True_()
             return Has("Spin Attack")
         if token == "GS":
