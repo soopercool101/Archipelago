@@ -687,9 +687,9 @@ class PortalOrder(Choice):
     Shuffle: Shuffles portal levels. If "Use Separate Entrance Pools" is true, these will be in their own unique pool.
     """
     display_name = "Portal Order"
-    option_vanilla = 0,
-    option_internal = 1,
-    option_shuffle = 2,
+    option_vanilla = 0
+    option_internal = 1
+    option_shuffle = 2
 
     default = option_vanilla
 

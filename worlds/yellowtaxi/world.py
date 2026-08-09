@@ -135,6 +135,14 @@ class YellowTaxiWorld(World):
             slot_data: dict[str, Any] = re_gen_passthrough[self.game]
             # Set all your options here instead of getting them from the yaml
             for key, value in slot_data.items():
+                if key == "level_order":
+                    for level in value:
+                        for levelName, levelId in data_loader.level_ids.items():
+                            if level == levelId:
+                                self.level_order += [levelName]
+                                break
+                    continue
+
                 opt: Optional[Option] = getattr(self.options, key, None)
                 if opt is not None:
                     # You can also set .value directly but that won't work if you have OptionSets
