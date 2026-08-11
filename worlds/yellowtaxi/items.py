@@ -388,9 +388,6 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
     return world.random.choices(filler, weights, k=count)
 
 def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
-    filler = []
-    weights = []
-
     return world.random.choices(sorted(world.options.enabled_traps.value), k=count)
 
 
