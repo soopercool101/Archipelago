@@ -44,6 +44,7 @@ class YellowTaxiWorld(World):
     # Universal Tracker stuff
     glitches_item_name = "Additional Expert Logic Level"
     ut_can_gen_without_yaml = True
+    found_entrances_datastorage_key: list[str] = ["Slot:{player}:PortalSave"]
 
     # Shamelessly taken from Tunic's implementation
     def attempt_launch_ut(*args: str) -> None:
@@ -120,6 +121,8 @@ class YellowTaxiWorld(World):
         # UT only
         if getattr(self.multiworld, "generation_is_fake", False):
             self.using_ut = True
+            self.defer_entrances : bool = getattr(self.multiworld, "enforce_deferred_connections", "default") != "off"
+            self.disconnected_entrances : dict[int, tuple[Entrance, Region]] = {}
             self.ut_true_num_gears : int = 0
             self.ut_true_goal_cost : int = 0
             self.ut_sort_region_dict : dict[str, int] = {}
@@ -415,6 +418,14 @@ class YellowTaxiWorld(World):
     def get_filler_item_name(self) -> str:
         return items.get_random_filler_item_name(self)
 
+    def reconnect_found_entrances(self, key: str, value: Any) -> None:
+        if not value:
+            return
+        else:
+            for i in range(0, len(data_loader.original_level_order)):
+                if (value >> i) & 1 == 1:
+                    self.disconnected_entrances[i][0].connect(self.disconnected_entrances[i][1])
+
     def fill_slot_data(self) -> Mapping[str, Any]:
         # Get relevant options needed for client
         slot_data : Dict[str, Any] = self.options.as_dict(
@@ -536,6 +547,8 @@ class YellowTaxiWorld(World):
                 level_entrance += " Entrance"
 
             for location in region.get_locations():
+                if location.address is None:
+                    continue
                 er_hint_data[location.address] = level_entrance
 
         hint_data[self.player] = er_hint_data
