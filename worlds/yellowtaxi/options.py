@@ -608,12 +608,12 @@ class EasyAlienMosk(Toggle):
 
     display_name = "Easy Alien Mosk"
 
-class QuickGearPickups(Toggle):
+class QuickPickups(Toggle):
     """
-    When enabled, all gears will use the quick pickup animation, rather than doing the full dance and item display
+    When enabled, all items will use the quick pickup animation, rather than freezing the player in place.
     """
 
-    display_name = "Quick Gear Pickups"
+    display_name = "Quick Pickups"
 
 class TrapFillPercent(Range):
     """
@@ -782,7 +782,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     time_trial_gears: TimeTrialGears
     funny_faces: FunnyFaces
     easy_alien_mosk: EasyAlienMosk
-    quick_gear_pickups: QuickGearPickups
+    quick_pickups: QuickPickups
     start_inventory_from_pool: StartInventoryPool
     trap_fill_percent: TrapFillPercent
     enabled_traps: EnabledTraps
@@ -864,7 +864,7 @@ option_groups = [
     OptionGroup(
         "Quality of Life Options",
         [
-            QuickGearPickups,
+            QuickPickups,
             ShopHints,
             PurchaseRebatePercent,
             EasyAlienMosk,
