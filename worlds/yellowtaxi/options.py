@@ -610,7 +610,7 @@ class EasyAlienMosk(Toggle):
 
 class QuickPickups(Toggle):
     """
-    When enabled, all items will use the quick pickup animation, rather than freezing the player in place.
+    When enabled, all collectables will use the quick pickup animation, rather than freezing the player in place.
     """
 
     display_name = "Quick Pickups"
