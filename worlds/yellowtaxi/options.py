@@ -738,6 +738,7 @@ class TaxiSkin(Choice):
     option_default_blue = 2
     option_default_purple = 3
     option_default_red = 4
+    option_default_random_every_load = 9
 
     option_skeleton = 10
     option_skeleton_green = 11
@@ -745,12 +746,14 @@ class TaxiSkin(Choice):
     option_skeleton_purple = 13
     option_skeleton_pink = 14
     option_skeleton_light = 15
+    option_skeleton_random_every_load = 19
 
     option_golden = 20
     option_golden_bright_yellow = 21
     option_golden_blurry = 22
     option_golden_light = 23
     option_golden_orange = 24
+    option_golden_random_every_load = 29
 
     option_prototype = 30
     option_prototype_yellow = 31
@@ -758,6 +761,9 @@ class TaxiSkin(Choice):
     option_prototype_blue = 33
     option_prototype_pink = 34
     option_prototype_red = 35
+    option_prototype_random_every_load = 39
+
+    option_random_every_load = 59
 
     default = option_default_yellow
     alias_yellow = option_default_yellow
