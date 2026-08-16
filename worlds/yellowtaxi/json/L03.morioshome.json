@@ -275,7 +275,7 @@
       "Morio's Island - First Bunny Arch": "X1/J1 & B2 | J1+X1+B1 | X2+B1",
       "Morio's Island - Second Bunny Arch": "B2 | X2+B1 & X3/J1 | X3+J1",
       "Morio's Island - Center Stone Island": "X1+B1 & J1/X2 | J2+X2 | B2 & J1/X1",
-      "Morio's Island - Highest Ground": "B2 | J2+X1 | X3+J1",
+      "Morio's Island - Highest Ground": "B2 | J2+X1 | X2+J1 & X3/B1",
       "Propeller Cap Access": ""
     }
   },
@@ -436,7 +436,8 @@
     "gears": {
       "Morio's Home - Gear - Living Room Nook": 30100002,
       "Morio's Home - Gear - Upper Bedroom Platform": 30100003,
-      "Morio's Home - Gear - In Bedroom Corner": 30100007
+      "Morio's Home - Gear - In Bedroom Corner": 30100007,
+      "Morio's Home - Gear - On Garage Shelf": 30100015
     },
     "bunnies": {
       "Morio's Home - Bunny - In Hidden Room in Hallway": 30200002
@@ -551,7 +552,8 @@
       "Morio's Home - Door in Bedroom": ["Weird Tunnels - Entrance Area", ""]
     },
     "specialrules": {
-      "Morio's Home - Coin Bag on Garage Wall Shelf": "J1 | X2+B1"
+      "Morio's Home - Coin Bag on Garage Wall Shelf": "J1 | X2+B1",
+      "Morio's Home - Gear - On Garage Shelf": "X3/B1/J1"
     }
   },
   "Morio's Home - Expert 2 High Ground": {
@@ -582,7 +584,6 @@
     "level": "Morio's Home",
     "sublevel": "Morio's Home",
     "gears": {
-      "Morio's Home - Gear - On Garage Shelf": 30100015,
       "Morio's Home - Gear - Above Hallway": 30100011
     },
     "coinbags": {
@@ -637,7 +638,7 @@
       "Morio's Home - Coin After Bed Pillars #6": 30300466
     },
     "warps": {
-      "Morio's Home - Portal to Morio's Lab": ["{RETURNPORTAL}", ""]
+      "Morio's Home - Morio's Lab Portal": ["{RETURNPORTAL}", ""]
     }
   },
   "Morio's Home - Loft": {

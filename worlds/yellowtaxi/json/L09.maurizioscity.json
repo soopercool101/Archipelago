@@ -365,7 +365,7 @@
       "Maurizio's City - Coin on Top of Large Red Beam Structure #4": 90300455
     },
     "connections": {
-      "Maurizio's City - Floating Orange Blocks With Bunny": "NOS+B2+J2 | X1+B2 & X2/J1",
+      "Maurizio's City - Floating Orange Blocks With Bunny": "NOS+B2+J2 | X1+B2 & X2/J1 | X3+B1",
       "Maurizio's City - Floating Orange Blocks With Coins (Closer Coins)": "X2+J1",
       "Maurizio's City - Floating Orange Blocks With Coins (Further Coins)": "X1/NOS/OS & B1 | X1+OS+J1",
       "Maurizio's City - Maurizio's Building Lower Ledge": "B1 | X1+J1"
@@ -411,7 +411,7 @@
       "Maurizio's City - Gear - Help Maurizio": 90100004
     },
     "connections": {
-      "Maurizio's City - Maurizio's Building Upper Area": "B2 & X1/J1 | X2+B1+J1"
+      "Maurizio's City - Maurizio's Building Upper Area": "B2 & X1/J1 | X2+B1+J1 | X3+J1"
     }
   },
   "Maurizio's City - Maurizio's Building Upper Area": {
@@ -424,8 +424,12 @@
       "Captain Abs-urd Hat": 90700024,
       "Roid-Man Hat": 90700025
     },
+    "connections": {
+      "Maurizio's City - Floating Orange Blocks With Bunny": "X3+J1",
+      "Maurizio's City - Floating Orange Blocks With Coins (Further Coins)": "X2+J1"
+    },
     "specialrules": {
-      "Maurizio's City - Bunny - On Top of Maurizio's Building": "B2 & X3/J1 | X2+B1+J1"
+      "Maurizio's City - Bunny - On Top of Maurizio's Building": "B2 & X3/J1 | X2+B1+J1 | X3+J1"
     }
   },
   "Maurizio's City - Island Near Hat World": {
@@ -534,24 +538,24 @@
     "level": "Maurizio's City",
     "sublevel": "Maurizio's City",
     "coinbags": {
-      "Maurizio's City - Coin Bag on Red Beams #1": 90300289,
-      "Maurizio's City - Coin Bag on Red Beams #2": 90300293,
-      "Maurizio's City - Coin Bag on Red Beams #3": 90300282,
-      "Maurizio's City - Coin Bag on Red Beams #4": 90300278
+      "Maurizio's City - Coin Bag on Orange Blocks on Red Beams #1": 90300289,
+      "Maurizio's City - Coin Bag on Orange Blocks on Red Beams #2": 90300293,
+      "Maurizio's City - Coin Bag on Orange Blocks on Red Beams #3": 90300282,
+      "Maurizio's City - Coin Bag on Orange Blocks on Red Beams #4": 90300278
     },
     "coins": {
-      "Maurizio's City - Coin on Red Beams #1": 90300290,
-      "Maurizio's City - Coin on Red Beams #2": 90300291,
-      "Maurizio's City - Coin on Red Beams #3": 90300292,
-      "Maurizio's City - Coin on Red Beams #4": 90300288,
-      "Maurizio's City - Coin on Red Beams #5": 90300286,
-      "Maurizio's City - Coin on Red Beams #6": 90300284,
-      "Maurizio's City - Coin on Red Beams #7": 90300281,
-      "Maurizio's City - Coin on Red Beams #8": 90300280,
-      "Maurizio's City - Coin on Red Beams #9": 90300279,
-      "Maurizio's City - Coin on Red Beams #10": 90300283,
-      "Maurizio's City - Coin on Red Beams #11": 90300285,
-      "Maurizio's City - Coin on Red Beams #12": 90300287
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #1": 90300290,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #2": 90300291,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #3": 90300292,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #4": 90300288,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #5": 90300286,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #6": 90300284,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #7": 90300281,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #8": 90300280,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #9": 90300279,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #10": 90300283,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #11": 90300285,
+      "Maurizio's City - Coin on Orange Blocks on Red Beams #12": 90300287
     }
   },
   "Maurizio's City - Floating Orange Blocks With Coins (Closer Coins)": {
