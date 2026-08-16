@@ -4,7 +4,7 @@ import typing
 from collections.abc import Mapping
 from typing import Any, ClassVar, Dict, List, Set, Optional
 
-from BaseClasses import MultiWorld, Region
+from BaseClasses import MultiWorld, Region, Entrance
 from Options import Option, OptionError
 from Utils import messagebox#, visualize_regions, Version
 from worlds.AutoWorld import World
