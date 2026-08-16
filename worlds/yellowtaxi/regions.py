@@ -19,7 +19,6 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         ut_sorted_sublevels: dict[str, int] = {}
         ut_sort_region_counters: dict[str, int] = {}
         ut_sorted_levels: dict[str, int] = {}
-        ut_sorted_level_counter: int = 0
         include_oob_areas: bool = (
                     world.options.include_out_of_bounds == world.options.include_out_of_bounds.option_full)
     else:
@@ -50,8 +49,10 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
         # Also this could probably be simplified significantly but it works for the time being
         if world.using_ut:
             if reg["level"] not in ut_sorted_levels.keys():
-                ut_sorted_levels[reg["level"]] = ut_sorted_level_counter
-                ut_sorted_level_counter += 1
+                if reg["level"] == "Hub":
+                    ut_sorted_levels[reg["level"]] = 0
+                else:
+                    ut_sorted_levels[reg["level"]] = world.level_order.index(reg["level"]) + 1
             if reg["sublevel"] not in ut_sorted_sublevels:
                 if reg["level"] in ut_sort_region_counters.keys():
                     ut_sort_region_counters[reg["level"]] += 1
@@ -98,7 +99,7 @@ def connect_regions(world: YellowTaxiWorld) -> None:
         # TODO: Full Entrance Rando
         if "warps" in reg.keys():
             for warp in reg["warps"].items():
-                warp_index : int = -1;
+                warp_index : int = -1
                 if warp[1][0].startswith("{PORTAL}"):
                     # Get the starting area that corresponds to this entrance
                     warp_index = original_level_order.index(warp[1][0][8:])
@@ -122,6 +123,8 @@ def connect_regions(world: YellowTaxiWorld) -> None:
                         continue
                 entrance = region.connect(connecting_region, warp[0])
                 if world.using_ut and world.defer_entrances and warp_index != -1:
+                    if world.level_order[warp_index] in world.goal_levels:
+                        continue
                     world.disconnected_entrances[warp_index] = entrance, connecting_region
                     entrance.connected_region = None
 
