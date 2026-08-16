@@ -423,7 +423,7 @@ class YellowTaxiWorld(World):
             return
         else:
             for i in range(0, len(data_loader.original_level_order)):
-                if (value >> i) & 1 == 1:
+                if (value >> i) & 1 == 1 and i in self.disconnected_entrances.keys():
                     self.disconnected_entrances[i][0].connect(self.disconnected_entrances[i][1])
 
     def fill_slot_data(self) -> Mapping[str, Any]:
