@@ -466,6 +466,7 @@ class YellowTaxiWorld(World):
             "easy_alien_mosk",
             "quick_pickups",
             "shop_hints",
+            "taxi_skin",
             # Only used by UT
             "expert_level",
             "include_out_of_bounds",

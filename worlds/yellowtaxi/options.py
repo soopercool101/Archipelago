@@ -728,6 +728,45 @@ class ShufflePsychoTaxiEntrance(Toggle):
     """
     display_name = "Shuffle Psycho Taxi Entrance"
 
+class TaxiSkin(Choice):
+    """
+    Default taxi skin.
+    """
+    display_name = "Taxi Skin"
+    option_default_yellow = 0
+    option_default_green = 1
+    option_default_blue = 2
+    option_default_purple = 3
+    option_default_red = 4
+
+    option_skeleton = 10
+    option_skeleton_green = 11
+    option_skeleton_blue = 12
+    option_skeleton_purple = 13
+    option_skeleton_pink = 14
+    option_skeleton_light = 15
+
+    option_golden = 20
+    option_golden_bright_yellow = 21
+    option_golden_blurry = 22
+    option_golden_light = 23
+    option_golden_orange = 24
+
+    option_prototype = 30
+    option_prototype_yellow = 31
+    option_prototype_green = 32
+    option_prototype_blue = 33
+    option_prototype_pink = 34
+    option_prototype_red = 35
+
+    default = option_default_yellow
+    alias_yellow = option_default_yellow
+    alias_default = option_default_yellow
+    alias_green = option_default_green
+    alias_blue = option_default_blue
+    alias_purple = option_default_purple
+    alias_red = option_default_red
+
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
@@ -794,6 +833,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_time_trial_entrances: ShuffleTimeTrialsEntrances
     shuffle_rocket_entrance: ShuffleRocketEntrance
     shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
+    taxi_skin: TaxiSkin
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -882,6 +922,7 @@ option_groups = [
     OptionGroup(
         "Cosmetic Options",
         [
+            TaxiSkin,
             FunnyFaces,
         ],
     ),
