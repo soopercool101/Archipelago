@@ -731,6 +731,10 @@ class ShufflePsychoTaxiEntrance(Toggle):
 class TaxiSkin(Choice):
     """
     Default taxi skin.
+
+    Custom will load "{FunnyFaces}Taxi.png" from the FunnyFaces Folder, where {FunnyFaces} is the string set for the Funny Faces setting.
+    The first time you load into a game, it will export the base taxi texture to this folder as "TestTaxi.png" for copying and editing.
+    If the custom taxi skin does not exist, the base skin will be used.
     """
     display_name = "Taxi Skin"
     option_default_yellow = 0
@@ -763,7 +767,18 @@ class TaxiSkin(Choice):
     option_prototype_red = 35
     option_prototype_random_every_load = 39
 
-    option_random_every_load = 59
+    option_corrupted_car = 50
+
+    option_grannys_car = 60
+    option_grannys_car_alt = 70
+    option_grannys_car_corrupted = 80
+    option_grannys_car_corrupted_alt = 90
+
+    option_destroyed = 100
+
+    option_custom = 1000
+
+    option_random_every_load = 999
 
     default = option_default_yellow
     alias_yellow = option_default_yellow
@@ -772,6 +787,7 @@ class TaxiSkin(Choice):
     alias_blue = option_default_blue
     alias_purple = option_default_purple
     alias_red = option_default_red
+    alias_corrupted = option_corrupted_car
 
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
