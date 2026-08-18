@@ -770,9 +770,10 @@ class TaxiSkin(Choice):
     option_corrupted_car = 50
 
     option_grannys_car = 60
-    option_grannys_car_alt = 70
-    option_grannys_car_corrupted = 80
-    option_grannys_car_corrupted_alt = 90
+    option_grannys_car_corrupted = 61
+
+    option_pink_flames = 70
+    option_pink_flames_corrupted = 71
 
     option_destroyed = 100
 
@@ -788,6 +789,8 @@ class TaxiSkin(Choice):
     alias_purple = option_default_purple
     alias_red = option_default_red
     alias_corrupted = option_corrupted_car
+    alias_grannys_car_alt = option_pink_flames
+    alias_grannys_car_corrupted_alt = option_pink_flames_corrupted
 
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
