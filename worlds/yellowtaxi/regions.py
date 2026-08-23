@@ -51,6 +51,8 @@ def create_all_regions(world: YellowTaxiWorld) -> None:
             if reg["level"] not in ut_sorted_levels.keys():
                 if reg["level"] == "Hub":
                     ut_sorted_levels[reg["level"]] = 0
+                elif reg["level"] in world.special_levels:
+                    ut_sorted_levels[reg["level"]] = -1
                 else:
                     ut_sorted_levels[reg["level"]] = world.level_order.index(reg["level"]) + 1
             if reg["sublevel"] not in ut_sorted_sublevels:
