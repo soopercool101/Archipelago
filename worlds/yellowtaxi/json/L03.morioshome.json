@@ -546,7 +546,7 @@
       "Morio's Home - Expert 2 High Ground": "X2/J1/B1",
       "Morio's Home - High Ground": "J1/B1",
       "Morio's Home - Loft": "B2 & X2/J2 | X1+J2 | X1+B2+J1 | X3+B1+J1",
-      "Morio's Home - Kitchen": "SP"
+      "Morio's Home - Kitchen": "SP/SCOOB"
     },
     "subwarps": {
       "Morio's Home - Door in Bedroom": ["Weird Tunnels - Entrance Area", ""]

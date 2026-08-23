@@ -544,7 +544,7 @@
     },
     "connections": {
       "Flushed Away - Central Drain High Ground": "B1/J1",
-      "Flushed Away - Central Drain Bunny": "X1+B1 | J1",
+      "Flushed Away - Central Drain Bunny": "X3+B1 | J1",
       "Flushed Away - Above Central Drain": "B2"
     },
     "subwarps": {
@@ -560,7 +560,7 @@
     "connections": {
       "Flushed Away - Central Drain": "",
       "Flushed Away - Central Drain Archway Accessible": "X1",
-      "Flushed Away - Central Drain Bunny": "X1"
+      "Flushed Away - Central Drain Bunny": "X3"
     }
   },
   "Flushed Away - Central Drain Archway Accessible": {
@@ -642,7 +642,7 @@
     },
     "connections": {
       "Flushed Away - Central Drain": "",
-      "Flushed Away - Central Drain Bunny": "X1"
+      "Flushed Away - Central Drain Bunny": "X3"
     }
   },
   "Flushed Away - Hidden Coins": {
