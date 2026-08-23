@@ -516,6 +516,8 @@ def fix_location_deficit(world: YellowTaxiWorld):
                 continue # Already accounted for
             if level == "Crash Test Industries":
                 location_deficit += 1
+                if world.options.allow_top_down_jumps:
+                    location_deficit += 1
             elif level.endswith("!"):
                 if not created_time_trial_moves:
                     location_deficit += 4

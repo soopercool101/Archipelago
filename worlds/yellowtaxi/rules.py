@@ -219,6 +219,8 @@ class RuleFactory:
                 return True_()
             return Has(f"{self.move_prefix}Jump{self.move_suffix}", 2)
         if token == "PMJ":
+            if self.world.options.allow_top_down_jumps:
+                return Has(f"{self.move_prefix}Jump{self.move_suffix}")
             return False_()
         if token == "GL":
             return Has("Glide",

@@ -484,7 +484,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         for level in true_included_levels:
             if level == "Crash Test Industries":
                 itempool += [world.create_item("Boost (Crash Test Industries)")]
-                #itempool += [world.create_item("Jump (Crash Test Industries)")]
+                if world.options.allow_top_down_jumps:
+                    itempool += [world.create_item("Jump (Crash Test Industries)")]
             elif level.endswith("!"):
                 if not created_time_trial_moves:
                     itempool += [world.create_item("Progressive Boost (Time Trials)") for _ in range(2)]

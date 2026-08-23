@@ -458,6 +458,7 @@ class YellowTaxiWorld(World):
             "hatsanity",
             "cheesesanity",
             "shuffle_flip_o_will",
+            "allow_top_down_jumps",
             "shuffle_spin_attack",
             "shuffle_glide",
             "shuffle_golden_spring",

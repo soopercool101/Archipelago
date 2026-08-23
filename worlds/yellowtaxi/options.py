@@ -475,6 +475,14 @@ class ShuffleFlipOWill(Choice):
     alias_on = option_global
     alias_progressive_split = option_global # TODO: Swap alias with main option if adding more options
 
+class AllowTopDownJumps(Toggle):
+    """
+    Allows you to interrupt the Flip O' Will in top-down sections where you usually aren't allowed to.
+    This breaks the level design significantly, but logic will account for this!
+    """
+
+    display_name = "Allow Jumping in Top-Down Sections"
+
 class ShuffleSpinAttack(DefaultOnToggle):
     """
     Shuffles the ability to attack using the Flip O' Will into the pool.
@@ -838,6 +846,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     coinsanity_non_filler_cap: CoinsanityNonFillerCap
     cheesesanity: Cheesesanity
     shuffle_flip_o_will: ShuffleFlipOWill
+    allow_top_down_jumps: AllowTopDownJumps
     shuffle_spin_attack: ShuffleSpinAttack
     shuffle_glide: ShuffleGlide
     early_move: EarlyMove
@@ -907,6 +916,7 @@ option_groups = [
         "Ability Randomizer Options",
         [
             ShuffleFlipOWill,
+            AllowTopDownJumps,
             ShuffleSpinAttack,
             ShuffleGlide,
             EarlyMove,
