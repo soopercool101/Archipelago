@@ -20,6 +20,7 @@ regions_json_data : Dict[str, Any] = (load_json_data("LXX.special.json") |
                                       load_json_data("L07.fecalmatters.json") |
                                       load_json_data("L08.flushedaway.json") |
                                       load_json_data("L09.maurizioscity.json") |
+                                      load_json_data("L10.crashtestindustries.json") |
                                       load_json_data("L16.rocket.json") |
                                       load_json_data("L17.babysteps.json") |
                                       load_json_data("L18.gettinggud.json") |
@@ -72,7 +73,6 @@ original_level_order : List[str] = original_portal_level_order + grannys_island_
 
 # TODO: Remove levels as they are finished. Remove this list entirely for v1.0.0
 unfinished_levels : List[str] = [
-    "Crash Test Industries",
     "Morio's Mind",
     "Ruined Observatory",
     "Tosla HQ",

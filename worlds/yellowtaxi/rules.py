@@ -261,6 +261,10 @@ class RuleFactory:
             if self.skip_unnecessary_rule_calculations and not self.world.has_orange_switch_access:
                 return False_()
             return Has("Orange Switch")
+        if token == "NGP":
+            if not self.world.has_golden_propeller_access:
+                return True_()
+            return False_()
         if token == "GP":
             if self.skip_unnecessary_rule_calculations and not self.world.has_golden_propeller_access:
                 return False_()
@@ -395,9 +399,20 @@ class RuleFactory:
         if token == "NSAR":
             # No Subarea randomization. Placeholder rule for now.
             return True_()
+        if token == "SAR":
+            # Subarea randomization. Placeholder rule for now.
+            return False_()
+        # No Golden Propeller Smuggling
+        if token == "NGPS":
+            if not self.world.has_golden_propeller_access:
+                return True_()
+            # TODO: Golden propeller smuggling will not work on full ER!
+            return False_()
         if token == "NHPR":
             # No Hub Portal randomization. Placeholder rule for now.
             # Hub portals launch you upwards when declining entry, making them logical access rules in some cases.
+            if self.world.using_ut:
+                return HubPortalBounce()
             return True_()
         if token == "OGI":
             if self.world.options.open_grannys_island:
@@ -562,6 +577,8 @@ class RuleFactory:
                         adjusted_bunny_level = "Flushed Away"
                     case "MC":
                         adjusted_bunny_level = "Maurizio's City"
+                    case "CTI":
+                        adjusted_bunny_level = "Crash Test Industries"
                 return Has(f"Bunny ({adjusted_bunny_level})", 3)
         if token.startswith("X"):
             expert_level = int(token[1:])
@@ -587,3 +604,18 @@ class OutOfBounds(Rule["YellowTaxiWorld"], game="Yellow Taxi Goes Vroom"):
         @override
         def __str__(self) -> str:
             return "Include Out-of-Bounds"
+
+# Used hub portal bounces, really just to explain things better in UT
+class HubPortalBounce(Rule["YellowTaxiWorld"], game="Yellow Taxi Goes Vroom"):
+    class Resolved(Rule.Resolved):
+        @override
+        def _evaluate(self, state: CollectionState) -> bool:
+            return True
+
+        @override
+        def explain_json(self, state: CollectionState | None = None) -> list[JSONMessagePart]:
+            return [{"type": "color", "color": "green", "text": "Hub Portal Bounce"}]
+
+        @override
+        def __str__(self) -> str:
+            return "Hub Portal Bounce"

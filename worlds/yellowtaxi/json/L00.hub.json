@@ -282,7 +282,7 @@
       "Granny's Island - Expert 2 High Ground": "X2/J1/B1/GP",
       "Granny's Island - High Ground": "J1/B1/GP",
       "Granny's Island - Coins on Top of Rocket": "X1+Rocket+J1 & X3/GP",
-      "Granny's Island - Gear on Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J1 | X3+B1+GP",
+      "Granny's Island - Gear on Top of Rocket": "Rocket+B2 | Rocket+B1 & X1/GP | X3+B2+J1 | X3+B1+GP | X2+Rocket+GP+J1",
       "Granny's Island - Arch Near Construction Site": "B1 | GP+J1",
       "Granny's Island - Ocean Pillar": "B1 | X2/GP & OS | X2+J1 & X3/GP | X2+GP",
       "Granny's Island - First Island Towards Sewer": "B1 | GP+J1+OS | X1+GP | X2+J1",
@@ -290,7 +290,7 @@
       "Granny's Island - Island Past Cloro-Phil": "GP | B2 | X1 & B1/J2",
       "Granny's Island - High Pillar by Lab": "X1/GP/J1 & B1 | NSAR+X1+GP & X2/J1 | X1+GP+J2 | X3+J1",
       "Granny's Island - Crash Again Island": "X1+B2+GP | X2+B2 & X3/J1 | X2+GP & X3/B1 | X3+J1",
-      "Granny's Island - Crash Again Roof": "X2+GP & X3/B2 | GP+OS+B1",
+      "Granny's Island - Crash Again Roof": "X2+GP & X3/B2 | GP+OS & X2/B1",
       "Granny's Island - Sewer Island": "X1+B2+J2+GP | X2+B2+J1 | X2+B1+GP",
       "Morio's Lab - Ground Floor Golden Propeller": "X1+NSAR+GP+LabKey",
       "Law Firm - Ledges": "X1+NSAR+GP",
@@ -1590,6 +1590,9 @@
       "Morio's Lab - Ground Floor Lowest Bolt": "FGU",
       "Morio's Lab - Ground Floor Orange Blocks": "FGU",
       "Morio's Lab - Ground Floor Second Wrench": "FGU | X3+B1"
+    },
+    "warps": {
+      "Morio's Lab - Crash Test Industries Portal": ["{PORTAL}Crash Test Industries", "PortalCrashTestIndustries"]
     }
   },
   "Morio's Lab - Fifth Floor Morio's Mind Area": {

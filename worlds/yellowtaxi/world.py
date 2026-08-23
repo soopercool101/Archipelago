@@ -313,6 +313,10 @@ class YellowTaxiWorld(World):
                 "Tosla Offices (Employees Only) - Starting Area",
                 "Tosla Offices (Employees Only) - Higher Ground",
             ]
+        if not self.has_golden_propeller_access and self.options.expert_level < 1:
+            self.excluded_regions += [
+                "Conveyor Belts - Platform Above Starting Area"
+            ]
 
         # Make sure early items are set as needed
         if not self.using_ut:

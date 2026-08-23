@@ -609,6 +609,9 @@
       "Spoiler": 90700022,
       "Police Lights": 90700023
     },
+    "connections": {
+      "Any Hat World": ""
+    },
     "subwarps": {
       "Maurizio's City Hat World - Exit": ["Maurizio's City - Starting Area", ""]
     }
@@ -627,7 +630,7 @@
     },
     "specialrules": {
       "Purple Tunnel - Gear": "B1/J1",
-      "Purple Tunnel - Bunny": "B1/J2 | X1+J1"
+      "Purple Tunnel - Bunny": "X2/J1 & B1 | X1+J1 | J2"
     }
   }
 }

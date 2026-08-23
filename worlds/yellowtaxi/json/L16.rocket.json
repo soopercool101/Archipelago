@@ -134,7 +134,8 @@
       "Mosk's Rocket - Golden Propeller": "GP"
     },
     "subwarps": {
-      "Mosk's Rocket - Heroic Moves Portal": ["Heroic Moves - Starting Area", "J1/B1/GP & Bunny-MC"]
+      "Mosk's Rocket - Heroic Moves Portal": ["Heroic Moves - Starting Area", "J1/B1/GP & Bunny-MC"],
+      "Mosk's Rocket - Conveyor Belts Portal": ["Conveyor Belts - Starting Area", "Bunny-CTI"]
     }
   },
   "Mosk's Rocket - Golden Propeller": {
@@ -151,7 +152,9 @@
       "Costipation - Hat Area": "X1+NSAR & {Costipation - Starting Area}",
       "Costipation - Roadway Gear Area": "X1+NSAR & {Costipation - Starting Area}",
       "Costipation - Island Gear Area": "X1+NSAR & {Costipation - Starting Area}",
-      "Heroic Moves - Building": "X1+NSAR & {Heroic Moves - Starting Area}"
+      "Heroic Moves - Building": "X1+NSAR & {Heroic Moves - Starting Area}",
+      "Conveyor Belts - Platform Above Starting Area": "NSAR & {Conveyor Belts - Starting Area}",
+      "Conveyor Belts - Ducts Above Starting Area": "NSAR & {Conveyor Belts - Starting Area}"
     }
   },
   "Mosk's Rocket - Coins Leading to Final Floor": {
@@ -877,6 +880,114 @@
     },
     "moriotrons": {
       "Heroic Moves - Mori-O-Tron": "Heroic Moves - Starting Area"
+    }
+  },
+  "Conveyor Belts - Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Conveyor Belts",
+    "kaizolevel": "Crash Test Industries",
+    "checkpoints": {
+      "Conveyor Belts - Checkpoint": 160900794
+    },
+    "connections": {
+      "Conveyor Belts - Ducts Above Starting Area": "X1+B1 | NGPS+B1+J1 | X2+J2",
+      "Conveyor Belts - Platform Above Starting Area": "X2+B2+J1 | X1+NGPS+B2+J2",
+      "Conveyor Belts - Lower Path": "B1+J1",
+      "Conveyor Belts - Upper Path": "B2 & X1/J1 | X1+B1 & X3/J1"
+    },
+    "subwarps": {
+      "Conveyor Belts - Mosk's Rocket Portal Near Entrance": ["Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area", ""]
+    }
+  },
+  "Conveyor Belts - Platform Above Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Conveyor Belts",
+    "kaizolevel": "Crash Test Industries",
+    "coinbags": {
+      "Conveyor Belts - Coin Bag on Platform Above Starting Area #1": 160300173,
+      "Conveyor Belts - Coin Bag on Platform Above Starting Area #2": 160300168
+    },
+    "coins": {
+      "Conveyor Belts - Coin on Platform Above Starting Area #1": 160300172,
+      "Conveyor Belts - Coin on Platform Above Starting Area #2": 160300171,
+      "Conveyor Belts - Coin on Platform Above Starting Area #3": 160300170,
+      "Conveyor Belts - Coin on Platform Above Starting Area #4": 160300169
+    },
+    "hats": {
+      "Crash Test Dummy Hat": 160700038
+    }
+  },
+  "Conveyor Belts - Ducts Above Starting Area": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Conveyor Belts",
+    "kaizolevel": "Crash Test Industries",
+    "safes": {
+      "Conveyor Belts - Safe on Ducts Above Starting Area": 160300178
+    },
+    "coinbags": {
+      "Conveyor Belts - Coin Bag on Ducts Above Starting Area #1": 160300181,
+      "Conveyor Belts - Coin Bag on Ducts Above Starting Area #2": 160300177
+    },
+    "coins": {
+      "Conveyor Belts - Coin on Ducts Above Starting Area #1": 160300180,
+      "Conveyor Belts - Coin on Ducts Above Starting Area #2": 160300179,
+      "Conveyor Belts - Coin on Ducts Above Starting Area #3": 160300183,
+      "Conveyor Belts - Coin on Ducts Above Starting Area #4": 160300182,
+      "Conveyor Belts - Coin on Ducts Above Starting Area #5": 160300176,
+      "Conveyor Belts - Coin on Ducts Above Starting Area #6": 160300175
+    },
+    "connections": {
+      "Conveyor Belts - Lower Path": "X2+B1"
+    }
+  },
+  "Conveyor Belts - Lower Path": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Conveyor Belts",
+    "kaizolevel": "Crash Test Industries",
+    "gears": {
+      "Conveyor Belts - Gear - Lower Path": 160100020
+    },
+    "chests": {
+      "Conveyor Belts - Chest at End of Lower Path #1": 160300005,
+      "Conveyor Belts - Chest at End of Lower Path #2": 160300000
+    },
+    "coinbags": {
+      "Conveyor Belts - Coin Bag at End of Lower Path #1": 160300007,
+      "Conveyor Belts - Coin Bag at End of Lower Path #2": 160300002
+    },
+    "coins": {
+      "Conveyor Belts - Coin at End of Lower Path #1": 160300004,
+      "Conveyor Belts - Coin at End of Lower Path #2": 160300006,
+      "Conveyor Belts - Coin at End of Lower Path #3": 160300001
+    },
+    "subwarps": {
+      "Conveyor Belts - Mosk's Rocket Portal on Lower Path": ["Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area", ""]
+    }
+  },
+  "Conveyor Belts - Upper Path": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Conveyor Belts",
+    "kaizolevel": "Crash Test Industries",
+    "gears": {
+      "Conveyor Belts - Gear - Upper Path": 160100021
+    },
+    "coinbags": {
+      "Conveyor Belts - Coin Bag at End of Upper Path #1": 160300192,
+      "Conveyor Belts - Coin Bag at End of Upper Path #2": 160300190
+    },
+    "coins": {
+      "Conveyor Belts - Coin at End of Upper Path #1": 160300198,
+      "Conveyor Belts - Coin at End of Upper Path #2": 160300193,
+      "Conveyor Belts - Coin at End of Upper Path #3": 160300188,
+      "Conveyor Belts - Coin at End of Upper Path #4": 160300197,
+      "Conveyor Belts - Coin at End of Upper Path #5": 160300187,
+      "Conveyor Belts - Coin at End of Upper Path #6": 160300196,
+      "Conveyor Belts - Coin at End of Upper Path #7": 160300186,
+      "Conveyor Belts - Coin at End of Upper Path #8": 160300195,
+      "Conveyor Belts - Coin at End of Upper Path #9": 160300185,
+      "Conveyor Belts - Coin at End of Upper Path #10": 160300194,
+      "Conveyor Belts - Coin at End of Upper Path #11": 160300189,
+      "Conveyor Belts - Coin at End of Upper Path #12": 160300184
     }
   }
 }

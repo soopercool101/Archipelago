@@ -661,7 +661,7 @@ class UseSeparateEntrancePools(Toggle):
 class AllowShufflingRemovedLevels(Choice):
     """
     When on, allows levels to be shuffled when they would normally not be included in the game.
-    Conversely, these levels will replace shuffled levels that would normally be included by your settings.
+    These levels will potentially replace shuffled levels that would normally be included by your settings.
 
     None: Only shuffle levels that would be included by your non-ER options
     Portal Levels Only: Only the Portal levels in Morio's Lab will be potentially shuffled in if not normally included.
@@ -675,7 +675,7 @@ class AllowShufflingRemovedLevels(Choice):
     option_main_levels_only = 2
     option_any = 3
 
-    default = option_main_levels_only
+    default = option_portal_levels_only
 
 class PortalOrder(Choice):
     """
@@ -791,6 +791,8 @@ class TaxiSkin(Choice):
     alias_corrupted = option_corrupted_car
     alias_grannys_car_alt = option_pink_flames
     alias_grannys_car_corrupted_alt = option_pink_flames_corrupted
+    alias_random_per_load = option_random_every_load
+    alias_fully_random = option_random_every_load
 
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
