@@ -481,7 +481,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     elif world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
         created_time_trial_moves : bool = False
         true_included_levels : set[str] = set(list(world.included_levels) + list(world.goal_levels))
-        for level in true_included_levels:
+        for level in sorted(true_included_levels):
             if level == "Crash Test Industries":
                 itempool += [world.create_item("Boost (Crash Test Industries)")]
                 if world.options.allow_top_down_jumps:
