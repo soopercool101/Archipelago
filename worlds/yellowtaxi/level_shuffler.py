@@ -11,6 +11,8 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     portal_order : List[str] = []
     valid_portals : List[str] = []
     shuffled_portals : bool = False
+    allow_excluded : bool = (options.allow_shuffling_removed_levels.value >=
+                             options.allow_shuffling_removed_levels.option_portal_levels_only)
     if options.portal_order.value == options.portal_order.option_shuffle:
         num_portals : int
         num_portals, valid_portals = get_portal_randomization_count_and_pool(options, goal_portal)
@@ -36,6 +38,8 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
             if portal == goal_portal and options.remove_post_goal_portals:
                 skip_remaining = True
             elif skip_remaining or portal in unfinished_levels:
+                if allow_excluded and portal not in unfinished_levels:
+                    valid_portals += [portal]
                 portal_order += ["Excluded"]
                 continue
             portal_order += [portal]
@@ -43,9 +47,10 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     grannys_order : List[str] = []
     valid_grannys : List[str] = []
     shuffled_grannys : bool = False
+    allow_excluded = (options.allow_shuffling_removed_levels.value >=
+                      options.allow_shuffling_removed_levels.option_any)
     if options.shuffle_grannys_levels:
-        if (options.allow_shuffling_removed_levels.value >=
-                options.allow_shuffling_removed_levels.option_main_levels_only):
+        if allow_excluded:
             valid_grannys = ["Gym Gears", "Fecal Matters", "Flushed Away"]
         else:
             if options.gym_gears_unlock_condition.value != options.gym_gears_unlock_condition.option_exclude:
@@ -84,12 +89,18 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
         grannys_order = list(grannys_island_level_order)
 
         if options.gym_gears_unlock_condition.value == options.gym_gears_unlock_condition.option_exclude:
+            if allow_excluded:
+                valid_grannys += ["Gym Gears"]
             grannys_order[0] = "Excluded"
         if options.fecal_matters_unlock_condition.value == options.fecal_matters_unlock_condition.option_exclude:
+            if allow_excluded:
+                valid_grannys += ["Fecal Matters"]
             grannys_order[1] = "Excluded"
         # Limitation: Logical access to sewer island isn't considered here.
         # Fine for now but eventually look into making "default" work as expected. Portal pool is already known!
         if options.flushed_away_unlock_condition.value == options.flushed_away_unlock_condition.option_exclude:
+            if allow_excluded:
+                valid_grannys += ["Flushed Away"]
             grannys_order[2] = "Excluded"
 
 
@@ -136,6 +147,11 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
 
     valid_levels: List[str] = valid_portals + valid_grannys + valid_misc
     if not options.use_separate_entrance_pools and len(valid_levels) > 0:
+        while len(valid_levels) > len(level_order) - level_order.count("Excluded"):
+            if remove_worthless_level_from_pool(options, random, valid_levels):
+                continue
+            break
+
         # Run randomization until placement passes important tests
         while True:
             random.shuffle(valid_levels)
@@ -199,7 +215,22 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
 
     return portal_order + grannys_order + misc_order
 
-def get_portal_randomization_count_and_pool(options: YellowTaxiOptions, goal_portal : str) -> Tuple[int, List[str]]:
+def remove_worthless_level_from_pool(options: YellowTaxiOptions, random: Random, valid_levels: List[str]) -> bool:
+    if "Psycho Taxi" in valid_levels:
+        valid_levels.remove("Psycho Taxi")
+        return True
+
+    if not options.time_trial_gears:
+        tt_levels : List[str] = ["Baby Steps!", "Getting Gud!", "Pro Tricks!"]
+        random.shuffle(tt_levels)
+        for level in tt_levels:
+            if level in valid_levels:
+                valid_levels.remove(level)
+                return True
+
+    return False
+
+def get_portal_randomization_count_and_pool(options: YellowTaxiOptions, goal_portal: str) -> Tuple[int, List[str]]:
     num_portals : int = 0
     valid_portals : List[str] = []
     past_goal : bool = False

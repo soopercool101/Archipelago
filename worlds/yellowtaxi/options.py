@@ -670,18 +670,18 @@ class AllowShufflingRemovedLevels(Choice):
     """
     When on, allows levels to be shuffled when they would normally not be included in the game.
     These levels will potentially replace shuffled levels that would normally be included by your settings.
+    Note that Time Trials, Psycho Taxi, and Mosk's Rocket are unaffected by this setting,
+    and will be shuffled into the pool if their shuffle settings are enabled regardless of being excluded or not.
 
     None: Only shuffle levels that would be included by your non-ER options
     Portal Levels Only: Only the Portal levels in Morio's Lab will be potentially shuffled in if not normally included.
-    Main Levels Only: Portal Levels and the three Granny's Island levels will be potentially shuffled in if not normally included.
-    Any: Allows Mosk's Rocket and Psycho Taxi to be shuffled, even if their entrance unlock conditions are excluded.
+    Any: Portal Levels and the three Granny's Island levels will be potentially shuffled in if not normally included.
     """
     display_name = "Allow Shuffling Removed Levels"
 
     option_none = 0
     option_portal_levels_only = 1
-    option_main_levels_only = 2
-    option_any = 3
+    option_any = 2
 
     default = option_portal_levels_only
 
