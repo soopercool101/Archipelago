@@ -36,6 +36,8 @@ class YellowTaxiWorld(World):
     item_name_groups = {
         "Move": { "Progressive Jump", "Progressive Boost" },
         "Move (Hub)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
+        "Move (Morio's Lab)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
+        "Move (Granny's Island)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
         "Move (Morio's Home)": { "Progressive Jump (Morio's Home)", "Progressive Boost (Morio's Home)" },
         "Move (Bombeach)": { "Progressive Jump (Bombeach)", "Progressive Boost (Bombeach)" },
         "Move (Arcade Panik)": { "Progressive Jump (Arcade Panik)", "Progressive Boost (Arcade Panik)" },
@@ -54,8 +56,12 @@ class YellowTaxiWorld(World):
         "Move (Mosk's Rocket)": { "Progressive Jump (Mosk's Rocket)", "Progressive Boost (Mosk's Rocket)" },
         "Move (Rocket)": { "Progressive Jump (Mosk's Rocket)", "Progressive Boost (Mosk's Rocket)" },
         "Move (Time Trials)": { "Progressive Jump (Time Trials)", "Progressive Boost (Time Trials)" },
+        "Move (Baby Steps!)": { "Progressive Jump (Time Trials)", "Progressive Boost (Time Trials)" },
+        "Move (Getting Gud!)": { "Progressive Jump (Time Trials)", "Progressive Boost (Time Trials)" },
+        "Move (Pro Tricks!)": { "Progressive Jump (Time Trials)", "Progressive Boost (Time Trials)" },
         "Golden Spring": { "Golden Spring Blueprints" },
         "Golden Propeller": { "Golden Propeller Blueprints" },
+        "FGU": { "Full Game Unlock" },
         "Trap": TRAPS,
         "Traps": TRAPS,
     }
