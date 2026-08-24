@@ -273,7 +273,7 @@
       "Crash Test Industries - Coin on Platform Right of Archway After Second Conveyor Belt #18": 100300185
     },
     "connections": {
-      "Crash Test Industries - Higher Platforms Above Second Checkpoint Area": "PMB",
+      "Crash Test Industries - Higher Platforms Above Second Checkpoint Area": "PMB | X3+PMJ",
       "Crash Test Industries - Path Along Wall Right of Second Conveyor Belt": "OS"
     }
   },
@@ -315,7 +315,7 @@
     },
     "connections": {
       "Crash Test Industries - Path Above Second Conveyor Belt": "PMB | X1+PMJ",
-      "Crash Test Industries - High Ducts Right of Starting Area": "PMB"
+      "Crash Test Industries - High Ducts Right of Starting Area": "PMB | X3+PMJ"
     }
   },
   "Crash Test Industries - Path Above Second Conveyor Belt": {
@@ -495,7 +495,7 @@
       "Crash Test Industries - Coin on Duct Left of Third Conveyor Belt #9": 100300358
     },
     "connections": {
-      "Crash Test Industries - Higher Ground Left of Third Conveyor Belt": "PMB"
+      "Crash Test Industries - Higher Ground Left of Third Conveyor Belt": "PMB | X3+PMJ"
     }
   },
   "Crash Test Industries - Higher Ground Left of Third Conveyor Belt": {
@@ -599,7 +599,7 @@
       "Crash Test Industries - Coin on Third Platform Right After Third Conveyor Belt #5": 100300311
     },
     "connections": {
-      "Crash Test Industries - Uppermost Platforms After Third Conveyor Belt": "PMB"
+      "Crash Test Industries - Uppermost Platforms After Third Conveyor Belt": "PMB | X3+PMJ"
     }
   },
   "Crash Test Industries - Uppermost Platforms After Third Conveyor Belt": {
@@ -679,7 +679,7 @@
     "connections": {
       "Crash Test Industries - After Third Conveyor Belt": "",
       "Crash Test Industries - Final Orange Block Bridge": "OS",
-      "Crash Test Industries - Final Area": "X3+PMB"
+      "Crash Test Industries - Final Area": "X3 & PMB/PMJ"
     },
     "specialrules": {
       "Crash Test Industries - Orange Switch": "X2/PMB/PMJ"

@@ -259,6 +259,11 @@ class RuleFactory:
             if self.world.has_orange_switch_access:
                 return False_()
             return True_()
+        # Non-shuffled orange switch, used to prevent impossible access rules
+        if token == "NSOS":
+            if self.world.options.shuffle_orange_switch:
+                return False_()
+            return True_()
         if token == "OS":
             if self.skip_unnecessary_rule_calculations and not self.world.has_orange_switch_access:
                 return False_()
