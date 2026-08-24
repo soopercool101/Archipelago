@@ -217,7 +217,7 @@ class YellowTaxiWorld(World):
 
         if not self.using_ut:
             self.level_order = level_shuffler.get_level_order(self.options, self.random, self.goal_levels[0])
-
+            #self.log_level_order()
 
         self.included_levels = ["Hub"]
         self.special_levels = [""]
@@ -454,6 +454,12 @@ class YellowTaxiWorld(World):
             for i in range(0, len(data_loader.original_level_order)):
                 if (value >> i) & 1 == 1 and i in self.disconnected_entrances.keys():
                     self.disconnected_entrances[i][0].connect(self.disconnected_entrances[i][1])
+
+    def log_level_order(self) -> None:
+        logger = logging.getLogger()
+        logger.info(f"\nLevel Order ({self.player_name}):")
+        for i in range(0, len(self.level_order)):
+            logger.info(f"  {data_loader.original_level_order[i]} -> {self.level_order[i]}")
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         # Get relevant options needed for client
