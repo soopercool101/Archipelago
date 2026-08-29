@@ -662,7 +662,8 @@
       "Crash Test Industries - Checkpoint on Fourth Platform Right After Third Conveyor Belt": 100900358
     },
     "connections": {
-      "Crash Test Industries - Hidden Coins Above Final Conveyor Belt": ""
+      "Crash Test Industries - Hidden Coins Above Final Conveyor Belt": "",
+      "Crash Test Industries - Final Area": "X1+PMB+PMJ"
     }
   },
   "Crash Test Industries - Hidden Coins Above Final Conveyor Belt": {
@@ -679,7 +680,7 @@
     "connections": {
       "Crash Test Industries - After Third Conveyor Belt": "",
       "Crash Test Industries - Final Orange Block Bridge": "OS",
-      "Crash Test Industries - Final Area": "X3 & PMB/PMJ"
+      "Crash Test Industries - Final Area": "X3+PMJ | X2+PMB"
     },
     "specialrules": {
       "Crash Test Industries - Orange Switch": "X2/PMB/PMJ"
@@ -726,7 +727,8 @@
       "Crash Test Industries - Cheese Near Pipe-Zone Pipe": 102100002
     },
     "connections": {
-      "Crash Test Industries - Final Orange Block Bridge": "OS"
+      "Crash Test Industries - Final Orange Block Bridge": "OS",
+      "Pipe-Zone - Starting Area": "X3+PMJ"
     },
     "subwarps": {
       "Crash Test Industries - Pipe Zone Pipe": ["Pipe-Zone - Starting Area", ""]

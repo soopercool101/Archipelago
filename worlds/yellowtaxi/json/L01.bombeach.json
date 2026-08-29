@@ -439,6 +439,7 @@
     "connections": {
       "Bombeach - Easy Bomb Jumps": "",
       "Bombeach - Expert 1 Bomb Jumps": "X1",
+      "Bombeach - Expert 2 Bomb Jumps": "X2",
       "Bombeach - Jump or Boost": "J1/B1"
     },
     "subwarps": {
@@ -607,7 +608,7 @@
       "Bombeach - Orange Block Bridge": "OS/X3"
     }
   },
-  "Bombeach - Jump or Boost": {
+  "Bombeach - Expert 2 Bomb Jumps": {
     "level": "Bombeach",
     "sublevel": "Bombeach",
     "coinbags": {
@@ -622,7 +623,13 @@
       "Bombeach - Coin in Secret Ocean Area Past Gem-Shaped Islands #4": 10300142,
       "Bombeach - Coin in Secret Ocean Area Past Gem-Shaped Islands #5": 10300147,
       "Bombeach - Coin in Secret Ocean Area Past Gem-Shaped Islands #6": 10300138,
-      "Bombeach - Coin in Secret Ocean Area Past Gem-Shaped Islands #7": 10300148,
+      "Bombeach - Coin in Secret Ocean Area Past Gem-Shaped Islands #7": 10300148
+    }
+  },
+  "Bombeach - Jump or Boost": {
+    "level": "Bombeach",
+    "sublevel": "Bombeach",
+    "coins": {
       "Bombeach - Coin in Row on Second High Ocean Pillar #1": 10300642,
       "Bombeach - Coin in Row on Second High Ocean Pillar #2": 10300643,
       "Bombeach - Coin in Row on Second High Ocean Pillar #3": 10300644,
@@ -633,6 +640,7 @@
     },
     "connections": {
       "Bombeach - Expert 1 Bomb Jumps": "",
+      "Bombeach - Expert 2 Bomb Jumps": "",
       "Bombeach - Orange Block Bridge": "",
       "Bombeach - Distant High Islands": "X1+J1 | J2 | B1"
     }

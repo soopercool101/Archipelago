@@ -890,9 +890,9 @@
       "Conveyor Belts - Checkpoint": 160900794
     },
     "connections": {
-      "Conveyor Belts - Ducts Above Starting Area": "X1+B1 | NGPS+B1+J1 | X2+J2",
-      "Conveyor Belts - Platform Above Starting Area": "X2+B2+J1 | X1+NGPS+B2+J2",
-      "Conveyor Belts - Lower Path": "B1+J1",
+      "Conveyor Belts - Ducts Above Starting Area": "X1+B1 | NGPS+B1+J1 | X2+J1",
+      "Conveyor Belts - Platform Above Starting Area": "X1+B2+J1 | X2+J2",
+      "Conveyor Belts - Lower Path": "X2/B1 & J1",
       "Conveyor Belts - Upper Path": "B2 & X1/J1 | X1+B1 & X3/J1"
     },
     "subwarps": {
