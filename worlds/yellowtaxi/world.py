@@ -503,6 +503,7 @@ class YellowTaxiWorld(World):
             "quick_pickups",
             "shop_hints",
             "taxi_skin",
+            "morio_costume",
             # Only used by UT
             "expert_level",
             "include_out_of_bounds",

@@ -802,6 +802,27 @@ class TaxiSkin(Choice):
     alias_random_per_load = option_random_every_load
     alias_fully_random = option_random_every_load
 
+class MorioCostume(Choice):
+    """
+    What costume Morio will wear in the lab.
+    Default will wear the relevant seasonal costume he would wear in vanilla as applicable.
+    """
+    display_name = "Morio Costume"
+    option_default = -1
+    option_no_costume = 0
+    option_halloween = 1
+    option_christmas = 2
+    option_valentines_day = 3
+    option_random_costume_every_load = -2
+    option_random_costume_parts_every_load = -3
+
+    default = option_default
+    alias_none = option_no_costume
+    alias_pumpkin = option_halloween
+    alias_santa = option_christmas
+    alias_cupid = option_valentines_day
+    alias_valentines = option_valentines_day
+
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
@@ -870,6 +891,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_rocket_entrance: ShuffleRocketEntrance
     shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
     taxi_skin: TaxiSkin
+    morio_costume: MorioCostume
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -961,6 +983,7 @@ option_groups = [
         [
             TaxiSkin,
             FunnyFaces,
+            MorioCostume,
         ],
     ),
     OptionGroup(
