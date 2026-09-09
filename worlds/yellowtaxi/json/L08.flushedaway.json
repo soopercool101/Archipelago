@@ -66,7 +66,7 @@
     },
     "connections": {
       "Flushed Away - Path Surrounding Starting Area": "X1/B1/J1",
-      "Flushed Away - Pipe to Upper Starting Area": "X2+B2 | J1 | X3+B1",
+      "Flushed Away - Pipe to Upper Starting Area": "X2+B2 | J1 | X3",
       "Flushed Away - Pipe Above Starting Area": "X2+B1",
       "Flushed Away - Ledge Above Starting Area": "X2+B1",
       "Flushed Away - Checkpoint Area": ""

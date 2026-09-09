@@ -153,6 +153,7 @@
       "Costipation - Roadway Gear Area": "X1+NSAR & {Costipation - Starting Area}",
       "Costipation - Island Gear Area": "X1+NSAR & {Costipation - Starting Area}",
       "Heroic Moves - Building": "X1+NSAR & {Heroic Moves - Starting Area}",
+      "Heroic Moves - Banana Hat Beam": "X1+NSAR & {Heroic Moves - Starting Area}",
       "Conveyor Belts - Platform Above Starting Area": "NSAR & {Conveyor Belts - Starting Area}",
       "Conveyor Belts - Ducts Above Starting Area": "NSAR & {Conveyor Belts - Starting Area}"
     }
@@ -828,7 +829,8 @@
       "Heroic Moves - Checkpoint": 160901130
     },
     "connections": {
-      "Heroic Moves - Building": "X3/J1/B1"
+      "Heroic Moves - Building": "X3/J1/B1",
+      "Heroic Moves - Banana Hat Beam": "J1/B1"
     },
     "subwarps": {
       "Heroic Moves - Mosk's Rocket Portal": ["Mosk's Rocket - Maurizio's City/Crash Test Industries/Morio's Mind Area", ""]
@@ -880,6 +882,14 @@
     },
     "moriotrons": {
       "Heroic Moves - Mori-O-Tron": "Heroic Moves - Starting Area"
+    }
+  },
+  "Heroic Moves - Banana Hat Beam": {
+    "level": "Mosk's Rocket",
+    "sublevel": "Heroic Moves",
+    "kaizolevel": "Maurizio's City",
+    "hats": {
+      "Banana Hat": 160700042
     }
   },
   "Conveyor Belts - Starting Area": {
