@@ -596,3 +596,21 @@ class YellowTaxiWorld(World):
         for i in range(0, len(self.level_order)):
             if self.level_order[i] != "Excluded":
                 spoiler_handle.write(f"\n{data_loader.original_level_order[i]} -> {self.level_order[i]}")
+
+    # This is purely to help generate in-game tracking
+    def write_map_area_locations(self, handle: typing.TextIO) -> None:
+        map_area_locs : Dict[str, List[int | None]] = {}
+        for loc_name, loc_id in self.location_name_to_id.items():
+            map_name : str = "Unknown Map"
+            if " - " in loc_name:
+                map_name = loc_name.split(" - ")[0]
+            if map_name in map_area_locs.keys():
+                map_area_locs[map_name] += [loc_id]
+            else:
+                map_area_locs[map_name] = [loc_id]
+
+        for map_name, loc_list in map_area_locs.items():
+            handle.write(f"\n            {{\n                \"{map_name}\",\n                [\n")
+            for loc_id in loc_list:
+                handle.write(f"                    {loc_id},\n")
+            handle.write("                ]\n            },")
