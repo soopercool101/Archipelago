@@ -130,7 +130,7 @@
     "connections": {
       "Mosk's Rocket - Flushed Away Area": "",
       "Mosk's Rocket - Coins Leading to Final Floor": "J1 | X1+B2",
-      "Mosk's Rocket - Tosla HQ Area": "J2",
+      "Mosk's Rocket - Tosla HQ Area": "J2 | X2+J1",
       "Mosk's Rocket - Golden Propeller": "GP"
     },
     "subwarps": {
