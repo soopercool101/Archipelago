@@ -5,7 +5,7 @@ from typing import Dict, List, TYPE_CHECKING, Union
 
 from BaseClasses import Location, Region, LocationProgressType
 
-from . import items
+from . import items, data_loader
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -554,6 +554,20 @@ def fix_location_deficit(world: YellowTaxiWorld):
             location_deficit += 1
         if "Pro Tricks!" not in world.included_levels:
             location_deficit += 1
+
+    # Bunnysanity can give or take away from deficit, depending on settings
+    if world.options.bunnysanity:
+        # If Mosk's Rocket isn't an included level, bunnies are not made. Remove from deficit
+        if "Mosk's Rocket" not in world.included_levels:
+            location_deficit -= world.hub_bunnies
+            for level in world.included_levels:
+                if level not in ["Hub", "Mosk's Rocket", "Psycho Taxi"] and not level.endswith("!"):
+                    location_deficit -= 3
+        # Otherwise, include all bunnies setting will add to deficit for every not-included level
+        elif world.options.bunnysanity_includes_all_bunnies:
+            for level in data_loader.original_portal_level_order + data_loader.grannys_island_level_order:
+                if level not in world.included_levels:
+                    location_deficit += 3
 
     # If there are not enough filler items to cover the deficit, we have to eat into gears
     if location_deficit > world.num_filler:

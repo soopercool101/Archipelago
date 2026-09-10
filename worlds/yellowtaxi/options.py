@@ -340,10 +340,20 @@ class DemoPortalMode(Choice):
 
 class Bunnysanity(Toggle):
     """
-    Adds Golden Bunnies as items and locations. These bunnies are filler items unless Mosk's Rocket is shuffled.
+    Adds Golden Bunnies as items and locations.
+    Items will only be added to the pool if Mosk's Rocket is an included level.
     """
 
     display_name = "Bunnysanity"
+
+class BunnysanityIncludesAllBunnies(DefaultOnToggle):
+    """
+    Adds Golden Bunny items for all levels, even levels not included in the current seed.
+    Has no effect unless Bunnysanity is enabled and Mosk's Rocket is an included level.
+    Will remove filler (and gears if needed) from the pool to compensate for the additional Bunny items.
+    """
+
+    display_name = "Bunnysanity Includes All Bunnies"
 
 class Hatsanity(Choice):
     """
@@ -854,6 +864,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     demo_portal_mode: DemoPortalMode
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
+    bunnysanity_includes_all_bunnies: BunnysanityIncludesAllBunnies
     hatsanity: Hatsanity
     hatsanity_filler_hats: HatsanityFillerHats
     checkpointsanity: Checkpointsanity
@@ -901,6 +912,7 @@ option_groups = [
             ExtraDemoCollectables,
             TimeTrialGears,
             Bunnysanity,
+            BunnysanityIncludesAllBunnies,
             Hatsanity,
             HatsanityFillerHats,
             Checkpointsanity,
