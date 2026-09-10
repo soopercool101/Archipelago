@@ -130,6 +130,7 @@ class YellowTaxiWorld(World):
         self.early_rocket : bool = False
         self.exclude_spike_bunny : bool = False
         self.exclude_top_bunny : bool = False
+        self.hub_bunnies : int = 3
         self.final_portal_cost : int = 0
         self.goal_levels : List[str] = ["Bombeach"]
         # These are used to simplify logic and region inclusion rules
@@ -364,10 +365,14 @@ class YellowTaxiWorld(World):
             if self.options.rocket_unlock_condition.value == self.options.rocket_unlock_condition.option_shuffle_rocket:
                 self.early_rocket = True
 
+            if self.options.extra_demo_collectables:
+                self.hub_bunnies += 2
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
                 self.exclude_spike_bunny = True
+                self.hub_bunnies -= 1
             if "Morio's Lab - Final Floor Bunny Shortcut Upper" in self.excluded_regions:
                 self.exclude_top_bunny = True
+                self.hub_bunnies -= 1
 
             if self.options.coinsanity and self.multiworld.players > 1:
                 if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
@@ -592,6 +597,7 @@ class YellowTaxiWorld(World):
         hint_data[self.player] = er_hint_data
 
     def write_spoiler(self, spoiler_handle: typing.TextIO) -> None:
+        #self.write_map_area_locations(spoiler_handle)
         spoiler_handle.write("\nEntrances:\n")
         for i in range(0, len(self.level_order)):
             if self.level_order[i] != "Excluded":

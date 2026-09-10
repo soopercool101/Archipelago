@@ -238,6 +238,10 @@ class RuleFactory:
             if self.world.options.shuffle_golden_spring == 0:
                 return True_()
             return Has("Golden Spring Blueprints")
+        if token == "NGS":
+            if not self.world.has_golden_spring_access:
+                return True_()
+            return False_()
         if token == "Spike":
             if self.skip_unnecessary_rule_calculations and not self.world.has_spike_traversal:
                 return False_()
@@ -555,14 +559,7 @@ class RuleFactory:
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
-                hub_bunnies = 3
-                if self.world.options.extra_demo_collectables:
-                    hub_bunnies += 2
-                if self.world.exclude_spike_bunny:
-                    hub_bunnies -= 1
-                if self.world.exclude_top_bunny:
-                    hub_bunnies -= 1
-                return Has("Bunny (Morio's Lab)", hub_bunnies)
+                return Has("Bunny (Morio's Lab)", self.world.hub_bunnies)
             else:
                 adjusted_bunny_level : str = bunny_level
                 match bunny_level:
@@ -586,6 +583,14 @@ class RuleFactory:
                         adjusted_bunny_level = "Maurizio's City"
                     case "CTI":
                         adjusted_bunny_level = "Crash Test Industries"
+                    case "MM":
+                        adjusted_bunny_level = "Morio's Mind"
+                    case "RO":
+                        adjusted_bunny_level = "Ruined Observatory"
+                    case "HQ":
+                        adjusted_bunny_level = "Tosla HQ"
+                    case "TM":
+                        adjusted_bunny_level = "The Moon"
                 return Has(f"Bunny ({adjusted_bunny_level})", 3)
         if token.startswith("X"):
             expert_level = int(token[1:])

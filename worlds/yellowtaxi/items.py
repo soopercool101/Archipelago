@@ -4,6 +4,7 @@ import math
 from typing import TYPE_CHECKING, List
 
 from BaseClasses import Item, ItemClassification
+from . import data_loader
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -25,7 +26,7 @@ ITEM_NAME_TO_ID = {
     "Bunny (Morio's Mind)": 2_12,
     "Bunny (Ruined Observatory)": 2_13,
     "Bunny (Tosla HQ)": 2_14,
-    "Bunny (Moon)": 2_15,
+    "Bunny (The Moon)": 2_15,
     "1 Coin": 3,
     "10 Coins": 4,
     "25 Coins": 5,
@@ -187,7 +188,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Bunny (Morio's Mind)": ItemClassification.progression_deprioritized,
     "Bunny (Ruined Observatory)": ItemClassification.progression_deprioritized,
     "Bunny (Tosla HQ)": ItemClassification.progression_deprioritized,
-    "Bunny (Moon)": ItemClassification.progression_deprioritized,
+    "Bunny (The Moon)": ItemClassification.progression_deprioritized,
     "1 Coin": ItemClassification.filler,
     "10 Coins": ItemClassification.filler,
     "25 Coins": ItemClassification.filler,
@@ -436,15 +437,11 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     # Add Bunnies to the pool if needed
     if world.options.bunnysanity and "Mosk's Rocket" in world.included_levels:
-        hub_bunnies = 3
-        if world.options.extra_demo_collectables:
-            hub_bunnies += 2
-        if world.exclude_top_bunny:
-            hub_bunnies -= 1
-        if world.exclude_spike_bunny:
-            hub_bunnies -= 1
-        itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(hub_bunnies)]
-        for level in world.included_levels:
+        itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(world.hub_bunnies)]
+        bunny_level_list : list[str] = world.included_levels.copy()
+        if world.options.bunnysanity_includes_all_bunnies:
+            bunny_level_list = data_loader.original_portal_level_order + data_loader.grannys_island_level_order
+        for level in bunny_level_list:
             if level not in ["Hub", "Mosk's Rocket", "Psycho Taxi"] and not level.endswith("!"):
                 itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
 
