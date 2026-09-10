@@ -364,15 +364,10 @@ class YellowTaxiWorld(World):
                 self.early_morios_password = True
             if self.options.rocket_unlock_condition.value == self.options.rocket_unlock_condition.option_shuffle_rocket:
                 self.early_rocket = True
-
-            if self.options.extra_demo_collectables:
-                self.hub_bunnies += 2
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
                 self.exclude_spike_bunny = True
-                self.hub_bunnies -= 1
             if "Morio's Lab - Final Floor Bunny Shortcut Upper" in self.excluded_regions:
                 self.exclude_top_bunny = True
-                self.hub_bunnies -= 1
 
             if self.options.coinsanity and self.multiworld.players > 1:
                 if self.settings.multiworld_coinsanity_percentage_cap < self.options.coinsanity_percent:
@@ -415,6 +410,14 @@ class YellowTaxiWorld(World):
                     f"{self.player_name}: Your options have been modified.\n"
                     "TrapLink has no effect on a single-player game "
                     "and has been disabled to reduce unnecessary network pings.")
+
+        # Get hub bunny count
+        if self.options.extra_demo_collectables:
+            self.hub_bunnies += 2
+        if self.exclude_spike_bunny:
+            self.hub_bunnies -= 1
+        if self.exclude_top_bunny:
+            self.hub_bunnies -= 1
 
         if not self.options.open_grannys_island and self.options.locked_morios_lab:
             self.lab_start = True
