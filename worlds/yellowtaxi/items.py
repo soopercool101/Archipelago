@@ -438,12 +438,14 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     # Add Bunnies to the pool if needed
     if world.options.bunnysanity and "Mosk's Rocket" in world.included_levels:
         itempool += [world.create_item("Bunny (Morio's Lab)") for _ in range(world.hub_bunnies)]
+        world.num_bunnies = world.hub_bunnies
         bunny_level_list : list[str] = world.included_levels.copy()
         if world.options.bunnysanity_includes_all_bunnies:
             bunny_level_list = data_loader.original_portal_level_order + data_loader.grannys_island_level_order
         for level in bunny_level_list:
             if level not in ["Hub", "Mosk's Rocket", "Psycho Taxi"] and not level.endswith("!"):
                 itempool += [world.create_item(f"Bunny ({level})") for _ in range(3)]
+                world.num_bunnies += 3
 
     if world.options.shuffle_gela_toni:
         itempool.append(world.create_item("Gela-Toni"))
