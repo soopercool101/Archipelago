@@ -319,6 +319,11 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     region.add_event(f"Event: Morio's Lab - Bunny - Above Pizza Time Portal", f"Bunny (Morio's Lab)",
                                          location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
                     world.num_bunnies += 1
+        case "Morio's Lab - Second Floor":
+            if world is None or world.options.shuffle_world_map:
+                locations = {
+                    "Morio's Lab - PICI World Map Tutorial": 8_00008,
+                }
         case "Morio's Lab - Second Floor After Demo Wall":
             if world is None or world.early_pizza_wheels:
                 locations = {

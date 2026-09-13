@@ -500,6 +500,7 @@ class YellowTaxiWorld(World):
             "allow_top_down_jumps",
             "shuffle_spin_attack",
             "shuffle_glide",
+            "shuffle_world_map",
             "shuffle_golden_spring",
             "shuffle_golden_propeller",
             "pizza_wheels",

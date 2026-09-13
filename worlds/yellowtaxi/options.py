@@ -510,6 +510,13 @@ class ShuffleGlide(Toggle):
 
     display_name = "Shuffle Glide"
 
+class ShuffleWorldMap(Toggle):
+    """
+    Shuffles the ability to use the World Map from the pause menu into the item pool and adds a new location for talking to a PICI in Morio's Lab.
+    """
+
+    display_name = "Shuffle World Map"
+
 class EarlyMove(Toggle):
     """
     If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to local sphere 0.
@@ -881,6 +888,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     allow_top_down_jumps: AllowTopDownJumps
     shuffle_spin_attack: ShuffleSpinAttack
     shuffle_glide: ShuffleGlide
+    shuffle_world_map: ShuffleWorldMap
     early_move: EarlyMove
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
@@ -958,6 +966,7 @@ option_groups = [
             ShuffleGoldenPropeller,
             PizzaWheels,
             ShuffleRat,
+            ShuffleWorldMap,
         ],
     ),
     OptionGroup(

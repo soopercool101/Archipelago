@@ -90,6 +90,8 @@ ITEM_NAME_TO_ID = {
     "Progressive Boost": 8_0_2,
     "Spin Attack": 8_0_3,
     "Glide": 8_0_4,
+    "Progressive Spin Attack": 8_0_5,
+    "World Map Unlock": 8_0_6,
     "Golden Spring Blueprints": 8_1_0,
     "Golden Propeller Blueprints": 8_2_0,
     "Pizza Wheels": 8_9_9,
@@ -252,6 +254,8 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Progressive Boost": ItemClassification.progression | ItemClassification.useful,
     "Spin Attack": ItemClassification.progression | ItemClassification.useful,
     "Glide": ItemClassification.useful,
+    "Progressive Spin Attack": ItemClassification.progression | ItemClassification.useful,
+    "World Map Unlock": ItemClassification.useful,
     "Golden Spring Blueprints": ItemClassification.progression | ItemClassification.useful,
     "Golden Propeller Blueprints": ItemClassification.progression | ItemClassification.useful,
     "Pizza Wheels": ItemClassification.filler,
@@ -499,6 +503,9 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     if world.options.shuffle_glide:
         itempool.append(world.create_item("Glide"))
+
+    if world.options.shuffle_world_map:
+        itempool.append(world.create_item("World Map Unlock"))
 
     if world.options.shuffle_golden_spring:
         itempool.append(world.create_item("Golden Spring Blueprints"))
