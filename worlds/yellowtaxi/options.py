@@ -493,13 +493,25 @@ class AllowTopDownJumps(Toggle):
 
     display_name = "Allow Jumping in Top-Down Sections"
 
-class ShuffleSpinAttack(DefaultOnToggle):
+class ShuffleSpinAttack(Choice):
     """
     Shuffles the ability to attack using the Flip O' Will into the pool.
     This attack will knock back enemies and break blocks and oil pumps.
+
+    Progressive adds a second spin attack item. When you have both you can break explosive blocks.
     """
 
     display_name = "Shuffle Spin Attack"
+
+    option_off = 0
+    option_shuffle = 1
+    option_progressive = 2
+
+    default = option_shuffle
+    alias_none = option_off
+    alias_false = option_off
+    alias_true = option_shuffle
+    alias_on = option_shuffle
 
 class ShuffleGlide(Toggle):
     """

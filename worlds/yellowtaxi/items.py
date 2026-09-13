@@ -498,8 +498,10 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                 itempool += [world.create_item(f"Progressive Boost ({level})") for _ in range(2)]
                 itempool += [world.create_item(f"Progressive Jump ({level})") for _ in range(2)]
 
-    if world.options.shuffle_spin_attack:
+    if world.options.shuffle_spin_attack.value == world.options.shuffle_spin_attack.option_shuffle:
         itempool.append(world.create_item("Spin Attack"))
+    elif world.options.shuffle_spin_attack.value == world.options.shuffle_spin_attack.option_progressive:
+        itempool += [world.create_item("Progressive Spin Attack") for _ in range(2)]
 
     if world.options.shuffle_glide:
         itempool.append(world.create_item("Glide"))

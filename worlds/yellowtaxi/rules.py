@@ -10,7 +10,7 @@ from BaseClasses import CollectionState, MultiWorld
 from worlds.generic.Rules import add_rule, set_rule
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
 from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide, IncludeOutOfBounds, LockedMoriosLab, \
-    LockedMoriosWardrobe, OpenGrannysIsland
+    LockedMoriosWardrobe, OpenGrannysIsland, ShuffleSpinAttack
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -227,9 +227,12 @@ class RuleFactory:
                        options=[OptionFilter(ShuffleGlide, ShuffleGlide.option_true)],
                        filtered_resolution=True)
         if token == "SP":
-            if not self.world.options.shuffle_spin_attack:
+            if self.world.options.shuffle_spin_attack.value == self.world.options.shuffle_spin_attack.option_off:
                 return True_()
-            return Has("Spin Attack")
+            return (Has("Spin Attack",
+                        options=[OptionFilter(ShuffleSpinAttack, ShuffleSpinAttack.option_shuffle)]) |
+                    Has("Progressive Spin Attack",
+                        options=[OptionFilter(ShuffleSpinAttack, ShuffleSpinAttack.option_progressive)]))
         if token == "GS":
             if self.skip_unnecessary_rule_calculations and not self.world.has_golden_spring_access:
                 return False_()

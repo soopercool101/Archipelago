@@ -340,7 +340,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Morio's Lab - PICI Flip Tutorial": 8_00003,
                 }
         case "Morio's Lab - Third Floor":
-            if world is None or world.options.shuffle_flip_o_will:
+            if world is None or world.options.shuffle_spin_attack.value != world.options.shuffle_spin_attack.option_off:
                 locations = {
                     "Morio's Lab - PICI Spin Attack Tutorial": 8_00005,
                 }
@@ -529,6 +529,9 @@ def fix_location_deficit(world: YellowTaxiWorld):
                     created_time_trial_moves = True
             elif level != "Psycho Taxi":
                 location_deficit += 4
+
+    if world.options.shuffle_spin_attack.value == world.options.shuffle_spin_attack.option_progressive:
+        location_deficit += 1
 
     # Gym Membership location is in Gym Gears
     if (world.options.gym_gears_unlock_condition.value ==
