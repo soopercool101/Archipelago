@@ -496,6 +496,8 @@ class YellowTaxiWorld(World):
             "bunnysanity",
             "hatsanity",
             "cheesesanity",
+            "pizzasanity",
+            "pizzasanity_count",
             "shuffle_flip_o_will",
             "allow_top_down_jumps",
             "shuffle_spin_attack",

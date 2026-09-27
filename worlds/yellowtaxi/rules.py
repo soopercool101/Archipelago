@@ -551,6 +551,14 @@ class RuleFactory:
                     return Has("Time Trial Remote (Pro Tricks!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
                     return Has("Progressive Time Trial Remote", 3)
+        if token == "Pizza":
+            if not self.world.options.pizzasanity:
+                return False_()
+            return Has("Corrupted Pizza Slice", self.world.options.pizzasanity_count.value)
+        if token == "NoPizza":
+            if self.world.options.pizzasanity:
+                return False_()
+            return True_()
         if token == "NHS":
             if self.world.options.hatsanity == 0:
                 return True_()

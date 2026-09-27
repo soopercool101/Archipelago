@@ -464,6 +464,23 @@ class Cheesesanity(Toggle):
 
     display_name = "Cheesesanity"
 
+class Pizzasanity(Toggle):
+    """
+    Adds the 5 Corrupted Pizza Slices as locations and items. Has no effect if Pizza Time isn't an included level.
+    """
+
+    display_name = "Pizzasanity"
+
+class PizzasanityCount(Range):
+    """
+    How many Corrupted Pizza Slice items will be added to the multiworld if Pizzasanity is enabled.
+    All of these items will be required in order to complete the Pizza King's Quest.
+    """
+    display_name = "Pizzasanity Count"
+    range_start = 1
+    range_end = 5
+    default = 5
+
 class ShuffleFlipOWill(Choice):
     """
     Shuffles the Flip O' Will into the item pool as 2 Progressive Boosts and 2 Progressive Jumps.
@@ -498,7 +515,7 @@ class ShuffleSpinAttack(Choice):
     Shuffles the ability to attack using the Flip O' Will into the pool.
     This attack will knock back enemies and break blocks and oil pumps.
 
-    Progressive adds a second spin attack item. When you have both you can break explosive blocks.
+    Progressive adds a second spin attack item. When you have both you can break explosive blocks and destroy cars.
     """
 
     display_name = "Shuffle Spin Attack"
@@ -896,6 +913,8 @@ class YellowTaxiOptions(PerGameCommonOptions):
     coinsanity_percent: CoinsanityPercent
     coinsanity_non_filler_cap: CoinsanityNonFillerCap
     cheesesanity: Cheesesanity
+    pizzasanity: Pizzasanity
+    pizzasanity_count: PizzasanityCount
     shuffle_flip_o_will: ShuffleFlipOWill
     allow_top_down_jumps: AllowTopDownJumps
     shuffle_spin_attack: ShuffleSpinAttack
@@ -944,6 +963,8 @@ option_groups = [
             Coinsanity,
             CoinsanityPercent,
             Cheesesanity,
+            Pizzasanity,
+            PizzasanityCount,
         ],
     ),
     OptionGroup(

@@ -417,8 +417,24 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 )
         case "Pizza Time - Starting Area":
             if world is None or world.options.pizza_wheels != world.options.pizza_wheels.option_off:
+                locations["Pizza Time - Talk to MacPizza"] = 2_07_99999
+            if world is None or world.options.pizzasanity:
+                locations["Pizza Time - Corrupted Pizza Behind Pizza King"] = 2_12_00675
+        case "Pizza Time - Accessible Ledges":
+            if world is None or world.options.pizzasanity:
                 locations = {
-                    "Pizza Time - Talk to MacPizza": 2_07_99999,
+                    "Pizza Time - Corrupted Pizza After Mario's Pizza": 2_12_00765
+                }
+        case "Pizza Time - High Ground":
+            if world is None or world.options.pizzasanity:
+                locations = {
+                    "Pizza Time - Corrupted Pizza on Mario's Pizza": 2_12_00840
+                }
+        case "Pizza Time - Pizza King's Path Upper Area":
+            if world is None or world.options.pizzasanity:
+                locations = {
+                    "Pizza Time - Corrupted Pizza on Lower Mountain": 2_12_00740,
+                    "Pizza Time - Corrupted Pizza on Higher Mountain": 2_12_00645
                 }
         case "Pizza Time - Pizza King's Quest":
             if world is None or world.options.shuffle_pizza_king:
@@ -576,6 +592,10 @@ def fix_location_deficit(world: YellowTaxiWorld):
             for level in data_loader.original_portal_level_order + data_loader.grannys_island_level_order:
                 if level not in world.included_levels:
                     location_deficit += 3
+
+    # Pizzasanity can remove from the deficit if less than 5 pizza slices are shuffled
+    if world.options.pizzasanity and "Pizza Time" in world.included_levels:
+        location_deficit -= (world.options.pizzasanity_count.value - 5)
 
     # If there are not enough filler items to cover the deficit, we have to eat into gears
     if location_deficit > world.num_filler:

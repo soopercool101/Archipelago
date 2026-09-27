@@ -112,6 +112,7 @@ ITEM_NAME_TO_ID = {
     "Morio's Password": 11_12,
     "Time Trial Remote": 11_17,
     "Progressive Time Trial Remote": 11_18,
+    "Corrupted Pizza Slice": 12_02,
     "Psycho Taxi Cartridge": 20_01,
     "Michele": 20_02,
     # Traps
@@ -276,6 +277,7 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Morio's Password": ItemClassification.progression,
     "Time Trial Remote": ItemClassification.progression,
     "Progressive Time Trial Remote": ItemClassification.progression,
+    "Corrupted Pizza Slice": ItemClassification.progression,
     "Psycho Taxi Cartridge": ItemClassification.filler,
     "Michele": ItemClassification.useful,
 
@@ -542,6 +544,9 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool.append(world.create_item("Time Trial Remote (Pro Tricks!)"))
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
         itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
+
+    if world.options.pizzasanity and "Pizza Time" in world.included_levels:
+        itempool += [world.create_item("Corrupted Pizza Slice") for _ in range(world.options.pizzasanity_count.value)]
 
     # Add included hats
     for hat in sorted(world.included_hats):
