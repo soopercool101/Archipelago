@@ -515,6 +515,8 @@ class YellowTaxiWorld(World):
             "shop_hints",
             "taxi_skin",
             "morio_costume",
+            "randomize_music",
+            "randomize_skyboxes",
             # Only used by UT
             "expert_level",
             "include_out_of_bounds",
@@ -551,6 +553,44 @@ class YellowTaxiWorld(World):
 
         # Start location
         slot_data["lab_start"] = self.lab_start
+
+        # Music rando
+        if self.options.randomize_music.value == self.options.randomize_music.option_consistent:
+            music_order : List[int] = list(range(24))
+            boss_songs : List[int] = [24, 25, 26]
+            #TODO
+            # include title/credits songs
+            if self.options.include_title_and_credits_music:
+                music_order += [27, 28]
+            # combine or split boss/regular pools
+            if self.options.separate_boss_music:
+                self.random.shuffle(music_order)
+                self.random.shuffle(boss_songs)
+                music_order = music_order[:24]
+                music_order.extend(boss_songs)
+            else:
+                music_order += boss_songs
+                self.random.shuffle(music_order)
+                music_order = music_order[:27]
+
+            slot_data["music_order"] = music_order
+        elif self.options.randomize_music.value == self.options.randomize_music.option_random_every_load:
+            # Need this info to determine what to randomize
+            slot_data["include_title_and_credits_music"] = self.options.include_title_and_credits_music
+            slot_data["separate_boss_music"] = self.options.separate_boss_music
+
+        if self.options.randomize_skyboxes == self.options.randomize_skyboxes.option_consistent:
+            skybox_order : List[int] = list(range(18))
+            if not self.options.exclude_boring_skyboxes:
+                skybox_order += [18, 19, 20]
+            self.random.shuffle(skybox_order)
+            if self.options.exclude_boring_skyboxes:
+                # 17 is billiards, which is unused
+                for i in range(3):
+                    skybox_order += [skybox_order[17]]
+            slot_data["skybox_order"] = skybox_order
+        elif self.options.randomize_skyboxes == self.options.randomize_skyboxes.option_random_every_load:
+            slot_data["exclude_boring_skyboxes"] = self.options.exclude_boring_skyboxes
 
         if self.options.trap_link_uses_whitelist:
             slot_data["trap_link_whitelist"] = sorted(self.options.enabled_traps.value)

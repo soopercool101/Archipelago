@@ -869,6 +869,58 @@ class MorioCostume(Choice):
     alias_cupid = option_valentines_day
     alias_valentines = option_valentines_day
 
+class RandomizeMusic(Choice):
+    """
+    Whether (and how) music will be randomized.
+
+    Consistent: Shuffles music, everywhere that plays the same song in vanilla will remain consistent with each other.
+    Random Every Load: Every time a load happens, the music will be determined at complete random.
+    """
+    display_name = "Randomize Music"
+
+    option_off = 0
+    option_consistent = 1
+    option_random_every_load = 2
+    #option_singularity = 3
+
+class IncludeTitleAndCreditsMusic(Toggle):
+    """
+    Whether Randomize Music will include the Title and Credits themes as possible songs.
+
+    Has no effect if Randomize Music is off.
+    """
+    display_name = "Include Title and Credits Music"
+
+class SeparateBossMusic(Toggle):
+    """
+    If enabled, bosses will only play boss themes, and no boss themes will play elsewhere.
+
+    Has no effect if Randomize Music is off.
+    """
+    display_name = "Separate Boss Music"
+
+class RandomizeSkyboxes(Choice):
+    """
+    Whether (and how) skyboxes will be randomized.
+
+    Consistent: Shuffles skyboxes, everywhere with the same skybox in vanilla will remain consistent with each other.
+    Random Every Load: Every time a load happens, the skybox will be determined at complete random.
+    """
+    display_name = "Randomize Skyboxes"
+
+    option_off = 0
+    option_consistent = 1
+    option_random_every_load = 2
+    #option_singularity = 3
+
+class ExcludeBoringSkyboxes(Toggle):
+    """
+    If enabled, Skyboxes consisting of a single color will not be included in the randomization.
+
+    Has no effect if Randomize Skyboxes is off.
+    """
+    display_name = "Exclude Boring Skyboxes"
+
 @dataclass
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
@@ -942,6 +994,11 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
     taxi_skin: TaxiSkin
     morio_costume: MorioCostume
+    randomize_music: RandomizeMusic
+    include_title_and_credits_music: IncludeTitleAndCreditsMusic
+    separate_boss_music: SeparateBossMusic
+    randomize_skyboxes: RandomizeSkyboxes
+    exclude_boring_skyboxes: ExcludeBoringSkyboxes
 
 # If we want to group our options by similar type, we can do so as well. This looks nice on the website.
 option_groups = [
@@ -1037,6 +1094,11 @@ option_groups = [
         [
             TaxiSkin,
             FunnyFaces,
+            RandomizeMusic,
+            IncludeTitleAndCreditsMusic,
+            SeparateBossMusic,
+            RandomizeSkyboxes,
+            ExcludeBoringSkyboxes,
             MorioCostume,
         ],
     ),
