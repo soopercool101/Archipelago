@@ -574,10 +574,11 @@ class YellowTaxiWorld(World):
                 music_order = music_order[:27]
 
             slot_data["music_order"] = music_order
-        elif self.options.randomize_music.value == self.options.randomize_music.option_random_every_load:
+        elif (self.options.randomize_music.value == self.options.randomize_music.option_random_every_load or
+              self.options.randomize_music.value == self.options.randomize_music.option_radio):
             # Need this info to determine what to randomize
-            slot_data["include_title_and_credits_music"] = self.options.include_title_and_credits_music
-            slot_data["separate_boss_music"] = self.options.separate_boss_music
+            slot_data["include_title_and_credits_music"] = self.options.include_title_and_credits_music.value == 1
+            slot_data["separate_boss_music"] = self.options.separate_boss_music.value == 1
 
         if self.options.randomize_skyboxes == self.options.randomize_skyboxes.option_consistent:
             skybox_order : List[int] = list(range(18))
@@ -590,7 +591,7 @@ class YellowTaxiWorld(World):
                     skybox_order += [skybox_order[17]]
             slot_data["skybox_order"] = skybox_order
         elif self.options.randomize_skyboxes == self.options.randomize_skyboxes.option_random_every_load:
-            slot_data["exclude_boring_skyboxes"] = self.options.exclude_boring_skyboxes
+            slot_data["exclude_boring_skyboxes"] = self.options.exclude_boring_skyboxes.value == 1
 
         if self.options.trap_link_uses_whitelist:
             slot_data["trap_link_whitelist"] = sorted(self.options.enabled_traps.value)

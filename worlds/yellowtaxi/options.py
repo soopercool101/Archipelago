@@ -875,6 +875,7 @@ class RandomizeMusic(Choice):
 
     Consistent: Shuffles music, everywhere that plays the same song in vanilla will remain consistent with each other.
     Random Every Load: Every time a load happens, the music will be determined at complete random.
+    Radio: Songs will play until their loop point, at which point the song will change to a valid random one.
     """
     display_name = "Randomize Music"
 
@@ -882,6 +883,7 @@ class RandomizeMusic(Choice):
     option_consistent = 1
     option_random_every_load = 2
     #option_singularity = 3
+    option_radio = -1
 
 class IncludeTitleAndCreditsMusic(Toggle):
     """
