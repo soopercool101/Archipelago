@@ -132,6 +132,7 @@ ITEM_NAME_TO_ID = {
     "Stun Trap": 666_013,
     "Timer Trap": 666_014,
     "Whirlpool Trap": 666_015,
+    "Debug Level Trap": 666_016,
 
     "Progressive Jump (Hub)": 777_00_0_1,
     "Progressive Boost (Hub)": 777_00_0_2,
@@ -357,6 +358,7 @@ TRAPS = [
     "Stun Trap",
     "Timer Trap",
     "Whirlpool Trap",
+    "Debug Level Trap",
 ]
 
 class YellowTaxiItem(Item):
