@@ -797,6 +797,7 @@ class TaxiSkin(Choice):
     option_default_purple = 3
     option_default_red = 4
     option_default_random_every_load = 9
+    option_default_random_every_flip = 1009
 
     option_skeleton = 10
     option_skeleton_green = 11
@@ -805,6 +806,7 @@ class TaxiSkin(Choice):
     option_skeleton_pink = 14
     option_skeleton_light = 15
     option_skeleton_random_every_load = 19
+    option_skeleton_random_every_flip = 1019
 
     option_golden = 20
     option_golden_bright_yellow = 21
@@ -812,6 +814,7 @@ class TaxiSkin(Choice):
     option_golden_light = 23
     option_golden_orange = 24
     option_golden_random_every_load = 29
+    option_golden_random_every_flip = 1029
 
     option_prototype = 30
     option_prototype_yellow = 31
@@ -820,6 +823,16 @@ class TaxiSkin(Choice):
     option_prototype_pink = 34
     option_prototype_red = 35
     option_prototype_random_every_load = 39
+    option_prototype_random_every_flip = 1039
+
+    option_car_blue = 40
+    option_car_green = 41
+    option_car_orange = 42
+    option_car_pink = 43
+    option_car_red = 44
+    option_car_white = 45
+    option_car_random_every_load = 49
+    option_car_random_every_flip = 1049
 
     option_corrupted_car = 50
 
@@ -829,11 +842,19 @@ class TaxiSkin(Choice):
     option_pink_flames = 70
     option_pink_flames_corrupted = 71
 
+    option_police_car = 80
+    option_police_car_corrupted = 81
+
+    option_stars_and_stripes = 90
+
     option_destroyed = 100
+
+    option_city_taxi = 110
 
     option_custom = 1000
 
     option_random_every_load = 999
+    option_random_every_flip = 1999
 
     default = option_default_yellow
     alias_yellow = option_default_yellow
@@ -847,6 +868,7 @@ class TaxiSkin(Choice):
     alias_grannys_car_corrupted_alt = option_pink_flames_corrupted
     alias_random_per_load = option_random_every_load
     alias_fully_random = option_random_every_load
+    alias_chaos = option_random_every_flip
 
 class MorioCostume(Choice):
     """
@@ -868,6 +890,8 @@ class MorioCostume(Choice):
     alias_santa = option_christmas
     alias_cupid = option_valentines_day
     alias_valentines = option_valentines_day
+    alias_random_per_load = option_random_costume_every_load
+    alias_fully_random = option_random_costume_parts_every_load
 
 class RandomizeMusic(Choice):
     """
@@ -884,6 +908,9 @@ class RandomizeMusic(Choice):
     option_random_every_load = 2
     #option_singularity = 3
     option_radio = -1
+
+    alias_random_per_load = option_random_every_load
+    alias_fully_random = option_random_every_load
 
 class IncludeTitleAndCreditsMusic(Toggle):
     """
@@ -914,6 +941,9 @@ class RandomizeSkyboxes(Choice):
     option_consistent = 1
     option_random_every_load = 2
     #option_singularity = 3
+
+    alias_random_per_load = option_random_every_load
+    alias_fully_random = option_random_every_load
 
 class ExcludeBoringSkyboxes(Toggle):
     """
