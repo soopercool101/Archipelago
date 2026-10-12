@@ -233,6 +233,8 @@ class RuleFactory:
                         options=[OptionFilter(ShuffleSpinAttack, ShuffleSpinAttack.option_shuffle)]) |
                     Has("Progressive Spin Attack",
                         options=[OptionFilter(ShuffleSpinAttack, ShuffleSpinAttack.option_progressive)]))
+        if token == "SP2":
+            return Has("Progressive Spin Attack", 2)
         if token == "GS":
             if self.skip_unnecessary_rule_calculations and not self.world.has_golden_spring_access:
                 return False_()
@@ -567,6 +569,12 @@ class RuleFactory:
             if self.world.options.hatsanity != 0:
                 return True_()
             return False_()
+        # Can you pass lasers. TODO: Add actual gating ability here
+        if token == "PassLaser":
+            return True_()
+        # Will Gigamorio always shoot lasers?
+        if token == "Lasers":
+            return True_()
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":

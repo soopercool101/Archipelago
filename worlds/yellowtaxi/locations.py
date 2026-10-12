@@ -500,6 +500,17 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Orange Switch",
                     location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
                 )
+        case "Morio's Mind - Starting Area (Laser Range)":
+            if world is None or world.options.shuffle_morios_password:
+                locations = {
+                    "Morio's Mind - Morio's Password": 12_11_00012,
+                }
+            else:
+                world.get_region(region_name).add_event(
+                    "Event: Morio's Mind - Morio's Password",
+                    "Morio's Password",
+                    location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
+                )
         case "Any Hat World":
             if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
                 locations = {

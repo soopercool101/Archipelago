@@ -294,7 +294,7 @@ class ShuffleOrangeSwitch(DefaultOnToggle):
 
     display_name = "Shuffle Orange Switch"
 
-class ShuffleMoriosPassword(Toggle):
+class ShuffleMoriosPassword(DefaultOnToggle):
     """
     Adds Morio's Password into the item pool and adds a location for obtaining the key in Morio's Mind.
 
