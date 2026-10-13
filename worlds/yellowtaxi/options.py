@@ -838,6 +838,7 @@ class TaxiSkin(Choice):
 
     option_grannys_car = 60
     option_grannys_car_corrupted = 61
+    option_stars_and_stripes = 62
 
     option_pink_flames = 70
     option_pink_flames_corrupted = 71
@@ -845,11 +846,9 @@ class TaxiSkin(Choice):
     option_police_car = 80
     option_police_car_corrupted = 81
 
-    option_stars_and_stripes = 90
+    option_city_taxi = 90
 
     option_destroyed = 100
-
-    option_city_taxi = 110
 
     option_custom = 1000
 
