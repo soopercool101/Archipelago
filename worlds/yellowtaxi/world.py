@@ -558,7 +558,6 @@ class YellowTaxiWorld(World):
         if self.options.randomize_music.value == self.options.randomize_music.option_consistent:
             music_order : List[int] = list(range(24))
             boss_songs : List[int] = [24, 25, 26]
-            #TODO
             # include title/credits songs
             if self.options.include_title_and_credits_music:
                 music_order += [27, 28]
