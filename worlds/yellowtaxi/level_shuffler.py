@@ -160,6 +160,9 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
                 # Don't let 1st portal be Rocket or Psycho Taxi
                 if valid_levels[0] in ["Mosk's Rocket", "Psycho Taxi"]:
                     continue
+                # Don't let Morio's Mind be the first level on Expert 0 (Mind is highly open but *really* hard)
+                if options.expert_level == 0 and valid_levels[0] == "Morio's Mind":
+                    continue
                 # If time trials don't have gears, don't let the first level be a time trial
                 if not options.time_trial_gears and valid_levels[0].endswith("!"):
                     continue
