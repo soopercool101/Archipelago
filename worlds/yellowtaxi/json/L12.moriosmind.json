@@ -16,21 +16,19 @@
     "level": "Morio's Mind",
     "sublevel": "Morio's Mind",
     "gears": {
-      "Morio's Mind - Gear - Left Side Path Midway Point": 120100005,
       "Morio's Mind - Gear - Path Forward From Start": 120100000,
       "Morio's Mind - Gear - Right Side Path Midway Point": 120100007,
-      "Morio's Mind - Gear - Right of Password": 120100008,
       "Morio's Mind - Gear - Left of Password": 120100009,
-      "Morio's Mind - Gear - Behind Laser Walls Above Right Path": 120100006
+      "Morio's Mind - Gear - Behind Laser Walls Above Right Path": 120100006,
+      "Morio's Mind - Gear - Cloud Above Starting Area": 120100001
     },
     "bunnies": {
       "Morio's Mind - Bunny - In Air on Right Path": 120200001,
-      "Morio's Mind - Bunny - Near Password Platform": 120200002
+      "Morio's Mind - Bunny - Near Password Platform": 120200002,
+      "Morio's Mind - Bunny - Lasagna Behind Starting Area": 120200000
     },
     "chests": {
-      "Morio's Mind - Chest on Cloud on Left Path After Midway Point": 120300159,
       "Morio's Mind - Chest on Cloud on Right Path After Midway Point": 120300170,
-      "Morio's Mind - Chest on Inner Left Lower Cloud Path": 120300228,
       "Morio's Mind - Chest on Inner Right Lower Cloud Path": 120300194
     },
     "coins": {
@@ -44,34 +42,6 @@
       "Morio's Mind - Coin on Path Left of Start #8": 120300023,
       "Morio's Mind - Coin on Path Left of Start #9": 120300024,
       "Morio's Mind - Coin on Path Left of Start #10": 120300025,
-      "Morio's Mind - Coin on Path Left of Start #33": 120300141,
-      "Morio's Mind - Coin on Path Left of Start #34": 120300142,
-      "Morio's Mind - Coin on Path Left of Start #35": 120300143,
-      "Morio's Mind - Coin on Path Left of Start #36": 120300144,
-      "Morio's Mind - Coin on Path Left of Start #37": 120300145,
-      "Morio's Mind - Coin on Path Left of Start #38": 120300146,
-      "Morio's Mind - Coin on Path Left of Start #39": 120300147,
-      "Morio's Mind - Coin on Path Left of Start #40": 120300148,
-      "Morio's Mind - Coin on Path Left of Start #41": 120300149,
-      "Morio's Mind - Coin on Path Left of Start #42": 120300150,
-      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #1": 120300151,
-      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #2": 120300192,
-      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #3": 120300223,
-      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #4": 120300241,
-      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #5": 120300244,
-      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #1": 120300246,
-      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #2": 120300270,
-      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #3": 120300272,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #1": 120300154,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #2": 120300157,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #3": 120300160,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #4": 120300156,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #5": 120300163,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #6": 120300155,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #7": 120300162,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #8": 120300158,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #9": 120300161,
-      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #10": 120300164,
       "Morio's Mind - Coin on Path Forward From Start #1": 120300031,
       "Morio's Mind - Coin on Path Forward From Start #2": 120300032,
       "Morio's Mind - Coin on Path Forward From Start #3": 120300033,
@@ -203,42 +173,6 @@
       "Morio's Mind - Coin on Cloud on Right Path After Midway Point #8": 120300171,
       "Morio's Mind - Coin on Cloud on Right Path After Midway Point #9": 120300175,
       "Morio's Mind - Coin on Cloud on Right Path After Midway Point #10": 120300172,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #1": 120300239,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #2": 120300238,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #3": 120300237,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #4": 120300236,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #5": 120300235,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #6": 120300234,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #7": 120300233,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #8": 120300232,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #9": 120300231,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #10": 120300230,
-      "Morio's Mind - Coin on Inner Left Lower Cloud Path #11": 120300229,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #1": 120300249,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #2": 120300251,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #3": 120300253,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #4": 120300255,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #5": 120300257,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #6": 120300259,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #7": 120300261,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #8": 120300263,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #9": 120300265,
-      "Morio's Mind - Coin on Inner Left Middle Cloud Path #10": 120300267,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #1": 120300321,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #2": 120300320,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #3": 120300319,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #4": 120300318,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #5": 120300317,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #6": 120300316,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #7": 120300315,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #8": 120300314,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #9": 120300313,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #10": 120300312,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #11": 120300311,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #12": 120300310,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #13": 120300309,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #14": 120300308,
-      "Morio's Mind - Coin on Cloud Platform Right of Password #15": 120300307,
       "Morio's Mind - Coin on Inner Right Lower Cloud Path #1": 120300209,
       "Morio's Mind - Coin on Inner Right Lower Cloud Path #2": 120300208,
       "Morio's Mind - Coin on Inner Right Lower Cloud Path #3": 120300207,
@@ -277,16 +211,13 @@
       "Morio's Mind - Coin on Beds Left of Password #12": 120300326
     },
     "checkpoints": {
-      "Morio's Mind - Checkpoint on Left Side Path Midway Point": 120900285,
       "Morio's Mind - Checkpoint on Right Side Path Midway Point": 120900170
     },
     "cheeses": {
-      "Morio's Mind - Cheese on Left Side Path Midway Point": 122100000,
       "Morio's Mind - Cheese on Path Forward From Start": 122100002,
       "Morio's Mind - Cheese on Right Side Path Midway Point": 122100001
     },
     "hats": {
-      "Morio's Brain Hat": 120700028,
       "Heart Hat": 120700029
     },
     "connections": {
@@ -294,37 +225,14 @@
       "Morio's Mind - High Ground Near Start": "J2 | X1 & J1/B1",
       "Morio's Mind - Outside Dreaming Entrance": "",
       "Morio's Mind - Left Path Higher Ground": "B1 | X1+J1",
-      "Morio's Mind - Above Starting Area": "X1+B1 & X2/J1 | B2 & J1/X1",
-      "Morio's Mind - Right Path Highest Ground": "B2 | X1+B1 & X2/J1",
+      "Morio's Mind - Right Path Highest Ground": "B2 | X1+B1 & X2/J1 | X2+J2",
       "Morio's Mind - TVs": "X1/PMJ/PMB"
     },
     "specialrules": {
       "Morio's Mind - Bunny - In Air on Right Path": "B1 | X2+J1",
-      "Morio's Mind - Bunny - Near Password Platform": "B1/J1",
-      "Morio's Mind - Gear - Behind Laser Walls Above Right Path": "B1 & X1/Lasers/J1/SP2 | X1+J2"
-    }
-  },
-  "Morio's Mind - High Ground Near Start": {
-    "level": "Morio's Mind",
-    "sublevel": "Morio's Mind",
-    "safes": {
-      "Morio's Mind - Safe on Cloud Near Starting Area": 120300122
-    },
-    "coinbags": {
-      "Morio's Mind - Coin Bag on Left Starting Area Wall #1": 120300191,
-      "Morio's Mind - Coin Bag on Left Starting Area Wall #2": 120300189,
-      "Morio's Mind - Coin Bag on Right Starting Area Wall #1": 120300188,
-      "Morio's Mind - Coin Bag on Right Starting Area Wall #2": 120300186
-    }
-  },
-  "Morio's Mind - Above Starting Area": {
-    "level": "Morio's Mind",
-    "sublevel": "Morio's Mind",
-    "gears": {
-      "Morio's Mind - Gear - Cloud Above Starting Area": 120100001
-    },
-    "bunnies": {
-      "Morio's Mind - Bunny - Lasagna Behind Starting Area": 120200000
+      "Morio's Mind - Bunny - Near Password Platform": "X3/B1/J1",
+      "Morio's Mind - Gear - Behind Laser Walls Above Right Path": "X1/B1 & Lasers/J1/SP2 | X1+B1",
+      "Morio's Mind - Gear - Cloud Above Starting Area": "X1+B1 & X2/J1 | B2 & J1/X1 | X2+J2 | X3+J1"
     }
   },
   "Morio's Mind - Left Path Higher Ground": {
@@ -355,7 +263,8 @@
       "Morio's Mind - Coin on Path Left of Start #32": 120300222
     },
     "connections": {
-      "Morio's Mind - Left Path Highest Ground": "B2 & X1/J1 | X1+B1+J1"
+      "Morio's Mind - Left Path Highest Ground": "B2 & X1/J1 | X1+B1 & X3/J1",
+      "Morio's Mind - Left Path": ""
     }
   },
   "Morio's Mind - Left Path Highest Ground": {
@@ -373,6 +282,106 @@
       "Morio's Mind - Coin on High Path Left of Start #6": 120300288,
       "Morio's Mind - Coin on High Path Left of Start #7": 120300287,
       "Morio's Mind - Coin on High Path Left of Start #8": 120300286
+    }
+  },
+  "Morio's Mind - Left Path": {
+    "level": "Morio's Mind",
+    "sublevel": "Morio's Mind",
+    "gears": {
+      "Morio's Mind - Gear - Left Side Path Midway Point": 120100005,
+      "Morio's Mind - Gear - Right of Password": 120100008
+    },
+    "chests": {
+      "Morio's Mind - Chest on Cloud on Left Path After Midway Point": 120300159,
+      "Morio's Mind - Chest on Inner Left Lower Cloud Path": 120300228
+    },
+    "coins": {
+      "Morio's Mind - Coin on Path Left of Start #33": 120300141,
+      "Morio's Mind - Coin on Path Left of Start #34": 120300142,
+      "Morio's Mind - Coin on Path Left of Start #35": 120300143,
+      "Morio's Mind - Coin on Path Left of Start #36": 120300144,
+      "Morio's Mind - Coin on Path Left of Start #37": 120300145,
+      "Morio's Mind - Coin on Path Left of Start #38": 120300146,
+      "Morio's Mind - Coin on Path Left of Start #39": 120300147,
+      "Morio's Mind - Coin on Path Left of Start #40": 120300148,
+      "Morio's Mind - Coin on Path Left of Start #41": 120300149,
+      "Morio's Mind - Coin on Path Left of Start #42": 120300150,
+      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #1": 120300151,
+      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #2": 120300192,
+      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #3": 120300223,
+      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #4": 120300241,
+      "Morio's Mind - Coin on Left Side Path Midway Point Ramp to Inner Ring #5": 120300244,
+      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #1": 120300246,
+      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #2": 120300270,
+      "Morio's Mind - Coin on Bed Near Left Side Path Midway Point #3": 120300272,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #1": 120300154,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #2": 120300157,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #3": 120300160,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #4": 120300156,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #5": 120300163,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #6": 120300155,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #7": 120300162,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #8": 120300158,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #9": 120300161,
+      "Morio's Mind - Coin on Cloud on Left Path After Midway Point #10": 120300164,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #1": 120300239,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #2": 120300238,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #3": 120300237,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #4": 120300236,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #5": 120300235,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #6": 120300234,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #7": 120300233,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #8": 120300232,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #9": 120300231,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #10": 120300230,
+      "Morio's Mind - Coin on Inner Left Lower Cloud Path #11": 120300229,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #1": 120300249,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #2": 120300251,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #3": 120300253,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #4": 120300255,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #5": 120300257,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #6": 120300259,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #7": 120300261,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #8": 120300263,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #9": 120300265,
+      "Morio's Mind - Coin on Inner Left Middle Cloud Path #10": 120300267,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #1": 120300321,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #2": 120300320,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #3": 120300319,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #4": 120300318,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #5": 120300317,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #6": 120300316,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #7": 120300315,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #8": 120300314,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #9": 120300313,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #10": 120300312,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #11": 120300311,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #12": 120300310,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #13": 120300309,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #14": 120300308,
+      "Morio's Mind - Coin on Cloud Platform Right of Password #15": 120300307
+    },
+    "checkpoints": {
+      "Morio's Mind - Checkpoint on Left Side Path Midway Point": 120900285
+    },
+    "cheeses": {
+      "Morio's Mind - Cheese on Left Side Path Midway Point": 122100000
+    },
+    "hats": {
+      "Morio's Brain Hat": 120700028
+    }
+  },
+  "Morio's Mind - High Ground Near Start": {
+    "level": "Morio's Mind",
+    "sublevel": "Morio's Mind",
+    "safes": {
+      "Morio's Mind - Safe on Cloud Near Starting Area": 120300122
+    },
+    "coinbags": {
+      "Morio's Mind - Coin Bag on Left Starting Area Wall #1": 120300191,
+      "Morio's Mind - Coin Bag on Left Starting Area Wall #2": 120300189,
+      "Morio's Mind - Coin Bag on Right Starting Area Wall #1": 120300188,
+      "Morio's Mind - Coin Bag on Right Starting Area Wall #2": 120300186
     }
   },
   "Morio's Mind - Right Path Highest Ground": {
@@ -421,7 +430,8 @@
       "Morio's Mind - Cheese Near Dreaming Pipe": 122100003
     },
     "connections": {
-      "Morio's Mind - Starting Area (Laser Range)": "PassLaser"
+      "Morio's Mind - Starting Area (Laser Range)": "PassLaser",
+      "Morio's Mind - Left Path": "X1+PassLaser"
     },
     "subwarps": {
       "Morio's Mind - Dreaming Pipe": ["Dreaming", ""]
