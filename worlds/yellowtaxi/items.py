@@ -5,6 +5,7 @@ from typing import TYPE_CHECKING, List
 
 from BaseClasses import Item, ItemClassification
 from . import data_loader
+from .names import ItemNames
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -32,59 +33,59 @@ ITEM_NAME_TO_ID = {
     "25 Coins": 5,
     "100 Coins": 6,
     # Hats reserve 7_00
-    "No Hat": 7_00,
-    "Propeller Cap": 7_01,
-    "Top Hat": 7_02,
-    "Morio Hat": 7_03,
-    "Taxi Stack Hat": 7_04,
-    "Bomb Hat": 7_05,
-    "Drink Hat": 7_06,
-    "Chef Hat": 7_07,
-    "Spaghetti Hat": 7_08,
-    "Pot Hat": 7_09,
-    "Lasagna Hat": 7_10,
-    "Joystick Hat": 7_11,
-    "Slot Machine Hat": 7_12,
-    "Gelatin Hat": 7_13,
-    "Mug Hat": 7_14,
-    "Tosla Employee Hat": 7_15,
-    "Flexing Hat": 7_16,
-    "Syringe Hat": 7_17,
-    "Poop Hat": 7_18,
-    "Dog Bowl Hat": 7_19,
-    "Toilet Hat": 7_20,
-    "Bone Fish Hat": 7_21,
-    "Spoiler": 7_22,
-    "Police Lights": 7_23,
-    "Captain Abs-urd Hat": 7_24,
-    "Roid-Man Hat": 7_25,
-    "Buzzsaw Hat": 7_26,
-    "Crusher Hat": 7_27,
-    "Morio's Brain Hat": 7_28,
-    "Heart Hat": 7_29,
-    "Moon Globe Hat": 7_30,
-    "Tower Hat": 7_31,
-    "Alien Mosk (Evil) Hat": 7_32,
-    "Skeleton Taxi Skin": 7_33,
-    "Golden Taxi Skin": 7_34,
-    "Orbit Hat": 7_35,
-    "Satellite Dish Hat": 7_36,
-    "Alien Mosk (Good) Hat": 7_37,
-    "Crash Test Dummy Hat": 7_38,
-    "Dentures Hat": 7_39,
-    "Mushroom Cloud Hat": 7_40,
-    "Gym Bros Hat": 7_41,
-    "Banana Hat": 7_42,
-    "Bunny Hat": 7_43,
-    "Inception Top Hat": 7_44,
-    "Pizza Man Hat": 7_45,
-    "Toilet Paper Hat": 7_46,
-    "Pod Hat": 7_47,
-    "Paper Boat Hat": 7_48,
-    "Prototype Taxi Skin": 7_49,
-    "Glitched Taxi Skin": 7_50,
-    "TV Hat": 7_51,
-    "Burger Hat": 7_52,
+    ItemNames.no_hat: 7_00,
+    ItemNames.propeller_cap: 7_01,
+    ItemNames.top_hat: 7_02,
+    ItemNames.morio_hat: 7_03,
+    ItemNames.taxi_stack_hat: 7_04,
+    ItemNames.bomb_hat: 7_05,
+    ItemNames.drink_hat: 7_06,
+    ItemNames.chef_hat: 7_07,
+    ItemNames.spaghetti_hat: 7_08,
+    ItemNames.pot_hat: 7_09,
+    ItemNames.lasagna_hat: 7_10,
+    ItemNames.joystick_hat: 7_11,
+    ItemNames.slot_machine_hat: 7_12,
+    ItemNames.gelatin_hat: 7_13,
+    ItemNames.mug_hat: 7_14,
+    ItemNames.tosla_employee_hat: 7_15,
+    ItemNames.flexing_hat: 7_16,
+    ItemNames.syringe_hat: 7_17,
+    ItemNames.poop_hat: 7_18,
+    ItemNames.dog_bowl_hat: 7_19,
+    ItemNames.toilet_hat: 7_20,
+    ItemNames.bone_fish_hat: 7_21,
+    ItemNames.spoiler: 7_22,
+    ItemNames.police_lights: 7_23,
+    ItemNames.captain_absurd_hat: 7_24,
+    ItemNames.roidman_hat: 7_25,
+    ItemNames.buzzsaw_hat: 7_26,
+    ItemNames.crusher_hat: 7_27,
+    ItemNames.morios_brain_hat: 7_28,
+    ItemNames.heart_hat: 7_29,
+    ItemNames.moon_globe_hat: 7_30,
+    ItemNames.tower_hat: 7_31,
+    ItemNames.alien_mosk_evil_hat: 7_32,
+    ItemNames.skeleton_taxi_skin: 7_33,
+    ItemNames.golden_taxi_skin: 7_34,
+    ItemNames.orbit_hat: 7_35,
+    ItemNames.satellite_dish_hat: 7_36,
+    ItemNames.alien_mosk_good_hat: 7_37,
+    ItemNames.crash_test_dummy_hat: 7_38,
+    ItemNames.dentures_hat: 7_39,
+    ItemNames.mushroom_cloud_hat: 7_40,
+    ItemNames.gym_bros_hat: 7_41,
+    ItemNames.banana_hat: 7_42,
+    ItemNames.bunny_hat: 7_43,
+    ItemNames.inception_top_hat: 7_44,
+    ItemNames.pizza_man_hat: 7_45,
+    ItemNames.toilet_paper_hat: 7_46,
+    ItemNames.pod_hat: 7_47,
+    ItemNames.paper_boat_hat: 7_48,
+    ItemNames.prototype_taxi_skin: 7_49,
+    ItemNames.glitched_taxi_skin: 7_50,
+    ItemNames.tv_hat: 7_51,
+    ItemNames.burger_hat: 7_52,
     #"Flip-O-Will": 8_0_0, # Not actually adding this at the moment, not interesting standalone
     "Progressive Jump": 8_0_1,
     "Progressive Boost": 8_0_2,
@@ -99,6 +100,7 @@ ITEM_NAME_TO_ID = {
     "Gym Membership": 10_06,
     "Doggo": 10_07,
     "Sewer Key": 10_08,
+    "Dream Machine": 10_12,
     "Mosk's Rocket": 10_16,
     "Time Trial Remote (Baby Steps!)": 10_17,
     "Time Trial Remote (Getting Gud!)": 10_18,
@@ -193,64 +195,10 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Bunny (Ruined Observatory)": ItemClassification.progression_deprioritized,
     "Bunny (Tosla HQ)": ItemClassification.progression_deprioritized,
     "Bunny (The Moon)": ItemClassification.progression_deprioritized,
-    "1 Coin": ItemClassification.filler,
-    "10 Coins": ItemClassification.filler,
-    "25 Coins": ItemClassification.filler,
-    "100 Coins": ItemClassification.filler,
     # Hats reserve 7_00
-    "No Hat": ItemClassification.filler,
-    "Propeller Cap": ItemClassification.filler,
-    "Top Hat": ItemClassification.filler,
-    "Morio Hat": ItemClassification.progression,
-    "Taxi Stack Hat": ItemClassification.filler,
-    "Bomb Hat": ItemClassification.filler,
-    "Drink Hat": ItemClassification.filler,
-    "Chef Hat": ItemClassification.filler,
-    "Spaghetti Hat": ItemClassification.filler,
-    "Pot Hat": ItemClassification.filler,
-    "Lasagna Hat": ItemClassification.filler,
-    "Joystick Hat": ItemClassification.filler,
-    "Slot Machine Hat": ItemClassification.filler,
-    "Gelatin Hat": ItemClassification.filler,
-    "Mug Hat": ItemClassification.filler,
-    "Tosla Employee Hat": ItemClassification.filler,
-    "Flexing Hat": ItemClassification.filler,
-    "Syringe Hat": ItemClassification.filler,
-    "Poop Hat": ItemClassification.filler,
-    "Dog Bowl Hat": ItemClassification.filler,
-    "Toilet Hat": ItemClassification.filler,
-    "Bone Fish Hat": ItemClassification.filler,
-    "Spoiler": ItemClassification.filler,
-    "Police Lights": ItemClassification.filler,
-    "Captain Abs-urd Hat": ItemClassification.filler,
-    "Roid-Man Hat": ItemClassification.filler,
-    "Buzzsaw Hat": ItemClassification.filler,
-    "Crusher Hat": ItemClassification.filler,
-    "Morio's Brain Hat": ItemClassification.progression,
-    "Heart Hat": ItemClassification.filler,
-    "Moon Globe Hat": ItemClassification.filler,
-    "Tower Hat": ItemClassification.filler,
-    "Alien Mosk (Evil) Hat": ItemClassification.filler,
-    "Skeleton Taxi Skin": ItemClassification.filler,
-    "Golden Taxi Skin": ItemClassification.filler,
-    "Orbit Hat": ItemClassification.filler,
-    "Satellite Dish Hat": ItemClassification.filler,
-    "Alien Mosk (Good) Hat": ItemClassification.filler,
-    "Crash Test Dummy Hat": ItemClassification.filler,
-    "Dentures Hat": ItemClassification.filler,
-    "Mushroom Cloud Hat": ItemClassification.filler,
-    "Gym Bros Hat": ItemClassification.filler,
-    "Banana Hat": ItemClassification.filler,
-    "Bunny Hat": ItemClassification.filler,
-    "Inception Top Hat": ItemClassification.filler,
-    "Pizza Man Hat": ItemClassification.filler,
-    "Toilet Paper Hat": ItemClassification.filler,
-    "Pod Hat": ItemClassification.filler,
-    "Paper Boat Hat": ItemClassification.filler,
-    "Prototype Taxi Skin": ItemClassification.filler,
-    "Glitched Taxi Skin": ItemClassification.filler,
-    "TV Hat": ItemClassification.filler,
-    "Burger Hat": ItemClassification.trap,
+    ItemNames.morio_hat: ItemClassification.progression,
+    ItemNames.morios_brain_hat: ItemClassification.progression,
+    ItemNames.burger_hat: ItemClassification.trap,
     "Flip-O-Will": ItemClassification.progression | ItemClassification.useful,
     "Progressive Jump": ItemClassification.progression | ItemClassification.useful,
     "Progressive Boost": ItemClassification.progression | ItemClassification.useful,
@@ -260,11 +208,11 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "World Map Unlock": ItemClassification.useful,
     "Golden Spring Blueprints": ItemClassification.progression | ItemClassification.useful,
     "Golden Propeller Blueprints": ItemClassification.progression | ItemClassification.useful,
-    "Pizza Wheels": ItemClassification.filler,
     "Lab Key": ItemClassification.progression,
     "Gym Membership": ItemClassification.progression,
     "Doggo": ItemClassification.progression,
     "Sewer Key": ItemClassification.progression,
+    "Dream Machine": ItemClassification.progression,
     "Mosk's Rocket": ItemClassification.progression,
     "Time Trial Remote (Baby Steps!)": ItemClassification.progression,
     "Time Trial Remote (Getting Gud!)": ItemClassification.progression,
@@ -279,7 +227,6 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Time Trial Remote": ItemClassification.progression,
     "Progressive Time Trial Remote": ItemClassification.progression,
     "Corrupted Pizza Slice": ItemClassification.progression,
-    "Psycho Taxi Cartridge": ItemClassification.filler,
     "Michele": ItemClassification.useful,
 
     # Universal Tracker Only
@@ -287,58 +234,59 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
 }
 
 HATS = [
-    "Propeller Cap",
-    "Top Hat",
-    "Morio Hat",
-    "Taxi Stack Hat",
-    "Bomb Hat",
-    "Drink Hat",
-    "Chef Hat",
-    "Spaghetti Hat",
-    "Pot Hat",
-    "Lasagna Hat",
-    "Joystick Hat",
-    "Slot Machine Hat",
-    "Gelatin Hat",
-    "Mug Hat",
-    "Tosla Employee Hat",
-    "Flexing Hat",
-    "Syringe Hat",
-    "Poop Hat",
-    "Dog Bowl Hat",
-    "Toilet Hat",
-    "Bone Fish Hat",
-    "Spoiler",
-    "Police Lights",
-    "Captain Abs-urd Hat",
-    "Roid-Man Hat",
-    "Buzzsaw Hat",
-    "Crusher Hat",
-    "Morio's Brain Hat",
-    "Heart Hat",
-    "Moon Globe Hat",
-    "Tower Hat",
-    "Alien Mosk (Evil) Hat",
-    "Skeleton Taxi Skin",
-    "Golden Taxi Skin",
-    "Orbit Hat",
-    "Satellite Dish Hat",
-    "Alien Mosk (Good) Hat",
-    "Crash Test Dummy Hat",
-    "Dentures Hat",
-    "Mushroom Cloud Hat",
-    "Gym Bros Hat",
-    "Banana Hat",
-    "Bunny Hat",
-    "Inception Top Hat",
-    "Pizza Man Hat",
-    "Toilet Paper Hat",
-    "Pod Hat",
-    "Paper Boat Hat",
-    "Prototype Taxi Skin",
-    "Glitched Taxi Skin",
-    "TV Hat",
-    "Burger Hat"
+    ItemNames.no_hat,
+    ItemNames.propeller_cap,
+    ItemNames.top_hat,
+    ItemNames.morio_hat,
+    ItemNames.taxi_stack_hat,
+    ItemNames.bomb_hat,
+    ItemNames.drink_hat,
+    ItemNames.chef_hat,
+    ItemNames.spaghetti_hat,
+    ItemNames.pot_hat,
+    ItemNames.lasagna_hat,
+    ItemNames.joystick_hat,
+    ItemNames.slot_machine_hat,
+    ItemNames.gelatin_hat,
+    ItemNames.mug_hat,
+    ItemNames.tosla_employee_hat,
+    ItemNames.flexing_hat,
+    ItemNames.syringe_hat,
+    ItemNames.poop_hat,
+    ItemNames.dog_bowl_hat,
+    ItemNames.toilet_hat,
+    ItemNames.bone_fish_hat,
+    ItemNames.spoiler,
+    ItemNames.police_lights,
+    ItemNames.captain_absurd_hat,
+    ItemNames.roidman_hat,
+    ItemNames.buzzsaw_hat,
+    ItemNames.crusher_hat,
+    ItemNames.morios_brain_hat,
+    ItemNames.heart_hat,
+    ItemNames.moon_globe_hat,
+    ItemNames.tower_hat,
+    ItemNames.alien_mosk_evil_hat,
+    ItemNames.skeleton_taxi_skin,
+    ItemNames.golden_taxi_skin,
+    ItemNames.orbit_hat,
+    ItemNames.satellite_dish_hat,
+    ItemNames.alien_mosk_good_hat,
+    ItemNames.crash_test_dummy_hat,
+    ItemNames.dentures_hat,
+    ItemNames.mushroom_cloud_hat,
+    ItemNames.gym_bros_hat,
+    ItemNames.banana_hat,
+    ItemNames.bunny_hat,
+    ItemNames.inception_top_hat,
+    ItemNames.pizza_man_hat,
+    ItemNames.toilet_paper_hat,
+    ItemNames.pod_hat,
+    ItemNames.paper_boat_hat,
+    ItemNames.prototype_taxi_skin,
+    ItemNames.glitched_taxi_skin,
+    ItemNames.tv_hat,
+    ItemNames.burger_hat,
 ]
 
 TRAPS = [
@@ -405,8 +353,10 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
         classification = ItemClassification.trap
     elif "Jump (" in name or "Boost (" in name:
         classification = ItemClassification.progression | ItemClassification.useful
-    else:
+    elif name in DEFAULT_ITEM_CLASSIFICATIONS:
         classification = DEFAULT_ITEM_CLASSIFICATIONS[name]
+    else:
+        classification = ItemClassification.filler
 
     # Don't skip balancing on required gears
     #if name == "Gear" and world.required_gears > 0:
@@ -417,12 +367,12 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     if name == "Michele" and world.options.cheesesanity:
         classification = ItemClassification.progression
 
-    if (name == "Police Lights" and
+    if (name == ItemNames.police_lights and
             ("Maurizio's City" in world.included_levels or "Maurizio's City" in world.goal_levels)):
         classification = ItemClassification.useful  # Makes cop cars not attack you
-    if (name == "Alien Mosk (Good) Hat" or name == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
+    if (name == ItemNames.alien_mosk_good_hat or name == ItemNames.bunny_hat) and "Ruined Observatory" in world.included_levels:
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
-    if name == "Tosla Employee Hat" and "Tosla's Offices" in world.included_levels:
+    if name == ItemNames.tosla_employee_hat and "Tosla's Offices" in world.included_levels:
         classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices
 
     if name == "Psycho Taxi Cartridge" and world.options.shuffle_psycho_taxi_entrance:
@@ -481,6 +431,11 @@ def create_all_items(world: YellowTaxiWorld) -> None:
 
     if world.options.rocket_unlock_condition == world.options.rocket_unlock_condition.option_shuffle_rocket:
         itempool.append(world.create_item("Mosk's Rocket"))
+
+    if (world.options.dream_machine_unlock_condition ==
+            world.options.dream_machine_unlock_condition.option_shuffle_dream_machine
+            and not "Morio's Lab - Dream Machine" in world.excluded_regions):
+        itempool.append(world.create_item("Dream Machine"))
 
     if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_global:
         itempool += [world.create_item("Progressive Boost") for _ in range(2)]
@@ -557,7 +512,7 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     # Create filler
     if world.using_ut:
         # Make one of everything for UT. No RNG to prevent item creation failures.
-        itempool += [world.create_item("No Hat")]
+        itempool += [world.create_item(ItemNames.no_hat)]
         for hat in HATS:
             if hat not in world.included_hats:
                 itempool.append(world.create_item(hat))
@@ -589,17 +544,17 @@ def create_all_items(world: YellowTaxiWorld) -> None:
             # If funny faces is enabled, special handling is performed for the TV Hat
             if world.options.funny_faces != "":
                 if extra_hats > 0 and world.options.hatsanity == world.options.hatsanity.option_shopsanity:
-                    itempool.append(world.create_item("No Hat"))
+                    itempool.append(world.create_item(ItemNames.no_hat))
                     extra_hats -= 1
                     needed_number_of_filler_items -= 1
-                world.included_hats.add("TV Hat") # TV Hat is always available when funny faces is enabled. Handled specially.
+                world.included_hats.add(ItemNames.tv_hat) # TV Hat is always available when funny faces is enabled. Handled specially.
 
             # Next, add "Alien Mosk (Good)" hat, which has a minor in-game use (allows access to a ruined observatory area, no checks in it though)
-            if extra_hats > 0 and "Ruined Observatory" in world.included_levels and "Alien Mosk (Good) Hat" not in world.included_hats:
-                itempool.append(world.create_item("Alien Mosk (Good) Hat"))
+            if extra_hats > 0 and "Ruined Observatory" in world.included_levels and ItemNames.alien_mosk_good_hat not in world.included_hats:
+                itempool.append(world.create_item(ItemNames.alien_mosk_good_hat))
                 extra_hats -= 1
                 needed_number_of_filler_items -= 1
-                world.included_hats.add("Alien Mosk (Good) Hat")
+                world.included_hats.add(ItemNames.alien_mosk_good_hat)
 
             # Now add random hats as needed
             if extra_hats > 0:

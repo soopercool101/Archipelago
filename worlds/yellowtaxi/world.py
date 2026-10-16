@@ -362,6 +362,8 @@ class YellowTaxiWorld(World):
                 self.early_golden_propeller = True
             if self.options.shuffle_morios_password and not "Morio's Mind" in self.included_levels:
                 self.early_morios_password = True
+            elif self.level_order[7] == "Excluded":
+                self.excluded_regions += ["Morio's Lab - Dream Machine"]
             if self.options.rocket_unlock_condition.value == self.options.rocket_unlock_condition.option_shuffle_rocket:
                 self.early_rocket = True
             if "Morio's Lab - Fourth Floor Spiky Bunny Alcove" in self.excluded_regions:
@@ -488,6 +490,7 @@ class YellowTaxiWorld(World):
             "shuffle_full_game",
             "demo_portal_mode",
             "shuffle_rat",
+            "dream_machine_unlock_condition",
             "gym_gears_unlock_condition",
             "fecal_matters_unlock_condition",
             "flushed_away_unlock_condition",

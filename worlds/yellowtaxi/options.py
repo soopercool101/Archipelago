@@ -222,6 +222,27 @@ class PsychoTaxiUnlockCondition(Choice):
     alias_unlocked = option_open
     alias_off = option_exclude
 
+class DreamMachineUnlockCondition(Choice):
+    """
+    How Morio's Dream Machine is unlocked.
+    If Morio's Password is not shuffled and Remove Post-Goal Portals has removed the Morio's Mind Portal, the dream machine will always be disabled.
+
+    Open: The Dream Machine can be activated as soon as it is reached.
+    Full Game: The Dream Machine can be activated after receiving Full Game Unlock. Same as Open if Shuffle Full Game is off.
+    Shuffle Dream Machine: Adds the Dream Machine into the item pool and adds a location for talking to Morio in Morio's Mind if Morio's Mind is an included level.
+    """
+    display_name = "Dream Machine Unlock Condition"
+
+    option_open = 0
+    option_full_game = 1
+    option_shuffle_dream_machine = 2
+    #option_exclude = 3
+
+    default = option_full_game
+    alias_vanilla = option_full_game
+    alias_unlocked = option_open
+    alias_locked = option_shuffle_dream_machine
+
 class MoskRocketUnlockCondition(Choice):
     """
     How Mosk's Rocket is unlocked.
@@ -971,6 +992,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     locked_morios_wardrobe: LockedMoriosWardrobe
     locked_time_trials: LockedTimeTrials
     psycho_taxi_unlock_condition: PsychoTaxiUnlockCondition
+    dream_machine_unlock_condition: DreamMachineUnlockCondition
     gym_gears_unlock_condition: GymGearsUnlockCondition
     fecal_matters_unlock_condition: FecalMattersUnlockCondition
     flushed_away_unlock_condition: FlushedAwayUnlockCondition
@@ -1063,6 +1085,7 @@ option_groups = [
             LockedMoriosWardrobe,
             LockedTimeTrials,
             PsychoTaxiUnlockCondition,
+            DreamMachineUnlockCondition,
             GymGearsUnlockCondition,
             FecalMattersUnlockCondition,
             FlushedAwayUnlockCondition,

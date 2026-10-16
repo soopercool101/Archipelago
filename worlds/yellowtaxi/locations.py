@@ -500,6 +500,13 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                     "Orange Switch",
                     location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
                 )
+        case "Morio's Mind - Starting Area":
+            if (world is None or
+                    world.options.dream_machine_unlock_condition ==
+                    world.options.dream_machine_unlock_condition.option_shuffle_dream_machine):
+                locations = {
+                    "Morio's Mind - Talk to Morio": 12_10_00012,
+                }
         case "Morio's Mind - Starting Area (Laser Range)":
             if world is None or world.options.shuffle_morios_password:
                 locations = {
@@ -539,6 +546,16 @@ def fix_location_deficit(world: YellowTaxiWorld):
     if (world.options.shuffle_flip_o_will.value != world.options.shuffle_flip_o_will.option_off and
             "Morio's Home" not in world.included_levels):
         location_deficit += 1
+
+    if (world.options.dream_machine_unlock_condition ==
+            world.options.dream_machine_unlock_condition.option_shuffle_dream_machine):
+        # This option creates a location in mind. If Mind is included but no reason to include dream machine, -1
+        if "Morio's Mind" in world.included_levels and "Morio's Lab - Dream Machine" in world.excluded_regions:
+            location_deficit -= 1
+        # If mind is not included, but Dream Machine is, +1
+        elif ("Morio's Mind" not in world.included_levels and
+              "Morio's Lab - Dream Machine" not in world.excluded_regions):
+            location_deficit += 1
 
     if world.options.shuffle_flip_o_will.value == world.options.shuffle_flip_o_will.option_per_level:
         created_time_trial_moves : bool = False

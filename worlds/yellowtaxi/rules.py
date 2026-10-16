@@ -15,12 +15,8 @@ from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide, IncludeOutOfBou
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
 
-
 def set_all_rules(world: YellowTaxiWorld) -> None:
-    # In order for AP to generate an item layout that is actually possible for the player to complete,
-    # we need to define rules for our Entrances and Locations.
-    # Note: Regions do not have rules, the Entrances connecting them do!
-    # We'll do entrances first, then locations, and then finally we set our victory condition.
+    # Uses a factory to load rules from the json
     rf = RuleFactory(world)
     set_all_entrance_location_rules(world, rf)
     set_completion_condition(world)
@@ -389,11 +385,8 @@ class RuleFactory:
                         options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
                         filtered_resolution=True))
         if token == "PortalMoriosMind":
-            if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
-                return True_()
-            return Has("Full Game Unlock",
-                        options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
-                        filtered_resolution=True)
+            # Morio's Mind Portal is locked only behind Dream Machine
+            return True_()
         if token == "PortalRuinedObservatory":
             if self.world.options.demo_portal_mode == self.world.options.demo_portal_mode.option_open:
                 return True_()
@@ -505,6 +498,16 @@ class RuleFactory:
                     return Has("Gym Membership")
                 case self.world.options.gym_gears_unlock_condition.option_exclude:
                     return False_()
+        if token == "Dream":
+            match self.world.options.dream_machine_unlock_condition:
+                case self.world.options.dream_machine_unlock_condition.option_open:
+                    return True_()
+                case self.world.options.dream_machine_unlock_condition.option_full_game:
+                    return Has("Full Game Unlock",
+                               options=[OptionFilter(ShuffleFullGame, ShuffleFullGame.option_true)],
+                               filtered_resolution=True)
+                case self.world.options.dream_machine_unlock_condition.option_shuffle_dream_machine:
+                    return Has("Dream Machine")
         if token == "HatMembership":
             return True_()
         if token == "SewerKey":
