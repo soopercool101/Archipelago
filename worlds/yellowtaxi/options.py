@@ -880,21 +880,46 @@ class TaxiSkin(Choice):
 class GlitchedTaxiSkinColor(TextChoice):
     """
     Sets the color used for the Glitched Taxi Skin.
-    Can also be set to a hex color code (e.g. #FC6A00) for a custom color.
+    Can also be set to a hex color code (e.g. #FF00DC) for a custom color.
     """
     display_name = "Glitched Taxi Skin Color"
-    option_orange = "orange"
-    option_green = "green"
+    option_vanilla_orange = "vanilla_orange"
+    option_time_trial_green = "time_trial_green"
+    #option_time_trial_gold = "time_trial_gold" # Too similar to vanilla to be listed. Can still be inputted though.
+    option_red = "red"
+    option_cyan = "cyan"
+    option_blue = "blue"
+    option_darkblue = "darkblue"
+    option_lightblue = "lightblue"
+    option_purple = "purple"
     option_yellow = "yellow"
+    #option_lime = "lime" # Too similar to time trial green to be listed. Can still be inputted though.
+    option_fuchsia = "fuchsia"
+    option_white = "white"
+    option_silver = "silver"
+    option_grey = "grey"
+    option_black = "black"
+    #option_orange = "orange" # Too similar to vanilla to be standard. Can still be inputted though.
+    option_brown = "brown"
+    option_maroon = "maroon"
+    option_green = "green"
+    option_olive = "olive"
+    option_navy = "navy"
+    option_teal = "teal"
+    option_aqua = "aqua"
+    option_magenta = "magenta"
 
-    default = option_orange
+    default = option_vanilla_orange
 
     @classmethod
     def from_text(cls, text: str) -> "GlitchedTaxiSkinColor":
-        # Special values, pull directly from existing implementations
-        if text.lower() in ["orange", "green", "yellow"]:
+        # Special Values and HTML colors supported by Unity
+        # https://docs.unity3d.com/2020.3/Documentation/ScriptReference/ColorUtility.TryParseHtmlString.html
+        if text.lower() in ["red", "cyan", "blue", "darkblue", "lightblue", "purple", "yellow", "lime", "fuchsia",
+                            "white", "silver", "grey", "black", "orange", "brown", "maroon", "green", "olive", "navy",
+                            "teal", "aqua", "magenta", "vanilla_orange", "time_trial_green", "time_trial_gold"]:
             return cls(text.lower())
-        # Strip leading # if present, then check if it's a valid 6-char hex color
+        # Check hex color for validity. Allow with or without leading #
         cleaned = text.strip().lstrip("#")
         if len(cleaned) == 6:
             try:
