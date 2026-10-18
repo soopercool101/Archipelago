@@ -1,21 +1,8 @@
 from dataclasses import dataclass
 
 from Options import (Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText,
-                     StartInventoryPool, OptionSet)
+                     StartInventoryPool, TextChoice, OptionSet, OptionError)
 from .items import TRAPS
-
-
-# In this file, we define the options the player can pick.
-# The most common types of options are Toggle, Range and Choice.
-
-# Options will be in the game's template yaml.
-# They will be represented by checkboxes, sliders etc. on the game's options page on the website.
-# (Note: Options can also be made invisible from either of these places by overriding Option.visibility.
-#  APQuest doesn't have an example of this, but this can be used for secret / hidden / advanced options.)
-
-# For further reading on options, you can also read the Options API Document:
-# https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/options%20api.md
-
 
 class Goal(Choice):
     """
@@ -890,6 +877,33 @@ class TaxiSkin(Choice):
     alias_fully_random = option_random_every_load
     alias_chaos = option_random_every_flip
 
+class GlitchedTaxiSkinColor(TextChoice):
+    """
+    Sets the color used for the Glitched Taxi Skin.
+    Can also be set to a hex color code (e.g. #FC6A00) for a custom color.
+    """
+    display_name = "Glitched Taxi Skin Color"
+    option_orange = "orange"
+    option_green = "green"
+    option_yellow = "yellow"
+
+    default = option_orange
+
+    @classmethod
+    def from_text(cls, text: str) -> "GlitchedTaxiSkinColor":
+        # Special values, pull directly from existing implementations
+        if text.lower() in ["orange", "green", "yellow"]:
+            return cls(text.lower())
+        # Strip leading # if present, then check if it's a valid 6-char hex color
+        cleaned = text.strip().lstrip("#")
+        if len(cleaned) == 6:
+            try:
+                int(cleaned, 16)
+                return cls("#" + cleaned.upper())
+            except ValueError:
+                pass
+        raise OptionError(text + " is not a valid color")
+
 class MorioCostume(Choice):
     """
     What costume Morio will wear in the lab.
@@ -1046,6 +1060,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_rocket_entrance: ShuffleRocketEntrance
     shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
     taxi_skin: TaxiSkin
+    glitched_taxi_skin_color: GlitchedTaxiSkinColor
     morio_costume: MorioCostume
     randomize_music: RandomizeMusic
     include_title_and_credits_music: IncludeTitleAndCreditsMusic
@@ -1147,6 +1162,7 @@ option_groups = [
         "Cosmetic Options",
         [
             TaxiSkin,
+            GlitchedTaxiSkinColor,
             FunnyFaces,
             RandomizeMusic,
             IncludeTitleAndCreditsMusic,

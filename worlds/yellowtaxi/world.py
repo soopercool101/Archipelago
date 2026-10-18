@@ -517,6 +517,7 @@ class YellowTaxiWorld(World):
             "quick_pickups",
             "shop_hints",
             "taxi_skin",
+            "glitched_taxi_skin_color",
             "morio_costume",
             "randomize_music",
             "randomize_skyboxes",
