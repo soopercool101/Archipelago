@@ -232,7 +232,8 @@
       "Morio's Mind - Bunny - In Air on Right Path": "B1 | X2+J1",
       "Morio's Mind - Bunny - Near Password Platform": "X3/B1/J1",
       "Morio's Mind - Gear - Behind Laser Walls Above Right Path": "X1/B1 & Lasers/J1/SP2 | X1+B1",
-      "Morio's Mind - Gear - Cloud Above Starting Area": "X1+B1 & X2/J1 | B2 & J1/X1 | X2+J2 | X3+J1"
+      "Morio's Mind - Gear - Cloud Above Starting Area": "X1+B1 & X2/J1 | B2 & J1/X1 | X2+J2 | X3+J1",
+      "Morio's Mind - Bunny - Lasagna Behind Starting Area": "X1+B1 & X2/J1 | B2 & J1/X1 | X2+J1"
     }
   },
   "Morio's Mind - Left Path Higher Ground": {
