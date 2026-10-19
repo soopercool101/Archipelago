@@ -1,6 +1,7 @@
 from typing import Any, Dict, Set, List
 
 from . import locations
+from .names import ItemNames
 
 import orjson
 import pkgutil
@@ -109,6 +110,62 @@ special_starting_areas : Dict[str, str] = {
     "Arcade Panik": "Arcade Plaza",
     "Tosla's Offices": "Tosla Square",
     "Psycho Taxi": "",
+}
+
+hat_prices : Dict[str, int] = {
+    ItemNames.no_hat: 0,
+    ItemNames.propeller_cap: 50,
+    ItemNames.top_hat: 300,
+    ItemNames.morio_hat: 500,
+    ItemNames.taxi_stack_hat: 700,
+    ItemNames.bomb_hat: 500,
+    ItemNames.drink_hat: 500,
+    ItemNames.chef_hat: 500,
+    ItemNames.spaghetti_hat: 600,
+    ItemNames.pot_hat: 300,
+    ItemNames.lasagna_hat: 300,
+    ItemNames.joystick_hat: 1000,
+    ItemNames.slot_machine_hat: 500,
+    ItemNames.gelatin_hat: 600,
+    ItemNames.mug_hat: 500,
+    ItemNames.tosla_employee_hat: 500,
+    ItemNames.flexing_hat: 0,
+    ItemNames.syringe_hat: 0,
+    ItemNames.poop_hat: 600,
+    ItemNames.dog_bowl_hat: 500,
+    ItemNames.toilet_hat: 700,
+    ItemNames.bone_fish_hat: 800,
+    ItemNames.spoiler: 600,
+    ItemNames.police_lights: 700,
+    ItemNames.captain_absurd_hat: 0,
+    ItemNames.roidman_hat: 0,
+    ItemNames.buzzsaw_hat: 700,
+    ItemNames.crusher_hat: 700,
+    ItemNames.morios_brain_hat: 500,
+    ItemNames.heart_hat: 500,
+    ItemNames.moon_globe_hat: 700,
+    ItemNames.tower_hat: 500,
+    ItemNames.alien_mosk_evil_hat: 700,
+    ItemNames.skeleton_taxi_skin: 1000,
+    ItemNames.golden_taxi_skin: 5000,
+    ItemNames.orbit_hat: 800,
+    ItemNames.satellite_dish_hat: 0,
+    ItemNames.alien_mosk_good_hat: 0,
+    ItemNames.crash_test_dummy_hat: 0,
+    ItemNames.dentures_hat: 0,
+    ItemNames.mushroom_cloud_hat: 0,
+    ItemNames.gym_bros_hat: 0,
+    ItemNames.banana_hat: 0,
+    ItemNames.bunny_hat: 0,
+    ItemNames.inception_top_hat: 0,
+    ItemNames.pizza_man_hat: 0,
+    ItemNames.toilet_paper_hat: 0,
+    ItemNames.pod_hat: 0,
+    ItemNames.paper_boat_hat: 0,
+    ItemNames.prototype_taxi_skin: 0,
+    ItemNames.glitched_taxi_skin: 0,
+    ItemNames.tv_hat: 0,
+    ItemNames.burger_hat: 0,
 }
 
 # Load static locations list

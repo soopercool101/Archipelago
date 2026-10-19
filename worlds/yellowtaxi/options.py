@@ -899,7 +899,7 @@ class GlitchedTaxiSkinColor(TextChoice):
     option_silver = "silver"
     option_grey = "grey"
     option_black = "black"
-    #option_orange = "orange" # Too similar to vanilla to be standard. Can still be inputted though.
+    #option_orange = "orange" # Too similar to vanilla to be listed. Can still be inputted though.
     option_brown = "brown"
     option_maroon = "maroon"
     option_green = "green"
