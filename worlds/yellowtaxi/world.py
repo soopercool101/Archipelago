@@ -514,6 +514,7 @@ class YellowTaxiWorld(World):
             "remove_goal_portal_locations",
             "funny_faces",
             "easy_alien_mosk",
+            "morios_mind_laser_behavior",
             "quick_pickups",
             "shop_hints",
             "taxi_skin",

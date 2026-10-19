@@ -670,6 +670,21 @@ class EasyAlienMosk(Toggle):
 
     display_name = "Easy Alien Mosk"
 
+class MoriosMindLaserBehavior(Choice):
+    """
+    How Morio's Mind Laser behaves.
+
+    The Hat options will disable the laser as long as you are wearing the relevant hat.
+    """
+    display_name = "Morio's Mind Laser Behavior"
+    option_enabled = 0
+    option_disabled = 1
+    option_morios_brain_hat = 2
+    option_inception_top_hat = 3
+    option_morios_brain_or_inception_top_hat = 4
+
+    default = option_enabled
+
 class QuickPickups(Toggle):
     """
     When enabled, all collectables will use the quick pickup animation, rather than freezing the player in place.
@@ -1072,6 +1087,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     time_trial_gears: TimeTrialGears
     funny_faces: FunnyFaces
     easy_alien_mosk: EasyAlienMosk
+    morios_mind_laser_behavior: MoriosMindLaserBehavior
     quick_pickups: QuickPickups
     start_inventory_from_pool: StartInventoryPool
     trap_fill_percent: TrapFillPercent
@@ -1172,6 +1188,7 @@ option_groups = [
             ShopHints,
             PurchaseRebatePercent,
             EasyAlienMosk,
+            MoriosMindLaserBehavior,
         ],
     ),
     OptionGroup(

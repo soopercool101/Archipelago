@@ -366,19 +366,23 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
     # Rat is progression if Cheesesanity is on
     if name == "Michele" and world.options.cheesesanity:
         classification = ItemClassification.progression
-
-    if (name == ItemNames.police_lights and
+    elif (name == ItemNames.police_lights and
             ("Maurizio's City" in world.included_levels or "Maurizio's City" in world.goal_levels)):
         classification = ItemClassification.useful  # Makes cop cars not attack you
-    if (name == ItemNames.alien_mosk_good_hat or name == ItemNames.bunny_hat) and "Ruined Observatory" in world.included_levels:
+    elif (name == ItemNames.alien_mosk_good_hat or name == ItemNames.bunny_hat) and "Ruined Observatory" in world.included_levels:
         classification = ItemClassification.useful  # No actual items locked behind this, but make it useful
-    if name == ItemNames.tosla_employee_hat and "Tosla's Offices" in world.included_levels:
+    elif name == ItemNames.tosla_employee_hat and "Tosla's Offices" in world.included_levels:
         classification = ItemClassification.progression # Allows access to employees-only room of Tosla Offices
-
-    if name == "Psycho Taxi Cartridge" and world.options.shuffle_psycho_taxi_entrance:
+    elif (name == ItemNames.inception_top_hat and "Morio's Mind" in world.included_levels and
+            world.options.morios_mind_laser_behavior.value in
+            [
+                world.options.morios_mind_laser_behavior.option_inception_top_hat,
+                world.options.morios_mind_laser_behavior.option_morios_brain_or_inception_top_hat
+            ]):
+        classification = ItemClassification.useful
+    elif name == "Psycho Taxi Cartridge" and world.options.shuffle_psycho_taxi_entrance:
         classification = ItemClassification.progression # Leads to an actual level, presumedly
-
-    if name == "Pizza Wheels":
+    elif name == "Pizza Wheels":
         if world.options.pizza_wheels == world.options.pizza_wheels.option_useful:
             classification = ItemClassification.useful
         if world.options.pizza_wheels == world.options.pizza_wheels.option_progression:

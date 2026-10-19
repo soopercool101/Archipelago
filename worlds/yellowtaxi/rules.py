@@ -572,12 +572,22 @@ class RuleFactory:
             if self.world.options.hatsanity != 0:
                 return True_()
             return False_()
-        # Can you pass lasers. TODO: Add actual gating ability here
+        # Can you pass lasers? TODO: Add actual gating ability here
         if token == "PassLaser":
             return True_()
-        # Will Gigamorio always shoot lasers?
+        # Can Gigamorio shoot lasers?
         if token == "Lasers":
-            return True_()
+            if (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_enabled):
+                return True_()
+            if (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_disabled):
+                return False_()
+            # If hats disable the lasers, need to assume you need access to wardrobe if hatsanity is on
+            # Otherwise, you could potentially get stuck with one of the relevant hats with no way to enable the lasers
+            if self.world.options.hatsanity.value == self.world.options.hatsanity.option_disabled:
+                return True_()
+            return CanReachRegion("Morio's Wardrobe")
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
