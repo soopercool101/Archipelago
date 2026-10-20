@@ -19,8 +19,6 @@ class YellowTaxiLocation(Location):
 def create_locations(world: YellowTaxiWorld) -> None:
     from .data_loader import regions_json_data
 
-    # Finally, we need to put the Locations ("checks") into their regions.
-    # Once again, before we do anything, we can grab our regions we created by using world.get_region()
     world.num_gears = 0
     world.num_bunnies = 0
     chests : List[tuple[Region, Dict[str, int | None]]] = []
