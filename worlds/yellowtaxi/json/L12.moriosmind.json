@@ -431,8 +431,8 @@
       "Morio's Mind - Cheese Near Dreaming Pipe": 122100003
     },
     "connections": {
-      "Morio's Mind - Starting Area (Laser Range)": "PassLaser",
-      "Morio's Mind - Left Path": "X1+PassLaser"
+      "Morio's Mind - Starting Area (Laser Range)": "X1+PassLaser | NoLaser",
+      "Morio's Mind - Left Path": "X1+PassLaser | NoLaser"
     },
     "subwarps": {
       "Morio's Mind - Dreaming Pipe": ["Dreaming", ""]
