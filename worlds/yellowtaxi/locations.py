@@ -6,6 +6,7 @@ from typing import Dict, List, TYPE_CHECKING, Union
 from BaseClasses import Location, Region, LocationProgressType
 
 from . import items, data_loader
+from .names import ItemNames
 
 if TYPE_CHECKING:
     from .world import YellowTaxiWorld
@@ -172,11 +173,18 @@ def create_hat_events(world: YellowTaxiWorld, region: Region, subarea_name: str,
             )
 
 def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
-    if hat == "Morio Hat" or hat == "Morio's Brain Hat":
+    if hat == ItemNames.morio_hat or hat == ItemNames.morios_brain_hat:
         return True
-    if hat == "Tosla Employee Hat": #and "Tosla's Offices" in world.included_levels: # Only found there. Redundant.
+    if (hat == ItemNames.inception_top_hat and "Morio's Mind" in world.included_levels and
+            (world.options.morios_mind_laser_behavior.value ==
+             world.options.morios_mind_laser_behavior.option_inception_top_hat or
+             world.options.morios_mind_laser_behavior.value ==
+             world.options.morios_mind_laser_behavior.option_morios_brain_or_inception_top_hat)):
         return True
-    if (hat == "Alien Mosk (Good) Hat" or hat == "Bunny Hat") and "Ruined Observatory" in world.included_levels:
+    if hat == ItemNames.tosla_employee_hat: #and "Tosla's Offices" in world.included_levels: # Only found there. Redundant.
+        return True
+    if ((hat == ItemNames.alien_mosk_good_hat or hat == ItemNames.bunny_hat)
+            and "Ruined Observatory" in world.included_levels):
         return True
     return False
 
