@@ -379,7 +379,10 @@ def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -
                 world.options.morios_mind_laser_behavior.option_inception_top_hat,
                 world.options.morios_mind_laser_behavior.option_morios_brain_or_inception_top_hat
             ]):
-        classification = ItemClassification.useful
+        if world.inception_hat_prog:
+            classification = ItemClassification.progression
+        else:
+            classification = ItemClassification.useful
     elif name == "Psycho Taxi Cartridge" and world.options.shuffle_psycho_taxi_entrance:
         classification = ItemClassification.progression # Leads to an actual level, presumedly
     elif name == "Pizza Wheels":
