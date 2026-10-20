@@ -6,8 +6,8 @@ from typing import TYPE_CHECKING, Callable, Mapping, Union, override, ClassVar
 from NetUtils import JSONMessagePart
 from rule_builder.options import OptionFilter
 from .data_loader import regions_json_data
-from BaseClasses import CollectionState, MultiWorld
-from worlds.generic.Rules import add_rule, set_rule
+from BaseClasses import CollectionState
+from .names import ItemNames
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
 from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide, IncludeOutOfBounds, LockedMoriosLab, \
     LockedMoriosWardrobe, OpenGrannysIsland, ShuffleSpinAttack
@@ -322,11 +322,11 @@ class RuleFactory:
                 return False_()
             return Has("Psycho Taxi Cartridge")
         if token == "MorioHat":
-            return Has("Morio Hat") | Has("Morio's Brain Hat")
+            return Has(ItemNames.morio_hat) | Has(ItemNames.morios_brain_hat)
         if token == "EmployeeHat":
-            return Has("Tosla Employee Hat")
+            return Has(ItemNames.tosla_employee_hat)
         if token == "MoskHat":
-            return Has("Alien Mosk (Good) Hat") | Has("Bunny Hat")
+            return Has(ItemNames.alien_mosk_good_hat) | Has(ItemNames.bunny_hat)
         # Portals. TODO: Allow variable portal costs beyond just final portal
         if token == "PortalMorioHome":
             if (self.world.options.goal == self.world.options.goal.option_bombeach_boss
@@ -588,6 +588,35 @@ class RuleFactory:
             if self.world.options.hatsanity.value == self.world.options.hatsanity.option_disabled:
                 return True_()
             return CanReachRegion("Morio's Wardrobe")
+        # Can lasers be avoided?
+        if token == "NoLasers":
+            if (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_enabled):
+                return False_()
+            if (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_disabled):
+                return True_()
+
+            if token in self.cached_complex_rules:
+                return self.cached_complex_rules[token]
+
+            no_laser_rule : Rule = True_()
+            # If hats disable the lasers, need to assume you need access to wardrobe if hatsanity is on
+            if self.world.options.hatsanity.value != self.world.options.hatsanity.option_disabled:
+                no_laser_rule = CanReachRegion("Morio's Wardrobe")
+
+            if (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_morios_brain_hat):
+                no_laser_rule &= Has(ItemNames.morios_brain_hat)
+            elif (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_inception_top_hat):
+                no_laser_rule &= Has(ItemNames.inception_top_hat)
+            elif (self.world.options.morios_mind_laser_behavior.value ==
+                    self.world.options.morios_mind_laser_behavior.option_morios_brain_or_inception_top_hat):
+                no_laser_rule &= (Has(ItemNames.morios_brain_hat) | Has(ItemNames.inception_top_hat))
+
+            self.cached_complex_rules[token] = no_laser_rule
+            return no_laser_rule
         if token.startswith("Bunny-"):
             bunny_level : str = token[len("Bunny-"):]
             if bunny_level == "Hub":
