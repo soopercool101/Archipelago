@@ -493,6 +493,9 @@ def create_all_items(world: YellowTaxiWorld) -> None:
     if world.options.shuffle_rat:
         itempool.append(world.create_item("Michele"))
 
+    if world.options.hat_world_membership:
+        itempool.append(world.create_item("Hat World Membership"))
+
     if (world.options.psycho_taxi_unlock_condition ==
             world.options.psycho_taxi_unlock_condition.option_shuffle_cartridge):
         itempool.append(world.create_item("Psycho Taxi Cartridge"))

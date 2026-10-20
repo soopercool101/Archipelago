@@ -144,6 +144,9 @@ class YellowTaxiWorld(World):
         self.has_spike_traversal : bool = False
         # Should inception hat be progression
         self.inception_hat_prog : bool = False
+        # Hat prices
+        self.hat_prices : dict[int, int] = {}
+        self.hat_location_prices : dict[str, int] = {}
 
         self.using_ut : bool = False
         # UT only
@@ -232,8 +235,10 @@ class YellowTaxiWorld(World):
                 continue
             self.included_levels += [level]
 
-        if self.options.hatsanity == 1: # Special "level" for shared hats
-            self.special_levels += ["Hatsanity"]
+        if self.options.hatsanity == 1: # Special "levels" for shared hats
+            self.special_levels += ["Hatsanity", "HatWorld"]
+        elif self.options.hat_world_membership:
+            self.special_levels += ["HatWorld"]
 
         self.has_golden_spring_access = ((self.options.shuffle_golden_spring ==
                                          self.options.shuffle_golden_spring.option_true) or
@@ -415,6 +420,13 @@ class YellowTaxiWorld(World):
                     "TrapLink has no effect on a single-player game "
                     "and has been disabled to reduce unnecessary network pings.")
 
+            if self.options.minimum_hat_price.value > self.options.maximum_hat_price.value:
+                self.options.minimum_hat_price.value, self.options.maximum_hat_price.value =(
+                    self.options.maximum_hat_price.value, self.options.minimum_hat_price.value)
+                logging.warning(
+                    f"{self.player_name}: Your options have been modified.\n"
+                    "Minimum and Maximum Hat Price have been swapped.")
+
         # Get hub bunny count
         if self.options.extra_demo_collectables:
             self.hub_bunnies += 2
@@ -491,6 +503,7 @@ class YellowTaxiWorld(World):
             "shuffle_morios_password",
             "shuffle_full_game",
             "demo_portal_mode",
+            "hat_world_membership",
             "shuffle_rat",
             "dream_machine_unlock_condition",
             "gym_gears_unlock_condition",
@@ -560,6 +573,10 @@ class YellowTaxiWorld(World):
 
         # Start location
         slot_data["lab_start"] = self.lab_start
+
+        # Hat prices (only needed if randomized)
+        if self.options.randomize_hat_prices:
+            slot_data["hat_prices"] = self.hat_prices
 
         # Music rando
         if self.options.randomize_music.value == self.options.randomize_music.option_consistent:

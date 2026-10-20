@@ -163,12 +163,19 @@ def create_hat_events(world: YellowTaxiWorld, region: Region, subarea_name: str,
     if len(hat_dict) == 0:
         return
 
-    for hat in hat_dict.keys():
+    for (hat, loc_id) in hat_dict.items():
+        hat_id : int = loc_id % 100000
+        if hat_id not in world.hat_prices.keys():
+            if world.options.randomize_hat_prices:
+                world.hat_prices[hat_id] = world.random.randint(world.options.minimum_hat_price.value,
+                                                                world.options.maximum_hat_price.value)
+            else:
+                world.hat_prices[hat_id] = data_loader.hat_prices[hat]
+
         if hat_is_important(world, hat):
-            region.add_event(
-                f"Event: {subarea_name} - Purchase {hat}", hat,
-                location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem
-            )
+            event_name = f"Event: {subarea_name} - Purchase {hat}"
+            region.add_event(event_name, hat, location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
+            world.hat_location_prices[event_name] = world.hat_prices[hat_id]
 
 def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
     if hat == ItemNames.morio_hat or hat == ItemNames.morios_brain_hat:
@@ -201,22 +208,46 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea: str, hats: 
             # Add hat to the "included hats" list for item generation
             if world is not None:
                 world.included_hats.add(hat)
+
+            true_id = (hat_id % 1_00_00000) + 99_00_00000
+            loc_name = f"Purchase {hat}"
+
+            if world is not None:
+                if true_id not in world.hat_prices.keys():
+                    if world.options.randomize_hat_prices:
+                        world.hat_prices[true_id] = world.random.randint(world.options.minimum_hat_price.value,
+                                                                        world.options.maximum_hat_price.value)
+                    else:
+                        world.hat_prices[true_id] = data_loader.hat_prices[hat]
+                if loc_name not in world.hat_location_prices.keys():
+                    world.hat_location_prices[loc_name] = world.hat_prices[true_id]
+
             # Hats purchasable in multiple locations (Handled in special locations)
             if hat == "Propeller Cap" or hat == "Top Hat":
                 continue
-
-            true_id = (hat_id % 1_00_00000) + 99_00_00000
-            locations[f"Purchase {hat}"] = true_id
+            locations[loc_name] = true_id
 
     if world is None or world.options.hatsanity == world.options.hatsanity.option_shopsanity:
         for (hat, hat_id) in hats.items():
+            loc_name = f"{subarea} - Purchase {hat}"
+
             # Add hat to the "included hats" list for item generation, count hat-based locations
             if world is not None:
                 if hat != "No Hat":
                     world.included_hats.add(hat)
                 world.hat_location_count += 1
 
-            locations[f"{subarea} - Purchase {hat}"] = hat_id
+                # Hat price randomization
+                if hat_id not in world.hat_prices.keys():
+                    if world.options.randomize_hat_prices:
+                        world.hat_prices[hat_id] = world.random.randint(world.options.minimum_hat_price.value,
+                                                                        world.options.maximum_hat_price.value)
+                    else:
+                        world.hat_prices[hat_id] = data_loader.hat_prices[hat]
+                if loc_name not in world.hat_location_prices.keys():
+                    world.hat_location_prices[loc_name] = world.hat_prices[hat_id]
+
+            locations[loc_name] = hat_id
 
     return locations
 
@@ -531,6 +562,8 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 }
                 if world is not None:
                     world.included_hats.add("Top Hat")
+            if world is None or world.options.hat_world_membership:
+                locations["Hat World - Purchase From Hat Master 9000"] = 99_10_00000
         case "Propeller Cap Access":
             if world is None or world.options.hatsanity == world.options.hatsanity.option_hatsanity:
                 locations = {

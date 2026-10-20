@@ -6,7 +6,7 @@ from typing import TYPE_CHECKING, Callable, Mapping, Union, override, ClassVar
 from NetUtils import JSONMessagePart
 from rule_builder.options import OptionFilter
 from .data_loader import regions_json_data
-from BaseClasses import CollectionState
+from BaseClasses import CollectionState, Location
 from .names import ItemNames
 from rule_builder.rules import Rule, True_, False_, Has, CanReachRegion, CanReachLocation
 from .options import ShuffleFullGame, PizzaWheels, ShuffleGlide, IncludeOutOfBounds, LockedMoriosLab, \
@@ -78,6 +78,20 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
         if "specialrules" in reg.keys():
             for location, rule in reg["specialrules"].items():
                 rf.assign_location_rule(location, rule)
+
+    # Hats
+    for (hat, price) in world.hat_location_prices.items():
+        hat_loc: Location = world.get_location(hat)
+        hat_rule: Rule = True_()
+
+        if world.options.hat_world_membership:
+            hat_rule = Has("Hat World Membership")
+
+        # TODO: Factor in prices in some way
+
+        if not hat_rule.Resolved.always_true:
+            world.set_rule(hat_loc, hat_rule)
+
 
 def set_completion_condition(world: YellowTaxiWorld) -> None:
     world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)

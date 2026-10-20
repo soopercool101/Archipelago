@@ -748,7 +748,7 @@
     },
     "connections": {
       "Smelly Slimes - Sidebars by Entrance": "X2/J1/B1",
-      "Smelly Slimes - Hat Area": "J1 | X2+B2",
+      "Smelly Slimes - Hat Area": "J1 | X2+B2 | X3+B1",
       "Smelly Slimes - Exit Area": "B1+J1 | X3 & B1/J1"
     },
     "subwarps": {

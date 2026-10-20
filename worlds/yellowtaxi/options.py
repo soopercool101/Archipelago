@@ -115,7 +115,7 @@ class LockedMoriosWardrobe(Toggle):
 
 class HatWorldMembership(Toggle):
     """
-    Adds a "Hat World Membership" item needed to purchase any hats from Hat World
+    Adds a "Hat World Membership" item needed to purchase any hats.
     """
     display_name = "Hat World Membership"
 
@@ -345,6 +345,35 @@ class DemoPortalMode(Choice):
     alias_extra = option_next_fest
     alias_extra_influencers = option_influencers
 
+class RandomizeHatPrices(Toggle):
+    """
+    Whether hat prices should be randomized.
+    """
+    display_name = "Randomize Hat Prices"
+
+class MinimumHatPrice(Range):
+    """
+    Minimum price for randomized hat prices.
+
+    If greater than Maximum, they will be swapped.
+    """
+    display_name = "Minimum Hat Price"
+
+    range_start = 0
+    range_end = 5000
+    default = 0
+
+class MaximumHatPrice(Range):
+    """
+    Maximum price for randomized hat prices.
+
+    If lower than Minimum, they will be swapped.
+    """
+    display_name = "Maximum Hat Price"
+
+    range_start = 0
+    range_end = 5000
+    default = 1200
 
 class Bunnysanity(Toggle):
     """
@@ -1057,6 +1086,10 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_morios_password: ShuffleMoriosPassword
     shuffle_full_game: ShuffleFullGame
     demo_portal_mode: DemoPortalMode
+    hat_world_membership: HatWorldMembership
+    randomize_hat_prices: RandomizeHatPrices
+    minimum_hat_price: MinimumHatPrice
+    maximum_hat_price: MaximumHatPrice
     shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
     bunnysanity_includes_all_bunnies: BunnysanityIncludesAllBunnies
@@ -1152,6 +1185,10 @@ option_groups = [
             ShuffleMoriosPassword,
             ShuffleFullGame,
             DemoPortalMode,
+            HatWorldMembership,
+            RandomizeHatPrices,
+            MinimumHatPrice,
+            MaximumHatPrice,
         ],
     ),
     OptionGroup(
