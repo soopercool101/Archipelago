@@ -91,7 +91,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
 
         if "hats" in reg.keys():
             if world.options.hatsanity != 0:
-                locations = locations | get_hat_locations(world, reg["sublevel"], reg["hats"])
+                locations = locations | get_hat_locations(world, region, reg["sublevel"], reg["hats"])
             else:
                 create_hat_events(world, region, reg["sublevel"], reg["hats"])
 
@@ -164,18 +164,20 @@ def create_hat_events(world: YellowTaxiWorld, region: Region, subarea_name: str,
         return
 
     for (hat, loc_id) in hat_dict.items():
-        hat_id : int = loc_id % 100000
-        if hat_id not in world.hat_prices.keys():
-            if world.options.randomize_hat_prices:
-                world.hat_prices[hat_id] = world.random.randint(world.options.minimum_hat_price.value,
-                                                                world.options.maximum_hat_price.value)
-            else:
-                world.hat_prices[hat_id] = data_loader.hat_prices[hat]
-
+        hat_id: int = loc_id % 100000
         if hat_is_important(world, hat):
             event_name = f"Event: {subarea_name} - Purchase {hat}"
             region.add_event(event_name, hat, location_type=YellowTaxiLocation, item_type=items.YellowTaxiItem)
-            world.hat_location_prices[event_name] = world.hat_prices[hat_id]
+            world.hat_locations += [event_name]
+        if world.options.randomize_hat_prices:
+            world.unique_hats.add(hat_id)
+            if world.options.sort_randomized_prices_by_sphere:
+                create_reach_hat_event(world, region, subarea_name, hat, hat_id)
+
+def create_reach_hat_event(world: YellowTaxiWorld, region: Region, subarea_name: str, hat_name: str, hat_id: int):
+    event_name = f"Event: {subarea_name} - Reach {hat_name}"
+    region.add_event(event_name, location_type=YellowTaxiLocation)
+    world.reach_hat_events[event_name] = hat_id
 
 def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
     if hat == ItemNames.morio_hat or hat == ItemNames.morios_brain_hat:
@@ -193,7 +195,7 @@ def hat_is_important(world: YellowTaxiWorld, hat: str) -> bool:
         return True
     return False
 
-def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea: str, hats: dict[str, int]) -> Dict[str, int | None]:
+def get_hat_locations(world: Union[YellowTaxiWorld | None], region: Union[Region | None], subarea: str, hats: dict[str, int]) -> Dict[str, int | None]:
     # No hats, return early
     if len(hats) == 0:
         return {}
@@ -211,21 +213,17 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea: str, hats: 
 
             true_id = (hat_id % 1_00_00000) + 99_00_00000
             loc_name = f"Purchase {hat}"
-
-            if world is not None:
-                if true_id not in world.hat_prices.keys():
-                    if world.options.randomize_hat_prices:
-                        world.hat_prices[true_id] = world.random.randint(world.options.minimum_hat_price.value,
-                                                                        world.options.maximum_hat_price.value)
-                    else:
-                        world.hat_prices[true_id] = data_loader.hat_prices[hat]
-                if loc_name not in world.hat_location_prices.keys():
-                    world.hat_location_prices[loc_name] = world.hat_prices[true_id]
+            if world is not None and region is not None and world.options.randomize_hat_prices:
+                world.unique_hats.add(true_id)
+                if world.options.sort_randomized_prices_by_sphere:
+                    create_reach_hat_event(world, region, subarea, hat, true_id)
 
             # Hats purchasable in multiple locations (Handled in special locations)
             if hat == "Propeller Cap" or hat == "Top Hat":
                 continue
             locations[loc_name] = true_id
+            if world is not None:
+                world.hat_locations += [loc_name]
 
     if world is None or world.options.hatsanity == world.options.hatsanity.option_shopsanity:
         for (hat, hat_id) in hats.items():
@@ -237,17 +235,13 @@ def get_hat_locations(world: Union[YellowTaxiWorld | None], subarea: str, hats: 
                     world.included_hats.add(hat)
                 world.hat_location_count += 1
 
-                # Hat price randomization
-                if hat_id not in world.hat_prices.keys():
-                    if world.options.randomize_hat_prices:
-                        world.hat_prices[hat_id] = world.random.randint(world.options.minimum_hat_price.value,
-                                                                        world.options.maximum_hat_price.value)
-                    else:
-                        world.hat_prices[hat_id] = data_loader.hat_prices[hat]
-                if loc_name not in world.hat_location_prices.keys():
-                    world.hat_location_prices[loc_name] = world.hat_prices[hat_id]
-
             locations[loc_name] = hat_id
+            if world is not None:
+                world.hat_locations += [loc_name]
+                if region is not None and world.options.randomize_hat_prices:
+                    world.unique_hats.add(hat_id)
+                    if world.options.sort_randomized_prices_by_sphere:
+                        create_reach_hat_event(world, region, subarea, hat, hat_id)
 
     return locations
 

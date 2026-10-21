@@ -191,7 +191,7 @@ def get_all_locations(json_data: Dict[str, Any]) -> Dict[str, int | None]:
                 reg_locations |= reg[key]
 
         if "hats" in reg.keys():
-            reg_locations |= locations.get_hat_locations(None, reg["sublevel"], reg["hats"])
+            reg_locations |= locations.get_hat_locations(None, None, reg["sublevel"], reg["hats"])
 
         reg_locations |= locations.get_special_locations(None, reg_name)
         game_locations.update(reg_locations)

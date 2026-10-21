@@ -366,6 +366,12 @@ class RandomizeHatPrices(Toggle):
     """
     display_name = "Randomize Hat Prices"
 
+class SortRandomizedPricesBySphere(Toggle):
+    """
+    When enabled, randomized hat prices will be sorted lowest -> highest on a sphere-by-sphere basis.
+    """
+    display_name = "Sort Randomized Prices by Sphere"
+
 class MinimumHatPrice(Range):
     """
     Minimum price for randomized hat prices.
@@ -1104,6 +1110,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     demo_portal_mode: DemoPortalMode
     hat_world_membership: HatWorldMembership
     randomize_hat_prices: RandomizeHatPrices
+    sort_randomized_prices_by_sphere: SortRandomizedPricesBySphere
     minimum_hat_price: MinimumHatPrice
     maximum_hat_price: MaximumHatPrice
     shuffle_rat: ShuffleRat
@@ -1203,6 +1210,7 @@ option_groups = [
             DemoPortalMode,
             HatWorldMembership,
             RandomizeHatPrices,
+            SortRandomizedPricesBySphere,
             MinimumHatPrice,
             MaximumHatPrice,
         ],

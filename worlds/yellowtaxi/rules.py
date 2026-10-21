@@ -80,14 +80,12 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
                 rf.assign_location_rule(location, rule)
 
     # Hats
-    for (hat, price) in world.hat_location_prices.items():
+    for hat in world.hat_locations:
         hat_loc: Location = world.get_location(hat)
         hat_rule: Rule = True_()
 
         if world.options.hat_world_membership:
             hat_rule = Has("Hat World Membership")
-
-        # TODO: Factor in prices in some way
 
         if not hat_rule.Resolved.always_true:
             world.set_rule(hat_loc, hat_rule)

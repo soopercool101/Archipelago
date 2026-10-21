@@ -2,7 +2,7 @@ import logging
 import math
 import typing
 from collections.abc import Mapping
-from typing import Any, ClassVar, Dict, List, Set, Optional
+from typing import Any, ClassVar, Dict, List, Set, Optional, Tuple
 
 from BaseClasses import MultiWorld, Region, Entrance
 from Options import Option, OptionError
@@ -145,8 +145,10 @@ class YellowTaxiWorld(World):
         # Should inception hat be progression
         self.inception_hat_prog : bool = False
         # Hat prices
-        self.hat_prices : dict[int, int] = {}
-        self.hat_location_prices : dict[str, int] = {}
+        self.reach_hat_events : Dict[str, int] = {}
+        self.hat_locations : List[str] = []
+        self.unique_hats : Set[int] = set()
+        self.hat_prices : Dict[int, int] = {}
 
         self.using_ut : bool = False
         # UT only
@@ -484,6 +486,42 @@ class YellowTaxiWorld(World):
         logger.info(f"\nLevel Order ({self.player_name}):")
         for i in range(0, len(self.level_order)):
             logger.info(f"  {data_loader.original_level_order[i]} -> {self.level_order[i]}")
+
+    def post_fill(self) -> None:
+        if not self.options.randomize_hat_prices:
+            return
+        self.hat_prices = {}
+        hat_price_list : List[int] = []
+        for _ in self.unique_hats:
+            hat_price_list.append(self.random.randint(self.options.minimum_hat_price.value,
+                                                      self.options.maximum_hat_price.value))
+
+        if not self.options.sort_randomized_prices_by_sphere:
+            for hat in sorted(self.unique_hats):
+                self.hat_prices[hat] = hat_price_list.pop()
+            return
+
+        hat_price_list.sort(reverse=True)
+        for sphere in self.multiworld.get_spheres():
+            sphere_hats : List[int] = []
+            for loc in sphere:
+                if loc.player != self.player:
+                    continue
+
+                if loc.name in self.reach_hat_events.keys():
+                    hat_id = self.reach_hat_events[loc.name]
+                    if hat_id in self.unique_hats:
+                        sphere_hats += [hat_id]
+                        self.unique_hats.remove(hat_id)
+            if len(sphere_hats) == 0:
+                continue
+
+            self.random.shuffle(sphere_hats)
+            for hat_id in sphere_hats:
+                self.hat_prices[hat_id] = hat_price_list.pop()
+
+            if len(hat_price_list) == 0:
+                break
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         # Get relevant options needed for client
