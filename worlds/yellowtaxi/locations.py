@@ -579,6 +579,13 @@ def fix_location_deficit(world: YellowTaxiWorld):
     if world.using_ut:
         return
 
+    if world.options.extra_gear_percentage.value < 100:
+        extra_gears : int = world.num_gears - world.final_portal_cost
+        remaining_extra_gears : int = int((extra_gears * world.options.extra_gear_percentage.value) / 100)
+        removed_gears : int = extra_gears - remaining_extra_gears
+        world.num_gears -= removed_gears
+        world.num_filler += removed_gears
+
     # Get how many filler items would be needed to make up for locations that wouldn't be in the world
     # Morio's Home traditionally has one of the Move Rando locations
     location_deficit : int = 0

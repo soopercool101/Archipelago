@@ -339,9 +339,9 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
     elif world.options.checkpointsanity:
         filler += ["1 Coin"]
         weights += [20]
-    if len(filler) == 0:
-        filler = ["25 Coins", "10 Coins"]
-        weights = [1, 5]
+    if len(filler) == 0 or world.options.extra_gear_percentage < 75:
+        filler += ["100 Coins", "25 Coins", "10 Coins", "1 Coin"]
+        weights += [1, 20, 15, 10]
     return world.random.choices(filler, weights, k=count)
 
 def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:

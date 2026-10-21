@@ -451,12 +451,12 @@ class YellowTaxiWorld(World):
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)
         locations.create_locations(self)
-        locations.fix_location_deficit(self)
         if self.using_ut:
             self.final_portal_cost = self.ut_true_goal_cost
         else:
             self.final_portal_cost = math.floor((self.num_gears *
                                                  self.options.goal_portal_gear_percentage) / 100)
+            locations.fix_location_deficit(self)
 
     def set_rules(self) -> None:
         rules.set_all_rules(self)

@@ -21,12 +21,27 @@ class Goal(Choice):
 
 class GoalPortalGearPercentage(Range):
     """
-    Percentage of Gear items needed to access the goal portal.
+    Percentage of Gear items (based on accessible gear locations) needed to access the goal portal.
     """
     display_name = "Goal Portal Gear Percentage"
     range_start = 40
     range_end = 90
     default = 60
+
+class ExtraGearPercentage(Range):
+    """
+    The percentage of the number of gears past the Goal Portal Gear Percentage that will be added to the item pool.
+    Any gears not added will be replaced with random filler.
+
+    If 100 gear locations are available in your seed, and your Goal Portal Gear Percentage is set to 60%:
+    100% will add all 40 extra gears to the pool beyond the 60 required, for a total of 100.
+    50% will add 20 extra gears to the pool beyond the 60 required, for a total of 80.
+    0% will add 0 extra gears to the pool beyond the 60 required, for a total of 60.
+    """
+    display_name = "Extra Gear Percentage"
+    range_start = 0
+    range_end = 100
+    default = 50
 
 class RemoveGoalPortalLocations(Toggle):
     """
@@ -1060,6 +1075,7 @@ class ExcludeBoringSkyboxes(Toggle):
 class YellowTaxiOptions(PerGameCommonOptions):
     goal: Goal
     goal_portal_gear_percentage: GoalPortalGearPercentage
+    extra_gear_percentage: ExtraGearPercentage
     remove_goal_portal_locations : RemoveGoalPortalLocations
     remove_post_goal_portals : RemovePostGoalPortals
     expert_level: ExpertLevel
