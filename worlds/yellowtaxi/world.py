@@ -491,10 +491,9 @@ class YellowTaxiWorld(World):
         if not self.options.randomize_hat_prices:
             return
         self.hat_prices = {}
-        hat_price_list : List[int] = []
-        for _ in self.unique_hats:
-            hat_price_list.append(self.random.randint(self.options.minimum_hat_price.value,
-                                                      self.options.maximum_hat_price.value))
+        hat_price_list : List[int] = [self.random.randint(self.options.minimum_hat_price.value,
+                                                          self.options.maximum_hat_price.value)
+                                      for _ in range(0, len(self.unique_hats))]
 
         if not self.options.sort_randomized_prices_by_sphere:
             for hat in sorted(self.unique_hats):
@@ -513,6 +512,8 @@ class YellowTaxiWorld(World):
                     if hat_id in self.unique_hats:
                         sphere_hats += [hat_id]
                         self.unique_hats.remove(hat_id)
+                if len(self.unique_hats) == 0:
+                    break
             if len(sphere_hats) == 0:
                 continue
 
