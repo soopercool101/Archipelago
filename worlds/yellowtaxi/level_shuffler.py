@@ -157,8 +157,9 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
             random.shuffle(valid_levels)
             # Closed Granny's Island has a very restrictive start. Make sure first portal remedies this somewhat
             if shuffled_portals and not options.open_grannys_island:
-                # Don't let 1st portal be Rocket, Psycho Taxi, or Getting Gud!
-                if valid_levels[0] in ["Mosk's Rocket", "Psycho Taxi", "Getting Gud!"]:
+                # Don't let 1st portal be Fecal Matters, Rocket, Psycho Taxi, or Getting Gud!
+                # None of these levels have immediate access to locations on most settings
+                if valid_levels[0] in ["Fecal Matters", "Mosk's Rocket", "Psycho Taxi", "Getting Gud!"]:
                     continue
                 # Don't let Morio's Mind be the first level on Expert 0 (Mind is highly open but *really* hard)
                 if options.expert_level == 0 and valid_levels[0] == "Morio's Mind":
