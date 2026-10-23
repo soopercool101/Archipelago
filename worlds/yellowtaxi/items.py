@@ -345,7 +345,14 @@ def get_random_filler_item_names(world: YellowTaxiWorld, count: int) -> List[str
     return world.random.choices(filler, weights, k=count)
 
 def get_random_trap_names(world: YellowTaxiWorld, count:int) -> List[str]:
-    return world.random.choices(sorted(world.options.enabled_traps.value), k=count)
+    traps = []
+    weights = []
+    for trap in world.options.trap_distribution.value:
+        if world.options.trap_distribution.value[trap] > 0:
+            traps += [trap]
+            weights += [world.options.trap_distribution.value[trap]]
+
+    return world.random.choices(traps, weights, k=count)
 
 
 def create_item_with_correct_classification(world: YellowTaxiWorld, name: str) -> YellowTaxiItem:
@@ -582,13 +589,20 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                     # No need to add to included hats, last place they're needed
 
         # Add traps
-        if world.options.trap_fill_percent > 0 and len(world.options.enabled_traps.value) > 0:
-            needed_number_of_traps = math.floor((needed_number_of_filler_items * world.options.trap_fill_percent) / 100)
+        if world.options.trap_fill_percent > 0:
+            any_traps_enabled : bool = False
+            for trap in world.options.trap_distribution.value:
+                if world.options.trap_distribution.value[trap] > 0:
+                    any_traps_enabled = True
+                    break
 
-            itempool += [world.create_item(trap) for trap
-                         in get_random_trap_names(world, needed_number_of_traps)]
+            if any_traps_enabled:
+                needed_number_of_traps = math.floor((needed_number_of_filler_items * world.options.trap_fill_percent) / 100)
 
-            needed_number_of_filler_items -= needed_number_of_traps
+                itempool += [world.create_item(trap) for trap
+                             in get_random_trap_names(world, needed_number_of_traps)]
+
+                needed_number_of_filler_items -= needed_number_of_traps
 
         itempool += [world.create_item(filler) for filler
                      in get_random_filler_item_names(world, needed_number_of_filler_items)]

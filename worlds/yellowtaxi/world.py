@@ -655,8 +655,13 @@ class YellowTaxiWorld(World):
         elif self.options.randomize_skyboxes == self.options.randomize_skyboxes.option_random_every_load:
             slot_data["exclude_boring_skyboxes"] = self.options.exclude_boring_skyboxes.value == 1
 
-        if self.options.trap_link_uses_whitelist:
-            slot_data["trap_link_whitelist"] = sorted(self.options.enabled_traps.value)
+        if self.options.trap_link and self.options.trap_link_uses_whitelist:
+            enabled_traps : List[str] = []
+            for trap in self.options.trap_distribution.value:
+                if self.options.trap_distribution.value[trap] > 0:
+                    enabled_traps += [trap]
+
+            slot_data["trap_link_whitelist"] = sorted(enabled_traps)
 
         numerical_level_order : List[int] = []
 

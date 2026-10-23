@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 
 from Options import (Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText,
-                     StartInventoryPool, TextChoice, OptionSet, OptionError)
+                     StartInventoryPool, TextChoice, OptionSet, OptionError, OptionCounter)
 from .items import TRAPS
 
 class Goal(Choice):
@@ -693,7 +693,7 @@ class TrapLink(Toggle):
 
 class TrapLinkUsesWhitelist(Toggle):
     """
-    If true, Trap Link will only receive traps from the "Enabled Traps" list.
+    If true, Trap Link will only receive traps that are weighted higher than 0.
     If false, Trap Link can receive any valid trap, including some that are exclusive to Trap Links from other games.
     """
     display_name = "Trap Link Uses Whitelist"
@@ -751,13 +751,19 @@ class TrapFillPercent(Range):
     range_end = 100
     default = 0
 
-class EnabledTraps(OptionSet):
+class TrapDistribution(OptionCounter):
     """
-    Which trap types are enabled.
+    Specify the weighted chance of rolling individual traps.
+    You can use a weight of "0" to disable a trap entirely.
     """
-    display_name = "Enabled Traps"
-    valid_keys = sorted(TRAPS)
-    default = sorted(TRAPS)
+    display_name = "Trap Distribution"
+    min = 0
+    max = 1000
+    valid_keys = frozenset(sorted(TRAPS))
+    default = {
+        trap: 100
+        for trap in sorted(TRAPS)
+    }
 
 class ShopHints(Choice):
     """
@@ -1147,7 +1153,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     quick_pickups: QuickPickups
     start_inventory_from_pool: StartInventoryPool
     trap_fill_percent: TrapFillPercent
-    enabled_traps: EnabledTraps
+    trap_distribution: TrapDistribution
     shop_hints: ShopHints
     use_separate_entrance_pools: UseSeparateEntrancePools
     allow_shuffling_removed_levels: AllowShufflingRemovedLevels
@@ -1258,7 +1264,7 @@ option_groups = [
             TrapLink,
             TrapLinkUsesWhitelist,
             TrapFillPercent,
-            EnabledTraps,
+            TrapDistribution,
         ],
     ),
     OptionGroup(
