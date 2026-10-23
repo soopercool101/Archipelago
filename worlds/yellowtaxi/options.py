@@ -1,3 +1,4 @@
+import random
 from dataclasses import dataclass
 
 from Options import (Choice, OptionGroup, PerGameCommonOptions, Range, Toggle, DefaultOnToggle, DeathLink, FreeText,
@@ -942,8 +943,6 @@ class TaxiSkin(Choice):
     alias_purple = option_default_purple
     alias_red = option_default_red
     alias_corrupted = option_corrupted_car
-    alias_grannys_car_alt = option_pink_flames
-    alias_grannys_car_corrupted_alt = option_pink_flames_corrupted
     alias_random_per_load = option_random_every_load
     alias_fully_random = option_random_every_load
     alias_chaos = option_random_every_flip
@@ -951,12 +950,12 @@ class TaxiSkin(Choice):
 class GlitchedTaxiSkinColor(TextChoice):
     """
     Sets the color used for the Glitched Taxi Skin.
-    Can also be set to a hex color code (e.g. #FF00DC) for a custom color.
+    Can also be set to a hex color code (e.g. '#FF00DC') for a custom color.
     """
     display_name = "Glitched Taxi Skin Color"
     option_vanilla_orange = "vanilla_orange"
-    option_time_trial_green = "time_trial_green"
-    #option_time_trial_gold = "time_trial_gold" # Too similar to vanilla to be listed. Can still be inputted though.
+    option_time_attack_green = "time_attack_green"
+    #option_time_attack_gold = "time_attack_gold" # Too similar to vanilla to be listed. Can still be inputted though.
     option_red = "red"
     option_cyan = "cyan"
     option_blue = "blue"
@@ -983,13 +982,138 @@ class GlitchedTaxiSkinColor(TextChoice):
     default = option_vanilla_orange
 
     @classmethod
-    def from_text(cls, text: str) -> "GlitchedTaxiSkinColor":
+    def from_text(cls, text: str) -> TextChoice:
         # Special Values and HTML colors supported by Unity
         # https://docs.unity3d.com/2020.3/Documentation/ScriptReference/ColorUtility.TryParseHtmlString.html
         if text.lower() in ["red", "cyan", "blue", "darkblue", "lightblue", "purple", "yellow", "lime", "fuchsia",
                             "white", "silver", "grey", "black", "orange", "brown", "maroon", "green", "olive", "navy",
                             "teal", "aqua", "magenta", "vanilla_orange", "time_trial_green", "time_trial_gold"]:
             return cls(text.lower())
+        # Interpret "random" as a completely random hex code
+        if text.lower() == "random":
+            return cls(f"#{random.randbytes(3).hex().upper()}")
+        # Check hex color for validity. Allow with or without leading #
+        cleaned = text.strip().lstrip("#")
+        if len(cleaned) == 6:
+            try:
+                int(cleaned, 16)
+                return cls("#" + cleaned.upper())
+            except ValueError:
+                pass
+        raise OptionError(text + " is not a valid color")
+
+class GearType(Choice):
+    """
+    Change the appearance of uncollected gears.
+    Default will use either Standard or Time Attack depending on if the level is a Time Attack level.
+    Inverse will use the opposite (either standard or time attack) as it would in vanilla
+    """
+    display_name = "Gear Type"
+    option_default = 0
+    option_inverse = 1
+    option_standard = 2
+    option_time_attack = 3
+
+class StandardGearColor(TextChoice):
+    """
+    Sets the color used for uncollected standard gears.
+    Default will use either the standard or colorblind material depending on in-game settings.
+    Can also be set to a hex color code (e.g. '#E91E63') for a custom color.
+    """
+    display_name = "Gear Color"
+    option_default = "default"
+    option_vanilla_green = "vanilla_green"
+    option_vanilla_colorblind_blue = "vanilla_colorblind_blue"
+    option_red = "red"
+    option_cyan = "cyan"
+    option_blue = "blue"
+    option_darkblue = "darkblue"
+    option_lightblue = "lightblue"
+    option_purple = "purple"
+    option_yellow = "yellow"
+    #option_lime = "lime" # Too similar to standard green to be listed. Can still be inputted though.
+    option_fuchsia = "fuchsia"
+    option_white = "white"
+    option_silver = "silver"
+    option_grey = "grey"
+    option_black = "black"
+    option_orange = "orange"
+    option_brown = "brown"
+    option_maroon = "maroon"
+    option_green = "green"
+    option_olive = "olive"
+    option_navy = "navy"
+    option_teal = "teal"
+    option_aqua = "aqua"
+    option_magenta = "magenta"
+
+    default = option_default
+
+    @classmethod
+    def from_text(cls, text: str) -> TextChoice:
+        # Special Values and HTML colors supported by Unity
+        # https://docs.unity3d.com/2020.3/Documentation/ScriptReference/ColorUtility.TryParseHtmlString.html
+        if text.lower() in ["red", "cyan", "blue", "darkblue", "lightblue", "purple", "yellow", "lime", "fuchsia",
+                            "white", "silver", "grey", "black", "orange", "brown", "maroon", "green", "olive", "navy",
+                            "teal", "aqua", "magenta", "default", "vanilla_green", "vanilla_colorblind_blue"]:
+            return cls(text.lower())
+        # Interpret "random" as a completely random hex code
+        if text.lower() == "random":
+            return cls(f"#{random.randbytes(3).hex().upper()}")
+        # Check hex color for validity. Allow with or without leading #
+        cleaned = text.strip().lstrip("#")
+        if len(cleaned) == 6:
+            try:
+                int(cleaned, 16)
+                return cls("#" + cleaned.upper())
+            except ValueError:
+                pass
+        raise OptionError(text + " is not a valid color")
+
+class TimeAttackGearColor(TextChoice):
+    """
+    Sets the color used for uncollected time attack gears.
+    Can also be set to a hex color code (e.g. '#E91E63') for a custom color.
+    """
+    display_name = "Gear Color"
+    option_vanilla_green = "vanilla_green"
+    option_gold = "gold"
+    option_red = "red"
+    option_cyan = "cyan"
+    option_blue = "blue"
+    option_darkblue = "darkblue"
+    option_lightblue = "lightblue"
+    option_purple = "purple"
+    option_yellow = "yellow"
+    #option_lime = "lime" # Too similar to standard green to be listed. Can still be inputted though.
+    option_fuchsia = "fuchsia"
+    option_white = "white"
+    option_silver = "silver"
+    option_grey = "grey"
+    option_black = "black"
+    option_orange = "orange"
+    option_brown = "brown"
+    option_maroon = "maroon"
+    option_green = "green"
+    option_olive = "olive"
+    option_navy = "navy"
+    option_teal = "teal"
+    option_aqua = "aqua"
+    option_magenta = "magenta"
+
+    default = option_vanilla_green
+
+    @classmethod
+    def from_text(cls, text: str) -> TextChoice:
+        # Special Values and HTML colors supported by Unity
+        # https://docs.unity3d.com/2020.3/Documentation/ScriptReference/ColorUtility.TryParseHtmlString.html
+        if text.lower() in ["red", "cyan", "blue", "darkblue", "lightblue", "purple", "yellow", "lime", "fuchsia",
+                            "white", "silver", "grey", "black", "orange", "brown", "maroon", "green", "olive", "navy",
+                            "teal", "aqua", "magenta", "vanilla_green", "gold"]:
+            return cls(text.lower())
+        # Interpret "random" as a completely random hex code
+        if text.lower() == "random":
+            return cls(f"#{random.randbytes(3).hex().upper()}")
         # Check hex color for validity. Allow with or without leading #
         cleaned = text.strip().lstrip("#")
         if len(cleaned) == 6:
@@ -1164,6 +1288,9 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_psycho_taxi_entrance: ShufflePsychoTaxiEntrance
     taxi_skin: TaxiSkin
     glitched_taxi_skin_color: GlitchedTaxiSkinColor
+    gear_type: GearType
+    standard_gear_color: StandardGearColor
+    time_attack_gear_color: TimeAttackGearColor
     morio_costume: MorioCostume
     randomize_music: RandomizeMusic
     include_title_and_credits_music: IncludeTitleAndCreditsMusic
@@ -1273,6 +1400,9 @@ option_groups = [
             TaxiSkin,
             GlitchedTaxiSkinColor,
             FunnyFaces,
+            GearType,
+            StandardGearColor,
+            TimeAttackGearColor,
             RandomizeMusic,
             IncludeTitleAndCreditsMusic,
             SeparateBossMusic,
