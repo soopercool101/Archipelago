@@ -25,9 +25,9 @@ class GoalPortalGearPercentage(Range):
     Percentage of Gear items (based on accessible gear locations) needed to access the goal portal.
     """
     display_name = "Goal Portal Gear Percentage"
-    range_start = 40
+    range_start = 45
     range_end = 90
-    default = 60
+    default = 65
 
 class ExtraGearPercentage(Range):
     """
