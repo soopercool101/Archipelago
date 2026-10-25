@@ -164,8 +164,6 @@ class YellowTaxiWorld(World):
         self.has_rocket_access : bool = False
         # Pizza Wheels or Golden Spring can give spike traversal
         self.has_spike_traversal : bool = False
-        # Should inception hat be progression
-        self.inception_hat_prog : bool = False
         # Hat prices
         self.reach_hat_events : Dict[str, int] = {}
         self.hat_locations : List[str] = []

@@ -622,11 +622,9 @@ class RuleFactory:
                 no_laser_rule &= Has(ItemNames.morios_brain_hat)
             elif (self.world.options.morios_mind_laser_behavior.value ==
                     self.world.options.morios_mind_laser_behavior.option_inception_top_hat):
-                self.world.inception_hat_prog = True
                 no_laser_rule &= Has(ItemNames.inception_top_hat)
             elif (self.world.options.morios_mind_laser_behavior.value ==
                     self.world.options.morios_mind_laser_behavior.option_morios_brain_or_inception_top_hat):
-                self.world.inception_hat_prog = True
                 no_laser_rule &= (Has(ItemNames.morios_brain_hat) | Has(ItemNames.inception_top_hat))
 
             self.cached_complex_rules[token] = no_laser_rule
