@@ -556,6 +556,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 }
                 if world is not None:
                     world.included_hats.add("Top Hat")
+                    world.hat_locations += ["Purchase Top Hat"]
             if world is None or world.options.hat_world_membership:
                 locations["Hat World - Purchase From Hat Master 9000"] = 99_10_00000
         case "Propeller Cap Access":
@@ -565,6 +566,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 }
                 if world is not None:
                     world.included_hats.add("Propeller Cap")
+                    world.hat_locations += ["Purchase Propeller Cap"]
 
     return locations
 
