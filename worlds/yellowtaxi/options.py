@@ -465,7 +465,7 @@ class ChestsanityPercent(Range):
     display_name = "Chestsanity Percent"
     range_start = 1
     range_end = 100
-    default = 50
+    default = 20
 
 class Coinbagsanity(Toggle):
     """
@@ -481,7 +481,7 @@ class CoinbagsanityPercent(Range):
     display_name = "Coinbagsanity Percent"
     range_start = 1
     range_end = 100
-    default = 20
+    default = 5
 
 class Coinsanity(Toggle):
     """
