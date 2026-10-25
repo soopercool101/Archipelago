@@ -1244,7 +1244,6 @@ class YellowTaxiOptions(PerGameCommonOptions):
     sort_randomized_prices_by_sphere: SortRandomizedPricesBySphere
     minimum_hat_price: MinimumHatPrice
     maximum_hat_price: MaximumHatPrice
-    shuffle_rat: ShuffleRat
     bunnysanity: Bunnysanity
     bunnysanity_includes_all_bunnies: BunnysanityIncludesAllBunnies
     hatsanity: Hatsanity
@@ -1269,6 +1268,7 @@ class YellowTaxiOptions(PerGameCommonOptions):
     shuffle_world_map: ShuffleWorldMap
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
+    shuffle_rat: ShuffleRat
     pizza_wheels: PizzaWheels
     extra_demo_collectables: ExtraDemoCollectables
     time_trial_gears: TimeTrialGears
