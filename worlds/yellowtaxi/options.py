@@ -1031,7 +1031,7 @@ class StandardGearColor(TextChoice):
     option_lightblue = "lightblue"
     option_purple = "purple"
     option_yellow = "yellow"
-    #option_lime = "lime" # Too similar to standard green to be listed. Can still be inputted though.
+    option_lime = "lime"
     option_fuchsia = "fuchsia"
     option_white = "white"
     option_silver = "silver"
