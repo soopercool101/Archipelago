@@ -36,7 +36,11 @@ class YellowTaxiWorld(World):
     item_name_groups = {
         "Move": { "Progressive Jump", "Progressive Boost" },
         "Move (Hub)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
+        "Progressive Jump (Morio's Lab)": { "Progressive Jump (Hub)" },
+        "Progressive Boost (Morio's Lab)": { "Progressive Boost (Hub)" },
         "Move (Morio's Lab)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
+        "Progressive Jump (Granny's Island)": { "Progressive Jump (Hub)" },
+        "Progressive Boost (Granny's Island)": { "Progressive Boost (Hub)" },
         "Move (Granny's Island)": { "Progressive Jump (Hub)", "Progressive Boost (Hub)" },
         "Move (Morio's Home)": { "Progressive Jump (Morio's Home)", "Progressive Boost (Morio's Home)" },
         "Move (Bombeach)": { "Progressive Jump (Bombeach)", "Progressive Boost (Bombeach)" },
