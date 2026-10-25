@@ -380,7 +380,7 @@ class MinimumHatPrice(Range):
 
     If greater than Maximum, they will be swapped.
     """
-    display_name = "Minimum Hat Price"
+    display_name = "Minimum Randomized Hat Price"
 
     range_start = 0
     range_end = 5000
@@ -392,11 +392,11 @@ class MaximumHatPrice(Range):
 
     If lower than Minimum, they will be swapped.
     """
-    display_name = "Maximum Hat Price"
+    display_name = "Maximum Randomized Hat Price"
 
     range_start = 0
     range_end = 5000
-    default = 1200
+    default = 1000
 
 class Bunnysanity(Toggle):
     """
@@ -1076,7 +1076,7 @@ class TimeAttackGearColor(TextChoice):
     Sets the color used for uncollected time attack gears.
     Can also be set to a hex color code (e.g. '#E91E63') for a custom color.
     """
-    display_name = "Gear Color"
+    display_name = "Time Attack Gear Color"
     option_vanilla_green = "vanilla_green"
     option_gold = "gold"
     option_red = "red"
