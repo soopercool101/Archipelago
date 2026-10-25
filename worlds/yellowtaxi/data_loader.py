@@ -43,6 +43,20 @@ original_portal_level_order : List[str] = [
     "The Moon",
 ]
 
+original_portal_costs : List[int] = [
+    3,  # "Morio's Home",
+    6,  # "Bombeach",
+    18, # "Arcade Panik",
+    32, # "Pizza Time",
+    50, # "Tosla's Offices",
+    65, # "Maurizio's City",
+    80, # "Crash Test Industries",
+    0, # "Morio's Mind",
+    0, # "Ruined Observatory",
+    130, # "Tosla HQ",
+    # 130, # "The Moon",
+]
+
 alternative_portal_level_order : List[str] = [
     "Bombeach",
     "Pizza Time",

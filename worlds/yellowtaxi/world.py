@@ -154,6 +154,7 @@ class YellowTaxiWorld(World):
         self.exclude_top_bunny : bool = False
         self.hub_bunnies : int = 3
         self.final_portal_cost : int = 0
+        self.highest_portal_cost : int = 0
         self.goal_levels : List[str] = ["Bombeach"]
         # These are used to simplify logic and region inclusion rules
         # Sometimes not shuffling these results in them not existing, if the related level isn't in the game
@@ -361,6 +362,10 @@ class YellowTaxiWorld(World):
                         "Morio's Lab - Middle Floors 2 Golden Propellers",
                         "Morio's Lab - Ground Floor Golden Propeller",
                     ]
+        elif self.options.expert_level <= 0:
+            self.excluded_regions += [
+                "Morio's Lab - Second Floor Access to Shortcut Pipe",
+            ]
         if not "Tosla's Offices" in self.included_levels and "Tosla's Offices" in self.goal_levels:
             # Remove employees-only completely since the hat will not be progression in this case
             # Makes generator less mad
@@ -469,6 +474,16 @@ class YellowTaxiWorld(World):
 
             if move != "":
                 self.multiworld.local_early_items[self.player][move] = 1
+
+        # Calculate highest portal cost
+        for index in range(len(data_loader.original_portal_costs)):
+            portal : str = self.level_order[index]
+            if portal == "Excluded":
+                break
+            if portal in self.goal_levels:
+                continue
+            if self.highest_portal_cost < data_loader.original_portal_costs[index]:
+                self.highest_portal_cost = data_loader.original_portal_costs[index]
 
     def create_regions(self) -> None:
         regions.create_and_connect_regions(self)

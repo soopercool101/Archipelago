@@ -576,7 +576,7 @@ def fix_location_deficit(world: YellowTaxiWorld):
         return
 
     if world.options.extra_gear_percentage.value < 100:
-        extra_gears : int = world.num_gears - world.final_portal_cost
+        extra_gears : int = world.num_gears - max(world.final_portal_cost, world.highest_portal_cost)
         remaining_extra_gears : int = int((extra_gears * world.options.extra_gear_percentage.value) / 100)
         removed_gears : int = extra_gears - remaining_extra_gears
         world.num_gears -= removed_gears
@@ -651,14 +651,8 @@ def fix_location_deficit(world: YellowTaxiWorld):
 
     # Bunnysanity can give or take away from deficit, depending on settings
     if world.options.bunnysanity:
-        # If Mosk's Rocket isn't an included level, bunnies are not made. Remove from deficit
-        if "Mosk's Rocket" not in world.included_levels:
-            location_deficit -= world.hub_bunnies
-            for level in world.included_levels:
-                if level not in ["Hub", "Mosk's Rocket", "Psycho Taxi"] and not level.endswith("!"):
-                    location_deficit -= 3
-        # Otherwise, include all bunnies setting will add to deficit for every not-included level
-        elif world.options.bunnysanity_includes_all_bunnies:
+        # Include all bunnies setting will add to deficit for every not-included level, assuming bunnies are made
+        if "Mosk's Rocket" in world.included_levels and world.options.bunnysanity_includes_all_bunnies:
             for level in data_loader.original_portal_level_order + data_loader.grannys_island_level_order:
                 if level not in world.included_levels:
                     location_deficit += 3
@@ -672,3 +666,5 @@ def fix_location_deficit(world: YellowTaxiWorld):
         location_deficit -= world.num_filler
         world.num_filler = 0
         world.num_gears -= location_deficit
+        if world.final_portal_cost > world.num_gears:
+            world.final_portal_cost = world.num_gears
