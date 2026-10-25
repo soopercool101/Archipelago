@@ -125,7 +125,7 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
     else:
         misc_order += [str(miscellaneous_level_order[0])]
 
-    # Time trials don't get excluded in the same way as other levels
+    # Time attacks don't get excluded in the same way as other levels
     if options.shuffle_time_trial_entrances:
         misc_order += list(valid_misc[misc_index:misc_index+3])
         misc_index += 3
@@ -164,7 +164,7 @@ def get_level_order(options: YellowTaxiOptions, random: Random, goal_portal : st
                 # Don't let Morio's Mind be the first level on Expert 0 (Mind is highly open but *really* hard)
                 if options.expert_level == 0 and valid_levels[0] == "Morio's Mind":
                     continue
-                # If time trials don't have gears, don't let the first level be a time trial
+                # If time attacks don't have gears, don't let the first level be a time attack
                 if not options.time_trial_gears and valid_levels[0].endswith("!"):
                     continue
             break

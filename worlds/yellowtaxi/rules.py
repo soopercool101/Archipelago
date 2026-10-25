@@ -36,7 +36,7 @@ def set_all_entrance_location_rules(world: YellowTaxiWorld, rf: RuleFactory) -> 
                 rf.move_prefix = "Progressive "
 
             if reg["level"].endswith("!"):
-                rf.move_suffix = " (Time Trials)"
+                rf.move_suffix = " (Time Attacks)"
             else:
                 rf.move_suffix = f" ({reg["level"]})"
 
@@ -543,31 +543,31 @@ class RuleFactory:
                 case self.world.options.locked_time_trials.option_open:
                     return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return Has("Time Trial Remote")
+                    return Has("Time Attack Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return Has("Time Trial Remote (Baby Steps!)")
+                    return Has("Time Attack Remote (Baby Steps!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return Has("Progressive Time Trial Remote")
+                    return Has("Progressive Time Attack Remote")
         if token == "TT2":
             match self.world.options.locked_time_trials:
                 case self.world.options.locked_time_trials.option_open:
                     return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return Has("Time Trial Remote")
+                    return Has("Time Attack Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return Has("Time Trial Remote (Getting Gud!)")
+                    return Has("Time Attack Remote (Getting Gud!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return Has("Progressive Time Trial Remote", 2)
+                    return Has("Progressive Time Attack Remote", 2)
         if token == "TT3":
             match self.world.options.locked_time_trials:
                 case self.world.options.locked_time_trials.option_open:
                     return True_()
                 case self.world.options.locked_time_trials.option_single_item:
-                    return Has("Time Trial Remote")
+                    return Has("Time Attack Remote")
                 case self.world.options.locked_time_trials.option_split_items:
-                    return Has("Time Trial Remote (Pro Tricks!)")
+                    return Has("Time Attack Remote (Pro Tricks!)")
                 case self.world.options.locked_time_trials.option_progressive_items:
-                    return Has("Progressive Time Trial Remote", 3)
+                    return Has("Progressive Time Attack Remote", 3)
         if token == "Pizza":
             if not self.world.options.pizzasanity:
                 return False_()

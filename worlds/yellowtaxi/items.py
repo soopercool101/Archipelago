@@ -102,9 +102,9 @@ ITEM_NAME_TO_ID = {
     "Sewer Key": 10_08,
     "Dream Machine": 10_12,
     "Mosk's Rocket": 10_16,
-    "Time Trial Remote (Baby Steps!)": 10_17,
-    "Time Trial Remote (Getting Gud!)": 10_18,
-    "Time Trial Remote (Pro Tricks!)": 10_19,
+    "Time Attack Remote (Baby Steps!)": 10_17,
+    "Time Attack Remote (Getting Gud!)": 10_18,
+    "Time Attack Remote (Pro Tricks!)": 10_19,
     "Hat World Membership": 10_99,
     "Morio's Wardrobe": 11_00,
     "Gela-Toni": 11_01,
@@ -112,8 +112,8 @@ ITEM_NAME_TO_ID = {
     "Orange Switch": 11_10,
     "Full Game Unlock": 11_11,
     "Morio's Password": 11_12,
-    "Time Trial Remote": 11_17,
-    "Progressive Time Trial Remote": 11_18,
+    "Time Attack Remote": 11_17,
+    "Progressive Time Attack Remote": 11_18,
     "Corrupted Pizza Slice": 12_02,
     "Psycho Taxi Cartridge": 20_01,
     "Michele": 20_02,
@@ -170,8 +170,8 @@ ITEM_NAME_TO_ID = {
     "Progressive Boost (Mosk's Rocket)": 777_16_0_2,
     "Progressive Jump (Psycho Taxi)": 777_20_0_1,
     "Progressive Boost (Psycho Taxi)": 777_20_0_2,
-    "Progressive Jump (Time Trials)": 777_21_0_1,
-    "Progressive Boost (Time Trials)": 777_21_0_2,
+    "Progressive Jump (Time Attacks)": 777_21_0_1,
+    "Progressive Boost (Time Attacks)": 777_21_0_2,
 
     # Universal Tracker Only
     "Additional Expert Logic Level": 666_999
@@ -214,9 +214,9 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Sewer Key": ItemClassification.progression,
     "Dream Machine": ItemClassification.progression,
     "Mosk's Rocket": ItemClassification.progression,
-    "Time Trial Remote (Baby Steps!)": ItemClassification.progression,
-    "Time Trial Remote (Getting Gud!)": ItemClassification.progression,
-    "Time Trial Remote (Pro Tricks!)": ItemClassification.progression,
+    "Time Attack Remote (Baby Steps!)": ItemClassification.progression,
+    "Time Attack Remote (Getting Gud!)": ItemClassification.progression,
+    "Time Attack Remote (Pro Tricks!)": ItemClassification.progression,
     "Hat World Membership": ItemClassification.progression,
     "Morio's Wardrobe": ItemClassification.progression,
     "Gela-Toni": ItemClassification.progression,
@@ -224,8 +224,8 @@ DEFAULT_ITEM_CLASSIFICATIONS = {
     "Orange Switch": ItemClassification.progression,
     "Full Game Unlock": ItemClassification.progression,
     "Morio's Password": ItemClassification.progression,
-    "Time Trial Remote": ItemClassification.progression,
-    "Progressive Time Trial Remote": ItemClassification.progression,
+    "Time Attack Remote": ItemClassification.progression,
+    "Progressive Time Attack Remote": ItemClassification.progression,
     "Corrupted Pizza Slice": ItemClassification.progression,
     "Michele": ItemClassification.useful,
 
@@ -464,8 +464,8 @@ def create_all_items(world: YellowTaxiWorld) -> None:
                     itempool += [world.create_item("Jump (Crash Test Industries)")]
             elif level.endswith("!"):
                 if not created_time_trial_moves:
-                    itempool += [world.create_item("Progressive Boost (Time Trials)") for _ in range(2)]
-                    itempool += [world.create_item("Progressive Jump (Time Trials)") for _ in range(2)]
+                    itempool += [world.create_item("Progressive Boost (Time Attacks)") for _ in range(2)]
+                    itempool += [world.create_item("Progressive Jump (Time Attacks)") for _ in range(2)]
                     created_time_trial_moves = True
             elif level != "Psycho Taxi":
                 itempool += [world.create_item(f"Progressive Boost ({level})") for _ in range(2)]
@@ -511,13 +511,13 @@ def create_all_items(world: YellowTaxiWorld) -> None:
         itempool.append(world.create_item("Morio's Wardrobe"))
 
     if world.options.locked_time_trials == world.options.locked_time_trials.option_single_item:
-        itempool.append(world.create_item("Time Trial Remote"))
+        itempool.append(world.create_item("Time Attack Remote"))
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_split_items:
-        itempool.append(world.create_item("Time Trial Remote (Baby Steps!)"))
-        itempool.append(world.create_item("Time Trial Remote (Getting Gud!)"))
-        itempool.append(world.create_item("Time Trial Remote (Pro Tricks!)"))
+        itempool.append(world.create_item("Time Attack Remote (Baby Steps!)"))
+        itempool.append(world.create_item("Time Attack Remote (Getting Gud!)"))
+        itempool.append(world.create_item("Time Attack Remote (Pro Tricks!)"))
     elif world.options.locked_time_trials == world.options.locked_time_trials.option_progressive_items:
-        itempool += [world.create_item("Progressive Time Trial Remote") for _ in range(3)]
+        itempool += [world.create_item("Progressive Time Attack Remote") for _ in range(3)]
 
     if world.options.pizzasanity and "Pizza Time" in world.included_levels:
         itempool += [world.create_item("Corrupted Pizza Slice") for _ in range(world.options.pizzasanity_count.value)]

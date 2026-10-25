@@ -101,10 +101,10 @@ class ExtraDemoCollectables(Toggle):
 
 class TimeTrialGears(Toggle):
     """
-    Adds each individual gear in Time Trials as a location, and adds the corresponding amount of gears to the pool.
+    Adds each individual gear in Time Attacks as a location, and adds the corresponding amount of gears to the pool.
     """
 
-    display_name = "Add Time Trial Gears"
+    display_name = "Add Time Attack Gears"
 
 class OpenGrannysIsland(Toggle):
     """
@@ -269,14 +269,15 @@ class MoskRocketUnlockCondition(Choice):
 
 class LockedTimeTrials(Choice):
     """
-    Whether Time Trials are locked behind an item. If set to anything but Open, will add locations for completing each Time Trial.
+    Whether Time Attack TVs are locked behind an item.
+    If set to anything but Open, will add locations for completing each Time Attack.
 
-    Open: Time Trials TVs can always be accessed
-    Single Item: Adds a "Time Trial Remote" item that is needed to access Time Trial TVs
-    Split Items: Adds three specific Time Trial Remote items, each corresponding to an individual Time Trial.
-    Progressive Items: Adds three "Progressive Time Trial Remote" items, each one allowing access to the next sequential Time Trial.
+    Open: Time Attack TVs can always be accessed
+    Single Item: Adds a "Time Attack Remote" item that is needed to access Time Attack TVs
+    Split Items: Adds three specific Time Attack Remote items, each corresponding to an individual Time Attack.
+    Progressive Items: Adds three "Progressive Time Attack Remote" items, each one allowing access to the next sequential Time Attack.
     """
-    display_name = "Locked Time Trials"
+    display_name = "Locked Time Attacks"
 
     option_open = 0
     option_single_item = 1
@@ -796,7 +797,7 @@ class AllowShufflingRemovedLevels(Choice):
     """
     When on, allows levels to be shuffled when they would normally not be included in the game.
     These levels will potentially replace shuffled levels that would normally be included by your settings.
-    Note that Time Trials, Psycho Taxi, and Mosk's Rocket are unaffected by this setting,
+    Note that Time Attacks, Psycho Taxi, and Mosk's Rocket are unaffected by this setting,
     and will be shuffled into the pool if their shuffle settings are enabled regardless of being excluded or not.
 
     None: Only shuffle levels that would be included by your non-ER options
@@ -837,11 +838,11 @@ class ShuffleGrannysLevels(Toggle):
 
 class ShuffleTimeTrialsEntrances(Toggle):
     """
-    Whether the three Time Trials should have their entrances be shuffled.
+    Whether the three Time Attacks should have their entrances be shuffled.
 
     If "Use Separate Entrance Pools" is true, these will be in the "Miscellaneous" pool.
     """
-    display_name = "Shuffle Time Trial Entrances"
+    display_name = "Shuffle Time Attack Entrances"
 
 class ShuffleRocketEntrance(Toggle):
     """
@@ -963,7 +964,7 @@ class GlitchedTaxiSkinColor(TextChoice):
     option_lightblue = "lightblue"
     option_purple = "purple"
     option_yellow = "yellow"
-    #option_lime = "lime" # Too similar to time trial green to be listed. Can still be inputted though.
+    #option_lime = "lime" # Too similar to time attack green to be listed. Can still be inputted though.
     option_fuchsia = "fuchsia"
     option_white = "white"
     option_silver = "silver"
@@ -987,7 +988,7 @@ class GlitchedTaxiSkinColor(TextChoice):
         # https://docs.unity3d.com/2020.3/Documentation/ScriptReference/ColorUtility.TryParseHtmlString.html
         if text.lower() in ["red", "cyan", "blue", "darkblue", "lightblue", "purple", "yellow", "lime", "fuchsia",
                             "white", "silver", "grey", "black", "orange", "brown", "maroon", "green", "olive", "navy",
-                            "teal", "aqua", "magenta", "vanilla_orange", "time_trial_green", "time_trial_gold"]:
+                            "teal", "aqua", "magenta", "vanilla_orange", "time_attack_green", "time_attack_gold"]:
             return cls(text.lower())
         # Interpret "random" as a completely random hex code
         if text.lower() == "random":

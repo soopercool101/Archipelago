@@ -41,7 +41,7 @@ def create_locations(world: YellowTaxiWorld) -> None:
             continue
 
         locations : Dict[str, int | None] = {}
-        # Time Trial Levels all end with "!", skip them when time trial gears aren't shuffled
+        # Time Attack Levels all end with "!", skip them when time attack gears aren't shuffled
         if "gears" in reg.keys() and (world.using_ut or world.options.time_trial_gears or not level.endswith("!")):
             locations = reg["gears"]
             world.num_gears += len(locations)
@@ -501,17 +501,17 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
         case "Baby Steps! - Pillar":
             if world is None or world.options.locked_time_trials:
                 locations = {
-                    "Baby Steps! - Complete Time Trial": 17_00_00000,
+                    "Baby Steps! - Complete Time Attack": 17_00_00000,
                 }
         case "Getting Gud! - In the Air":
             if world is None or world.options.locked_time_trials:
                 locations = {
-                    "Getting Gud! - Complete Time Trial": 18_00_00000,
+                    "Getting Gud! - Complete Time Attack": 18_00_00000,
                 }
         case "Pro Tricks! - Final Section":
             if world is None or world.options.locked_time_trials:
                 locations = {
-                    "Pro Tricks! - Complete Time Trial": 19_00_00000,
+                    "Pro Tricks! - Complete Time Attack": 19_00_00000,
                 }
         case "Flushed Away - Starting Area":
             if (world is None or
