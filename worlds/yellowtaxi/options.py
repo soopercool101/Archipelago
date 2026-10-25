@@ -42,7 +42,7 @@ class ExtraGearPercentage(Range):
     display_name = "Extra Gear Percentage"
     range_start = 0
     range_end = 100
-    default = 50
+    default = 25
 
 class RemoveGoalPortalLocations(Toggle):
     """
@@ -55,7 +55,7 @@ class RemovePostGoalPortals(Toggle):
     """
     If true, removes portals that are after your current goal portal.
 
-    Note that the game does not currently support any portals after Tosla's Offices, so these will always be removed.
+    Note that the game does not currently support any portals after Morio's Mind, so these will always be removed.
     """
 
     display_name = "Remove Post-Goal Portals"
