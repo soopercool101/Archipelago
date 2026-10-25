@@ -329,7 +329,7 @@ def get_special_locations(world: Union[YellowTaxiWorld | None], region_name: str
                 locations = {
                     "Morio's Lab - Talk to Morio in Morio's Room": 10_00000,
                 }
-        case "Morio's Lab - Psycho Taxi Arcade Machine":
+        case "Morio's Lab - Psycho Taxi Arcade Machine Area":
             if world is None or world.early_psycho_taxi:
                 locations = {
                     "Morio's Lab - Interact with Psycho Taxi Arcade Machine": 20_99999,
