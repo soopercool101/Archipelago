@@ -665,7 +665,7 @@ def fix_location_deficit(world: YellowTaxiWorld):
 
     # Pizzasanity can remove from the deficit if less than 5 pizza slices are shuffled
     if world.options.pizzasanity and "Pizza Time" in world.included_levels:
-        location_deficit -= (world.options.pizzasanity_count.value - 5)
+        location_deficit -= (5 - world.options.pizzasanity_count.value)
 
     # If there are not enough filler items to cover the deficit, we have to eat into gears
     if location_deficit > world.num_filler:
