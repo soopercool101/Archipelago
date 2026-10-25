@@ -541,6 +541,17 @@ class PizzasanityCount(Range):
     range_end = 5
     default = 5
 
+class EarlyMove(Toggle):
+    """
+    If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to local sphere 0.
+
+    Prevents an early BK depending on settings.
+
+    If per-level Flip O' Will randomization is performed, this will be a Hub move.
+    """
+
+    display_name = "Early Move"
+
 class ShuffleFlipOWill(Choice):
     """
     Shuffles the Flip O' Will into the item pool as 2 Progressive Boosts and 2 Progressive Jumps.
@@ -605,17 +616,6 @@ class ShuffleWorldMap(Toggle):
     """
 
     display_name = "Shuffle World Map"
-
-class EarlyMove(Toggle):
-    """
-    If Flip O' Will Shuffle is enabled, forces either a Progressive Boost or Progressive Jump to local sphere 0.
-
-    Prevents an early BK depending on settings.
-
-    If per-level Flip O' Will randomization is performed, this will be a Hub move.
-    """
-
-    display_name = "Early Move"
 
 class ShuffleGoldenSpring(DefaultOnToggle):
     """
@@ -1261,12 +1261,12 @@ class YellowTaxiOptions(PerGameCommonOptions):
     cheesesanity: Cheesesanity
     pizzasanity: Pizzasanity
     pizzasanity_count: PizzasanityCount
+    early_move: EarlyMove
     shuffle_flip_o_will: ShuffleFlipOWill
     allow_top_down_jumps: AllowTopDownJumps
     shuffle_spin_attack: ShuffleSpinAttack
     shuffle_glide: ShuffleGlide
     shuffle_world_map: ShuffleWorldMap
-    early_move: EarlyMove
     shuffle_golden_spring: ShuffleGoldenSpring
     shuffle_golden_propeller: ShuffleGoldenPropeller
     pizza_wheels: PizzaWheels
@@ -1352,11 +1352,11 @@ option_groups = [
     OptionGroup(
         "Ability Randomizer Options",
         [
+            EarlyMove,
             ShuffleFlipOWill,
             AllowTopDownJumps,
             ShuffleSpinAttack,
             ShuffleGlide,
-            EarlyMove,
             ShuffleGoldenSpring,
             ShuffleGoldenPropeller,
             PizzaWheels,
