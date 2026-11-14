@@ -1,7 +1,7 @@
 # Cut the Rope Randomizer Setup Guide
 
 ## Required Software
-- A [Big Fish](https://www.bigfishgames.com/cut-the-rope-f7389t1l1.html) or [Steam](https://store.steampowered.com/app/223280/Cut_the_Rope/) *(delisted)* PC copy of Yellow Taxi Goes Vroom
+- A [Big Fish](https://www.bigfishgames.com/cut-the-rope-f7389t1l1.html) or [Steam](https://store.steampowered.com/app/223280/Cut_the_Rope/) *(delisted)* PC copy of Cut the Rope
 - The [latest client](https://github.com/soopercool101/CutTheRopeAP/releases/latest)
 
 ## Optional/Recommended Software
