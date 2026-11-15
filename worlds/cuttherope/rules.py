@@ -100,6 +100,21 @@ class RuleFactory:
                 return False_()
             self.world.spikes_progression = True
             return Has("Disable Spikes")
+        if token == "Sl":
+            self.world.has_slider = True
+            return Has("Sliders")
+        if token == "E1":
+            self.world.has_electric_gates = True
+            if self.world.options.progressive_electric_sparks:
+                return Has("Progressive Electric Sparks")
+            else:
+                return Has("Electric Sparks")
+        if token == "E2":
+            self.world.has_electric_gates = True
+            if self.world.options.progressive_electric_sparks:
+                return Has("Progressive Electric Sparks", 2)
+            else:
+                return False_()
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()

@@ -34,7 +34,7 @@ ITEM_NAME_TO_ID = {
     "Automatic Ropes": 1_02,
     "Air Cushions": 1_03,
     "Sliders": 1_04,
-    "Electric Gates": 1_05,
+    "Electric Sparks": 1_05,
     "Hats": 1_06,
     "Bouncers": 1_07,
     "Wheels": 1_08,
@@ -44,7 +44,7 @@ ITEM_NAME_TO_ID = {
     "Records": 1_12,
     "Disable Spikes": 2_00,
     "Disable Star Timers": 2_01,
-    "Progressive Electric Gates": 2_05,
+    "Progressive Electric Sparks": 2_05,
     "Progressive Blades": 2_10,
     
     # Boxes
@@ -59,6 +59,9 @@ ITEM_NAME_TO_ID = {
     "Toolbox": 10_09,
     "Buzz Box": 10_10,
     "DJ Box": 10_11, # Probably unused unless I make goal box selectable while still having more boxes
+
+    # Universal Tracker Only
+    "Additional Expert Logic Level": 666_999
 }
 
 class CutTheRopeItem(Item):
@@ -113,9 +116,9 @@ def create_all_items(world: CutTheRopeWorld) -> None:
         itempool.append(world.create_item("Sliders"))
     if world.has_electric_gates:
         if world.options.progressive_electric_sparks:
-            itempool += [world.create_item("Progressive Electric Gates") for _ in range(2)]
+            itempool += [world.create_item("Progressive Electric Sparks") for _ in range(2)]
         else:
-            itempool.append(world.create_item("Electric Gates"))
+            itempool.append(world.create_item("Electric Sparks"))
     if world.has_hat:
         itempool.append(world.create_item("Hats"))
     if world.has_bouncer:
@@ -142,6 +145,10 @@ def create_all_items(world: CutTheRopeWorld) -> None:
 
     if world.options.tutorials_item:
         itempool.append(world.create_item("Tutorials"))
+
+    if world.options.box_locking_mode == world.options.box_locking_mode.option_box_items:
+        for i in range(1, world.options.goal_box - 1):
+            itempool += [world.create_item(BOX_ITEMS[i])]
 
     # Make goal-required stars
     itempool += [world.create_item("Star") for _ in range(world.options.goal_box_star_requirement)]
