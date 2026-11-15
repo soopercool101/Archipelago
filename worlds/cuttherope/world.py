@@ -89,6 +89,7 @@ class CutTheRopeWorld(World):
         # Same with timed stars kinda
         # TODO: Make list of levels containing timed stars, if none are present don't make the item at all
         self.timed_star_progression : bool = False
+        self.starting_box : int = 1
 
         self.using_ut : bool = False
         # UT only
@@ -124,6 +125,8 @@ class CutTheRopeWorld(World):
                     minor_version = value
                 elif key == "build_version":
                     build_version = value
+                elif key == "starting_box":
+                    self.starting_box = value
 
             if major_version != self.world_version.major or minor_version != self.world_version.minor:
                 message : str = ("APWorld version (v" +
@@ -135,6 +138,19 @@ class CutTheRopeWorld(World):
                 except:
                     raise OptionError(message)
                 raise TrackerException(message=message)
+        # UT doesn't need to choose a starting box
+        elif not self.using_ut and self.options.random_starting_box:
+            if self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips:
+                # Every world has a starting sphere with skips enabled
+                self.starting_box = self.random.choice(range(1, self.options.goal_box - 1))
+            elif self.options.box_locking_mode == self.options.box_locking_mode.option_box_items:
+                # Only certain boxes allow immediately accessible locations, dependent on starsanity settings
+                allowed_boxes : List[int] = [1, 5, 6, 8, 10]
+                if self.options.starsanity_mode == self.options.starsanity_mode.option_individual:
+                    # Individual starsanity boxes have some more options, albeit most of these will be quite restrictive
+                    allowed_boxes += [4, 9, 11]
+                self.starting_box = self.random.choice([i for i in allowed_boxes if i < self.options.goal_box])
+
         # Cap the number of stars to goal at 75 x number of non-goal boxes
         # This guarantees enough stars can be placed prior to the goal
         # Might still need to tweak this honestly, but it's probably fine for now
@@ -182,9 +198,9 @@ class CutTheRopeWorld(World):
                     if box_num == self.options.goal_box - 1:
                         # Goal level has a star requirement
                         level_access_rule = Has("Star", self.options.goal_box_star_requirement.value)
-                    elif box_num > 0:
+                    elif box_num != self.starting_box - 1:
                         # Boxes have an item requirement on non-open world mode
-                        if self.options.box_locking_mode == self.options.box_locking_mode.alias_items:
+                        if self.options.box_locking_mode != self.options.box_locking_mode.option_open_world:
                             level_access_rule = Has(items.BOX_ITEMS[box_num])
                 # Connect the level to previous area
                 previous_region.connect(current_level, rule=level_access_rule)
@@ -236,7 +252,10 @@ class CutTheRopeWorld(World):
 
                 regions += [current_level, current_goal]
 
-                previous_region = current_goal
+                if self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips:
+                    previous_region = current_level
+                else:
+                    previous_region = current_goal
                 level_index += 1
 
         previous_region.add_event("Complete Goal Box", "Victory")
@@ -280,5 +299,6 @@ class CutTheRopeWorld(World):
         slot_data["major_version"] = self.world_version.major
         slot_data["minor_version"] = self.world_version.minor
         slot_data["build_version"] = self.world_version.build
+        slot_data["starting_box"] = self.starting_box
 
         return slot_data

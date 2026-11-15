@@ -103,6 +103,10 @@ class RuleFactory:
         if token == "Sl":
             self.world.has_slider = True
             return Has("Sliders")
+        if token == "SR": # Sliders+Automatic Ropes. Comes up often enough that this helps simplify rules
+            self.world.has_slider = True
+            self.world.has_autograb = True
+            return Has("Sliders") & Has("Automatic Ropes")
         if token == "E1":
             self.world.has_electric_gates = True
             if self.world.options.progressive_electric_sparks:
@@ -115,6 +119,9 @@ class RuleFactory:
                 return Has("Progressive Electric Sparks", 2)
             else:
                 return False_()
+        if token == "H":
+            self.world.has_hat = True
+            return Has("Hats")
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()

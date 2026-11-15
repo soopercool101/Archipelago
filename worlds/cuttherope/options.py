@@ -36,16 +36,26 @@ class BoxLockingMode(Choice):
     """
     How boxes are unlocked.
 
-    Box Items: Specific items are needed to unlock a given box.
     Open World: Each non-goal box starts unlocked.
+    Box Items: Specific items are needed to unlock a given non-goal box.
+    Box Items With Skips: Same as above, but all levels are always accessible in an unlocked non-goal box.
     """
     display_name = "Box Locking Mode"
     option_open_world = 0
     option_box_items = 1
+    option_box_items_with_skips = 2
     default = option_box_items
 
     alias_open = 0
     alias_items = 1
+    alias_skips = 2
+
+class RandomStartingBox(Toggle):
+    """
+    If enabled, you will start with a random box rather than Cardboard Box.
+    Has no effect when Box Locking Mode is set to Open World.
+    """
+    display_name = "Random Starting Box"
 
 class StarsanityMode(Choice):
     """
@@ -57,7 +67,7 @@ class StarsanityMode(Choice):
     display_name = "Starsanity Mode"
     #option_disabled = 0 # TODO: Figure out if this is even fun and worth implementing
     option_per_level_count = 1
-    option_individual = 2 # TODO: Implement
+    option_individual = 2
     default = 1
 
 class ExpertLevel(Range):
@@ -75,6 +85,7 @@ class ExpertLevel(Range):
 class DeathLinkAmnesty(Range):
     """
     How many deaths it takes to send a DeathLink.
+    Note that some levels will kill you instantly without items, it is highly recommended to have this higher than 1!
     """
     display_name = "Death Link Amnesty"
     range_start = 1
@@ -118,6 +129,7 @@ class CutTheRopeOptions(PerGameCommonOptions):
     goal_box_star_requirement: GoalBoxStarRequirement
     extra_stars: ExtraStars
     box_locking_mode: BoxLockingMode
+    random_starting_box: RandomStartingBox
     starsanity_mode: StarsanityMode
     expert_level: ExpertLevel
     death_link: DeathLink

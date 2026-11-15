@@ -676,16 +676,16 @@
     }
   },
   "3-3": {
-    "goal": "Sl+AR & X1/AC & X2/Bu",
+    "goal": "SR & X1/AC & X2/Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "Middle Star": "AR+Bu+AC | AR+Sl & X2/Bu",
+      "Middle Star": "AR+Bu+AC | SR & X2/Bu",
       "Bottom Star": "AR & Sl/Bu",
-      "Top Star": "AR+Bu+AC | AR+Sl & X2/Bu"
+      "Top Star": "AR+Bu+AC | SR & X2/Bu"
     }
   },
   "3-4": {
@@ -754,29 +754,29 @@
     }
   },
   "3-9": {
-    "goal": "Bu+AR+Sl",
+    "goal": "Bu+SR",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "Top Star": "Bu+AR+Sl",
-      "Left Star": "Bu+AR+Sl",
-      "Right Star": "Bu+AR+Sl"
+      "Top Star": "Bu+SR",
+      "Left Star": "Bu+SR",
+      "Right Star": "Bu+SR"
     }
   },
   "3-10": {
-    "goal": "Sl+AR",
+    "goal": "SR",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "Left Star": "Sl+AR",
-      "Top Star": "Sl+AR",
-      "Right Star": "Sl+AR"
+      "Left Star": "SR",
+      "Top Star": "SR",
+      "Right Star": "SR"
     }
   },
   "3-11": {
@@ -923,11 +923,11 @@
     }
   },
   "3-22": {
-    "goal": "X1+SD+Sl | Sl+AR+Bu+E1",
+    "goal": "X1+SD+Sl | SR+Bu+E1",
     "starcounts": [
       "",
-      "Sl+AR+Bu+E1",
-      "Sl+AR+Bu+E1"
+      "SR+Bu+E1",
+      "SR+Bu+E1"
     ],
     "starsanity": {
       "Bottom Left Star": "",
@@ -1159,144 +1159,144 @@
   "4-15": {
     "goal": "",
     "starcounts": [
-      "SD/AC | SL+AR",
-      "SD+AC | SL+AR & X1/Bu",
-      "AC"
+      "SD/AC | SR",
+      "SD+AC | SR & X1/Bu",
+      "AC+SR & X1/Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Star": "AC",
+      "Left Star": "",
+      "Right Star": ""
     }
   },
   "4-16": {
-    "goal": "",
+    "goal": "H+AC",
     "starcounts": [
       "",
       "",
-      "AC"
+      ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Star": "H+AC",
+      "Moving Star": "H",
+      "Star Below Om Nom": "H+AC"
     }
   },
   "4-17": {
-    "goal": "",
+    "goal": "Bu+AC+H+AR | X1+Bu+SD+H & X2/AR",
     "starcounts": [
-      "",
-      "",
-      ""
+      "AR",
+      "AR",
+      "AR"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Right Star": "Bu+H+AC | X1+SD+Bu+H",
+      "Left Star": "Bu",
+      "Top Star": "Bu+H"
     }
   },
   "4-18": {
-    "goal": "",
+    "goal": "X1/H",
     "starcounts": [
-      "",
-      "",
-      ""
+      "H",
+      "H+Sl",
+      "H+Sl"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Left Star": "H+Sl",
+      "Bottom Right Star": "",
+      "Bottom Left Star": ""
     }
   },
   "4-19": {
-    "goal": "",
+    "goal": "X1/Sl",
     "starcounts": [
-      "",
-      "",
-      ""
+      "H+Sl",
+      "H+Sl",
+      "H+Sl"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Star": "H+Sl",
+      "Bottom Star": "H+Sl",
+      "Middle Star": "H+Sl"
     }
   },
   "4-20": {
-    "goal": "",
+    "goal": "Bu+SR",
     "starcounts": [
       "",
       "",
-      ""
+      "X2 | H+AC | X1+TS"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Left Star": "Bu",
+      "Top Right Star": "Bu+H+AC | Bu+SR & X2/TS",
+      "Bottom Star": "SR"
     }
   },
   "4-21": {
     "goal": "",
     "starcounts": [
       "",
-      "",
-      ""
+      "Bu+Sl+H+AC",
+      "Bu+Sl+H+AC"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Center Star": "",
+      "Left Star": "Sl",
+      "Right Star": "Sl"
     }
   },
   "4-22": {
-    "goal": "",
+    "goal": "Bu+H+AR+AC",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Right Star": "Bu+AR & X2/AC",
+      "Bottom Star": "Bu+AR",
+      "Top Left Star": "Bu+AR"
     }
   },
   "4-23": {
-    "goal": "",
+    "goal": "H+AR",
     "starcounts": [
       "",
       "",
-      ""
+      "Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Right Star": "H+AR+Bu",
+      "Bottom Left Star": "H",
+      "Top Star": "H+AR"
     }
   },
   "4-24": {
     "goal": "",
     "starcounts": [
-      "",
-      "",
-      ""
+      "H+Bu",
+      "H+Bu",
+      "H+Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Center Star": "",
+      "Right Star": "",
+      "Left Star": ""
     }
   },
   "4-25": {
-    "goal": "",
+    "goal": "H",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "H",
+      "Bottom Right Star": "H",
+      "Top Star": ""
     }
   },
   "5-1": {
@@ -1307,35 +1307,35 @@
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Right Star": "",
+      "Top Left Star": "",
+      "Bottom Star": ""
     }
   },
   "5-2": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Middle Star": "Bu",
+      "Bottom Star": "",
+      "Top Star": "Bu"
     }
   },
   "5-3": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Right Star": "Bu",
+      "Center Star": "Bu",
+      "Left Star": "X1/Bu"
     }
   },
   "5-4": {
@@ -1346,22 +1346,22 @@
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Right Star": "",
+      "Top Left Star": "",
+      "Bottom Star": ""
     }
   },
   "5-5": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Star": "",
+      "Top Star": "",
+      "Left Star": "Bu | X2+SD"
     }
   },
   "5-6": {
@@ -1372,256 +1372,256 @@
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Left Star": "",
+      "Top Right Star": "",
+      "Star Above Om Nom": ""
     }
   },
   "5-7": {
-    "goal": "",
+    "goal": "Bu+AC",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "",
+      "Bottom Right Star": "",
+      "Top Left Star": "Bu"
     }
   },
   "5-8": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
-      "",
-      "",
-      ""
+      "X1/Sl",
+      "Sl",
+      "Sl"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Right Star": "",
+      "Bottom Left Star": "",
+      "Bottom Right Star": ""
     }
   },
   "5-9": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Star": "",
+      "Star Below Om Nom": "Bu",
+      "Right Star": ""
     }
   },
   "5-10": {
-    "goal": "",
+    "goal": "Bu+AC",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "",
+      "Top Left Star": "Bu",
+      "Star Below Om Nom": "Bu"
     }
   },
   "5-11": {
-    "goal": "",
+    "goal": "SR & X1/Bu",
     "starcounts": [
       "",
       "",
-      ""
+      "Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Star": "SR",
+      "Top Left Star": "Bu",
+      "Right Star": ""
     }
   },
   "5-12": {
-    "goal": "",
+    "goal": "AC/Bu",
     "starcounts": [
-      "",
-      "",
-      ""
+      "Bu",
+      "Bu",
+      "Bu & X1/AC"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star in Cluster #1": "Bu",
+      "Star in Cluster #2": "Bu",
+      "Star in Cluster #3": "Bu"
     }
   },
   "5-13": {
-    "goal": "",
+    "goal": "X1/Bu",
     "starcounts": [
       "",
-      "",
-      ""
+      "Bu",
+      "Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Star": "Bu",
+      "Bottom Star": "",
+      "Left Star": "Bu"
     }
   },
   "5-14": {
-    "goal": "",
+    "goal": "Bu+SR",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star Below Om Nom": "Bu",
+      "Left Star": "Bu & Sl/TS",
+      "Bottom Right Star": "X1/Bu"
     }
   },
   "5-15": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "",
+      "Top Right Star": "Bu",
+      "Top Left Star": "Bu"
     }
   },
   "5-16": {
-    "goal": "",
+    "goal": "Bu+SR",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star Above Om Nom": "Bu+SR",
+      "Top Left Star": "Bu",
+      "Top Right Star": "Bu+SR"
     }
   },
   "5-17": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
       "",
       "",
-      ""
+      "AC | X2+TS"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "",
+      "Star Below Om Nom": "Bu/AC",
+      "Bottom Right Star": ""
     }
   },
   "5-18": {
-    "goal": "",
+    "goal": "SD+Bu | Bu+SR+AC",
     "starcounts": [
       "",
-      "",
-      ""
+      "SR+AC",
+      "SR+AC"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Left Star": "Bu+SR",
+      "Right Star": "Bu+SR",
+      "Star Below Om Nom": "Bu"
     }
   },
   "5-19": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
-      "",
-      "",
-      ""
+      "Sl",
+      "Sl",
+      "Sl"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Left Star": "Bu+Sl",
+      "Bottom Star": "",
+      "Top Right Star": "Bu+Sl"
     }
   },
   "5-20": {
-    "goal": "",
+    "goal": "Bu | SR",
     "starcounts": [
-      "",
-      "",
-      ""
+      "Bu",
+      "Bu",
+      "Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star in Bubble": "",
+      "Top Left Star": "",
+      "Bottom Left Star": ""
     }
   },
   "5-21": {
-    "goal": "",
+    "goal": "Bu+AC & X2/AR",
     "starcounts": [
       "",
-      "",
-      ""
+      "AR",
+      "AR"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Right Star": "Bu",
+      "Left Star": "Bu",
+      "Star Below Om Nom": "Bu+AC"
     }
   },
   "5-22": {
-    "goal": "",
+    "goal": "Bu & X1/AR",
     "starcounts": [
       "",
       "",
-      ""
+      "AR/SD"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Right Star": "",
+      "Circling Star #1": "",
+      "Circling Star #2": ""
     }
   },
   "5-23": {
-    "goal": "",
+    "goal": "AC",
     "starcounts": [
-      "",
-      "",
-      ""
+      "Bu",
+      "Bu",
+      "Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Left Star": "Bu",
+      "Top Right Star": "Bu",
+      "Bottom Star": ""
     }
   },
   "5-24": {
-    "goal": "",
+    "goal": "Bu",
     "starcounts": [
-      "",
-      "",
-      ""
+      "X1/AC",
+      "X1/AC",
+      "AC"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Bottom Left Star": "",
+      "Top Right Star": "",
+      "Upper Left Star": ""
     }
   },
   "5-25": {
-    "goal": "",
+    "goal": "Bu+AC+E1",
     "starcounts": [
       "",
       "",
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star in Electric Square #1": "Bu+E1",
+      "Star in Electric Square #2": "Bu+E1",
+      "Star in Electric Square #3": "Bu+E1"
     }
   },
   "6-1": {

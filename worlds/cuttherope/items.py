@@ -146,8 +146,10 @@ def create_all_items(world: CutTheRopeWorld) -> None:
     if world.options.tutorials_item:
         itempool.append(world.create_item("Tutorials"))
 
-    if world.options.box_locking_mode == world.options.box_locking_mode.option_box_items:
-        for i in range(1, world.options.goal_box - 1):
+    if world.options.box_locking_mode != world.options.box_locking_mode.option_open_world:
+        for i in range(0, world.options.goal_box - 1):
+            if i+1 == world.starting_box:
+                continue
             itempool += [world.create_item(BOX_ITEMS[i])]
 
     # Make goal-required stars
