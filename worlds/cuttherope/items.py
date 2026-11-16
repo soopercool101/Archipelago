@@ -122,7 +122,7 @@ def create_all_items(world: CutTheRopeWorld) -> None:
     if world.has_hat:
         itempool.append(world.create_item("Hats"))
     if world.has_bouncer:
-        itempool.append(world.create_item("Bouncer"))
+        itempool.append(world.create_item("Bouncers"))
     if world.has_wheel:
         itempool.append(world.create_item("Wheels"))
     if world.has_gravity_button:

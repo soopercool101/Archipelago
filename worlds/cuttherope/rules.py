@@ -122,6 +122,12 @@ class RuleFactory:
         if token == "H":
             self.world.has_hat = True
             return Has("Hats")
+        if token == "Bo":
+            self.world.has_bouncer = True
+            return Has("Bouncers")
+        if token == "W":
+            self.world.has_wheel = True
+            return Has("Wheels")
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()
