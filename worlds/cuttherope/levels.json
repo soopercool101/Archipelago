@@ -2106,42 +2106,42 @@
     }
   },
   "7-13": {
-    "goal": "",
+    "goal": "W+Bu+SR & AC/SD",
     "starcounts": [
       "",
       "",
-      ""
+      "AC"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Star": "W+Bu+SR & AC/SD",
+      "Star Right of Start": "AC | X1+SD+W+Bu+AR",
+      "Middle Star": "W+Bu & AC/SD"
     }
   },
   "7-14": {
     "goal": "",
     "starcounts": [
       "",
-      "",
-      ""
+      "Bu+AR | X1+Bu+AC",
+      "Bu+AC+AR"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star Above Om Nom": "",
+      "Top Right Star": "Bu+AR",
+      "Star in Bubble": ""
     }
   },
   "7-15": {
     "goal": "",
     "starcounts": [
-      "",
-      "",
-      ""
+      "AC & X1/AR",
+      "AC+E1+Bu & X1/AR",
+      "AC+E1+Bu & X2/AR | X1+E2+AC+Bu"
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Star in Left Bubble": "AC+E1",
+      "Star in Right Bubble": "AC+E1",
+      "Top Star": "AC & X1/AR"
     }
   },
   "7-16": {
@@ -2152,9 +2152,9 @@
       ""
     ],
     "starsanity": {
-      "<STAR NAME 0>": "",
-      "<STAR NAME 1>": "",
-      "<STAR NAME 2>": ""
+      "Top Right Star": "",
+      "Middle Star": "",
+      "Bottom Left Star": ""
     }
   },
   "7-17": {
