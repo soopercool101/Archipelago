@@ -217,6 +217,17 @@ class CutTheRopeWorld(World):
                 # B = Original Box Number, L = Original Level Number
                 level_base_id : int = int(level_name.split('-')[0]) * 10000 + int(level_name.split('-')[1]) * 100
 
+                # Add individual starsanity locations
+                if self.options.starsanity_mode == self.options.starsanity_mode.option_individual:
+                    level_locations : Dict[str, int | None] = {}
+                    star_num = 0
+                    for star, rule_str in level_json["starsanity"].items():
+                        star_name = f"{level_name} - {star}"
+                        level_locations[star_name] = level_base_id + 2_0 + star_num
+                        star_num += 1
+                        location_rules[star_name] = rule_str
+                    current_level.add_locations(level_locations, CutTheRopeLocation)
+
                 # Goal location. No rule since it is in the level complete region. Uses just the base ID for the level
                 goal_area_locations[f"{level_name} - Complete Level"] = level_base_id
 
@@ -232,17 +243,6 @@ class CutTheRopeWorld(World):
                 # Add all goal region locations
                 current_goal.add_locations(goal_area_locations, CutTheRopeLocation)
 
-                # Add individual starsanity locations
-                if self.options.starsanity_mode == self.options.starsanity_mode.option_individual:
-                    level_locations : Dict[str, int | None] = {}
-                    star_num = 0
-                    for star, rule_str in level_json["starsanity"].items():
-                        star_name = f"{level_name} - {star}"
-                        level_locations[star_name] = level_base_id + 2_0 + star_num
-                        star_num += 1
-                        location_rules[star_name] = rule_str
-                    current_level.add_locations(level_locations, CutTheRopeLocation)
-
 
                 # Set rules
                 for location_str, rule_str in location_rules.items():
@@ -252,7 +252,8 @@ class CutTheRopeWorld(World):
 
                 regions += [current_level, current_goal]
 
-                if self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips:
+                if (self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips
+                        and box_num != self.options.goal_box - 1):
                     previous_region = current_level
                 else:
                     previous_region = current_goal
@@ -273,6 +274,10 @@ class CutTheRopeWorld(World):
 
     def get_filler_item_name(self) -> str:
         return items.get_random_filler_item_name(self)
+
+    # This sorts the items into creation order, which until level shuffle is the exact order I want them
+    def custom_ut_sort(self, region_label: str, location_label: str) -> str | int:
+        return 1 # self.ut_sort_region_dict.get(region_label, 9999999)
 
     def fill_slot_data(self) -> Mapping[str, Any]:
         slot_data : dict[str, Any] = self.options.as_dict(
