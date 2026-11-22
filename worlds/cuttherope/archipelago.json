@@ -2,5 +2,10 @@
 	"game": "Cut the Rope",
 	"minimum_ap_version": "0.6.7",
 	"world_version": "0.0.6",
-	"authors": ["soopercool101"]
+	"authors": ["soopercool101"],
+	"igdb_id": 9761,
+	"license": "MIT",
+	"repo_url": "https://github.com/soopercool101/Archipelago/tree/CTRAP",
+	"ai_disclosure": "Hint",
+	"flags": ["supports_deathlink"]
 }
