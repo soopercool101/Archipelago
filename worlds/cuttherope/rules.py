@@ -128,6 +128,9 @@ class RuleFactory:
         if token == "W":
             self.world.has_wheel = True
             return Has("Wheels")
+        if token == "G":
+            self.world.has_gravity_button = True
+            return Has("Gravity Buttons")
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()

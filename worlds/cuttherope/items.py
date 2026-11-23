@@ -48,7 +48,7 @@ ITEM_NAME_TO_ID = {
     "Progressive Blades": 2_10,
     
     # Boxes
-    "Cardboard Box": 10_01, # Probably unused unless I do a "starting box"
+    "Cardboard Box": 10_01,
     "Fabric Box": 10_02,
     "Foil Box": 10_03,
     "Magic Box": 10_04,
