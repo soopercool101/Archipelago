@@ -131,6 +131,24 @@ class RuleFactory:
         if token == "G":
             self.world.has_gravity_button = True
             return Has("Gravity Buttons")
+        if token == "B1":
+            self.world.has_blade = True
+            if self.world.options.progressive_blades:
+                return Has("Progressive Blades")
+            else:
+                return Has("Blades")
+        if token == "B2":
+            self.world.has_blade = True
+            if self.world.options.progressive_blades:
+                return Has("Progressive Blades", 2)
+            else:
+                return False_()
+        if token == "B": # There are so many more common items starting with B, but come on... it's a pun
+            self.world.has_bee = True
+            return Has("Bees")
+        if token == "R":
+            self.world.has_record = True
+            return Has("Records")
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()
