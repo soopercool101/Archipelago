@@ -146,6 +146,10 @@ class RuleFactory:
         if token == "B": # There are so many more common items starting with B, but come on... it's a pun
             self.world.has_bee = True
             return Has("Bees")
+        if token == "BR":
+            self.world.has_bee = True
+            self.world.has_autograb = True
+            return Has("Bees") & Has("Automatic Ropes")
         if token == "R":
             self.world.has_record = True
             return Has("Records")
