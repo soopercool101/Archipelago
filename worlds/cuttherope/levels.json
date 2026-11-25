@@ -1040,11 +1040,11 @@
     }
   },
   "4-6": {
-    "goal": "Bu+H",
+    "goal": "Bu+H | X2+AC",
     "starcounts": [
       "",
       "",
-      "AC & X1/AR"
+      "Bu+H+AC & X1/AR"
     ],
     "starsanity": {
       "Top Right Star": "AC & X1/AR",
@@ -1069,7 +1069,7 @@
     "goal": "",
     "starcounts": [
       "Bu",
-      "Bu+AC+H",
+      "Bu+AC & X1/H",
       "Bu+AC+H"
     ],
     "starsanity": {
@@ -1563,7 +1563,7 @@
     "goal": "Bu+AC & X2/AR",
     "starcounts": [
       "",
-      "AR",
+      "",
       "AR"
     ],
     "starsanity": {
