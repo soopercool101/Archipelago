@@ -44,6 +44,7 @@ ITEM_NAME_TO_ID = {
     "Records": 1_12,
     "Disable Spikes": 2_00,
     "Disable Star Timers": 2_01,
+    "Disable Spiders": 2_02,
     "Progressive Electric Sparks": 2_05,
     "Progressive Blades": 2_10,
     
@@ -88,6 +89,8 @@ def create_item_with_correct_classification(world: CutTheRopeWorld, name: str) -
     if name == "Disable Spikes" and not world.spikes_progression:
         classification = ItemClassification.useful
     if name == "Star Timer Disable" and not world.timed_star_progression:
+        classification = ItemClassification.useful
+    if name == "Disable Spiders":
         classification = ItemClassification.useful
 
     return CutTheRopeItem(name, classification, ITEM_NAME_TO_ID[name], world.player)
@@ -142,6 +145,9 @@ def create_all_items(world: CutTheRopeWorld) -> None:
 
     if world.options.star_timer_disable_item:
         itempool.append(world.create_item("Disable Star Timers"))
+
+    if world.options.disable_spiders_item:
+        itempool.append(world.create_item("Disable Spiders"))
 
     if world.options.tutorials_item:
         itempool.append(world.create_item("Tutorials"))

@@ -139,7 +139,7 @@ class CutTheRopeWorld(World):
                     raise OptionError(message)
                 raise TrackerException(message=message)
         # UT doesn't need to choose a starting box
-        elif not self.using_ut and self.options.random_starting_box and not self.options.goal_box > 2:
+        elif not self.using_ut and self.options.random_starting_box and self.options.goal_box > 2:
             if self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips:
                 # Every world has a starting sphere with skips enabled
                 self.starting_box = self.random.choice(range(1, self.options.goal_box - 1))

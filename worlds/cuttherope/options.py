@@ -105,6 +105,12 @@ class DisableSpikesItem(DefaultOnToggle):
     """
     display_name = "Disable Spikes Item"
 
+class DisableSpidersItem(DefaultOnToggle):
+    """
+    Adds an item that disables spiders.
+    """
+    display_name = "Disable Spiders Item"
+
 class ProgressiveElectricSparks(DefaultOnToggle):
     """
     Adds a second Electric Sparks item. Having both fully disables electric sparks. Accounted for in logic.
@@ -136,6 +142,7 @@ class CutTheRopeOptions(PerGameCommonOptions):
     death_link_amnesty: DeathLinkAmnesty
     tutorials_item: TutorialsItem
     disable_spikes_item: DisableSpikesItem
+    disable_spiders_item: DisableSpidersItem
     progressive_electric_sparks: ProgressiveElectricSparks
     progressive_blades: ProgressiveBlades
     star_timer_disable_item: StarTimerDisableItem
@@ -146,6 +153,7 @@ option_groups = [
         [
             TutorialsItem,
             DisableSpikesItem,
+            DisableSpidersItem,
             ProgressiveElectricSparks,
             ProgressiveBlades,
             StarTimerDisableItem,
