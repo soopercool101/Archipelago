@@ -139,7 +139,7 @@ class CutTheRopeWorld(World):
                     raise OptionError(message)
                 raise TrackerException(message=message)
         # UT doesn't need to choose a starting box
-        elif not self.using_ut and self.options.random_starting_box:
+        elif not self.using_ut and self.options.random_starting_box and not self.options.goal_box > 2:
             if self.options.box_locking_mode == self.options.box_locking_mode.option_box_items_with_skips:
                 # Every world has a starting sphere with skips enabled
                 self.starting_box = self.random.choice(range(1, self.options.goal_box - 1))
@@ -166,13 +166,6 @@ class CutTheRopeWorld(World):
         self.level_order = self.level_order[:(self.options.goal_box * 25)]
 
     def create_regions(self) -> None:
-        # TODO: Create regions and locations at same time, no need to overcomplicate
-        # World docs says setting rules can be done here too so probably will
-        # https://github.com/ArchipelagoMW/Archipelago/blob/main/docs/world%20api.md#create_regions
-        # Also, create_regions is called *before* create_items, so can determine what items are needed programmatically
-        #regions.create_and_connect_regions(self)
-        #locations.create_all_locations(self)
-
         # Rules
         rule_factory = RuleFactory(self)
 

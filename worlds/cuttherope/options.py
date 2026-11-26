@@ -9,7 +9,7 @@ class GoalBox(Range):
     display_name = "Goal Box"
     range_start = 2
     range_end = 11
-    default = 8
+    default = 11
 
 class GoalBoxStarRequirement(Range):
     """

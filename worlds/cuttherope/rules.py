@@ -153,6 +153,10 @@ class RuleFactory:
         if token == "R":
             self.world.has_record = True
             return Has("Records")
+        if token == "RR":
+            self.world.has_record = True
+            self.world.has_autograb = True
+            return Has("Records") & Has("Automatic Ropes")
         if token == "TS":
             if not self.world.options.star_timer_disable_item:
                 return False_()
