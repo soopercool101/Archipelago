@@ -17,5 +17,5 @@ See [here](https://archipelago.gg/tutorial/Archipelago/setup_en) for information
 - Copy the `content` folder from your official installation into the same folder as the new exe
 
 ## How to play
-- Edit the `apconnectioninfo.txt` with your connection details (line 1: host:port, line 2: player name, line 3: password)
 - Run `CutTheRopeArchipelago.exe`
+- Edit the connection info and click the "Connect" button
